@@ -59,16 +59,20 @@ def run(conn=None, n_runs: int = 50_000) -> dict:
     if conn.execute("SELECT COUNT(*) c FROM teams").fetchone()["c"] == 0:
         ingest.ingest_all(conn)
     overrides_report = overrides.sync_vault_overrides(conn)
-    calib = log_calibration(conn)               # score the prior forecast first
+    from . import scrape
+    scraped = scrape.update_results(conn)        # pull newly-completed results
+    elo_rep = scrape.recompute_elo(conn)         # fold them into current Elo
+    calib = log_calibration(conn)                # score the prior forecast vs played results
     result = forecast.run_forecast(conn, n_runs=n_runs)
     vault = vaultgen.generate(conn, result)
     memory.log_task(
         "Automated refresh (update.py)",
+        f"scraped results: {scraped}; elo: {elo_rep}; "
         f"overrides synced: {overrides_report.get('events', 0)} events; "
         f"running calibration: {calib}; vault: {vault}; run_id {result['run_id']}.",
     )
-    return {"overrides": overrides_report, "calibration": calib, "vault": vault,
-            "run_id": result["run_id"]}
+    return {"scraped": scraped, "elo": elo_rep, "overrides": overrides_report,
+            "calibration": calib, "vault": vault, "run_id": result["run_id"]}
 
 
 def main() -> None:

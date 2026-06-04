@@ -273,6 +273,11 @@ def run(write: bool = True, train_until: int = 2021):
     if write:
         (config.DATA_RAW / "fitted_params.json").write_text(json.dumps(report["fitted"], indent=2))
         (config.DATA_RAW / "backtest_report.json").write_text(json.dumps(report, indent=2))
+        # base = results.csv replay only (stable anchor for re-applying live results)
+        (config.DATA_RAW / "base_elo.json").write_text(
+            json.dumps({"updated": "2026-06-05", "source": "self-replay of results.csv",
+                        "ratings": {k: round(v, 1) for k, v in ratings.items()}}, indent=2)
+        )
         current = apply_played_friendlies(ratings)
         (config.DATA_RAW / "replayed_elo.json").write_text(
             json.dumps({"updated": "2026-06-05",

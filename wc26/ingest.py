@@ -238,6 +238,13 @@ def _ingest_friendlies(conn) -> dict:
             "ON CONFLICT(stage, home_team_id, away_team_id, date_utc) DO NOTHING",
             (m.get("date_utc"), m.get("venue"), hid, aid, hs, as_, played),
         )
+        if played:
+            conn.execute(
+                "INSERT INTO results_ledger (played_on, home_team, away_team, home_goals, "
+                "away_goals, neutral, tournament, source, fetched_at) "
+                "VALUES (?,?,?,?,?,1,'Friendly','friendlies.json',?)",
+                (str(m.get("date_utc"))[:10], m["home"], m["away"], hs, as_, "ingest"),
+            )
         n += 1
     return {"count": n}
 

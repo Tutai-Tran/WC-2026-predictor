@@ -53,3 +53,9 @@ Rebuilt the Streamlit dashboard (wc26/app.py) to be user-friendly: emoji title, 
 - Plus Champion & stages, Groups, Scorers, Calibration (now includes model-vs-market).
 Forecast payload gained: dates on group matches, friendly forecasts, knockout fixtures (slots + dates + projected teams), and a bracket projection that auto-sharpens toward actual qualifiers (reads conditional-sim probs).
 vaultgen now writes WC vault/_bracket.md (Mermaid knockout bracket). Verified the dashboard renders in a real browser (Playwright). 56 tests pass.
+
+## 2026-06-04 23:25 UTC — Live results scraper (ESPN) + self-improving Elo loop
+
+Added wc26/scrape.py: reads completed friendly + World Cup results from ESPN's public site JSON (keyless, valid public data) over a rolling 12-day window, records genuinely new results into the results ledger (dedup by teams+date), and recompute_elo() rebuilds current Elo = base (results.csv replay) + the ledger, then updates the ratings table.
+backtest now also writes base_elo.json (stable anchor). update.py refresh loop now: sync overrides -> scrape results -> recompute Elo -> log calibration -> re-forecast -> regenerate vault. This is the real self-improving loop: new results flow in and sharpen the ratings/forecast automatically.
+First live run added 26 new results; forecast stays sane (Spain ~23%, sum 1.0). 56 tests pass.

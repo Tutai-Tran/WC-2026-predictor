@@ -48,14 +48,16 @@ def test_availability_multiplier(tmp_path):
 
 def test_add_result_marks_played_and_ledger(tmp_path):
     conn = db.connect(tmp_path / "t.db"); ingest.ingest_all(conn)
-    before = conn.execute("SELECT COUNT(*) c FROM matches WHERE played=1").fetchone()["c"]
+    before_p = conn.execute("SELECT COUNT(*) c FROM matches WHERE played=1").fetchone()["c"]
+    before_l = conn.execute("SELECT COUNT(*) c FROM results_ledger").fetchone()["c"]
     fx = conn.execute(
         "SELECT h.name home, a.name away FROM matches m JOIN teams h ON h.id=m.home_team_id "
         "JOIN teams a ON a.id=m.away_team_id WHERE m.stage='group' LIMIT 1").fetchone()
     overrides.add_result(conn, fx["home"], fx["away"], 4, 0)
-    after = conn.execute("SELECT COUNT(*) c FROM matches WHERE played=1").fetchone()["c"]
-    assert after == before + 1  # the group fixture is now marked played
-    assert conn.execute("SELECT COUNT(*) c FROM results_ledger").fetchone()["c"] == 1
+    after_p = conn.execute("SELECT COUNT(*) c FROM matches WHERE played=1").fetchone()["c"]
+    after_l = conn.execute("SELECT COUNT(*) c FROM results_ledger").fetchone()["c"]
+    assert after_p == before_p + 1  # the group fixture is now marked played
+    assert after_l == before_l + 1  # one ledger row appended
 
 
 def test_sync_vault_overrides(tmp_path, monkeypatch):
