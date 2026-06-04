@@ -2,10 +2,10 @@
 type: wc-country
 team: "Spain"
 fifa_code: "{{fifa_code}}"
-group: "{{group}}"
-fifa_rank: {{fifa_rank}}
-elo: {{elo}}
-champion_prob: {{champion_prob}}
+group: "H"
+fifa_rank: 1
+elo: 2232
+champion_prob: 0.2594
 status: active
 created: 2026-06-04
 updated: 2026-06-04
@@ -13,9 +13,9 @@ updated: 2026-06-04
 
 # Spain
 
-<!-- WC26:AUTO:snapshot START -->
-Group {{group}} | FIFA rank {{fifa_rank}} | Elo {{elo}}
-Champion: {{champion_prob}} | Reach final: {{final_prob}} | Reach SF: {{sf_prob}}
+<!-- WC26:AUTO:snapshot START | generated 2026-06-04T21:24Z | source elo-goal-v1 -->
+Group H | FIFA rank 1 | Elo 2232
+Champion 25.9% | Final 37.0% | SF 50.0% | QF 60.3% | Advance 99.7%
 <!-- WC26:AUTO:snapshot END -->
 
 ## Squad & availability
@@ -64,5 +64,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-04T21:24Z | source elo-goal-v1 -->
+- 2026-06-04: champion 25.9% (run 5000 sims)
 <!-- WC26:AUTO:changelog END -->

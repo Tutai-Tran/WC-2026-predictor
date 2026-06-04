@@ -11,9 +11,10 @@ from __future__ import annotations
 import argparse
 import json
 import subprocess
+from collections import defaultdict
 from datetime import datetime, timezone
 
-from . import config, db, model as model_mod
+from . import config, db, model as model_mod, scorers as scorers_mod
 from .simulate import Tournament, simulate
 
 HOSTS = config.HOSTS
@@ -29,13 +30,35 @@ def _git_sha() -> str | None:
         return None
 
 
+def load_fitted_params() -> model_mod.ModelParams | None:
+    fp = config.DATA_RAW / "fitted_params.json"
+    if not fp.exists():
+        return None
+    d = json.loads(fp.read_text())
+    return model_mod.ModelParams(
+        c=d.get("c", 219.0), base_goals=d.get("base_goals", 2.6), rho=d.get("rho", -0.06)
+    )
+
+
 def load_tournament(conn, params: model_mod.ModelParams | None = None) -> Tournament:
+    if params is None:
+        params = load_fitted_params()
     teams: dict[str, dict] = {}
     for r in conn.execute(
         "SELECT t.name n, t.group_letter g, t.fifa_rank fr, r.elo e "
         "FROM teams t JOIN ratings r ON r.team_id=t.id"
     ):
         teams[r["n"]] = {"elo": r["e"], "group": r["g"], "fifa_rank": r["fr"]}
+
+    for r in conn.execute(
+        "SELECT t.name tn, p.name pn, p.position pos, p.club_goals cg, p.is_penalty_taker pk "
+        "FROM players p JOIN teams t ON t.id=p.team_id"
+    ):
+        if r["tn"] in teams:
+            teams[r["tn"]].setdefault("players", []).append(
+                {"name": r["pn"], "position": r["pos"], "club_goals": r["cg"],
+                 "is_penalty_taker": bool(r["pk"])}
+            )
 
     groups: dict[str, list[str]] = {}
     for r in conn.execute("SELECT name, group_letter FROM teams ORDER BY group_letter, name"):
@@ -78,9 +101,32 @@ def group_match_forecasts(t: Tournament) -> list[dict]:
             "group": fx["group"], "home": h, "away": a,
             "p_home": round(f["p_home"], 3), "p_draw": round(f["p_draw"], 3),
             "p_away": round(f["p_away"], 3),
+            "lambda_home": round(f["lambda_home"], 2), "lambda_away": round(f["lambda_away"], 2),
             "top_scoreline": f"{sh}-{sa}", "top_scoreline_p": round(sp, 3),
+            "top_scorers_home": scorers_mod.top_scorers(t.teams[h].get("players", []), f["lambda_home"]),
+            "top_scorers_away": scorers_mod.top_scorers(t.teams[a].get("players", []), f["lambda_away"]),
         })
     return out
+
+
+def golden_boot(t: Tournament, top_n: int = 15) -> list[dict]:
+    """Expected group-stage goals per player (a 'most likely to score' ranking)."""
+    exp_goals: dict[str, float] = defaultdict(float)
+    player_team: dict[str, str] = {}
+    for fx in t.group_fixtures:
+        h, a, vc = fx["home"], fx["away"], fx.get("venue_country")
+        la, lb = model_mod.match_lambdas(
+            t.teams[h]["elo"], t.teams[a]["elo"], t.params,
+            _host_adv(h, vc, t.host_bump), _host_adv(a, vc, t.host_bump),
+        )
+        for team, players, lam in ((h, t.teams[h].get("players", []), la),
+                                   (a, t.teams[a].get("players", []), lb)):
+            shares = scorers_mod.team_goal_shares(players)
+            for p in players:
+                exp_goals[p["name"]] += shares[p["name"]] * lam
+                player_team[p["name"]] = team
+    ranked = sorted(exp_goals.items(), key=lambda kv: kv[1], reverse=True)[:top_n]
+    return [{"player": n, "team": player_team[n], "exp_group_goals": round(g, 2)} for n, g in ranked]
 
 
 def run_forecast(conn, n_runs: int = config.DEFAULT_SIM_RUNS,
@@ -88,13 +134,14 @@ def run_forecast(conn, n_runs: int = config.DEFAULT_SIM_RUNS,
     t = load_tournament(conn)
     sim = simulate(t, n_runs=n_runs, seed=seed)
     matches = group_match_forecasts(t)
+    boot = golden_boot(t)
 
     run_id = datetime.now(timezone.utc).strftime("run-%Y%m%dT%H%M%SZ")
     ts = datetime.now(timezone.utc).isoformat()
     data_as_of = json.loads((config.DATA_RAW / "elo_seed.json").read_text()).get("updated")
 
     payload = {
-        "probs": sim["probs"], "matches": matches,
+        "probs": sim["probs"], "matches": matches, "golden_boot": boot,
         "data_as_of": data_as_of, "n_runs": n_runs, "seed": seed,
     }
     conn.execute(
@@ -125,12 +172,17 @@ def _print_summary(result: dict) -> None:
         print(f"  {name:<22} win {p['champion']*100:5.1f}%   "
               f"final {p['final']*100:5.1f}%   SF {p['sf']*100:5.1f}%   "
               f"QF {p['qf']*100:5.1f}%")
-    print("\nSample group-match forecasts (first 6):")
-    for m in result["matches"][:6]:
-        print(f"  [{m['group']}] {m['home']:<16} vs {m['away']:<16}  "
-              f"W {m['p_home']*100:4.0f}% / D {m['p_draw']*100:4.0f}% / "
-              f"L {m['p_away']*100:4.0f}%   most likely {m['top_scoreline']} "
-              f"({m['top_scoreline_p']*100:.0f}%)")
+    print("\nSample group-match forecasts (first 5):")
+    for m in result["matches"][:5]:
+        print(f"  [{m['group']}] {m['home']} vs {m['away']}  "
+              f"W {m['p_home']*100:.0f}% / D {m['p_draw']*100:.0f}% / L {m['p_away']*100:.0f}%  "
+              f"likely {m['top_scoreline']} ({m['top_scoreline_p']*100:.0f}%)")
+        sc = ", ".join(f"{s['player']} {s['p_anytime']*100:.0f}%"
+                       for s in (m['top_scorers_home'] + m['top_scorers_away'])[:4])
+        print(f"        scorers: {sc}")
+    print("\nMost likely scorers (expected group-stage goals):")
+    for b in result["golden_boot"][:10]:
+        print(f"  {b['player']:<22} ({b['team']:<14}) {b['exp_group_goals']:.2f}")
     total = sum(p["champion"] for p in probs.values())
     print(f"\n(Champion probabilities sum to {total:.3f}; should be ~1.0)")
 
@@ -140,11 +192,16 @@ def main() -> None:
     ap.add_argument("--runs", type=int, default=config.DEFAULT_SIM_RUNS)
     ap.add_argument("--seed", type=int, default=config.DEFAULT_RNG_SEED)
     ap.add_argument("--db", type=str, default=None)
+    ap.add_argument("--no-vault", action="store_true", help="skip writing the WC vault")
     args = ap.parse_args()
     conn = db.connect(args.db)
     db.init_db(conn)
     result = run_forecast(conn, n_runs=args.runs, seed=args.seed)
     _print_summary(result)
+    if not args.no_vault:
+        from . import vaultgen
+        counts = vaultgen.generate(conn, result)
+        print(f"\nWC vault updated: {counts}")
 
 
 if __name__ == "__main__":

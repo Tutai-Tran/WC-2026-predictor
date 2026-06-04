@@ -1,0 +1,56 @@
+name: forecast
+
+# Compute pipeline (per PLAN.md): scrapers run on the Mac and commit data/raw;
+# GitHub Actions does the deterministic compute on that committed data, never
+# touching hostile sites. It rebuilds the DB from data/raw, calibrates, runs the
+# forecast, regenerates the WC vault, and commits the results back.
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Daily at 06:00 UTC (ramp up cadence during the tournament as needed)
+    - cron: "0 6 * * *"
+
+concurrency:
+  group: forecast
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  forecast:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install uv
+        run: pipx install uv
+
+      - name: Install dependencies
+        run: |
+          uv venv --python 3.12 .venv
+          uv pip install --python .venv/bin/python -r requirements.txt
+
+      - name: Build DB, calibrate, forecast, generate vault
+        run: |
+          .venv/bin/python -c "from wc26 import db, ingest; ingest.ingest_all(db.connect())"
+          .venv/bin/python -m wc26.backtest
+          # re-ingest so the forecast uses the freshly replayed Elo
+          .venv/bin/python -c "from wc26 import db, ingest; ingest.ingest_all(db.connect())"
+          .venv/bin/python -m wc26.forecast --runs 50000
+
+      - name: Run tests
+        run: .venv/bin/python -m pytest -q
+
+      - name: Commit updated vault + fitted params
+        run: |
+          git config user.name "wc26-bot"
+          git config user.email "wc26-bot@users.noreply.github.com"
+          git add "WC vault" data/raw/fitted_params.json data/raw/replayed_elo.json || true
+          git commit -m "chore: scheduled forecast refresh [skip ci]" || echo "no changes"
+          git push || echo "nothing to push"

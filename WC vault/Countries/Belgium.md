@@ -2,10 +2,10 @@
 type: wc-country
 team: "Belgium"
 fifa_code: "{{fifa_code}}"
-group: "{{group}}"
-fifa_rank: {{fifa_rank}}
-elo: {{elo}}
-champion_prob: {{champion_prob}}
+group: "G"
+fifa_rank: 8
+elo: 1940
+champion_prob: 0.0104
 status: active
 created: 2026-06-04
 updated: 2026-06-04
@@ -13,9 +13,9 @@ updated: 2026-06-04
 
 # Belgium
 
-<!-- WC26:AUTO:snapshot START -->
-Group {{group}} | FIFA rank {{fifa_rank}} | Elo {{elo}}
-Champion: {{champion_prob}} | Reach final: {{final_prob}} | Reach SF: {{sf_prob}}
+<!-- WC26:AUTO:snapshot START | generated 2026-06-04T21:24Z | source elo-goal-v1 -->
+Group G | FIFA rank 8 | Elo 1940
+Champion 1.0% | Final 3.0% | SF 7.5% | QF 21.6% | Advance 86.5%
 <!-- WC26:AUTO:snapshot END -->
 
 ## Squad & availability
@@ -64,5 +64,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-04T21:24Z | source elo-goal-v1 -->
+- 2026-06-04: champion 1.0% (run 5000 sims)
 <!-- WC26:AUTO:changelog END -->

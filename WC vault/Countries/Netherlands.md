@@ -2,10 +2,10 @@
 type: wc-country
 team: "Netherlands"
 fifa_code: "{{fifa_code}}"
-group: "{{group}}"
-fifa_rank: {{fifa_rank}}
-elo: {{elo}}
-champion_prob: {{champion_prob}}
+group: "F"
+fifa_rank: 7
+elo: 2015
+champion_prob: 0.0266
 status: active
 created: 2026-06-04
 updated: 2026-06-04
@@ -13,9 +13,9 @@ updated: 2026-06-04
 
 # Netherlands
 
-<!-- WC26:AUTO:snapshot START -->
-Group {{group}} | FIFA rank {{fifa_rank}} | Elo {{elo}}
-Champion: {{champion_prob}} | Reach final: {{final_prob}} | Reach SF: {{sf_prob}}
+<!-- WC26:AUTO:snapshot START | generated 2026-06-04T21:24Z | source elo-goal-v1 -->
+Group F | FIFA rank 7 | Elo 2015
+Champion 2.7% | Final 6.2% | SF 14.2% | QF 28.4% | Advance 90.8%
 <!-- WC26:AUTO:snapshot END -->
 
 ## Squad & availability
@@ -64,5 +64,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-04T21:24Z | source elo-goal-v1 -->
+- 2026-06-04: champion 2.7% (run 5000 sims)
 <!-- WC26:AUTO:changelog END -->

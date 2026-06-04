@@ -65,7 +65,15 @@ def _team_id(conn, name: str) -> int | None:
 
 
 def _ingest_elo(conn) -> dict:
-    data = _load_json("elo_seed.json")
+    # Prefer self-replayed ratings (same scale the goal model is fitted on);
+    # fall back to the eloratings.net seed before the backtest has been run.
+    replayed = config.DATA_RAW / "replayed_elo.json"
+    if replayed.exists():
+        data = json.loads(replayed.read_text())
+        src = "replay"
+    else:
+        data = _load_json("elo_seed.json")
+        src = "elo_seed"
     ratings = data["ratings"]
     valid_from = data.get("updated", config.TOURNAMENT_START)
     misses = []
@@ -79,8 +87,8 @@ def _ingest_elo(conn) -> dict:
         conn.execute(
             """INSERT INTO ratings (team_id, elo, valid_from, source)
                VALUES (?,?,?,?)
-               ON CONFLICT(team_id, valid_from) DO UPDATE SET elo=excluded.elo""",
-            (row["id"], float(elo), valid_from, "elo_seed"),
+               ON CONFLICT(team_id, valid_from) DO UPDATE SET elo=excluded.elo, source=excluded.source""",
+            (row["id"], float(elo), valid_from, src),
         )
         n += 1
     return {"count": n, "misses": misses}
