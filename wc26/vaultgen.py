@@ -118,10 +118,14 @@ def update_country_notes(result: dict, meta: dict) -> int:
             continue
         text = path.read_text()
         m = meta.get(name, {})
+        inj = m.get("injuries") or []
+        inj_line = ("Availability concerns: " + ", ".join(inj[:8])) if inj \
+            else "Availability: no concerns recorded"
         snapshot = (f"Group {m.get('group','?')} | FIFA rank {m.get('fifa_rank','?')} | "
                     f"Elo {round(m.get('elo',0))}\n"
                     f"Champion {_pct(p['champion'])} | Final {_pct(p['final'])} | "
-                    f"SF {_pct(p['sf'])} | QF {_pct(p['qf'])} | Advance {_pct(p['advance'])}")
+                    f"SF {_pct(p['sf'])} | QF {_pct(p['qf'])} | Advance {_pct(p['advance'])}\n"
+                    f"{inj_line}")
         text = replace_auto_block(text, "snapshot", snapshot, source="elo-goal-v1")
         text = set_frontmatter(text, "champion_prob", round(p["champion"], 4))
         if m.get("group"):
@@ -270,6 +274,13 @@ def generate(conn, result: dict) -> dict:
         "WHERE rt.valid_from = (SELECT MAX(r2.valid_from) FROM ratings r2 WHERE r2.team_id=t.id)"
     ):
         meta[r["n"]] = {"group": r["g"], "fifa_rank": r["fr"], "fifa_code": r["fc"], "elo": r["e"]}
+    for r in conn.execute(
+        "SELECT t.name n, ae.player_name p, ae.status s FROM availability_events ae "
+        "JOIN teams t ON t.id=ae.team_id "
+        "WHERE ae.player_name != '(scan-marker)' AND ae.status != 'fit'"
+    ):
+        if r["n"] in meta:
+            meta[r["n"]].setdefault("injuries", []).append(f"{r['p']} ({r['s']})")
     write_dashboard(result)
     write_bracket(result)
     return {
