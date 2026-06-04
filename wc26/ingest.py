@@ -33,6 +33,8 @@ def ingest_all(conn, raw_dir: Path | None = None) -> dict:
         report["elo"] = _ingest_elo(conn)
         report["fixtures"] = _ingest_fixtures(conn)
         report["players"] = _ingest_squads(conn)
+        report["knockout"] = _ingest_knockout_fixtures(conn)
+        report["friendlies"] = _ingest_friendlies(conn)
         conn.commit()
         return report
     finally:
@@ -139,6 +141,105 @@ def _ingest_squads(conn) -> dict:
             )
             n += 1
     return {"players": n, "teams_with_squad": teams_done}
+
+
+_KO_MX = {"Guadalupe", "Mexico City", "Monterrey", "Guadalajara"}
+_KO_CA = {"Toronto", "Vancouver"}
+
+
+def _ko_country(city: str | None) -> str:
+    if city in _KO_MX:
+        return "Mexico"
+    if city in _KO_CA:
+        return "Canada"
+    return "United States"
+
+
+def _stage_for_match_no(n: int) -> str:
+    if 73 <= n <= 88:
+        return "R32"
+    if 89 <= n <= 96:
+        return "R16"
+    if 97 <= n <= 100:
+        return "QF"
+    if 101 <= n <= 102:
+        return "SF"
+    if n == 104:
+        return "Final"
+    return "KO"
+
+
+def _ingest_knockout_fixtures(conn) -> dict:
+    """Round of 32 fixtures (with dates + slots) and the structural R16->Final tree."""
+    bracket = _load_json("bracket.json")
+    n = 0
+    for m in bracket.get("r32", []):
+        conn.execute(
+            "INSERT INTO matches (stage, match_no, date_utc, venue, venue_country, "
+            "home_slot, away_slot, source) VALUES ('R32',?,?,?,?,?,?, 'bracket') "
+            "ON CONFLICT(match_no) DO NOTHING",
+            (m["match"], m.get("date_utc"), m.get("venue"), _ko_country(m.get("city")),
+             m["home_slot"], m["away_slot"]),
+        )
+        n += 1
+    from .simulate import KNOCKOUT_TREE
+    for match_no, (a, b) in KNOCKOUT_TREE.items():
+        conn.execute(
+            "INSERT INTO matches (stage, match_no, home_slot, away_slot, source) "
+            "VALUES (?,?,?,?, 'bracket') ON CONFLICT(match_no) DO NOTHING",
+            (_stage_for_match_no(match_no), match_no, f"W{a}", f"W{b}"),
+        )
+        n += 1
+    return {"count": n}
+
+
+def _elo_lookup() -> dict[str, float]:
+    for fname in ("replayed_elo.json", "elo_seed.json"):
+        path = config.DATA_RAW / fname
+        if path.exists():
+            return json.loads(path.read_text()).get("ratings", {})
+    return {}
+
+
+def _ensure_team(conn, name: str, elo: dict[str, float]) -> int:
+    """Return team id, inserting a minimal (non-WC) team + rating if absent."""
+    row = conn.execute("SELECT id FROM teams WHERE name=?", (name,)).fetchone()
+    if row:
+        return row["id"]
+    conn.execute("INSERT INTO teams (name, is_host) VALUES (?, 0)", (name,))
+    tid = conn.execute("SELECT id FROM teams WHERE name=?", (name,)).fetchone()["id"]
+    rating = elo.get(name) or elo.get(ELO_ALIASES.get(name, "")) or 1500.0
+    conn.execute(
+        "INSERT INTO ratings (team_id, elo, valid_from, source) VALUES (?,?,?,?) "
+        "ON CONFLICT(team_id, valid_from) DO UPDATE SET elo=excluded.elo",
+        (tid, float(rating), config.TOURNAMENT_START, "friendly-opponent"),
+    )
+    return tid
+
+
+def _ingest_friendlies(conn) -> dict:
+    """Pre-tournament warm-up friendlies (predicted, and Elo-updating once played)."""
+    path = config.DATA_RAW / "friendlies.json"
+    if not path.exists():
+        return {"count": 0, "note": "no friendlies.json yet"}
+    data = json.loads(path.read_text())
+    elo = _elo_lookup()
+    n = 0
+    for m in data.get("matches", []):
+        if not m.get("home") or not m.get("away"):
+            continue
+        hid = _ensure_team(conn, m["home"], elo)
+        aid = _ensure_team(conn, m["away"], elo)
+        hs, as_ = m.get("home_score"), m.get("away_score")
+        played = 1 if hs is not None and as_ is not None else 0
+        conn.execute(
+            "INSERT INTO matches (stage, date_utc, venue, home_team_id, away_team_id, "
+            "home_goals, away_goals, played, source) VALUES ('friendly',?,?,?,?,?,?,?, 'friendlies.json') "
+            "ON CONFLICT(stage, home_team_id, away_team_id, date_utc) DO NOTHING",
+            (m.get("date_utc"), m.get("venue"), hid, aid, hs, as_, played),
+        )
+        n += 1
+    return {"count": n}
 
 
 def main() -> None:

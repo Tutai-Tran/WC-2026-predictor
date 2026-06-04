@@ -48,7 +48,8 @@ def load_tournament(conn, params: model_mod.ModelParams | None = None) -> Tourna
     for r in conn.execute(
         "SELECT t.name n, t.group_letter g, t.fifa_rank fr, r.elo e "
         "FROM teams t JOIN ratings r ON r.team_id=t.id "
-        "WHERE r.valid_from = (SELECT MAX(r2.valid_from) FROM ratings r2 WHERE r2.team_id=t.id)"
+        "WHERE t.group_letter IS NOT NULL "
+        "AND r.valid_from = (SELECT MAX(r2.valid_from) FROM ratings r2 WHERE r2.team_id=t.id)"
     ):
         teams[r["n"]] = {"elo": r["e"], "group": r["g"], "fifa_rank": r["fr"]}
 
@@ -63,7 +64,10 @@ def load_tournament(conn, params: model_mod.ModelParams | None = None) -> Tourna
             )
 
     groups: dict[str, list[str]] = {}
-    for r in conn.execute("SELECT name, group_letter FROM teams ORDER BY group_letter, name"):
+    for r in conn.execute(
+        "SELECT name, group_letter FROM teams WHERE group_letter IS NOT NULL "
+        "ORDER BY group_letter, name"
+    ):
         groups.setdefault(r["group_letter"], []).append(r["name"])
 
     fixtures: list[dict] = []
@@ -147,12 +151,37 @@ def golden_boot(t: Tournament, top_n: int = 15) -> list[dict]:
             for (team, name), g in ranked]
 
 
+def friendly_forecasts(conn, params: model_mod.ModelParams) -> list[dict]:
+    """Predict pre-tournament warm-up friendlies (any teams with a known Elo)."""
+    out = []
+    for r in conn.execute(
+        "SELECT m.date_utc d, h.name home, a.name away, m.home_goals hg, m.away_goals ag, m.played p, "
+        "(SELECT elo FROM ratings WHERE team_id=h.id ORDER BY valid_from DESC LIMIT 1) he, "
+        "(SELECT elo FROM ratings WHERE team_id=a.id ORDER BY valid_from DESC LIMIT 1) ae "
+        "FROM matches m JOIN teams h ON h.id=m.home_team_id JOIN teams a ON a.id=m.away_team_id "
+        "WHERE m.stage='friendly' ORDER BY m.date_utc"
+    ):
+        if r["he"] is None or r["ae"] is None:
+            continue
+        f = model_mod.match_forecast(r["he"], r["ae"], params)
+        (sh, sa), _ = f["top_scorelines"][0]
+        out.append({
+            "date": r["d"], "home": r["home"], "away": r["away"],
+            "p_home": round(f["p_home"], 3), "p_draw": round(f["p_draw"], 3),
+            "p_away": round(f["p_away"], 3), "top_scoreline": f"{sh}-{sa}",
+            "played": bool(r["p"]),
+            "result": (f'{r["hg"]}-{r["ag"]}' if r["p"] else None),
+        })
+    return out
+
+
 def run_forecast(conn, n_runs: int = config.DEFAULT_SIM_RUNS,
                  seed: int = config.DEFAULT_RNG_SEED) -> dict:
     t = load_tournament(conn)
     sim = simulate(t, n_runs=n_runs, seed=seed)
     matches = group_match_forecasts(t)
     boot = golden_boot(t)
+    friendlies = friendly_forecasts(conn, t.params)
 
     run_id = datetime.now(timezone.utc).strftime("run-%Y%m%dT%H%M%SZ")
     ts = datetime.now(timezone.utc).isoformat()
@@ -160,6 +189,7 @@ def run_forecast(conn, n_runs: int = config.DEFAULT_SIM_RUNS,
 
     payload = {
         "probs": sim["probs"], "matches": matches, "golden_boot": boot,
+        "friendlies": friendlies,
         "data_as_of": data_as_of, "n_runs": n_runs, "seed": seed,
     }
     conn.execute(

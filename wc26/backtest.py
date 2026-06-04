@@ -210,6 +210,26 @@ def fit(feats_train, rho: float = -0.06):
     return model_mod.ModelParams(c=round(c, 2), base_goals=round(base, 3), rho=rho), home
 
 
+def apply_played_friendlies(ratings: dict[str, float]) -> dict[str, float]:
+    """Continue the Elo replay with already-played warm-up friendlies so current
+    ratings reflect the latest results (the backtest itself stays on results.csv)."""
+    path = config.DATA_RAW / "friendlies.json"
+    if not path.exists():
+        return ratings
+    matches = json.loads(path.read_text()).get("matches", [])
+    played = [m for m in matches if m.get("home_score") is not None and m.get("away_score") is not None]
+    played.sort(key=lambda m: m.get("date_utc") or "")
+    r = dict(ratings)
+    for m in played:
+        h, a = m["home"], m["away"]
+        rh = r.get(h, elo_mod.DEFAULT_ELO)
+        ra = r.get(a, elo_mod.DEFAULT_ELO)
+        nh, na = elo_mod.update_pair(rh, ra, int(m["home_score"]), int(m["away_score"]),
+                                     k=20.0, home_adv=0.0)
+        r[h], r[a] = nh, na
+    return r
+
+
 def _temp_log_loss(feats, params, T) -> float:
     p = _probs_for(feats, params)
     pc = np.power(p, 1.0 / T)
@@ -253,9 +273,11 @@ def run(write: bool = True, train_until: int = 2021):
     if write:
         (config.DATA_RAW / "fitted_params.json").write_text(json.dumps(report["fitted"], indent=2))
         (config.DATA_RAW / "backtest_report.json").write_text(json.dumps(report, indent=2))
+        current = apply_played_friendlies(ratings)
         (config.DATA_RAW / "replayed_elo.json").write_text(
-            json.dumps({"updated": "2026-06-04", "source": "self-replay of results.csv",
-                        "ratings": {k: round(v, 1) for k, v in ratings.items()}}, indent=2)
+            json.dumps({"updated": "2026-06-05",
+                        "source": "self-replay of results.csv + played warm-up friendlies",
+                        "ratings": {k: round(v, 1) for k, v in current.items()}}, indent=2)
         )
     return report
 

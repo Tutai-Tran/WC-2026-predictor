@@ -13,7 +13,7 @@ from __future__ import annotations
 import json
 from datetime import datetime, timezone
 
-from . import db, ingest, overrides, forecast, vaultgen
+from . import db, ingest, overrides, forecast, vaultgen, memory
 
 
 def log_calibration(conn) -> dict:
@@ -62,6 +62,11 @@ def run(conn=None, n_runs: int = 50_000) -> dict:
     calib = log_calibration(conn)               # score the prior forecast first
     result = forecast.run_forecast(conn, n_runs=n_runs)
     vault = vaultgen.generate(conn, result)
+    memory.log_task(
+        "Automated refresh (update.py)",
+        f"overrides synced: {overrides_report.get('events', 0)} events; "
+        f"running calibration: {calib}; vault: {vault}; run_id {result['run_id']}.",
+    )
     return {"overrides": overrides_report, "calibration": calib, "vault": vault,
             "run_id": result["run_id"]}
 

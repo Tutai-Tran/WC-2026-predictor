@@ -1,0 +1,45 @@
+---
+type: wc-memory
+---
+
+# WC-2026 Project Memory
+
+Running log of context, decisions, and what was done each task. Newest entries are
+appended at the bottom. This file is the project's source of truth for "what did we
+do and why".
+
+## Project background (seeded 2026-06-05)
+
+**Goal:** forecast the FIFA World Cup 2026 (match winners, scorelines, goalscorers, progression, champion) as well-calibrated probabilities, fed by scraped data, improving over time, with a standalone Obsidian vault (this vault) and a Streamlit dashboard.
+
+**Architecture built (v1):**
+- `wc26/elo.py` — World Football Elo, replayable from a results ledger.
+- `wc26/model.py` — Elo-driven goal expectation -> Poisson + Dixon-Coles scoreline matrix -> W/D/L, top scorelines. Supports attacking-xG multipliers (availability).
+- `wc26/rules.py` — 2026 rules engine: head-to-head-first group ranking (with recursive re-application), best-8-of-12 thirds.
+- `wc26/simulate.py` — Monte Carlo (groups -> Annex C routing -> knockouts with ET + shootouts); conditional sim (fix played matches); `decide_knockout` pure function.
+- `wc26/backtest.py` — leak-free calibration (fitted c=219, base 2.63); baselines (uniform/climatology/favourite), bootstrap CI, tournament-only slice, temperature, reliability slope (1.019). Writes fitted_params.json, replayed_elo.json, backtest_report.json.
+- `wc26/scorers.py` — anytime-scorer model (goal-share shrunk to role prior + penalty stream).
+- `wc26/ingest.py` — loads data/raw into SQLite (48 teams, 72 fixtures, 1246 players); prefers self-replayed Elo.
+- `wc26/forecast.py` — orchestrator + CLI (`python -m wc26.forecast`), self-ingests on empty DB.
+- `wc26/overrides.py` — manual result/availability entry + parse-back of vault HUMAN override blocks; availability -> attacking-xG multiplier.
+- `wc26/update.py` — fast loop (sync overrides -> log calibration -> re-forecast -> vault).
+- `wc26/odds.py` — The Odds API winner odds, devigged, as a prediction benchmark only (never betting).
+- `wc26/vaultgen.py` — generates the vault (clobber-proof AUTO blocks; HUMAN blocks preserved).
+- `wc26/app.py` — read-only Streamlit dashboard (Champion, Matches, Groups, Scorers, Calibration).
+- GitHub Actions compute pipeline; repo at github.com/Tutai-Tran/WC-2026-predictor.
+
+**Data sources (one-time snapshot dated 2026-06-04):** Wikipedia (2026 groups/fixtures/squads), martj42/international_results (49,378 historical results), eloratings.net, FIFA/ESPN bracket + 495-combo Annex C routing. Odds live via The Odds API key (in gitignored .env).
+
+**Testing:** 6 adversarial test agents + 4 verification agents + 3 sign-off agents; 10 bugs fixed; 56 tests passing at the start of this session.
+
+**Headline forecast (50k sims, seed 20260611):** Spain ~25%, Argentina ~17%, France ~12%, England ~6%.
+
+**Honest framing:** probabilities not certainties; model runs hotter than the market on the very top Elo teams.
+
+## 2026-06-04 23:14 UTC — Data layer: vault memory, schema v2, knockout fixtures, friendlies
+
+Added the vault memory system (wc26/memory.py + this file); update.py logs each refresh here.
+Schema v2: matches gained match_no / home_slot / away_slot; stage now spans friendly, group, R32, R16, QF, SF, Final.
+Ingest now also loads 31 knockout fixtures (R32 with real dates+slots, plus the R16->Final tree by match number) and 62 pre-WC warm-up friendlies (33 already played) from data/raw/friendlies.json, scraped by an agent from football365 / SI / ESPN.
+Played friendlies are folded into current Elo (backtest.apply_played_friendlies), and the forecast now predicts friendlies. The model's top pick was correct on 21/33 (64%) of the played friendlies.
+56 tests pass; calibration unchanged (test log loss 0.861, reliability slope 1.019).

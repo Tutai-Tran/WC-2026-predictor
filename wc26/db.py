@@ -14,7 +14,7 @@ from pathlib import Path
 
 from . import config
 
-SCHEMA_VERSION = 1
+SCHEMA_VERSION = 2
 
 _SCHEMA = """
 CREATE TABLE IF NOT EXISTS schema_version (version INTEGER NOT NULL);
@@ -44,7 +44,8 @@ CREATE TABLE IF NOT EXISTS players (
 -- Fixtures and (optionally) their final scores.
 CREATE TABLE IF NOT EXISTS matches (
     id          INTEGER PRIMARY KEY,
-    stage       TEXT NOT NULL,            -- 'group' or one of KNOCKOUT_STAGES
+    stage       TEXT NOT NULL,            -- 'friendly' | 'group' | R32/R16/QF/SF/Final
+    match_no    INTEGER,                  -- official match number (knockouts)
     group_letter TEXT,
     matchday    INTEGER,
     date_utc    TEXT,
@@ -52,11 +53,14 @@ CREATE TABLE IF NOT EXISTS matches (
     venue_country TEXT,
     home_team_id INTEGER REFERENCES teams(id),
     away_team_id INTEGER REFERENCES teams(id),
+    home_slot   TEXT,                     -- e.g. '1A','2B','3rd C/E/F/H/I' (knockouts)
+    away_slot   TEXT,
     home_goals  INTEGER,
     away_goals  INTEGER,
     played      INTEGER NOT NULL DEFAULT 0,
     source      TEXT,
-    UNIQUE(stage, home_team_id, away_team_id, date_utc)
+    UNIQUE(stage, home_team_id, away_team_id, date_utc),
+    UNIQUE(match_no)
 );
 
 -- Append-only ledger of confirmed results (drives replayable Elo).
