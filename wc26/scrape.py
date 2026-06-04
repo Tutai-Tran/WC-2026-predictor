@@ -30,17 +30,10 @@ def _norm(name: str) -> str:
     return ESPN_ALIASES.get(name, name)
 
 
-def fetch_espn(league: str, ymd: str) -> list[dict]:
-    """Completed matches for a league on a date (YYYYMMDD). [] on any error."""
-    url = ESPN.format(league=league, ymd=ymd)
-    try:
-        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 wc26"})
-        with urllib.request.urlopen(req, timeout=20) as r:
-            data = json.load(r)
-    except Exception:
-        return []
+def parse_espn(data: dict, league: str = "") -> list[dict]:
+    """Pure parser: ESPN scoreboard JSON -> list of completed results. Testable."""
     out = []
-    for ev in data.get("events", []):
+    for ev in (data or {}).get("events", []):
         comp = (ev.get("competitions") or [{}])[0]
         status = (comp.get("status") or ev.get("status") or {}).get("type", {})
         if not status.get("completed"):
@@ -61,6 +54,18 @@ def fetch_espn(league: str, ymd: str) -> list[dict]:
             "hg": hg, "ag": ag, "tournament": LEAGUES.get(league, ""),
         })
     return out
+
+
+def fetch_espn(league: str, ymd: str) -> list[dict]:
+    """Completed matches for a league on a date (YYYYMMDD). [] on any error."""
+    url = ESPN.format(league=league, ymd=ymd)
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 wc26"})
+        with urllib.request.urlopen(req, timeout=20) as r:
+            data = json.load(r)
+    except Exception:
+        return []
+    return parse_espn(data, league)
 
 
 def update_results(conn, days_back: int = 12) -> dict:

@@ -74,3 +74,7 @@ HIGH: (1) scraper dedup never matched because add_result stored today's date not
 MEDIUM: (4) friendly-opponent seed ratings were dated at the future TOURNAMENT_START so recompute_elo was ignored; now seeded at 2000-01-01 so the recompute wins. (5) vaultgen meta query now selects the latest rating (MAX valid_from) like load_tournament.
 LOW: (6) news._extract_json_array now uses raw_decode (robust to stray brackets in prose). (7) autostart dashboard binds 127.0.0.1 (matches the install message).
 62 tests pass.
+
+## 2026-06-04 23:49 UTC — Visual bracket diagram + Monte Carlo CIs + ESPN parser tests
+
+Dashboard Bracket tab now renders a graphviz knockout diagram (R32->Final, projected qualifiers) in addition to the text breakdown and the vault Mermaid. Champion tab shows a Monte Carlo 95% CI per team (honest uncertainty). Refactored scrape.fetch_espn into a pure parse_espn() with unit tests (completed-only, alias mapping, bad-score handling). Verified the bracket renders in a real browser (0 console errors). 65 tests pass.

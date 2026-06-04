@@ -126,9 +126,12 @@ with tabs[1]:
         blend = odds.blended_champion(db.connect())
     except Exception:
         blend = {}
+    n_runs = max(1, data.get("n_runs", 1))
     rows = []
     for n, p in probs.items():
-        row = {"Team": n, "Win %": round(p["champion"]*100, 1)}
+        c = p["champion"]
+        ci = round(1.96 * (c * (1 - c) / n_runs) ** 0.5 * 100, 2)  # Monte Carlo 95% CI
+        row = {"Team": n, "Win %": round(c * 100, 1), "± (95%)": ci}
         if blend:
             row["Win % (model+market)"] = round(blend.get(n, p["champion"])*100, 1)
         row.update({"Final %": round(p["final"]*100, 1), "SF %": round(p["sf"]*100, 1),
@@ -184,6 +187,28 @@ with tabs[3]:
                "winners as knockout matches are played. For now it shows the structure and the "
                "current most-likely qualifier for each slot.")
     ko = {k["match_no"]: k for k in data.get("knockout", [])}
+
+    try:
+        from wc26.simulate import KNOCKOUT_TREE
+
+        def _nl(mno):
+            k = ko.get(mno)
+            if not k:
+                return f"#{mno}"
+            h = k.get("home_proj") or k["home_slot"]
+            a = k.get("away_proj") or k["away_slot"]
+            return f"{h}\\nvs {a}".replace('"', "'")
+
+        dot = ["digraph B { rankdir=LR; bgcolor=transparent; "
+               "node [shape=box style=rounded fontsize=9]; ranksep=0.6; nodesep=0.12;"]
+        for mno in sorted(set(range(73, 89)) | set(KNOCKOUT_TREE)):
+            dot.append(f'M{mno} [label="{_nl(mno)}"];')
+        for mno, (a, b) in KNOCKOUT_TREE.items():
+            dot.append(f"M{a} -> M{mno}; M{b} -> M{mno};")
+        dot.append("}")
+        st.graphviz_chart("\n".join(dot), use_container_width=True)
+    except Exception as e:
+        st.caption(f"(diagram unavailable: {e})")
 
     def line(mno):
         k = ko.get(mno)
