@@ -126,6 +126,8 @@ def update_country_notes(result: dict, meta: dict) -> int:
         text = set_frontmatter(text, "champion_prob", round(p["champion"], 4))
         if m.get("group"):
             text = set_frontmatter(text, "group", f"\"{m['group']}\"")
+        if m.get("fifa_code"):
+            text = set_frontmatter(text, "fifa_code", f"\"{m['fifa_code']}\"")
         text = set_frontmatter(text, "elo", round(m.get("elo", 0)))
         if m.get("fifa_rank"):
             text = set_frontmatter(text, "fifa_rank", m["fifa_rank"])
@@ -193,10 +195,10 @@ def write_match_notes(result: dict) -> int:
 def generate(conn, result: dict) -> dict:
     meta = {}
     for r in conn.execute(
-        "SELECT t.name n, t.group_letter g, t.fifa_rank fr, rt.elo e "
+        "SELECT t.name n, t.group_letter g, t.fifa_rank fr, t.fifa_code fc, rt.elo e "
         "FROM teams t JOIN ratings rt ON rt.team_id=t.id"
     ):
-        meta[r["n"]] = {"group": r["g"], "fifa_rank": r["fr"], "elo": r["e"]}
+        meta[r["n"]] = {"group": r["g"], "fifa_rank": r["fr"], "fifa_code": r["fc"], "elo": r["e"]}
     write_dashboard(result)
     return {
         "countries": update_country_notes(result, meta),

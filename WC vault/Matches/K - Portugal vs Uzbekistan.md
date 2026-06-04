@@ -13,7 +13,7 @@ updated: 2026-06-04
 Win Portugal: 59.6% | Draw: 24.1% | Win Uzbekistan: 16.3%
 Most likely scoreline: 1-0 (12.3%) (modal only; many outcomes possible)
 Top scorers: Cristiano Ronaldo 64.5%; Bruno Fernandes 17.1%; Bernardo Silva 9.2%; Eldor Shomurodov 23.7%; Igor Sergeev 14.1%; Jaloliddin Masharipov 7.3%;
-Data as of 2026-06-04 | runs 50000 | seed 20260611
+Data as of 2026-06-04 | runs 20000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

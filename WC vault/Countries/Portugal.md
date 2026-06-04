@@ -1,11 +1,11 @@
 ---
 type: wc-country
 team: "Portugal"
-fifa_code: "{{fifa_code}}"
+fifa_code: "POR"
 group: "K"
 fifa_rank: 5
 elo: 2054
-champion_prob: 0.0405
+champion_prob: 0.041
 status: active
 created: 2026-06-04
 updated: 2026-06-04
@@ -13,9 +13,9 @@ updated: 2026-06-04
 
 # Portugal
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-04T21:59Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-04T22:06Z | source elo-goal-v1 -->
 Group K | FIFA rank 5 | Elo 2054
-Champion 4.0% | Final 8.9% | SF 16.9% | QF 31.8% | Advance 90.5%
+Champion 4.1% | Final 9.0% | SF 17.2% | QF 31.8% | Advance 90.2%
 <!-- WC26:AUTO:snapshot END -->
 
 ## Squad & availability
@@ -64,6 +64,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-04T21:59Z | source elo-goal-v1 -->
-- 2026-06-04: champion 4.0% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-04T22:06Z | source elo-goal-v1 -->
+- 2026-06-04: champion 4.1% (run 20000 sims)
 <!-- WC26:AUTO:changelog END -->
