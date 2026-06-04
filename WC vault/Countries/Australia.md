@@ -1,0 +1,68 @@
+---
+type: wc-country
+team: "Australia"
+fifa_code: "{{fifa_code}}"
+group: "{{group}}"
+fifa_rank: {{fifa_rank}}
+elo: {{elo}}
+champion_prob: {{champion_prob}}
+status: active
+created: 2026-06-04
+updated: 2026-06-04
+---
+
+# Australia
+
+<!-- WC26:AUTO:snapshot START -->
+Group {{group}} | FIFA rank {{fifa_rank}} | Elo {{elo}}
+Champion: {{champion_prob}} | Reach final: {{final_prob}} | Reach SF: {{sf_prob}}
+<!-- WC26:AUTO:snapshot END -->
+
+## Squad & availability
+<!-- WC26:AUTO:squad START -->
+| Player | Pos | Goals (recent) | Status |
+| --- | --- | --- | --- |
+| Mathew Ryan | GK | 0 | available |
+| Miloš Degenek | DF | 1 | available |
+| Alessandro Circati | DF | 1 | available |
+| Jacob Italiano | DF | 0 | available |
+| Jordan Bos | DF | 4 | available |
+| Jason Geria | DF | 0 | available |
+| Mathew Leckie | FW | 14 | available |
+| Connor Metcalfe | MF | 1 | available |
+| Mohamed Touré | FW | 2 | available |
+| Ajdin Hrustic | FW | 4 | available |
+| Awer Mabil | FW | 10 | available |
+| Paul Izzo | GK | 0 | available |
+| Aiden O'Neill | MF | 0 | available |
+| Cammy Devlin | MF | 0 | available |
+| Kai Trewin | DF | 0 | available |
+| Aziz Behich | DF | 3 | available |
+| Nestory Irankunda | FW | 5 | available |
+| Patrick Beach | GK | 0 | available |
+| Harry Souttar | DF | 11 | available |
+| Cristian Volpato | FW | 0 | available |
+| Cameron Burgess | DF | 0 | available |
+| Jackson Irvine | MF | 14 | available |
+| Nishan Velupillay | FW | 3 | available |
+| Paul Okon-Engstler | MF | 0 | available |
+| Lucas Herrington | DF | 0 | available |
+| Tete Yengi | FW | 0 | available |
+<!-- WC26:AUTO:squad END -->
+
+## Upcoming
+<!-- WC26:AUTO:upcoming START -->
+<!-- WC26:AUTO:upcoming END -->
+
+## My read
+<!-- WC26:HUMAN:notes -->
+_Your notes here. Never overwritten by the generator._
+
+## Manual overrides
+<!-- WC26:HUMAN:override -->
+_Lines here are parsed back into the model. Example:_
+_- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
+
+## Change log
+<!-- WC26:AUTO:changelog START -->
+<!-- WC26:AUTO:changelog END -->

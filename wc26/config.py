@@ -34,8 +34,7 @@ DEFAULT_SIM_RUNS = 50_000
 DEFAULT_RNG_SEED = 20260611
 
 # Model defaults (estimated from data in the backtest; these are only fallbacks).
-DEFAULT_HOME_GOALS = 0.0          # neutral venue baseline; host bump applied per-venue
-DEFAULT_HOST_BUMP = 0.12          # extra expected goals when a team plays in its host nation
+HOST_BUMP_ELO = 50.0              # Elo points added when a host nation plays in its own country
 EXTRA_TIME_SCALE = 1.0 / 3.0      # ET goal expectation relative to 90 min
 SHOOTOUT_FAVOURITE_TILT = 0.05    # small tilt above 50/50 by relative strength
 

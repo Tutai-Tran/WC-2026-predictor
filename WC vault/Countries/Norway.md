@@ -1,0 +1,68 @@
+---
+type: wc-country
+team: "Norway"
+fifa_code: "{{fifa_code}}"
+group: "{{group}}"
+fifa_rank: {{fifa_rank}}
+elo: {{elo}}
+champion_prob: {{champion_prob}}
+status: active
+created: 2026-06-04
+updated: 2026-06-04
+---
+
+# Norway
+
+<!-- WC26:AUTO:snapshot START -->
+Group {{group}} | FIFA rank {{fifa_rank}} | Elo {{elo}}
+Champion: {{champion_prob}} | Reach final: {{final_prob}} | Reach SF: {{sf_prob}}
+<!-- WC26:AUTO:snapshot END -->
+
+## Squad & availability
+<!-- WC26:AUTO:squad START -->
+| Player | Pos | Goals (recent) | Status |
+| --- | --- | --- | --- |
+| Ørjan Nyland | GK | 0 | available |
+| Morten Thorsby | MF | 0 | available |
+| Kristoffer Ajer | DF | 2 | available |
+| Leo Østigård | DF | 1 | available |
+| David Møller Wolfe | DF | 1 | available |
+| Patrick Berg | MF | 0 | available |
+| Alexander Sørloth | FW | 26 | available |
+| Sander Berge | MF | 1 | available |
+| Erling Haaland | FW | 55 (PK) | available |
+| Martin Ødegaard | MF | 4 | available |
+| Jørgen Strand Larsen | FW | 6 | available |
+| Sander Tangvik | GK | 0 | available |
+| Egil Selvik | GK | 0 | available |
+| Fredrik Aursnes | MF | 1 | available |
+| Fredrik André Bjørkan | DF | 1 | available |
+| Marcus Holmgren Pedersen | DF | 0 | available |
+| Torbjørn Heggem | DF | 0 | available |
+| Kristian Thorstvedt | MF | 4 | available |
+| Thelo Aasgaard | MF | 5 | available |
+| Antonio Nusa | FW | 8 | available |
+| Andreas Schjelderup | MF | 1 | available |
+| Oscar Bobb | MF | 2 | available |
+| Jens Petter Hauge | MF | 1 | available |
+| Sondre Langås | DF | 0 | available |
+| Henrik Falchener | DF | 0 | available |
+| Julian Ryerson | FW | 1 | available |
+<!-- WC26:AUTO:squad END -->
+
+## Upcoming
+<!-- WC26:AUTO:upcoming START -->
+<!-- WC26:AUTO:upcoming END -->
+
+## My read
+<!-- WC26:HUMAN:notes -->
+_Your notes here. Never overwritten by the generator._
+
+## Manual overrides
+<!-- WC26:HUMAN:override -->
+_Lines here are parsed back into the model. Example:_
+_- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
+
+## Change log
+<!-- WC26:AUTO:changelog START -->
+<!-- WC26:AUTO:changelog END -->

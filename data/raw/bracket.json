@@ -1,0 +1,136 @@
+{
+  "updated": "2026-06-04",
+  "source": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage ; https://en.wikipedia.org/wiki/Template:2026_FIFA_World_Cup_third-place_table ; https://en.wikipedia.org/wiki/2026_FIFA_World_Cup ; https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/knockout-stage-match-schedule-bracket",
+  "note": "Slot labels use FIFA's canonical group-position notation: '1X'=winner of group X, '2X'=runner-up of group X. Third-place slots show the exact set of groups that can supply that slot's best-third team, derived from the 495-combination Annex C table (see third_place_routing.json). Only the eight group winners 1A,1B,1D,1E,1G,1I,1K,1L host a third-placed team; the specific group is resolved via the routing table once the 8 best thirds are known. date_utc converted from published local kickoff times.",
+  "r32": [
+    {
+      "match": 73,
+      "date_utc": "2026-06-28T19:00:00Z",
+      "venue": "SoFi Stadium",
+      "city": "Inglewood",
+      "home_slot": "2A",
+      "away_slot": "2B"
+    },
+    {
+      "match": 74,
+      "date_utc": "2026-06-29T20:30:00Z",
+      "venue": "Gillette Stadium",
+      "city": "Foxborough",
+      "home_slot": "1E",
+      "away_slot": "3rd A/B/C/D/F"
+    },
+    {
+      "match": 75,
+      "date_utc": "2026-06-30T01:00:00Z",
+      "venue": "Estadio BBVA",
+      "city": "Guadalupe",
+      "home_slot": "1F",
+      "away_slot": "2C"
+    },
+    {
+      "match": 76,
+      "date_utc": "2026-06-29T17:00:00Z",
+      "venue": "NRG Stadium",
+      "city": "Houston",
+      "home_slot": "1C",
+      "away_slot": "2F"
+    },
+    {
+      "match": 77,
+      "date_utc": "2026-06-30T21:00:00Z",
+      "venue": "MetLife Stadium",
+      "city": "East Rutherford",
+      "home_slot": "1I",
+      "away_slot": "3rd C/D/F/G/H"
+    },
+    {
+      "match": 78,
+      "date_utc": "2026-06-30T17:00:00Z",
+      "venue": "AT&T Stadium",
+      "city": "Arlington",
+      "home_slot": "2E",
+      "away_slot": "2I"
+    },
+    {
+      "match": 79,
+      "date_utc": "2026-07-01T01:00:00Z",
+      "venue": "Estadio Azteca",
+      "city": "Mexico City",
+      "home_slot": "1A",
+      "away_slot": "3rd C/E/F/H/I"
+    },
+    {
+      "match": 80,
+      "date_utc": "2026-07-01T16:00:00Z",
+      "venue": "Mercedes-Benz Stadium",
+      "city": "Atlanta",
+      "home_slot": "1L",
+      "away_slot": "3rd E/H/I/J/K"
+    },
+    {
+      "match": 81,
+      "date_utc": "2026-07-02T00:00:00Z",
+      "venue": "Levi's Stadium",
+      "city": "Santa Clara",
+      "home_slot": "1D",
+      "away_slot": "3rd B/E/F/I/J"
+    },
+    {
+      "match": 82,
+      "date_utc": "2026-07-01T20:00:00Z",
+      "venue": "Lumen Field",
+      "city": "Seattle",
+      "home_slot": "1G",
+      "away_slot": "3rd A/E/H/I/J"
+    },
+    {
+      "match": 83,
+      "date_utc": "2026-07-02T23:00:00Z",
+      "venue": "BMO Field",
+      "city": "Toronto",
+      "home_slot": "2K",
+      "away_slot": "2L"
+    },
+    {
+      "match": 84,
+      "date_utc": "2026-07-02T19:00:00Z",
+      "venue": "SoFi Stadium",
+      "city": "Inglewood",
+      "home_slot": "1H",
+      "away_slot": "2J"
+    },
+    {
+      "match": 85,
+      "date_utc": "2026-07-03T03:00:00Z",
+      "venue": "BC Place",
+      "city": "Vancouver",
+      "home_slot": "1B",
+      "away_slot": "3rd E/F/G/I/J"
+    },
+    {
+      "match": 86,
+      "date_utc": "2026-07-03T22:00:00Z",
+      "venue": "Hard Rock Stadium",
+      "city": "Miami Gardens",
+      "home_slot": "1J",
+      "away_slot": "2H"
+    },
+    {
+      "match": 87,
+      "date_utc": "2026-07-04T01:30:00Z",
+      "venue": "Arrowhead Stadium",
+      "city": "Kansas City",
+      "home_slot": "1K",
+      "away_slot": "3rd D/E/I/J/L"
+    },
+    {
+      "match": 88,
+      "date_utc": "2026-07-03T18:00:00Z",
+      "venue": "AT&T Stadium",
+      "city": "Arlington",
+      "home_slot": "2D",
+      "away_slot": "2G"
+    }
+  ],
+  "progression": "Round of 16 (matches 89-96): 89=W74 vs W77; 90=W73 vs W75; 91=W76 vs W78; 92=W79 vs W80; 93=W83 vs W84; 94=W81 vs W82; 95=W86 vs W88; 96=W85 vs W87. Quarter-finals (97-100): 97=W89 vs W90; 98=W93 vs W94; 99=W91 vs W92; 100=W95 vs W96. Semi-finals (101-102): 101=W97 vs W98; 102=W99 vs W100. Third-place play-off (103): L101 vs L102 (Miami Gardens, Hard Rock Stadium, Jul 18 2026). Final (104): W101 vs W102 (East Rutherford, MetLife Stadium, Jul 19 2026)."
+}

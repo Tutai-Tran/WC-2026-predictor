@@ -1,0 +1,68 @@
+---
+type: wc-country
+team: "Jordan"
+fifa_code: "{{fifa_code}}"
+group: "{{group}}"
+fifa_rank: {{fifa_rank}}
+elo: {{elo}}
+champion_prob: {{champion_prob}}
+status: active
+created: 2026-06-04
+updated: 2026-06-04
+---
+
+# Jordan
+
+<!-- WC26:AUTO:snapshot START -->
+Group {{group}} | FIFA rank {{fifa_rank}} | Elo {{elo}}
+Champion: {{champion_prob}} | Reach final: {{final_prob}} | Reach SF: {{sf_prob}}
+<!-- WC26:AUTO:snapshot END -->
+
+## Squad & availability
+<!-- WC26:AUTO:squad START -->
+| Player | Pos | Goals (recent) | Status |
+| --- | --- | --- | --- |
+| Yazeed Abulaila | GK | 0 | available |
+| Mohammad Abu Hashish | DF | 1 | available |
+| Abdallah Nasib | DF | 3 | available |
+| Husam Abu Dahab | DF | 0 | available |
+| Yazan Al-Arab | DF | 3 | available |
+| Amer Jamous | MF | 1 | available |
+| Mohammad Abu Zrayq | FW | 5 | available |
+| Noor Al-Rawabdeh | MF | 3 | available |
+| Ali Olwan | FW | 29 | available |
+| Musa Al-Taamari | FW | 24 | available |
+| Odeh Al-Fakhouri | FW | 1 | available |
+| Nour Bani Attiah | GK | 0 | available |
+| Mahmoud Al-Mardi | FW | 9 | available |
+| Rajaei Ayed | MF | 0 | available |
+| Ibrahim Sadeh | MF | 3 | available |
+| Mo Abualnadi | DF | 0 | available |
+| Salim Obaid | DF | 0 | available |
+| Ibrahim Sabra | FW | 1 | available |
+| Saed Al-Rosan | DF | 2 | available |
+| Mohannad Abu Taha | MF | 1 | available |
+| Nizar Al-Rashdan | MF | 4 | available |
+| Abdallah Al-Fakhouri | GK | 0 | available |
+| Ihsan Haddad | DF | 2 | available |
+| Ali Azaizeh | FW | 0 | available |
+| Mohammad Al-Dawoud | MF | 1 | available |
+| Anas Badawi | DF | 0 | available |
+<!-- WC26:AUTO:squad END -->
+
+## Upcoming
+<!-- WC26:AUTO:upcoming START -->
+<!-- WC26:AUTO:upcoming END -->
+
+## My read
+<!-- WC26:HUMAN:notes -->
+_Your notes here. Never overwritten by the generator._
+
+## Manual overrides
+<!-- WC26:HUMAN:override -->
+_Lines here are parsed back into the model. Example:_
+_- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
+
+## Change log
+<!-- WC26:AUTO:changelog START -->
+<!-- WC26:AUTO:changelog END -->

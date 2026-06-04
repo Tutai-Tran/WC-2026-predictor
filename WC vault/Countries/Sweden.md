@@ -1,0 +1,68 @@
+---
+type: wc-country
+team: "Sweden"
+fifa_code: "{{fifa_code}}"
+group: "{{group}}"
+fifa_rank: {{fifa_rank}}
+elo: {{elo}}
+champion_prob: {{champion_prob}}
+status: active
+created: 2026-06-04
+updated: 2026-06-04
+---
+
+# Sweden
+
+<!-- WC26:AUTO:snapshot START -->
+Group {{group}} | FIFA rank {{fifa_rank}} | Elo {{elo}}
+Champion: {{champion_prob}} | Reach final: {{final_prob}} | Reach SF: {{sf_prob}}
+<!-- WC26:AUTO:snapshot END -->
+
+## Squad & availability
+<!-- WC26:AUTO:squad START -->
+| Player | Pos | Goals (recent) | Status |
+| --- | --- | --- | --- |
+| Jacob Widell Zetterström | GK | 0 | available |
+| Gustaf Lagerbielke | DF | 2 | available |
+| Victor Lindelöf | DF | 3 | available |
+| Isak Hien | DF | 0 | available |
+| Gabriel Gudmundsson | DF | 0 | available |
+| Herman Johansson | DF | 0 | available |
+| Lucas Bergvall | MF | 0 | available |
+| Daniel Svensson | DF | 0 | available |
+| Alexander Isak | FW | 17 (PK) | available |
+| Benjamin Nygren | MF | 3 | available |
+| Anthony Elanga | FW | 6 | available |
+| Viktor Johansson | GK | 0 | available |
+| Ken Sema | MF | 5 | available |
+| Hjalmar Ekdal | DF | 0 | available |
+| Carl Starfelt | DF | 0 | available |
+| Jesper Karlström | MF | 0 | available |
+| Viktor Gyökeres | FW | 20 | available |
+| Yasin Ayari | MF | 3 | available |
+| Mattias Svanberg | MF | 2 | available |
+| Eric Smith | DF | 0 | available |
+| Alexander Bernhardsson | DF | 0 | available |
+| Besfort Zeneli | MF | 0 | available |
+| Kristoffer Nordfeldt | GK | 0 | available |
+| Elliot Stroud | DF | 0 | available |
+| Gustaf Nilsson | FW | 4 | available |
+| Taha Ali | FW | 0 | available |
+<!-- WC26:AUTO:squad END -->
+
+## Upcoming
+<!-- WC26:AUTO:upcoming START -->
+<!-- WC26:AUTO:upcoming END -->
+
+## My read
+<!-- WC26:HUMAN:notes -->
+_Your notes here. Never overwritten by the generator._
+
+## Manual overrides
+<!-- WC26:HUMAN:override -->
+_Lines here are parsed back into the model. Example:_
+_- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
+
+## Change log
+<!-- WC26:AUTO:changelog START -->
+<!-- WC26:AUTO:changelog END -->

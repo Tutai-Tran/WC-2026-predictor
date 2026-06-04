@@ -1,0 +1,68 @@
+---
+type: wc-country
+team: "Uruguay"
+fifa_code: "{{fifa_code}}"
+group: "{{group}}"
+fifa_rank: {{fifa_rank}}
+elo: {{elo}}
+champion_prob: {{champion_prob}}
+status: active
+created: 2026-06-04
+updated: 2026-06-04
+---
+
+# Uruguay
+
+<!-- WC26:AUTO:snapshot START -->
+Group {{group}} | FIFA rank {{fifa_rank}} | Elo {{elo}}
+Champion: {{champion_prob}} | Reach final: {{final_prob}} | Reach SF: {{sf_prob}}
+<!-- WC26:AUTO:snapshot END -->
+
+## Squad & availability
+<!-- WC26:AUTO:squad START -->
+| Player | Pos | Goals (recent) | Status |
+| --- | --- | --- | --- |
+| Sergio Rochet | GK | 0 | available |
+| José Giménez | DF | 8 | available |
+| Sebastián Cáceres | DF | 0 | available |
+| Ronald Araújo | DF | 1 | available |
+| Manuel Ugarte | MF | 1 | available |
+| Rodrigo Bentancur | MF | 3 | available |
+| Nicolás de la Cruz | MF | 5 | available |
+| Federico Valverde | MF | 9 (PK) | available |
+| Darwin Núñez | FW | 13 | available |
+| Giorgian de Arrascaeta | MF | 13 | available |
+| Facundo Pellistri | FW | 2 | available |
+| Santiago Mele | GK | 0 | available |
+| Guillermo Varela | DF | 0 | available |
+| Agustín Canobbio | MF | 1 | available |
+| Emiliano Martínez | MF | 0 | available |
+| Mathías Olivera | DF | 2 | available |
+| Matías Viña | DF | 1 | available |
+| Brian Rodríguez | FW | 4 | available |
+| Rodrigo Aguirre | FW | 3 | available |
+| Maximiliano Araújo | MF | 3 | available |
+| Federico Viñas | FW | 2 | available |
+| Joaquín Piquerez | MF | 0 | available |
+| Fernando Muslera | GK | 0 | available |
+| Santiago Bueno | DF | 0 | available |
+| Juan Manuel Sanabria | MF | 1 | available |
+| Rodrigo Zalazar | MF | 2 | available |
+<!-- WC26:AUTO:squad END -->
+
+## Upcoming
+<!-- WC26:AUTO:upcoming START -->
+<!-- WC26:AUTO:upcoming END -->
+
+## My read
+<!-- WC26:HUMAN:notes -->
+_Your notes here. Never overwritten by the generator._
+
+## Manual overrides
+<!-- WC26:HUMAN:override -->
+_Lines here are parsed back into the model. Example:_
+_- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
+
+## Change log
+<!-- WC26:AUTO:changelog START -->
+<!-- WC26:AUTO:changelog END -->

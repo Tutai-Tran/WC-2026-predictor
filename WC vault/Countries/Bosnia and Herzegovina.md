@@ -1,0 +1,68 @@
+---
+type: wc-country
+team: "Bosnia and Herzegovina"
+fifa_code: "{{fifa_code}}"
+group: "{{group}}"
+fifa_rank: {{fifa_rank}}
+elo: {{elo}}
+champion_prob: {{champion_prob}}
+status: active
+created: 2026-06-04
+updated: 2026-06-04
+---
+
+# Bosnia and Herzegovina
+
+<!-- WC26:AUTO:snapshot START -->
+Group {{group}} | FIFA rank {{fifa_rank}} | Elo {{elo}}
+Champion: {{champion_prob}} | Reach final: {{final_prob}} | Reach SF: {{sf_prob}}
+<!-- WC26:AUTO:snapshot END -->
+
+## Squad & availability
+<!-- WC26:AUTO:squad START -->
+| Player | Pos | Goals (recent) | Status |
+| --- | --- | --- | --- |
+| Nikola Vasilj | GK | 0 | available |
+| Nihad Mujakić | DF | 1 | available |
+| Dennis Hadžikadunić | DF | 0 | available |
+| Tarik Muharemović | DF | 1 | available |
+| Sead Kolašinac | DF | 0 | available |
+| Benjamin Tahirović | MF | 2 | available |
+| Amar Dedić | DF | 1 | available |
+| Armin Gigović | MF | 1 | available |
+| Samed Baždar | FW | 1 | available |
+| Ermedin Demirović | FW | 4 | available |
+| Edin Džeko | FW | 73 (PK) | available |
+| Mladen Jurkas | GK | 0 | available |
+| Ivan Bašić | MF | 0 | available |
+| Ivan Šunjić | MF | 0 | available |
+| Amar Memić | MF | 1 | available |
+| Amir Hadžiahmetović | MF | 0 | available |
+| Dženis Burnić | MF | 0 | available |
+| Nikola Katić | DF | 1 | available |
+| Kerim Alajbegović | FW | 1 | available |
+| Esmir Bajraktarević | FW | 1 | available |
+| Stjepan Radeljić | DF | 0 | available |
+| Martin Zlomislić | GK | 0 | available |
+| Haris Tabaković | FW | 4 | available |
+| Nidal Čelik | DF | 0 | available |
+| Jovo Lukić | FW | 0 | available |
+| Ermin Mahmić | MF | 0 | available |
+<!-- WC26:AUTO:squad END -->
+
+## Upcoming
+<!-- WC26:AUTO:upcoming START -->
+<!-- WC26:AUTO:upcoming END -->
+
+## My read
+<!-- WC26:HUMAN:notes -->
+_Your notes here. Never overwritten by the generator._
+
+## Manual overrides
+<!-- WC26:HUMAN:override -->
+_Lines here are parsed back into the model. Example:_
+_- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
+
+## Change log
+<!-- WC26:AUTO:changelog START -->
+<!-- WC26:AUTO:changelog END -->

@@ -1,0 +1,366 @@
+{
+  "updated": "2026-06-04",
+  "source": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_draw ; https://www.espn.com/soccer/story/_/id/48939282/2026-fifa-world-cup-fixtures-results-match-schedule-group-stage-knockout-rounds-bracket ; https://stadiumdb.com/tournaments/world_cup/2026 ; https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026",
+  "groups": {
+    "A": [
+      {
+        "name": "Mexico",
+        "fifa_code": "MEX",
+        "confederation": "CONCACAF",
+        "fifa_rank": 14,
+        "is_host": true
+      },
+      {
+        "name": "South Africa",
+        "fifa_code": "RSA",
+        "confederation": "CAF",
+        "fifa_rank": 56,
+        "is_host": false
+      },
+      {
+        "name": "South Korea",
+        "fifa_code": "KOR",
+        "confederation": "AFC",
+        "fifa_rank": 23,
+        "is_host": false
+      },
+      {
+        "name": "Czech Republic",
+        "fifa_code": "CZE",
+        "confederation": "UEFA",
+        "fifa_rank": 44,
+        "is_host": false
+      }
+    ],
+    "B": [
+      {
+        "name": "Canada",
+        "fifa_code": "CAN",
+        "confederation": "CONCACAF",
+        "fifa_rank": 27,
+        "is_host": true
+      },
+      {
+        "name": "Bosnia and Herzegovina",
+        "fifa_code": "BIH",
+        "confederation": "UEFA",
+        "fifa_rank": 64,
+        "is_host": false
+      },
+      {
+        "name": "Qatar",
+        "fifa_code": "QAT",
+        "confederation": "AFC",
+        "fifa_rank": 54,
+        "is_host": false
+      },
+      {
+        "name": "Switzerland",
+        "fifa_code": "SUI",
+        "confederation": "UEFA",
+        "fifa_rank": 17,
+        "is_host": false
+      }
+    ],
+    "C": [
+      {
+        "name": "Brazil",
+        "fifa_code": "BRA",
+        "confederation": "CONMEBOL",
+        "fifa_rank": 6,
+        "is_host": false
+      },
+      {
+        "name": "Morocco",
+        "fifa_code": "MAR",
+        "confederation": "CAF",
+        "fifa_rank": 12,
+        "is_host": false
+      },
+      {
+        "name": "Haiti",
+        "fifa_code": "HAI",
+        "confederation": "CONCACAF",
+        "fifa_rank": 84,
+        "is_host": false
+      },
+      {
+        "name": "Scotland",
+        "fifa_code": "SCO",
+        "confederation": "UEFA",
+        "fifa_rank": 39,
+        "is_host": false
+      }
+    ],
+    "D": [
+      {
+        "name": "United States",
+        "fifa_code": "USA",
+        "confederation": "CONCACAF",
+        "fifa_rank": 16,
+        "is_host": true
+      },
+      {
+        "name": "Paraguay",
+        "fifa_code": "PAR",
+        "confederation": "CONMEBOL",
+        "fifa_rank": 38,
+        "is_host": false
+      },
+      {
+        "name": "Australia",
+        "fifa_code": "AUS",
+        "confederation": "AFC",
+        "fifa_rank": 25,
+        "is_host": false
+      },
+      {
+        "name": "Turkey",
+        "fifa_code": "TUR",
+        "confederation": "UEFA",
+        "fifa_rank": 26,
+        "is_host": false
+      }
+    ],
+    "E": [
+      {
+        "name": "Germany",
+        "fifa_code": "GER",
+        "confederation": "UEFA",
+        "fifa_rank": 9,
+        "is_host": false
+      },
+      {
+        "name": "Curacao",
+        "fifa_code": "CUW",
+        "confederation": "CONCACAF",
+        "fifa_rank": 88,
+        "is_host": false
+      },
+      {
+        "name": "Ivory Coast",
+        "fifa_code": "CIV",
+        "confederation": "CAF",
+        "fifa_rank": 40,
+        "is_host": false
+      },
+      {
+        "name": "Ecuador",
+        "fifa_code": "ECU",
+        "confederation": "CONMEBOL",
+        "fifa_rank": 24,
+        "is_host": false
+      }
+    ],
+    "F": [
+      {
+        "name": "Netherlands",
+        "fifa_code": "NED",
+        "confederation": "UEFA",
+        "fifa_rank": 7,
+        "is_host": false
+      },
+      {
+        "name": "Japan",
+        "fifa_code": "JPN",
+        "confederation": "AFC",
+        "fifa_rank": 19,
+        "is_host": false
+      },
+      {
+        "name": "Sweden",
+        "fifa_code": "SWE",
+        "confederation": "UEFA",
+        "fifa_rank": 41,
+        "is_host": false
+      },
+      {
+        "name": "Tunisia",
+        "fifa_code": "TUN",
+        "confederation": "CAF",
+        "fifa_rank": 42,
+        "is_host": false
+      }
+    ],
+    "G": [
+      {
+        "name": "Belgium",
+        "fifa_code": "BEL",
+        "confederation": "UEFA",
+        "fifa_rank": 8,
+        "is_host": false
+      },
+      {
+        "name": "Egypt",
+        "fifa_code": "EGY",
+        "confederation": "CAF",
+        "fifa_rank": 32,
+        "is_host": false
+      },
+      {
+        "name": "Iran",
+        "fifa_code": "IRN",
+        "confederation": "AFC",
+        "fifa_rank": 20,
+        "is_host": false
+      },
+      {
+        "name": "New Zealand",
+        "fifa_code": "NZL",
+        "confederation": "OFC",
+        "fifa_rank": 86,
+        "is_host": false
+      }
+    ],
+    "H": [
+      {
+        "name": "Spain",
+        "fifa_code": "ESP",
+        "confederation": "UEFA",
+        "fifa_rank": 1,
+        "is_host": false
+      },
+      {
+        "name": "Cape Verde",
+        "fifa_code": "CPV",
+        "confederation": "CAF",
+        "fifa_rank": 67,
+        "is_host": false
+      },
+      {
+        "name": "Saudi Arabia",
+        "fifa_code": "KSA",
+        "confederation": "AFC",
+        "fifa_rank": 58,
+        "is_host": false
+      },
+      {
+        "name": "Uruguay",
+        "fifa_code": "URU",
+        "confederation": "CONMEBOL",
+        "fifa_rank": 15,
+        "is_host": false
+      }
+    ],
+    "I": [
+      {
+        "name": "France",
+        "fifa_code": "FRA",
+        "confederation": "UEFA",
+        "fifa_rank": 3,
+        "is_host": false
+      },
+      {
+        "name": "Senegal",
+        "fifa_code": "SEN",
+        "confederation": "CAF",
+        "fifa_rank": 18,
+        "is_host": false
+      },
+      {
+        "name": "Iraq",
+        "fifa_code": "IRQ",
+        "confederation": "AFC",
+        "fifa_rank": 57,
+        "is_host": false
+      },
+      {
+        "name": "Norway",
+        "fifa_code": "NOR",
+        "confederation": "UEFA",
+        "fifa_rank": 29,
+        "is_host": false
+      }
+    ],
+    "J": [
+      {
+        "name": "Argentina",
+        "fifa_code": "ARG",
+        "confederation": "CONMEBOL",
+        "fifa_rank": 2,
+        "is_host": false
+      },
+      {
+        "name": "Algeria",
+        "fifa_code": "ALG",
+        "confederation": "CAF",
+        "fifa_rank": 33,
+        "is_host": false
+      },
+      {
+        "name": "Austria",
+        "fifa_code": "AUT",
+        "confederation": "UEFA",
+        "fifa_rank": 22,
+        "is_host": false
+      },
+      {
+        "name": "Jordan",
+        "fifa_code": "JOR",
+        "confederation": "AFC",
+        "fifa_rank": 62,
+        "is_host": false
+      }
+    ],
+    "K": [
+      {
+        "name": "Portugal",
+        "fifa_code": "POR",
+        "confederation": "UEFA",
+        "fifa_rank": 5,
+        "is_host": false
+      },
+      {
+        "name": "DR Congo",
+        "fifa_code": "COD",
+        "confederation": "CAF",
+        "fifa_rank": 60,
+        "is_host": false
+      },
+      {
+        "name": "Uzbekistan",
+        "fifa_code": "UZB",
+        "confederation": "AFC",
+        "fifa_rank": 51,
+        "is_host": false
+      },
+      {
+        "name": "Colombia",
+        "fifa_code": "COL",
+        "confederation": "CONMEBOL",
+        "fifa_rank": 13,
+        "is_host": false
+      }
+    ],
+    "L": [
+      {
+        "name": "England",
+        "fifa_code": "ENG",
+        "confederation": "UEFA",
+        "fifa_rank": 4,
+        "is_host": false
+      },
+      {
+        "name": "Croatia",
+        "fifa_code": "CRO",
+        "confederation": "UEFA",
+        "fifa_rank": 10,
+        "is_host": false
+      },
+      {
+        "name": "Ghana",
+        "fifa_code": "GHA",
+        "confederation": "CAF",
+        "fifa_rank": 72,
+        "is_host": false
+      },
+      {
+        "name": "Panama",
+        "fifa_code": "PAN",
+        "confederation": "CONCACAF",
+        "fifa_rank": 30,
+        "is_host": false
+      }
+    ]
+  }
+}
