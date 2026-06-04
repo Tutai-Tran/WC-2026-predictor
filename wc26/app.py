@@ -78,7 +78,7 @@ for col, (name, p) in zip(cols, champ_sorted[:4]):
     col.metric(name, _pct(p["champion"]), help="Probability of winning the tournament")
 
 tabs = st.tabs(["📅 Daily", "🏆 Champion & stages", "⚽ Matches", "🔀 Bracket",
-                "👥 Groups", "🥅 Scorers", "📈 Calibration"])
+                "👥 Groups", "🥅 Scorers", "📋 Availability", "📈 Calibration"])
 
 # =============================== Daily ===============================
 with tabs[0]:
@@ -261,8 +261,34 @@ with tabs[5]:
     st.dataframe(pd.DataFrame(data.get("golden_boot", [])), hide_index=True,
                  use_container_width=True)
 
-# ============================ Calibration ===========================
+# ============================ Availability ==========================
 with tabs[6]:
+    st.subheader("Current injuries & availability (scraped)")
+    st.caption("From the LLM news agent (web search on your Max subscription), your vault "
+               "overrides, and manual entries. These reduce a team's attacking strength in the forecast.")
+    conn = db.connect()
+    rows = conn.execute(
+        "SELECT t.name team, ae.player_name player, ae.status, ae.source, ae.source_quote quote, ae.url "
+        "FROM availability_events ae JOIN teams t ON t.id=ae.team_id "
+        "WHERE ae.player_name != '(scan-marker)' AND ae.status != 'fit' "
+        "ORDER BY t.name, ae.player_name"
+    ).fetchall()
+    if rows:
+        st.dataframe(pd.DataFrame([
+            {"Team": r["team"], "Player": r["player"], "Status": r["status"],
+             "Source": r["source"], "Note": (r["quote"] or "")[:90]} for r in rows
+        ]), hide_index=True, use_container_width=True)
+    else:
+        st.caption("No current availability concerns recorded yet. The news agent scans teams "
+                   "on a rotating schedule; results appear here as it finds them.")
+    scanned = conn.execute(
+        "SELECT COUNT(DISTINCT team_id) c FROM availability_events WHERE source LIKE 'news-llm%'"
+    ).fetchone()["c"]
+    st.caption(f"Teams scanned by the news agent so far: {scanned}/48.")
+
+
+# ============================ Calibration ===========================
+with tabs[7]:
     st.subheader("How good is the model? (leak-free historical backtest)")
     rp = config.DATA_RAW / "backtest_report.json"
     if rp.exists():
