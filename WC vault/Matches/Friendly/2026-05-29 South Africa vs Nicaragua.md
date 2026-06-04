@@ -14,7 +14,7 @@ updated: 2026-06-04
 
 Win South Africa: 51.1% | Draw: 26.2% | Win Nicaragua: 22.7%
 Most likely scoreline: 1-1
-Data as of 2026-06-04 | runs 5000 | seed 20260611
+Data as of 2026-06-04 | runs 20000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

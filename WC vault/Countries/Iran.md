@@ -4,8 +4,8 @@ team: "Iran"
 fifa_code: "IRN"
 group: "G"
 fifa_rank: 20
-elo: 1917
-champion_prob: 0.0076
+elo: 1902
+champion_prob: 0.0046
 status: active
 created: 2026-06-04
 updated: 2026-06-04
@@ -13,9 +13,9 @@ updated: 2026-06-04
 
 # Iran
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-04T23:34Z | source elo-goal-v1 -->
-Group G | FIFA rank 20 | Elo 1917
-Champion 0.8% | Final 2.1% | SF 5.8% | QF 17.5% | Advance 82.5%
+<!-- WC26:AUTO:snapshot START | generated 2026-06-04T23:45Z | source elo-goal-v1 -->
+Group G | FIFA rank 20 | Elo 1902
+Champion 0.5% | Final 1.7% | SF 4.6% | QF 15.6% | Advance 80.9%
 <!-- WC26:AUTO:snapshot END -->
 
 ## Squad & availability
@@ -64,6 +64,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-04T23:34Z | source elo-goal-v1 -->
-- 2026-06-04: champion 0.8% (run 5000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-04T23:45Z | source elo-goal-v1 -->
+- 2026-06-04: champion 0.5% (run 20000 sims)
 <!-- WC26:AUTO:changelog END -->

@@ -14,7 +14,7 @@ updated: 2026-06-04
 
 Win Spain: 85.6% | Draw: 12.2% | Win Iraq: 2.2%
 Most likely scoreline: 2-0
-Data as of 2026-06-04 | runs 5000 | seed 20260611
+Data as of 2026-06-04 | runs 20000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

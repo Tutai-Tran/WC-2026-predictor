@@ -14,7 +14,7 @@ updated: 2026-06-04
 
 Win Wales: 51.0% | Draw: 26.2% | Win Ghana: 22.8%
 Most likely scoreline: 1-1
-Data as of 2026-06-04 | runs 5000 | seed 20260611
+Data as of 2026-06-04 | runs 20000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

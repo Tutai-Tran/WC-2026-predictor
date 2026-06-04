@@ -8,13 +8,13 @@ updated: 2026-06-04
 
 # Group A
 
-<!-- WC26:AUTO:standings START | generated 2026-06-04T23:34Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:standings START | generated 2026-06-04T23:45Z | source elo-goal-v1 -->
 | Team | Win group | Top 2 | Advance |
 | --- | --- | --- | --- |
-| [[Countries/Mexico\|Mexico]] | 59.6% | 86.3% | 95.4% |
-| [[Countries/South Korea\|South Korea]] | 23.6% | 60.6% | 80.6% |
-| [[Countries/Czech Republic\|Czech Republic]] | 14.1% | 40.3% | 65.6% |
-| [[Countries/South Africa\|South Africa]] | 2.7% | 12.9% | 26.3% |
+| [[Countries/Mexico\|Mexico]] | 59.7% | 86.0% | 95.3% |
+| [[Countries/South Korea\|South Korea]] | 24.1% | 60.5% | 80.3% |
+| [[Countries/Czech Republic\|Czech Republic]] | 13.4% | 40.6% | 65.6% |
+| [[Countries/South Africa\|South Africa]] | 2.7% | 12.9% | 27.0% |
 <!-- WC26:AUTO:standings END -->
 
 ## Fixtures

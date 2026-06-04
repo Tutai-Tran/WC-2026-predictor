@@ -8,13 +8,13 @@ updated: 2026-06-04
 
 # Group F
 
-<!-- WC26:AUTO:standings START | generated 2026-06-04T23:34Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:standings START | generated 2026-06-04T23:45Z | source elo-goal-v1 -->
 | Team | Win group | Top 2 | Advance |
 | --- | --- | --- | --- |
-| [[Countries/Japan\|Japan]] | 46.1% | 79.1% | 91.6% |
-| [[Countries/Netherlands\|Netherlands]] | 40.3% | 76.1% | 88.9% |
-| [[Countries/Sweden\|Sweden]] | 8.0% | 26.0% | 48.6% |
-| [[Countries/Tunisia\|Tunisia]] | 5.5% | 18.8% | 38.8% |
+| [[Countries/Japan\|Japan]] | 45.1% | 79.3% | 91.1% |
+| [[Countries/Netherlands\|Netherlands]] | 41.8% | 77.0% | 89.7% |
+| [[Countries/Sweden\|Sweden]] | 7.9% | 25.4% | 49.3% |
+| [[Countries/Tunisia\|Tunisia]] | 5.2% | 18.3% | 37.2% |
 <!-- WC26:AUTO:standings END -->
 
 ## Fixtures

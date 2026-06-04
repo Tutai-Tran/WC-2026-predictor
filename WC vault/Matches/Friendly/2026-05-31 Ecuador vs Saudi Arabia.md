@@ -12,9 +12,9 @@ updated: 2026-06-04
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-05-31 · played 2-1
 
-Win Ecuador: 73.9% | Draw: 18.6% | Win Saudi Arabia: 7.5%
+Win Ecuador: 72.9% | Draw: 19.1% | Win Saudi Arabia: 8.0%
 Most likely scoreline: 2-0
-Data as of 2026-06-04 | runs 5000 | seed 20260611
+Data as of 2026-06-04 | runs 20000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

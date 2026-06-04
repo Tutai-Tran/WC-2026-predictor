@@ -14,7 +14,7 @@ updated: 2026-06-04
 
 Win Peru: 2.7% | Draw: 13.1% | Win Spain: 84.2%
 Most likely scoreline: 0-2
-Data as of 2026-06-04 | runs 5000 | seed 20260611
+Data as of 2026-06-04 | runs 20000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match
