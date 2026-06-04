@@ -5,7 +5,7 @@ fifa_code: "SCO"
 group: "C"
 fifa_rank: 39
 elo: 1857
-champion_prob: 0.0015
+champion_prob: 0.0026
 status: active
 created: 2026-06-04
 updated: 2026-06-04
@@ -13,9 +13,9 @@ updated: 2026-06-04
 
 # Scotland
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-04T23:18Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-04T23:34Z | source elo-goal-v1 -->
 Group C | FIFA rank 39 | Elo 1857
-Champion 0.2% | Final 0.6% | SF 2.5% | QF 8.1% | Advance 60.8%
+Champion 0.3% | Final 0.7% | SF 2.8% | QF 8.2% | Advance 60.3%
 <!-- WC26:AUTO:snapshot END -->
 
 ## Squad & availability
@@ -64,6 +64,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-04T23:18Z | source elo-goal-v1 -->
-- 2026-06-04: champion 0.2% (run 20000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-04T23:34Z | source elo-goal-v1 -->
+- 2026-06-04: champion 0.3% (run 5000 sims)
 <!-- WC26:AUTO:changelog END -->

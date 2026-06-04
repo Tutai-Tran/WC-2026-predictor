@@ -11,14 +11,10 @@
             "id": "56fac5b7aaebf843",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Matches/A - Mexico vs South Africa.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "A - Mexico vs South Africa"
+              "title": "New tab"
             }
           }
         ]
@@ -94,7 +90,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Matches/A - Mexico vs South Africa.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +99,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for A - Mexico vs South Africa"
+              "title": "Backlinks"
             }
           },
           {
@@ -113,12 +108,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Matches/A - Mexico vs South Africa.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from A - Mexico vs South Africa"
+              "title": "Outgoing links"
             }
           },
           {
@@ -156,13 +150,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Matches/A - Mexico vs South Africa.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of A - Mexico vs South Africa"
+              "title": "Outline"
             }
           }
         ]
@@ -185,14 +178,35 @@
   },
   "active": "56fac5b7aaebf843",
   "lastOpenFiles": [
-    "_bracket.md",
-    "_memory/CONTEXT.md",
-    "_memory",
-    "Matches/A - Czech Republic vs South Africa.md",
-    "Matches/A - Czech Republic vs Mexico.md",
-    "Countries/Algeria.md",
-    "Groups/Group A.md",
-    "_forecast.md",
-    "_templates/country.md"
+    "Matches/A - Mexico vs South Africa.md",
+    "Matches/Knockout/104 Final W101 vs W102.md",
+    "Matches/Knockout/102 SF W99 vs W100.md",
+    "Matches/Knockout/101 SF W97 vs W98.md",
+    "Matches/Knockout/100 QF W95 vs W96.md",
+    "Matches/Knockout/099 QF W91 vs W92.md",
+    "Matches/Knockout/098 QF W93 vs W94.md",
+    "Matches/Knockout/097 QF W89 vs W90.md",
+    "Matches/Knockout/096 R16 W85 vs W87.md",
+    "Matches/Knockout/095 R16 W86 vs W88.md",
+    "Matches/Knockout/094 R16 W81 vs W82.md",
+    "Matches/Knockout/093 R16 W83 vs W84.md",
+    "Matches/Knockout/092 R16 W79 vs W80.md",
+    "Matches/Knockout/091 R16 W76 vs W78.md",
+    "Matches/Knockout/090 R16 W73 vs W75.md",
+    "Matches/Knockout/089 R16 W74 vs W77.md",
+    "Matches/Knockout/088 R32 2D vs 2G.md",
+    "Matches/Knockout/087 R32 1K vs 3rd D-E-I-J-L.md",
+    "Matches/Knockout/086 R32 1J vs 2H.md",
+    "Matches/Knockout/085 R32 1B vs 3rd E-F-G-I-J.md",
+    "Matches/Knockout/084 R32 1H vs 2J.md",
+    "Matches/Knockout/083 R32 2K vs 2L.md",
+    "Matches/Knockout/082 R32 1G vs 3rd A-E-H-I-J.md",
+    "Matches/Knockout/081 R32 1D vs 3rd B-E-F-I-J.md",
+    "Matches/Knockout/080 R32 1L vs 3rd E-H-I-J-K.md",
+    "Matches/Knockout/079 R32 1A vs 3rd C-E-F-H-I.md",
+    "Matches/Knockout",
+    "Matches/Friendly",
+    "Matches/Group",
+    "_memory"
   ]
 }

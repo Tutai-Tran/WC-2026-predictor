@@ -10,17 +10,17 @@ Empty for now: teams are projected (current most-likely qualifier per slot) and 
 <!-- WC26:AUTO:bracket START -->
 ```mermaid
 flowchart LR
-  M73["R32 #73<br>South Korea vs Switzerland"]
+  M73["R32 #73<br>South Korea vs Canada"]
   M74["R32 #74<br>Ecuador vs 3rd A/B/C/D/F"]
   M75["R32 #75<br>Japan vs Morocco"]
   M76["R32 #76<br>Brazil vs Netherlands"]
   M77["R32 #77<br>France vs 3rd C/D/F/G/H"]
-  M78["R32 #78<br>Germany vs Norway"]
+  M78["R32 #78<br>Ecuador vs Norway"]
   M79["R32 #79<br>Mexico vs 3rd C/E/F/H/I"]
   M80["R32 #80<br>England vs 3rd E/H/I/J/K"]
   M81["R32 #81<br>Turkey vs 3rd B/E/F/I/J"]
   M82["R32 #82<br>Belgium vs 3rd A/E/H/I/J"]
-  M83["R32 #83<br>Colombia vs Croatia"]
+  M83["R32 #83<br>Portugal vs Croatia"]
   M84["R32 #84<br>Spain vs Austria"]
   M85["R32 #85<br>Canada vs 3rd E/F/G/I/J"]
   M86["R32 #86<br>Argentina vs Uruguay"]

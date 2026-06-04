@@ -56,7 +56,7 @@ def test_match_note_preserves_human_via_marker(tmp_path, monkeypatch):
                            "top_scorers_home": [], "top_scorers_away": []}],
               "data_as_of": "2026-06-04", "n_runs": 100, "seed": 1}
     vaultgen.write_match_notes(result)
-    f = tmp_path / "A - X vs Y.md"
+    f = tmp_path / "Group" / "TBD X vs Y.md"  # date-prefixed, in the Group subfolder
     f.write_text(f.read_text() + "my private post-match note\n")
     vaultgen.write_match_notes(result)  # regenerate
     assert "my private post-match note" in f.read_text()

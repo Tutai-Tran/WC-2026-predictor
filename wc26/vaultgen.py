@@ -162,34 +162,72 @@ def update_group_notes(result: dict, meta: dict) -> int:
     return n
 
 
-def write_match_notes(result: dict) -> int:
-    MATCHES.mkdir(exist_ok=True)
-    n = 0
-    for m in result["matches"]:
-        scorers = " ".join(
-            f"{s['player']} {_pct(s['p_anytime'])};"
-            for s in (m["top_scorers_home"] + m["top_scorers_away"]))
-        body = (f"Win {m['home']}: {_pct(m['p_home'])} | Draw: {_pct(m['p_draw'])} | "
+def _dprefix(d) -> str:
+    return str(d)[:10] if d else "TBD"
+
+
+def _emit_match_note(path, frontmatter: dict, title: str, auto_body: str) -> None:
+    head = "---\n" + "\n".join(f"{k}: {v}" for k, v in frontmatter.items()) + "\n---\n\n"
+    head += (f"# {title}\n\n<!-- WC26:AUTO:forecast START -->\n{auto_body.strip()}\n"
+             f"<!-- WC26:AUTO:forecast END -->\n\n## Post-match\n")
+    human = "<!-- WC26:HUMAN:notes -->\n"
+    if path.exists():
+        idx = path.read_text().find("<!-- WC26:HUMAN:notes -->")
+        if idx != -1:
+            human = path.read_text()[idx:]
+    path.write_text(head + human)
+
+
+def write_match_notes(result: dict) -> dict:
+    """Match notes split into Matches/{Group,Friendly,Knockout}, each dated and typed."""
+    counts = {"group": 0, "friendly": 0, "knockout": 0}
+
+    gdir = MATCHES / "Group"; gdir.mkdir(parents=True, exist_ok=True)
+    for m in result.get("matches", []):
+        scorers = " ".join(f"{s['player']} {_pct(s['p_anytime'])};"
+                           for s in (m["top_scorers_home"] + m["top_scorers_away"]))
+        body = (f"**Group {m['group']} match** · {_dprefix(m.get('date'))}\n\n"
+                f"Win {m['home']}: {_pct(m['p_home'])} | Draw: {_pct(m['p_draw'])} | "
                 f"Win {m['away']}: {_pct(m['p_away'])}\n"
                 f"Most likely scoreline: {m['top_scoreline']} ({_pct(m['top_scoreline_p'])}) "
                 f"(modal only; many outcomes possible)\n"
                 f"Top scorers: {scorers}\n{_freshness(result)}")
-        fname = MATCHES / f"{m['group']} - {_safe(m['home'])} vs {_safe(m['away'])}.md"
-        head = (f"---\ntype: wc-match\nstage: group\ngroup: {m['group']}\n"
-                f"home: \"{m['home']}\"\naway: \"{m['away']}\"\n"
-                f"updated: {datetime.now(timezone.utc).date()}\n---\n\n"
-                f"# {m['home']} vs {m['away']}\n\n"
-                f"<!-- WC26:AUTO:forecast START -->\n{body}\n<!-- WC26:AUTO:forecast END -->\n\n"
-                f"## Post-match\n")
-        # preserve human content keyed on the marker (not the cosmetic heading)
-        human = "<!-- WC26:HUMAN:notes -->\n"
-        if fname.exists():
-            idx = fname.read_text().find("<!-- WC26:HUMAN:notes -->")
-            if idx != -1:
-                human = fname.read_text()[idx:]
-        fname.write_text(head + human)
-        n += 1
-    return n
+        fm = {"type": "wc-match", "stage": "group", "group": m["group"],
+              "date": _dprefix(m.get("date")), "home": f'"{m["home"]}"', "away": f'"{m["away"]}"',
+              "updated": datetime.now(timezone.utc).date()}
+        path = gdir / f"{_dprefix(m.get('date'))} {_safe(m['home'])} vs {_safe(m['away'])}.md"
+        _emit_match_note(path, fm, f"{m['home']} vs {m['away']}", body)
+        counts["group"] += 1
+
+    fdir = MATCHES / "Friendly"; fdir.mkdir(parents=True, exist_ok=True)
+    for f in result.get("friendlies", []):
+        status = f"played {f['result']}" if f["played"] else "scheduled"
+        body = (f"**Warm-up friendly** · {_dprefix(f.get('date'))} · {status}\n\n"
+                f"Win {f['home']}: {_pct(f['p_home'])} | Draw: {_pct(f['p_draw'])} | "
+                f"Win {f['away']}: {_pct(f['p_away'])}\n"
+                f"Most likely scoreline: {f['top_scoreline']}\n{_freshness(result)}")
+        fm = {"type": "wc-match", "stage": "friendly", "date": _dprefix(f.get("date")),
+              "home": f'"{f["home"]}"', "away": f'"{f["away"]}"',
+              "updated": datetime.now(timezone.utc).date()}
+        path = fdir / f"{_dprefix(f.get('date'))} {_safe(f['home'])} vs {_safe(f['away'])}.md"
+        _emit_match_note(path, fm, f"{f['home']} vs {f['away']} (friendly)", body)
+        counts["friendly"] += 1
+
+    kdir = MATCHES / "Knockout"; kdir.mkdir(parents=True, exist_ok=True)
+    for k in result.get("knockout", []):
+        h = k.get("home_proj") or k["home_slot"]
+        a = k.get("away_proj") or k["away_slot"]
+        body = (f"**{k['stage']} (match #{k['match_no']})** · {_dprefix(k.get('date'))}\n\n"
+                f"Slots: {k['home_slot']} vs {k['away_slot']}\n"
+                f"Projected: {h} vs {a}\n"
+                f"Result: {k.get('result') or 'TBD'}\n{_freshness(result)}")
+        fm = {"type": "wc-match", "stage": k["stage"], "match_no": k["match_no"],
+              "date": _dprefix(k.get("date")), "updated": datetime.now(timezone.utc).date()}
+        path = kdir / f"{k['match_no']:03d} {k['stage']} {_safe(k['home_slot'])} vs {_safe(k['away_slot'])}.md"
+        _emit_match_note(path, fm, f"{k['stage']} #{k['match_no']}: {k['home_slot']} vs {k['away_slot']}", body)
+        counts["knockout"] += 1
+
+    return counts
 
 
 def write_bracket(result: dict) -> None:

@@ -63,3 +63,7 @@ First live run added 26 new results; forecast stays sane (Spain ~23%, sum 1.0). 
 ## 2026-06-04 23:32 UTC — LLM news agent (Claude CLI + web) for injuries/availability
 
 Added wc26/news.py: an agent that calls the local Claude CLI (Max subscription) with WebSearch/WebFetch to research current injuries/suspensions per team and return structured, source-quoted availability events. Guards: player must be in the official squad (enum), source quote required, a team's prior LLM events are replaced each scan (no double-count), and a rotation marker advances coverage. Validated live: it correctly found Spain's Lamine Yamal and Nico Williams doubtful (hamstrings) with ESPN sources. Events feed the availability -> attacking-xG channel, so scraped injuries move the forecast. Wired into update.py (rotating batch of 3 teams per refresh, best-effort/never blocks). 59 tests pass.
+
+## 2026-06-04 23:34 UTC — Vault match notes split by type + dated
+
+vaultgen now writes match notes into Matches/Group, Matches/Friendly, Matches/Knockout, each with the date and a clear type label in the body and frontmatter (filenames are date-prefixed for sorting). Knockout notes show slots + projected teams + result-TBD. Removed the old flat match notes. HUMAN post-match blocks preserved on regeneration. Counts: 72 group, 62 friendly, 31 knockout. 59 tests pass.
