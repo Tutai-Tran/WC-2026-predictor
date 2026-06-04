@@ -330,3 +330,31 @@ with tabs[7]:
             st.caption("Run `python -m wc26.odds` to fetch and compare market odds.")
     except Exception as e:
         st.caption(f"Market odds unavailable: {e}")
+
+    st.subheader("Pre-tournament friendly accuracy (real out-of-sample check)")
+    played = [f for f in data.get("friendlies", []) if f.get("played") and f.get("result")]
+    if played:
+        import math
+        picks = ["Home win", "Draw", "Away win"]
+        hit, ll, frows = 0, 0.0, []
+        for f in played:
+            try:
+                hs, as_ = map(int, str(f["result"]).split("-"))
+            except Exception:
+                continue
+            outcome = 0 if hs > as_ else (1 if hs == as_ else 2)
+            p = [f["p_home"], f["p_draw"], f["p_away"]]
+            pred = p.index(max(p))
+            hit += pred == outcome
+            ll += -math.log(max(1e-9, p[outcome]))
+            frows.append({"Date": _date(f.get("date")), "Match": f"{f['home']} vs {f['away']}",
+                          "Our pick": picks[pred], "Result": f["result"],
+                          "✓": "✅" if pred == outcome else "❌"})
+        n = len(frows)
+        if n:
+            c1, c2 = st.columns(2)
+            c1.metric("Top-pick accuracy", f"{hit}/{n} ({hit/n*100:.0f}%)")
+            c2.metric("Avg log loss", round(ll / n, 3))
+            st.dataframe(pd.DataFrame(frows), hide_index=True, use_container_width=True)
+    else:
+        st.caption("No played friendlies in the latest snapshot yet.")
