@@ -95,6 +95,24 @@ def model_vs_market(conn) -> list[dict]:
     return rows
 
 
+def blended_champion(conn, weight: float = 0.5) -> dict[str, float]:
+    """Champion probabilities blending the model with the devigged market (normalised).
+
+    The market is the strongest single signal, so a blend is usually better calibrated
+    than either alone. weight = model share. Returns {} if either side is missing."""
+    market = latest_market_champion(conn)
+    row = conn.execute(
+        "SELECT payload_json FROM predictions WHERE scope='forecast' ORDER BY id DESC LIMIT 1"
+    ).fetchone()
+    if not market or not row:
+        return {}
+    model = {t: p["champion"] for t, p in json.loads(row["payload_json"])["probs"].items()}
+    blend = {t: (weight * mp + (1 - weight) * market[t]) if t in market else mp
+             for t, mp in model.items()}
+    total = sum(blend.values()) or 1.0
+    return {t: v / total for t, v in blend.items()}
+
+
 def refresh(conn=None) -> dict:
     conn = conn or db.connect()
     db.init_db(conn)

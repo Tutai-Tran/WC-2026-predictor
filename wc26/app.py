@@ -120,12 +120,26 @@ with tabs[0]:
 
 # ======================== Champion & stages =========================
 with tabs[1]:
-    rows = [{"Team": n, "Win %": round(p["champion"]*100, 1), "Final %": round(p["final"]*100, 1),
-             "SF %": round(p["sf"]*100, 1), "QF %": round(p["qf"]*100, 1),
-             "R16 %": round(p["r16"]*100, 1), "Advance %": round(p["advance"]*100, 1)}
-            for n, p in probs.items()]
+    blend = {}
+    try:
+        from wc26 import odds
+        blend = odds.blended_champion(db.connect())
+    except Exception:
+        blend = {}
+    rows = []
+    for n, p in probs.items():
+        row = {"Team": n, "Win %": round(p["champion"]*100, 1)}
+        if blend:
+            row["Win % (model+market)"] = round(blend.get(n, p["champion"])*100, 1)
+        row.update({"Final %": round(p["final"]*100, 1), "SF %": round(p["sf"]*100, 1),
+                    "QF %": round(p["qf"]*100, 1), "R16 %": round(p["r16"]*100, 1),
+                    "Advance %": round(p["advance"]*100, 1)})
+        rows.append(row)
     df = pd.DataFrame(rows).sort_values("Win %", ascending=False).reset_index(drop=True)
-    st.dataframe(df, use_container_width=True, height=620)
+    if blend:
+        st.caption("'Win % (model+market)' blends the model with devigged market odds "
+                   "(usually better calibrated). Plain 'Win %' is the pure model.")
+    st.dataframe(df, use_container_width=True, height=600)
 
 # ============================== Matches =============================
 with tabs[2]:
