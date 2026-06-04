@@ -198,6 +198,11 @@ def main() -> None:
     args = ap.parse_args()
     conn = db.connect(args.db)
     db.init_db(conn)
+    # self-bootstrap: ingest from data/raw if the database is empty
+    if conn.execute("SELECT COUNT(*) c FROM teams").fetchone()["c"] == 0:
+        from . import ingest
+        print("Empty database; ingesting from data/raw ...")
+        ingest.ingest_all(conn)
     result = run_forecast(conn, n_runs=args.runs, seed=args.seed)
     _print_summary(result)
     if not args.no_vault:

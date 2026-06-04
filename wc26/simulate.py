@@ -43,6 +43,22 @@ def _r32_country(city: str | None) -> str:
     return "United States"
 
 
+def decide_knockout(a, ea, aa, b, eb, ab, params, rng) -> str:
+    """Resolve a knockout match (no draws): 90 min, then extra time, then a
+    near-coin-flip shootout with a small strength tilt. Pure and testable."""
+    la, lb = model_mod.match_lambdas(ea, eb, params, aa, ab)
+    ga, gb = rng.poisson(la), rng.poisson(lb)
+    if ga != gb:
+        return a if ga > gb else b
+    ga += rng.poisson(la * config.EXTRA_TIME_SCALE)
+    gb += rng.poisson(lb * config.EXTRA_TIME_SCALE)
+    if ga != gb:
+        return a if ga > gb else b
+    p_a = 0.5 + config.SHOOTOUT_FAVOURITE_TILT * (2 * elo_mod.expected(ea + aa, eb + ab) - 1)
+    p_a = min(0.65, max(0.35, p_a))
+    return a if rng.random() < p_a else b
+
+
 @dataclass
 class Tournament:
     teams: dict[str, dict]              # name -> {elo, group, fifa_rank}
@@ -89,21 +105,10 @@ def simulate(tournament: Tournament, n_runs: int = 10_000, seed: int = config.DE
         return int(rng.poisson(la)), int(rng.poisson(lb))
 
     def knockout_winner(a: str, b: str, venue_country: str | None) -> str:
-        ea, eb = t.teams[a]["elo"], t.teams[b]["elo"]
-        aa, ab = adv(a, venue_country), adv(b, venue_country)
-        la, lb = model_mod.match_lambdas(ea, eb, t.params, aa, ab)
-        ga, gb = rng.poisson(la), rng.poisson(lb)
-        if ga != gb:
-            return a if ga > gb else b
-        # extra time
-        ga += rng.poisson(la * config.EXTRA_TIME_SCALE)
-        gb += rng.poisson(lb * config.EXTRA_TIME_SCALE)
-        if ga != gb:
-            return a if ga > gb else b
-        # penalty shootout: near coin flip with a small strength tilt
-        p_a = 0.5 + config.SHOOTOUT_FAVOURITE_TILT * (2 * elo_mod.expected(ea + aa, eb + ab) - 1)
-        p_a = min(0.65, max(0.35, p_a))
-        return a if rng.random() < p_a else b
+        return decide_knockout(
+            a, t.teams[a]["elo"], adv(a, venue_country),
+            b, t.teams[b]["elo"], adv(b, venue_country), t.params, rng,
+        )
 
     for _ in range(n_runs):
         winners: dict[str, str] = {}
