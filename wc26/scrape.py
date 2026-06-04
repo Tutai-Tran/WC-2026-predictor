@@ -82,7 +82,7 @@ def update_results(conn, days_back: int = 12) -> dict:
                     continue
                 stage = "group" if league == "fifa.world" else "friendly"
                 overrides.add_result(conn, m["home"], m["away"], m["hg"], m["ag"],
-                                     stage=stage, source="espn")
+                                     stage=stage, source="espn", played_on=m["date"])
                 added += 1
     return {"added": added}
 

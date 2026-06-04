@@ -85,11 +85,18 @@ def sync_vault_overrides(conn) -> dict:
 
 
 def add_result(conn, home: str, away: str, home_goals: int, away_goals: int,
-               stage: str = "group", source: str = "manual") -> None:
-    """Record a played result: update the fixture and append to the results ledger."""
+               stage: str = "group", source: str = "manual",
+               played_on: str | None = None, neutral: int = 1) -> None:
+    """Record a played result: update the fixture and append to the results ledger.
+
+    played_on should be the actual match date (so dedup and the chronological Elo
+    replay are correct); tournament is derived from stage so the Elo K factor is
+    right (friendlies use a smaller K than World Cup matches)."""
     hid = conn.execute("SELECT id FROM teams WHERE name=?", (home,)).fetchone()
     aid = conn.execute("SELECT id FROM teams WHERE name=?", (away,)).fetchone()
     now = datetime.now(timezone.utc).isoformat()
+    played_on = played_on or now[:10]
+    tournament = "Friendly" if stage == "friendly" else "FIFA World Cup"
     match_id = None
     if hid and aid:
         m = conn.execute(
@@ -105,8 +112,8 @@ def add_result(conn, home: str, away: str, home_goals: int, away_goals: int,
     conn.execute(
         "INSERT INTO results_ledger (match_id, played_on, home_team, away_team, "
         "home_goals, away_goals, neutral, tournament, source, fetched_at) "
-        "VALUES (?,?,?,?,?,?,1,'FIFA World Cup',?,?)",
-        (match_id, now[:10], home, away, home_goals, away_goals, source, now),
+        "VALUES (?,?,?,?,?,?,?,?,?,?)",
+        (match_id, played_on, home, away, home_goals, away_goals, neutral, tournament, source, now),
     )
     conn.commit()
 

@@ -67,3 +67,10 @@ Added wc26/news.py: an agent that calls the local Claude CLI (Max subscription) 
 ## 2026-06-04 23:34 UTC — Vault match notes split by type + dated
 
 vaultgen now writes match notes into Matches/Group, Matches/Friendly, Matches/Knockout, each with the date and a clear type label in the body and frontmatter (filenames are date-prefixed for sorting). Knockout notes show slots + projected teams + result-TBD. Removed the old flat match notes. HUMAN post-match blocks preserved on regeneration. Counts: 72 group, 62 friendly, 31 knockout. 59 tests pass.
+
+## 2026-06-04 23:44 UTC — Fixed 7 issues from the 4-agent session test
+
+HIGH: (1) scraper dedup never matched because add_result stored today's date not the match date -> ledger duplicated every run and recompute_elo double-counted; add_result now takes played_on and stores the real date (run2 now adds 0). (2) scraped friendlies were labelled 'FIFA World Cup' -> Elo used K=60 not K=20; add_result now derives tournament from stage. (3) bracket_projection could assign the same team to 1X and 2X of a group; runner-up now excludes the winner (regression test added).
+MEDIUM: (4) friendly-opponent seed ratings were dated at the future TOURNAMENT_START so recompute_elo was ignored; now seeded at 2000-01-01 so the recompute wins. (5) vaultgen meta query now selects the latest rating (MAX valid_from) like load_tournament.
+LOW: (6) news._extract_json_array now uses raw_decode (robust to stray brackets in prose). (7) autostart dashboard binds 127.0.0.1 (matches the install message).
+62 tests pass.

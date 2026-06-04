@@ -209,10 +209,11 @@ def _ensure_team(conn, name: str, elo: dict[str, float]) -> int:
     conn.execute("INSERT INTO teams (name, is_host) VALUES (?, 0)", (name,))
     tid = conn.execute("SELECT id FROM teams WHERE name=?", (name,)).fetchone()["id"]
     rating = elo.get(name) or elo.get(ELO_ALIASES.get(name, "")) or 1500.0
+    # seed with a PAST date so a later recompute (dated today) always sorts as latest
     conn.execute(
         "INSERT INTO ratings (team_id, elo, valid_from, source) VALUES (?,?,?,?) "
         "ON CONFLICT(team_id, valid_from) DO UPDATE SET elo=excluded.elo",
-        (tid, float(rating), config.TOURNAMENT_START, "friendly-opponent"),
+        (tid, float(rating), "2000-01-01", "friendly-opponent"),
     )
     return tid
 

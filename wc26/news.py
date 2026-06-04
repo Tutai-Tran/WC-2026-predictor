@@ -30,13 +30,25 @@ def _claude_bin() -> str | None:
 
 def _extract_json_array(text: str) -> list:
     text = text.replace("```json", "").replace("```", "").strip()
-    m = re.search(r"\[.*\]", text, re.S)
-    if not m:
-        return []
+    # whole thing is the array
     try:
-        return json.loads(m.group(0))
+        v = json.loads(text)
+        if isinstance(v, list):
+            return v
     except Exception:
-        return []
+        pass
+    # otherwise scan for the first '[' that decodes to a list (robust to stray brackets)
+    decoder = json.JSONDecoder()
+    for i, ch in enumerate(text):
+        if ch != "[":
+            continue
+        try:
+            v, _ = decoder.raw_decode(text[i:])
+            if isinstance(v, list):
+                return v
+        except Exception:
+            continue
+    return []
 
 
 def parse_team_news(team: str, squad_names: list[str], timeout: int = 200) -> list[dict]:

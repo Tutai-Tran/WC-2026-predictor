@@ -62,6 +62,20 @@ def test_match_note_preserves_human_via_marker(tmp_path, monkeypatch):
     assert "my private post-match note" in f.read_text()
 
 
+def test_bracket_projection_no_within_group_collision(tmp_path):
+    from wc26 import simulate
+    conn = db.connect(tmp_path / "t.db"); ingest.ingest_all(conn)
+    t = forecast.load_tournament(conn)
+    probs = simulate.simulate(t, n_runs=400, seed=42)["probs"]
+    proj = forecast.bracket_projection(conn, probs)
+    groups: dict = {}
+    for r in conn.execute("SELECT name, group_letter g FROM teams WHERE group_letter IS NOT NULL"):
+        groups.setdefault(r["g"], set()).add(r["name"])
+    for g, teams in groups.items():
+        assert proj[f"1{g}"] != proj[f"2{g}"]          # winner != runner-up
+        assert proj[f"1{g}"] in teams and proj[f"2{g}"] in teams
+
+
 def test_replace_auto_block_survives_orphan_start():
     note = ("<!-- WC26:AUTO:snapshot START | x -->\norphan no end\n"
             "PRECIOUS HUMAN\n"

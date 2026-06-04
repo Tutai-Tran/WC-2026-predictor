@@ -25,4 +25,4 @@ pkill -f "wc26.update" 2>/dev/null || true
 echo $! > logs/refresh.pid
 
 # dashboard in the foreground (KeepAlive restarts it if it ever exits)
-exec "$ST" run wc26/app.py --server.headless true --server.port 8501 --server.address 0.0.0.0
+exec "$ST" run wc26/app.py --server.headless true --server.port 8501 --server.address 127.0.0.1

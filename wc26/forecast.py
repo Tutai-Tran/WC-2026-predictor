@@ -185,8 +185,10 @@ def bracket_projection(conn, probs: dict) -> dict[str, str]:
         groups.setdefault(r["group_letter"], []).append(r["name"])
     proj: dict[str, str] = {}
     for g, teams in groups.items():
-        proj[f"1{g}"] = max(teams, key=lambda t: probs[t]["win_group"])
-        proj[f"2{g}"] = max(teams, key=lambda t: probs[t]["top2"] - probs[t]["win_group"])
+        winner = max(teams, key=lambda t: probs[t]["win_group"])
+        proj[f"1{g}"] = winner
+        rest = [t for t in teams if t != winner]
+        proj[f"2{g}"] = max(rest, key=lambda t: probs[t]["top2"] - probs[t]["win_group"])
     return proj
 
 

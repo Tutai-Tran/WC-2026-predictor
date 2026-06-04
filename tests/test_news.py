@@ -12,3 +12,8 @@ def test_extract_json_array_finds_embedded():
 def test_extract_json_array_empty_on_garbage():
     assert news._extract_json_array("no json at all") == []
     assert news._extract_json_array("[broken") == []
+
+
+def test_extract_json_array_handles_stray_brackets():
+    s = 'I checked [sources] and found: [{"player": "X", "status": "out"}]'
+    assert news._extract_json_array(s) == [{"player": "X", "status": "out"}]

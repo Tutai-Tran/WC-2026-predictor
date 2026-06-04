@@ -266,7 +266,8 @@ def generate(conn, result: dict) -> dict:
     meta = {}
     for r in conn.execute(
         "SELECT t.name n, t.group_letter g, t.fifa_rank fr, t.fifa_code fc, rt.elo e "
-        "FROM teams t JOIN ratings rt ON rt.team_id=t.id"
+        "FROM teams t JOIN ratings rt ON rt.team_id=t.id "
+        "WHERE rt.valid_from = (SELECT MAX(r2.valid_from) FROM ratings r2 WHERE r2.team_id=t.id)"
     ):
         meta[r["n"]] = {"group": r["g"], "fifa_rank": r["fr"], "fifa_code": r["fc"], "elo": r["e"]}
     write_dashboard(result)

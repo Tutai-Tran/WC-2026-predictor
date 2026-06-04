@@ -60,6 +60,17 @@ def test_add_result_marks_played_and_ledger(tmp_path):
     assert after_l == before_l + 1  # one ledger row appended
 
 
+def test_add_result_friendly_uses_correct_tournament_and_date(tmp_path):
+    conn = db.connect(tmp_path / "t.db"); ingest.ingest_all(conn)
+    overrides.add_result(conn, "Brazil", "Andorra", 3, 0, stage="friendly",
+                         source="manual", played_on="2026-06-01")
+    row = conn.execute(
+        "SELECT tournament, played_on FROM results_ledger "
+        "WHERE source='manual' AND home_team='Brazil' ORDER BY id DESC LIMIT 1").fetchone()
+    assert row["tournament"] == "Friendly"      # not 'FIFA World Cup' (correct Elo K)
+    assert row["played_on"] == "2026-06-01"     # real match date (dedup + replay order)
+
+
 def test_sync_vault_overrides(tmp_path, monkeypatch):
     conn = db.connect(tmp_path / "t.db"); ingest.ingest_all(conn)
     vault = tmp_path / "vault"
