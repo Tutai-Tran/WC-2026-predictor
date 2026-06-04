@@ -5,7 +5,7 @@ fifa_code: "{{fifa_code}}"
 group: "J"
 fifa_rank: 33
 elo: 1876
-champion_prob: 0.0016
+champion_prob: 0.002
 status: active
 created: 2026-06-04
 updated: 2026-06-04
@@ -13,9 +13,9 @@ updated: 2026-06-04
 
 # Algeria
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-04T21:41Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-04T21:59Z | source elo-goal-v1 -->
 Group J | FIFA rank 33 | Elo 1876
-Champion 0.2% | Final 0.7% | SF 2.5% | QF 7.2% | Advance 60.3%
+Champion 0.2% | Final 0.8% | SF 2.6% | QF 7.5% | Advance 60.4%
 <!-- WC26:AUTO:snapshot END -->
 
 ## Squad & availability
@@ -64,6 +64,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-04T21:41Z | source elo-goal-v1 -->
-- 2026-06-04: champion 0.2% (run 20000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-04T21:59Z | source elo-goal-v1 -->
+- 2026-06-04: champion 0.2% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

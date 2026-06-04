@@ -43,10 +43,12 @@ def _r32_country(city: str | None) -> str:
     return "United States"
 
 
-def decide_knockout(a, ea, aa, b, eb, ab, params, rng) -> str:
+def decide_knockout(a, ea, aa, b, eb, ab, params, rng, mult_a=1.0, mult_b=1.0) -> str:
     """Resolve a knockout match (no draws): 90 min, then extra time, then a
     near-coin-flip shootout with a small strength tilt. Pure and testable."""
     la, lb = model_mod.match_lambdas(ea, eb, params, aa, ab)
+    la *= mult_a
+    lb *= mult_b
     ga, gb = rng.poisson(la), rng.poisson(lb)
     if ga != gb:
         return a if ga > gb else b
@@ -68,9 +70,14 @@ class Tournament:
     routing: dict[str, dict]            # combo -> {host_slot: group_letter}
     params: model_mod.ModelParams = field(default_factory=model_mod.ModelParams)
     host_bump: float = config.HOST_BUMP_ELO
+    attack_mult: dict = field(default_factory=dict)     # team -> attacking-xG multiplier
+    played: dict = field(default_factory=dict)          # (home, away) -> (gh, ga) for completed group matches
 
     def fifa_ranks(self) -> dict[str, int]:
         return {n: (d.get("fifa_rank") or 9999) for n, d in self.teams.items()}
+
+    def mult(self, team: str) -> float:
+        return self.attack_mult.get(team, 1.0)
 
 
 _STAGES = ["win_group", "top2", "advance", "r16", "qf", "sf", "final", "champion"]
@@ -98,16 +105,21 @@ def simulate(tournament: Tournament, n_runs: int = 10_000, seed: int = config.DE
         return t.host_bump if venue_country and team == venue_country else 0.0
 
     def sample_goals(home: str, away: str, venue_country: str | None) -> tuple[int, int]:
+        if (home, away) in t.played:                  # conditional sim: fix completed matches
+            return t.played[(home, away)]
         la, lb = model_mod.match_lambdas(
             t.teams[home]["elo"], t.teams[away]["elo"], t.params,
             adv(home, venue_country), adv(away, venue_country),
         )
+        la *= t.mult(home)
+        lb *= t.mult(away)
         return int(rng.poisson(la)), int(rng.poisson(lb))
 
     def knockout_winner(a: str, b: str, venue_country: str | None) -> str:
         return decide_knockout(
             a, t.teams[a]["elo"], adv(a, venue_country),
             b, t.teams[b]["elo"], adv(b, venue_country), t.params, rng,
+            mult_a=t.mult(a), mult_b=t.mult(b),
         )
 
     for _ in range(n_runs):

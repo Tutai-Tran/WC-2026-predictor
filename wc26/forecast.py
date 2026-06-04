@@ -78,10 +78,23 @@ def load_tournament(conn, params: model_mod.ModelParams | None = None) -> Tourna
     r32 = json.loads((config.DATA_RAW / "bracket.json").read_text())["r32"]
     routing = json.loads((config.DATA_RAW / "third_place_routing.json").read_text())["combinations"]
 
+    from . import overrides
+    players_by_team = {name: d.get("players", []) for name, d in teams.items()}
+    attack_mult = overrides.availability_multipliers(conn, players_by_team)
+
+    played: dict = {}
+    for r in conn.execute(
+        "SELECT h.name home, a.name away, m.home_goals hg, m.away_goals ag "
+        "FROM matches m JOIN teams h ON h.id=m.home_team_id JOIN teams a ON a.id=m.away_team_id "
+        "WHERE m.stage='group' AND m.played=1 AND m.home_goals IS NOT NULL"
+    ):
+        played[(r["home"], r["away"])] = (int(r["hg"]), int(r["ag"]))
+
     return Tournament(
         teams=teams, groups=groups, group_fixtures=fixtures,
         r32=r32, routing=routing,
         params=params or model_mod.ModelParams(),
+        attack_mult=attack_mult, played=played,
     )
 
 
@@ -97,6 +110,7 @@ def group_match_forecasts(t: Tournament) -> list[dict]:
         f = model_mod.match_forecast(
             t.teams[h]["elo"], t.teams[a]["elo"], t.params,
             _host_adv(h, vc, t.host_bump), _host_adv(a, vc, t.host_bump),
+            mult_a=t.mult(h), mult_b=t.mult(a),
         )
         (sh, sa), sp = f["top_scorelines"][0]
         out.append({
@@ -121,6 +135,8 @@ def golden_boot(t: Tournament, top_n: int = 15) -> list[dict]:
             t.teams[h]["elo"], t.teams[a]["elo"], t.params,
             _host_adv(h, vc, t.host_bump), _host_adv(a, vc, t.host_bump),
         )
+        la *= t.mult(h)
+        lb *= t.mult(a)
         for team, players, lam in ((h, t.teams[h].get("players", []), la),
                                    (a, t.teams[a].get("players", []), lb)):
             shares = scorers_mod.team_goal_shares(players)

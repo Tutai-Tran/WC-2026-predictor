@@ -13,9 +13,9 @@ updated: 2026-06-04
 
 # Scotland
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-04T21:41Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-04T21:59Z | source elo-goal-v1 -->
 Group C | FIFA rank 39 | Elo 1853
-Champion 0.1% | Final 0.6% | SF 2.4% | QF 7.9% | Advance 61.8%
+Champion 0.1% | Final 0.6% | SF 2.4% | QF 7.9% | Advance 61.6%
 <!-- WC26:AUTO:snapshot END -->
 
 ## Squad & availability
@@ -64,6 +64,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-04T21:41Z | source elo-goal-v1 -->
-- 2026-06-04: champion 0.1% (run 20000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-04T21:59Z | source elo-goal-v1 -->
+- 2026-06-04: champion 0.1% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

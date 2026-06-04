@@ -89,9 +89,16 @@ def match_forecast(
     params: ModelParams = ModelParams(),
     home_adv_elo_a: float = 0.0,
     home_adv_elo_b: float = 0.0,
+    mult_a: float = 1.0,
+    mult_b: float = 1.0,
 ) -> dict:
-    """Full single-match forecast: outcome probs, top scorelines, lambdas."""
+    """Full single-match forecast: outcome probs, top scorelines, lambdas.
+
+    mult_a/mult_b scale each team's attacking expected goals (e.g. an availability
+    adjustment when key players are out)."""
     la, lb = match_lambdas(elo_a, elo_b, params, home_adv_elo_a, home_adv_elo_b)
+    la *= mult_a
+    lb *= mult_b
     matrix = scoreline_matrix(la, lb, params.max_goals, params.rho)
     p_home, p_draw, p_away = outcome_probs(matrix)
     return {

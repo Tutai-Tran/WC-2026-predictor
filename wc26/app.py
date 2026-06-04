@@ -52,7 +52,8 @@ banner = f"Data as of **{as_of}** | {data['n_runs']} sims | seed {data['seed']} 
 st.caption("These are probabilities, not certainties. The single most likely scoreline is usually only ~10% likely, and the top scorer misses about half the time.")
 
 probs = data["probs"]
-tab_f, tab_m, tab_g, tab_s = st.tabs(["Champion & stages", "Matches", "Groups", "Scorers"])
+tab_f, tab_m, tab_g, tab_s, tab_c = st.tabs(
+    ["Champion & stages", "Matches", "Groups", "Scorers", "Calibration"])
 
 with tab_f:
     rows = [{"Team": n, "Win %": round(p["champion"] * 100, 1), "Final %": round(p["final"] * 100, 1),
@@ -91,3 +92,34 @@ with tab_g:
 with tab_s:
     st.subheader("Most likely scorers (expected group-stage goals)")
     st.dataframe(pd.DataFrame(data.get("golden_boot", [])), hide_index=True, use_container_width=True)
+
+with tab_c:
+    st.subheader("How good is the model? (leak-free historical backtest)")
+    rp = config.DATA_RAW / "backtest_report.json"
+    if rp.exists():
+        r = json.loads(rp.read_text())
+        b = r["baselines"]
+        st.caption("Log loss on held-out matches, lower is better. The model should beat all baselines.")
+        st.dataframe(pd.DataFrame([
+            {"forecast": "our model", "log loss": r["test"]["log_loss"]},
+            {"forecast": "favourite baseline", "log loss": b["favourite_log_loss"]},
+            {"forecast": "climatology baseline", "log loss": b["climatology_log_loss"]},
+            {"forecast": "uniform baseline", "log loss": b["uniform_log_loss"]},
+        ]), hide_index=True, use_container_width=True)
+        c1, c2 = st.columns(2)
+        c1.metric("Reliability slope (1.0 = perfect calibration)", r["reliability"]["home_win_slope"])
+        c2.metric("Model log loss (95% CI)", f"{r['test']['log_loss']} {r['test']['log_loss_ci95']}")
+        st.caption(f"Tournament-only matches: model {r['tournament_only']['log_loss']} vs "
+                   f"climatology {r['tournament_only']['climatology_log_loss']}.")
+    else:
+        st.info("Run `python -m wc26.backtest` to populate calibration metrics.")
+
+    st.subheader("Running calibration vs played results")
+    conn = db.connect()
+    rows = conn.execute(
+        "SELECT payload_json FROM predictions WHERE scope='calibration' ORDER BY id").fetchall()
+    if rows:
+        traj = pd.DataFrame([json.loads(r["payload_json"]) for r in rows])
+        st.line_chart(traj.set_index("computed_at")[["brier", "log_loss"]])
+    else:
+        st.caption("No played results yet — the running-improvement trajectory fills in once matches start.")
