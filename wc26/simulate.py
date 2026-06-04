@@ -61,8 +61,15 @@ _STAGES = ["win_group", "top2", "advance", "r16", "qf", "sf", "final", "champion
 
 
 def simulate(tournament: Tournament, n_runs: int = 10_000, seed: int = config.DEFAULT_RNG_SEED) -> dict:
-    rng = np.random.default_rng(seed)
     t = tournament
+    if not t.teams or len(t.groups) != len(config.GROUP_LETTERS) or any(
+        len(v) < 3 for v in t.groups.values()
+    ):
+        raise ValueError(
+            "simulate() needs 12 groups of >=3 teams with ratings; "
+            "the database looks empty or un-ingested. Run: python -m wc26.ingest"
+        )
+    rng = np.random.default_rng(seed)
     counts = {name: dict.fromkeys(_STAGES, 0) for name in t.teams}
     fifa = t.fifa_ranks()
 

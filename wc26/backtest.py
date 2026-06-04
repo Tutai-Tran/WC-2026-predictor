@@ -135,8 +135,12 @@ def fit(feats_train, rho: float = -0.06):
 
     res = minimize(obj, x0=[200.0, 2.6, 60.0], method="Nelder-Mead",
                    options={"xatol": 0.5, "fatol": 1e-5, "maxiter": 400})
-    c, base, home = res.x
-    return model_mod.ModelParams(c=round(float(c), 2), base_goals=round(float(base), 3), rho=rho), float(home)
+    # clamp the RETURNED point to the same bounds enforced inside the objective,
+    # so a pathological optimum can never write an invalid (e.g. negative c) param
+    c = min(600.0, max(50.0, float(res.x[0])))
+    base = min(4.0, max(1.5, float(res.x[1])))
+    home = min(150.0, max(0.0, float(res.x[2])))
+    return model_mod.ModelParams(c=round(c, 2), base_goals=round(base, 3), rho=rho), home
 
 
 def run(write: bool = True, train_until: int = 2021):

@@ -8,29 +8,29 @@ updated: 2026-06-04
 
 # Group E
 
-<!-- WC26:AUTO:standings START | generated 2026-06-04T21:24Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:standings START | generated 2026-06-04T21:41Z | source elo-goal-v1 -->
 | Team | Win group | Top 2 | Advance |
 | --- | --- | --- | --- |
-| [[Countries/Ecuador\|Ecuador]] | 44.6% | 82.3% | 94.9% |
-| [[Countries/Germany\|Germany]] | 45.3% | 81.4% | 94.4% |
-| [[Countries/Ivory Coast\|Ivory Coast]] | 9.1% | 31.1% | 63.4% |
-| [[Countries/Curacao\|Curacao]] | 1.0% | 5.3% | 15.0% |
+| [[Countries/Ecuador\|Ecuador]] | 45.2% | 82.2% | 94.6% |
+| [[Countries/Germany\|Germany]] | 44.2% | 81.1% | 94.4% |
+| [[Countries/Ivory Coast\|Ivory Coast]] | 9.6% | 31.6% | 63.9% |
+| [[Countries/Curaçao\|Curacao]] | 0.9% | 5.0% | 14.5% |
 <!-- WC26:AUTO:standings END -->
 
 ## Fixtures
 <!-- WC26:AUTO:fixtures START -->
 | MD | Date (UTC) | Match | Venue |
 | --- | --- | --- | --- |
-| 1 | 2026-06-14T17:00:00Z | [[Countries/Germany|Germany]] vs [[Countries/Curacao|Curacao]] | Houston Stadium (NRG), Houston (United States) |
+| 1 | 2026-06-14T17:00:00Z | [[Countries/Germany|Germany]] vs [[Countries/Curaçao|Curacao]] | Houston Stadium (NRG), Houston (United States) |
 | 1 | 2026-06-14T23:00:00Z | [[Countries/Ivory Coast|Ivory Coast]] vs [[Countries/Ecuador|Ecuador]] | Philadelphia Stadium (Lincoln Financial), Philadelphia (United States) |
 | 2 | 2026-06-20T20:00:00Z | [[Countries/Germany|Germany]] vs [[Countries/Ivory Coast|Ivory Coast]] | Toronto Stadium (BMO Field), Toronto (Canada) |
-| 2 | 2026-06-21T00:00:00Z | [[Countries/Ecuador|Ecuador]] vs [[Countries/Curacao|Curacao]] | Kansas City Stadium (Arrowhead), Kansas City (United States) |
+| 2 | 2026-06-21T00:00:00Z | [[Countries/Ecuador|Ecuador]] vs [[Countries/Curaçao|Curacao]] | Kansas City Stadium (Arrowhead), Kansas City (United States) |
 | 3 | 2026-06-25T20:00:00Z | [[Countries/Ecuador|Ecuador]] vs [[Countries/Germany|Germany]] | New York New Jersey Stadium (MetLife), East Rutherford (United States) |
-| 3 | 2026-06-25T20:00:00Z | [[Countries/Curacao|Curacao]] vs [[Countries/Ivory Coast|Ivory Coast]] | Philadelphia Stadium (Lincoln Financial), Philadelphia (United States) |
+| 3 | 2026-06-25T20:00:00Z | [[Countries/Curaçao|Curacao]] vs [[Countries/Ivory Coast|Ivory Coast]] | Philadelphia Stadium (Lincoln Financial), Philadelphia (United States) |
 <!-- WC26:AUTO:fixtures END -->
 
 ## Teams
-[[Countries/Germany]] [[Countries/Curacao]] [[Countries/Ivory Coast]] [[Countries/Ecuador]]
+[[Countries/Germany]] [[Countries/Curaçao]] [[Countries/Ivory Coast]] [[Countries/Ecuador]]
 
 ## My read
 <!-- WC26:HUMAN:notes -->

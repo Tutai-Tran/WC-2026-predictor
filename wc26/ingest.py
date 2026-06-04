@@ -139,3 +139,14 @@ def _ingest_squads(conn) -> dict:
             )
             n += 1
     return {"players": n, "teams_with_squad": teams_done}
+
+
+def main() -> None:
+    from . import db
+    conn = db.connect()
+    report = ingest_all(conn)
+    print(report)
+
+
+if __name__ == "__main__":
+    main()

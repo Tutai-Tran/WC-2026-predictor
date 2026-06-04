@@ -26,11 +26,23 @@ def _safe(name: str) -> str:
     return name.replace("/", "-")
 
 
+# DB team name -> on-disk note filename stem (scrapers used the cedilla form)
+NOTE_FILENAME_ALIASES = {"Curacao": "Curaçao"}
+
+
+def _link(name: str) -> str:
+    """Wikilink target stem, honouring the on-disk filename alias."""
+    return NOTE_FILENAME_ALIASES.get(name, _safe(name))
+
+
 def replace_auto_block(text: str, name: str, content: str, source: str = "model") -> str:
     """Replace the body between WC26:AUTO:<name> START/END markers. No-op if absent."""
+    # Tempered body so a START never spans across another same-name START
+    # (protects HUMAN content if a note is corrupted with a missing END marker).
     pattern = re.compile(
-        r"(<!-- WC26:AUTO:" + re.escape(name) + r" START)[^\n]*?(-->)(.*?)(<!-- WC26:AUTO:"
-        + re.escape(name) + r" END -->)",
+        r"(<!-- WC26:AUTO:" + re.escape(name) + r" START)[^\n]*?(-->)"
+        r"((?:(?!<!-- WC26:AUTO:" + re.escape(name) + r" START).)*?)"
+        r"(<!-- WC26:AUTO:" + re.escape(name) + r" END -->)",
         re.DOTALL,
     )
     new_start = f"<!-- WC26:AUTO:{name} START | generated {_now()} | source {source} -->"
@@ -41,9 +53,22 @@ def replace_auto_block(text: str, name: str, content: str, source: str = "model"
 
 
 def set_frontmatter(text: str, key: str, value) -> str:
-    """Replace `key: ...` inside the leading YAML frontmatter (no-op if missing)."""
+    """Replace `key: ...` ONLY inside the leading YAML frontmatter (no-op if missing).
+
+    Anchoring to the frontmatter block avoids rewriting a HUMAN body line that
+    happens to start with the same key text.
+    """
+    if not text.startswith("---"):
+        return text
+    parts = text.split("---", 2)
+    if len(parts) < 3:
+        return text
+    fm = parts[1]
     pat = re.compile(r"(?m)^(" + re.escape(key) + r":).*$")
-    return pat.sub(f"{key}: {value}", text, count=1) if pat.search(text) else text
+    if not pat.search(fm):
+        return text
+    fm = pat.sub(f"{key}: {value}", fm, count=1)
+    return parts[0] + "---" + fm + "---" + parts[2]
 
 
 def _pct(x: float) -> str:
@@ -71,7 +96,7 @@ def write_dashboard(result: dict) -> None:
              "## Champion ladder", "",
              "| Team | Win | Final | SF | QF | R16 |", "| --- | --- | --- | --- | --- | --- |"]
     for name, p in champ[:24]:
-        lines.append(f"| [[Countries/{_safe(name)}\\|{name}]] | {_pct(p['champion'])} | "
+        lines.append(f"| [[Countries/{_link(name)}\\|{name}]] | {_pct(p['champion'])} | "
                      f"{_pct(p['final'])} | {_pct(p['sf'])} | {_pct(p['qf'])} | {_pct(p['r16'])} |")
     lines += ["", "## Most likely scorers (expected group-stage goals)", ""]
     for b in result.get("golden_boot", [])[:15]:
@@ -81,10 +106,6 @@ def write_dashboard(result: dict) -> None:
             f"# World Cup 2026 Forecast\n\n"
             f"<!-- WC26:AUTO:dashboard START -->\n{body}\n<!-- WC26:AUTO:dashboard END -->\n")
     (VAULT / "_forecast.md").write_text(text)
-
-
-# DB team name -> on-disk note filename stem (scrapers used the cedilla form)
-NOTE_FILENAME_ALIASES = {"Curacao": "Curaçao"}
 
 
 def update_country_notes(result: dict, meta: dict) -> int:
@@ -130,7 +151,7 @@ def update_group_notes(result: dict, meta: dict) -> int:
         rows = ["| Team | Win group | Top 2 | Advance |", "| --- | --- | --- | --- |"]
         for t in ranked:
             p = probs[t]
-            rows.append(f"| [[Countries/{_safe(t)}\\|{t}]] | {_pct(p['win_group'])} | "
+            rows.append(f"| [[Countries/{_link(t)}\\|{t}]] | {_pct(p['win_group'])} | "
                         f"{_pct(p['top2'])} | {_pct(p['advance'])} |")
         text = path.read_text()
         text = replace_auto_block(text, "standings", "\n".join(rows), source="elo-goal-v1")
@@ -152,18 +173,19 @@ def write_match_notes(result: dict) -> int:
                 f"(modal only; many outcomes possible)\n"
                 f"Top scorers: {scorers}\n{_freshness(result)}")
         fname = MATCHES / f"{m['group']} - {_safe(m['home'])} vs {_safe(m['away'])}.md"
-        text = (f"---\ntype: wc-match\nstage: group\ngroup: {m['group']}\n"
+        head = (f"---\ntype: wc-match\nstage: group\ngroup: {m['group']}\n"
                 f"home: \"{m['home']}\"\naway: \"{m['away']}\"\n"
                 f"updated: {datetime.now(timezone.utc).date()}\n---\n\n"
                 f"# {m['home']} vs {m['away']}\n\n"
                 f"<!-- WC26:AUTO:forecast START -->\n{body}\n<!-- WC26:AUTO:forecast END -->\n\n"
-                f"## Post-match\n<!-- WC26:HUMAN:notes -->\n")
-        # preserve any human notes if the note already exists
+                f"## Post-match\n")
+        # preserve human content keyed on the marker (not the cosmetic heading)
+        human = "<!-- WC26:HUMAN:notes -->\n"
         if fname.exists():
-            old = fname.read_text()
-            human = old.split("## Post-match", 1)
-            text = text.split("## Post-match")[0] + "## Post-match" + (human[1] if len(human) > 1 else "\n<!-- WC26:HUMAN:notes -->\n")
-        fname.write_text(text)
+            idx = fname.read_text().find("<!-- WC26:HUMAN:notes -->")
+            if idx != -1:
+                human = fname.read_text()[idx:]
+        fname.write_text(head + human)
         n += 1
     return n
 

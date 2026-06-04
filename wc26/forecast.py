@@ -36,7 +36,8 @@ def load_fitted_params() -> model_mod.ModelParams | None:
         return None
     d = json.loads(fp.read_text())
     return model_mod.ModelParams(
-        c=d.get("c", 219.0), base_goals=d.get("base_goals", 2.6), rho=d.get("rho", -0.06)
+        c=d.get("c", 219.0), base_goals=d.get("base_goals", 2.6), rho=d.get("rho", -0.06),
+        max_goals=d.get("max_goals", 10), min_lambda=d.get("min_lambda", 0.15),
     )
 
 
@@ -46,7 +47,8 @@ def load_tournament(conn, params: model_mod.ModelParams | None = None) -> Tourna
     teams: dict[str, dict] = {}
     for r in conn.execute(
         "SELECT t.name n, t.group_letter g, t.fifa_rank fr, r.elo e "
-        "FROM teams t JOIN ratings r ON r.team_id=t.id"
+        "FROM teams t JOIN ratings r ON r.team_id=t.id "
+        "WHERE r.valid_from = (SELECT MAX(r2.valid_from) FROM ratings r2 WHERE r2.team_id=t.id)"
     ):
         teams[r["n"]] = {"elo": r["e"], "group": r["g"], "fifa_rank": r["fr"]}
 
@@ -111,8 +113,8 @@ def group_match_forecasts(t: Tournament) -> list[dict]:
 
 def golden_boot(t: Tournament, top_n: int = 15) -> list[dict]:
     """Expected group-stage goals per player (a 'most likely to score' ranking)."""
-    exp_goals: dict[str, float] = defaultdict(float)
-    player_team: dict[str, str] = {}
+    # key by (team, player) so distinct same-named players are not merged
+    exp_goals: dict[tuple[str, str], float] = defaultdict(float)
     for fx in t.group_fixtures:
         h, a, vc = fx["home"], fx["away"], fx.get("venue_country")
         la, lb = model_mod.match_lambdas(
@@ -123,10 +125,10 @@ def golden_boot(t: Tournament, top_n: int = 15) -> list[dict]:
                                    (a, t.teams[a].get("players", []), lb)):
             shares = scorers_mod.team_goal_shares(players)
             for p in players:
-                exp_goals[p["name"]] += shares[p["name"]] * lam
-                player_team[p["name"]] = team
+                exp_goals[(team, p["name"])] += shares[p["name"]] * lam
     ranked = sorted(exp_goals.items(), key=lambda kv: kv[1], reverse=True)[:top_n]
-    return [{"player": n, "team": player_team[n], "exp_group_goals": round(g, 2)} for n, g in ranked]
+    return [{"player": name, "team": team, "exp_group_goals": round(g, 2)}
+            for (team, name), g in ranked]
 
 
 def run_forecast(conn, n_runs: int = config.DEFAULT_SIM_RUNS,

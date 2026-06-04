@@ -13,9 +13,9 @@ updated: 2026-06-04
 
 # Turkey
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-04T21:24Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-04T21:41Z | source elo-goal-v1 -->
 Group D | FIFA rank 26 | Elo 1974
-Champion 1.5% | Final 3.6% | SF 8.8% | QF 23.3% | Advance 77.9%
+Champion 1.5% | Final 4.0% | SF 9.2% | QF 23.8% | Advance 77.3%
 <!-- WC26:AUTO:snapshot END -->
 
 ## Squad & availability
@@ -64,6 +64,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-04T21:24Z | source elo-goal-v1 -->
-- 2026-06-04: champion 1.5% (run 5000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-04T21:41Z | source elo-goal-v1 -->
+- 2026-06-04: champion 1.5% (run 20000 sims)
 <!-- WC26:AUTO:changelog END -->
