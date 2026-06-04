@@ -7,7 +7,13 @@ All computation happens in the pipeline; this only displays precomputed results.
 from __future__ import annotations
 
 import json
+import sys
 from datetime import datetime, timezone
+from pathlib import Path
+
+# `streamlit run wc26/app.py` puts wc26/ on sys.path, not the repo root, so the
+# package import fails. Add the repo root so `import wc26` resolves.
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 import pandas as pd
 import streamlit as st
