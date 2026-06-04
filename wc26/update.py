@@ -53,7 +53,7 @@ def log_calibration(conn) -> dict:
     return metrics
 
 
-def run(conn=None, n_runs: int = 50_000) -> dict:
+def run(conn=None, n_runs: int = 50_000, news_teams: int = 3) -> dict:
     conn = conn or db.connect()
     db.init_db(conn)
     if conn.execute("SELECT COUNT(*) c FROM teams").fetchone()["c"] == 0:
@@ -62,17 +62,23 @@ def run(conn=None, n_runs: int = 50_000) -> dict:
     from . import scrape
     scraped = scrape.update_results(conn)        # pull newly-completed results
     elo_rep = scrape.recompute_elo(conn)         # fold them into current Elo
+    try:                                          # LLM news scan (best-effort; never blocks)
+        from . import news
+        news_rep = news.run_news_scan(conn, limit=news_teams)
+    except Exception as e:
+        news_rep = {"error": str(e)}
     calib = log_calibration(conn)                # score the prior forecast vs played results
     result = forecast.run_forecast(conn, n_runs=n_runs)
     vault = vaultgen.generate(conn, result)
     memory.log_task(
         "Automated refresh (update.py)",
-        f"scraped results: {scraped}; elo: {elo_rep}; "
+        f"scraped results: {scraped}; elo: {elo_rep}; news: {news_rep}; "
         f"overrides synced: {overrides_report.get('events', 0)} events; "
         f"running calibration: {calib}; vault: {vault}; run_id {result['run_id']}.",
     )
-    return {"scraped": scraped, "elo": elo_rep, "overrides": overrides_report,
-            "calibration": calib, "vault": vault, "run_id": result["run_id"]}
+    return {"scraped": scraped, "elo": elo_rep, "news": news_rep,
+            "overrides": overrides_report, "calibration": calib, "vault": vault,
+            "run_id": result["run_id"]}
 
 
 def main() -> None:
