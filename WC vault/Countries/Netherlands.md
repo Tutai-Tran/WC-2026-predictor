@@ -5,7 +5,7 @@ fifa_code: "NED"
 group: "F"
 fifa_rank: 7
 elo: 2015
-champion_prob: 0.0234
+champion_prob: 0.0241
 status: active
 created: 2026-06-04
 updated: 2026-06-04
@@ -13,9 +13,9 @@ updated: 2026-06-04
 
 # Netherlands
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-04T22:06Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-04T22:41Z | source elo-goal-v1 -->
 Group F | FIFA rank 7 | Elo 2015
-Champion 2.3% | Final 5.5% | SF 13.7% | QF 27.6% | Advance 90.7%
+Champion 2.4% | Final 5.9% | SF 13.8% | QF 27.8% | Advance 90.8%
 <!-- WC26:AUTO:snapshot END -->
 
 ## Squad & availability
@@ -64,6 +64,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-04T22:06Z | source elo-goal-v1 -->
-- 2026-06-04: champion 2.3% (run 20000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-04T22:41Z | source elo-goal-v1 -->
+- 2026-06-04: champion 2.4% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

@@ -123,3 +123,16 @@ with tab_c:
         st.line_chart(traj.set_index("computed_at")[["brier", "log_loss"]])
     else:
         st.caption("No played results yet — the running-improvement trajectory fills in once matches start.")
+
+    st.subheader("Model vs market (devigged World Cup winner odds)")
+    try:
+        from wc26 import odds
+        comp = odds.model_vs_market(conn)
+        if comp:
+            st.dataframe(pd.DataFrame(comp), hide_index=True, use_container_width=True)
+            st.caption("Benchmark only, never betting. Edge = model minus market; a model that "
+                       "cannot beat the market would mostly surface its own miscalibration.")
+        else:
+            st.caption("Run `python -m wc26.odds` to fetch and compare market odds.")
+    except Exception as e:
+        st.caption(f"Market odds unavailable: {e}")

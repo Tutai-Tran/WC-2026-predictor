@@ -5,7 +5,7 @@ fifa_code: "CIV"
 group: "E"
 fifa_rank: 40
 elo: 1800
-champion_prob: 0.0006
+champion_prob: 0.0005
 status: active
 created: 2026-06-04
 updated: 2026-06-04
@@ -13,9 +13,9 @@ updated: 2026-06-04
 
 # Ivory Coast
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-04T22:06Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-04T22:41Z | source elo-goal-v1 -->
 Group E | FIFA rank 40 | Elo 1800
-Champion 0.1% | Final 0.3% | SF 1.4% | QF 5.7% | Advance 63.9%
+Champion 0.1% | Final 0.3% | SF 1.4% | QF 5.6% | Advance 63.7%
 <!-- WC26:AUTO:snapshot END -->
 
 ## Squad & availability
@@ -64,6 +64,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-04T22:06Z | source elo-goal-v1 -->
-- 2026-06-04: champion 0.1% (run 20000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-04T22:41Z | source elo-goal-v1 -->
+- 2026-06-04: champion 0.1% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
