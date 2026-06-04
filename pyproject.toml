@@ -1,0 +1,16 @@
+[project]
+name = "wc26"
+version = "0.1.0"
+description = "FIFA World Cup 2026 prediction system (Elo-driven goal model + Monte Carlo)"
+requires-python = ">=3.12"
+
+[tool.setuptools]
+packages = ["wc26"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
