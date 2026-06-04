@@ -4,8 +4,8 @@ team: "Iraq"
 fifa_code: "IRQ"
 group: "I"
 fifa_rank: 57
-elo: 1737
-champion_prob: 0.0
+elo: 1747
+champion_prob: 0.0001
 status: active
 created: 2026-06-04
 updated: 2026-06-04
@@ -13,9 +13,9 @@ updated: 2026-06-04
 
 # Iraq
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-04T22:41Z | source elo-goal-v1 -->
-Group I | FIFA rank 57 | Elo 1737
-Champion 0.0% | Final 0.1% | SF 0.3% | QF 1.6% | Advance 24.0%
+<!-- WC26:AUTO:snapshot START | generated 2026-06-04T23:18Z | source elo-goal-v1 -->
+Group I | FIFA rank 57 | Elo 1747
+Champion 0.0% | Final 0.1% | SF 0.3% | QF 1.8% | Advance 25.9%
 <!-- WC26:AUTO:snapshot END -->
 
 ## Squad & availability
@@ -64,6 +64,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-04T22:41Z | source elo-goal-v1 -->
-- 2026-06-04: champion 0.0% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-04T23:18Z | source elo-goal-v1 -->
+- 2026-06-04: champion 0.0% (run 20000 sims)
 <!-- WC26:AUTO:changelog END -->

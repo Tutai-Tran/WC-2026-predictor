@@ -4,8 +4,8 @@ team: "Saudi Arabia"
 fifa_code: "KSA"
 group: "H"
 fifa_rank: 58
-elo: 1694
-champion_prob: 0.0
+elo: 1691
+champion_prob: 0.0001
 status: active
 created: 2026-06-04
 updated: 2026-06-04
@@ -13,9 +13,9 @@ updated: 2026-06-04
 
 # Saudi Arabia
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-04T22:41Z | source elo-goal-v1 -->
-Group H | FIFA rank 58 | Elo 1694
-Champion 0.0% | Final 0.0% | SF 0.2% | QF 1.1% | Advance 31.7%
+<!-- WC26:AUTO:snapshot START | generated 2026-06-04T23:18Z | source elo-goal-v1 -->
+Group H | FIFA rank 58 | Elo 1691
+Champion 0.0% | Final 0.0% | SF 0.1% | QF 1.1% | Advance 29.9%
 <!-- WC26:AUTO:snapshot END -->
 
 ## Squad & availability
@@ -64,6 +64,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-04T22:41Z | source elo-goal-v1 -->
-- 2026-06-04: champion 0.0% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-04T23:18Z | source elo-goal-v1 -->
+- 2026-06-04: champion 0.0% (run 20000 sims)
 <!-- WC26:AUTO:changelog END -->

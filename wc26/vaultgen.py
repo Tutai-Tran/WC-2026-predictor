@@ -192,6 +192,38 @@ def write_match_notes(result: dict) -> int:
     return n
 
 
+def write_bracket(result: dict) -> None:
+    """Mermaid knockout bracket. Shows the structure with projected qualifiers now,
+    and fills with real teams/winners as the group stage and knockouts complete."""
+    from .simulate import KNOCKOUT_TREE
+    ko = {k["match_no"]: k for k in result.get("knockout", [])}
+
+    def label(mno: int) -> str:
+        k = ko.get(mno)
+        if not k:
+            return f"#{mno}"
+        h = k.get("home_proj") or k.get("home_slot") or "?"
+        a = k.get("away_proj") or k.get("away_slot") or "?"
+        res = f" [{k['result']}]" if k.get("result") else ""
+        return f"{k['stage']} #{mno}<br>{h} vs {a}{res}".replace('"', "'")
+
+    lines = ["```mermaid", "flowchart LR"]
+    all_nos = set(range(73, 89)) | set(KNOCKOUT_TREE)
+    for mno in sorted(all_nos):
+        lines.append(f'  M{mno}["{label(mno)}"]')
+    for mno, (a, b) in KNOCKOUT_TREE.items():
+        lines.append(f"  M{a} --> M{mno}")
+        lines.append(f"  M{b} --> M{mno}")
+    lines.append("```")
+    text = (f"---\ntype: wc-bracket\nupdated: {datetime.now(timezone.utc).date()}\n---\n\n"
+            f"# Knockout bracket\n\n"
+            f"Empty for now: teams are projected (current most-likely qualifier per slot) and "
+            f"fill in with real teams as the group stage finishes and with winners as knockout "
+            f"matches are played.\n\n"
+            f"<!-- WC26:AUTO:bracket START -->\n" + "\n".join(lines) + "\n<!-- WC26:AUTO:bracket END -->\n")
+    (VAULT / "_bracket.md").write_text(text)
+
+
 def generate(conn, result: dict) -> dict:
     meta = {}
     for r in conn.execute(
@@ -200,8 +232,10 @@ def generate(conn, result: dict) -> dict:
     ):
         meta[r["n"]] = {"group": r["g"], "fifa_rank": r["fr"], "fifa_code": r["fc"], "elo": r["e"]}
     write_dashboard(result)
+    write_bracket(result)
     return {
         "countries": update_country_notes(result, meta),
         "groups": update_group_notes(result, meta),
         "matches": write_match_notes(result),
+        "bracket": "written",
     }

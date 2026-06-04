@@ -4,8 +4,8 @@ team: "Morocco"
 fifa_code: "MAR"
 group: "C"
 fifa_rank: 12
-elo: 2006
-champion_prob: 0.0217
+elo: 2008
+champion_prob: 0.0239
 status: active
 created: 2026-06-04
 updated: 2026-06-04
@@ -13,9 +13,9 @@ updated: 2026-06-04
 
 # Morocco
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-04T22:41Z | source elo-goal-v1 -->
-Group C | FIFA rank 12 | Elo 2006
-Champion 2.2% | Final 5.4% | SF 13.0% | QF 26.9% | Advance 88.4%
+<!-- WC26:AUTO:snapshot START | generated 2026-06-04T23:18Z | source elo-goal-v1 -->
+Group C | FIFA rank 12 | Elo 2008
+Champion 2.4% | Final 5.6% | SF 13.0% | QF 26.2% | Advance 87.5%
 <!-- WC26:AUTO:snapshot END -->
 
 ## Squad & availability
@@ -64,6 +64,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-04T22:41Z | source elo-goal-v1 -->
-- 2026-06-04: champion 2.2% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-04T23:18Z | source elo-goal-v1 -->
+- 2026-06-04: champion 2.4% (run 20000 sims)
 <!-- WC26:AUTO:changelog END -->

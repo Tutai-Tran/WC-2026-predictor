@@ -10,10 +10,10 @@ updated: 2026-06-04
 # Senegal vs Iraq
 
 <!-- WC26:AUTO:forecast START -->
-Win Senegal: 55.4% | Draw: 25.2% | Win Iraq: 19.4%
-Most likely scoreline: 1-1 (12.0%) (modal only; many outcomes possible)
-Top scorers: Sadio Mané 51.8%; Ismaïla Sarr 20.8%; Nicolas Jackson 10.3%; Aymen Hussein 25.8%; Mohanad Ali 21.8%; Ibrahim Bayesh 7.2%;
-Data as of 2026-06-04 | runs 50000 | seed 20260611
+Win Senegal: 53.0% | Draw: 25.8% | Win Iraq: 21.2%
+Most likely scoreline: 1-1 (12.3%) (modal only; many outcomes possible)
+Top scorers: Sadio Mané 51.0%; Ismaïla Sarr 20.3%; Nicolas Jackson 10.1%; Aymen Hussein 26.9%; Mohanad Ali 22.8%; Ibrahim Bayesh 7.6%;
+Data as of 2026-06-04 | runs 20000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

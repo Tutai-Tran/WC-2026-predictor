@@ -10,10 +10,10 @@ updated: 2026-06-04
 # Uruguay vs Cape Verde
 
 <!-- WC26:AUTO:forecast START -->
-Win Uruguay: 67.7% | Draw: 21.3% | Win Cape Verde: 11.0%
-Most likely scoreline: 2-0 (14.0%) (modal only; many outcomes possible)
-Top scorers: Darwin Núñez 26.9%; Federico Valverde 25.8%; Giorgian de Arrascaeta 25.4%; Ryan Mendes 16.5%; Garry Rodrigues 7.2%; Dailon Livramento 6.4%;
-Data as of 2026-06-04 | runs 50000 | seed 20260611
+Win Uruguay: 65.1% | Draw: 22.3% | Win Cape Verde: 12.6%
+Most likely scoreline: 1-0 (13.2%) (modal only; many outcomes possible)
+Top scorers: Darwin Núñez 26.2%; Federico Valverde 25.4%; Giorgian de Arrascaeta 24.8%; Ryan Mendes 17.7%; Garry Rodrigues 7.7%; Dailon Livramento 6.9%;
+Data as of 2026-06-04 | runs 20000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

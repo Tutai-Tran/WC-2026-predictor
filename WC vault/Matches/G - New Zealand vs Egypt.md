@@ -10,10 +10,10 @@ updated: 2026-06-04
 # New Zealand vs Egypt
 
 <!-- WC26:AUTO:forecast START -->
-Win New Zealand: 27.8% | Draw: 27.2% | Win Egypt: 45.1%
-Most likely scoreline: 1-1 (13.0%) (modal only; many outcomes possible)
-Top scorers: Chris Wood 34.3%; Kosta Barbarouses 10.0%; Ben Waine 9.2%; Mohamed Salah 55.4%; Trézéguet 22.7%; Omar Marmoush 12.4%;
-Data as of 2026-06-04 | runs 50000 | seed 20260611
+Win New Zealand: 24.8% | Draw: 26.7% | Win Egypt: 48.5%
+Most likely scoreline: 1-1 (12.7%) (modal only; many outcomes possible)
+Top scorers: Chris Wood 32.6%; Kosta Barbarouses 9.4%; Ben Waine 8.6%; Mohamed Salah 56.8%; Trézéguet 23.6%; Omar Marmoush 12.9%;
+Data as of 2026-06-04 | runs 20000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

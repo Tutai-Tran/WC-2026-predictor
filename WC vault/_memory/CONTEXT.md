@@ -43,3 +43,13 @@ Schema v2: matches gained match_no / home_slot / away_slot; stage now spans frie
 Ingest now also loads 31 knockout fixtures (R32 with real dates+slots, plus the R16->Final tree by match number) and 62 pre-WC warm-up friendlies (33 already played) from data/raw/friendlies.json, scraped by an agent from football365 / SI / ESPN.
 Played friendlies are folded into current Elo (backtest.apply_played_friendlies), and the forecast now predicts friendlies. The model's top pick was correct on 21/33 (64%) of the played friendlies.
 56 tests pass; calibration unchanged (test log loss 0.861, reliability slope 1.019).
+
+## 2026-06-04 23:19 UTC — Dashboard overhaul + bracket diagram + daily view
+
+Rebuilt the Streamlit dashboard (wc26/app.py) to be user-friendly: emoji title, freshness/STALE banner, headline favourite metric cards, and 7 tabs.
+- Daily: all matches (friendly/group/knockout) grouped by date with a date slider + full schedule.
+- Matches: split by competition (Group stage / Friendlies / Knockouts) with dates and clear type labels.
+- Bracket: R32->Final structure with projected qualifiers, fills with real teams/winners as results arrive.
+- Plus Champion & stages, Groups, Scorers, Calibration (now includes model-vs-market).
+Forecast payload gained: dates on group matches, friendly forecasts, knockout fixtures (slots + dates + projected teams), and a bracket projection that auto-sharpens toward actual qualifiers (reads conditional-sim probs).
+vaultgen now writes WC vault/_bracket.md (Mermaid knockout bracket). Verified the dashboard renders in a real browser (Playwright). 56 tests pass.

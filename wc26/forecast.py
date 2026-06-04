@@ -72,12 +72,12 @@ def load_tournament(conn, params: model_mod.ModelParams | None = None) -> Tourna
 
     fixtures: list[dict] = []
     for r in conn.execute(
-        "SELECT m.group_letter grp, h.name home, a.name away, m.venue_country vc "
+        "SELECT m.group_letter grp, h.name home, a.name away, m.venue_country vc, m.date_utc d "
         "FROM matches m JOIN teams h ON h.id=m.home_team_id "
         "JOIN teams a ON a.id=m.away_team_id WHERE m.stage='group'"
     ):
         fixtures.append({"group": r["grp"], "home": r["home"], "away": r["away"],
-                         "venue_country": r["vc"]})
+                         "venue_country": r["vc"], "date": r["d"]})
 
     r32 = json.loads((config.DATA_RAW / "bracket.json").read_text())["r32"]
     routing = json.loads((config.DATA_RAW / "third_place_routing.json").read_text())["combinations"]
@@ -118,7 +118,7 @@ def group_match_forecasts(t: Tournament) -> list[dict]:
         )
         (sh, sa), sp = f["top_scorelines"][0]
         out.append({
-            "group": fx["group"], "home": h, "away": a,
+            "group": fx["group"], "home": h, "away": a, "date": fx.get("date"),
             "p_home": round(f["p_home"], 3), "p_draw": round(f["p_draw"], 3),
             "p_away": round(f["p_away"], 3),
             "lambda_home": round(f["lambda_home"], 2), "lambda_away": round(f["lambda_away"], 2),
@@ -175,6 +175,38 @@ def friendly_forecasts(conn, params: model_mod.ModelParams) -> list[dict]:
     return out
 
 
+def bracket_projection(conn, probs: dict) -> dict[str, str]:
+    """Most-likely team for each group-position slot (1X = winner, 2X = runner-up).
+
+    Reads the (conditional) simulation probabilities, so as real group results are
+    entered the projection sharpens toward the actual qualifiers."""
+    groups: dict[str, list[str]] = {}
+    for r in conn.execute("SELECT name, group_letter FROM teams WHERE group_letter IS NOT NULL"):
+        groups.setdefault(r["group_letter"], []).append(r["name"])
+    proj: dict[str, str] = {}
+    for g, teams in groups.items():
+        proj[f"1{g}"] = max(teams, key=lambda t: probs[t]["win_group"])
+        proj[f"2{g}"] = max(teams, key=lambda t: probs[t]["top2"] - probs[t]["win_group"])
+    return proj
+
+
+def knockout_fixtures(conn, proj: dict[str, str]) -> list[dict]:
+    """All knockout fixtures with dates, slot labels, and projected teams."""
+    out = []
+    for r in conn.execute(
+        "SELECT match_no, stage, date_utc, venue, venue_country, home_slot, away_slot, "
+        "home_goals hg, away_goals ag, played FROM matches "
+        "WHERE stage IN ('R32','R16','QF','SF','Final') ORDER BY match_no"
+    ):
+        out.append({
+            "match_no": r["match_no"], "stage": r["stage"], "date": r["date_utc"],
+            "venue": r["venue"], "home_slot": r["home_slot"], "away_slot": r["away_slot"],
+            "home_proj": proj.get(r["home_slot"]), "away_proj": proj.get(r["away_slot"]),
+            "result": (f'{r["hg"]}-{r["ag"]}' if r["played"] else None),
+        })
+    return out
+
+
 def run_forecast(conn, n_runs: int = config.DEFAULT_SIM_RUNS,
                  seed: int = config.DEFAULT_RNG_SEED) -> dict:
     t = load_tournament(conn)
@@ -182,6 +214,8 @@ def run_forecast(conn, n_runs: int = config.DEFAULT_SIM_RUNS,
     matches = group_match_forecasts(t)
     boot = golden_boot(t)
     friendlies = friendly_forecasts(conn, t.params)
+    proj = bracket_projection(conn, sim["probs"])
+    knockout = knockout_fixtures(conn, proj)
 
     run_id = datetime.now(timezone.utc).strftime("run-%Y%m%dT%H%M%SZ")
     ts = datetime.now(timezone.utc).isoformat()
@@ -189,7 +223,7 @@ def run_forecast(conn, n_runs: int = config.DEFAULT_SIM_RUNS,
 
     payload = {
         "probs": sim["probs"], "matches": matches, "golden_boot": boot,
-        "friendlies": friendlies,
+        "friendlies": friendlies, "knockout": knockout, "bracket_slots": proj,
         "data_as_of": data_as_of, "n_runs": n_runs, "seed": seed,
     }
     conn.execute(

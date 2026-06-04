@@ -10,10 +10,10 @@ updated: 2026-06-04
 # Turkey vs United States
 
 <!-- WC26:AUTO:forecast START -->
-Win Turkey: 42.1% | Draw: 27.5% | Win United States: 30.4%
+Win Turkey: 41.5% | Draw: 27.5% | Win United States: 31.0%
 Most likely scoreline: 1-1 (13.1%) (modal only; many outcomes possible)
-Top scorers: Hakan Çalhanoğlu 24.7%; Kerem Aktürkoğlu 18.7%; Arda Güler 9.1%; Christian Pulisic 31.6%; Ricardo Pepi 11.5%; Weston McKennie 10.1%;
-Data as of 2026-06-04 | runs 50000 | seed 20260611
+Top scorers: Hakan Çalhanoğlu 24.5%; Kerem Aktürkoğlu 18.6%; Arda Güler 9.0%; Christian Pulisic 31.8%; Ricardo Pepi 11.6%; Weston McKennie 10.2%;
+Data as of 2026-06-04 | runs 20000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

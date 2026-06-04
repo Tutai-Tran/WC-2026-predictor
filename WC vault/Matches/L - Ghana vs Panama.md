@@ -10,10 +10,10 @@ updated: 2026-06-04
 # Ghana vs Panama
 
 <!-- WC26:AUTO:forecast START -->
-Win Ghana: 15.0% | Draw: 23.5% | Win Panama: 61.6%
-Most likely scoreline: 0-1 (12.6%) (modal only; many outcomes possible)
-Top scorers: Jordan Ayew 27.7%; Thomas Partey 13.4%; Ernest Nuamah 5.0%; José Fajardo 21.7%; Ismael Díaz 20.8%; Cecilio Waterman 19.6%;
-Data as of 2026-06-04 | runs 50000 | seed 20260611
+Win Ghana: 15.7% | Draw: 23.8% | Win Panama: 60.5%
+Most likely scoreline: 0-1 (12.5%) (modal only; many outcomes possible)
+Top scorers: Jordan Ayew 28.4%; Thomas Partey 13.7%; Ernest Nuamah 5.2%; José Fajardo 21.5%; Ismael Díaz 20.6%; Cecilio Waterman 19.4%;
+Data as of 2026-06-04 | runs 20000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

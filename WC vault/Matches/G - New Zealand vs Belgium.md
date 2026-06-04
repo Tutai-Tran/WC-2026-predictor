@@ -10,10 +10,10 @@ updated: 2026-06-04
 # New Zealand vs Belgium
 
 <!-- WC26:AUTO:forecast START -->
-Win New Zealand: 15.9% | Draw: 23.9% | Win Belgium: 60.3%
-Most likely scoreline: 0-1 (12.4%) (modal only; many outcomes possible)
-Top scorers: Chris Wood 26.3%; Kosta Barbarouses 7.3%; Ben Waine 6.7%; Romelu Lukaku 51.9%; Kevin De Bruyne 31.8%; Youri Tielemans 10.4%;
-Data as of 2026-06-04 | runs 50000 | seed 20260611
+Win New Zealand: 13.2% | Draw: 22.6% | Win Belgium: 64.2%
+Most likely scoreline: 0-1 (13.1%) (modal only; many outcomes possible)
+Top scorers: Chris Wood 24.0%; Kosta Barbarouses 6.6%; Ben Waine 6.1%; Romelu Lukaku 53.4%; Kevin De Bruyne 32.7%; Youri Tielemans 10.8%;
+Data as of 2026-06-04 | runs 20000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

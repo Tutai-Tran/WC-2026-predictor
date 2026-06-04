@@ -10,10 +10,10 @@ updated: 2026-06-04
 # France vs Iraq
 
 <!-- WC26:AUTO:forecast START -->
-Win France: 79.9% | Draw: 15.6% | Win Iraq: 4.5%
-Most likely scoreline: 2-0 (18.2%) (modal only; many outcomes possible)
-Top scorers: Kylian Mbappé 70.4%; Ousmane Dembélé 15.6%; Adrien Rabiot 14.1%; Aymen Hussein 11.6%; Mohanad Ali 9.7%; Ibrahim Bayesh 3.1%;
-Data as of 2026-06-04 | runs 50000 | seed 20260611
+Win France: 77.4% | Draw: 16.9% | Win Iraq: 5.7%
+Most likely scoreline: 2-0 (17.3%) (modal only; many outcomes possible)
+Top scorers: Kylian Mbappé 69.5%; Ousmane Dembélé 15.2%; Adrien Rabiot 13.7%; Aymen Hussein 13.4%; Mohanad Ali 11.2%; Ibrahim Bayesh 3.6%;
+Data as of 2026-06-04 | runs 20000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

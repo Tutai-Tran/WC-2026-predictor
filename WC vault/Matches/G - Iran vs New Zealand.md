@@ -10,10 +10,10 @@ updated: 2026-06-04
 # Iran vs New Zealand
 
 <!-- WC26:AUTO:forecast START -->
-Win Iran: 54.7% | Draw: 25.4% | Win New Zealand: 19.9%
-Most likely scoreline: 1-1 (12.1%) (modal only; many outcomes possible)
-Top scorers: Mehdi Taremi 51.3%; Alireza Jahanbakhsh 16.6%; Mohammad Mohebi 14.0%; Chris Wood 29.3%; Kosta Barbarouses 8.3%; Ben Waine 7.6%;
-Data as of 2026-06-04 | runs 50000 | seed 20260611
+Win Iran: 57.3% | Draw: 24.7% | Win New Zealand: 18.0%
+Most likely scoreline: 1-0 (12.0%) (modal only; many outcomes possible)
+Top scorers: Mehdi Taremi 52.3%; Alireza Jahanbakhsh 17.1%; Mohammad Mohebi 14.4%; Chris Wood 28.0%; Kosta Barbarouses 7.9%; Ben Waine 7.2%;
+Data as of 2026-06-04 | runs 20000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match
