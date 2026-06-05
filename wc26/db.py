@@ -9,12 +9,16 @@ Design notes (see PLAN.md):
 
 from __future__ import annotations
 
+import os
 import sqlite3
 from pathlib import Path
+from urllib.parse import quote
 
 from . import config
 
 SCHEMA_VERSION = 3
+
+_SQLITE_MAGIC = b"SQLite format 3\x00"
 
 _SCHEMA = """
 CREATE TABLE IF NOT EXISTS schema_version (version INTEGER NOT NULL);
@@ -210,6 +214,55 @@ def connect(db_path: str | Path | None = None) -> sqlite3.Connection:
     conn.execute("PRAGMA foreign_keys = ON")
     conn.execute("PRAGMA journal_mode = WAL")
     return conn
+
+
+def is_valid_snapshot(path: str | Path) -> bool:
+    """True only if `path` is a readable SQLite database that contains a forecast.
+
+    Guards a hosted DB download against partial transfers, HTML error/redirect
+    pages (e.g. a 404 served during the mid-publish ``--clobber`` window), and any
+    other non-database bytes, so a bad download is never swapped in."""
+    try:
+        with open(path, "rb") as f:
+            if f.read(16) != _SQLITE_MAGIC:
+                return False
+    except OSError:
+        return False
+    try:
+        # quote so paths with spaces/special chars form a valid SQLite file: URI
+        c = sqlite3.connect(f"file:{quote(str(Path(path).resolve()))}?mode=ro", uri=True)
+    except sqlite3.Error:
+        return False
+    try:
+        if c.execute("PRAGMA quick_check").fetchone()[0] != "ok":
+            return False
+        return c.execute(
+            "SELECT COUNT(*) FROM predictions WHERE scope='forecast'"
+        ).fetchone()[0] > 0
+    except sqlite3.DatabaseError:
+        return False
+    finally:
+        c.close()
+
+
+def install_snapshot(content: bytes, dest: str | Path | None = None) -> bool:
+    """Atomically install a downloaded DB snapshot, returning True only if it took.
+
+    Validates the bytes are a real forecast snapshot BEFORE swapping, and clears any
+    stale ``-wal``/``-shm`` sidecars first: those belong to the previous file and,
+    read against the freshly-swapped main DB, raise ``database disk image is
+    malformed`` (the recurring hosted crash). A rejected download leaves the existing
+    DB untouched."""
+    dest = Path(dest) if dest is not None else config.DB_PATH
+    tmp = str(dest) + ".download"
+    Path(tmp).write_bytes(content)
+    if not is_valid_snapshot(tmp):
+        Path(tmp).unlink(missing_ok=True)
+        return False
+    for sfx in ("-wal", "-shm"):
+        Path(str(dest) + sfx).unlink(missing_ok=True)
+    os.replace(tmp, dest)                            # atomic swap of a validated file
+    return True
 
 
 def init_db(conn: sqlite3.Connection) -> None:

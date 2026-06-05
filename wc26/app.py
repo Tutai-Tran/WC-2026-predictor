@@ -9,6 +9,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import sqlite3
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -53,29 +54,61 @@ def _sync_remote_db() -> str | None:
         import requests
         r = requests.get(_DB_URL, timeout=30)
         r.raise_for_status()
-        tmp = str(config.DB_PATH) + ".download"
-        Path(tmp).write_bytes(r.content)
-        os.replace(tmp, config.DB_PATH)            # atomic swap
+        if not db.install_snapshot(r.content):     # validates + clears stale WAL/SHM first
+            return None                            # bad download: keep the current DB
         return hashlib.sha256(r.content).hexdigest()[:16]
     except Exception:
         return None                                # keep whatever DB is already present
+
+
+def _heal_hosted_db() -> None:
+    """Drop the hosted DB (+ sidecars) so the next sync re-downloads a clean copy.
+
+    Hosted only: there the DB is a disposable download. Locally it's the real source
+    of truth, so we never delete it."""
+    if _DB_URL:
+        for sfx in ("", "-wal", "-shm"):
+            Path(str(config.DB_PATH) + sfx).unlink(missing_ok=True)
 
 
 @st.cache_data(ttl=60)
 def load_latest(db_fingerprint=None):
     # db_fingerprint participates in the cache key: a new published snapshot
     # changes it and forces a reload (hosted). Unused value otherwise.
-    conn = db.connect()
-    db.init_db(conn)
-    row = conn.execute(
-        "SELECT payload_json, computed_at, run_id FROM predictions "
-        "WHERE scope='forecast' ORDER BY id DESC LIMIT 1"
-    ).fetchone()
-    if not row:
+    try:
+        conn = db.connect()
+        try:
+            db.init_db(conn)
+            row = conn.execute(
+                "SELECT payload_json, computed_at, run_id FROM predictions "
+                "WHERE scope='forecast' ORDER BY id DESC LIMIT 1"
+            ).fetchone()
+        finally:
+            conn.close()
+        if not row:
+            return None
+        payload = json.loads(row["payload_json"])
+        payload["_computed_at"] = row["computed_at"]
+        return payload
+    except (sqlite3.Error, ValueError) as e:
+        # A corrupt/locked DB (sqlite3.Error covers DatabaseError AND OperationalError,
+        # which are siblings) or an unreadable payload must never take the page down with
+        # a redacted crash. Self-heal only on a DB-level fault (a bad payload would just
+        # re-download identically), then show the friendly waiting state.
+        if isinstance(e, sqlite3.Error):
+            _heal_hosted_db()
         return None
-    payload = json.loads(row["payload_json"])
-    payload["_computed_at"] = row["computed_at"]
-    return payload
+
+
+def _conn_or_stop():
+    """Open a DB connection for a tab, or degrade gracefully if the DB is momentarily
+    unavailable (e.g. a sync swap landed mid-rerun) instead of crashing the page."""
+    try:
+        return db.connect()
+    except sqlite3.Error:
+        _heal_hosted_db()
+        st.info("⏳ Data is refreshing — reload in a moment.")
+        st.stop()
 
 
 def _date(s):
@@ -550,7 +583,7 @@ with tabs[3]:
 # ============================== Groups =============================
 with tabs[4]:
     groups: dict[str, list] = {}
-    conn = db.connect()
+    conn = _conn_or_stop()
     for r in conn.execute("SELECT name, group_letter FROM teams WHERE group_letter IS NOT NULL"):
         groups.setdefault(r["group_letter"], []).append(r["name"])
     cols = st.columns(3)
@@ -574,7 +607,7 @@ with tabs[6]:
     st.subheader("Current injuries & availability (scraped)")
     st.caption("From the LLM news agent (web search on your Max subscription), your vault "
                "overrides, and manual entries. These reduce a team's attacking strength in the forecast.")
-    conn = db.connect()
+    conn = _conn_or_stop()
     rows = conn.execute(
         "SELECT t.name team, ae.player_name player, ae.status, ae.source, ae.source_quote quote, ae.url "
         "FROM availability_events ae JOIN teams t ON t.id=ae.team_id "
@@ -622,7 +655,7 @@ with tabs[7]:
         st.info("Run `python -m wc26.backtest` to populate calibration metrics.")
 
     st.subheader("Running calibration vs played results")
-    conn = db.connect()
+    conn = _conn_or_stop()
     rows = conn.execute(
         "SELECT payload_json FROM predictions WHERE scope='calibration' ORDER BY id").fetchall()
     if rows:
@@ -675,7 +708,7 @@ with tabs[7]:
 with tabs[8]:
     sel = st.selectbox("Select a team", sorted(probs.keys()))
     p = probs[sel]
-    conn = db.connect()
+    conn = _conn_or_stop()
     info = conn.execute(
         "SELECT t.group_letter g, t.fifa_rank fr, "
         "(SELECT elo FROM ratings WHERE team_id=t.id ORDER BY valid_from DESC LIMIT 1) elo "
@@ -742,7 +775,7 @@ with tabs[9]:
                "the vault's `_memory/LESSONS.md`. Parameters only change when a bias validates "
                "out-of-sample, so a single upset never moves the model. Exact scores stay inherently "
                "~10% likely; the learnable wins are calibration and systematic biases.")
-    conn = db.connect()
+    conn = _conn_or_stop()
     db.init_db(conn)                          # ensure the learning tables exist (old DBs / cold cloud)
     _lrow = conn.execute("SELECT payload_json FROM predictions WHERE scope='lessons' "
                          "ORDER BY id DESC LIMIT 1").fetchone()
