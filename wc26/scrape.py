@@ -17,12 +17,17 @@ from . import config, elo as elo_mod, overrides
 ESPN = "https://site.api.espn.com/apis/site/v2/sports/soccer/{league}/scoreboard?dates={ymd}"
 LEAGUES = {"fifa.friendly": "Friendly", "fifa.world": "FIFA World Cup"}
 
-# ESPN display name -> our team name
+# ESPN/source display name -> our canonical team name (also used to canonicalise
+# base_elo spellings). Maps every observed spelling variant onto the teams-table name
+# so a result is never silently dropped to a phantom rating or an ungraded fixture.
 ESPN_ALIASES = {
     "USA": "United States", "Korea Republic": "South Korea", "South Korea": "South Korea",
     "Czechia": "Czech Republic", "Côte d'Ivoire": "Ivory Coast", "Ivory Coast": "Ivory Coast",
     "Curaçao": "Curacao", "IR Iran": "Iran", "Türkiye": "Turkey", "Turkiye": "Turkey",
     "DR Congo": "DR Congo", "Cape Verde Islands": "Cape Verde",
+    # observed in the live ledger as unmatched: qualified WC teams whose source spelling
+    # differs from ours (would otherwise fail to grade their group matches), plus China.
+    "Bosnia-Herzegovina": "Bosnia and Herzegovina", "Congo DR": "DR Congo", "China": "China PR",
 }
 
 
@@ -98,19 +103,38 @@ def recompute_elo(conn) -> dict:
     base_path = config.DATA_RAW / "base_elo.json"
     if not base_path.exists():
         return {"recomputed": False, "reason": "no base_elo.json (run backtest first)"}
-    ratings = dict(json.loads(base_path.read_text()).get("ratings", {}))
+    # Canonicalise base_elo spellings through the same alias map (e.g. "Curaçao" -> our
+    # "Curacao") so a qualified team isn't seeded under a name the ledger never matches.
+    ratings: dict[str, float] = {}
+    for name, elo in json.loads(base_path.read_text()).get("ratings", {}).items():
+        ratings[_norm(name)] = elo
+    known = set(ratings)                          # authoritative ~336-team name set
     rows = conn.execute(
         "SELECT home_team h, away_team a, home_goals hg, away_goals ag, "
-        "COALESCE(tournament,'Friendly') t, COALESCE(neutral,1) n FROM results_ledger "
+        "COALESCE(tournament,'Friendly') t, COALESCE(neutral,1) n, played_on p FROM results_ledger "
         "WHERE home_goals IS NOT NULL ORDER BY played_on"
     ).fetchall()
+    # Canonicalise ledger names so a result recorded under an ESPN spelling variant still
+    # feeds the real team's Elo, AND de-duplicate by (home, away, date): once an alias is
+    # added, a re-scrape can store a match already present under its old spelling, and that
+    # match must be applied to Elo only once. Anything still unknown after aliasing is a
+    # genuine gap (phantom DEFAULT_ELO, never grades) -> surface it loudly in the report.
+    graded, seen = [], set()
     for r in rows:
-        rh = ratings.get(r["h"], elo_mod.DEFAULT_ELO)
-        ra = ratings.get(r["a"], elo_mod.DEFAULT_ELO)
-        k = elo_mod.k_for_tournament(r["t"])
-        home_adv = 0.0 if r["n"] else 60.0
-        nh, na = elo_mod.update_pair(rh, ra, int(r["hg"]), int(r["ag"]), k=k, home_adv=home_adv)
-        ratings[r["h"]], ratings[r["a"]] = nh, na
+        h, a = _norm(r["h"]), _norm(r["a"])
+        key = (h, a, r["p"])
+        if key in seen:
+            continue
+        seen.add(key)
+        graded.append((h, a, int(r["hg"]), int(r["ag"]), r["t"], r["n"]))
+    unmatched = sorted(({g[0] for g in graded} | {g[1] for g in graded}) - known)
+    for h, a, hg, ag, tour, neutral in graded:
+        rh = ratings.get(h, elo_mod.DEFAULT_ELO)
+        ra = ratings.get(a, elo_mod.DEFAULT_ELO)
+        k = elo_mod.k_for_tournament(tour)
+        home_adv = 0.0 if neutral else 60.0
+        nh, na = elo_mod.update_pair(rh, ra, hg, ag, k=k, home_adv=home_adv)
+        ratings[h], ratings[a] = nh, na
 
     today = date.today().isoformat()
     (config.DATA_RAW / "replayed_elo.json").write_text(json.dumps(
@@ -126,7 +150,10 @@ def recompute_elo(conn) -> dict:
             )
             updated += 1
     conn.commit()
-    return {"recomputed": True, "ledger_matches": len(rows), "teams_updated": updated}
+    report = {"recomputed": True, "ledger_matches": len(rows), "teams_updated": updated}
+    if unmatched:
+        report["unmatched_teams"] = unmatched     # alias gap: add to ESPN_ALIASES
+    return report
 
 
 def main() -> None:
