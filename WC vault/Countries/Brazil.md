@@ -5,7 +5,7 @@ fifa_code: "BRA"
 group: "C"
 fifa_rank: 6
 elo: 2063
-champion_prob: 0.0266
+champion_prob: 0.0273
 status: active
 created: 2026-06-04
 updated: 2026-06-05
@@ -13,9 +13,9 @@ updated: 2026-06-05
 
 # Brazil
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-05T13:32Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-05T16:39Z | source elo-goal-v1 -->
 Group C | FIFA rank 6 | Elo 2063
-Champion 2.7% | Final 6.4% | SF 14.4% | QF 28.9% | Advance 89.1%
+Champion 2.7% | Final 6.5% | SF 14.6% | QF 29.1% | Advance 88.9%
 Availability concerns: Neymar (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-05T13:32Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-05T16:39Z | source elo-goal-v1 -->
 - 2026-06-05: champion 2.7% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
