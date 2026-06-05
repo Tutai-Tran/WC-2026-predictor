@@ -5,7 +5,7 @@ fifa_code: "JOR"
 group: "J"
 fifa_rank: 62
 elo: 1789
-champion_prob: 0.0002
+champion_prob: 0.0006
 status: active
 created: 2026-06-04
 updated: 2026-06-05
@@ -13,9 +13,9 @@ updated: 2026-06-05
 
 # Jordan
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-05T19:46Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-05T22:54Z | source elo-goal-v1 -->
 Group J | FIFA rank 62 | Elo 1789
-Champion 0.0% | Final 0.1% | SF 0.7% | QF 3.0% | Advance 36.2%
+Champion 0.1% | Final 0.3% | SF 1.1% | QF 3.9% | Advance 43.3%
 Availability: no concerns recorded
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-05T19:46Z | source elo-goal-v1 -->
-- 2026-06-05: champion 0.0% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-05T22:54Z | source elo-goal-v1 -->
+- 2026-06-05: champion 0.1% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

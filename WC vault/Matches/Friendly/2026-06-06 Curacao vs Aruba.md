@@ -14,7 +14,7 @@ updated: 2026-06-05
 
 Win Curacao: 77.4% | Draw: 15.7% | Win Aruba: 6.8%
 Most likely scoreline: 2-0
-Data as of 2026-06-05 | runs 50000 | seed 20260611
+Data as of 2026-06-06 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

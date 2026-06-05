@@ -14,7 +14,7 @@ updated: 2026-06-05
 
 Win Czech Republic: 40.1% | Draw: 29.8% | Win Kosovo: 30.1%
 Most likely scoreline: 1-0
-Data as of 2026-06-05 | runs 50000 | seed 20260611
+Data as of 2026-06-06 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

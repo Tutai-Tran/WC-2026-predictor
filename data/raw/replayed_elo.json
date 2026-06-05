@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-05",
+  "updated": "2026-06-06",
   "source": "base_elo + results ledger",
   "ratings": {
     "Scotland": 1859.4,
@@ -152,7 +152,7 @@
     "Togo": 1493.0,
     "North Korea": 1489.8,
     "Sudan": 1461.2,
-    "Malta": 1350.5,
+    "Malta": 1368.4,
     "Tunisia": 1738.4,
     "Libya": 1531.7,
     "Malawi": 1448.2,
@@ -212,7 +212,7 @@
     "Northern Cyprus": 1750.5,
     "Armenia": 1431.9,
     "Georgia": 1726.2,
-    "Azerbaijan": 1417.0,
+    "Azerbaijan": 1399.2,
     "Kazakhstan": 1523.6,
     "Comoros": 1460.4,
     "Maldives": 1005.3,
