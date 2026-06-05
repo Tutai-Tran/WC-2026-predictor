@@ -94,3 +94,9 @@ macOS TCC blocks launchd from reading the project under ~/Documents (Operation n
 ## 2026-06-05 00:14 UTC — Team explorer tab
 
 Added a Team explorer tab (selectbox) to drill into any country: champion/final/advance probs, Elo, group, FIFA rank, current scraped injuries, all its matches (group + friendly) with predictions, and most-likely scorers. Verified all 9 tabs render with 0 console errors. 65 tests pass.
+
+## 2026-06-05 00:21 UTC — Session complete — strong, tested, self-running state
+
+Final 2-agent sign-off: GREEN on correctness (all session fixes verified holding; 65 tests; 9 dashboard tabs render; secrets safe; payload/Elo/bracket/availability all correct). Fixed the one finding: gitignored runtime logs and made the refresh loop auto-commit+push, so the tree stays clean and the self-improving updates are saved+pushed automatically.
+Delivered this session: vault memory; Daily view + match dates/types/split; 62 warm-up friendlies (predicted + Elo-feeding); knockout fixtures + projected bracket (graphviz + Mermaid) that fills with winners; ESPN live results scraper + self-improving Elo loop; LLM news agent (Max subscription, web) for injuries -> forecast; odds blend; Availability + Team explorer tabs; Monte Carlo CIs; friendly-accuracy panel; auto-start (run-now works; boot-start needs one-time Full Disk Access since the project is in ~/Documents); SUMMARY.md; four multi-agent test rounds (16 agents) with all findings fixed.
+The dashboard + 3-hourly self-improving refresh (scrape -> news -> recompute Elo -> re-forecast -> regenerate vault -> commit+push) are running and will continue until scripts/stop.sh.
