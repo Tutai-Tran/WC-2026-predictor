@@ -314,7 +314,8 @@ _DAILY_COLCFG = {
 }
 
 tabs = st.tabs(["📅 Daily", "🏆 Champion & stages", "⚽ Matches", "🔀 Bracket",
-                "👥 Groups", "🥅 Scorers", "📋 Availability", "📈 Calibration", "🔎 Team"])
+                "👥 Groups", "🥅 Scorers", "📋 Availability", "📈 Calibration", "🔎 Team",
+                "🧠 Learning"])
 
 # =============================== Daily ===============================
 with tabs[0]:
@@ -731,3 +732,74 @@ with tabs[8]:
                                    for s in scs]), hide_index=True, use_container_width=True)
     else:
         st.caption("Scorer estimates appear for teams in the group stage.")
+
+# ============================== Learning =============================
+with tabs[9]:
+    st.subheader("🧠 What the model has learned")
+    st.caption("After every match, the model scores its **pre-match** prediction against the "
+               "result (leak-free), and an agent writes a post-mortem on each miss — *why* it was "
+               "wrong — which aggregate into systematic-bias hypotheses. The audit trail lives in "
+               "the vault's `_memory/LESSONS.md`. Parameters only change when a bias validates "
+               "out-of-sample, so a single upset never moves the model. Exact scores stay inherently "
+               "~10% likely; the learnable wins are calibration and systematic biases.")
+    conn = db.connect()
+    _lrow = conn.execute("SELECT payload_json FROM predictions WHERE scope='lessons' "
+                         "ORDER BY id DESC LIMIT 1").fetchone()
+    _L = json.loads(_lrow["payload_json"]) if _lrow else {}
+    _o = _L.get("overall", {}) or {}
+    if _o.get("n"):
+        m1, m2, m3, m4 = st.columns(4)
+        m1.metric("Graded matches", _o["n"])
+        m2.metric("Outcome accuracy", f"{_o['accuracy']*100:.0f}%", help="Leak-free: pre-match pick vs result")
+        m3.metric("Brier", _o.get("brier"))
+        m4.metric("Log loss", _o.get("log_loss"))
+    else:
+        st.info("Learning kicks in once matches are played. From then on, each refresh logs every "
+                "result against its frozen pre-match prediction, writes post-mortems on the misses, "
+                "and updates the lessons below.")
+
+    _ctraj = conn.execute("SELECT payload_json FROM predictions WHERE scope='calibration' "
+                          "ORDER BY id").fetchall()
+    if _ctraj:
+        st.markdown("##### Accuracy over time (lower is better)")
+        _t = pd.DataFrame([json.loads(r["payload_json"]) for r in _ctraj])
+        _t["computed_at"] = pd.to_datetime(_t["computed_at"])
+        _line = (alt.Chart(_t).transform_fold(["brier", "log_loss"], as_=["metric", "value"])
+                 .mark_line(point=True)
+                 .encode(x=alt.X("computed_at:T", title=None),
+                         y=alt.Y("value:Q", title="error"),
+                         color=alt.Color("metric:N", legend=alt.Legend(title=None)),
+                         tooltip=["computed_at:T", "metric:N", alt.Tooltip("value:Q", format=".3f")])
+                 .properties(height=220))
+        st.altair_chart(_line, use_container_width=True)
+
+    _segs = _L.get("segments", {})
+    if _segs:
+        st.markdown("##### Accuracy by competition type")
+        st.dataframe(pd.DataFrame([{"Segment": k, "Accuracy": f"{v['accuracy']*100:.0f}%",
+                                    "Matches": v["n"]} for k, v in _segs.items()]),
+                     hide_index=True, use_container_width=True)
+
+    _biases = _L.get("biases", [])
+    if _biases:
+        st.markdown("##### Systematic biases the model found")
+        _bdf = pd.DataFrame(_biases)
+        _bar = (alt.Chart(_bdf).mark_bar().encode(
+            x=alt.X("n:Q", title="wrong matches (evidence)"),
+            y=alt.Y("factor:N", sort="-x", title=None),
+            color=alt.Color("direction:N", scale=alt.Scale(domain=["over", "under"],
+                            range=["#D1495B", "#4a78c4"]), legend=alt.Legend(title="model rated")),
+            tooltip=["factor:N", "segment:N", "direction:N", "strength:Q", "n:Q"])
+            .properties(height=max(120, 26 * len(_bdf))))
+        st.altair_chart(_bar, use_container_width=True)
+
+    _pm = conn.execute(
+        "SELECT pl.home_team, pl.away_team, pl.home_goals hg, pl.away_goals ag, p.factor, p.summary "
+        "FROM postmortems p JOIN prediction_log pl ON pl.id=p.prediction_id "
+        "ORDER BY p.id DESC LIMIT 12").fetchall()
+    if _pm:
+        st.markdown("##### Recent post-mortems (why we missed)")
+        st.dataframe(pd.DataFrame([
+            {"Match": f"{r['home_team']} {r['hg']}-{r['ag']} {r['away_team']}",
+             "Factor": r["factor"], "Lesson": r["summary"]} for r in _pm]),
+            hide_index=True, use_container_width=True)

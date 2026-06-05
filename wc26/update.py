@@ -93,6 +93,7 @@ def run(conn=None, n_runs: int = 50_000, news_teams: int = 3, postmortems: int =
              json.dumps(lessons), lessons["computed_at"]),
         )
         conn.commit()
+        memory.write_lessons(lessons)            # regenerate the Obsidian 'what we learned' note
     except Exception as e:
         lessons = {"error": str(e)}
     vault = vaultgen.generate(conn, result)
