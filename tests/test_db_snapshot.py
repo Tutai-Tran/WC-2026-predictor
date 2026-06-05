@@ -81,6 +81,29 @@ def test_is_valid_snapshot_handles_path_with_spaces(tmp_path):
     assert db.is_valid_snapshot(p) is True            # file: URI must be percent-encoded
 
 
+def test_corrupt_db_read_raises_catchable_sqlite_error(tmp_path):
+    """Reproduce the exact live failure: a corrupt wc26.db makes the connect+query
+    path raise a sqlite3.Error (DatabaseError/OperationalError both subclass it), which
+    is what load_latest now catches to degrade gracefully instead of crashing the page.
+    Also confirm such a file is rejected by validation so it's never installed."""
+    bad = tmp_path / "wc26.db"
+    bad.write_bytes(b"definitely not a sqlite database " * 300)   # right size, wrong bytes
+
+    raised = False
+    try:
+        conn = db.connect(bad)                # mirrors load_latest's connect+query flow
+        try:
+            conn.execute(
+                "SELECT payload_json FROM predictions WHERE scope='forecast' "
+                "ORDER BY id DESC LIMIT 1").fetchone()
+        finally:
+            conn.close()
+    except sqlite3.Error:                     # the base class load_latest catches
+        raised = True
+    assert raised, "a corrupt DB must raise a catchable sqlite3.Error"
+    assert db.is_valid_snapshot(bad) is False  # ...and validation would never install it
+
+
 def test_install_snapshot_rejects_bad_download_keeps_existing(tmp_path):
     dest = tmp_path / "wc26.db"
     good = _db_bytes(tmp_path, "good.db")
