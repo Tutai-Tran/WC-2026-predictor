@@ -9,6 +9,11 @@
 # Safe to re-run; creates the release on first use. Fails soft from start.sh
 # (called with `|| true`), but logs real errors to logs/publish.log.
 set -eu
+# launchd runs the refresh loop with a minimal PATH (/usr/bin:/bin:...) that omits
+# Homebrew, where gh lives — so the automated publish was failing with "gh: command
+# not found" while manual runs (login shell) worked. Make gh resolvable either way.
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:$PATH"
+command -v gh >/dev/null 2>&1 || { echo "ERROR: gh (GitHub CLI) not on PATH; cannot publish to cloud" >&2; exit 1; }
 PROJ="/Users/tutaitran/wc26"
 PY="$PROJ/.venv/bin/python"
 DATA_REPO="Tutai-Tran/WC-2026-data"

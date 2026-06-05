@@ -5,6 +5,8 @@ set -u
 PROJ="/Users/tutaitran/wc26"
 PY="$PROJ/.venv/bin/python"
 ST="$PROJ/.venv/bin/streamlit"
+# launchd gives us a minimal PATH; add Homebrew so child tools (gh, git) resolve.
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:$PATH"
 cd "$PROJ" || exit 1
 mkdir -p logs
 
