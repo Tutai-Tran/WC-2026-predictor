@@ -136,3 +136,11 @@ scraped results: {'added': 0}; elo: {'recomputed': True, 'ledger_matches': 61, '
 ## 2026-06-05 13:32 UTC — Automated refresh (update.py)
 
 scraped results: {'added': 1}; elo: {'recomputed': True, 'ledger_matches': 62, 'teams_updated': 76}; news: {'teams_scanned': ['Iran', 'New Zealand', 'Spain'], 'events': 8}; overrides synced: 0 events; prediction snapshots: {'snapshotted': 99}; graded: {'graded': 0, 'wrong': 0}; post-mortems: {'analyzed': 0, 'errors': 0}; lessons: {'n': 0, 'accuracy': None, 'brier': None, 'log_loss': None}; running calibration: {'n': 0}; vault: {'countries': 48, 'groups': 12, 'matches': {'group': 72, 'friendly': 62, 'knockout': 31}, 'bracket': 'written'}; run_id run-20260605T133215Z.
+
+## 2026-06-05 — Session summary (full record in [[sessions/2026-06-05 session]])
+
+Delivered this session: played/today row highlights + Amsterdam kickoff times; better score model (head-to-head term + supremacy-dependent goals γ=0.454 + outcome-consistent likely score + "our call" ✅/❌); front-page accuracy scorecard; cloud hosting Option B2 (Mac publishes a WAL-merged wc26.db to the `live` GitHub Release, Streamlit Cloud app pulls it on a 60s TTL — reachable when the Mac is off, updates the moment it's on); UX redesign.
+
+Biggest piece — the **self-learning post-match loop** (wired into every update.py refresh, forever): snapshot frozen pre-match predictions (leak-free, before results enter Elo) → grade once played → LLM post-mortem on wrong picks (enum-validated, `variance` upsets excluded) → aggregate ranked systematic biases → regenerate LESSONS.md + 🧠 Learning tab → propose **candidate** parameter nudges once a factor is tagged by ≥8 distinct wrong matches (audit-only, never auto-applied). Key decision: **parameters are frozen during the tournament** because single-tournament learning chases noise (this is how the old flat goal_scale=1.10 overfit); applying a nudge is gated behind the deferred phase 3b out-of-sample re-fit gate. "LLM proposes, the math disposes." See [[LESSONS]].
+
+Also fixed a **live-down `sqlite3.DatabaseError`**: cloud-side DB-sync bug (unvalidated downloads + stale WAL sidecars after the file swap). Fix = validate snapshot before install + clear sidecars + graceful self-healing degradation (commit 973bf74). Verified recovered in-browser. 103 tests pass. All pushed to main.
