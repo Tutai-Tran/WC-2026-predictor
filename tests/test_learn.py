@@ -69,3 +69,48 @@ def test_grade_noop_when_nothing_played(tmp_path):
     conn = _setup(tmp_path)
     learn.snapshot_upcoming(conn)
     assert learn.grade_newly_played(conn) == {"graded": 0, "wrong": 0}
+
+
+def _force_wrong(conn):
+    """Mark one snapshot as a WRONG graded prediction, deterministically."""
+    r = conn.execute("SELECT id, pick FROM prediction_log LIMIT 1").fetchone()
+    wrong = "away" if r["pick"] != "away" else "home"
+    hg, ag = (0, 2) if wrong == "away" else (2, 0)
+    conn.execute("UPDATE prediction_log SET graded=1, correct=0, home_goals=?, away_goals=?, "
+                 "actual=?, brier=0.9, log_loss=1.5, postmortem_status='pending' WHERE id=?",
+                 (hg, ag, wrong, r["id"]))
+    conn.commit()
+    return r["id"]
+
+
+def test_postmortems_write_and_aggregate(tmp_path, monkeypatch):
+    conn = _setup(tmp_path)
+    learn.snapshot_upcoming(conn)
+    pid = _force_wrong(conn)
+    monkeypatch.setattr(learn, "_analyze", lambda row, timeout=180: [
+        {"factor": "home_advantage", "direction": "over", "magnitude": 0.5,
+         "suggested_segment": "host", "confidence": 0.8, "evidence": "host lost", "summary": "over-rated host"},
+        {"factor": "variance", "direction": "over", "magnitude": 0.0, "suggested_segment": "global",
+         "confidence": 0.6, "evidence": "upset", "summary": "noise"},
+        {"factor": "NONSENSE", "direction": "sideways"},   # invalid -> dropped by the guard
+    ])
+    rep = learn.run_postmortems(conn, limit=5)
+    assert rep["analyzed"] == 1
+    # 2 valid lessons written (the invalid one is filtered out)
+    assert conn.execute("SELECT COUNT(*) FROM postmortems WHERE prediction_id=?", (pid,)).fetchone()[0] == 2
+    assert conn.execute("SELECT postmortem_status FROM prediction_log WHERE id=?", (pid,)).fetchone()[0] == "done"
+
+    agg = learn.aggregate_lessons(conn)
+    factors = {b["factor"] for b in agg["biases"]}
+    assert "home_advantage" in factors and "variance" not in factors   # variance never a bias
+    assert agg["overall"]["n"] >= 1 and agg["overall"]["accuracy"] is not None
+
+
+def test_postmortem_cli_down_marks_error(tmp_path, monkeypatch):
+    conn = _setup(tmp_path)
+    learn.snapshot_upcoming(conn)
+    pid = _force_wrong(conn)
+    monkeypatch.setattr(learn, "_analyze", lambda row, timeout=180: None)   # CLI unavailable
+    rep = learn.run_postmortems(conn, limit=5)
+    assert rep["errors"] == 1
+    assert conn.execute("SELECT postmortem_status FROM prediction_log WHERE id=?", (pid,)).fetchone()[0] == "error"

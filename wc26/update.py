@@ -53,7 +53,7 @@ def log_calibration(conn) -> dict:
     return metrics
 
 
-def run(conn=None, n_runs: int = 50_000, news_teams: int = 3) -> dict:
+def run(conn=None, n_runs: int = 50_000, news_teams: int = 3, postmortems: int = 2) -> dict:
     conn = conn or db.connect()
     db.init_db(conn)
     if conn.execute("SELECT COUNT(*) c FROM teams").fetchone()["c"] == 0:
@@ -78,18 +78,35 @@ def run(conn=None, n_runs: int = 50_000, news_teams: int = 3) -> dict:
         news_rep = news.run_news_scan(conn, limit=news_teams)
     except Exception as e:
         news_rep = {"error": str(e)}
+    try:                                          # LLM root-cause post-mortems on WRONG predictions
+        pm_rep = learn.run_postmortems(conn, limit=postmortems)
+    except Exception as e:
+        pm_rep = {"error": str(e)}
     calib = log_calibration(conn)                # score the prior forecast vs played results
     result = forecast.run_forecast(conn, n_runs=n_runs)
+    # regenerate the learning summary (leak-free accuracy + ranked biases) for the dashboard
+    try:
+        lessons = learn.aggregate_lessons(conn)
+        conn.execute(
+            "INSERT INTO predictions (run_id, scope, ref, payload_json, computed_at) VALUES (?,?,?,?,?)",
+            ("lessons-" + lessons["computed_at"], "lessons", "running",
+             json.dumps(lessons), lessons["computed_at"]),
+        )
+        conn.commit()
+    except Exception as e:
+        lessons = {"error": str(e)}
     vault = vaultgen.generate(conn, result)
     memory.log_task(
         "Automated refresh (update.py)",
         f"scraped results: {scraped}; elo: {elo_rep}; news: {news_rep}; "
         f"overrides synced: {overrides_report.get('events', 0)} events; "
-        f"prediction snapshots: {snap_rep}; graded: {grade_rep}; "
+        f"prediction snapshots: {snap_rep}; graded: {grade_rep}; post-mortems: {pm_rep}; "
+        f"lessons: {lessons.get('overall') if isinstance(lessons, dict) else lessons}; "
         f"running calibration: {calib}; vault: {vault}; run_id {result['run_id']}.",
     )
     return {"scraped": scraped, "elo": elo_rep, "news": news_rep,
             "overrides": overrides_report, "snapshots": snap_rep, "graded": grade_rep,
+            "postmortems": pm_rep, "lessons": lessons,
             "calibration": calib, "vault": vault, "run_id": result["run_id"]}
 
 
