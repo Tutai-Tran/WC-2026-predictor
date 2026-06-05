@@ -54,3 +54,14 @@ def test_all_48_teams_present(tmp_path):
     t = _build(tmp_path)
     probs = simulate.simulate(t, n_runs=100, seed=1)["probs"]
     assert len(probs) == 48
+
+
+def test_routing_table_completeness_guard(tmp_path):
+    """An incomplete third-place routing table must fail loud, not silently drop
+    the 8 third-placed R32 matches and emit wrong champion probabilities."""
+    import pytest
+    t = _build(tmp_path)
+    assert len(t.routing) == 495                      # the real table is complete
+    t.routing = {k: v for k, v in list(t.routing.items())[:-1]}   # drop one combo
+    with pytest.raises(ValueError, match="routing table missing"):
+        simulate.simulate(t, n_runs=10, seed=1)

@@ -10,6 +10,7 @@ Determinism: pass a fixed seed. The same seed + same inputs reproduce the run.
 
 from __future__ import annotations
 
+import itertools
 from dataclasses import dataclass, field
 
 import numpy as np
@@ -98,6 +99,17 @@ def simulate(tournament: Tournament, n_runs: int = 10_000, seed: int = config.DE
         raise ValueError(
             "simulate() needs 12 groups of >=3 teams with ratings; "
             "the database looks empty or un-ingested. Run: python -m wc26.ingest"
+        )
+    # The third-place routing table must cover EVERY combination of which 8 of the 12
+    # groups' third-placed teams advance. A missing combo would make resolve_slot()
+    # return None for that run's 8 third-placed R32 matches, silently dropping them and
+    # producing wrong champion probabilities. Fail loud at load instead of silently wrong.
+    _expected = {"".join(c) for c in itertools.combinations(config.GROUP_LETTERS, config.N_BEST_THIRDS)}
+    _missing = _expected - t.routing.keys()
+    if _missing:
+        raise ValueError(
+            f"third-place routing table missing {len(_missing)} of {len(_expected)} "
+            f"combination(s) (e.g. {sorted(_missing)[:3]}); regenerate third_place_routing.json."
         )
     rng = np.random.default_rng(seed)
     counts = {name: dict.fromkeys(_STAGES, 0) for name in t.teams}
