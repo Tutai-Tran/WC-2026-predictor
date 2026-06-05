@@ -19,6 +19,10 @@ pkill -f "wc26.update" 2>/dev/null || true
   while true; do
     "$PY" -m wc26.update >> logs/update.log 2>&1 || true
     "$PY" -m wc26.odds   >> logs/odds.log   2>&1 || true
+    # save + push the self-improving updates (vault, memory, ratings)
+    git -C "$PROJ" add -A >/dev/null 2>&1 || true
+    git -C "$PROJ" commit -q -m "chore: scheduled self-improving refresh [skip ci]" >/dev/null 2>&1 || true
+    git -C "$PROJ" push -q origin main >/dev/null 2>&1 || true
     sleep 10800
   done
 ) &

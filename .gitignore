@@ -7,6 +7,8 @@ __pycache__/
 *.db-shm
 .DS_Store
 data/cache/
+# runtime logs (pure runtime, regenerated)
+logs/
 # derived (rebuilt from data/raw by ingest); not the persistent source yet
 wc26.db
 # agent scratch artifacts

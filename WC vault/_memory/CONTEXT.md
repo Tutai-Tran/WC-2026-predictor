@@ -90,3 +90,7 @@ News agent scanned 5 teams and found real injuries (South Africa: Mbokazi suspen
 ## 2026-06-05 00:11 UTC — Auto-start + persistence finalized
 
 macOS TCC blocks launchd from reading the project under ~/Documents (Operation not permitted), so the login-time LaunchAgent needs a one-time Full Disk Access grant for /bin/bash. Removed the broken auto-loading plist to avoid boot errors; updated install_autostart.sh + SUMMARY with the FDA step. For now the dashboard + 3-hourly self-improving refresh loop run via 'nohup bash scripts/start.sh' (works without special permission; persists this session on http://localhost:8501). 65 tests pass.
+
+## 2026-06-05 00:14 UTC — Team explorer tab
+
+Added a Team explorer tab (selectbox) to drill into any country: champion/final/advance probs, Elo, group, FIFA rank, current scraped injuries, all its matches (group + friendly) with predictions, and most-likely scorers. Verified all 9 tabs render with 0 console errors. 65 tests pass.
