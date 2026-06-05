@@ -16,7 +16,7 @@ updated: 2026-06-05
 Win Cape Verde: 37.2% | Draw: 30.4% | Win Saudi Arabia: 32.4%
 Most likely scoreline: 1-0 (11.6%) (modal only; many outcomes possible)
 Top scorers: Ryan Mendes 27.3%; Garry Rodrigues 12.3%; Dailon Livramento 11.0%; Salem Al-Dawsari 30.5%; Saleh Al-Shehri 17.7%; Firas Al-Buraikan 15.2%;
-Data as of 2026-06-04 | runs 50000 | seed 20260611
+Data as of 2026-06-05 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

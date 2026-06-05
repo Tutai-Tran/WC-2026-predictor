@@ -14,7 +14,7 @@ updated: 2026-06-05
 
 Win Canada: 47.7% | Draw: 28.0% | Win Uzbekistan: 24.3%
 Most likely scoreline: 1-0
-Data as of 2026-06-04 | runs 50000 | seed 20260611
+Data as of 2026-06-05 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

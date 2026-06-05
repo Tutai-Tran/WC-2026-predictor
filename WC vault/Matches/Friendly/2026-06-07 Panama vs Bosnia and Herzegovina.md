@@ -14,7 +14,7 @@ updated: 2026-06-05
 
 Win Panama: 58.6% | Draw: 24.4% | Win Bosnia and Herzegovina: 17.0%
 Most likely scoreline: 1-0
-Data as of 2026-06-04 | runs 50000 | seed 20260611
+Data as of 2026-06-05 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

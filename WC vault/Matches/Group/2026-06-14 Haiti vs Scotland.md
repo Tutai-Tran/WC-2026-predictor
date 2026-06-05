@@ -16,7 +16,7 @@ updated: 2026-06-05
 Win Haiti: 23.6% | Draw: 28.3% | Win Scotland: 48.1%
 Most likely scoreline: 0-1 (12.7%) (modal only; many outcomes possible)
 Top scorers: Duckens Nazon 26.9%; Frantzdy Pierrot 21.7%; Louicius Deedson 7.7%; John McGinn 29.9%; Scott McTominay 17.2%; Ché Adams 15.0%;
-Data as of 2026-06-04 | runs 50000 | seed 20260611
+Data as of 2026-06-05 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

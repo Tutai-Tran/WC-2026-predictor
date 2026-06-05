@@ -16,7 +16,7 @@ updated: 2026-06-05
 Win United States: 36.8% | Draw: 30.5% | Win Paraguay: 32.7%
 Most likely scoreline: 1-0 (11.7%) (modal only; many outcomes possible)
 Top scorers: Christian Pulisic 31.0%; Ricardo Pepi 11.2%; Weston McKennie 9.8%; Miguel Almirón 14.4%; Antonio Sanabria 12.9%; Kaku 10.1%;
-Data as of 2026-06-04 | runs 50000 | seed 20260611
+Data as of 2026-06-05 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

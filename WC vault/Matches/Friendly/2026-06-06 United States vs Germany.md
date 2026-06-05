@@ -14,7 +14,7 @@ updated: 2026-06-05
 
 Win United States: 20.0% | Draw: 26.1% | Win Germany: 53.9%
 Most likely scoreline: 0-1
-Data as of 2026-06-04 | runs 50000 | seed 20260611
+Data as of 2026-06-05 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match
