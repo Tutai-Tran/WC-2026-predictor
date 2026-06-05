@@ -30,10 +30,15 @@ def match_lambdas(
     params: ModelParams = ModelParams(),
     home_adv_elo_a: float = 0.0,
     home_adv_elo_b: float = 0.0,
+    h2h_delta: float = 0.0,
 ) -> tuple[float, float]:
-    """Expected goals (lambda_a, lambda_b) from the effective Elo difference."""
+    """Expected goals (lambda_a, lambda_b) from the effective Elo difference.
+
+    `h2h_delta` (goal units, positive favours team A) is an optional head-to-head
+    adjustment added to the Elo-derived supremacy; see `wc26.h2h`.
+    """
     eff_diff = (elo_a + home_adv_elo_a) - (elo_b + home_adv_elo_b)
-    supremacy = eff_diff / params.c
+    supremacy = eff_diff / params.c + h2h_delta
     la = (params.base_goals + supremacy) / 2.0
     lb = (params.base_goals - supremacy) / 2.0
     return max(params.min_lambda, la), max(params.min_lambda, lb)
@@ -83,6 +88,47 @@ def top_scorelines(matrix: np.ndarray, n: int = 3) -> list[tuple[tuple[int, int]
     return out
 
 
+def outcome_label(p_home: float, p_draw: float, p_away: float) -> str:
+    """The modal outcome ('home' | 'draw' | 'away') for a set of outcome probs."""
+    return ("home", "draw", "away")[int(np.argmax([p_home, p_draw, p_away]))]
+
+
+def result_label(home_goals: int, away_goals: int) -> str:
+    """The actual outcome ('home' | 'draw' | 'away') of a finished match."""
+    if home_goals > away_goals:
+        return "home"
+    if away_goals > home_goals:
+        return "away"
+    return "draw"
+
+
+def forecast_hit(p_home: float, p_draw: float, p_away: float,
+                 home_goals: int, away_goals: int) -> bool:
+    """True if our modal W/D/L pick matched the actual result of a played match."""
+    return outcome_label(p_home, p_draw, p_away) == result_label(home_goals, away_goals)
+
+
+def most_likely_scoreline(
+    matrix: np.ndarray, outcome: str | None = None
+) -> tuple[tuple[int, int], float]:
+    """Most likely exact scoreline, optionally restricted to one outcome region.
+
+    Passing `outcome` ('home' | 'draw' | 'away') returns the most likely scoreline
+    *consistent with that result*, so the headline score never contradicts the
+    headline winner (e.g. a predicted home win shows 2-1, not a 1-1 draw)."""
+    if outcome == "home":
+        mask = np.tril(np.ones_like(matrix), -1)   # home goals > away goals
+    elif outcome == "away":
+        mask = np.triu(np.ones_like(matrix), 1)    # away goals > home goals
+    elif outcome == "draw":
+        mask = np.eye(matrix.shape[0])
+    else:
+        mask = np.ones_like(matrix)
+    idx = int(np.argmax(matrix * mask))
+    i, j = np.unravel_index(idx, matrix.shape)
+    return (int(i), int(j)), float(matrix[i, j])
+
+
 def match_forecast(
     elo_a: float,
     elo_b: float,
@@ -91,16 +137,20 @@ def match_forecast(
     home_adv_elo_b: float = 0.0,
     mult_a: float = 1.0,
     mult_b: float = 1.0,
+    h2h_delta: float = 0.0,
 ) -> dict:
     """Full single-match forecast: outcome probs, top scorelines, lambdas.
 
     mult_a/mult_b scale each team's attacking expected goals (e.g. an availability
-    adjustment when key players are out)."""
-    la, lb = match_lambdas(elo_a, elo_b, params, home_adv_elo_a, home_adv_elo_b)
+    adjustment when key players are out). `h2h_delta` adds a head-to-head supremacy
+    nudge (see `wc26.h2h`)."""
+    la, lb = match_lambdas(elo_a, elo_b, params, home_adv_elo_a, home_adv_elo_b, h2h_delta)
     la *= mult_a
     lb *= mult_b
     matrix = scoreline_matrix(la, lb, params.max_goals, params.rho)
     p_home, p_draw, p_away = outcome_probs(matrix)
+    modal = outcome_label(p_home, p_draw, p_away)
+    consistent, consistent_p = most_likely_scoreline(matrix, modal)
     return {
         "lambda_home": la,
         "lambda_away": lb,
@@ -108,5 +158,7 @@ def match_forecast(
         "p_draw": p_draw,
         "p_away": p_away,
         "top_scorelines": top_scorelines(matrix, 3),
+        "likely_scoreline": consistent,            # most likely score for the predicted result
+        "likely_scoreline_p": consistent_p,
         "matrix": matrix,
     }

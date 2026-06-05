@@ -10,6 +10,7 @@ import json
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 # `streamlit run wc26/app.py` puts wc26/ on sys.path, not the repo root, so the
 # package import fails. Add the repo root so `import wc26` resolves.
@@ -18,7 +19,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import pandas as pd
 import streamlit as st
 
-from wc26 import config, db
+from wc26 import config, db, model
 
 st.set_page_config(page_title="World Cup 2026 Forecast", page_icon="⚽", layout="wide")
 
@@ -46,6 +47,90 @@ def _date(s):
 
 def _pct(x):
     return f"{x*100:.0f}%"
+
+
+# All match scheduling is shown in Amsterdam local time. Group-stage and knockout
+# fixtures carry a UTC kickoff (e.g. "2026-06-11T19:00:00Z"); friendlies in the data
+# have a date only, so their kickoff time shows as "—".
+_AMS = ZoneInfo("Europe/Amsterdam")
+
+
+def _ams_parts(value) -> tuple[str, str]:
+    """Return (Amsterdam date, Amsterdam "HH:MM") for a stored kickoff.
+
+    Date-only values (no time in the data) yield the date and an empty time."""
+    if not value:
+        return "TBD", ""
+    s = str(value)
+    if "T" in s:
+        try:
+            local = datetime.fromisoformat(s.replace("Z", "+00:00")).astimezone(_AMS)
+            return local.date().isoformat(), local.strftime("%H:%M")
+        except ValueError:
+            pass
+    return s[:10], ""
+
+
+# Row highlights: blue = the match is today, green = already played, none = other
+# upcoming. A match is "played" once its status/result cell holds a score
+# (e.g. "2-1" / "played 2-1") rather than a placeholder ("scheduled" / "-" / "TBD").
+# "Today" takes precedence so the day's fixtures always stand out; the ✅ marker in
+# the status cell still flags played matches regardless of row colour.
+_PLAYED_BG = "background-color: rgba(38, 166, 91, 0.18)"   # green
+_TODAY_BG = "background-color: rgba(56, 132, 255, 0.20)"    # blue
+
+
+def _today_iso() -> str:
+    return datetime.now(_AMS).date().isoformat()
+
+
+def _is_played(value) -> bool:
+    return str(value).strip().lower() not in ("", "scheduled", "-", "tbd", "nan", "none")
+
+
+def _highlight_rows(frame: pd.DataFrame, date_col: str | None = None,
+                    status_col: str | None = None, today: str | None = None):
+    """Tint whole rows blue if the row's date is today, else green if played."""
+    today = today or _today_iso()
+
+    def _row(r):
+        if date_col is not None and str(r[date_col])[:10] == today:
+            css = _TODAY_BG
+        elif status_col is not None and _is_played(r[status_col]):
+            css = _PLAYED_BG
+        else:
+            css = ""
+        return [css] * len(r)
+
+    return frame.style.apply(_row, axis=1)
+
+
+_SIDE_LABEL = {"home": "Home win", "draw": "Draw", "away": "Away win"}
+
+
+def _called(p_home, p_draw, p_away, result):
+    """Did our top W/D/L pick match the actual result of a played match?
+
+    Returns (correct: bool, predicted_side, actual_side) or None when the match
+    has no result or no probabilities to judge against."""
+    if result is None or p_home is None:
+        return None
+    try:
+        hs, as_ = map(int, str(result).split("-"))
+    except (ValueError, AttributeError):
+        return None
+    pred = _SIDE_LABEL[model.outcome_label(p_home, p_draw, p_away)]
+    actual = _SIDE_LABEL[model.result_label(hs, as_)]
+    return pred == actual, pred, actual
+
+
+def _called_cell(p_home, p_draw, p_away, result):
+    """Compact 'did we get the result right' cell: '' when not yet played."""
+    c = _called(p_home, p_draw, p_away, result)
+    if c is None:
+        return ""
+    correct, pred, _actual = c
+    return "✅ correct" if correct else f"❌ said {pred.split()[0]}"
 
 
 data = load_latest()
@@ -85,38 +170,55 @@ with tabs[0]:
     st.subheader("Matches by day")
     rows = []
     for m in data.get("matches", []):
-        rows.append({"date": _date(m.get("date")), "type": f"Group {m['group']}",
+        d, t = _ams_parts(m.get("date"))
+        gres = m.get("result")
+        rows.append({"date": d, "time (AMS)": t or "—", "type": f"Group {m['group']}",
                      "match": f"{m['home']} vs {m['away']}",
                      "forecast": f"{_pct(m['p_home'])} / {_pct(m['p_draw'])} / {_pct(m['p_away'])}",
-                     "likely": m["top_scoreline"], "status": "scheduled"})
+                     "likely": m["top_scoreline"],
+                     "status": (f"✅ played {gres}" if gres else "scheduled"),
+                     "our call": _called_cell(m.get("p_home"), m.get("p_draw"), m.get("p_away"), gres)})
     for f in data.get("friendlies", []):
-        rows.append({"date": _date(f.get("date")), "type": "Friendly",
+        d, t = _ams_parts(f.get("date"))
+        rows.append({"date": d, "time (AMS)": t or "—", "type": "Friendly",
                      "match": f"{f['home']} vs {f['away']}",
                      "forecast": f"{_pct(f['p_home'])} / {_pct(f['p_draw'])} / {_pct(f['p_away'])}",
                      "likely": f["top_scoreline"],
-                     "status": (f"played {f['result']}" if f["played"] else "scheduled")})
+                     "status": (f"✅ played {f['result']}" if f["played"] else "scheduled"),
+                     "our call": _called_cell(f.get("p_home"), f.get("p_draw"), f.get("p_away"), f.get("result"))})
     for k in data.get("knockout", []):
         if not k.get("date"):
             continue
+        d, t = _ams_parts(k["date"])
         home = k.get("home_proj") or k["home_slot"]
         away = k.get("away_proj") or k["away_slot"]
-        rows.append({"date": _date(k["date"]), "type": k["stage"],
+        rows.append({"date": d, "time (AMS)": t or "—", "type": k["stage"],
                      "match": f"{home} vs {away}", "forecast": "(projected teams)",
-                     "likely": "-", "status": k.get("result") or "scheduled"})
-    df = pd.DataFrame(rows).sort_values(["date", "type"]).reset_index(drop=True)
+                     "likely": "-", "status": (f"✅ {k['result']}" if k.get("result") else "scheduled"),
+                     "our call": ""})
+    df = pd.DataFrame(rows).sort_values(["date", "time (AMS)", "type"]).reset_index(drop=True)
     dates = sorted(df["date"].unique())
-    today = datetime.now(timezone.utc).date().isoformat()
+    today = _today_iso()
     upcoming = [d for d in dates if d >= today]
     default = upcoming[0] if upcoming else (dates[-1] if dates else None)
     pick = st.select_slider("Pick a date", options=dates,
                             value=default) if dates else None
     if pick:
         day = df[df["date"] == pick]
-        st.markdown(f"### {pick} — {len(day)} match(es)")
-        st.caption("Forecast column is Win / Draw / Win (home/away).")
-        st.dataframe(day.drop(columns=["date"]), hide_index=True, use_container_width=True)
+        st.markdown(f"### {pick} — {len(day)} match(es)" + ("  ·  📍 today" if pick == today else ""))
+        st.caption("Forecast column is Win / Draw / Win (home/away). The 'our call' column shows "
+                   "✅ if our forecast got the result (win/draw/loss) right and ❌ (with what we "
+                   "said) if not. Kickoff times are Amsterdam local (CEST); matches without a "
+                   "scheduled time show —. 🔵 Today's matches are highlighted blue, ✅ played green.")
+        day_disp = day.drop(columns=["date"])
+        if pick == today:
+            styled = day_disp.style.apply(lambda r: [_TODAY_BG] * len(r), axis=1)
+        else:
+            styled = _highlight_rows(day_disp, status_col="status")
+        st.dataframe(styled, hide_index=True, use_container_width=True)
     with st.expander("See the full schedule (all days)"):
-        st.dataframe(df, hide_index=True, use_container_width=True, height=400)
+        st.dataframe(_highlight_rows(df, date_col="date", status_col="status", today=today),
+                     hide_index=True, use_container_width=True, height=400)
 
 # ======================== Champion & stages =========================
 with tabs[1]:
@@ -153,32 +255,63 @@ with tabs[2]:
         for m in data.get("matches", []):
             sc = ", ".join(f"{s['player']} {_pct(s['p_anytime'])}"
                            for s in (m["top_scorers_home"][:2] + m["top_scorers_away"][:2]))
-            mrows.append({"Date": _date(m.get("date")), "Grp": m["group"],
+            d, t = _ams_parts(m.get("date"))
+            gres = m.get("result")
+            mrows.append({"Date": d, "Kickoff (AMS)": t or "—", "Grp": m["group"],
                           "Home": m["home"], "Away": m["away"],
                           "H%": round(m["p_home"]*100), "D%": round(m["p_draw"]*100),
                           "A%": round(m["p_away"]*100), "Likely": m["top_scoreline"],
+                          "Our call": _called_cell(m.get("p_home"), m.get("p_draw"), m.get("p_away"), gres),
+                          "Status": (f"✅ played {gres}" if gres else "scheduled"),
                           "Top scorers": sc})
-        st.dataframe(pd.DataFrame(mrows).sort_values("Date"), hide_index=True,
-                     use_container_width=True, height=560)
+        st.caption("Kickoff times are Amsterdam local (CEST). 🔵 Today's matches are highlighted blue, "
+                   "✅ played green; 'Our call' shows ✅/❌ once a match has a result.")
+        st.dataframe(_highlight_rows(pd.DataFrame(mrows).sort_values(["Date", "Kickoff (AMS)"]),
+                                     date_col="Date", status_col="Status"),
+                     hide_index=True, use_container_width=True, height=560)
     elif kind == "Friendlies (warm-up)":
-        frows = [{"Date": _date(f.get("date")), "Home": f["home"], "Away": f["away"],
-                  "H%": round(f["p_home"]*100), "D%": round(f["p_draw"]*100),
-                  "A%": round(f["p_away"]*100), "Likely": f["top_scoreline"],
-                  "Status": (f"played {f['result']}" if f["played"] else "scheduled")}
-                 for f in data.get("friendlies", [])]
-        st.caption("Warm-up friendlies in the run-up to the World Cup. Played results also "
-                   "update the model's Elo ratings.")
-        st.dataframe(pd.DataFrame(frows).sort_values("Date"), hide_index=True,
-                     use_container_width=True, height=560)
+        frows = []
+        n_played = n_correct = 0
+        for f in data.get("friendlies", []):
+            d, t = _ams_parts(f.get("date"))
+            c = _called(f.get("p_home"), f.get("p_draw"), f.get("p_away"), f.get("result"))
+            if c is not None:
+                n_played += 1
+                n_correct += int(c[0])
+            frows.append({"Date": d, "Kickoff (AMS)": t or "—", "Home": f["home"], "Away": f["away"],
+                          "H%": round(f["p_home"]*100), "D%": round(f["p_draw"]*100),
+                          "A%": round(f["p_away"]*100), "Likely": f["top_scoreline"],
+                          "Our call": _called_cell(f.get("p_home"), f.get("p_draw"), f.get("p_away"), f.get("result")),
+                          "Status": (f"✅ played {f['result']}" if f["played"] else "scheduled")})
+        if n_played:
+            st.success(f"Our win/draw/loss call was correct in **{n_correct}/{n_played}** played "
+                       f"friendlies (**{n_correct/n_played*100:.0f}%**). Exact scorelines are far "
+                       "less predictable than the result, so the 'Our call' column judges the model "
+                       "on the outcome it picked, not the exact score.")
+            st.caption("Heads-up: these forecasts use the current Elo ratings, which already include "
+                       "these friendly results, so this figure is an optimistic upper bound rather "
+                       "than a clean out-of-sample score. The leak-free skill estimate (historical "
+                       "backtest) is on the 📈 Calibration tab.")
+        st.caption("Warm-up friendlies in the run-up to the World Cup. Kickoff times are Amsterdam "
+                   "local (CEST) where the data has them, else —. 🔵 Today's matches are highlighted "
+                   "blue; played results (✅, green) also update the model's Elo when the refresh runs.")
+        st.dataframe(_highlight_rows(pd.DataFrame(frows).sort_values("Date"),
+                                     date_col="Date", status_col="Status"),
+                     hide_index=True, use_container_width=True, height=560)
     else:
-        krows = [{"#": k["match_no"], "Stage": k["stage"], "Date": _date(k.get("date")),
-                  "Home slot": k["home_slot"], "Away slot": k["away_slot"],
-                  "Projected": f"{k.get('home_proj') or '?'} vs {k.get('away_proj') or '?'}",
-                  "Result": k.get("result") or "-"}
-                 for k in data.get("knockout", [])]
-        st.caption("Knockout fixtures by slot. Teams are TBD until the group stage finishes; "
-                   "the 'Projected' column shows the current most-likely qualifiers.")
-        st.dataframe(pd.DataFrame(krows), hide_index=True, use_container_width=True, height=560)
+        krows = []
+        for k in data.get("knockout", []):
+            d, t = _ams_parts(k.get("date"))
+            krows.append({"#": k["match_no"], "Stage": k["stage"], "Date": d,
+                          "Kickoff (AMS)": t or "—",
+                          "Home slot": k["home_slot"], "Away slot": k["away_slot"],
+                          "Projected": f"{k.get('home_proj') or '?'} vs {k.get('away_proj') or '?'}",
+                          "Result": (f"✅ {k['result']}" if k.get("result") else "-")})
+        st.caption("Knockout fixtures by slot. Kickoff times are Amsterdam local (CEST). Teams are "
+                   "TBD until the group stage finishes; the 'Projected' column shows the current "
+                   "most-likely qualifiers. 🔵 Today's matches are highlighted blue, ✅ played green.")
+        st.dataframe(_highlight_rows(pd.DataFrame(krows), date_col="Date", status_col="Result"),
+                     hide_index=True, use_container_width=True, height=560)
 
 # ============================== Bracket =============================
 with tabs[3]:
@@ -217,7 +350,9 @@ with tabs[3]:
         h = k.get("home_proj") or k["home_slot"]
         a = k.get("away_proj") or k["away_slot"]
         res = f"  →  {k['result']}" if k.get("result") else ""
-        return f"**{k['stage']}** (#{mno}, {_date(k.get('date'))}): {h}  vs  {a}{res}"
+        d, t = _ams_parts(k.get("date"))
+        when = f"{d} {t} AMS" if t else d
+        return f"**{k['stage']}** (#{mno}, {when}): {h}  vs  {a}{res}"
 
     c1, c2 = st.columns(2)
     with c1:
@@ -391,18 +526,21 @@ with tabs[8]:
     mrows = []
     for m in data.get("matches", []):
         if sel in (m["home"], m["away"]):
-            mrows.append({"Date": _date(m.get("date")), "Type": f"Group {m['group']}",
+            d, t = _ams_parts(m.get("date"))
+            mrows.append({"Date": d, "Kickoff (AMS)": t or "—", "Type": f"Group {m['group']}",
                           "Match": f"{m['home']} vs {m['away']}",
                           "Forecast": f"{_pct(m['p_home'])}/{_pct(m['p_draw'])}/{_pct(m['p_away'])}",
-                          "Likely": m["top_scoreline"]})
+                          "Likely": (m.get("result") or m["top_scoreline"])})
     for f in data.get("friendlies", []):
         if sel in (f["home"], f["away"]):
-            mrows.append({"Date": _date(f.get("date")), "Type": "Friendly",
+            d, t = _ams_parts(f.get("date"))
+            mrows.append({"Date": d, "Kickoff (AMS)": t or "—", "Type": "Friendly",
                           "Match": f"{f['home']} vs {f['away']}",
                           "Forecast": f"{_pct(f['p_home'])}/{_pct(f['p_draw'])}/{_pct(f['p_away'])}",
                           "Likely": (f["result"] if f["played"] else f["top_scoreline"])})
     if mrows:
-        st.dataframe(pd.DataFrame(mrows).sort_values("Date"), hide_index=True,
+        st.caption("Kickoff times are Amsterdam local (CEST); matches without a scheduled time show —.")
+        st.dataframe(pd.DataFrame(mrows).sort_values(["Date", "Kickoff (AMS)"]), hide_index=True,
                      use_container_width=True)
 
     st.subheader("Most likely scorers")

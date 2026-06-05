@@ -14,7 +14,7 @@ import subprocess
 from collections import defaultdict
 from datetime import datetime, timezone
 
-from . import config, db, model as model_mod, scorers as scorers_mod
+from . import config, db, h2h as h2h_mod, model as model_mod, scorers as scorers_mod
 from .simulate import Tournament, simulate
 
 HOSTS = config.HOSTS
@@ -41,15 +41,19 @@ def load_fitted_params() -> model_mod.ModelParams | None:
     )
 
 
-def load_tournament(conn, params: model_mod.ModelParams | None = None) -> Tournament:
+def load_tournament(conn, params: model_mod.ModelParams | None = None,
+                    h2h_index: dict | None = None) -> Tournament:
     if params is None:
         params = load_fitted_params()
+    if h2h_index is None:
+        h2h_index = h2h_mod.build_index()
     teams: dict[str, dict] = {}
     for r in conn.execute(
         "SELECT t.name n, t.group_letter g, t.fifa_rank fr, r.elo e "
         "FROM teams t JOIN ratings r ON r.team_id=t.id "
         "WHERE t.group_letter IS NOT NULL "
-        "AND r.valid_from = (SELECT MAX(r2.valid_from) FROM ratings r2 WHERE r2.team_id=t.id)"
+        "AND r.valid_from = (SELECT MAX(r2.valid_from) FROM ratings r2 WHERE r2.team_id=t.id) "
+        "ORDER BY t.name"   # deterministic team order -> deterministic h2h delta_map construction
     ):
         teams[r["n"]] = {"elo": r["e"], "group": r["g"], "fifa_rank": r["fr"]}
 
@@ -94,11 +98,13 @@ def load_tournament(conn, params: model_mod.ModelParams | None = None) -> Tourna
     ):
         played[(r["home"], r["away"])] = (int(r["hg"]), int(r["ag"]))
 
+    h2h_map = h2h_mod.delta_map(teams.keys(), h2h_index)
+
     return Tournament(
         teams=teams, groups=groups, group_fixtures=fixtures,
         r32=r32, routing=routing,
         params=params or model_mod.ModelParams(),
-        attack_mult=attack_mult, played=played,
+        attack_mult=attack_mult, played=played, h2h=h2h_map,
     )
 
 
@@ -114,15 +120,19 @@ def group_match_forecasts(t: Tournament) -> list[dict]:
         f = model_mod.match_forecast(
             t.teams[h]["elo"], t.teams[a]["elo"], t.params,
             _host_adv(h, vc, t.host_bump), _host_adv(a, vc, t.host_bump),
-            mult_a=t.mult(h), mult_b=t.mult(a),
+            mult_a=t.mult(h), mult_b=t.mult(a), h2h_delta=t.h2h_delta(h, a),
         )
-        (sh, sa), sp = f["top_scorelines"][0]
+        ph, pdw, pa = round(f["p_home"], 3), round(f["p_draw"], 3), round(f["p_away"], 3)
+        # pick the headline score from the matrix region of the modal outcome computed
+        # on the *rounded* probs, so it can never contradict the W/D/L shown next to it
+        (sh, sa), sp = model_mod.most_likely_scoreline(f["matrix"], model_mod.outcome_label(ph, pdw, pa))
+        res = t.played.get((h, a))
         out.append({
             "group": fx["group"], "home": h, "away": a, "date": fx.get("date"),
-            "p_home": round(f["p_home"], 3), "p_draw": round(f["p_draw"], 3),
-            "p_away": round(f["p_away"], 3),
+            "p_home": ph, "p_draw": pdw, "p_away": pa,
             "lambda_home": round(f["lambda_home"], 2), "lambda_away": round(f["lambda_away"], 2),
             "top_scoreline": f"{sh}-{sa}", "top_scoreline_p": round(sp, 3),
+            "result": (f"{res[0]}-{res[1]}" if res else None),
             "top_scorers_home": scorers_mod.top_scorers(t.teams[h].get("players", []), f["lambda_home"]),
             "top_scorers_away": scorers_mod.top_scorers(t.teams[a].get("players", []), f["lambda_away"]),
         })
@@ -137,7 +147,7 @@ def golden_boot(t: Tournament, top_n: int = 15) -> list[dict]:
         h, a, vc = fx["home"], fx["away"], fx.get("venue_country")
         la, lb = model_mod.match_lambdas(
             t.teams[h]["elo"], t.teams[a]["elo"], t.params,
-            _host_adv(h, vc, t.host_bump), _host_adv(a, vc, t.host_bump),
+            _host_adv(h, vc, t.host_bump), _host_adv(a, vc, t.host_bump), t.h2h_delta(h, a),
         )
         la *= t.mult(h)
         lb *= t.mult(a)
@@ -151,8 +161,14 @@ def golden_boot(t: Tournament, top_n: int = 15) -> list[dict]:
             for (team, name), g in ranked]
 
 
-def friendly_forecasts(conn, params: model_mod.ModelParams) -> list[dict]:
-    """Predict pre-tournament warm-up friendlies (any teams with a known Elo)."""
+def friendly_forecasts(conn, params: model_mod.ModelParams,
+                       h2h_index: dict | None = None) -> list[dict]:
+    """Predict pre-tournament warm-up friendlies (any teams with a known Elo).
+
+    Uses an H2H index built only from pre-2026 history so a played warm-up never
+    leaks its own result into its own forecast (keeps it an honest accuracy check)."""
+    if h2h_index is None:
+        h2h_index = h2h_mod.build_index(cutoff=h2h_mod.PRE_WARMUP_CUTOFF)
     out = []
     for r in conn.execute(
         "SELECT m.date_utc d, h.name home, a.name away, m.home_goals hg, m.away_goals ag, m.played p, "
@@ -163,12 +179,14 @@ def friendly_forecasts(conn, params: model_mod.ModelParams) -> list[dict]:
     ):
         if r["he"] is None or r["ae"] is None:
             continue
-        f = model_mod.match_forecast(r["he"], r["ae"], params)
-        (sh, sa), _ = f["top_scorelines"][0]
+        meetings = h2h_index.get(frozenset((r["home"], r["away"]))) or []
+        delta = h2h_mod.h2h_delta(meetings, r["home"], r["away"])
+        f = model_mod.match_forecast(r["he"], r["ae"], params, h2h_delta=delta)
+        ph, pdw, pa = round(f["p_home"], 3), round(f["p_draw"], 3), round(f["p_away"], 3)
+        (sh, sa), _ = model_mod.most_likely_scoreline(f["matrix"], model_mod.outcome_label(ph, pdw, pa))
         out.append({
             "date": r["d"], "home": r["home"], "away": r["away"],
-            "p_home": round(f["p_home"], 3), "p_draw": round(f["p_draw"], 3),
-            "p_away": round(f["p_away"], 3), "top_scoreline": f"{sh}-{sa}",
+            "p_home": ph, "p_draw": pdw, "p_away": pa, "top_scoreline": f"{sh}-{sa}",
             "played": bool(r["p"]),
             "result": (f'{r["hg"]}-{r["ag"]}' if r["p"] else None),
         })
@@ -211,11 +229,14 @@ def knockout_fixtures(conn, proj: dict[str, str]) -> list[dict]:
 
 def run_forecast(conn, n_runs: int = config.DEFAULT_SIM_RUNS,
                  seed: int = config.DEFAULT_RNG_SEED) -> dict:
-    t = load_tournament(conn)
+    h2h_index = h2h_mod.build_index()
+    t = load_tournament(conn, h2h_index=h2h_index)
     sim = simulate(t, n_runs=n_runs, seed=seed)
     matches = group_match_forecasts(t)
     boot = golden_boot(t)
-    friendlies = friendly_forecasts(conn, t.params)
+    # friendlies predict the 2026 warm-ups, so they get a leak-free (pre-2026) H2H index
+    friendly_h2h = h2h_mod.build_index(cutoff=h2h_mod.PRE_WARMUP_CUTOFF)
+    friendlies = friendly_forecasts(conn, t.params, friendly_h2h)
     proj = bracket_projection(conn, sim["probs"])
     knockout = knockout_fixtures(conn, proj)
 

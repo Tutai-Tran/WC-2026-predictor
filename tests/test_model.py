@@ -42,3 +42,47 @@ def test_top_scorelines_sorted():
 def test_lambda_floor():
     la, lb = model.match_lambdas(1000, 2200)  # huge gap
     assert lb >= model.ModelParams().min_lambda
+
+
+def test_h2h_delta_shifts_supremacy():
+    base_a, base_b = model.match_lambdas(1500, 1500)
+    up_a, up_b = model.match_lambdas(1500, 1500, h2h_delta=0.5)
+    assert up_a > base_a and up_b < base_b
+    assert abs((up_a - up_b) - (base_a - base_b) - 0.5) < 1e-9   # supremacy += delta
+    # symmetric negative delta favours the away side
+    dn_a, dn_b = model.match_lambdas(1500, 1500, h2h_delta=-0.5)
+    assert dn_a < dn_b
+
+
+def test_h2h_delta_zero_is_unchanged():
+    assert model.match_lambdas(1700, 1500) == model.match_lambdas(1700, 1500, h2h_delta=0.0)
+
+
+def test_likely_scoreline_consistent_with_outcome():
+    # strong favourite: predicted outcome is a home win, so the likely score must
+    # be a home win (home goals strictly greater), never a draw.
+    f = model.match_forecast(1950, 1500)
+    assert f["p_home"] == max(f["p_home"], f["p_draw"], f["p_away"])
+    sh, sa = f["likely_scoreline"]
+    assert sh > sa
+
+
+def test_forecast_hit_outcome_correctness():
+    # predicted home win (probs favour home), actual 2-0 home win -> hit
+    assert model.forecast_hit(0.6, 0.25, 0.15, 2, 0) is True
+    # predicted home win, actual 0-0 draw -> miss
+    assert model.forecast_hit(0.6, 0.25, 0.15, 0, 0) is False
+    # predicted away win, actual away win -> hit
+    assert model.forecast_hit(0.2, 0.3, 0.5, 1, 3) is True
+    assert model.result_label(1, 1) == "draw"
+    assert model.result_label(0, 2) == "away"
+
+
+def test_most_likely_scoreline_respects_region():
+    m = model.scoreline_matrix(1.2, 1.2)        # even match, modal exact score is a draw
+    (dh, da), _ = model.most_likely_scoreline(m, "draw")
+    assert dh == da
+    (hh, ha), _ = model.most_likely_scoreline(m, "home")
+    assert hh > ha
+    (ah, aa), _ = model.most_likely_scoreline(m, "away")
+    assert ah < aa
