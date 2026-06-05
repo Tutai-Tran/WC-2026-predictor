@@ -5,7 +5,7 @@ fifa_code: "TUN"
 group: "F"
 fifa_rank: 42
 elo: 1738
-champion_prob: 0.0001
+champion_prob: 0.0002
 status: active
 created: 2026-06-04
 updated: 2026-06-05
@@ -13,9 +13,9 @@ updated: 2026-06-05
 
 # Tunisia
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-05T00:59Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-05T04:07Z | source elo-goal-v1 -->
 Group F | FIFA rank 42 | Elo 1738
-Champion 0.0% | Final 0.1% | SF 0.4% | QF 1.8% | Advance 38.1%
+Champion 0.0% | Final 0.1% | SF 0.4% | QF 2.1% | Advance 38.0%
 Availability: no concerns recorded
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-05T00:59Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-05T04:07Z | source elo-goal-v1 -->
 - 2026-06-05: champion 0.0% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

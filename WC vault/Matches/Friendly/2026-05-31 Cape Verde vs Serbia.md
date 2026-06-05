@@ -12,7 +12,7 @@ updated: 2026-06-05
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-05-31 · played 3-0
 
-Win Cape Verde: 26.5% | Draw: 27.0% | Win Serbia: 46.5%
+Win Cape Verde: 27.5% | Draw: 27.1% | Win Serbia: 45.4%
 Most likely scoreline: 1-1
 Data as of 2026-06-04 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->

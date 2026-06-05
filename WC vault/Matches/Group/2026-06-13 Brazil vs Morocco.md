@@ -13,9 +13,9 @@ updated: 2026-06-05
 <!-- WC26:AUTO:forecast START -->
 **Group C match** · 2026-06-13
 
-Win Brazil: 42.0% | Draw: 27.5% | Win Morocco: 30.5%
-Most likely scoreline: 1-1 (13.1%) (modal only; many outcomes possible)
-Top scorers: Neymar 49.3%; Raphinha 17.9%; Lucas Paquetá 10.9%; Ayoub El Kaabi 31.8%; Achraf Hakimi 18.2%; Brahim Díaz 13.5%;
+Win Brazil: 35.3% | Draw: 31.1% | Win Morocco: 33.6%
+Most likely scoreline: 1-1 (14.3%) (modal only; many outcomes possible)
+Top scorers: Neymar 40.5%; Raphinha 15.8%; Lucas Paquetá 8.5%; Ayoub El Kaabi 29.0%; Achraf Hakimi 17.2%; Brahim Díaz 12.2%;
 Data as of 2026-06-04 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
