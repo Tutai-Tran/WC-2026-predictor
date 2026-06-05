@@ -8,13 +8,13 @@ updated: 2026-06-04
 
 # Group D
 
-<!-- WC26:AUTO:standings START | generated 2026-06-05T00:07Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:standings START | generated 2026-06-05T00:59Z | source elo-goal-v1 -->
 | Team | Win group | Top 2 | Advance |
 | --- | --- | --- | --- |
-| [[Countries/Turkey\|Turkey]] | 33.7% | 60.4% | 77.6% |
-| [[Countries/United States\|United States]] | 24.5% | 50.0% | 68.9% |
-| [[Countries/Paraguay\|Paraguay]] | 21.0% | 45.2% | 64.6% |
-| [[Countries/Australia\|Australia]] | 20.8% | 44.5% | 63.8% |
+| [[Countries/Turkey\|Turkey]] | 33.7% | 60.4% | 77.5% |
+| [[Countries/United States\|United States]] | 24.5% | 49.9% | 68.7% |
+| [[Countries/Paraguay\|Paraguay]] | 21.3% | 45.4% | 64.8% |
+| [[Countries/Australia\|Australia]] | 20.5% | 44.3% | 63.9% |
 <!-- WC26:AUTO:standings END -->
 
 ## Fixtures
