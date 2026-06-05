@@ -12,7 +12,7 @@ updated: 2026-06-05
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-06-07 · scheduled
 
-Win Venezuela: 20.9% | Draw: 25.7% | Win Turkey: 53.5%
+Win Venezuela: 19.7% | Draw: 25.9% | Win Turkey: 54.4%
 Most likely scoreline: 0-1
 Data as of 2026-06-04 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->

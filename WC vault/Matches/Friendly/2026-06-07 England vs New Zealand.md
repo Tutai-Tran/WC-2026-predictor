@@ -12,7 +12,7 @@ updated: 2026-06-05
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-06-07 · scheduled
 
-Win England: 78.4% | Draw: 16.4% | Win New Zealand: 5.2%
+Win England: 78.4% | Draw: 15.2% | Win New Zealand: 6.4%
 Most likely scoreline: 2-0
 Data as of 2026-06-04 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->

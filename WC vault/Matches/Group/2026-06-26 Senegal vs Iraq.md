@@ -13,9 +13,9 @@ updated: 2026-06-05
 <!-- WC26:AUTO:forecast START -->
 **Group I match** · 2026-06-26
 
-Win Senegal: 53.0% | Draw: 25.8% | Win Iraq: 21.2%
-Most likely scoreline: 1-0 (11.3%) (modal only; many outcomes possible)
-Top scorers: Sadio Mané 51.0%; Ismaïla Sarr 20.3%; Nicolas Jackson 10.1%; Aymen Hussein 26.9%; Mohanad Ali 22.8%; Ibrahim Bayesh 7.6%;
+Win Senegal: 53.9% | Draw: 26.1% | Win Iraq: 20.0%
+Most likely scoreline: 1-0 (12.3%) (modal only; many outcomes possible)
+Top scorers: Sadio Mané 50.4%; Ismaïla Sarr 20.0%; Nicolas Jackson 9.9%; Aymen Hussein 25.3%; Mohanad Ali 21.4%; Ibrahim Bayesh 7.1%;
 Data as of 2026-06-04 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

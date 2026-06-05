@@ -14,46 +14,46 @@ These are probabilities, not certainties.
 
 | Team | Win | Final | SF | QF | R16 |
 | --- | --- | --- | --- | --- | --- |
-| [[Countries/Spain\|Spain]] | 26.7% | 38.6% | 51.5% | 61.5% | 79.2% |
-| [[Countries/Argentina\|Argentina]] | 18.0% | 29.3% | 41.8% | 56.2% | 69.6% |
-| [[Countries/France\|France]] | 11.1% | 19.5% | 35.7% | 51.9% | 73.0% |
-| [[Countries/England\|England]] | 7.2% | 14.2% | 25.8% | 41.1% | 66.0% |
-| [[Countries/Colombia\|Colombia]] | 4.9% | 10.6% | 19.3% | 35.2% | 60.9% |
-| [[Countries/Portugal\|Portugal]] | 4.4% | 9.7% | 18.3% | 33.7% | 58.7% |
-| [[Countries/Ecuador\|Ecuador]] | 2.9% | 7.1% | 16.7% | 30.6% | 58.8% |
-| [[Countries/Japan\|Japan]] | 2.6% | 6.2% | 14.9% | 29.8% | 50.1% |
-| [[Countries/Netherlands\|Netherlands]] | 2.5% | 5.9% | 14.8% | 30.4% | 52.2% |
-| [[Countries/Mexico\|Mexico]] | 2.4% | 6.2% | 16.0% | 33.7% | 67.2% |
-| [[Countries/Brazil\|Brazil]] | 2.4% | 5.7% | 13.5% | 27.4% | 49.9% |
-| [[Countries/Norway\|Norway]] | 2.0% | 5.2% | 12.9% | 26.2% | 47.2% |
-| [[Countries/Germany\|Germany]] | 1.6% | 4.6% | 12.2% | 25.0% | 52.2% |
-| [[Countries/Morocco\|Morocco]] | 1.5% | 4.2% | 10.7% | 23.0% | 44.9% |
-| [[Countries/Uruguay\|Uruguay]] | 1.4% | 4.1% | 9.3% | 19.1% | 35.0% |
-| [[Countries/Belgium\|Belgium]] | 1.3% | 3.8% | 8.6% | 25.7% | 52.7% |
-| [[Countries/Switzerland\|Switzerland]] | 1.2% | 3.7% | 9.8% | 26.0% | 57.2% |
-| [[Countries/Croatia\|Croatia]] | 1.0% | 3.2% | 7.8% | 16.7% | 41.1% |
-| [[Countries/Canada\|Canada]] | 0.6% | 2.0% | 6.1% | 20.1% | 51.9% |
-| [[Countries/Turkey\|Turkey]] | 0.6% | 1.8% | 5.3% | 16.5% | 39.6% |
-| [[Countries/Paraguay\|Paraguay]] | 0.5% | 1.8% | 5.1% | 16.0% | 39.2% |
-| [[Countries/Iran\|Iran]] | 0.5% | 1.8% | 5.1% | 17.0% | 41.9% |
-| [[Countries/Senegal\|Senegal]] | 0.5% | 1.5% | 4.7% | 12.9% | 28.7% |
-| [[Countries/South Korea\|South Korea]] | 0.4% | 1.6% | 5.5% | 17.4% | 42.2% |
+| [[Countries/Spain\|Spain]] | 27.0% | 38.7% | 50.9% | 61.1% | 78.8% |
+| [[Countries/Argentina\|Argentina]] | 18.3% | 30.1% | 42.3% | 56.8% | 69.5% |
+| [[Countries/France\|France]] | 11.3% | 20.1% | 36.5% | 52.6% | 73.4% |
+| [[Countries/England\|England]] | 7.2% | 14.5% | 26.5% | 42.3% | 66.8% |
+| [[Countries/Colombia\|Colombia]] | 5.1% | 11.0% | 20.0% | 36.2% | 61.3% |
+| [[Countries/Portugal\|Portugal]] | 4.6% | 10.0% | 18.8% | 34.4% | 59.5% |
+| [[Countries/Ecuador\|Ecuador]] | 2.8% | 6.9% | 16.4% | 30.5% | 58.7% |
+| [[Countries/Japan\|Japan]] | 2.5% | 6.2% | 15.1% | 30.1% | 51.0% |
+| [[Countries/Netherlands\|Netherlands]] | 2.4% | 5.9% | 14.7% | 30.4% | 52.2% |
+| [[Countries/Brazil\|Brazil]] | 2.4% | 5.8% | 14.1% | 27.9% | 50.1% |
+| [[Countries/Mexico\|Mexico]] | 2.3% | 6.1% | 15.8% | 33.2% | 67.1% |
+| [[Countries/Norway\|Norway]] | 1.8% | 5.0% | 12.5% | 26.2% | 47.8% |
+| [[Countries/Germany\|Germany]] | 1.6% | 4.5% | 11.7% | 24.6% | 52.2% |
+| [[Countries/Morocco\|Morocco]] | 1.5% | 4.1% | 10.9% | 23.7% | 45.4% |
+| [[Countries/Belgium\|Belgium]] | 1.3% | 3.7% | 8.9% | 26.5% | 54.1% |
+| [[Countries/Uruguay\|Uruguay]] | 1.3% | 4.0% | 9.3% | 19.2% | 34.8% |
+| [[Countries/Switzerland\|Switzerland]] | 1.2% | 3.5% | 9.4% | 25.9% | 57.6% |
+| [[Countries/Croatia\|Croatia]] | 0.9% | 2.9% | 7.7% | 17.1% | 41.4% |
+| [[Countries/Turkey\|Turkey]] | 0.6% | 2.0% | 5.5% | 16.9% | 40.5% |
+| [[Countries/Canada\|Canada]] | 0.5% | 1.9% | 6.3% | 20.2% | 52.3% |
+| [[Countries/Iran\|Iran]] | 0.4% | 1.6% | 4.8% | 16.6% | 41.7% |
+| [[Countries/Paraguay\|Paraguay]] | 0.4% | 1.5% | 4.8% | 15.1% | 38.0% |
+| [[Countries/South Korea\|South Korea]] | 0.4% | 1.5% | 5.3% | 16.9% | 42.0% |
+| [[Countries/Senegal\|Senegal]] | 0.4% | 1.2% | 4.3% | 12.2% | 28.6% |
 
 ## Most likely scorers (expected group-stage goals)
 
-- Lionel Messi (Argentina): 3.06
-- Harry Kane (England): 2.88
-- Kylian Mbappé (France): 2.84
-- Cristiano Ronaldo (Portugal): 2.67
-- Enner Valencia (Ecuador): 2.55
-- Romelu Lukaku (Belgium): 2.0
-- Raúl Jiménez (Mexico): 1.95
-- Neymar (Brazil): 1.95
-- Erling Haaland (Norway): 1.82
-- Edin Džeko (Bosnia and Herzegovina): 1.77
-- Mohamed Salah (Egypt): 1.77
-- Memphis Depay (Netherlands): 1.69
-- Mehdi Taremi (Iran): 1.66
-- Son Heung-min (South Korea): 1.54
-- Jonathan David (Canada): 1.4
+- Lionel Messi (Argentina): 3.32
+- Harry Kane (England): 3.07
+- Kylian Mbappé (France): 2.97
+- Enner Valencia (Ecuador): 2.66
+- Cristiano Ronaldo (Portugal): 2.65
+- Raúl Jiménez (Mexico): 2.06
+- Neymar (Brazil): 1.99
+- Romelu Lukaku (Belgium): 1.96
+- Edin Džeko (Bosnia and Herzegovina): 1.81
+- Erling Haaland (Norway): 1.79
+- Memphis Depay (Netherlands): 1.68
+- Mohamed Salah (Egypt): 1.63
+- Mehdi Taremi (Iran): 1.57
+- Mikel Oyarzabal (Spain): 1.52
+- Son Heung-min (South Korea): 1.5
 <!-- WC26:AUTO:dashboard END -->

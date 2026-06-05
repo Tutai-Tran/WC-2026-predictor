@@ -13,9 +13,9 @@ updated: 2026-06-05
 <!-- WC26:AUTO:forecast START -->
 **Group B match** · 2026-06-12
 
-Win Canada: 67.2% | Draw: 22.5% | Win Bosnia and Herzegovina: 10.3%
-Most likely scoreline: 1-0 (16.1%) (modal only; many outcomes possible)
-Top scorers: Jonathan David 44.8%; Cyle Larin 32.5%; Alphonso Davies 17.2%; Edin Džeko 37.5%; Ermedin Demirović 2.8%; Haris Tabaković 2.8%;
+Win Canada: 68.0% | Draw: 21.2% | Win Bosnia and Herzegovina: 10.9%
+Most likely scoreline: 2-0 (14.0%) (modal only; many outcomes possible)
+Top scorers: Jonathan David 47.0%; Cyle Larin 34.6%; Alphonso Davies 18.4%; Edin Džeko 41.2%; Ermedin Demirović 3.3%; Haris Tabaković 3.3%;
 Data as of 2026-06-04 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

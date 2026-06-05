@@ -12,7 +12,7 @@ updated: 2026-06-05
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-06-06 · scheduled
 
-Win Haiti: 31.0% | Draw: 27.5% | Win Peru: 41.4%
+Win Haiti: 29.4% | Draw: 29.7% | Win Peru: 40.9%
 Most likely scoreline: 0-1
 Data as of 2026-06-04 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->

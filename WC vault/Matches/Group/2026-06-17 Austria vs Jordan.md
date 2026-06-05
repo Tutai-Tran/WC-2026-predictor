@@ -13,9 +13,9 @@ updated: 2026-06-05
 <!-- WC26:AUTO:forecast START -->
 **Group J match** · 2026-06-17
 
-Win Austria: 48.4% | Draw: 26.7% | Win Jordan: 25.0%
-Most likely scoreline: 1-0 (10.6%) (modal only; many outcomes possible)
-Top scorers: Marko Arnautović 37.2%; Marcel Sabitzer 29.2%; Michael Gregoritsch 21.8%; Ali Olwan 25.2%; Musa Al-Taamari 21.6%; Mahmoud Al-Mardi 9.6%;
+Win Austria: 48.8% | Draw: 27.7% | Win Jordan: 23.5%
+Most likely scoreline: 1-0 (12.2%) (modal only; many outcomes possible)
+Top scorers: Marko Arnautović 35.7%; Marcel Sabitzer 28.3%; Michael Gregoritsch 20.8%; Ali Olwan 23.0%; Musa Al-Taamari 19.6%; Mahmoud Al-Mardi 8.7%;
 Data as of 2026-06-04 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

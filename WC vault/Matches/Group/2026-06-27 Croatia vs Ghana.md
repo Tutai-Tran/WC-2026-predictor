@@ -13,9 +13,9 @@ updated: 2026-06-05
 <!-- WC26:AUTO:forecast START -->
 **Group L match** · 2026-06-27
 
-Win Croatia: 71.8% | Draw: 19.6% | Win Ghana: 8.6%
-Most likely scoreline: 2-0 (15.3%) (modal only; many outcomes possible)
-Top scorers: Ivan Perišić 38.2%; Andrej Kramarić 36.7%; Luka Modrić 35.5%; Jordan Ayew 20.9%; Thomas Partey 9.8%; Ernest Nuamah 3.7%;
+Win Croatia: 72.5% | Draw: 18.3% | Win Ghana: 9.2%
+Most likely scoreline: 2-0 (13.7%) (modal only; many outcomes possible)
+Top scorers: Ivan Perišić 40.7%; Andrej Kramarić 39.1%; Luka Modrić 37.4%; Jordan Ayew 24.1%; Thomas Partey 11.5%; Ernest Nuamah 4.3%;
 Data as of 2026-06-04 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

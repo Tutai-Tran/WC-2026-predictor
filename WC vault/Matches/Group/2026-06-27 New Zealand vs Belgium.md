@@ -13,9 +13,9 @@ updated: 2026-06-05
 <!-- WC26:AUTO:forecast START -->
 **Group G match** · 2026-06-27
 
-Win New Zealand: 13.2% | Draw: 22.6% | Win Belgium: 64.2%
-Most likely scoreline: 0-1 (13.1%) (modal only; many outcomes possible)
-Top scorers: Chris Wood 24.0%; Kosta Barbarouses 6.6%; Ben Waine 6.1%; Romelu Lukaku 53.4%; Kevin De Bruyne 32.7%; Youri Tielemans 10.8%;
+Win New Zealand: 13.0% | Draw: 21.7% | Win Belgium: 65.3%
+Most likely scoreline: 0-2 (12.6%) (modal only; many outcomes possible)
+Top scorers: Chris Wood 24.9%; Kosta Barbarouses 6.9%; Ben Waine 6.3%; Romelu Lukaku 55.1%; Kevin De Bruyne 33.7%; Youri Tielemans 11.3%;
 Data as of 2026-06-04 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
