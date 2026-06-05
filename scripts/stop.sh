@@ -1,6 +1,6 @@
 #!/bin/bash
 # Stops the WC2026 dashboard + refresh loop and disables auto-start.
-PROJ="/Users/tutaitran/Documents/own projects/WC-2026-predictor"
+PROJ="/Users/tutaitran/wc26"
 launchctl unload "$HOME/Library/LaunchAgents/com.tutai.wc26.plist" 2>/dev/null || true
 [ -f "$PROJ/logs/refresh.pid" ] && kill "$(cat "$PROJ/logs/refresh.pid")" 2>/dev/null || true
 pkill -f "streamlit run.*wc26/app.py" 2>/dev/null || true

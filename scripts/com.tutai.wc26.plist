@@ -7,15 +7,15 @@
     <key>ProgramArguments</key>
     <array>
         <string>/bin/bash</string>
-        <string>/Users/tutaitran/Documents/own projects/WC-2026-predictor/scripts/start.sh</string>
+        <string>/Users/tutaitran/wc26/scripts/start.sh</string>
     </array>
     <key>RunAtLoad</key>
     <true/>
     <key>KeepAlive</key>
     <true/>
     <key>StandardOutPath</key>
-    <string>/Users/tutaitran/Documents/own projects/WC-2026-predictor/logs/launchd.out.log</string>
+    <string>/Users/tutaitran/wc26/logs/launchd.out.log</string>
     <key>StandardErrorPath</key>
-    <string>/Users/tutaitran/Documents/own projects/WC-2026-predictor/logs/launchd.err.log</string>
+    <string>/Users/tutaitran/wc26/logs/launchd.err.log</string>
 </dict>
 </plist>

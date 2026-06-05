@@ -3,7 +3,7 @@
 > Self-contained handoff document. It holds the final plan (v4, after nine review passes plus a consolidation), every decision made, the research context behind those decisions, and the review history. A fresh session can pick this up cold and start building.
 
 - Status: planning complete, not yet built.
-- Project location: `/Users/tutaitran/Documents/own projects/WC-2026-predictor/`
+- Project location: `/Users/tutaitran/wc26/`
 - Knowledge base: a standalone Obsidian vault named `WC vault` inside this folder, separate from existing vaults.
 - Created from research + adversarial review on 2026-06-04.
 
@@ -98,7 +98,7 @@ Two kinds of facts, routed by origin so the model never parses prose for its num
 
 v1 scope: one-directional generation (DB to read-only per-country/group/match notes + `_forecast.md`) PLUS the HUMAN-override block parsed back to the DB (needed for manual result/injury entry). Full bidirectional sync and provenance change-logs are v2.
 
-Mechanics: persistence + transport = one dedicated private git repo at `/Users/tutaitran/Documents/own projects/WC-2026-predictor/` holding the SQLite DB, the scrape cache, and the `WC vault` markdown. The Obsidian MCP is never used from CI (no Obsidian there); it is reserved for interactive use on the Mac, whose `WC vault` is a clone of the repo (Obsidian Git plugin auto-pulls). Clobber-proofing: CI replaces only content between `<!-- WC26:AUTO:section START -->` / `END` markers, never a byte outside; missing markers means skip and log; automation never deletes notes (mark `status: eliminated`). Schema mirrors the user's `_project-template` conventions; frontmatter carries `champion_prob` etc. for Dataview; generated notes use `[[wikilinks]]` so an injury connects to every match it affects. Per the user's preference the `WC vault` is a STANDALONE vault, separate from the existing vaults; the pipeline does not write into `The vault/`. Optionally a single one-line pointer can be added to the main `_index.md` for discoverability, but that is opt-in and off by default.
+Mechanics: persistence + transport = one dedicated private git repo at `/Users/tutaitran/wc26/` holding the SQLite DB, the scrape cache, and the `WC vault` markdown. The Obsidian MCP is never used from CI (no Obsidian there); it is reserved for interactive use on the Mac, whose `WC vault` is a clone of the repo (Obsidian Git plugin auto-pulls). Clobber-proofing: CI replaces only content between `<!-- WC26:AUTO:section START -->` / `END` markers, never a byte outside; missing markers means skip and log; automation never deletes notes (mark `status: eliminated`). Schema mirrors the user's `_project-template` conventions; frontmatter carries `champion_prob` etc. for Dataview; generated notes use `[[wikilinks]]` so an injury connects to every match it affects. Per the user's preference the `WC vault` is a STANDALONE vault, separate from the existing vaults; the pipeline does not write into `The vault/`. Optionally a single one-line pointer can be added to the main `_index.md` for discoverability, but that is opt-in and off by default.
 
 Streamlit (read-only, compute-free, local/private) is where you CONSUME forecasts, calibration, and the improvement trajectory; the vault is where you RECORD facts and judgment that feed the system.
 

@@ -2,7 +2,7 @@
 # Starts the WC2026 dashboard (foreground) and a periodic scrape/refresh loop.
 # Invoked by the LaunchAgent on login (RunAtLoad + KeepAlive).
 set -u
-PROJ="/Users/tutaitran/Documents/own projects/WC-2026-predictor"
+PROJ="/Users/tutaitran/wc26"
 PY="$PROJ/.venv/bin/python"
 ST="$PROJ/.venv/bin/streamlit"
 cd "$PROJ" || exit 1

@@ -9,7 +9,7 @@
 # Without it the agent fails with "Operation not permitted". For the current
 # session you can instead just run:  nohup bash scripts/start.sh >logs/run.log 2>&1 &
 set -e
-PROJ="/Users/tutaitran/Documents/own projects/WC-2026-predictor"
+PROJ="/Users/tutaitran/wc26"
 DEST="$HOME/Library/LaunchAgents/com.tutai.wc26.plist"
 mkdir -p "$HOME/Library/LaunchAgents"
 cp "$PROJ/scripts/com.tutai.wc26.plist" "$DEST"

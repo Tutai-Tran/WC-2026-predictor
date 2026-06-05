@@ -5,7 +5,7 @@ A self-improving FIFA World Cup 2026 forecasting system: scrapes data, predicts 
 ## How to use
 
 ```bash
-cd "/Users/tutaitran/Documents/own projects/WC-2026-predictor"
+cd "/Users/tutaitran/wc26"
 .venv/bin/python -m wc26.forecast        # full forecast -> DB + vault + console
 .venv/bin/streamlit run wc26/app.py      # dashboard (http://localhost:8501)
 .venv/bin/python -m wc26.update          # one self-improving refresh (scrape+news+recompute+forecast+vault)
