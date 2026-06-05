@@ -148,3 +148,7 @@ Also fixed a **live-down `sqlite3.DatabaseError`**: cloud-side DB-sync bug (unva
 ## 2026-06-05 16:39 UTC — Automated refresh (update.py)
 
 scraped results: {'added': 4}; elo: {'recomputed': True, 'ledger_matches': 66, 'teams_updated': 76}; news: {'teams_scanned': ['Cape Verde', 'Saudi Arabia', 'Uruguay'], 'events': 4}; overrides synced: 0 events; prediction snapshots: {'snapshotted': 99}; graded: {'graded': 0, 'wrong': 0}; post-mortems: {'analyzed': 0, 'errors': 0}; lessons: {'n': 0, 'accuracy': None, 'brier': None, 'log_loss': None}; running calibration: {'n': 0}; vault: {'countries': 48, 'groups': 12, 'matches': {'group': 72, 'friendly': 62, 'knockout': 31}, 'bracket': 'written'}; run_id run-20260605T163939Z.
+
+## 2026-06-05 19:46 UTC — Automated refresh (update.py)
+
+scraped results: {'added': 7}; elo: {'recomputed': True, 'ledger_matches': 73, 'teams_updated': 76}; news: {'teams_scanned': ['France', 'Senegal', 'Iraq'], 'events': 2}; overrides synced: 0 events; prediction snapshots: {'snapshotted': 99}; graded: {'graded': 0, 'wrong': 0}; post-mortems: {'analyzed': 0, 'errors': 0}; lessons: {'n': 0, 'accuracy': None, 'brier': None, 'log_loss': None}; running calibration: {'n': 0}; vault: {'countries': 48, 'groups': 12, 'matches': {'group': 72, 'friendly': 62, 'knockout': 31}, 'bracket': 'written'}; run_id run-20260605T194614Z.

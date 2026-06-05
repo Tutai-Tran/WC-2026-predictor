@@ -13,9 +13,9 @@ updated: 2026-06-05
 
 # Japan
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-05T16:39Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-05T19:46Z | source elo-goal-v1 -->
 Group F | FIFA rank 19 | Elo 2014
-Champion 2.8% | Final 6.6% | SF 15.5% | QF 30.8% | Advance 92.0%
+Champion 2.8% | Final 6.6% | SF 15.3% | QF 30.4% | Advance 91.8%
 Availability: no concerns recorded
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-05T16:39Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-05T19:46Z | source elo-goal-v1 -->
 - 2026-06-05: champion 2.8% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
