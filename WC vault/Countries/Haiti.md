@@ -13,9 +13,9 @@ updated: 2026-06-05
 
 # Haiti
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-05T11:30Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-05T11:47Z | source elo-goal-v1 -->
 Group C | FIFA rank 84 | Elo 1729
-Champion 0.0% | Final 0.0% | SF 0.3% | QF 1.6% | Advance 33.4%
+Champion 0.0% | Final 0.1% | SF 0.4% | QF 1.8% | Advance 33.6%
 Availability concerns: Dominique Simon (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-05T11:30Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-05T11:47Z | source elo-goal-v1 -->
 - 2026-06-05: champion 0.0% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
