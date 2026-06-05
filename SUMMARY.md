@@ -9,9 +9,12 @@ cd "/Users/tutaitran/Documents/own projects/WC-2026-predictor"
 .venv/bin/python -m wc26.forecast        # full forecast -> DB + vault + console
 .venv/bin/streamlit run wc26/app.py      # dashboard (http://localhost:8501)
 .venv/bin/python -m wc26.update          # one self-improving refresh (scrape+news+recompute+forecast+vault)
-bash scripts/install_autostart.sh        # auto-start dashboard + 3-hourly refresh on every login
+nohup bash scripts/start.sh >logs/run.log 2>&1 &   # run dashboard + 3-hourly refresh loop now (this session)
+bash scripts/install_autostart.sh        # auto-start on every login (see caveat below)
 bash scripts/stop.sh                     # stop everything + disable auto-start
 ```
+
+**Auto-start caveat (macOS):** the project lives under `~/Documents`, which macOS protects from background launchd processes, so the login-time LaunchAgent needs a one-time **Full Disk Access** grant for `/bin/bash` (System Settings > Privacy & Security > Full Disk Access). Until then, `nohup bash scripts/start.sh &` keeps the dashboard + refresh loop running for the current session (no special permission needed).
 
 The Obsidian vault is the folder `WC vault/` — open it in Obsidian via "Open folder as vault".
 

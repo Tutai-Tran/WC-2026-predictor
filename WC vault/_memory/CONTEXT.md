@@ -86,3 +86,7 @@ Added a dashboard Availability tab showing scraped injuries/availability (news-L
 ## 2026-06-05 00:07 UTC — Session wrap-up: injuries scraped, vault refreshed, auto-start next
 
 News agent scanned 5 teams and found real injuries (South Africa: Mbokazi suspended + 3 doubtful; Canada: Davies + others doubtful), now reflected in the forecast (availability -> attacking-xG) and the country vault notes. Regenerated the 50k forecast + full vault. SUMMARY.md added. 65 tests pass. Next: activate auto-start so the dashboard + self-improving refresh loop persist across reboots.
+
+## 2026-06-05 00:11 UTC — Auto-start + persistence finalized
+
+macOS TCC blocks launchd from reading the project under ~/Documents (Operation not permitted), so the login-time LaunchAgent needs a one-time Full Disk Access grant for /bin/bash. Removed the broken auto-loading plist to avoid boot errors; updated install_autostart.sh + SUMMARY with the FDA step. For now the dashboard + 3-hourly self-improving refresh loop run via 'nohup bash scripts/start.sh' (works without special permission; persists this session on http://localhost:8501). 65 tests pass.
