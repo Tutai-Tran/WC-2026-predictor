@@ -22,6 +22,8 @@ class ModelParams:
     rho: float = -0.06        # Dixon-Coles low-score correction
     max_goals: int = 10
     min_lambda: float = 0.15
+    goal_scale: float = 1.0   # leak-free multiplier on total goals (fit in the backtest)
+    gamma: float = 0.0        # extra total goals per unit |supremacy| (mismatches score more)
 
 
 def match_lambdas(
@@ -39,8 +41,13 @@ def match_lambdas(
     """
     eff_diff = (elo_a + home_adv_elo_a) - (elo_b + home_adv_elo_b)
     supremacy = eff_diff / params.c + h2h_delta
-    la = (params.base_goals + supremacy) / 2.0
-    lb = (params.base_goals - supremacy) / 2.0
+    # Total goals (la + lb) = base. goal_scale is a flat leak-free volume correction;
+    # gamma * |supremacy| makes mismatches score more in total (the favourite runs up
+    # the score), giving per-match variation in totals. Supremacy (la - lb) is the
+    # only driver of the favourite, so the modal W/D/L pick is unchanged by either term.
+    base = params.base_goals * params.goal_scale + params.gamma * abs(supremacy)
+    la = (base + supremacy) / 2.0
+    lb = (base - supremacy) / 2.0
     return max(params.min_lambda, la), max(params.min_lambda, lb)
 
 

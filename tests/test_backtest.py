@@ -40,3 +40,4 @@ def test_fit_clamps_params_on_degenerate_data():
     assert 50.0 <= params.c <= 600.0       # never negative / out of bounds
     assert 1.5 <= params.base_goals <= 4.0
     assert 0.0 <= home <= 150.0
+    assert 0.0 <= params.gamma <= 1.0      # supremacy->goals term stays bounded

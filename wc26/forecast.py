@@ -38,6 +38,7 @@ def load_fitted_params() -> model_mod.ModelParams | None:
     return model_mod.ModelParams(
         c=d.get("c", 219.0), base_goals=d.get("base_goals", 2.6), rho=d.get("rho", -0.06),
         max_goals=d.get("max_goals", 10), min_lambda=d.get("min_lambda", 0.15),
+        goal_scale=d.get("goal_scale", 1.0), gamma=d.get("gamma", 0.0),
     )
 
 
@@ -187,6 +188,7 @@ def friendly_forecasts(conn, params: model_mod.ModelParams,
         out.append({
             "date": r["d"], "home": r["home"], "away": r["away"],
             "p_home": ph, "p_draw": pdw, "p_away": pa, "top_scoreline": f"{sh}-{sa}",
+            "lambda_home": round(f["lambda_home"], 2), "lambda_away": round(f["lambda_away"], 2),
             "played": bool(r["p"]),
             "result": (f'{r["hg"]}-{r["ag"]}' if r["p"] else None),
         })
@@ -230,7 +232,8 @@ def knockout_fixtures(conn, proj: dict[str, str]) -> list[dict]:
 def run_forecast(conn, n_runs: int = config.DEFAULT_SIM_RUNS,
                  seed: int = config.DEFAULT_RNG_SEED) -> dict:
     h2h_index = h2h_mod.build_index()
-    t = load_tournament(conn, h2h_index=h2h_index)
+    params = load_fitted_params() or model_mod.ModelParams()
+    t = load_tournament(conn, params=params, h2h_index=h2h_index)
     sim = simulate(t, n_runs=n_runs, seed=seed)
     matches = group_match_forecasts(t)
     boot = golden_boot(t)
@@ -248,6 +251,7 @@ def run_forecast(conn, n_runs: int = config.DEFAULT_SIM_RUNS,
         "probs": sim["probs"], "matches": matches, "golden_boot": boot,
         "friendlies": friendlies, "knockout": knockout, "bracket_slots": proj,
         "data_as_of": data_as_of, "n_runs": n_runs, "seed": seed,
+        "goal_calibration": {"goal_scale": params.goal_scale, "gamma": params.gamma},
     }
     conn.execute(
         "INSERT INTO predictions (run_id, scope, ref, payload_json, computed_at) "

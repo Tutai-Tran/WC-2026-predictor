@@ -18,10 +18,11 @@ from zoneinfo import ZoneInfo
 # package import fails. Add the repo root so `import wc26` resolves.
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
+import altair as alt
 import pandas as pd
 import streamlit as st
 
-from wc26 import config, db, model
+from wc26 import accuracy, config, db, model
 
 st.set_page_config(page_title="World Cup 2026 Forecast", page_icon="⚽", layout="wide")
 
@@ -203,6 +204,47 @@ champ_sorted = sorted(probs.items(), key=lambda kv: kv[1]["champion"], reverse=T
 cols = st.columns(4)
 for col, (name, p) in zip(cols, champ_sorted[:4]):
     col.metric(name, _pct(p["champion"]), help="Probability of winning the tournament")
+
+
+def _accuracy_donut(label: str, correct: int, total: int):
+    pct = correct / total * 100.0
+    dfp = pd.DataFrame({"k": ["correct", "wrong"], "v": [correct, total - correct]})
+    return (
+        alt.Chart(dfp)
+        .mark_arc(innerRadius=34)
+        .encode(
+            theta=alt.Theta("v:Q"),
+            color=alt.Color("k:N", scale=alt.Scale(domain=["correct", "wrong"],
+                                                    range=["#2ecc71", "#e9ecef"]), legend=None),
+            tooltip=[alt.Tooltip("k:N", title=""), alt.Tooltip("v:Q", title="matches")],
+        )
+        .properties(height=150, title=f"{label} — {pct:.0f}%")
+    )
+
+
+# ---- model accuracy scorecard (how often we are right, per metric) ----
+_played = accuracy.played_from_payload(data)
+if _played:
+    _rows = accuracy.metrics(_played)
+    _n = max((r["total"] for r in _rows), default=0)
+    st.subheader(f"How accurate has the model been? ({_n} played matches so far)")
+    st.caption(
+        "Share of played matches we called right, per prediction type. We call the **result** "
+        "(win/draw/loss) far better than the **exact score**, which is inherently low-probability in "
+        "football, so judge the model on outcomes, over/under, and both-teams-to-score. The model "
+        "parameters are fit leak-free on 14k+ historical internationals and the Elo ratings update "
+        "from every new result, so it keeps learning as matches are played."
+    )
+    _scards = [r for r in _rows if r["total"]]
+    for _row_cols in (_scards[:3], _scards[3:]):
+        if not _row_cols:
+            continue
+        _cols = st.columns(len(_row_cols))
+        for _c, _r in zip(_cols, _row_cols):
+            _c.altair_chart(_accuracy_donut(_r["label"], _r["correct"], _r["total"]),
+                            use_container_width=True)
+            _c.markdown(f"<div style='text-align:center;margin-top:-0.8em;color:#666'>"
+                        f"{_r['correct']}/{_r['total']} correct</div>", unsafe_allow_html=True)
 
 tabs = st.tabs(["📅 Daily", "🏆 Champion & stages", "⚽ Matches", "🔀 Bracket",
                 "👥 Groups", "🥅 Scorers", "📋 Availability", "📈 Calibration", "🔎 Team"])

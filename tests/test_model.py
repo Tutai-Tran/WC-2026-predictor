@@ -58,6 +58,30 @@ def test_h2h_delta_zero_is_unchanged():
     assert model.match_lambdas(1700, 1500) == model.match_lambdas(1700, 1500, h2h_delta=0.0)
 
 
+def test_goal_scale_lifts_total_not_supremacy():
+    p1 = model.ModelParams(goal_scale=1.0)
+    p2 = model.ModelParams(goal_scale=1.2)
+    a1, b1 = model.match_lambdas(1700, 1500, p1)
+    a2, b2 = model.match_lambdas(1700, 1500, p2)
+    assert (a2 + b2) > (a1 + b1)                       # more total goals
+    assert abs((a2 - b2) - (a1 - b1)) < 1e-9           # same supremacy (favourite unchanged)
+
+
+def test_gamma_makes_mismatches_higher_scoring():
+    p0 = model.ModelParams(gamma=0.0)
+    pg = model.ModelParams(gamma=0.4)
+    even0 = sum(model.match_lambdas(1500, 1500, p0))
+    even_g = sum(model.match_lambdas(1500, 1500, pg))
+    assert abs(even0 - even_g) < 1e-9                  # even match: no extra goals
+    mismatch0 = sum(model.match_lambdas(1900, 1500, p0))
+    mismatch_g = sum(model.match_lambdas(1900, 1500, pg))
+    assert mismatch_g > mismatch0                      # bigger gap -> more total goals with gamma
+    # and a bigger gap gets a bigger gamma bump than a smaller gap
+    small = sum(model.match_lambdas(1600, 1500, pg)) - sum(model.match_lambdas(1600, 1500, p0))
+    big = sum(model.match_lambdas(2000, 1500, pg)) - sum(model.match_lambdas(2000, 1500, p0))
+    assert big > small
+
+
 def test_likely_scoreline_consistent_with_outcome():
     # strong favourite: predicted outcome is a home win, so the likely score must
     # be a home win (home goals strictly greater), never a draw.

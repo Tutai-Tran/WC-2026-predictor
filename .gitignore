@@ -14,3 +14,4 @@ wc26.db
 # agent scratch artifacts
 data/raw/_*
 data/raw/*.tsv
+data/raw/goal_scale.json

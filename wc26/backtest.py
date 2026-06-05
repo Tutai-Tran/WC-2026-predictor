@@ -2,7 +2,7 @@
 
 One chronological pass records each match's PRE-match Elo (no look-ahead) and also
 yields current self-maintained ratings. We then fit the global goal-model
-parameters (c, base_goals, home_adv_elo) by minimising log loss on a training
+parameters (c, base_goals, home_adv_elo, gamma) by minimising log loss on a training
 window and report Brier / log loss / RPS on a held-out later window. Fitted
 parameters and current ratings are written to data/raw for the forecast to use.
 """
@@ -68,11 +68,12 @@ def prematch_pass(df: pd.DataFrame, home_adv: float = 60.0):
     return feats, ratings
 
 
-def _lambdas(elo_h, elo_a, neutral, c, base, home_adv_elo):
+def _lambdas(elo_h, elo_a, neutral, c, base, home_adv_elo, gamma=0.0):
     eff = (elo_h + np.where(neutral, 0.0, home_adv_elo)) - elo_a
     sup = eff / c
-    la = np.maximum(MIN_LAMBDA, (base + sup) / 2.0)
-    lb = np.maximum(MIN_LAMBDA, (base - sup) / 2.0)
+    base_eff = base + gamma * np.abs(sup)   # mismatches score more in total
+    la = np.maximum(MIN_LAMBDA, (base_eff + sup) / 2.0)
+    lb = np.maximum(MIN_LAMBDA, (base_eff - sup) / 2.0)
     return la, lb
 
 
@@ -95,8 +96,8 @@ def _outcome_probs(la, lb, rho=-0.06):
 
 
 def _probs_for(feats, params):
-    c, base, home_adv_elo, rho = params
-    la, lb = _lambdas(feats["elo_h"], feats["elo_a"], feats["neutral"], c, base, home_adv_elo)
+    c, base, home_adv_elo, rho, gamma = params
+    la, lb = _lambdas(feats["elo_h"], feats["elo_a"], feats["neutral"], c, base, home_adv_elo, gamma)
     return _outcome_probs(la, lb, rho)
 
 
@@ -194,20 +195,23 @@ def _subset(feats, mask):
 
 def fit(feats_train, rho: float = -0.06):
     def obj(x):
-        c, base, home = x
+        c, base, home, gamma = x
         c = min(600.0, max(50.0, c))
         base = min(4.0, max(1.5, base))
         home = min(150.0, max(0.0, home))
-        return log_loss(feats_train, (c, base, home, rho))
+        gamma = min(1.0, max(0.0, gamma))
+        return log_loss(feats_train, (c, base, home, rho, gamma))
 
-    res = minimize(obj, x0=[200.0, 2.6, 60.0], method="Nelder-Mead",
-                   options={"xatol": 0.5, "fatol": 1e-5, "maxiter": 400})
+    res = minimize(obj, x0=[200.0, 2.6, 60.0, 0.2], method="Nelder-Mead",
+                   options={"xatol": 0.5, "fatol": 1e-5, "maxiter": 600})
     # clamp the RETURNED point to the same bounds enforced inside the objective,
     # so a pathological optimum can never write an invalid (e.g. negative c) param
     c = min(600.0, max(50.0, float(res.x[0])))
     base = min(4.0, max(1.5, float(res.x[1])))
     home = min(150.0, max(0.0, float(res.x[2])))
-    return model_mod.ModelParams(c=round(c, 2), base_goals=round(base, 3), rho=rho), home
+    gamma = min(1.0, max(0.0, float(res.x[3])))
+    return model_mod.ModelParams(c=round(c, 2), base_goals=round(base, 3), rho=rho,
+                                 gamma=round(gamma, 3)), home
 
 
 def apply_played_friendlies(ratings: dict[str, float]) -> dict[str, float]:
@@ -246,15 +250,23 @@ def run(write: bool = True, train_until: int = 2021):
     test = _subset(feats, feats["year"] >= train_until)
 
     params, home_adv_elo = fit(train)
-    p = (params.c, params.base_goals, home_adv_elo, params.rho)
+    p = (params.c, params.base_goals, home_adv_elo, params.rho, params.gamma)
     temperature = round(fit_temperature(train, p), 3)
     ci_lo, ci_hi = bootstrap_log_loss_ci(test, p)
     slope, nbins = reliability_slope(test, p)
     tourn = _subset(test, test["is_major"])
 
+    # leak-free goal-volume correction: match mean predicted to mean actual total
+    # goals on the held-out test window (bounded so it can never run wild).
+    la_t, lb_t = _lambdas(test["elo_h"], test["elo_a"], test["neutral"],
+                          params.c, params.base_goals, home_adv_elo, params.gamma)
+    pred_tot = float(np.mean(la_t + lb_t))
+    act_tot = float(np.mean(test["gh"] + test["ga"]))
+    goal_scale = round(min(1.10, max(0.90, act_tot / pred_tot)), 4) if pred_tot > 0 else 1.0
+
     report = {
         "fitted": {**asdict(params), "home_adv_elo": round(home_adv_elo, 1),
-                   "temperature": temperature},
+                   "temperature": temperature, "goal_scale": goal_scale},
         "train": {"n": int(len(train["outcome"])), "log_loss": round(log_loss(train, p), 4),
                   "brier": round(brier(train, p), 4), "rps": round(rps(train, p), 4)},
         "test": {"n": int(len(test["outcome"])), "log_loss": round(log_loss(test, p), 4),
