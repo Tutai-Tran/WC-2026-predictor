@@ -193,7 +193,11 @@ except Exception:
     pass
 banner = (f"Data as of **{as_of}**  ·  {data['n_runs']:,} simulations  ·  "
           f"updated {str(data['_computed_at'])[:16].replace('T', ' ')}")
-(st.error if stale else st.success)(("⚠️ STALE — " if stale else "✅ ") + banner)
+# quiet status when fresh (the 99% case), a loud alert only when actually stale
+if stale:
+    st.error("⚠️ Data may be stale — " + banner)
+else:
+    st.caption("🟢 " + banner)
 st.caption("These are probabilities, not certainties. A single most-likely scoreline is usually "
            "only ~10% likely, and even the top scorer pick misses about half the time.")
 
@@ -215,6 +219,10 @@ with st.container(border=True):
 _RATE_METRICS = {"outcome", "favourite", "ou25", "btts"}
 _NEUTRAL = "#4a78c4"
 _DONUT_BG = "#E7E9E4"
+# darker text variants so the centred % meets WCAG contrast on the light hole
+# (the lighter arc-fill colour can stay vivid).
+_TEXT_COLOR = {"#00875A": "#00875A", "#E8A33D": "#B26A00", "#D1495B": "#D1495B",
+               _NEUTRAL: "#33558f"}
 
 
 def _donut_color(key: str, pct: float) -> str:
@@ -229,6 +237,8 @@ def _donut_color(key: str, pct: float) -> str:
 
 def _accuracy_donut(key: str, correct: int, total: int):
     """A thin ring with a big centred % — the focal number the eye wants."""
+    if not total:
+        return alt.Chart(pd.DataFrame({"v": [1]})).mark_arc().encode(theta="v:Q")
     pct = correct / total * 100.0
     color = _donut_color(key, pct)
     ring = pd.DataFrame({"k": ["correct", "wrong"], "v": [correct, total - correct],
@@ -242,7 +252,7 @@ def _accuracy_donut(key: str, correct: int, total: int):
         )
     )
     center = (alt.Chart(pd.DataFrame({"t": [f"{pct:.0f}%"]}))
-              .mark_text(fontSize=26, fontWeight="bold", color=color)
+              .mark_text(fontSize=26, fontWeight="bold", color=_TEXT_COLOR.get(color, color))
               .encode(text="t:N"))
     return alt.layer(arc, center).properties(height=140).configure_view(strokeWidth=0)
 
@@ -269,10 +279,12 @@ if _played:
                         f"justify-content:center'>{_r['label']}</div>", unsafe_allow_html=True)
             _c.altair_chart(_accuracy_donut(_r["key"], _r["correct"], _r["total"]),
                             use_container_width=True)
-            _c.markdown(f"<div style='text-align:center;color:#6B7280;font-size:0.82rem;"
+            _c.markdown(f"<div style='text-align:center;color:#4B5563;font-size:0.82rem;"
                         f"margin-top:-0.6em'>{_r['correct']} / {_r['total']} correct</div>",
                         unsafe_allow_html=True)
         st.write("")   # breathing room so the rings don't touch the card border
+else:
+    st.caption("🎯 Accuracy scoring will appear here once matches have been played.")
 
 st.divider()
 
@@ -286,6 +298,19 @@ _MATCH_COLCFG = {
     "A%": st.column_config.NumberColumn("Away win", format="%d%%"),
     "Likely": st.column_config.TextColumn("Likely score"),
     "Top scorers": st.column_config.TextColumn("Top scorers", width="large"),
+}
+
+_DAILY_COLCFG = {
+    "date": st.column_config.TextColumn("Date"),
+    "time (AMS)": st.column_config.TextColumn("Kickoff"),
+    "type": st.column_config.TextColumn("Stage"),
+    "match": st.column_config.TextColumn("Match", width="medium"),
+    "forecast": st.column_config.TextColumn("Win / Draw / Away %",
+                                            help="Model probabilities: home win / draw / away win"),
+    "likely": st.column_config.TextColumn("Likely score"),
+    "status": st.column_config.TextColumn("Status"),
+    "our call": st.column_config.TextColumn("Our call",
+                                            help="✅ if our win/draw/loss pick matched the result"),
 }
 
 tabs = st.tabs(["📅 Daily", "🏆 Champion & stages", "⚽ Matches", "🔀 Bracket",
@@ -341,10 +366,13 @@ with tabs[0]:
             styled = day_disp.style.apply(lambda r: [_TODAY_BG] * len(r), axis=1)
         else:
             styled = _highlight_rows(day_disp, status_col="status")
-        st.dataframe(styled, hide_index=True, use_container_width=True)
+        st.caption("↔ On a phone, swipe the table sideways to see every column.")
+        st.dataframe(styled, hide_index=True, use_container_width=True,
+                     column_config=_DAILY_COLCFG)
     with st.expander("See the full schedule (all days)"):
         st.dataframe(_highlight_rows(df, date_col="date", status_col="status", today=today),
-                     hide_index=True, use_container_width=True, height=400)
+                     hide_index=True, use_container_width=True, height=400,
+                     column_config=_DAILY_COLCFG)
 
 # ======================== Champion & stages =========================
 with tabs[1]:
@@ -368,9 +396,25 @@ with tabs[1]:
         rows.append(row)
     df = pd.DataFrame(rows).sort_values("Win %", ascending=False).reset_index(drop=True)
     if blend:
-        st.caption("'Win % (model+market)' blends the model with devigged market odds "
-                   "(usually better calibrated). Plain 'Win %' is the pure model.")
-    st.dataframe(df, use_container_width=True, height=600)
+        st.caption("'Model + market' blends the model with devigged market odds "
+                   "(usually better calibrated). Plain 'Champion' is the pure model.")
+    _champ_cfg = {
+        "Win %": st.column_config.ProgressColumn(
+            "Champion", format="%.1f%%", min_value=0.0,
+            max_value=float(df["Win %"].max()) if len(df) else 1.0,
+            help="Probability of winning the tournament"),
+        "± (95%)": st.column_config.NumberColumn("± 95% CI", format="%.1f",
+            help="Monte-Carlo 95% confidence interval on the champion %"),
+        "Win % (model+market)": st.column_config.NumberColumn("Model + market", format="%.1f%%"),
+        "Final %": st.column_config.NumberColumn("Reach final", format="%.1f%%"),
+        "SF %": st.column_config.NumberColumn("Semi-final", format="%.1f%%"),
+        "QF %": st.column_config.NumberColumn("Quarter-final", format="%.1f%%"),
+        "R16 %": st.column_config.NumberColumn("Round of 16", format="%.1f%%"),
+        "Advance %": st.column_config.NumberColumn("Advance (R32)", format="%.1f%%",
+            help="Probability of getting out of the group"),
+    }
+    st.dataframe(df, use_container_width=True, height=600, hide_index=True,
+                 column_config=_champ_cfg)
 
 # ============================== Matches =============================
 with tabs[2]:
@@ -564,9 +608,13 @@ with tabs[7]:
             {"forecast": "climatology baseline", "log loss": b["climatology_log_loss"]},
             {"forecast": "uniform baseline", "log loss": b["uniform_log_loss"]},
         ]), hide_index=True, use_container_width=True)
-        c1, c2 = st.columns(2)
-        c1.metric("Reliability slope (1.0 = perfect)", r["reliability"]["home_win_slope"])
-        c2.metric("Model log loss (95% CI)", f"{r['test']['log_loss']} {r['test']['log_loss_ci95']}")
+        c1, c2, c3, c4 = st.columns(4)
+        c1.metric("Log loss", r["test"]["log_loss"],
+                  help=f"95% CI {r['test']['log_loss_ci95']} · lower is better")
+        c2.metric("Brier score", r["test"]["brier"], help="Lower is better")
+        c3.metric("RPS", r["test"]["rps"],
+                  help="Ranked Probability Score: the standard ordinal football metric (lower is better)")
+        c4.metric("Reliability slope", r["reliability"]["home_win_slope"], help="1.0 = perfectly calibrated")
         st.caption(f"Tournament-only matches: model {r['tournament_only']['log_loss']} vs "
                    f"climatology {r['tournament_only']['climatology_log_loss']}.")
     else:

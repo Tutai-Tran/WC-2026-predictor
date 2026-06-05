@@ -245,7 +245,14 @@ def run_forecast(conn, n_runs: int = config.DEFAULT_SIM_RUNS,
 
     run_id = datetime.now(timezone.utc).strftime("run-%Y%m%dT%H%M%SZ")
     ts = datetime.now(timezone.utc).isoformat()
-    data_as_of = json.loads((config.DATA_RAW / "elo_seed.json").read_text()).get("updated")
+    # live ratings come from replayed_elo.json (base + results-ledger replay, dated
+    # by the last scrape); fall back to the static seed only if it is missing
+    data_as_of = next(
+        (json.loads((config.DATA_RAW / f).read_text()).get("updated")
+         for f in ("replayed_elo.json", "elo_seed.json")
+         if (config.DATA_RAW / f).exists()),
+        None,
+    )
 
     payload = {
         "probs": sim["probs"], "matches": matches, "golden_boot": boot,

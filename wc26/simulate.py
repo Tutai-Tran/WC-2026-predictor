@@ -57,7 +57,9 @@ def decide_knockout(a, ea, aa, b, eb, ab, params, rng, mult_a=1.0, mult_b=1.0,
     gb += rng.poisson(lb * config.EXTRA_TIME_SCALE)
     if ga != gb:
         return a if ga > gb else b
-    p_a = 0.5 + config.SHOOTOUT_FAVOURITE_TILT * (2 * elo_mod.expected(ea + aa, eb + ab) - 1)
+    # a shootout is a near coin-flip on skill alone; home/venue advantage does not
+    # carry into penalties, so tilt on raw Elo (no host bump).
+    p_a = 0.5 + config.SHOOTOUT_FAVOURITE_TILT * (2 * elo_mod.expected(ea, eb) - 1)
     p_a = min(0.65, max(0.35, p_a))
     return a if rng.random() < p_a else b
 

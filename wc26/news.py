@@ -106,25 +106,33 @@ def run_news_scan(conn, limit: int = 4) -> dict:
         squad = [r["name"] for r in conn.execute(
             "SELECT name FROM players WHERE team_id=?", (t["id"],))]
         events = parse_team_news(t["name"], squad[:26])
-        conn.execute("DELETE FROM availability_events WHERE team_id=? AND source LIKE 'news-llm%'",
-                     (t["id"],))
-        for e in events:
-            mf = 0.0 if e["status"] in ("out", "suspended") else 0.5
+        # one transaction per team: if any write fails, roll back so we never
+        # leave a team with its old events deleted and no new ones + no scan
+        # marker (which would make the rotation re-scan it forever).
+        n = 0
+        try:
+            conn.execute("DELETE FROM availability_events WHERE team_id=? AND source LIKE 'news-llm%'",
+                         (t["id"],))
+            for e in events:
+                mf = 0.0 if e["status"] in ("out", "suspended") else 0.5
+                conn.execute(
+                    "INSERT INTO availability_events (team_id, player_name, status, minutes_factor, "
+                    "source, source_quote, url, confidence, fetched_at, reviewed) "
+                    "VALUES (?,?,?,?,?,?,?,?,?,0)",
+                    (t["id"], e["player"], e["status"], mf, "news-llm", e["quote"], e["url"], 0.8, now),
+                )
+                n += 1
+            # scan marker so rotation advances even when no concerns are found
             conn.execute(
                 "INSERT INTO availability_events (team_id, player_name, status, minutes_factor, "
-                "source, source_quote, url, confidence, fetched_at, reviewed) "
-                "VALUES (?,?,?,?,?,?,?,?,?,0)",
-                (t["id"], e["player"], e["status"], mf, "news-llm", e["quote"], e["url"], 0.8, now),
+                "source, source_quote, fetched_at, reviewed) VALUES (?,?,?,?,?,?,?,1)",
+                (t["id"], "(scan-marker)", "fit", 1.0, "news-llm-marker", "scan", now),
             )
-            total += 1
-        # scan marker so rotation advances even when no concerns are found
-        conn.execute(
-            "INSERT INTO availability_events (team_id, player_name, status, minutes_factor, "
-            "source, source_quote, fetched_at, reviewed) VALUES (?,?,?,?,?,?,?,1)",
-            (t["id"], "(scan-marker)", "fit", 1.0, "news-llm-marker", "scan", now),
-        )
-        scanned.append(t["name"])
-        conn.commit()
+            conn.commit()
+            total += n                     # only count events that were actually committed
+            scanned.append(t["name"])
+        except Exception:
+            conn.rollback()
     return {"teams_scanned": scanned, "events": total}
 
 
