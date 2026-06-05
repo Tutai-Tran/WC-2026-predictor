@@ -14,7 +14,7 @@ from pathlib import Path
 
 from . import config
 
-SCHEMA_VERSION = 2
+SCHEMA_VERSION = 3
 
 _SCHEMA = """
 CREATE TABLE IF NOT EXISTS schema_version (version INTEGER NOT NULL);
@@ -143,6 +143,59 @@ CREATE TABLE IF NOT EXISTS public_benchmark (
     fetched_at  TEXT
 );
 
+-- Self-learning loop -----------------------------------------------------
+-- One PRE-MATCH prediction snapshot per match, frozen BEFORE its result is
+-- folded into Elo, then graded in place once the match is played. This is the
+-- leak-free basis for "why was this prediction wrong" analysis.
+CREATE TABLE IF NOT EXISTS prediction_log (
+    id            INTEGER PRIMARY KEY,
+    match_id      INTEGER REFERENCES matches(id),
+    stage         TEXT,
+    home_team     TEXT NOT NULL,
+    away_team     TEXT NOT NULL,
+    date_utc      TEXT,
+    p_home        REAL NOT NULL,
+    p_draw        REAL NOT NULL,
+    p_away        REAL NOT NULL,
+    lambda_home   REAL,
+    lambda_away   REAL,
+    top_scoreline TEXT,
+    pick          TEXT NOT NULL,          -- modal outcome at snapshot: home|draw|away
+    inputs_json   TEXT,                   -- frozen inputs (elo gap, h2h, availability) for the post-mortem
+    snapshot_at   TEXT NOT NULL,
+    graded        INTEGER NOT NULL DEFAULT 0,
+    home_goals    INTEGER,
+    away_goals    INTEGER,
+    actual        TEXT,                   -- home|draw|away
+    correct       INTEGER,                -- 1 if pick==actual
+    brier         REAL,
+    log_loss      REAL,
+    graded_at     TEXT,
+    postmortem_status TEXT NOT NULL DEFAULT 'none',  -- none|pending|done|skipped|error
+    UNIQUE(match_id)                      -- upsert while upcoming; frozen once graded
+);
+
+-- Structured LLM root-cause lessons for WRONG graded predictions.
+CREATE TABLE IF NOT EXISTS postmortems (
+    id            INTEGER PRIMARY KEY,
+    prediction_id INTEGER NOT NULL REFERENCES prediction_log(id),
+    match_id      INTEGER REFERENCES matches(id),
+    factor        TEXT NOT NULL,          -- enum: elo_gap|home_advantage|availability|h2h|goal_volume|draw|variance|...
+    direction     TEXT NOT NULL,          -- over|under (we over/under-weighted the factor)
+    magnitude     REAL,
+    suggested_segment TEXT,               -- global|friendly|group|knockout|host|mismatch|close_match
+    confidence    REAL,
+    evidence      TEXT,
+    summary       TEXT,
+    model_raw     TEXT,
+    created_at    TEXT NOT NULL,
+    applied       INTEGER NOT NULL DEFAULT 0,
+    UNIQUE(prediction_id, factor)
+);
+
+CREATE INDEX IF NOT EXISTS idx_predlog_grade ON prediction_log(graded, date_utc);
+CREATE INDEX IF NOT EXISTS idx_predlog_pm ON prediction_log(graded, correct, postmortem_status);
+CREATE INDEX IF NOT EXISTS idx_postmortems_applied ON postmortems(applied, factor, suggested_segment);
 CREATE INDEX IF NOT EXISTS idx_matches_stage ON matches(stage);
 CREATE INDEX IF NOT EXISTS idx_ratings_team ON ratings(team_id, valid_from);
 CREATE INDEX IF NOT EXISTS idx_results_teams ON results_ledger(home_team, away_team, played_on);

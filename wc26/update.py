@@ -59,9 +59,20 @@ def run(conn=None, n_runs: int = 50_000, news_teams: int = 3) -> dict:
     if conn.execute("SELECT COUNT(*) c FROM teams").fetchone()["c"] == 0:
         ingest.ingest_all(conn)
     overrides_report = overrides.sync_vault_overrides(conn)
+    from . import learn
+    # freeze pre-match predictions for still-upcoming matches BEFORE results enter
+    # Elo, so the post-match analysis is leak-free
+    try:
+        snap_rep = learn.snapshot_upcoming(conn)
+    except Exception as e:
+        snap_rep = {"error": str(e)}
     from . import scrape
     scraped = scrape.update_results(conn)        # pull newly-completed results
     elo_rep = scrape.recompute_elo(conn)         # fold them into current Elo
+    try:                                          # grade frozen snapshots now that results are in
+        grade_rep = learn.grade_newly_played(conn)
+    except Exception as e:
+        grade_rep = {"error": str(e)}
     try:                                          # LLM news scan (best-effort; never blocks)
         from . import news
         news_rep = news.run_news_scan(conn, limit=news_teams)
@@ -74,11 +85,12 @@ def run(conn=None, n_runs: int = 50_000, news_teams: int = 3) -> dict:
         "Automated refresh (update.py)",
         f"scraped results: {scraped}; elo: {elo_rep}; news: {news_rep}; "
         f"overrides synced: {overrides_report.get('events', 0)} events; "
+        f"prediction snapshots: {snap_rep}; graded: {grade_rep}; "
         f"running calibration: {calib}; vault: {vault}; run_id {result['run_id']}.",
     )
     return {"scraped": scraped, "elo": elo_rep, "news": news_rep,
-            "overrides": overrides_report, "calibration": calib, "vault": vault,
-            "run_id": result["run_id"]}
+            "overrides": overrides_report, "snapshots": snap_rep, "graded": grade_rep,
+            "calibration": calib, "vault": vault, "run_id": result["run_id"]}
 
 
 def main() -> None:
