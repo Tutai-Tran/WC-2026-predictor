@@ -37,6 +37,10 @@ def ingest_all(conn, raw_dir: Path | None = None) -> dict:
         report["friendlies"] = _ingest_friendlies(conn)
         conn.commit()
         return report
+    except Exception:
+        # don't leave a half-built DB if one sub-ingest fails partway
+        conn.rollback()
+        raise
     finally:
         config.DATA_RAW = global_raw
 
