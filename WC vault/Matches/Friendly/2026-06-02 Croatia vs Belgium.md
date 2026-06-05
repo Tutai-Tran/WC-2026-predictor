@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-02
 home: "Croatia"
 away: "Belgium"
-updated: 2026-06-04
+updated: 2026-06-05
 ---
 
 # Croatia vs Belgium (friendly)
@@ -14,7 +14,7 @@ updated: 2026-06-04
 
 Win Croatia: 36.3% | Draw: 27.7% | Win Belgium: 36.0%
 Most likely scoreline: 1-1
-Data as of 2026-06-04 | runs 20000 | seed 20260611
+Data as of 2026-06-04 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

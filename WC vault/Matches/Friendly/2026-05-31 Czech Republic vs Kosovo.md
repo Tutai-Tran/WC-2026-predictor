@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-05-31
 home: "Czech Republic"
 away: "Kosovo"
-updated: 2026-06-04
+updated: 2026-06-05
 ---
 
 # Czech Republic vs Kosovo (friendly)
@@ -14,7 +14,7 @@ updated: 2026-06-04
 
 Win Czech Republic: 39.7% | Draw: 27.6% | Win Kosovo: 32.6%
 Most likely scoreline: 1-1
-Data as of 2026-06-04 | runs 20000 | seed 20260611
+Data as of 2026-06-04 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

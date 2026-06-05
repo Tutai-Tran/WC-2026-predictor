@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-08
 home: "Argentina"
 away: "Honduras"
-updated: 2026-06-04
+updated: 2026-06-05
 ---
 
 # Argentina vs Honduras (friendly)
@@ -14,7 +14,7 @@ updated: 2026-06-04
 
 Win Argentina: 84.6% | Draw: 12.9% | Win Honduras: 2.5%
 Most likely scoreline: 2-0
-Data as of 2026-06-04 | runs 20000 | seed 20260611
+Data as of 2026-06-04 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

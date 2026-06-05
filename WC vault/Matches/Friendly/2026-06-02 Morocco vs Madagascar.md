@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-02
 home: "Morocco"
 away: "Madagascar"
-updated: 2026-06-04
+updated: 2026-06-05
 ---
 
 # Morocco vs Madagascar (friendly)
@@ -14,7 +14,7 @@ updated: 2026-06-04
 
 Win Morocco: 87.8% | Draw: 10.8% | Win Madagascar: 1.4%
 Most likely scoreline: 2-0
-Data as of 2026-06-04 | runs 20000 | seed 20260611
+Data as of 2026-06-04 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

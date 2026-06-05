@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-04
 home: "Panama"
 away: "Dominican Republic"
-updated: 2026-06-04
+updated: 2026-06-05
 ---
 
 # Panama vs Dominican Republic (friendly)
@@ -14,7 +14,7 @@ updated: 2026-06-04
 
 Win Panama: 75.5% | Draw: 17.9% | Win Dominican Republic: 6.6%
 Most likely scoreline: 2-0
-Data as of 2026-06-04 | runs 20000 | seed 20260611
+Data as of 2026-06-04 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

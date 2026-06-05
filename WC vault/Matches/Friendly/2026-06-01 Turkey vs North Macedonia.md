@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-01
 home: "Turkey"
 away: "North Macedonia"
-updated: 2026-06-04
+updated: 2026-06-05
 ---
 
 # Turkey vs North Macedonia (friendly)
@@ -14,7 +14,7 @@ updated: 2026-06-04
 
 Win Turkey: 72.8% | Draw: 19.1% | Win North Macedonia: 8.1%
 Most likely scoreline: 2-0
-Data as of 2026-06-04 | runs 20000 | seed 20260611
+Data as of 2026-06-04 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

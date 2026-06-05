@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-07
 home: "Australia"
 away: "Switzerland"
-updated: 2026-06-04
+updated: 2026-06-05
 ---
 
 # Australia vs Switzerland (friendly)
@@ -14,7 +14,7 @@ updated: 2026-06-04
 
 Win Australia: 29.7% | Draw: 27.4% | Win Switzerland: 42.9%
 Most likely scoreline: 1-1
-Data as of 2026-06-04 | runs 20000 | seed 20260611
+Data as of 2026-06-04 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

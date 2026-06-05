@@ -3,7 +3,7 @@ type: wc-match
 stage: R32
 match_no: 81
 date: 2026-07-02
-updated: 2026-06-04
+updated: 2026-06-05
 ---
 
 # R32 #81: 1D vs 3rd B/E/F/I/J
@@ -14,7 +14,7 @@ updated: 2026-06-04
 Slots: 1D vs 3rd B/E/F/I/J
 Projected: Turkey vs 3rd B/E/F/I/J
 Result: TBD
-Data as of 2026-06-04 | runs 20000 | seed 20260611
+Data as of 2026-06-04 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

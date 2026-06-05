@@ -3,7 +3,7 @@ type: wc-match
 stage: R32
 match_no: 74
 date: 2026-06-29
-updated: 2026-06-04
+updated: 2026-06-05
 ---
 
 # R32 #74: 1E vs 3rd A/B/C/D/F
@@ -14,7 +14,7 @@ updated: 2026-06-04
 Slots: 1E vs 3rd A/B/C/D/F
 Projected: Ecuador vs 3rd A/B/C/D/F
 Result: TBD
-Data as of 2026-06-04 | runs 20000 | seed 20260611
+Data as of 2026-06-04 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

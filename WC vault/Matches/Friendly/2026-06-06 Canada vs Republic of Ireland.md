@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-06
 home: "Canada"
 away: "Republic of Ireland"
-updated: 2026-06-04
+updated: 2026-06-05
 ---
 
 # Canada vs Republic of Ireland (friendly)
@@ -14,7 +14,7 @@ updated: 2026-06-04
 
 Win Canada: 53.4% | Draw: 25.7% | Win Republic of Ireland: 20.9%
 Most likely scoreline: 1-1
-Data as of 2026-06-04 | runs 20000 | seed 20260611
+Data as of 2026-06-04 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

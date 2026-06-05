@@ -5,7 +5,7 @@ group: I
 date: 2026-06-23
 home: "Norway"
 away: "Senegal"
-updated: 2026-06-04
+updated: 2026-06-05
 ---
 
 # Norway vs Senegal
@@ -16,7 +16,7 @@ updated: 2026-06-04
 Win Norway: 47.2% | Draw: 26.9% | Win Senegal: 25.9%
 Most likely scoreline: 1-1 (12.8%) (modal only; many outcomes possible)
 Top scorers: Erling Haaland 51.6%; Alexander Sørloth 26.7%; Antonio Nusa 10.3%; Sadio Mané 39.1%; Ismaïla Sarr 13.8%; Nicolas Jackson 6.7%;
-Data as of 2026-06-04 | runs 20000 | seed 20260611
+Data as of 2026-06-04 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

@@ -78,3 +78,11 @@ LOW: (6) news._extract_json_array now uses raw_decode (robust to stray brackets 
 ## 2026-06-04 23:49 UTC — Visual bracket diagram + Monte Carlo CIs + ESPN parser tests
 
 Dashboard Bracket tab now renders a graphviz knockout diagram (R32->Final, projected qualifiers) in addition to the text breakdown and the vault Mermaid. Champion tab shows a Monte Carlo 95% CI per team (honest uncertainty). Refactored scrape.fetch_espn into a pure parse_espn() with unit tests (completed-only, alias mapping, bad-score handling). Verified the bracket renders in a real browser (0 console errors). 65 tests pass.
+
+## 2026-06-04 23:53 UTC — Availability tab + friendly-accuracy validation panel
+
+Added a dashboard Availability tab showing scraped injuries/availability (news-LLM + vault + manual), and a Calibration-tab panel showing our forecast vs actual played-friendly results (top-pick accuracy + log loss) as a real out-of-sample check. Launched a background news scan to populate availability across teams. 65 tests pass; dashboard renders clean.
+
+## 2026-06-05 00:07 UTC — Session wrap-up: injuries scraped, vault refreshed, auto-start next
+
+News agent scanned 5 teams and found real injuries (South Africa: Mbokazi suspended + 3 doubtful; Canada: Davies + others doubtful), now reflected in the forecast (availability -> attacking-xG) and the country vault notes. Regenerated the 50k forecast + full vault. SUMMARY.md added. 65 tests pass. Next: activate auto-start so the dashboard + self-improving refresh loop persist across reboots.

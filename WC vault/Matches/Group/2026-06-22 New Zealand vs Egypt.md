@@ -5,7 +5,7 @@ group: G
 date: 2026-06-22
 home: "New Zealand"
 away: "Egypt"
-updated: 2026-06-04
+updated: 2026-06-05
 ---
 
 # New Zealand vs Egypt
@@ -16,7 +16,7 @@ updated: 2026-06-04
 Win New Zealand: 24.9% | Draw: 26.7% | Win Egypt: 48.5%
 Most likely scoreline: 1-1 (12.7%) (modal only; many outcomes possible)
 Top scorers: Chris Wood 32.6%; Kosta Barbarouses 9.4%; Ben Waine 8.6%; Mohamed Salah 56.8%; Trézéguet 23.6%; Omar Marmoush 12.9%;
-Data as of 2026-06-04 | runs 20000 | seed 20260611
+Data as of 2026-06-04 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

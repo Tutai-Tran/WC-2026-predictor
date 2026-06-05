@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-03
 home: "Netherlands"
 away: "Algeria"
-updated: 2026-06-04
+updated: 2026-06-05
 ---
 
 # Netherlands vs Algeria (friendly)
@@ -14,7 +14,7 @@ updated: 2026-06-04
 
 Win Netherlands: 48.4% | Draw: 26.7% | Win Algeria: 24.9%
 Most likely scoreline: 1-1
-Data as of 2026-06-04 | runs 20000 | seed 20260611
+Data as of 2026-06-04 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

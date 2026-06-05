@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-03
 home: "Haiti"
 away: "New Zealand"
-updated: 2026-06-04
+updated: 2026-06-05
 ---
 
 # Haiti vs New Zealand (friendly)
@@ -14,7 +14,7 @@ updated: 2026-06-04
 
 Win Haiti: 38.9% | Draw: 27.7% | Win New Zealand: 33.4%
 Most likely scoreline: 1-1
-Data as of 2026-06-04 | runs 20000 | seed 20260611
+Data as of 2026-06-04 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

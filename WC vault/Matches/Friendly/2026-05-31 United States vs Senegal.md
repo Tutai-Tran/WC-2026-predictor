@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-05-31
 home: "United States"
 away: "Senegal"
-updated: 2026-06-04
+updated: 2026-06-05
 ---
 
 # United States vs Senegal (friendly)
@@ -14,7 +14,7 @@ updated: 2026-06-04
 
 Win United States: 34.0% | Draw: 27.7% | Win Senegal: 38.3%
 Most likely scoreline: 1-1
-Data as of 2026-06-04 | runs 20000 | seed 20260611
+Data as of 2026-06-04 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

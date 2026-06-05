@@ -5,7 +5,7 @@ group: C
 date: 2026-06-19
 home: "Scotland"
 away: "Morocco"
-updated: 2026-06-04
+updated: 2026-06-05
 ---
 
 # Scotland vs Morocco
@@ -16,7 +16,7 @@ updated: 2026-06-04
 Win Scotland: 21.3% | Draw: 25.8% | Win Morocco: 52.9%
 Most likely scoreline: 1-1 (12.3%) (modal only; many outcomes possible)
 Top scorers: John McGinn 23.6%; Scott McTominay 11.9%; Ché Adams 10.3%; Ayoub El Kaabi 41.4%; Achraf Hakimi 21.7%; Brahim Díaz 18.4%;
-Data as of 2026-06-04 | runs 20000 | seed 20260611
+Data as of 2026-06-04 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

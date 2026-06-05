@@ -5,7 +5,7 @@ group: A
 date: 2026-06-11
 home: "Mexico"
 away: "South Africa"
-updated: 2026-06-04
+updated: 2026-06-05
 ---
 
 # Mexico vs South Africa
@@ -13,10 +13,10 @@ updated: 2026-06-04
 <!-- WC26:AUTO:forecast START -->
 **Group A match** · 2026-06-11
 
-Win Mexico: 77.3% | Draw: 17.0% | Win South Africa: 5.7%
-Most likely scoreline: 2-0 (17.2%) (modal only; many outcomes possible)
-Top scorers: Raúl Jiménez 56.4%; Orbelín Pineda 18.7%; Alexis Vega 13.1%; Teboho Mokoena 13.4%; Themba Zwane 6.8%; Lyle Foster 6.2%;
-Data as of 2026-06-04 | runs 20000 | seed 20260611
+Win Mexico: 78.6% | Draw: 16.4% | Win South Africa: 4.9%
+Most likely scoreline: 2-0 (18.1%) (modal only; many outcomes possible)
+Top scorers: Raúl Jiménez 56.4%; Orbelín Pineda 18.7%; Alexis Vega 13.1%; Teboho Mokoena 12.9%; Themba Zwane 6.0%; Lyle Foster 5.5%;
+Data as of 2026-06-04 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

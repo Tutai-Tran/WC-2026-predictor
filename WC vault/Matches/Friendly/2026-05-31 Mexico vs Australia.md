@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-05-31
 home: "Mexico"
 away: "Australia"
-updated: 2026-06-04
+updated: 2026-06-05
 ---
 
 # Mexico vs Australia (friendly)
@@ -14,7 +14,7 @@ updated: 2026-06-04
 
 Win Mexico: 44.9% | Draw: 27.2% | Win Australia: 27.9%
 Most likely scoreline: 1-1
-Data as of 2026-06-04 | runs 20000 | seed 20260611
+Data as of 2026-06-04 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

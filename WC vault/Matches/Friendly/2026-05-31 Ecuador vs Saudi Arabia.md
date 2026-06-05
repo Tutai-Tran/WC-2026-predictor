@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-05-31
 home: "Ecuador"
 away: "Saudi Arabia"
-updated: 2026-06-04
+updated: 2026-06-05
 ---
 
 # Ecuador vs Saudi Arabia (friendly)
@@ -14,7 +14,7 @@ updated: 2026-06-04
 
 Win Ecuador: 72.9% | Draw: 19.1% | Win Saudi Arabia: 8.0%
 Most likely scoreline: 2-0
-Data as of 2026-06-04 | runs 20000 | seed 20260611
+Data as of 2026-06-04 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match
