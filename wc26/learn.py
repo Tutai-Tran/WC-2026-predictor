@@ -50,6 +50,9 @@ def snapshot_upcoming(conn) -> dict:
     if not payload:
         return {"snapshotted": 0}
     idx = _match_index(conn)
+    elo = {r["name"]: r["elo"] for r in conn.execute(
+        "SELECT t.name, r.elo FROM teams t JOIN ratings r ON r.team_id=t.id "
+        "WHERE r.valid_from=(SELECT MAX(valid_from) FROM ratings r2 WHERE r2.team_id=t.id)")}
     now = datetime.now(timezone.utc).isoformat()
     n = 0
     items = ([("group", m) for m in payload.get("matches", [])]
@@ -63,8 +66,11 @@ def snapshot_upcoming(conn) -> dict:
             continue
         ph, pdw, pa = m["p_home"], m["p_draw"], m["p_away"]
         pick = model.outcome_label(ph, pdw, pa)
+        eh, ea = elo.get(m["home"]), elo.get(m["away"])
+        # freeze the inputs that produced this prediction so the post-mortem is grounded
         inputs = {"lambda_home": m.get("lambda_home"), "lambda_away": m.get("lambda_away"),
-                  "top_scoreline": m.get("top_scoreline")}
+                  "top_scoreline": m.get("top_scoreline"), "elo_home": eh, "elo_away": ea,
+                  "elo_gap": (round(eh - ea, 1) if eh is not None and ea is not None else None)}
         conn.execute(
             "INSERT INTO prediction_log (match_id, stage, home_team, away_team, date_utc, "
             "p_home, p_draw, p_away, lambda_home, lambda_away, top_scoreline, pick, inputs_json, snapshot_at) "
@@ -167,7 +173,7 @@ def _analyze(row, timeout: int = 180):
         f"Our PRE-match prediction: home {row['p_home']:.0%} / draw {row['p_draw']:.0%} / "
         f"away {row['p_away']:.0%}; pick={row['pick']}; "
         f"expected goals {inp.get('lambda_home')}-{inp.get('lambda_away')}; "
-        f"likely score {inp.get('top_scoreline')}.\n"
+        f"likely score {inp.get('top_scoreline')}; Elo gap (home-away) {inp.get('elo_gap')}.\n"
         f"ACTUAL RESULT: {row['home_team']} {row['home_goals']}-{row['away_goals']} {row['away_team']} "
         f"(a {row['actual']} result).\n\n"
         "Return ONLY a JSON array of lesson objects, no prose. Each object:\n"
@@ -220,7 +226,7 @@ def run_postmortems(conn, limit: int = 2) -> dict:
                     "confidence=excluded.confidence, evidence=excluded.evidence, summary=excluded.summary",
                     (r["id"], r["match_id"], ln["factor"], ln["direction"], ln["magnitude"],
                      ln["suggested_segment"], ln["confidence"], ln["evidence"], ln["summary"],
-                     json.dumps(lessons), now),
+                     json.dumps(raw), now),          # store the RAW model output for audit
                 )
             conn.execute("UPDATE prediction_log SET postmortem_status='done' WHERE id=?", (r["id"],))
             conn.commit()

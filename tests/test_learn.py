@@ -71,6 +71,13 @@ def test_grade_noop_when_nothing_played(tmp_path):
     assert learn.grade_newly_played(conn) == {"graded": 0, "wrong": 0}
 
 
+def test_aggregate_lessons_empty(tmp_path):
+    conn = _setup(tmp_path)
+    agg = learn.aggregate_lessons(conn)                # no graded matches yet
+    assert agg["overall"]["n"] == 0 and agg["overall"]["accuracy"] is None
+    assert agg["biases"] == [] and agg["segments"] == {}
+
+
 def _force_wrong(conn):
     """Mark one snapshot as a WRONG graded prediction, deterministically."""
     r = conn.execute("SELECT id, pick FROM prediction_log LIMIT 1").fetchone()

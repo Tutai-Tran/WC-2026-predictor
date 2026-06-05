@@ -743,6 +743,7 @@ with tabs[9]:
                "out-of-sample, so a single upset never moves the model. Exact scores stay inherently "
                "~10% likely; the learnable wins are calibration and systematic biases.")
     conn = db.connect()
+    db.init_db(conn)                          # ensure the learning tables exist (old DBs / cold cloud)
     _lrow = conn.execute("SELECT payload_json FROM predictions WHERE scope='lessons' "
                          "ORDER BY id DESC LIMIT 1").fetchone()
     _L = json.loads(_lrow["payload_json"]) if _lrow else {}
