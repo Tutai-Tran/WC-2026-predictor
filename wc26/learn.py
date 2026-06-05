@@ -276,3 +276,58 @@ def aggregate_lessons(conn) -> dict:
     return {"overall": overall, "segments": segments, "biases": biases,
             "computed_at": datetime.now(timezone.utc).isoformat()}
 
+
+# --------------------------------------------------------------------------
+# Phase 3a: turn quorum-reaching systematic biases into CANDIDATE parameter nudges.
+# Candidates only — never auto-applied. The validated re-fit gate (phase 3b) decides
+# adoption out-of-sample, so a transient bias never moves a live parameter. Frozen
+# during the tournament until enough new matches accumulate to validate a change.
+# --------------------------------------------------------------------------
+
+_QUORUM = 8   # wrong matches tagging a factor before it becomes a candidate (guard vs anecdote)
+
+# factor -> (fitted param, direction implied when the model OVER-weighted that factor).
+# Only factors that map to a real fitted knob (the re-fit gate's parameters) appear here;
+# qualitative factors (h2h, availability, motivation, tactical) have no parameter to nudge.
+_PARAM_MAP = {
+    "goal_volume":    ("goal_scale", "down"),   # over-predicted goals -> scale lambdas down
+    "elo_gap":        ("c", "up"),              # over-rated favourites -> raise Elo-per-goal (less supremacy)
+    "home_advantage": ("home_adv_elo", "down"),
+    "draw":           ("rho", "up"),            # over-predicted draws -> rho toward 0 (fewer draws)
+}
+_FLIP = {"up": "down", "down": "up"}
+
+
+def propose_adjustments(conn, quorum: int = _QUORUM) -> dict:
+    """Turn quorum-reaching systematic biases into CANDIDATE parameter nudges.
+
+    A factor only becomes a candidate once at least `quorum` wrong matches tagged it
+    (so it is systematic, not a single upset). Candidates are written for the audit
+    trail only; they are NOT applied — adoption is decided by the validated re-fit gate
+    out-of-sample. Returns the candidate list and writes data/raw/learned_adjustments.json."""
+    candidates = []
+    for r in conn.execute(
+        "SELECT factor, "
+        "SUM(CASE WHEN direction='over' THEN confidence*magnitude "
+        "ELSE -confidence*magnitude END) signed, COUNT(*) n "
+        "FROM postmortems WHERE factor != 'variance' GROUP BY factor HAVING n >= ?",
+        (quorum,),
+    ):
+        mapped = _PARAM_MAP.get(r["factor"])
+        if not mapped:
+            continue                                  # qualitative factor — no fitted knob to nudge
+        param, over_dir = mapped
+        over_weighted = (r["signed"] or 0) >= 0
+        candidates.append({
+            "factor": r["factor"], "param": param,
+            "direction": over_dir if over_weighted else _FLIP[over_dir],
+            "evidence_n": r["n"], "applied": False,
+            "note": "candidate only — adoption requires out-of-sample re-fit validation",
+        })
+    out = {"quorum": quorum, "candidates": candidates,
+           "computed_at": datetime.now(timezone.utc).isoformat()}
+    path = config.DATA_RAW / "learned_adjustments.json"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(out, indent=2))
+    return out
+

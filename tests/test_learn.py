@@ -113,6 +113,42 @@ def test_postmortems_write_and_aggregate(tmp_path, monkeypatch):
     assert agg["overall"]["n"] >= 1 and agg["overall"]["accuracy"] is not None
 
 
+def _pm(conn, pid, factor, direction, conf=0.8, mag=0.6):
+    conn.execute(
+        "INSERT INTO postmortems (prediction_id, match_id, factor, direction, magnitude, "
+        "suggested_segment, confidence, evidence, summary, model_raw, created_at) "
+        "VALUES (?,?,?,?,?,?,?,?,?,?,?)",
+        (pid, pid, factor, direction, mag, "global", conf, "e", "s", "[]", "2026-06-05T00:00:00+00:00"))
+
+
+def test_propose_adjustments_quorum(tmp_path):
+    conn = _setup(tmp_path)
+    learn.snapshot_upcoming(conn)            # real prediction_log rows to satisfy the FK
+    ids = [r[0] for r in conn.execute("SELECT id FROM prediction_log LIMIT 30").fetchall()]
+    for pid in ids[:8]:                       # quorum reached, maps to a fitted knob -> candidate
+        _pm(conn, pid, "goal_volume", "over")
+    for pid in ids[8:11]:                     # sub-quorum -> dropped
+        _pm(conn, pid, "home_advantage", "under")
+    for pid in ids[11:20]:                    # quorum but qualitative (no fitted knob) -> dropped
+        _pm(conn, pid, "h2h", "over")
+    for pid in ids[20:30]:                    # variance is never a bias
+        _pm(conn, pid, "variance", "over")
+    conn.commit()
+
+    out = learn.propose_adjustments(conn, quorum=8)
+    cands = {c["factor"]: c for c in out["candidates"]}
+    assert set(cands) == {"goal_volume"}                      # only the systematic, mappable one
+    assert cands["goal_volume"]["param"] == "goal_scale"
+    assert cands["goal_volume"]["direction"] == "down"        # over-predicted goals -> scale down
+    assert cands["goal_volume"]["applied"] is False           # candidates are never auto-applied
+
+
+def test_propose_adjustments_empty(tmp_path):
+    conn = _setup(tmp_path)
+    out = learn.propose_adjustments(conn)                     # no post-mortems yet
+    assert out["candidates"] == []
+
+
 def test_postmortem_cli_down_marks_error(tmp_path, monkeypatch):
     conn = _setup(tmp_path)
     learn.snapshot_upcoming(conn)

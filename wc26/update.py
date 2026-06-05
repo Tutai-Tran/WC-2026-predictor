@@ -87,6 +87,8 @@ def run(conn=None, n_runs: int = 50_000, news_teams: int = 3, postmortems: int =
     # regenerate the learning summary (leak-free accuracy + ranked biases) for the dashboard
     try:
         lessons = learn.aggregate_lessons(conn)
+        # quorum-gated candidate parameter nudges (audit only; never auto-applied)
+        lessons["candidate_adjustments"] = learn.propose_adjustments(conn).get("candidates", [])
         conn.execute(
             "INSERT INTO predictions (run_id, scope, ref, payload_json, computed_at) VALUES (?,?,?,?,?)",
             ("lessons-" + lessons["computed_at"], "lessons", "running",
