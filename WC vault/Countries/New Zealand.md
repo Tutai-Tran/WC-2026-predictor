@@ -13,10 +13,10 @@ updated: 2026-06-05
 
 # New Zealand
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-05T12:19Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-05T13:32Z | source elo-goal-v1 -->
 Group G | FIFA rank 86 | Elo 1703
-Champion 0.0% | Final 0.1% | SF 0.3% | QF 2.4% | Advance 48.1%
-Availability: no concerns recorded
+Champion 0.0% | Final 0.0% | SF 0.3% | QF 2.3% | Advance 47.4%
+Availability concerns: Ryan Thomas (doubtful), Joe Bell (doubtful), Ben Old (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
 ## Squad & availability
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-05T12:19Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-05T13:32Z | source elo-goal-v1 -->
 - 2026-06-05: champion 0.0% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

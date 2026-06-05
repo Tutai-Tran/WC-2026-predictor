@@ -18,7 +18,7 @@ import json
 import math
 from datetime import datetime, timezone
 
-from . import model
+from . import config, model
 
 
 def _match_index(conn) -> dict:

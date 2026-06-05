@@ -128,3 +128,11 @@ scraped results: {'added': 0}; elo: {'recomputed': True, 'ledger_matches': 61, '
 ## 2026-06-05 12:19 UTC — Automated refresh (update.py)
 
 scraped results: {'added': 0}; elo: {'recomputed': True, 'ledger_matches': 61, 'teams_updated': 76}; news: {'teams_scanned': ['Tunisia', 'Belgium', 'Egypt'], 'events': 8}; overrides synced: 0 events; running calibration: {'n': 0}; vault: {'countries': 48, 'groups': 12, 'matches': {'group': 72, 'friendly': 62, 'knockout': 31}, 'bracket': 'written'}; run_id run-20260605T121917Z.
+
+## 2026-06-05 13:15 UTC — Automated refresh (update.py)
+
+scraped results: {'added': 0}; elo: {'recomputed': True, 'ledger_matches': 61, 'teams_updated': 76}; news: {'teams_scanned': [], 'events': 0}; overrides synced: 0 events; prediction snapshots: {'snapshotted': 99}; graded: {'graded': 0, 'wrong': 0}; post-mortems: {'analyzed': 0, 'errors': 0}; lessons: {'n': 0, 'accuracy': None, 'brier': None, 'log_loss': None}; running calibration: {'n': 0}; vault: {'countries': 48, 'groups': 12, 'matches': {'group': 72, 'friendly': 62, 'knockout': 31}, 'bracket': 'written'}; run_id run-20260605T131547Z.
+
+## 2026-06-05 13:32 UTC — Automated refresh (update.py)
+
+scraped results: {'added': 1}; elo: {'recomputed': True, 'ledger_matches': 62, 'teams_updated': 76}; news: {'teams_scanned': ['Iran', 'New Zealand', 'Spain'], 'events': 8}; overrides synced: 0 events; prediction snapshots: {'snapshotted': 99}; graded: {'graded': 0, 'wrong': 0}; post-mortems: {'analyzed': 0, 'errors': 0}; lessons: {'n': 0, 'accuracy': None, 'brier': None, 'log_loss': None}; running calibration: {'n': 0}; vault: {'countries': 48, 'groups': 12, 'matches': {'group': 72, 'friendly': 62, 'knockout': 31}, 'bracket': 'written'}; run_id run-20260605T133215Z.
