@@ -13,9 +13,9 @@ updated: 2026-06-05
 
 # Croatia
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-05T09:57Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-05T10:19Z | source elo-goal-v1 -->
 Group L | FIFA rank 10 | Elo 1958
-Champion 1.0% | Final 3.0% | SF 7.7% | QF 16.9% | Advance 86.2%
+Champion 1.0% | Final 3.2% | SF 7.8% | QF 16.7% | Advance 85.8%
 Availability: no concerns recorded
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-05T09:57Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-05T10:19Z | source elo-goal-v1 -->
 - 2026-06-05: champion 1.0% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
