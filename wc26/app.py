@@ -78,7 +78,7 @@ for col, (name, p) in zip(cols, champ_sorted[:4]):
     col.metric(name, _pct(p["champion"]), help="Probability of winning the tournament")
 
 tabs = st.tabs(["📅 Daily", "🏆 Champion & stages", "⚽ Matches", "🔀 Bracket",
-                "👥 Groups", "🥅 Scorers", "📋 Availability", "📈 Calibration"])
+                "👥 Groups", "🥅 Scorers", "📋 Availability", "📈 Calibration", "🔎 Team"])
 
 # =============================== Daily ===============================
 with tabs[0]:
@@ -358,3 +358,62 @@ with tabs[7]:
             st.dataframe(pd.DataFrame(frows), hide_index=True, use_container_width=True)
     else:
         st.caption("No played friendlies in the latest snapshot yet.")
+
+# ============================== Team ==============================
+with tabs[8]:
+    sel = st.selectbox("Select a team", sorted(probs.keys()))
+    p = probs[sel]
+    conn = db.connect()
+    info = conn.execute(
+        "SELECT t.group_letter g, t.fifa_rank fr, "
+        "(SELECT elo FROM ratings WHERE team_id=t.id ORDER BY valid_from DESC LIMIT 1) elo "
+        "FROM teams t WHERE t.name=?", (sel,)).fetchone()
+    c1, c2, c3, c4 = st.columns(4)
+    c1.metric("Champion", _pct(p["champion"]))
+    c2.metric("Reach final", _pct(p["final"]))
+    c3.metric("Advance (R32)", _pct(p["advance"]))
+    c4.metric("Elo", round(info["elo"]) if info and info["elo"] else "?")
+    st.caption(f"Group {info['g'] if info else '?'} · FIFA rank {info['fr'] if info else '?'}")
+
+    st.subheader("Availability")
+    inj = conn.execute(
+        "SELECT player_name, status, source_quote FROM availability_events ae "
+        "JOIN teams t ON t.id=ae.team_id WHERE t.name=? AND player_name!='(scan-marker)' "
+        "AND status!='fit'", (sel,)).fetchall()
+    if inj:
+        st.dataframe(pd.DataFrame([{"Player": r["player_name"], "Status": r["status"],
+                                    "Note": (r["source_quote"] or "")[:90]} for r in inj]),
+                     hide_index=True, use_container_width=True)
+    else:
+        st.caption("No concerns recorded.")
+
+    st.subheader("Matches")
+    mrows = []
+    for m in data.get("matches", []):
+        if sel in (m["home"], m["away"]):
+            mrows.append({"Date": _date(m.get("date")), "Type": f"Group {m['group']}",
+                          "Match": f"{m['home']} vs {m['away']}",
+                          "Forecast": f"{_pct(m['p_home'])}/{_pct(m['p_draw'])}/{_pct(m['p_away'])}",
+                          "Likely": m["top_scoreline"]})
+    for f in data.get("friendlies", []):
+        if sel in (f["home"], f["away"]):
+            mrows.append({"Date": _date(f.get("date")), "Type": "Friendly",
+                          "Match": f"{f['home']} vs {f['away']}",
+                          "Forecast": f"{_pct(f['p_home'])}/{_pct(f['p_draw'])}/{_pct(f['p_away'])}",
+                          "Likely": (f["result"] if f["played"] else f["top_scoreline"])})
+    if mrows:
+        st.dataframe(pd.DataFrame(mrows).sort_values("Date"), hide_index=True,
+                     use_container_width=True)
+
+    st.subheader("Most likely scorers")
+    scs = None
+    for m in data.get("matches", []):
+        if m["home"] == sel:
+            scs = m["top_scorers_home"]; break
+        if m["away"] == sel:
+            scs = m["top_scorers_away"]; break
+    if scs:
+        st.dataframe(pd.DataFrame([{"Player": s["player"], "P(anytime)": _pct(s["p_anytime"])}
+                                   for s in scs]), hide_index=True, use_container_width=True)
+    else:
+        st.caption("Scorer estimates appear for teams in the group stage.")
