@@ -5,7 +5,7 @@ fifa_code: "MEX"
 group: "A"
 fifa_rank: 14
 elo: 1998
-champion_prob: 0.0266
+champion_prob: 0.024
 status: active
 created: 2026-06-04
 updated: 2026-06-05
@@ -13,9 +13,9 @@ updated: 2026-06-05
 
 # Mexico
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-05T04:07Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-05T09:57Z | source elo-goal-v1 -->
 Group A | FIFA rank 14 | Elo 1998
-Champion 2.7% | Final 6.7% | SF 15.8% | QF 33.4% | Advance 96.0%
+Champion 2.4% | Final 6.2% | SF 15.5% | QF 33.0% | Advance 96.4%
 Availability: no concerns recorded
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-05T04:07Z | source elo-goal-v1 -->
-- 2026-06-05: champion 2.7% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-05T09:57Z | source elo-goal-v1 -->
+- 2026-06-05: champion 2.4% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

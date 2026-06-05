@@ -14,7 +14,7 @@ updated: 2026-06-05
 **Group D match** · 2026-06-20
 
 Win Turkey: 43.4% | Draw: 27.4% | Win Paraguay: 29.3%
-Most likely scoreline: 1-1 (13.0%) (modal only; many outcomes possible)
+Most likely scoreline: 1-0 (9.9%) (modal only; many outcomes possible)
 Top scorers: Hakan Çalhanoğlu 25.0%; Kerem Aktürkoğlu 19.0%; Arda Güler 9.3%; Miguel Almirón 15.5%; Antonio Sanabria 13.9%; Kaku 10.8%;
 Data as of 2026-06-04 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->

@@ -6,7 +6,9 @@ All computation happens in the pipeline; this only displays precomputed results.
 
 from __future__ import annotations
 
+import hashlib
 import json
+import os
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -24,8 +26,44 @@ from wc26 import config, db, model
 st.set_page_config(page_title="World Cup 2026 Forecast", page_icon="⚽", layout="wide")
 
 
+def _secret_or_env(key: str):
+    """Read config from Streamlit secrets (hosted) or the environment, else None."""
+    try:
+        if key in st.secrets:
+            return st.secrets[key]
+    except Exception:
+        pass
+    return os.environ.get(key)
+
+
+# Set ONLY on the hosted deployment (Streamlit secret / env). When present, the
+# app pulls the latest DB snapshot the Mac publishes; when absent (local run),
+# the app keeps using its own live wc26.db and never downloads anything.
+_DB_URL = _secret_or_env("WC26_DB_URL")
+
+
+@st.cache_data(ttl=60, show_spinner="Syncing latest data…")
+def _sync_remote_db() -> str | None:
+    """Pull the published DB snapshot (hosted only). Returns a short content
+    fingerprint so load_latest reloads when the data changes; None = no-op."""
+    if not _DB_URL:
+        return None
+    try:
+        import requests
+        r = requests.get(_DB_URL, timeout=30)
+        r.raise_for_status()
+        tmp = str(config.DB_PATH) + ".download"
+        Path(tmp).write_bytes(r.content)
+        os.replace(tmp, config.DB_PATH)            # atomic swap
+        return hashlib.sha256(r.content).hexdigest()[:16]
+    except Exception:
+        return None                                # keep whatever DB is already present
+
+
 @st.cache_data(ttl=60)
-def load_latest():
+def load_latest(db_fingerprint=None):
+    # db_fingerprint participates in the cache key: a new published snapshot
+    # changes it and forces a reload (hosted). Unused value otherwise.
     conn = db.connect()
     db.init_db(conn)
     row = conn.execute(
@@ -133,11 +171,15 @@ def _called_cell(p_home, p_draw, p_away, result):
     return "✅ correct" if correct else f"❌ said {pred.split()[0]}"
 
 
-data = load_latest()
+data = load_latest(_sync_remote_db())
 st.title("⚽ World Cup 2026 Forecast")
 
 if data is None:
-    st.warning("No forecast yet. Run:  python -m wc26.forecast")
+    if _DB_URL:
+        st.info("Waiting for the first live data snapshot from the source device. "
+                "This page updates automatically once data is published.")
+    else:
+        st.warning("No forecast yet. Run:  python -m wc26.forecast")
     st.stop()
 
 # ---- freshness banner ----

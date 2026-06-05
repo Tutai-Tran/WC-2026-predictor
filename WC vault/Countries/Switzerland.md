@@ -5,7 +5,7 @@ fifa_code: "SUI"
 group: "B"
 fifa_rank: 17
 elo: 1970
-champion_prob: 0.0144
+champion_prob: 0.0125
 status: active
 created: 2026-06-04
 updated: 2026-06-05
@@ -13,9 +13,9 @@ updated: 2026-06-05
 
 # Switzerland
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-05T04:07Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-05T09:57Z | source elo-goal-v1 -->
 Group B | FIFA rank 17 | Elo 1970
-Champion 1.4% | Final 3.9% | SF 10.1% | QF 25.8% | Advance 95.4%
+Champion 1.2% | Final 3.6% | SF 9.7% | QF 25.9% | Advance 95.0%
 Availability concerns: Noah Okafor (doubtful), Fabian Rieder (doubtful), Zeki Amdouni (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-05T04:07Z | source elo-goal-v1 -->
-- 2026-06-05: champion 1.4% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-05T09:57Z | source elo-goal-v1 -->
+- 2026-06-05: champion 1.2% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

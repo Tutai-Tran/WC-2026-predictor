@@ -12,7 +12,7 @@ updated: 2026-06-05
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-05-31 · played 1-0
 
-Win Japan: 78.2% | Draw: 16.5% | Win Iceland: 5.3%
+Win Japan: 79.2% | Draw: 16.0% | Win Iceland: 4.8%
 Most likely scoreline: 2-0
 Data as of 2026-06-04 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->

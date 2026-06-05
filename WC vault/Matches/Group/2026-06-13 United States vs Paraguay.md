@@ -13,9 +13,9 @@ updated: 2026-06-05
 <!-- WC26:AUTO:forecast START -->
 **Group D match** · 2026-06-13
 
-Win United States: 38.0% | Draw: 27.7% | Win Paraguay: 34.3%
-Most likely scoreline: 1-1 (13.2%) (modal only; many outcomes possible)
-Top scorers: Christian Pulisic 34.3%; Ricardo Pepi 13.0%; Weston McKennie 11.4%; Miguel Almirón 16.8%; Antonio Sanabria 15.1%; Kaku 11.8%;
+Win United States: 37.9% | Draw: 27.8% | Win Paraguay: 34.3%
+Most likely scoreline: 1-0 (9.1%) (modal only; many outcomes possible)
+Top scorers: Christian Pulisic 34.1%; Ricardo Pepi 12.9%; Weston McKennie 11.4%; Miguel Almirón 16.7%; Antonio Sanabria 15.0%; Kaku 11.8%;
 Data as of 2026-06-04 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

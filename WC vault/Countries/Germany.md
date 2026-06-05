@@ -5,7 +5,7 @@ fifa_code: "GER"
 group: "E"
 fifa_rank: 9
 elo: 2013
-champion_prob: 0.0274
+champion_prob: 0.0277
 status: active
 created: 2026-06-04
 updated: 2026-06-05
@@ -13,9 +13,9 @@ updated: 2026-06-05
 
 # Germany
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-05T04:07Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-05T09:57Z | source elo-goal-v1 -->
 Group E | FIFA rank 9 | Elo 2013
-Champion 2.7% | Final 6.6% | SF 15.5% | QF 29.0% | Advance 96.6%
+Champion 2.8% | Final 6.6% | SF 15.9% | QF 29.9% | Advance 96.5%
 Availability: no concerns recorded
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-05T04:07Z | source elo-goal-v1 -->
-- 2026-06-05: champion 2.7% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-05T09:57Z | source elo-goal-v1 -->
+- 2026-06-05: champion 2.8% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

@@ -13,7 +13,7 @@ updated: 2026-06-05
 **Warm-up friendly** · 2026-06-08 · scheduled
 
 Win Netherlands: 55.0% | Draw: 25.3% | Win Uzbekistan: 19.7%
-Most likely scoreline: 1-1
+Most likely scoreline: 1-0
 Data as of 2026-06-04 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

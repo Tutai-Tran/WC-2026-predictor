@@ -12,20 +12,21 @@ mkdir -p logs
 [ -f logs/refresh.pid ] && kill "$(cat logs/refresh.pid)" 2>/dev/null || true
 pkill -f "wc26.update" 2>/dev/null || true
 
-# periodic refresh: scrape live data, re-forecast, fetch odds — every 3 hours.
-# First run is delayed so a fresh login does not immediately churn the repo.
-(
-  sleep 1800
-  while true; do
-    "$PY" -m wc26.update >> logs/update.log 2>&1 || true
-    "$PY" -m wc26.odds   >> logs/odds.log   2>&1 || true
-    # save + push the self-improving updates (vault, memory, ratings)
-    git -C "$PROJ" add -A >/dev/null 2>&1 || true
-    git -C "$PROJ" commit -q -m "chore: scheduled self-improving refresh [skip ci]" >/dev/null 2>&1 || true
-    git -C "$PROJ" push -q origin main >/dev/null 2>&1 || true
-    sleep 10800
-  done
-) &
+# One full self-improving cycle: scrape + LLM news + odds + re-forecast, publish
+# the DB snapshot for the cloud dashboard, then push the repo updates (vault,
+# ratings, memory).
+refresh_cycle() {
+  "$PY" -m wc26.update >> logs/update.log 2>&1 || true
+  "$PY" -m wc26.odds   >> logs/odds.log   2>&1 || true
+  bash "$PROJ/scripts/publish_db.sh" >> logs/publish.log 2>&1 || true
+  git -C "$PROJ" add -A >/dev/null 2>&1 || true
+  git -C "$PROJ" commit -q -m "chore: scheduled self-improving refresh [skip ci]" >/dev/null 2>&1 || true
+  git -C "$PROJ" push -q origin main >/dev/null 2>&1 || true
+}
+
+# Refresh + publish IMMEDIATELY on launch so the cloud dashboard updates right
+# after this device comes online, then repeat every 3 hours.
+( refresh_cycle; while true; do sleep 10800; refresh_cycle; done ) &
 echo $! > logs/refresh.pid
 
 # dashboard in the foreground (KeepAlive restarts it if it ever exits)

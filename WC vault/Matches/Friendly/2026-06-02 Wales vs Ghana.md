@@ -13,7 +13,7 @@ updated: 2026-06-05
 **Warm-up friendly** · 2026-06-02 · played 1-1
 
 Win Wales: 51.0% | Draw: 26.2% | Win Ghana: 22.8%
-Most likely scoreline: 1-1
+Most likely scoreline: 1-0
 Data as of 2026-06-04 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

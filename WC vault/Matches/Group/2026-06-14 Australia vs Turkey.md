@@ -13,9 +13,9 @@ updated: 2026-06-05
 <!-- WC26:AUTO:forecast START -->
 **Group D match** · 2026-06-14
 
-Win Australia: 28.8% | Draw: 27.3% | Win Turkey: 43.9%
-Most likely scoreline: 1-1 (13.0%) (modal only; many outcomes possible)
-Top scorers: Mathew Leckie 17.8%; Jackson Irvine 16.8%; Awer Mabil 13.6%; Hakan Çalhanoğlu 25.2%; Kerem Aktürkoğlu 19.2%; Arda Güler 9.3%;
+Win Australia: 27.8% | Draw: 27.2% | Win Turkey: 45.0%
+Most likely scoreline: 0-1 (10.1%) (modal only; many outcomes possible)
+Top scorers: Mathew Leckie 17.4%; Jackson Irvine 16.5%; Awer Mabil 13.3%; Hakan Çalhanoğlu 25.5%; Kerem Aktürkoğlu 19.4%; Arda Güler 9.5%;
 Data as of 2026-06-04 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

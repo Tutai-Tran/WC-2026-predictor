@@ -5,7 +5,7 @@ fifa_code: "FRA"
 group: "I"
 fifa_rank: 3
 elo: 2129
-champion_prob: 0.1061
+champion_prob: 0.1081
 status: active
 created: 2026-06-04
 updated: 2026-06-05
@@ -13,9 +13,9 @@ updated: 2026-06-05
 
 # France
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-05T04:07Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-05T09:57Z | source elo-goal-v1 -->
 Group I | FIFA rank 3 | Elo 2129
-Champion 10.6% | Final 18.5% | SF 32.8% | QF 48.6% | Advance 95.2%
+Champion 10.8% | Final 19.0% | SF 34.3% | QF 50.4% | Advance 95.4%
 Availability: no concerns recorded
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-05T04:07Z | source elo-goal-v1 -->
-- 2026-06-05: champion 10.6% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-05T09:57Z | source elo-goal-v1 -->
+- 2026-06-05: champion 10.8% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

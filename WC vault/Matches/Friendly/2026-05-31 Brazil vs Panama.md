@@ -12,7 +12,7 @@ updated: 2026-06-05
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-05-31 · played 6-2
 
-Win Brazil: 59.6% | Draw: 24.1% | Win Panama: 16.4%
+Win Brazil: 62.3% | Draw: 23.2% | Win Panama: 14.4%
 Most likely scoreline: 1-0
 Data as of 2026-06-04 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->

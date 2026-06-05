@@ -13,7 +13,7 @@ updated: 2026-06-05
 **Warm-up friendly** · 2026-06-09 · scheduled
 
 Win DR Congo: 35.0% | Draw: 27.7% | Win Chile: 37.2%
-Most likely scoreline: 1-1
+Most likely scoreline: 0-1
 Data as of 2026-06-04 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

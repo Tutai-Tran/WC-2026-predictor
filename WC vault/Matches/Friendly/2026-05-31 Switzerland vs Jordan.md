@@ -13,7 +13,7 @@ updated: 2026-06-05
 **Warm-up friendly** · 2026-05-31 · played 4-1
 
 Win Switzerland: 56.2% | Draw: 25.0% | Win Jordan: 18.8%
-Most likely scoreline: 1-1
+Most likely scoreline: 1-0
 Data as of 2026-06-04 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

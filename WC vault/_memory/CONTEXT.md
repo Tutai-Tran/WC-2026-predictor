@@ -108,3 +108,7 @@ scraped results: {'added': 0}; elo: {'recomputed': True, 'ledger_matches': 59, '
 ## 2026-06-05 04:07 UTC — Automated refresh (update.py)
 
 scraped results: {'added': 2}; elo: {'recomputed': True, 'ledger_matches': 61, 'teams_updated': 76}; news: {'teams_scanned': ['Brazil', 'Morocco', 'Haiti'], 'events': 8}; overrides synced: 0 events; running calibration: {'n': 0}; vault: {'countries': 48, 'groups': 12, 'matches': {'group': 72, 'friendly': 62, 'knockout': 31}, 'bracket': 'written'}; run_id run-20260605T040751Z.
+
+## 2026-06-05 09:57 UTC — Automated refresh (update.py)
+
+scraped results: {'added': 0}; elo: {'recomputed': True, 'ledger_matches': 61, 'teams_updated': 76}; news: {'teams_scanned': ['Scotland', 'United States', 'Paraguay'], 'events': 5}; overrides synced: 0 events; running calibration: {'n': 0}; vault: {'countries': 48, 'groups': 12, 'matches': {'group': 72, 'friendly': 62, 'knockout': 31}, 'bracket': 'written'}; run_id run-20260605T095750Z.

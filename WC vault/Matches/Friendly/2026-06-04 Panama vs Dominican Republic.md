@@ -12,7 +12,7 @@ updated: 2026-06-05
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-06-04 · played 4-2
 
-Win Panama: 75.5% | Draw: 17.9% | Win Dominican Republic: 6.6%
+Win Panama: 77.8% | Draw: 16.7% | Win Dominican Republic: 5.5%
 Most likely scoreline: 2-0
 Data as of 2026-06-04 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->

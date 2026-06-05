@@ -12,7 +12,7 @@ updated: 2026-06-05
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-06-04 · played 1-1
 
-Win Spain: 85.6% | Draw: 12.2% | Win Iraq: 2.2%
+Win Spain: 85.9% | Draw: 12.0% | Win Iraq: 2.0%
 Most likely scoreline: 2-0
 Data as of 2026-06-04 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
