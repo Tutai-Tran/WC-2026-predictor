@@ -1,0 +1,7 @@
+[theme]
+base = "light"
+primaryColor = "#00875A"               # pitch green: buttons, slider, active tab
+backgroundColor = "#FBFBF9"            # warm off-white (not clinical pure white)
+secondaryBackgroundColor = "#F1F3F0"   # cards / table headers / sidebar
+textColor = "#1A2230"                  # near-black navy, softer than pure black
+font = "sans serif"

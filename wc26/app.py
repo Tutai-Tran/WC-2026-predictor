@@ -201,50 +201,92 @@ probs = data["probs"]
 champ_sorted = sorted(probs.items(), key=lambda kv: kv[1]["champion"], reverse=True)
 
 # ---- headline favourites ----
-cols = st.columns(4)
-for col, (name, p) in zip(cols, champ_sorted[:4]):
-    col.metric(name, _pct(p["champion"]), help="Probability of winning the tournament")
+with st.container(border=True):
+    st.markdown("##### 🏆 Title favourites")
+    cols = st.columns(4)
+    for rank, (col, (name, p)) in enumerate(zip(cols, champ_sorted[:4]), start=1):
+        col.metric(f"{rank}. {name}", _pct(p["champion"]),
+                   help="Probability of winning the tournament")
+    st.caption("Top 4 by simulated title probability. Full table on the **Champion & stages** tab.")
+
+# rate metrics share a ~50% coin-flip baseline and are graded green/amber/red;
+# exact score & goal difference are low-ceiling by nature (a single scoreline is
+# ~10% likely even for a perfect model), so they are shown neutral, not "failing".
+_RATE_METRICS = {"outcome", "favourite", "ou25", "btts"}
+_NEUTRAL = "#4a78c4"
+_DONUT_BG = "#E7E9E4"
 
 
-def _accuracy_donut(label: str, correct: int, total: int):
+def _donut_color(key: str, pct: float) -> str:
+    if key not in _RATE_METRICS:
+        return _NEUTRAL
+    if pct >= 58:
+        return "#00875A"   # green: clearly beating a coin flip
+    if pct >= 48:
+        return "#E8A33D"   # amber: around chance
+    return "#D1495B"       # red: below chance
+
+
+def _accuracy_donut(key: str, correct: int, total: int):
+    """A thin ring with a big centred % — the focal number the eye wants."""
     pct = correct / total * 100.0
-    dfp = pd.DataFrame({"k": ["correct", "wrong"], "v": [correct, total - correct]})
-    return (
-        alt.Chart(dfp)
-        .mark_arc(innerRadius=34)
-        .encode(
-            theta=alt.Theta("v:Q"),
+    color = _donut_color(key, pct)
+    ring = pd.DataFrame({"k": ["correct", "wrong"], "v": [correct, total - correct],
+                         "o": [0, 1]})
+    arc = (
+        alt.Chart(ring).mark_arc(innerRadius=46, outerRadius=62, cornerRadius=3).encode(
+            theta=alt.Theta("v:Q", stack=True), order=alt.Order("o:Q"),
             color=alt.Color("k:N", scale=alt.Scale(domain=["correct", "wrong"],
-                                                    range=["#2ecc71", "#e9ecef"]), legend=None),
+                                                    range=[color, _DONUT_BG]), legend=None),
             tooltip=[alt.Tooltip("k:N", title=""), alt.Tooltip("v:Q", title="matches")],
         )
-        .properties(height=150, title=f"{label} — {pct:.0f}%")
     )
+    center = (alt.Chart(pd.DataFrame({"t": [f"{pct:.0f}%"]}))
+              .mark_text(fontSize=26, fontWeight="bold", color=color)
+              .encode(text="t:N"))
+    return alt.layer(arc, center).properties(height=140).configure_view(strokeWidth=0)
 
 
 # ---- model accuracy scorecard (how often we are right, per metric) ----
 _played = accuracy.played_from_payload(data)
 if _played:
-    _rows = accuracy.metrics(_played)
+    _rows = [r for r in accuracy.metrics(_played) if r["total"]]
     _n = max((r["total"] for r in _rows), default=0)
-    st.subheader(f"How accurate has the model been? ({_n} played matches so far)")
-    st.caption(
-        "Share of played matches we called right, per prediction type. We call the **result** "
-        "(win/draw/loss) far better than the **exact score**, which is inherently low-probability in "
-        "football, so judge the model on outcomes, over/under, and both-teams-to-score. The model "
-        "parameters are fit leak-free on 14k+ historical internationals and the Elo ratings update "
-        "from every new result, so it keeps learning as matches are played."
-    )
-    _scards = [r for r in _rows if r["total"]]
-    for _row_cols in (_scards[:3], _scards[3:]):
-        if not _row_cols:
-            continue
-        _cols = st.columns(len(_row_cols))
-        for _c, _r in zip(_cols, _row_cols):
-            _c.altair_chart(_accuracy_donut(_r["label"], _r["correct"], _r["total"]),
+    with st.container(border=True):
+        st.markdown(f"##### 🎯 How accurate has the model been? · {_n} played matches")
+        st.caption(
+            "Share of played matches we called right, per prediction type. We nail the **result** "
+            "(win/draw/loss) far more often than the **exact score**, which is inherently "
+            "low-probability in football, so judge the model on the green metrics (outcome, "
+            "over/under, both-teams-to-score). Goal difference and exact score (blue) are "
+            "low-ceiling by nature. Parameters are fit leak-free on 14k+ historical internationals "
+            "and the ratings update from every result, so it keeps learning."
+        )
+        _cols = st.columns(len(_rows))
+        for _c, _r in zip(_cols, _rows):
+            _c.markdown(f"<div style='text-align:center;font-weight:600;font-size:0.9rem;"
+                        f"min-height:2.6em;line-height:1.2;display:flex;align-items:center;"
+                        f"justify-content:center'>{_r['label']}</div>", unsafe_allow_html=True)
+            _c.altair_chart(_accuracy_donut(_r["key"], _r["correct"], _r["total"]),
                             use_container_width=True)
-            _c.markdown(f"<div style='text-align:center;margin-top:-0.8em;color:#666'>"
-                        f"{_r['correct']}/{_r['total']} correct</div>", unsafe_allow_html=True)
+            _c.markdown(f"<div style='text-align:center;color:#6B7280;font-size:0.82rem;"
+                        f"margin-top:-0.6em'>{_r['correct']} / {_r['total']} correct</div>",
+                        unsafe_allow_html=True)
+        st.write("")   # breathing room so the rings don't touch the card border
+
+st.divider()
+
+# friendly column labels + percent formatting for the match tables (the row
+# highlighting from _highlight_rows still applies; this only renames/formats).
+_MATCH_COLCFG = {
+    "Kickoff (AMS)": st.column_config.TextColumn("Kickoff"),
+    "Grp": st.column_config.TextColumn("Group"),
+    "H%": st.column_config.NumberColumn("Home win", format="%d%%"),
+    "D%": st.column_config.NumberColumn("Draw", format="%d%%"),
+    "A%": st.column_config.NumberColumn("Away win", format="%d%%"),
+    "Likely": st.column_config.TextColumn("Likely score"),
+    "Top scorers": st.column_config.TextColumn("Top scorers", width="large"),
+}
 
 tabs = st.tabs(["📅 Daily", "🏆 Champion & stages", "⚽ Matches", "🔀 Bracket",
                 "👥 Groups", "🥅 Scorers", "📋 Availability", "📈 Calibration", "🔎 Team"])
@@ -352,7 +394,8 @@ with tabs[2]:
                    "✅ played green; 'Our call' shows ✅/❌ once a match has a result.")
         st.dataframe(_highlight_rows(pd.DataFrame(mrows).sort_values(["Date", "Kickoff (AMS)"]),
                                      date_col="Date", status_col="Status"),
-                     hide_index=True, use_container_width=True, height=560)
+                     hide_index=True, use_container_width=True, height=560,
+                     column_config=_MATCH_COLCFG)
     elif kind == "Friendlies (warm-up)":
         frows = []
         n_played = n_correct = 0
@@ -381,7 +424,8 @@ with tabs[2]:
                    "blue; played results (✅, green) also update the model's Elo when the refresh runs.")
         st.dataframe(_highlight_rows(pd.DataFrame(frows).sort_values("Date"),
                                      date_col="Date", status_col="Status"),
-                     hide_index=True, use_container_width=True, height=560)
+                     hide_index=True, use_container_width=True, height=560,
+                     column_config=_MATCH_COLCFG)
     else:
         krows = []
         for k in data.get("knockout", []):

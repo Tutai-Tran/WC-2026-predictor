@@ -15,3 +15,4 @@ wc26.db
 data/raw/_*
 data/raw/*.tsv
 data/raw/goal_scale.json
+.streamlit/secrets.toml
