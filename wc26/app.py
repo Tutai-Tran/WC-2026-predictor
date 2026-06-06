@@ -769,12 +769,14 @@ with tabs[8]:
 # ============================== Learning =============================
 with tabs[9]:
     st.subheader("🧠 What the model has learned")
-    st.caption("After every match, the model scores its **pre-match** prediction against the "
-               "result (leak-free), and an agent writes a post-mortem on each miss — *why* it was "
-               "wrong — which aggregate into systematic-bias hypotheses. The audit trail lives in "
-               "the vault's `_memory/LESSONS.md`. Parameters only change when a bias validates "
-               "out-of-sample, so a single upset never moves the model. Exact scores stay inherently "
-               "~10% likely; the learnable wins are calibration and systematic biases.")
+    st.caption("After every match, the model scores its **pre-match** prediction against the result "
+               "(leak-free). On each miss a **panel of agents** diagnoses *why* from different angles "
+               "(ratings, team context, tactics) and their consensus aggregates into systematic-bias "
+               "hypotheses (audit trail in the vault's `_memory/LESSONS.md`). When a bias is "
+               "corroborated and a parameter change is **validated to improve accuracy out-of-sample**, "
+               "the model adopts it automatically — it keeps sharpening itself, while a single upset "
+               "never moves it. Exact scores stay inherently ~10% likely; the learnable wins are "
+               "calibration and systematic biases.")
     conn = _conn_or_stop()
     db.init_db(conn)                          # ensure the learning tables exist (old DBs / cold cloud)
     _lrow = conn.execute("SELECT payload_json FROM predictions WHERE scope='lessons' "
@@ -826,6 +828,23 @@ with tabs[9]:
             tooltip=["factor:N", "segment:N", "direction:N", "strength:Q", "n:Q"])
             .properties(height=max(120, 26 * len(_bdf))))
         st.altair_chart(_bar, use_container_width=True)
+
+    try:                                              # adopted parameter changes (schema v4+)
+        _adj = conn.execute(
+            "SELECT created_at, param, direction, old_value, new_value, factor, n_eval "
+            "FROM model_params_log WHERE adopted=1 ORDER BY id DESC LIMIT 10").fetchall()
+    except Exception:
+        _adj = []
+    if _adj:
+        st.markdown("##### Algorithm changes the model adopted by itself")
+        st.caption("Each was applied only after a multi-agent diagnosis flagged a systematic bias "
+                   "AND the change lowered error on the tournament results so far without worsening "
+                   "the historical backtest — the model retuning its own calculation, validated.")
+        st.dataframe(pd.DataFrame([
+            {"When": str(r["created_at"])[:10], "From bias": r["factor"], "Parameter": r["param"],
+             "Change": f"{r['old_value']} → {r['new_value']}",
+             "Validated on": f"{r['n_eval']} matches"} for r in _adj]),
+            hide_index=True, use_container_width=True)
 
     _pm = conn.execute(
         "SELECT pl.home_team, pl.away_team, pl.home_goals hg, pl.away_goals ag, p.factor, p.summary "
