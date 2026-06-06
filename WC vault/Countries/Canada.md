@@ -5,7 +5,7 @@ fifa_code: "CAN"
 group: "B"
 fifa_rank: 27
 elo: 1923
-champion_prob: 0.0082
+champion_prob: 0.0083
 status: active
 created: 2026-06-04
 updated: 2026-06-06
@@ -13,9 +13,9 @@ updated: 2026-06-06
 
 # Canada
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-06T05:11Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-06T08:19Z | source elo-goal-v1 -->
 Group B | FIFA rank 27 | Elo 1923
-Champion 0.8% | Final 2.6% | SF 7.9% | QF 21.2% | Advance 95.2%
+Champion 0.8% | Final 2.6% | SF 8.0% | QF 21.4% | Advance 95.1%
 Availability concerns: Alphonso Davies (doubtful), Moïse Bombito (doubtful), Jacob Shaffelburg (doubtful), Ali Ahmed (doubtful), Alfie Jones (doubtful), Richie Laryea (doubtful), Luc de Fougerolles (doubtful), Promise David (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -64,6 +64,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-06T05:11Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-06T08:19Z | source elo-goal-v1 -->
 - 2026-06-06: champion 0.8% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

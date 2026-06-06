@@ -5,7 +5,7 @@ fifa_code: "COL"
 group: "K"
 fifa_rank: 13
 elo: 2064
-champion_prob: 0.057
+champion_prob: 0.0568
 status: active
 created: 2026-06-04
 updated: 2026-06-06
@@ -13,9 +13,9 @@ updated: 2026-06-06
 
 # Colombia
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-06T05:11Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-06T08:19Z | source elo-goal-v1 -->
 Group K | FIFA rank 13 | Elo 2064
-Champion 5.7% | Final 11.4% | SF 20.9% | QF 33.7% | Advance 90.2%
+Champion 5.7% | Final 11.8% | SF 21.5% | QF 34.9% | Advance 90.3%
 Availability concerns: Jhon Córdoba (doubtful), Yerry Mina (doubtful), Johan Mojica (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-06T05:11Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-06T08:19Z | source elo-goal-v1 -->
 - 2026-06-06: champion 5.7% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
