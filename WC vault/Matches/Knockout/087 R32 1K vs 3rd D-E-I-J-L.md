@@ -12,9 +12,9 @@ updated: 2026-06-06
 **R32 (match #87)** · 2026-07-04
 
 Slots: 1K vs 3rd D/E/I/J/L
-Projected: Colombia vs 3rd D/E/I/J/L
+Projected: Portugal vs 3rd D/E/I/J/L
 Result: TBD
-Data as of 2026-06-05 | runs 50000 | seed 20260611
+Data as of 2026-06-06 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match
