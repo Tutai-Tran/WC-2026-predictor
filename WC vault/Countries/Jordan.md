@@ -13,9 +13,9 @@ updated: 2026-06-06
 
 # Jordan
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-06T16:53Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-06T20:02Z | source elo-goal-v1 -->
 Group J | FIFA rank 62 | Elo 1789
-Champion 0.0% | Final 0.1% | SF 0.6% | QF 2.7% | Advance 37.0%
+Champion 0.0% | Final 0.1% | SF 0.7% | QF 2.7% | Advance 37.3%
 Availability concerns: Ali Olwan (doubtful), Ihsan Haddad (doubtful), Nour Bani Attiah (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-06T16:53Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-06T20:02Z | source elo-goal-v1 -->
 - 2026-06-06: champion 0.0% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
