@@ -5,7 +5,7 @@ fifa_code: "SCO"
 group: "C"
 fifa_rank: 39
 elo: 1859
-champion_prob: 0.0014
+champion_prob: 0.0019
 status: active
 created: 2026-06-04
 updated: 2026-06-06
@@ -13,10 +13,10 @@ updated: 2026-06-06
 
 # Scotland
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-06T20:02Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-06T21:29Z | source elo-goal-v1 -->
 Group C | FIFA rank 39 | Elo 1859
-Champion 0.1% | Final 0.6% | SF 2.0% | QF 6.8% | Advance 58.0%
-Availability concerns: Ché Adams (doubtful), Aaron Hickey (doubtful), Ben Gannon-Doak (doubtful), Craig Gordon (doubtful)
+Champion 0.2% | Final 0.8% | SF 2.5% | QF 8.2% | Advance 61.3%
+Availability: no concerns recorded
 <!-- WC26:AUTO:snapshot END -->
 
 ## Squad & availability
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-06T20:02Z | source elo-goal-v1 -->
-- 2026-06-06: champion 0.1% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-06T21:29Z | source elo-goal-v1 -->
+- 2026-06-06: champion 0.2% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

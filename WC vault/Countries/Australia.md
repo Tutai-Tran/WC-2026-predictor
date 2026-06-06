@@ -4,7 +4,7 @@ team: "Australia"
 fifa_code: "AUS"
 group: "D"
 fifa_rank: 25
-elo: 1908
+elo: 1909
 champion_prob: 0.0019
 status: active
 created: 2026-06-04
@@ -13,9 +13,9 @@ updated: 2026-06-06
 
 # Australia
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-06T20:02Z | source elo-goal-v1 -->
-Group D | FIFA rank 25 | Elo 1908
-Champion 0.2% | Final 0.8% | SF 2.7% | QF 9.2% | Advance 53.2%
+<!-- WC26:AUTO:snapshot START | generated 2026-06-06T21:29Z | source elo-goal-v1 -->
+Group D | FIFA rank 25 | Elo 1909
+Champion 0.2% | Final 0.8% | SF 2.8% | QF 9.5% | Advance 54.6%
 Availability concerns: Harry Souttar (doubtful), Aiden O'Neill (doubtful), Jackson Irvine (doubtful), Connor Metcalfe (doubtful), Mathew Leckie (doubtful), Cammy Devlin (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-06T20:02Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-06T21:29Z | source elo-goal-v1 -->
 - 2026-06-06: champion 0.2% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
