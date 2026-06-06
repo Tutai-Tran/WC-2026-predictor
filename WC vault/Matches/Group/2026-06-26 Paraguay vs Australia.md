@@ -13,10 +13,10 @@ updated: 2026-06-06
 <!-- WC26:AUTO:forecast START -->
 **Group D match** · 2026-06-26
 
-Win Paraguay: 41.7% | Draw: 32.4% | Win Australia: 25.8%
-Most likely scoreline: 1-0 (15.2%) (modal only; many outcomes possible)
-Top scorers: Miguel Almirón 15.0%; Antonio Sanabria 13.5%; Kaku 10.5%; Mathew Leckie 13.1%; Jackson Irvine 12.3%; Awer Mabil 9.9%;
-Data as of 2026-06-06 | runs 50000 | seed 20260611
+Win Paraguay: 35.6% | Draw: 30.6% | Win Australia: 33.8%
+Most likely scoreline: 1-0 (11.5%) (modal only; many outcomes possible)
+Top scorers: Miguel Almirón 15.0%; Antonio Sanabria 13.5%; Kaku 10.5%; Mathew Leckie 16.9%; Jackson Irvine 16.0%; Awer Mabil 12.9%;
+Data as of 2026-06-05 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

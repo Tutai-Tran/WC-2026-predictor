@@ -16,7 +16,7 @@ updated: 2026-06-06
 Win DR Congo: 28.7% | Draw: 29.5% | Win Uzbekistan: 41.8%
 Most likely scoreline: 0-1 (12.0%) (modal only; many outcomes possible)
 Top scorers: Cédric Bakambu 20.7%; Meschak Elia 13.0%; Yoane Wissa 10.3%; Eldor Shomurodov 34.3%; Igor Sergeev 21.0%; Jaloliddin Masharipov 11.1%;
-Data as of 2026-06-06 | runs 50000 | seed 20260611
+Data as of 2026-06-05 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

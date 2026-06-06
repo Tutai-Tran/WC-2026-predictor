@@ -12,9 +12,9 @@ updated: 2026-06-06
 **R32 (match #74)** · 2026-06-29
 
 Slots: 1E vs 3rd A/B/C/D/F
-Projected: Ecuador vs 3rd A/B/C/D/F
+Projected: Germany vs 3rd A/B/C/D/F
 Result: TBD
-Data as of 2026-06-06 | runs 50000 | seed 20260611
+Data as of 2026-06-05 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

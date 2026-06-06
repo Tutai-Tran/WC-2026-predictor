@@ -12,9 +12,9 @@ updated: 2026-06-06
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-05-31 · played 4-0
 
-Win Germany: 81.8% | Draw: 13.3% | Win Finland: 4.9%
+Win Germany: 81.4% | Draw: 13.5% | Win Finland: 5.1%
 Most likely scoreline: 2-0
-Data as of 2026-06-06 | runs 50000 | seed 20260611
+Data as of 2026-06-05 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

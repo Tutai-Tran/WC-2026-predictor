@@ -14,7 +14,7 @@ updated: 2026-06-06
 
 Win Haiti: 36.8% | Draw: 30.4% | Win New Zealand: 32.8%
 Most likely scoreline: 1-0
-Data as of 2026-06-06 | runs 50000 | seed 20260611
+Data as of 2026-06-05 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

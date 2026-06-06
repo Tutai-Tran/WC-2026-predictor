@@ -14,7 +14,7 @@ updated: 2026-06-06
 
 Win Netherlands: 48.9% | Draw: 27.7% | Win Algeria: 23.4%
 Most likely scoreline: 1-0
-Data as of 2026-06-06 | runs 50000 | seed 20260611
+Data as of 2026-06-05 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

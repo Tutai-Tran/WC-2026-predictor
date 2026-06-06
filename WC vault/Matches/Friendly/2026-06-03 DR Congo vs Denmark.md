@@ -14,7 +14,7 @@ updated: 2026-06-06
 
 Win DR Congo: 19.7% | Draw: 26.0% | Win Denmark: 54.3%
 Most likely scoreline: 0-1
-Data as of 2026-06-06 | runs 50000 | seed 20260611
+Data as of 2026-06-05 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match
