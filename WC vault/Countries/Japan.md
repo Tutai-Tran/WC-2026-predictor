@@ -5,7 +5,7 @@ fifa_code: "JPN"
 group: "F"
 fifa_rank: 19
 elo: 2014
-champion_prob: 0.0326
+champion_prob: 0.0321
 status: active
 created: 2026-06-04
 updated: 2026-06-06
@@ -13,9 +13,9 @@ updated: 2026-06-06
 
 # Japan
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-06T02:01Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-06T05:11Z | source elo-goal-v1 -->
 Group F | FIFA rank 19 | Elo 2014
-Champion 3.3% | Final 7.1% | SF 15.4% | QF 30.6% | Advance 91.9%
+Champion 3.2% | Final 7.2% | SF 15.5% | QF 31.3% | Advance 91.9%
 Availability: no concerns recorded
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-06T02:01Z | source elo-goal-v1 -->
-- 2026-06-06: champion 3.3% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-06T05:11Z | source elo-goal-v1 -->
+- 2026-06-06: champion 3.2% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

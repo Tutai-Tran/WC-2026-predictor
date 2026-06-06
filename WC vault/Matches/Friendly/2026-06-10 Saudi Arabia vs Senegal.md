@@ -12,7 +12,7 @@ updated: 2026-06-06
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-06-10 · scheduled
 
-Win Saudi Arabia: 15.9% | Draw: 23.7% | Win Senegal: 60.4%
+Win Saudi Arabia: 16.2% | Draw: 23.9% | Win Senegal: 59.9%
 Most likely scoreline: 0-1
 Data as of 2026-06-06 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
