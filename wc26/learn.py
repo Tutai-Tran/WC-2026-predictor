@@ -168,6 +168,15 @@ _PANEL = (
     ("tactical", "You are a TACTICAL football analyst. Focus on the on-pitch matchup: style "
                  "clash, game state, set-pieces, a red card. Be honest: if the result was simply "
                  "a fair low-probability upset with no model error, say so via the 'variance' factor."),
+    ("draws", "You are a DRAW SPECIALIST. The model has been systematically UNDER-predicting "
+              "draws. Judge specifically how likely a DRAW was vs the model's draw probability: "
+              "weigh parity between the sides, low-scoring/cagey tendencies, defensive setups, "
+              "and late-equaliser dynamics. If a draw was more likely than the model implied, "
+              "return factor 'draw' direction 'under'. Use 'goal_volume' if total goals drove it."),
+    ("scoreline", "You are a SCORELINE/expected-goals analyst. Focus on the GOALS, not the "
+                  "win/draw/loss pick: was the expected-goals total too high/low (goal_volume) or "
+                  "the home/away split wrong, and would a tighter, more draw-prone scoreline "
+                  "distribution have fit the actual score better? Map to 'goal_volume' and 'draw'."),
 )
 
 _LESSON_SCHEMA = (

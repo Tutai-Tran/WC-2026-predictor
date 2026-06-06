@@ -175,10 +175,11 @@ def test_merge_panel_consensus():
                       "suggested_segment": "global", "evidence": "lone", "summary": "lone"}],
     }
     merged = {m["factor"]: m for m in learn._merge_panel(by_lens)}
+    n = len(learn._PANEL)                                     # evidence tags against the panel size
     assert merged["draw"]["direction"] == "under"             # 2 under outvote 1 over
     assert merged["draw"]["confidence"] > 0.75                # consensus boost above the raw mean
-    assert "2/3 agents" in merged["draw"]["evidence"]
-    assert merged["tactical"]["direction"] == "under" and "1/3 agents" in merged["tactical"]["evidence"]
+    assert f"2/{n} agents" in merged["draw"]["evidence"]
+    assert merged["tactical"]["direction"] == "under" and f"1/{n} agents" in merged["tactical"]["evidence"]
 
 
 # --------------------------- validated adoption gate (Part B) -------------------------
