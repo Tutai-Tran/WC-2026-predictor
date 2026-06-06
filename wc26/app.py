@@ -128,16 +128,25 @@ _AMS = ZoneInfo("Europe/Amsterdam")
 
 
 def _ams_parts(value) -> tuple[str, str]:
-    """Return (Amsterdam date, Amsterdam "HH:MM") for a stored kickoff.
+    """Return (matchday date, Amsterdam "HH:MM") for a stored kickoff.
 
-    Date-only values (no time in the data) yield the date and an empty time."""
+    The matchday is the UTC calendar date of kickoff — the canonical day a fixture
+    "is on". The 2026 World Cup is in the Americas, so most kickoffs are late-UTC and
+    would roll to the NEXT day in Amsterdam local time; grouping by the Amsterdam date
+    therefore mislabels nearly every match a day late. We keep the kickoff TIME in
+    Amsterdam (as requested) and append a "(+1d)" marker when that clock time lands on
+    the day after the matchday. Date-only values yield the date and an empty time."""
     if not value:
         return "TBD", ""
     s = str(value)
     if "T" in s:
         try:
-            local = datetime.fromisoformat(s.replace("Z", "+00:00")).astimezone(_AMS)
-            return local.date().isoformat(), local.strftime("%H:%M")
+            dt = datetime.fromisoformat(s.replace("Z", "+00:00"))
+            matchday = dt.astimezone(timezone.utc).date()
+            ams = dt.astimezone(_AMS)
+            delta = (ams.date() - matchday).days
+            t = ams.strftime("%H:%M") + (f" ({delta:+d}d)" if delta else "")
+            return matchday.isoformat(), t
         except ValueError:
             pass
     return s[:10], ""
@@ -153,7 +162,9 @@ _TODAY_BG = "background-color: rgba(56, 132, 255, 0.20)"    # blue
 
 
 def _today_iso() -> str:
-    return datetime.now(_AMS).date().isoformat()
+    # UTC, to match the matchday grouping in _ams_parts (so "today" highlighting and the
+    # date slider line up with the day each fixture is grouped under).
+    return datetime.now(timezone.utc).date().isoformat()
 
 
 def _is_played(value) -> bool:
@@ -391,7 +402,7 @@ with tabs[0]:
     if pick:
         day = df[df["date"] == pick]
         st.markdown(f"### {pick} — {len(day)} match(es)" + ("  ·  📍 today" if pick == today else ""))
-        st.caption("Forecast column is Win / Draw / Win (home/away). The 'our call' column shows "
+        st.caption("Forecast column is Win / Draw / Away win (home perspective). The 'our call' column shows "
                    "✅ if our forecast got the result (win/draw/loss) right and ❌ (with what we "
                    "said) if not. Kickoff times are Amsterdam local (CEST); matches without a "
                    "scheduled time show —. 🔵 Today's matches are highlighted blue, ✅ played green.")
@@ -588,12 +599,16 @@ with tabs[4]:
         groups.setdefault(r["group_letter"], []).append(r["name"])
     cols = st.columns(3)
     for i, letter in enumerate(sorted(groups)):
-        teams = sorted(groups[letter], key=lambda t: probs[t]["advance"], reverse=True)
+        # guard with .get: a team in the DB but absent from the latest forecast payload
+        # (e.g. a partial run) must not crash the whole tab.
+        def _p(t, key):
+            return (probs.get(t) or {}).get(key, 0.0)
+        teams = sorted(groups[letter], key=lambda t: _p(t, "advance"), reverse=True)
         with cols[i % 3]:
             st.subheader(f"Group {letter}")
             st.dataframe(pd.DataFrame([
-                {"Team": t, "Win grp %": round(probs[t]["win_group"]*100),
-                 "Advance %": round(probs[t]["advance"]*100)} for t in teams
+                {"Team": t, "Win grp %": round(_p(t, "win_group")*100),
+                 "Advance %": round(_p(t, "advance")*100)} for t in teams
             ]), hide_index=True, use_container_width=True)
 
 # ============================== Scorers =============================
