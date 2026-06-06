@@ -29,7 +29,18 @@ refresh_cycle() {
 # Refresh + publish IMMEDIATELY on launch so the cloud dashboard updates right
 # after this device comes online, then repeat every 3 hours.
 ( refresh_cycle; while true; do sleep 10800; refresh_cycle; done ) &
-echo $! > logs/refresh.pid
+LOOP_PID=$!
+echo "$LOOP_PID" > logs/refresh.pid
 
-# dashboard in the foreground (KeepAlive restarts it if it ever exits)
-exec "$ST" run wc26/app.py --server.headless true --server.port 8501 --server.address 127.0.0.1
+# dashboard alongside the loop
+"$ST" run wc26/app.py --server.headless true --server.port 8501 --server.address 127.0.0.1 &
+DASH_PID=$!
+
+# Supervise BOTH: if either the refresh loop or the dashboard dies, exit non-zero so
+# launchd KeepAlive relaunches the whole thing. This keeps the device-only system
+# self-healing with no Claude session involved — only the device needs to be on.
+while kill -0 "$LOOP_PID" 2>/dev/null && kill -0 "$DASH_PID" 2>/dev/null; do
+  sleep 30
+done
+kill "$LOOP_PID" "$DASH_PID" 2>/dev/null || true
+exit 1
