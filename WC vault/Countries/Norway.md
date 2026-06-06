@@ -5,7 +5,7 @@ fifa_code: "NOR"
 group: "I"
 fifa_rank: 29
 elo: 2000
-champion_prob: 0.0234
+champion_prob: 0.0247
 status: active
 created: 2026-06-04
 updated: 2026-06-06
@@ -13,9 +13,9 @@ updated: 2026-06-06
 
 # Norway
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-06T14:09Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-06T16:53Z | source elo-goal-v1 -->
 Group I | FIFA rank 29 | Elo 2000
-Champion 2.3% | Final 6.0% | SF 13.2% | QF 26.2% | Advance 82.1%
+Champion 2.5% | Final 6.1% | SF 13.0% | QF 26.0% | Advance 81.9%
 Availability concerns: Martin Ødegaard (doubtful), Leo Østigård (doubtful), Kristoffer Ajer (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-06T14:09Z | source elo-goal-v1 -->
-- 2026-06-06: champion 2.3% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-06T16:53Z | source elo-goal-v1 -->
+- 2026-06-06: champion 2.5% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

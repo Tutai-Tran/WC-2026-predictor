@@ -12,8 +12,8 @@ updated: 2026-06-06
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-06-02 · played 0-2
 
-Win Croatia: 35.1% | Draw: 30.7% | Win Belgium: 34.2%
-Most likely scoreline: 1-0
+Win Croatia: 34.1% | Draw: 30.7% | Win Belgium: 35.2%
+Most likely scoreline: 0-1
 Data as of 2026-06-06 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
