@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-08
 home: "France"
 away: "Northern Ireland"
-updated: 2026-06-05
+updated: 2026-06-06
 ---
 
 # France vs Northern Ireland (friendly)

@@ -5,7 +5,7 @@ group: L
 date: 2026-06-17
 home: "Ghana"
 away: "Panama"
-updated: 2026-06-05
+updated: 2026-06-06
 ---
 
 # Ghana vs Panama

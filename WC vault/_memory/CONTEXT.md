@@ -156,3 +156,7 @@ scraped results: {'added': 7}; elo: {'recomputed': True, 'ledger_matches': 73, '
 ## 2026-06-05 22:54 UTC — Automated refresh (update.py)
 
 scraped results: {'added': 1}; elo: {'recomputed': True, 'ledger_matches': 74, 'teams_updated': 76}; news: {'teams_scanned': ['Norway', 'Argentina', 'Algeria'], 'events': 17}; overrides synced: 0 events; prediction snapshots: {'snapshotted': 99}; graded: {'graded': 0, 'wrong': 0}; post-mortems: {'analyzed': 0, 'errors': 0}; lessons: {'n': 0, 'accuracy': None, 'brier': None, 'log_loss': None}; running calibration: {'n': 0}; vault: {'countries': 48, 'groups': 12, 'matches': {'group': 72, 'friendly': 62, 'knockout': 31}, 'bracket': 'written'}; run_id run-20260605T225409Z.
+
+## 2026-06-06 02:01 UTC — Automated refresh (update.py)
+
+scraped results: {'added': 2}; elo: {'recomputed': True, 'ledger_matches': 76, 'teams_updated': 76}; news: {'teams_scanned': ['Austria', 'Jordan', 'Portugal'], 'events': 7}; overrides synced: 0 events; prediction snapshots: {'snapshotted': 99}; graded: {'graded': 2, 'wrong': 1}; post-mortems: {'analyzed': 1, 'errors': 0}; lessons: {'n': 2, 'accuracy': 0.5, 'brier': 0.4701, 'log_loss': 0.785}; running calibration: {'n': 0}; vault: {'countries': 48, 'groups': 12, 'matches': {'group': 72, 'friendly': 62, 'knockout': 31}, 'bracket': 'written'}; run_id run-20260606T020155Z.

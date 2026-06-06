@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-01
 home: "Austria"
 away: "Tunisia"
-updated: 2026-06-05
+updated: 2026-06-06
 ---
 
 # Austria vs Tunisia (friendly)

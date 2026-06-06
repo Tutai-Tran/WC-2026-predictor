@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-08
 home: "Colombia"
 away: "Jordan"
-updated: 2026-06-05
+updated: 2026-06-06
 ---
 
 # Colombia vs Jordan (friendly)

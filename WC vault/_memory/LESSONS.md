@@ -1,10 +1,18 @@
 ---
 type: wc-lessons
-updated: 2026-06-05
+updated: 2026-06-06
 ---
 
 # What the model has learned
 
-> Leak-free over **0** graded matches: outcome accuracy **—**, Brier None, log loss None. The biases below are hypotheses (the audit trail); the model's parameters are where learning is actually applied, only after it validates out-of-sample.
+> Leak-free over **2** graded matches: outcome accuracy **50%**, Brier 0.4701, log loss 0.785. The biases below are hypotheses (the audit trail); the model's parameters are where learning is actually applied, only after it validates out-of-sample.
 
-_No systematic bias detected yet — needs more played matches._
+## Accuracy by segment
+- friendly: 50% (2 matches)
+
+## Systematic biases found (ranked by evidence)
+- **draw** (friendly): model under-rated it (strength 0.45, over 1 wrong matches)
+- **elo_gap** (friendly): model over-rated it (strength 0.4, over 1 wrong matches)
+- **goal_volume** (friendly): model under-rated it (strength 0.25, over 1 wrong matches)
+- **home_advantage** (friendly): model over-rated it (strength 0.3, over 1 wrong matches)
+- **motivation** (friendly): model over-rated it (strength 0.35, over 1 wrong matches)

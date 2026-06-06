@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-07
 home: "England"
 away: "New Zealand"
-updated: 2026-06-05
+updated: 2026-06-06
 ---
 
 # England vs New Zealand (friendly)

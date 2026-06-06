@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-07
 home: "Croatia"
 away: "Slovenia"
-updated: 2026-06-05
+updated: 2026-06-06
 ---
 
 # Croatia vs Slovenia (friendly)

@@ -5,7 +5,7 @@ group: B
 date: 2026-06-24
 home: "Bosnia and Herzegovina"
 away: "Qatar"
-updated: 2026-06-05
+updated: 2026-06-06
 ---
 
 # Bosnia and Herzegovina vs Qatar

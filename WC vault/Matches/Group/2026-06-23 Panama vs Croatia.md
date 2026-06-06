@@ -5,7 +5,7 @@ group: L
 date: 2026-06-23
 home: "Panama"
 away: "Croatia"
-updated: 2026-06-05
+updated: 2026-06-06
 ---
 
 # Panama vs Croatia

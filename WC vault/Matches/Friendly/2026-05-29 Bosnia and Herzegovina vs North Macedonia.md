@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-05-29
 home: "Bosnia and Herzegovina"
 away: "North Macedonia"
-updated: 2026-06-05
+updated: 2026-06-06
 ---
 
 # Bosnia and Herzegovina vs North Macedonia (friendly)

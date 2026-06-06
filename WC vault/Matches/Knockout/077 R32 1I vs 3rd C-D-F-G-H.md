@@ -3,7 +3,7 @@ type: wc-match
 stage: R32
 match_no: 77
 date: 2026-06-30
-updated: 2026-06-05
+updated: 2026-06-06
 ---
 
 # R32 #77: 1I vs 3rd C/D/F/G/H

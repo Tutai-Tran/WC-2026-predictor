@@ -5,7 +5,7 @@ group: E
 date: 2026-06-25
 home: "Ecuador"
 away: "Germany"
-updated: 2026-06-05
+updated: 2026-06-06
 ---
 
 # Ecuador vs Germany

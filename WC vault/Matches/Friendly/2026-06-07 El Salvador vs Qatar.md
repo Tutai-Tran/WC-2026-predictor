@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-07
 home: "El Salvador"
 away: "Qatar"
-updated: 2026-06-05
+updated: 2026-06-06
 ---
 
 # El Salvador vs Qatar (friendly)

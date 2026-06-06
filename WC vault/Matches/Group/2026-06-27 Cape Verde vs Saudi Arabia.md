@@ -5,7 +5,7 @@ group: H
 date: 2026-06-27
 home: "Cape Verde"
 away: "Saudi Arabia"
-updated: 2026-06-05
+updated: 2026-06-06
 ---
 
 # Cape Verde vs Saudi Arabia

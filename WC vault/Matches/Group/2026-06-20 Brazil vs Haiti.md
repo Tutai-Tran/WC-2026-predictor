@@ -5,7 +5,7 @@ group: C
 date: 2026-06-20
 home: "Brazil"
 away: "Haiti"
-updated: 2026-06-05
+updated: 2026-06-06
 ---
 
 # Brazil vs Haiti

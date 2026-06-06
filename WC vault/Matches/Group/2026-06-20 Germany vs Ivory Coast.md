@@ -5,7 +5,7 @@ group: E
 date: 2026-06-20
 home: "Germany"
 away: "Ivory Coast"
-updated: 2026-06-05
+updated: 2026-06-06
 ---
 
 # Germany vs Ivory Coast

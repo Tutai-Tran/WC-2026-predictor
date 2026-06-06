@@ -5,7 +5,7 @@ group: F
 date: 2026-06-15
 home: "Sweden"
 away: "Tunisia"
-updated: 2026-06-05
+updated: 2026-06-06
 ---
 
 # Sweden vs Tunisia

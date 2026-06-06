@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-11
 home: "England"
 away: "Costa Rica"
-updated: 2026-06-05
+updated: 2026-06-06
 ---
 
 # England vs Costa Rica (friendly)

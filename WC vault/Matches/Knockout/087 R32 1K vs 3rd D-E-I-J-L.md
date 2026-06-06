@@ -3,7 +3,7 @@ type: wc-match
 stage: R32
 match_no: 87
 date: 2026-07-04
-updated: 2026-06-05
+updated: 2026-06-06
 ---
 
 # R32 #87: 1K vs 3rd D/E/I/J/L

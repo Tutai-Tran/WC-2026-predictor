@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-10
 home: "Argentina"
 away: "Iceland"
-updated: 2026-06-05
+updated: 2026-06-06
 ---
 
 # Argentina vs Iceland (friendly)
