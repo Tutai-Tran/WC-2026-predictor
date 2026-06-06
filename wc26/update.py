@@ -78,10 +78,14 @@ def run(conn=None, n_runs: int = 50_000, news_teams: int = 3, postmortems: int =
         news_rep = news.run_news_scan(conn, limit=news_teams)
     except Exception as e:
         news_rep = {"error": str(e)}
-    try:                                          # LLM root-cause post-mortems on WRONG predictions
+    try:                                          # multi-agent root-cause post-mortems on WRONG predictions
         pm_rep = learn.run_postmortems(conn, limit=postmortems)
     except Exception as e:
         pm_rep = {"error": str(e)}
+    try:                                          # VALIDATED parameter adoption (only if it improves
+        adopt_rep = learn.adopt_adjustments(conn)  # out-of-sample accuracy); runs BEFORE the forecast
+    except Exception as e:                         # so an adopted change sharpens THIS cycle's forecast
+        adopt_rep = {"error": str(e)}
     calib = log_calibration(conn)                # score the prior forecast vs played results
     result = forecast.run_forecast(conn, n_runs=n_runs)
     # regenerate the learning summary (leak-free accuracy + ranked biases) for the dashboard
@@ -104,12 +108,13 @@ def run(conn=None, n_runs: int = 50_000, news_teams: int = 3, postmortems: int =
         f"scraped results: {scraped}; elo: {elo_rep}; news: {news_rep}; "
         f"overrides synced: {overrides_report.get('events', 0)} events; "
         f"prediction snapshots: {snap_rep}; graded: {grade_rep}; post-mortems: {pm_rep}; "
+        f"param adoption: {adopt_rep}; "
         f"lessons: {lessons.get('overall') if isinstance(lessons, dict) else lessons}; "
         f"running calibration: {calib}; vault: {vault}; run_id {result['run_id']}.",
     )
     return {"scraped": scraped, "elo": elo_rep, "news": news_rep,
             "overrides": overrides_report, "snapshots": snap_rep, "graded": grade_rep,
-            "postmortems": pm_rep, "lessons": lessons,
+            "postmortems": pm_rep, "adoption": adopt_rep, "lessons": lessons,
             "calibration": calib, "vault": vault, "run_id": result["run_id"]}
 
 

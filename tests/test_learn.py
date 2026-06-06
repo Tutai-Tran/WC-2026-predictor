@@ -94,13 +94,13 @@ def test_postmortems_write_and_aggregate(tmp_path, monkeypatch):
     conn = _setup(tmp_path)
     learn.snapshot_upcoming(conn)
     pid = _force_wrong(conn)
-    monkeypatch.setattr(learn, "_analyze", lambda row, timeout=180: [
+    # the panel returns (merged_lessons, raw_by_lens); validation already happened per lens
+    monkeypatch.setattr(learn, "_analyze_panel", lambda row, timeout=180: ([
         {"factor": "home_advantage", "direction": "over", "magnitude": 0.5,
          "suggested_segment": "host", "confidence": 0.8, "evidence": "host lost", "summary": "over-rated host"},
         {"factor": "variance", "direction": "over", "magnitude": 0.0, "suggested_segment": "global",
          "confidence": 0.6, "evidence": "upset", "summary": "noise"},
-        {"factor": "NONSENSE", "direction": "sideways"},   # invalid -> dropped by the guard
-    ])
+    ], {"quant": [{"factor": "home_advantage"}]}))
     rep = learn.run_postmortems(conn, limit=5)
     assert rep["analyzed"] == 1
     # 2 valid lessons written (the invalid one is filtered out)
@@ -138,8 +138,8 @@ def test_propose_adjustments_quorum(tmp_path):
     out = learn.propose_adjustments(conn, quorum=8)
     cands = {c["factor"]: c for c in out["candidates"]}
     assert set(cands) == {"goal_volume"}                      # only the systematic, mappable one
-    assert cands["goal_volume"]["param"] == "goal_scale"
-    assert cands["goal_volume"]["direction"] == "down"        # over-predicted goals -> scale down
+    assert cands["goal_volume"]["param"] == "base_goals"      # the real gate-tunable knob
+    assert cands["goal_volume"]["direction"] == "down"        # over-predicted goals -> lower base goals
     assert cands["goal_volume"]["applied"] is False           # candidates are never auto-applied
 
 
@@ -153,7 +153,114 @@ def test_postmortem_cli_down_marks_error(tmp_path, monkeypatch):
     conn = _setup(tmp_path)
     learn.snapshot_upcoming(conn)
     pid = _force_wrong(conn)
-    monkeypatch.setattr(learn, "_analyze", lambda row, timeout=180: None)   # CLI unavailable
+    monkeypatch.setattr(learn, "_analyze_panel", lambda row, timeout=180: None)   # whole panel down
     rep = learn.run_postmortems(conn, limit=5)
     assert rep["errors"] == 1
     assert conn.execute("SELECT postmortem_status FROM prediction_log WHERE id=?", (pid,)).fetchone()[0] == "error"
+
+
+# ----------------------------- multi-agent panel (Part A) -----------------------------
+
+def test_merge_panel_consensus():
+    """Two lenses agreeing on a factor outweigh a lone dissenter and boost confidence;
+    a factor only one lens raises stays single-strength and labelled 1/3 agents."""
+    by_lens = {
+        "quant":    [{"factor": "draw", "direction": "under", "magnitude": 0.5, "confidence": 0.7,
+                      "suggested_segment": "friendly", "evidence": "q", "summary": "q"}],
+        "context":  [{"factor": "draw", "direction": "under", "magnitude": 0.6, "confidence": 0.8,
+                      "suggested_segment": "friendly", "evidence": "c", "summary": "c"}],
+        "tactical": [{"factor": "draw", "direction": "over", "magnitude": 0.3, "confidence": 0.4,
+                      "suggested_segment": "friendly", "evidence": "t", "summary": "t"},
+                     {"factor": "tactical", "direction": "under", "magnitude": 0.5, "confidence": 0.6,
+                      "suggested_segment": "global", "evidence": "lone", "summary": "lone"}],
+    }
+    merged = {m["factor"]: m for m in learn._merge_panel(by_lens)}
+    assert merged["draw"]["direction"] == "under"             # 2 under outvote 1 over
+    assert merged["draw"]["confidence"] > 0.75                # consensus boost above the raw mean
+    assert "2/3 agents" in merged["draw"]["evidence"]
+    assert merged["tactical"]["direction"] == "under" and "1/3 agents" in merged["tactical"]["evidence"]
+
+
+# --------------------------- validated adoption gate (Part B) -------------------------
+
+def _grade_with_elo(conn, n, actual="draw", elo_away=1690):
+    """Mark n snapshotted GROUP-stage rows graded, with pre-match Elo in inputs_json
+    (the gate only evaluates tournament matches, so friendlies don't count)."""
+    import json
+    ids = [r[0] for r in conn.execute(
+        "SELECT id FROM prediction_log WHERE stage='group' LIMIT ?", (n,)).fetchall()]
+    hg, ag = (1, 1) if actual == "draw" else ((2, 0) if actual == "home" else (0, 2))
+    for i, pid in enumerate(ids):
+        conn.execute(
+            "UPDATE prediction_log SET graded=1, home_goals=?, away_goals=?, actual=?, correct=0, "
+            "brier=0.5, log_loss=1.0, inputs_json=? WHERE id=?",
+            (hg, ag, actual, json.dumps({"elo_home": 1700 + i, "elo_away": elo_away}), pid))
+    conn.commit()
+    return ids
+
+
+def test_adopt_adjustments_insufficient_data(tmp_path):
+    conn = _setup(tmp_path)
+    learn.snapshot_upcoming(conn)                              # snapshots exist, none graded
+    rep = learn.adopt_adjustments(conn)
+    assert rep["adopted"] == 0 and "insufficient" in rep["reason"]
+
+
+def test_adopt_adjustments_no_quorum_candidates(tmp_path):
+    conn = _setup(tmp_path)
+    learn.snapshot_upcoming(conn)
+    _grade_with_elo(conn, 20)                                  # enough data, but no post-mortems
+    rep = learn.adopt_adjustments(conn)
+    assert rep["adopted"] == 0 and "no quorum" in rep["reason"] and rep["n"] == 20
+
+
+def _arm_gate(tmp_path, monkeypatch, hist_ll):
+    """Set up a conn with 12 graded matches + quorum on 'draw', isolate DATA_RAW, and
+    stub the backtest so the historical log loss is `hist_ll(params)` and the 2026 log
+    loss rewards a more-negative rho. Returns (conn, raw_dir)."""
+    import json, shutil
+    import numpy as np
+    from wc26 import config, backtest as bt
+    conn = _setup(tmp_path)
+    learn.snapshot_upcoming(conn)
+    ids = _grade_with_elo(conn, 20)
+    for pid in ids[:8]:                                        # quorum on 'draw', under-weighted
+        _pm(conn, pid, "draw", "under")
+    conn.commit()
+
+    raw = tmp_path / "raw"; raw.mkdir()
+    shutil.copy(config.DATA_RAW / "fitted_params.json", raw / "fitted_params.json")
+    monkeypatch.setattr("wc26.config.DATA_RAW", raw)
+    monkeypatch.setattr(bt, "read_results", lambda *a, **k: "df")
+    monkeypatch.setattr(bt, "prematch_pass", lambda df: ({"year": np.array([2022, 2023])}, {}))
+    # the 2026 eval feats carry 'elo_h'; the historical subset (from prematch_pass) does not.
+    # 2026 log loss falls as rho goes more negative; historical is hist_ll(params).
+    monkeypatch.setattr(bt, "log_loss",
+                        lambda feats, params: (1.0 + params[3]) if "elo_h" in feats else hist_ll(params))
+    return conn, raw
+
+
+def test_adopt_adjustments_adopts_when_validated(tmp_path, monkeypatch):
+    import json
+    # historical log loss flat (no regression); 2026 improves as rho goes more negative -> ADOPT
+    conn, raw = _arm_gate(tmp_path, monkeypatch, hist_ll=lambda p: 0.80)
+    before = json.loads((raw / "fitted_params.json").read_text())["rho"]
+    rep = learn.adopt_adjustments(conn)
+    after = json.loads((raw / "fitted_params.json").read_text())["rho"]
+    assert rep["adopted"] == 1
+    assert after < before                                      # rho nudged down and written
+    row = conn.execute("SELECT param, adopted FROM model_params_log ORDER BY id DESC LIMIT 1").fetchone()
+    assert row["param"] == "rho" and row["adopted"] == 1
+
+
+def test_adopt_adjustments_rejects_when_history_regresses(tmp_path, monkeypatch):
+    import json
+    # historical log loss worsens past the cap when rho drops -> REJECT despite a 2026 gain
+    conn, raw = _arm_gate(tmp_path, monkeypatch, hist_ll=lambda p: 0.80 - p[3])
+    before = json.loads((raw / "fitted_params.json").read_text())["rho"]
+    rep = learn.adopt_adjustments(conn)
+    after = json.loads((raw / "fitted_params.json").read_text())["rho"]
+    assert rep["adopted"] == 0
+    assert after == before                                     # live params untouched
+    row = conn.execute("SELECT adopted FROM model_params_log ORDER BY id DESC LIMIT 1").fetchone()
+    assert row["adopted"] == 0                                 # decision logged for audit

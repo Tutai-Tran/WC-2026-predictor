@@ -16,7 +16,7 @@ from urllib.parse import quote
 
 from . import config
 
-SCHEMA_VERSION = 3
+SCHEMA_VERSION = 4
 
 _SQLITE_MAGIC = b"SQLite format 3\x00"
 
@@ -197,6 +197,27 @@ CREATE TABLE IF NOT EXISTS postmortems (
     UNIQUE(prediction_id, factor)
 );
 
+-- Phase 3b: every parameter-adjustment DECISION (adopted or rejected), so the
+-- learning loop's changes to the algorithm are auditable and reversible. A row is
+-- written each time the adoption gate evaluates a candidate against held-out data.
+CREATE TABLE IF NOT EXISTS model_params_log (
+    id              INTEGER PRIMARY KEY,
+    created_at      TEXT NOT NULL,
+    factor          TEXT,                  -- the bias that motivated the change
+    param           TEXT,                  -- which fitted parameter (c|gamma|home_adv_elo|rho|base_goals)
+    direction       TEXT,                  -- up|down
+    old_value       REAL,
+    new_value       REAL,
+    ll_new_before   REAL,                  -- log loss on the 2026 graded matches, before
+    ll_new_after    REAL,                  -- ...and after the nudge (must improve to adopt)
+    ll_hist_before  REAL,                  -- log loss on the historical held-out set, before
+    ll_hist_after   REAL,                  -- ...and after (must not worsen beyond margin)
+    n_eval          INTEGER,               -- number of 2026 graded matches used to validate
+    adopted         INTEGER NOT NULL,      -- 1 if applied to fitted_params.json, 0 if rejected
+    reason          TEXT,
+    params_json     TEXT                   -- full fitted-params snapshot after this decision (rollback)
+);
+
 CREATE INDEX IF NOT EXISTS idx_predlog_grade ON prediction_log(graded, date_utc);
 CREATE INDEX IF NOT EXISTS idx_predlog_pm ON prediction_log(graded, correct, postmortem_status);
 CREATE INDEX IF NOT EXISTS idx_postmortems_applied ON postmortems(applied, factor, suggested_segment);
@@ -271,6 +292,8 @@ def init_db(conn: sqlite3.Connection) -> None:
     row = conn.execute("SELECT version FROM schema_version LIMIT 1").fetchone()
     if row is None:
         conn.execute("INSERT INTO schema_version (version) VALUES (?)", (SCHEMA_VERSION,))
+    elif row[0] != SCHEMA_VERSION:                    # additive migration applied above; stamp it
+        conn.execute("UPDATE schema_version SET version=?", (SCHEMA_VERSION,))
     conn.commit()
 
 
