@@ -7,5 +7,6 @@
   "goal_scale": 0.9987,
   "gamma": 0.454,
   "home_adv_elo": 118.5,
-  "temperature": 1.001
+  "temperature": 1.001,
+  "rho_friendly": -0.15
 }

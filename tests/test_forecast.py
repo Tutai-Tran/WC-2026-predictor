@@ -24,6 +24,26 @@ def test_run_forecast_end_to_end(tmp_path):
     assert conn.execute("SELECT COUNT(*) c FROM model_runs").fetchone()["c"] == 1
 
 
+def test_friendly_forecasts_use_stronger_draw_rho(tmp_path):
+    """Friendlies get a more-negative Dixon-Coles rho (they under-predict draws), so every
+    friendly carries MORE draw mass than at the competitive rho. WC/group matches keep the
+    fitted rho and are unaffected."""
+    import dataclasses
+    from wc26 import model as m, h2h as h2h_mod
+    conn = db.connect(tmp_path / "t.db")
+    ingest.ingest_all(conn)
+    base = forecast.load_fitted_params() or m.ModelParams()
+    h2h = h2h_mod.build_index(cutoff=h2h_mod.PRE_WARMUP_CUTOFF)
+    comp = {(f["home"], f["away"]): f["p_draw"]
+            for f in forecast.friendly_forecasts(conn, dataclasses.replace(base, rho=-0.06), h2h)}
+    friendly = {(f["home"], f["away"]): f["p_draw"]
+                for f in forecast.friendly_forecasts(conn, dataclasses.replace(base, rho=-0.15), h2h)}
+    assert comp and friendly
+    assert all(friendly[k] >= comp[k] - 1e-9 for k in comp)   # never LESS draw mass anywhere
+    assert sum(friendly.values()) > sum(comp.values())        # and strictly more in aggregate
+    assert base.rho_friendly <= base.rho                      # live config: friendly rho is stronger
+
+
 def test_top_scoreline_never_contradicts_outcome(tmp_path):
     """The displayed likely score must always agree with the displayed W/D/L."""
     conn = db.connect(tmp_path / "t.db")

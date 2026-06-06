@@ -9,6 +9,7 @@ prints a readable summary. Probabilities, never certainties.
 from __future__ import annotations
 
 import argparse
+import dataclasses
 import json
 import subprocess
 from collections import defaultdict
@@ -37,6 +38,7 @@ def load_fitted_params() -> model_mod.ModelParams | None:
     d = json.loads(fp.read_text())
     return model_mod.ModelParams(
         c=d.get("c", 219.0), base_goals=d.get("base_goals", 2.6), rho=d.get("rho", -0.06),
+        rho_friendly=d.get("rho_friendly", d.get("rho", -0.06)),
         max_goals=d.get("max_goals", 10), min_lambda=d.get("min_lambda", 0.15),
         goal_scale=d.get("goal_scale", 1.0), gamma=d.get("gamma", 0.0),
     )
@@ -237,9 +239,12 @@ def run_forecast(conn, n_runs: int = config.DEFAULT_SIM_RUNS,
     sim = simulate(t, n_runs=n_runs, seed=seed)
     matches = group_match_forecasts(t)
     boot = golden_boot(t)
-    # friendlies predict the 2026 warm-ups, so they get a leak-free (pre-2026) H2H index
+    # friendlies predict the 2026 warm-ups, so they get a leak-free (pre-2026) H2H index AND a
+    # stronger Dixon-Coles rho (validated: friendlies systematically under-predict draws because
+    # they over-produce goals; competitive/WC matches stay at the fitted rho and are untouched).
     friendly_h2h = h2h_mod.build_index(cutoff=h2h_mod.PRE_WARMUP_CUTOFF)
-    friendlies = friendly_forecasts(conn, t.params, friendly_h2h)
+    friendly_params = dataclasses.replace(t.params, rho=t.params.rho_friendly)
+    friendlies = friendly_forecasts(conn, friendly_params, friendly_h2h)
     proj = bracket_projection(conn, sim["probs"])
     knockout = knockout_fixtures(conn, proj)
 

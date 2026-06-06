@@ -264,9 +264,14 @@ def run(write: bool = True, train_until: int = 2021):
     act_tot = float(np.mean(test["gh"] + test["ga"]))
     goal_scale = round(min(1.10, max(0.90, act_tot / pred_tot)), 4) if pred_tot > 0 else 1.0
 
+    # preserve a previously-set friendly-only rho (a validated segment calibration the global
+    # fit doesn't re-derive) so a manual re-fit never silently reverts the friendly draw fix
+    _prev = json.loads((config.DATA_RAW / "fitted_params.json").read_text()) \
+        if (config.DATA_RAW / "fitted_params.json").exists() else {}
     report = {
         "fitted": {**asdict(params), "home_adv_elo": round(home_adv_elo, 1),
-                   "temperature": temperature, "goal_scale": goal_scale},
+                   "temperature": temperature, "goal_scale": goal_scale,
+                   "rho_friendly": _prev.get("rho_friendly", asdict(params).get("rho_friendly", -0.06))},
         "train": {"n": int(len(train["outcome"])), "log_loss": round(log_loss(train, p), 4),
                   "brier": round(brier(train, p), 4), "rps": round(rps(train, p), 4)},
         "test": {"n": int(len(test["outcome"])), "log_loss": round(log_loss(test, p), 4),

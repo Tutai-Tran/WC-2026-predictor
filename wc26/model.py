@@ -19,7 +19,8 @@ from scipy.stats import poisson
 class ModelParams:
     c: float = 110.0          # Elo points per goal of supremacy
     base_goals: float = 2.6   # expected total goals in an even match
-    rho: float = -0.06        # Dixon-Coles low-score correction
+    rho: float = -0.06        # Dixon-Coles low-score correction (competitive matches)
+    rho_friendly: float = -0.06   # stronger draw correction for friendlies (they under-predict draws)
     max_goals: int = 10
     min_lambda: float = 0.15
     goal_scale: float = 1.0   # leak-free multiplier on total goals (fit in the backtest)
