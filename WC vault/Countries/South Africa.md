@@ -13,9 +13,9 @@ updated: 2026-06-07
 
 # South Africa
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-07T06:53Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-07T10:03Z | source elo-goal-v1 -->
 Group A | FIFA rank 56 | Elo 1667
-Champion 0.0% | Final 0.0% | SF 0.2% | QF 1.3% | Advance 24.5%
+Champion 0.0% | Final 0.0% | SF 0.1% | QF 1.1% | Advance 24.5%
 Availability concerns: Aubrey Modiba (doubtful), Mbekezeli Mbokazi (suspended), Themba Zwane (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-07T06:53Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-07T10:03Z | source elo-goal-v1 -->
 - 2026-06-07: champion 0.0% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
