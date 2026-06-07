@@ -13,9 +13,9 @@ updated: 2026-06-07
 
 # Sweden
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-07T10:03Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-07T19:26Z | source elo-goal-v1 -->
 Group F | FIFA rank 41 | Elo 1781
-Champion 0.0% | Final 0.1% | SF 0.4% | QF 1.9% | Advance 42.8%
+Champion 0.0% | Final 0.1% | SF 0.4% | QF 1.9% | Advance 42.2%
 Availability concerns: Anthony Elanga (doubtful), Benjamin Nygren (doubtful), Alexander Isak (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-07T10:03Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-07T19:26Z | source elo-goal-v1 -->
 - 2026-06-07: champion 0.0% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

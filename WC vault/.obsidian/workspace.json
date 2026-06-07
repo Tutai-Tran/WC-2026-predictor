@@ -11,10 +11,14 @@
             "id": "56fac5b7aaebf843",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "_memory/CONTEXT.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "CONTEXT"
             }
           }
         ]
@@ -178,6 +182,18 @@
   },
   "active": "56fac5b7aaebf843",
   "lastOpenFiles": [
+    "_templates/match.md",
+    "_templates/group.md",
+    "_templates/country.md",
+    "Countries/Algeria.md",
+    "_forecast.md",
+    "_bracket.md",
+    "Matches/Group/2026-06-11 Mexico vs South Africa.md",
+    "Matches/Friendly/2026-05-31 Mexico vs Australia.md",
+    "Matches/Friendly/2026-05-31 Cape Verde vs Serbia.md",
+    "Matches/Friendly/2026-05-28 Egypt vs Russia.md",
+    "Matches/Friendly/2026-05-28 Republic of Ireland vs Qatar.md",
+    "Groups/Group A.md",
     "Matches/A - Mexico vs South Africa.md",
     "Matches/Knockout/104 Final W101 vs W102.md",
     "Matches/Knockout/102 SF W99 vs W100.md",
@@ -192,18 +208,6 @@
     "Matches/Knockout/093 R16 W83 vs W84.md",
     "Matches/Knockout/092 R16 W79 vs W80.md",
     "Matches/Knockout/091 R16 W76 vs W78.md",
-    "Matches/Knockout/090 R16 W73 vs W75.md",
-    "Matches/Knockout/089 R16 W74 vs W77.md",
-    "Matches/Knockout/088 R32 2D vs 2G.md",
-    "Matches/Knockout/087 R32 1K vs 3rd D-E-I-J-L.md",
-    "Matches/Knockout/086 R32 1J vs 2H.md",
-    "Matches/Knockout/085 R32 1B vs 3rd E-F-G-I-J.md",
-    "Matches/Knockout/084 R32 1H vs 2J.md",
-    "Matches/Knockout/083 R32 2K vs 2L.md",
-    "Matches/Knockout/082 R32 1G vs 3rd A-E-H-I-J.md",
-    "Matches/Knockout/081 R32 1D vs 3rd B-E-F-I-J.md",
-    "Matches/Knockout/080 R32 1L vs 3rd E-H-I-J-K.md",
-    "Matches/Knockout/079 R32 1A vs 3rd C-E-F-H-I.md",
     "Matches/Knockout",
     "Matches/Friendly",
     "Matches/Group",
