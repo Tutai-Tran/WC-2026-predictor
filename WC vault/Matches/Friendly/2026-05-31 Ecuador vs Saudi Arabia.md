@@ -14,7 +14,7 @@ updated: 2026-06-07
 
 Win Ecuador: 72.3% | Draw: 19.5% | Win Saudi Arabia: 8.2%
 Most likely scoreline: 2-0
-Data as of 2026-06-07 | runs 50000 | seed 20260611
+Data as of 2026-06-05  **STALE** (inputs 2d old) | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

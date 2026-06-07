@@ -12,9 +12,9 @@ updated: 2026-06-07
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-06-07 · scheduled
 
-Win Croatia: 61.7% | Draw: 24.7% | Win Slovenia: 13.6%
+Win Croatia: 60.8% | Draw: 25.1% | Win Slovenia: 14.1%
 Most likely scoreline: 2-0
-Data as of 2026-06-07 | runs 50000 | seed 20260611
+Data as of 2026-06-05  **STALE** (inputs 2d old) | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

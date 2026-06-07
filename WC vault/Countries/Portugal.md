@@ -5,7 +5,7 @@ fifa_code: "POR"
 group: "K"
 fifa_rank: 5
 elo: 2058
-champion_prob: 0.0579
+champion_prob: 0.0432
 status: active
 created: 2026-06-04
 updated: 2026-06-07
@@ -13,10 +13,10 @@ updated: 2026-06-07
 
 # Portugal
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-07T06:53Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-07T08:43Z | source elo-goal-v1 -->
 Group K | FIFA rank 5 | Elo 2058
-Champion 5.8% | Final 11.9% | SF 22.6% | QF 36.4% | Advance 90.9%
-Availability concerns: Matheus Nunes (doubtful), João Félix (doubtful)
+Champion 4.3% | Final 9.7% | SF 18.5% | QF 34.6% | Advance 91.5%
+Availability: no concerns recorded
 <!-- WC26:AUTO:snapshot END -->
 
 ## Squad & availability
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-07T06:53Z | source elo-goal-v1 -->
-- 2026-06-07: champion 5.8% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-07T08:43Z | source elo-goal-v1 -->
+- 2026-06-07: champion 4.3% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

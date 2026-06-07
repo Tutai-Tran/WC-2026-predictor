@@ -14,7 +14,7 @@ updated: 2026-06-07
 
 Win Croatia: 32.9% | Draw: 33.1% | Win Belgium: 34.0%
 Most likely scoreline: 0-1
-Data as of 2026-06-07 | runs 50000 | seed 20260611
+Data as of 2026-06-05  **STALE** (inputs 2d old) | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match
