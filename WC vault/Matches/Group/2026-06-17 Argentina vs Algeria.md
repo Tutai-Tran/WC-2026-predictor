@@ -13,9 +13,9 @@ updated: 2026-06-07
 <!-- WC26:AUTO:forecast START -->
 **Group J match** · 2026-06-17
 
-Win Argentina: 54.4% | Draw: 28.8% | Win Algeria: 16.8%
+Win Argentina: 54.6% | Draw: 28.7% | Win Algeria: 16.7%
 Most likely scoreline: 1-0 (17.0%) (modal only; many outcomes possible)
-Top scorers: Lionel Messi 54.6%; Lautaro Martínez 20.1%; Julián Alvarez 8.9%; Riyad Mahrez 17.7%; Mohamed Amoura 9.7%; Amine Gouiri 4.6%;
+Top scorers: Lionel Messi 54.7%; Lautaro Martínez 20.1%; Julián Alvarez 8.9%; Riyad Mahrez 17.7%; Mohamed Amoura 9.6%; Amine Gouiri 4.6%;
 Data as of 2026-06-07 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

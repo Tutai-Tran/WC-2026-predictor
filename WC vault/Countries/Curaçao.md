@@ -4,7 +4,7 @@ team: "Curaçao"
 fifa_code: "CUW"
 group: "E"
 fifa_rank: 88
-elo: 1589
+elo: 1592
 champion_prob: 0.0
 status: active
 created: 2026-06-04
@@ -13,9 +13,9 @@ updated: 2026-06-07
 
 # Curaçao
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-07T00:37Z | source elo-goal-v1 -->
-Group E | FIFA rank 88 | Elo 1589
-Champion 0.0% | Final 0.0% | SF 0.0% | QF 0.2% | Advance 13.0%
+<!-- WC26:AUTO:snapshot START | generated 2026-06-07T03:46Z | source elo-goal-v1 -->
+Group E | FIFA rank 88 | Elo 1592
+Champion 0.0% | Final 0.0% | SF 0.0% | QF 0.2% | Advance 13.1%
 Availability concerns: Jürgen Locadia (suspended)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-07T00:37Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-07T03:46Z | source elo-goal-v1 -->
 - 2026-06-07: champion 0.0% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

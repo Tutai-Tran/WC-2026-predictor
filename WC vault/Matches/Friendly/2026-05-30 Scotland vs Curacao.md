@@ -12,7 +12,7 @@ updated: 2026-06-07
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-05-30 · played 4-1
 
-Win Scotland: 67.6% | Draw: 21.9% | Win Curacao: 10.5%
+Win Scotland: 67.2% | Draw: 22.1% | Win Curacao: 10.7%
 Most likely scoreline: 2-0
 Data as of 2026-06-07 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
