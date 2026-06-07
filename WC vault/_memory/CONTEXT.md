@@ -196,3 +196,7 @@ scraped results: {'added': 6}; elo: {'recomputed': True, 'ledger_matches': 96, '
 ## 2026-06-07 03:46 UTC — Automated refresh (update.py)
 
 scraped results: {'added': 2}; elo: {'recomputed': True, 'ledger_matches': 98, 'teams_updated': 76}; news: {'teams_scanned': ['Curacao', 'Ivory Coast', 'Ecuador'], 'events': 3}; overrides synced: 0 events; prediction snapshots: {'snapshotted': 89}; graded: {'graded': 2, 'wrong': 0}; post-mortems: {'analyzed': 0, 'errors': 0}; param adoption: {'adopted': 0, 'reason': 'insufficient graded matches', 'n': 0}; lessons: {'n': 12, 'accuracy': 0.833, 'brier': 0.3185, 'log_loss': 0.59}; running calibration: {'n': 0}; vault: {'countries': 48, 'groups': 12, 'matches': {'group': 72, 'friendly': 62, 'knockout': 31}, 'bracket': 'written'}; run_id run-20260607T034601Z.
+
+## 2026-06-07 06:53 UTC — Automated refresh (update.py)
+
+scraped results: {'added': 0}; elo: {'recomputed': True, 'ledger_matches': 98, 'teams_updated': 76}; news: {'teams_scanned': ['Netherlands', 'Japan', 'Sweden'], 'events': 5}; overrides synced: 0 events; prediction snapshots: {'snapshotted': 87}; graded: {'graded': 0, 'wrong': 0}; post-mortems: {'analyzed': 0, 'errors': 0}; param adoption: {'adopted': 0, 'reason': 'insufficient graded matches', 'n': 0}; lessons: {'n': 12, 'accuracy': 0.833, 'brier': 0.3185, 'log_loss': 0.59}; running calibration: {'n': 0}; vault: {'countries': 48, 'groups': 12, 'matches': {'group': 72, 'friendly': 62, 'knockout': 31}, 'bracket': 'written'}; run_id run-20260607T065340Z.
