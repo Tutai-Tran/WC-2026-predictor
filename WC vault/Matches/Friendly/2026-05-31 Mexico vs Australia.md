@@ -14,7 +14,7 @@ updated: 2026-06-07
 
 Win Mexico: 44.1% | Draw: 31.0% | Win Australia: 24.9%
 Most likely scoreline: 1-0
-Data as of 2026-06-07 | runs 50000 | seed 20260611
+Data as of 2026-06-08 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

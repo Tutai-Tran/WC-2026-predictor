@@ -14,7 +14,7 @@ updated: 2026-06-07
 
 Win Switzerland: 56.1% | Draw: 27.0% | Win Jordan: 16.9%
 Most likely scoreline: 1-0
-Data as of 2026-06-07 | runs 50000 | seed 20260611
+Data as of 2026-06-08 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

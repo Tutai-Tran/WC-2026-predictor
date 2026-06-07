@@ -16,7 +16,7 @@ updated: 2026-06-07
 Win Tunisia: 14.8% | Draw: 24.7% | Win Netherlands: 60.5%
 Most likely scoreline: 0-1 (14.3%) (modal only; many outcomes possible)
 Top scorers: Firas Chaouat 8.9%; Ali Abdi 8.4%; Elias Achouri 6.7%; Memphis Depay 48.4%; Cody Gakpo 18.8%; Wout Weghorst 14.6%;
-Data as of 2026-06-07 | runs 50000 | seed 20260611
+Data as of 2026-06-08 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

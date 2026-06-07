@@ -14,7 +14,7 @@ updated: 2026-06-07
 
 Win Haiti: 26.5% | Draw: 31.5% | Win Peru: 42.0%
 Most likely scoreline: 0-1
-Data as of 2026-06-07 | runs 50000 | seed 20260611
+Data as of 2026-06-08 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

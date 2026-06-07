@@ -10,11 +10,11 @@ updated: 2026-06-07
 # Ecuador vs Guatemala (friendly)
 
 <!-- WC26:AUTO:forecast START -->
-**Warm-up friendly** · 2026-06-08 · scheduled
+**Warm-up friendly** · 2026-06-08 · played 3-0
 
-Win Ecuador: 77.9% | Draw: 16.3% | Win Guatemala: 5.7%
+Win Ecuador: 78.6% | Draw: 16.0% | Win Guatemala: 5.5%
 Most likely scoreline: 2-0
-Data as of 2026-06-07 | runs 50000 | seed 20260611
+Data as of 2026-06-08 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

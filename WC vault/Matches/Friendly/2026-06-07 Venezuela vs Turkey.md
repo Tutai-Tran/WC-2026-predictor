@@ -14,7 +14,7 @@ updated: 2026-06-07
 
 Win Venezuela: 17.7% | Draw: 27.5% | Win Turkey: 54.8%
 Most likely scoreline: 0-1
-Data as of 2026-06-07 | runs 50000 | seed 20260611
+Data as of 2026-06-08 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

@@ -14,7 +14,7 @@ updated: 2026-06-07
 
 Win Saudi Arabia: 15.2% | Draw: 25.9% | Win Senegal: 58.9%
 Most likely scoreline: 0-2
-Data as of 2026-06-07 | runs 50000 | seed 20260611
+Data as of 2026-06-08 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

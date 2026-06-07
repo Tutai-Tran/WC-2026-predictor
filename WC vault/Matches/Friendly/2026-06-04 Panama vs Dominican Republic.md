@@ -14,7 +14,7 @@ updated: 2026-06-07
 
 Win Panama: 76.7% | Draw: 17.0% | Win Dominican Republic: 6.2%
 Most likely scoreline: 2-0
-Data as of 2026-06-07 | runs 50000 | seed 20260611
+Data as of 2026-06-08 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match
