@@ -5,7 +5,7 @@ group: D
 date: 2026-06-26
 home: "Turkey"
 away: "United States"
-updated: 2026-06-06
+updated: 2026-06-07
 ---
 
 # Turkey vs United States
@@ -13,10 +13,10 @@ updated: 2026-06-06
 <!-- WC26:AUTO:forecast START -->
 **Group D match** · 2026-06-26
 
-Win Turkey: 35.1% | Draw: 32.0% | Win United States: 32.8%
-Most likely scoreline: 1-0 (12.7%) (modal only; many outcomes possible)
-Top scorers: Hakan Çalhanoğlu 18.6%; Kerem Aktürkoğlu 14.0%; Arda Güler 6.7%; Christian Pulisic 28.4%; Ricardo Pepi 9.8%; Weston McKennie 8.6%;
-Data as of 2026-06-06 | runs 50000 | seed 20260611
+Win Turkey: 34.4% | Draw: 32.4% | Win United States: 33.2%
+Most likely scoreline: 1-0 (12.8%) (modal only; many outcomes possible)
+Top scorers: Hakan Çalhanoğlu 18.1%; Kerem Aktürkoğlu 13.6%; Arda Güler 6.5%; Christian Pulisic 28.3%; Ricardo Pepi 9.7%; Weston McKennie 8.5%;
+Data as of 2026-06-07 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-05-28
 home: "Egypt"
 away: "Russia"
-updated: 2026-06-06
+updated: 2026-06-07
 ---
 
 # Egypt vs Russia (friendly)
@@ -12,9 +12,9 @@ updated: 2026-06-06
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-05-28 · played 1-0
 
-Win Egypt: 31.4% | Draw: 30.2% | Win Russia: 38.4%
+Win Egypt: 29.8% | Draw: 32.5% | Win Russia: 37.7%
 Most likely scoreline: 0-1
-Data as of 2026-06-06 | runs 50000 | seed 20260611
+Data as of 2026-06-07 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

@@ -5,7 +5,7 @@ group: F
 date: 2026-06-15
 home: "Sweden"
 away: "Tunisia"
-updated: 2026-06-06
+updated: 2026-06-07
 ---
 
 # Sweden vs Tunisia
@@ -16,7 +16,7 @@ updated: 2026-06-06
 Win Sweden: 42.4% | Draw: 29.7% | Win Tunisia: 27.9%
 Most likely scoreline: 1-0 (12.4%) (modal only; many outcomes possible)
 Top scorers: Alexander Isak 32.1%; Viktor Gyökeres 29.2%; Anthony Elanga 11.5%; Firas Chaouat 12.0%; Ali Abdi 11.3%; Elias Achouri 9.0%;
-Data as of 2026-06-06 | runs 50000 | seed 20260611
+Data as of 2026-06-07 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

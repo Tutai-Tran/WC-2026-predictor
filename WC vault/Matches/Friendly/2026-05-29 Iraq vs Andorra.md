@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-05-29
 home: "Iraq"
 away: "Andorra"
-updated: 2026-06-06
+updated: 2026-06-07
 ---
 
 # Iraq vs Andorra (friendly)
@@ -12,9 +12,9 @@ updated: 2026-06-06
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-05-29 · played 1-0
 
-Win Iraq: 90.5% | Draw: 7.7% | Win Andorra: 1.8%
+Win Iraq: 90.2% | Draw: 8.3% | Win Andorra: 1.5%
 Most likely scoreline: 3-0
-Data as of 2026-06-06 | runs 50000 | seed 20260611
+Data as of 2026-06-07 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

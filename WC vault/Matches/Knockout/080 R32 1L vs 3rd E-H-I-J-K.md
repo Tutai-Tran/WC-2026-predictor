@@ -3,7 +3,7 @@ type: wc-match
 stage: R32
 match_no: 80
 date: 2026-07-01
-updated: 2026-06-06
+updated: 2026-06-07
 ---
 
 # R32 #80: 1L vs 3rd E/H/I/J/K
@@ -14,7 +14,7 @@ updated: 2026-06-06
 Slots: 1L vs 3rd E/H/I/J/K
 Projected: England vs 3rd E/H/I/J/K
 Result: TBD
-Data as of 2026-06-06 | runs 50000 | seed 20260611
+Data as of 2026-06-07 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

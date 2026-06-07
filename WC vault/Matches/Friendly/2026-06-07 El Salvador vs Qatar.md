@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-07
 home: "El Salvador"
 away: "Qatar"
-updated: 2026-06-06
+updated: 2026-06-07
 ---
 
 # El Salvador vs Qatar (friendly)
@@ -12,9 +12,9 @@ updated: 2026-06-06
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-06-07 · scheduled
 
-Win El Salvador: 25.5% | Draw: 28.5% | Win Qatar: 46.1%
+Win El Salvador: 24.7% | Draw: 30.9% | Win Qatar: 44.4%
 Most likely scoreline: 0-1
-Data as of 2026-06-06 | runs 50000 | seed 20260611
+Data as of 2026-06-07 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

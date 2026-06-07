@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-09
 home: "Peru"
 away: "Spain"
-updated: 2026-06-06
+updated: 2026-06-07
 ---
 
 # Peru vs Spain (friendly)
@@ -12,9 +12,9 @@ updated: 2026-06-06
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-06-09 · scheduled
 
-Win Peru: 4.5% | Draw: 12.6% | Win Spain: 82.9%
+Win Peru: 4.0% | Draw: 13.6% | Win Spain: 82.4%
 Most likely scoreline: 0-2
-Data as of 2026-06-06 | runs 50000 | seed 20260611
+Data as of 2026-06-07 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

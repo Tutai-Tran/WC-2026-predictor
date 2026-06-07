@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-05-31
 home: "Switzerland"
 away: "Jordan"
-updated: 2026-06-06
+updated: 2026-06-07
 ---
 
 # Switzerland vs Jordan (friendly)
@@ -12,9 +12,9 @@ updated: 2026-06-06
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-05-31 · played 4-1
 
-Win Switzerland: 57.1% | Draw: 25.0% | Win Jordan: 17.9%
+Win Switzerland: 56.1% | Draw: 27.0% | Win Jordan: 16.9%
 Most likely scoreline: 1-0
-Data as of 2026-06-06 | runs 50000 | seed 20260611
+Data as of 2026-06-07 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

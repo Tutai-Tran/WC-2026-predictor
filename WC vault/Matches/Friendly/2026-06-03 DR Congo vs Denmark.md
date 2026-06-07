@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-03
 home: "DR Congo"
 away: "Denmark"
-updated: 2026-06-06
+updated: 2026-06-07
 ---
 
 # DR Congo vs Denmark (friendly)
@@ -12,9 +12,9 @@ updated: 2026-06-06
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-06-03 · played 0-0
 
-Win DR Congo: 19.7% | Draw: 26.0% | Win Denmark: 54.3%
+Win DR Congo: 18.7% | Draw: 28.1% | Win Denmark: 53.3%
 Most likely scoreline: 0-1
-Data as of 2026-06-06 | runs 50000 | seed 20260611
+Data as of 2026-06-07 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

@@ -8,14 +8,14 @@ elo: 1665
 champion_prob: 0.0
 status: active
 created: 2026-06-04
-updated: 2026-06-06
+updated: 2026-06-07
 ---
 
 # Bosnia and Herzegovina
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-06T21:29Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-07T00:37Z | source elo-goal-v1 -->
 Group B | FIFA rank 64 | Elo 1665
-Champion 0.0% | Final 0.0% | SF 0.3% | QF 2.4% | Advance 48.8%
+Champion 0.0% | Final 0.1% | SF 0.3% | QF 2.5% | Advance 49.4%
 Availability concerns: Amir Hadžiahmetović (out), Haris Tabaković (doubtful), Ivan Šunjić (doubtful), Dennis Hadžikadunić (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-06T21:29Z | source elo-goal-v1 -->
-- 2026-06-06: champion 0.0% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-07T00:37Z | source elo-goal-v1 -->
+- 2026-06-07: champion 0.0% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

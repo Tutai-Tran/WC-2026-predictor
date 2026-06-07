@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-06
 home: "United States"
 away: "Germany"
-updated: 2026-06-06
+updated: 2026-06-07
 ---
 
 # United States vs Germany (friendly)
@@ -12,9 +12,9 @@ updated: 2026-06-06
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-06-06 · played 1-2
 
-Win United States: 19.0% | Draw: 25.6% | Win Germany: 55.4%
+Win United States: 18.0% | Draw: 27.6% | Win Germany: 54.4%
 Most likely scoreline: 0-1
-Data as of 2026-06-06 | runs 50000 | seed 20260611
+Data as of 2026-06-07 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

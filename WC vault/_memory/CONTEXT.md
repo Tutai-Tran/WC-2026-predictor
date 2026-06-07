@@ -188,3 +188,7 @@ scraped results: {'added': 4}; elo: {'recomputed': True, 'ledger_matches': 86, '
 ## 2026-06-06 21:29 UTC — Automated refresh (update.py)
 
 scraped results: {'added': 4}; elo: {'recomputed': True, 'ledger_matches': 90, 'teams_updated': 76}; news: {'teams_scanned': ['Scotland', 'United States', 'Paraguay'], 'events': 2}; overrides synced: 0 events; prediction snapshots: {'snapshotted': 94}; graded: {'graded': 2, 'wrong': 1}; post-mortems: {'analyzed': 1, 'errors': 0}; param adoption: {'adopted': 0, 'reason': 'insufficient graded matches', 'n': 0}; lessons: {'n': 7, 'accuracy': 0.714, 'brier': 0.4427, 'log_loss': 0.7639}; running calibration: {'n': 0}; vault: {'countries': 48, 'groups': 12, 'matches': {'group': 72, 'friendly': 62, 'knockout': 31}, 'bracket': 'written'}; run_id run-20260606T212901Z.
+
+## 2026-06-07 00:37 UTC — Automated refresh (update.py)
+
+scraped results: {'added': 6}; elo: {'recomputed': True, 'ledger_matches': 96, 'teams_updated': 76}; news: {'teams_scanned': ['Australia', 'Turkey', 'Germany'], 'events': 10}; overrides synced: 0 events; prediction snapshots: {'snapshotted': 92}; graded: {'graded': 3, 'wrong': 0}; post-mortems: {'analyzed': 0, 'errors': 0}; param adoption: {'adopted': 0, 'reason': 'insufficient graded matches', 'n': 0}; lessons: {'n': 10, 'accuracy': 0.8, 'brier': 0.3698, 'log_loss': 0.6655}; running calibration: {'n': 0}; vault: {'countries': 48, 'groups': 12, 'matches': {'group': 72, 'friendly': 62, 'knockout': 31}, 'bracket': 'written'}; run_id run-20260607T003727Z.

@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-05-31
 home: "Cape Verde"
 away: "Serbia"
-updated: 2026-06-06
+updated: 2026-06-07
 ---
 
 # Cape Verde vs Serbia (friendly)
@@ -12,9 +12,9 @@ updated: 2026-06-06
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-05-31 · played 3-0
 
-Win Cape Verde: 25.9% | Draw: 28.6% | Win Serbia: 45.5%
+Win Cape Verde: 24.7% | Draw: 30.9% | Win Serbia: 44.4%
 Most likely scoreline: 0-1
-Data as of 2026-06-06 | runs 50000 | seed 20260611
+Data as of 2026-06-07 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match
