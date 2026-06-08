@@ -86,12 +86,14 @@ def sync_vault_overrides(conn) -> dict:
 
 def add_result(conn, home: str, away: str, home_goals: int, away_goals: int,
                stage: str = "group", source: str = "manual",
-               played_on: str | None = None, neutral: int = 1) -> None:
+               played_on: str | None = None, neutral: int = 1) -> int | None:
     """Record a played result: update the fixture and append to the results ledger.
 
     played_on should be the actual match date (so dedup and the chronological Elo
     replay are correct); tournament is derived from stage so the Elo K factor is
-    right (friendlies use a smaller K than World Cup matches)."""
+    right (friendlies use a smaller K than World Cup matches). Returns the bound
+    fixture id, or None if no fixture matched (e.g. a knockout result, whose fixture
+    is not pre-loaded)."""
     hid = conn.execute("SELECT id FROM teams WHERE name=?", (home,)).fetchone()
     aid = conn.execute("SELECT id FROM teams WHERE name=?", (away,)).fetchone()
     now = datetime.now(timezone.utc).isoformat()
@@ -103,12 +105,31 @@ def add_result(conn, home: str, away: str, home_goals: int, away_goals: int,
             "SELECT id FROM matches WHERE home_team_id=? AND away_team_id=? AND stage=?",
             (hid["id"], aid["id"], stage),
         ).fetchone()
-        if m:
+        if m:                                       # fixture stored in the same orientation
             match_id = m["id"]
             conn.execute(
                 "UPDATE matches SET home_goals=?, away_goals=?, played=1 WHERE id=?",
                 (home_goals, away_goals, match_id),
             )
+        elif stage != "friendly":
+            # Neutral-venue tournament fixtures carry FIFA's nominal home/away, which can
+            # be the reverse of how the result source (ESPN) reports the match. Bind to the
+            # reversed fixture and swap the goals back into the fixture's orientation, so the
+            # frozen pre-match snapshot still grades (the ledger keeps the source orientation,
+            # which is irrelevant to the orientation-agnostic Elo replay). Restricted to
+            # tournament stages: a group pairing is unique (each pair plays once), so the
+            # reverse can never bind the wrong match. Friendlies are excluded because the same
+            # pair can meet twice in a window and the host is the real home side anyway.
+            rev = conn.execute(
+                "SELECT id FROM matches WHERE home_team_id=? AND away_team_id=? AND stage=?",
+                (aid["id"], hid["id"], stage),
+            ).fetchone()
+            if rev:
+                match_id = rev["id"]
+                conn.execute(
+                    "UPDATE matches SET home_goals=?, away_goals=?, played=1 WHERE id=?",
+                    (away_goals, home_goals, match_id),
+                )
     conn.execute(
         "INSERT INTO results_ledger (match_id, played_on, home_team, away_team, "
         "home_goals, away_goals, neutral, tournament, source, fetched_at) "
@@ -116,6 +137,7 @@ def add_result(conn, home: str, away: str, home_goals: int, away_goals: int,
         (match_id, played_on, home, away, home_goals, away_goals, neutral, tournament, source, now),
     )
     conn.commit()
+    return match_id
 
 
 def add_availability(conn, team: str, player: str, status: str,
