@@ -5,7 +5,7 @@ fifa_code: "ENG"
 group: "L"
 fifa_rank: 4
 elo: 2094
-champion_prob: 0.0884
+champion_prob: 0.0886
 status: active
 created: 2026-06-04
 updated: 2026-06-09
@@ -13,9 +13,9 @@ updated: 2026-06-09
 
 # England
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-08T17:21Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-08T20:30Z | source elo-goal-v1 -->
 Group L | FIFA rank 4 | Elo 2094
-Champion 8.8% | Final 16.3% | SF 27.3% | QF 44.4% | Advance 97.4%
+Champion 8.9% | Final 16.2% | SF 27.3% | QF 44.3% | Advance 97.4%
 Availability concerns: Tino Livramento (doubtful), Djed Spence (doubtful), John Stones (doubtful), Noni Madueke (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-08T17:21Z | source elo-goal-v1 -->
-- 2026-06-08: champion 8.8% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-08T20:30Z | source elo-goal-v1 -->
+- 2026-06-08: champion 8.9% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
