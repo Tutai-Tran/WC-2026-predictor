@@ -13,9 +13,9 @@ updated: 2026-06-09
 
 # Tunisia
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-08T11:06Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-08T14:14Z | source elo-goal-v1 -->
 Group F | FIFA rank 42 | Elo 1730
-Champion 0.0% | Final 0.0% | SF 0.4% | QF 2.0% | Advance 41.1%
+Champion 0.0% | Final 0.1% | SF 0.4% | QF 2.0% | Advance 41.0%
 Availability concerns: Hannibal Mejbri (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-08T11:06Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-08T14:14Z | source elo-goal-v1 -->
 - 2026-06-08: champion 0.0% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
