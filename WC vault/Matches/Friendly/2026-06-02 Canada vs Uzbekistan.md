@@ -12,9 +12,9 @@ updated: 2026-06-09
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-06-02 · played 2-0
 
-Win Canada: 46.6% | Draw: 30.3% | Win Uzbekistan: 23.1%
+Win Canada: 46.8% | Draw: 30.2% | Win Uzbekistan: 23.0%
 Most likely scoreline: 1-0
-Data as of 2026-06-05  **STALE** (inputs 4d old) | runs 50000 | seed 20260611
+Data as of 2026-06-09 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

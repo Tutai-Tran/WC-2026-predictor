@@ -14,7 +14,7 @@ updated: 2026-06-09
 
 Win England: 77.7% | Draw: 16.5% | Win New Zealand: 5.8%
 Most likely scoreline: 2-0
-Data as of 2026-06-05  **STALE** (inputs 4d old) | runs 50000 | seed 20260611
+Data as of 2026-06-09 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

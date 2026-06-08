@@ -16,7 +16,7 @@ updated: 2026-06-09
 Win Colombia: 68.2% | Draw: 20.5% | Win DR Congo: 11.3%
 Most likely scoreline: 2-0 (13.3%) (modal only; many outcomes possible)
 Top scorers: James Rodríguez 46.1%; Luis Díaz 32.5%; Yerry Mina 12.7%; Cédric Bakambu 14.9%; Meschak Elia 9.2%; Yoane Wissa 7.3%;
-Data as of 2026-06-08 | runs 50000 | seed 20260611
+Data as of 2026-06-09 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

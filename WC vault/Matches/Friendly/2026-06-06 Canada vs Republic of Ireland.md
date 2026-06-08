@@ -14,7 +14,7 @@ updated: 2026-06-09
 
 Win Canada: 52.5% | Draw: 28.3% | Win Republic of Ireland: 19.1%
 Most likely scoreline: 1-0
-Data as of 2026-06-05  **STALE** (inputs 4d old) | runs 50000 | seed 20260611
+Data as of 2026-06-09 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

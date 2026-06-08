@@ -14,7 +14,7 @@ updated: 2026-06-09
 
 Win Portugal: 66.0% | Draw: 22.7% | Win Chile: 11.3%
 Most likely scoreline: 2-0
-Data as of 2026-06-05  **STALE** (inputs 4d old) | runs 50000 | seed 20260611
+Data as of 2026-06-09 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

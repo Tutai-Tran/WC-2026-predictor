@@ -10,11 +10,11 @@ updated: 2026-06-09
 # Netherlands vs Uzbekistan (friendly)
 
 <!-- WC26:AUTO:forecast START -->
-**Warm-up friendly** · 2026-06-08 · scheduled
+**Warm-up friendly** · 2026-06-08 · played 2-1
 
-Win Netherlands: 55.0% | Draw: 27.4% | Win Uzbekistan: 17.6%
+Win Netherlands: 56.3% | Draw: 26.9% | Win Uzbekistan: 16.8%
 Most likely scoreline: 1-0
-Data as of 2026-06-05  **STALE** (inputs 4d old) | runs 50000 | seed 20260611
+Data as of 2026-06-09 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match
