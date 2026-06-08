@@ -2,11 +2,11 @@
   "c": 208.55,
   "base_goals": 2.199,
   "rho": -0.06,
+  "rho_friendly": -0.15,
   "max_goals": 10,
   "min_lambda": 0.15,
   "goal_scale": 0.9987,
   "gamma": 0.454,
   "home_adv_elo": 118.5,
-  "temperature": 1.001,
-  "rho_friendly": -0.15
+  "temperature": 1.001
 }

@@ -5,7 +5,7 @@ fifa_code: "UZB"
 group: "K"
 fifa_rank: 51
 elo: 1831
-champion_prob: 0.0012
+champion_prob: 0.0007
 status: active
 created: 2026-06-04
 updated: 2026-06-07

@@ -43,6 +43,7 @@ These are probabilities, not certainties.
 
 - Harry Kane (England): 3.08
 - Kylian Mbappé (France): 2.97
+- Cristiano Ronaldo (Portugal): 2.67
 - Neymar (Brazil): 2.61
 - Cristiano Ronaldo (Portugal): 2.59
 - Enner Valencia (Ecuador): 2.52

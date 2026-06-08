@@ -12,7 +12,7 @@ updated: 2026-06-07
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-05-31 · played 5-0
 
-Win South Korea: 75.3% | Draw: 17.9% | Win Trinidad and Tobago: 6.9%
+Win South Korea: 75.3% | Draw: 17.9% | Win Trinidad and Tobago: 6.8%
 Most likely scoreline: 2-0
 Data as of 2026-06-08 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->

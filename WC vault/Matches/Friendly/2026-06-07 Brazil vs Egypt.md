@@ -10,7 +10,7 @@ updated: 2026-06-07
 # Brazil vs Egypt (friendly)
 
 <!-- WC26:AUTO:forecast START -->
-**Warm-up friendly** · 2026-06-07 · played 2-1
+**Warm-up friendly** · 2026-06-07 · scheduled
 
 Win Brazil: 66.0% | Draw: 22.7% | Win Egypt: 11.3%
 Most likely scoreline: 2-0

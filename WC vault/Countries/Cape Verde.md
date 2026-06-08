@@ -5,7 +5,7 @@ fifa_code: "CPV"
 group: "H"
 fifa_rank: 67
 elo: 1709
-champion_prob: 0.0001
+champion_prob: 0.0
 status: active
 created: 2026-06-04
 updated: 2026-06-07

@@ -10,7 +10,7 @@ updated: 2026-06-07
 # Belgium vs Tunisia (friendly)
 
 <!-- WC26:AUTO:forecast START -->
-**Warm-up friendly** · 2026-06-06 · played 5-0
+**Warm-up friendly** · 2026-06-06 · scheduled
 
 Win Belgium: 64.6% | Draw: 23.3% | Win Tunisia: 12.0%
 Most likely scoreline: 2-0

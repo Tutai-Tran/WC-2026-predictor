@@ -5,7 +5,7 @@ fifa_code: "SWE"
 group: "F"
 fifa_rank: 41
 elo: 1781
-champion_prob: 0.0001
+champion_prob: 0.0002
 status: active
 created: 2026-06-04
 updated: 2026-06-07
