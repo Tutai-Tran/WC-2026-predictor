@@ -5,7 +5,7 @@ group: J
 date: 2026-06-28
 home: "Algeria"
 away: "Austria"
-updated: 2026-06-07
+updated: 2026-06-08
 ---
 
 # Algeria vs Austria

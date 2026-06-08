@@ -4,18 +4,18 @@ team: "Jordan"
 fifa_code: "JOR"
 group: "J"
 fifa_rank: 62
-elo: 1789
-champion_prob: 0.0002
+elo: 1784
+champion_prob: 0.0003
 status: active
 created: 2026-06-04
-updated: 2026-06-07
+updated: 2026-06-08
 ---
 
 # Jordan
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-07T22:36Z | source elo-goal-v1 -->
-Group J | FIFA rank 62 | Elo 1789
-Champion 0.0% | Final 0.1% | SF 0.5% | QF 2.4% | Advance 36.6%
+<!-- WC26:AUTO:snapshot START | generated 2026-06-08T01:42Z | source elo-goal-v1 -->
+Group J | FIFA rank 62 | Elo 1784
+Champion 0.0% | Final 0.1% | SF 0.5% | QF 2.3% | Advance 36.2%
 Availability concerns: Ali Olwan (doubtful), Ihsan Haddad (doubtful), Nour Bani Attiah (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-07T22:36Z | source elo-goal-v1 -->
-- 2026-06-07: champion 0.0% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-08T01:42Z | source elo-goal-v1 -->
+- 2026-06-08: champion 0.0% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

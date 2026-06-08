@@ -5,7 +5,7 @@ group: A
 date: 2026-06-19
 home: "Mexico"
 away: "South Korea"
-updated: 2026-06-07
+updated: 2026-06-08
 ---
 
 # Mexico vs South Korea

@@ -5,7 +5,7 @@ group: L
 date: 2026-06-17
 home: "England"
 away: "Croatia"
-updated: 2026-06-07
+updated: 2026-06-08
 ---
 
 # England vs Croatia

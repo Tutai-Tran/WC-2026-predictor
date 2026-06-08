@@ -5,7 +5,7 @@ group: C
 date: 2026-06-14
 home: "Haiti"
 away: "Scotland"
-updated: 2026-06-07
+updated: 2026-06-08
 ---
 
 # Haiti vs Scotland

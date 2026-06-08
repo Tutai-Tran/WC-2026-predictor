@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-08
 home: "Netherlands"
 away: "Uzbekistan"
-updated: 2026-06-07
+updated: 2026-06-08
 ---
 
 # Netherlands vs Uzbekistan (friendly)

@@ -5,7 +5,7 @@ group: D
 date: 2026-06-26
 home: "Turkey"
 away: "United States"
-updated: 2026-06-07
+updated: 2026-06-08
 ---
 
 # Turkey vs United States

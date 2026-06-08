@@ -5,7 +5,7 @@ group: L
 date: 2026-06-23
 home: "England"
 away: "Ghana"
-updated: 2026-06-07
+updated: 2026-06-08
 ---
 
 # England vs Ghana

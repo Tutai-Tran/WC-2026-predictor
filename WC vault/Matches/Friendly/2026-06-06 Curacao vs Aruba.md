@@ -4,15 +4,15 @@ stage: friendly
 date: 2026-06-06
 home: "Curacao"
 away: "Aruba"
-updated: 2026-06-07
+updated: 2026-06-08
 ---
 
 # Curacao vs Aruba (friendly)
 
 <!-- WC26:AUTO:forecast START -->
-**Warm-up friendly** · 2026-06-06 · scheduled
+**Warm-up friendly** · 2026-06-06 · played 4-0
 
-Win Curacao: 77.1% | Draw: 16.8% | Win Aruba: 6.1%
+Win Curacao: 77.4% | Draw: 16.7% | Win Aruba: 5.9%
 Most likely scoreline: 2-0
 Data as of 2026-06-08 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->

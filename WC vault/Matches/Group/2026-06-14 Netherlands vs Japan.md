@@ -5,7 +5,7 @@ group: F
 date: 2026-06-14
 home: "Netherlands"
 away: "Japan"
-updated: 2026-06-07
+updated: 2026-06-08
 ---
 
 # Netherlands vs Japan

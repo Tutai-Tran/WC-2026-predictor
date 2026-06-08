@@ -5,7 +5,7 @@ group: H
 date: 2026-06-15
 home: "Spain"
 away: "Cape Verde"
-updated: 2026-06-07
+updated: 2026-06-08
 ---
 
 # Spain vs Cape Verde

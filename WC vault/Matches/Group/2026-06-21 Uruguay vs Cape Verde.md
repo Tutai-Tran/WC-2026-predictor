@@ -5,7 +5,7 @@ group: H
 date: 2026-06-21
 home: "Uruguay"
 away: "Cape Verde"
-updated: 2026-06-07
+updated: 2026-06-08
 ---
 
 # Uruguay vs Cape Verde

@@ -5,7 +5,7 @@ group: I
 date: 2026-06-26
 home: "Norway"
 away: "France"
-updated: 2026-06-07
+updated: 2026-06-08
 ---
 
 # Norway vs France
@@ -13,9 +13,9 @@ updated: 2026-06-07
 <!-- WC26:AUTO:forecast START -->
 **Group I match** · 2026-06-26
 
-Win Norway: 20.2% | Draw: 26.5% | Win France: 53.3%
-Most likely scoreline: 0-1 (12.7%) (modal only; many outcomes possible)
-Top scorers: Erling Haaland 36.5%; Alexander Sørloth 16.3%; Antonio Nusa 6.0%; Kylian Mbappé 58.9%; Ousmane Dembélé 11.3%; Adrien Rabiot 10.2%;
+Win Norway: 26.5% | Draw: 31.3% | Win France: 42.2%
+Most likely scoreline: 0-1 (14.1%) (modal only; many outcomes possible)
+Top scorers: Erling Haaland 36.5%; Alexander Sørloth 16.3%; Antonio Nusa 6.0%; Kylian Mbappé 49.8%; Ousmane Dembélé 8.6%; Adrien Rabiot 7.7%;
 Data as of 2026-06-08 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

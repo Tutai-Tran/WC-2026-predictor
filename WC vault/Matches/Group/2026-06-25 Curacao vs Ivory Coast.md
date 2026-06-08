@@ -5,7 +5,7 @@ group: E
 date: 2026-06-25
 home: "Curacao"
 away: "Ivory Coast"
-updated: 2026-06-07
+updated: 2026-06-08
 ---
 
 # Curacao vs Ivory Coast

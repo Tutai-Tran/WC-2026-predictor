@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-03
 home: "Haiti"
 away: "New Zealand"
-updated: 2026-06-07
+updated: 2026-06-08
 ---
 
 # Haiti vs New Zealand (friendly)

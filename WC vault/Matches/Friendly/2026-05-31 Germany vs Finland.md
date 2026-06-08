@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-05-31
 home: "Germany"
 away: "Finland"
-updated: 2026-06-07
+updated: 2026-06-08
 ---
 
 # Germany vs Finland (friendly)
@@ -12,7 +12,7 @@ updated: 2026-06-07
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-05-31 · played 4-0
 
-Win Germany: 81.3% | Draw: 14.3% | Win Finland: 4.4%
+Win Germany: 81.7% | Draw: 14.0% | Win Finland: 4.2%
 Most likely scoreline: 2-0
 Data as of 2026-06-08 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->

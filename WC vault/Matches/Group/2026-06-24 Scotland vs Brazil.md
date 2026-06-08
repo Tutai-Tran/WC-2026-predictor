@@ -5,7 +5,7 @@ group: C
 date: 2026-06-24
 home: "Scotland"
 away: "Brazil"
-updated: 2026-06-07
+updated: 2026-06-08
 ---
 
 # Scotland vs Brazil

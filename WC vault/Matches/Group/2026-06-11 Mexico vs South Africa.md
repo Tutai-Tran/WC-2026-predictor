@@ -5,7 +5,7 @@ group: A
 date: 2026-06-11
 home: "Mexico"
 away: "South Africa"
-updated: 2026-06-07
+updated: 2026-06-08
 ---
 
 # Mexico vs South Africa

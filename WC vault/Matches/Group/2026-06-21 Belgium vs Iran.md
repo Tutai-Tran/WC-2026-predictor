@@ -5,7 +5,7 @@ group: G
 date: 2026-06-21
 home: "Belgium"
 away: "Iran"
-updated: 2026-06-07
+updated: 2026-06-08
 ---
 
 # Belgium vs Iran
