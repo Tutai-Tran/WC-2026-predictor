@@ -13,9 +13,9 @@ updated: 2026-06-08
 
 # Czech Republic
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-08T04:51Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-08T07:57Z | source elo-goal-v1 -->
 Group A | FIFA rank 44 | Elo 1825
-Champion 0.2% | Final 0.7% | SF 2.7% | QF 10.7% | Advance 69.6%
+Champion 0.2% | Final 0.7% | SF 2.7% | QF 10.7% | Advance 69.8%
 Availability: no concerns recorded
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-08T04:51Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-08T07:57Z | source elo-goal-v1 -->
 - 2026-06-08: champion 0.2% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
