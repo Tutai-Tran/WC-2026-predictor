@@ -5,7 +5,7 @@ fifa_code: "ENG"
 group: "L"
 fifa_rank: 4
 elo: 2094
-champion_prob: 0.0966
+champion_prob: 0.096
 status: active
 created: 2026-06-04
 updated: 2026-06-08
@@ -13,9 +13,9 @@ updated: 2026-06-08
 
 # England
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-08T01:42Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-08T04:51Z | source elo-goal-v1 -->
 Group L | FIFA rank 4 | Elo 2094
-Champion 9.7% | Final 17.4% | SF 28.2% | QF 44.9% | Advance 97.7%
+Champion 9.6% | Final 17.3% | SF 28.3% | QF 45.4% | Advance 97.5%
 Availability: no concerns recorded
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-08T01:42Z | source elo-goal-v1 -->
-- 2026-06-08: champion 9.7% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-08T04:51Z | source elo-goal-v1 -->
+- 2026-06-08: champion 9.6% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
