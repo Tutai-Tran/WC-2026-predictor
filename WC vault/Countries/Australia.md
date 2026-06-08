@@ -4,8 +4,8 @@ team: "Australia"
 fifa_code: "AUS"
 group: "D"
 fifa_rank: 25
-elo: 1908
-champion_prob: 0.003
+elo: 1909
+champion_prob: 0.006
 status: active
 created: 2026-06-04
 updated: 2026-06-09
@@ -13,10 +13,10 @@ updated: 2026-06-09
 
 # Australia
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-09T08:57Z | source elo-goal-v1 -->
-Group D | FIFA rank 25 | Elo 1908
-Champion 0.3% | Final 1.2% | SF 3.8% | QF 12.0% | Advance 61.9%
-Availability: no concerns recorded
+<!-- WC26:AUTO:snapshot START | generated 2026-06-08T11:06Z | source elo-goal-v1 -->
+Group D | FIFA rank 25 | Elo 1909
+Champion 0.6% | Final 1.9% | SF 5.4% | QF 15.8% | Advance 66.3%
+Availability concerns: Aiden O'Neill (doubtful), Cristian Volpato (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
 ## Squad & availability
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-09T08:57Z | source elo-goal-v1 -->
-- 2026-06-09: champion 0.3% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-08T11:06Z | source elo-goal-v1 -->
+- 2026-06-08: champion 0.6% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

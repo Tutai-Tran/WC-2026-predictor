@@ -5,7 +5,7 @@ fifa_code: "AUT"
 group: "J"
 fifa_rank: 22
 elo: 1900
-champion_prob: 0.0027
+champion_prob: 0.0048
 status: active
 created: 2026-06-04
 updated: 2026-06-09
@@ -13,9 +13,9 @@ updated: 2026-06-09
 
 # Austria
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-09T08:57Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-08T11:06Z | source elo-goal-v1 -->
 Group J | FIFA rank 22 | Elo 1900
-Champion 0.3% | Final 1.0% | SF 3.1% | QF 8.6% | Advance 65.8%
+Champion 0.5% | Final 1.5% | SF 4.3% | QF 11.4% | Advance 70.5%
 Availability: no concerns recorded
 <!-- WC26:AUTO:snapshot END -->
 
@@ -64,6 +64,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-09T08:57Z | source elo-goal-v1 -->
-- 2026-06-09: champion 0.3% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-08T11:06Z | source elo-goal-v1 -->
+- 2026-06-08: champion 0.5% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

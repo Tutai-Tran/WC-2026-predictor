@@ -4,8 +4,8 @@ team: "Turkey"
 fifa_code: "TUR"
 group: "D"
 fifa_rank: 26
-elo: 1979
-champion_prob: 0.0129
+elo: 1985
+champion_prob: 0.0075
 status: active
 created: 2026-06-04
 updated: 2026-06-09
@@ -13,10 +13,10 @@ updated: 2026-06-09
 
 # Turkey
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-09T08:57Z | source elo-goal-v1 -->
-Group D | FIFA rank 26 | Elo 1979
-Champion 1.3% | Final 3.7% | SF 8.9% | QF 24.6% | Advance 79.5%
-Availability: no concerns recorded
+<!-- WC26:AUTO:snapshot START | generated 2026-06-08T11:06Z | source elo-goal-v1 -->
+Group D | FIFA rank 26 | Elo 1985
+Champion 0.7% | Final 2.3% | SF 6.4% | QF 17.9% | Advance 70.3%
+Availability concerns: Hakan Çalhanoğlu (doubtful), Arda Güler (doubtful), Kenan Yıldız (doubtful), Ferdi Kadıoğlu (doubtful), Kerem Aktürkoğlu (doubtful), Eren Elmalı (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
 ## Squad & availability
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-09T08:57Z | source elo-goal-v1 -->
-- 2026-06-09: champion 1.3% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-08T11:06Z | source elo-goal-v1 -->
+- 2026-06-08: champion 0.7% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
