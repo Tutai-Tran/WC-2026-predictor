@@ -14,7 +14,7 @@ updated: 2026-06-08
 
 Win Morocco: 85.7% | Draw: 11.5% | Win Madagascar: 2.8%
 Most likely scoreline: 2-0
-Data as of 2026-06-08 | runs 50000 | seed 20260611
+Data as of 2026-06-05  **STALE** (inputs 3d old) | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

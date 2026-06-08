@@ -14,7 +14,7 @@ updated: 2026-06-08
 Slots: 1E vs 3rd A/B/C/D/F
 Projected: Germany vs 3rd A/B/C/D/F
 Result: TBD
-Data as of 2026-06-08 | runs 50000 | seed 20260611
+Data as of 2026-06-05  **STALE** (inputs 3d old) | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

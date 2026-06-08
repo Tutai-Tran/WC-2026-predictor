@@ -13,10 +13,10 @@ updated: 2026-06-08
 <!-- WC26:AUTO:forecast START -->
 **Group J match** · 2026-06-28
 
-Win Jordan: 10.8% | Draw: 23.7% | Win Argentina: 65.5%
-Most likely scoreline: 0-1 (16.9%) (modal only; many outcomes possible)
-Top scorers: Ali Olwan 14.2%; Musa Al-Taamari 12.0%; Mahmoud Al-Mardi 5.2%; Lionel Messi 61.3%; Lautaro Martínez 24.0%; Julián Alvarez 10.8%;
-Data as of 2026-06-08 | runs 50000 | seed 20260611
+Win Jordan: 6.1% | Draw: 14.8% | Win Argentina: 79.1%
+Most likely scoreline: 0-2 (14.5%) (modal only; many outcomes possible)
+Top scorers: Ali Olwan 14.5%; Musa Al-Taamari 12.3%; Mahmoud Al-Mardi 5.3%; Lionel Messi 73.5%; Lautaro Martínez 32.7%; Julián Alvarez 15.2%;
+Data as of 2026-06-05  **STALE** (inputs 3d old) | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

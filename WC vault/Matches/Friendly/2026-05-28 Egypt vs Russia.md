@@ -12,9 +12,9 @@ updated: 2026-06-08
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-05-28 · played 1-0
 
-Win Egypt: 29.8% | Draw: 32.5% | Win Russia: 37.7%
+Win Egypt: 30.8% | Draw: 32.7% | Win Russia: 36.5%
 Most likely scoreline: 0-1
-Data as of 2026-06-08 | runs 50000 | seed 20260611
+Data as of 2026-06-05  **STALE** (inputs 3d old) | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

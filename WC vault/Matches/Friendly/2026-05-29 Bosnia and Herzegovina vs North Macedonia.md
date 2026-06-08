@@ -14,7 +14,7 @@ updated: 2026-06-08
 
 Win Bosnia and Herzegovina: 35.4% | Draw: 32.9% | Win North Macedonia: 31.7%
 Most likely scoreline: 1-0
-Data as of 2026-06-08 | runs 50000 | seed 20260611
+Data as of 2026-06-05  **STALE** (inputs 3d old) | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

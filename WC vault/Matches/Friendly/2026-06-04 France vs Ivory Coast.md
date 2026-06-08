@@ -14,7 +14,7 @@ updated: 2026-06-08
 
 Win France: 71.1% | Draw: 20.1% | Win Ivory Coast: 8.7%
 Most likely scoreline: 2-0
-Data as of 2026-06-08 | runs 50000 | seed 20260611
+Data as of 2026-06-05  **STALE** (inputs 3d old) | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match
