@@ -5,7 +5,7 @@ fifa_code: "ECU"
 group: "E"
 fifa_rank: 24
 elo: 2029
-champion_prob: 0.0426
+champion_prob: 0.0115
 status: active
 created: 2026-06-04
 updated: 2026-06-09
@@ -13,10 +13,10 @@ updated: 2026-06-09
 
 # Ecuador
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-09T10:19Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-09T13:29Z | source elo-goal-v1 -->
 Group E | FIFA rank 24 | Elo 2029
-Champion 4.3% | Final 9.1% | SF 18.9% | QF 33.7% | Advance 95.0%
-Availability: no concerns recorded
+Champion 1.1% | Final 3.1% | SF 8.0% | QF 18.6% | Advance 85.0%
+Availability concerns: Enner Valencia (doubtful), Kevin Rodríguez (doubtful), Gonzalo Plata (doubtful), Kendry Páez (doubtful), Alan Minda (doubtful), John Yeboah (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
 ## Squad & availability
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-09T10:19Z | source elo-goal-v1 -->
-- 2026-06-09: champion 4.3% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-09T13:29Z | source elo-goal-v1 -->
+- 2026-06-09: champion 1.1% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

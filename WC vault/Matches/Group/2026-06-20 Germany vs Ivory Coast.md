@@ -14,7 +14,7 @@ updated: 2026-06-09
 **Group E match** · 2026-06-20
 
 Win Germany: 57.5% | Draw: 25.1% | Win Ivory Coast: 17.4%
-Most likely scoreline: 1-0 (12.8%) (modal only; many outcomes possible)
+Most likely scoreline: 1-0 (12.7%) (modal only; many outcomes possible)
 Top scorers: Kai Havertz 34.1%; Leroy Sané 21.5%; Leon Goretzka 20.3%; Franck Kessié 12.1%; Nicolas Pépé 10.6%; Ibrahim Sangaré 9.9%;
 Data as of 2026-06-09 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->

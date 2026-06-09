@@ -5,7 +5,7 @@ fifa_code: "MAR"
 group: "C"
 fifa_rank: 12
 elo: 2009
-champion_prob: 0.0296
+champion_prob: 0.0324
 status: active
 created: 2026-06-04
 updated: 2026-06-09
@@ -13,9 +13,9 @@ updated: 2026-06-09
 
 # Morocco
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-09T10:19Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-09T13:29Z | source elo-goal-v1 -->
 Group C | FIFA rank 12 | Elo 2009
-Champion 3.0% | Final 6.6% | SF 14.6% | QF 28.5% | Advance 88.8%
+Champion 3.2% | Final 7.1% | SF 15.7% | QF 29.7% | Advance 88.8%
 Availability concerns: Abde Ezzalzouli (doubtful), Noussair Mazraoui (doubtful), Nayef Aguerd (doubtful), Yassine Bounou (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-09T10:19Z | source elo-goal-v1 -->
-- 2026-06-09: champion 3.0% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-09T13:29Z | source elo-goal-v1 -->
+- 2026-06-09: champion 3.2% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
