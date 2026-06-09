@@ -3,7 +3,7 @@ type: wc-match
 stage: R32
 match_no: 82
 date: 2026-07-01
-updated: 2026-06-08
+updated: 2026-06-09
 ---
 
 # R32 #82: 1G vs 3rd A/E/H/I/J
@@ -14,7 +14,7 @@ updated: 2026-06-08
 Slots: 1G vs 3rd A/E/H/I/J
 Projected: Belgium vs 3rd A/E/H/I/J
 Result: TBD
-Data as of 2026-06-05  **STALE** (inputs 3d old) | runs 50000 | seed 20260611
+Data as of 2026-06-05  **STALE** (inputs 4d old) | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

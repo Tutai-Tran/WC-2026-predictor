@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-05-30
 home: "Scotland"
 away: "Curacao"
-updated: 2026-06-08
+updated: 2026-06-09
 ---
 
 # Scotland vs Curacao (friendly)
@@ -12,9 +12,9 @@ updated: 2026-06-08
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-05-30 · played 4-1
 
-Win Scotland: 67.2% | Draw: 22.1% | Win Curacao: 10.7%
+Win Scotland: 75.0% | Draw: 18.0% | Win Curacao: 7.0%
 Most likely scoreline: 2-0
-Data as of 2026-06-05  **STALE** (inputs 3d old) | runs 50000 | seed 20260611
+Data as of 2026-06-05  **STALE** (inputs 4d old) | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

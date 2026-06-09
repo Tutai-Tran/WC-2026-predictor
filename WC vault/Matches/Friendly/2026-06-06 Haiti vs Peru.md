@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-06
 home: "Haiti"
 away: "Peru"
-updated: 2026-06-08
+updated: 2026-06-09
 ---
 
 # Haiti vs Peru (friendly)
@@ -12,9 +12,9 @@ updated: 2026-06-08
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-06-06 · scheduled
 
-Win Haiti: 27.4% | Draw: 31.8% | Win Peru: 40.8%
+Win Haiti: 28.3% | Draw: 32.0% | Win Peru: 39.7%
 Most likely scoreline: 0-1
-Data as of 2026-06-05  **STALE** (inputs 3d old) | runs 50000 | seed 20260611
+Data as of 2026-06-05  **STALE** (inputs 4d old) | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

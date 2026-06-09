@@ -8,14 +8,14 @@ elo: 2000
 champion_prob: 0.0159
 status: active
 created: 2026-06-04
-updated: 2026-06-08
+updated: 2026-06-09
 ---
 
 # Norway
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-08T10:14Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-09T08:57Z | source elo-goal-v1 -->
 Group I | FIFA rank 29 | Elo 2000
-Champion 1.6% | Final 4.4% | SF 11.0% | QF 23.6% | Advance 83.2%
+Champion 1.6% | Final 4.4% | SF 11.4% | QF 24.3% | Advance 83.1%
 Availability: no concerns recorded
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-08T10:14Z | source elo-goal-v1 -->
-- 2026-06-08: champion 1.6% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-09T08:57Z | source elo-goal-v1 -->
+- 2026-06-09: champion 1.6% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

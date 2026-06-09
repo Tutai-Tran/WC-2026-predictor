@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-06
 home: "Belgium"
 away: "Tunisia"
-updated: 2026-06-08
+updated: 2026-06-09
 ---
 
 # Belgium vs Tunisia (friendly)
@@ -12,9 +12,9 @@ updated: 2026-06-08
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-06-06 · scheduled
 
-Win Belgium: 64.6% | Draw: 23.3% | Win Tunisia: 12.0%
+Win Belgium: 62.7% | Draw: 24.2% | Win Tunisia: 13.1%
 Most likely scoreline: 2-0
-Data as of 2026-06-05  **STALE** (inputs 3d old) | runs 50000 | seed 20260611
+Data as of 2026-06-05  **STALE** (inputs 4d old) | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

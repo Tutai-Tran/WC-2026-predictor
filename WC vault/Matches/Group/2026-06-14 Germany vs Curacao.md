@@ -5,7 +5,7 @@ group: E
 date: 2026-06-14
 home: "Germany"
 away: "Curacao"
-updated: 2026-06-08
+updated: 2026-06-09
 ---
 
 # Germany vs Curacao
@@ -13,10 +13,10 @@ updated: 2026-06-08
 <!-- WC26:AUTO:forecast START -->
 **Group E match** · 2026-06-14
 
-Win Germany: 81.0% | Draw: 13.7% | Win Curacao: 5.2%
-Most likely scoreline: 2-0 (14.7%) (modal only; many outcomes possible)
-Top scorers: Kai Havertz 44.3%; Leroy Sané 30.6%; Leon Goretzka 29.1%; Leandro Bacuna 9.6%; Juninho Bacuna 8.5%; Gervane Kastaneer 6.2%;
-Data as of 2026-06-05  **STALE** (inputs 3d old) | runs 50000 | seed 20260611
+Win Germany: 87.0% | Draw: 10.1% | Win Curacao: 2.9%
+Most likely scoreline: 2-0 (15.2%) (modal only; many outcomes possible)
+Top scorers: Kai Havertz 47.5%; Leroy Sané 33.6%; Leon Goretzka 32.0%; Leandro Bacuna 7.6%; Juninho Bacuna 6.7%; Gervane Kastaneer 4.9%;
+Data as of 2026-06-05  **STALE** (inputs 4d old) | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

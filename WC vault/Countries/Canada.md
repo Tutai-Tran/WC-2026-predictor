@@ -4,18 +4,18 @@ team: "Canada"
 fifa_code: "CAN"
 group: "B"
 fifa_rank: 27
-elo: 1924
-champion_prob: 0.0066
+elo: 1928
+champion_prob: 0.0072
 status: active
 created: 2026-06-04
-updated: 2026-06-08
+updated: 2026-06-09
 ---
 
 # Canada
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-08T10:14Z | source elo-goal-v1 -->
-Group B | FIFA rank 27 | Elo 1924
-Champion 0.7% | Final 2.3% | SF 7.1% | QF 22.4% | Advance 96.3%
+<!-- WC26:AUTO:snapshot START | generated 2026-06-09T08:57Z | source elo-goal-v1 -->
+Group B | FIFA rank 27 | Elo 1928
+Champion 0.7% | Final 2.4% | SF 7.4% | QF 22.7% | Advance 96.3%
 Availability: no concerns recorded
 <!-- WC26:AUTO:snapshot END -->
 
@@ -64,6 +64,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-08T10:14Z | source elo-goal-v1 -->
-- 2026-06-08: champion 0.7% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-09T08:57Z | source elo-goal-v1 -->
+- 2026-06-09: champion 0.7% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

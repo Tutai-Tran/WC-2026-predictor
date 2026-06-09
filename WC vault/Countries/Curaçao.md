@@ -4,18 +4,18 @@ team: "Curaçao"
 fifa_code: "CUW"
 group: "E"
 fifa_rank: 88
-elo: 1592
+elo: 1496
 champion_prob: 0.0
 status: active
 created: 2026-06-04
-updated: 2026-06-08
+updated: 2026-06-09
 ---
 
 # Curaçao
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-08T10:14Z | source elo-goal-v1 -->
-Group E | FIFA rank 88 | Elo 1592
-Champion 0.0% | Final 0.0% | SF 0.0% | QF 0.2% | Advance 14.2%
+<!-- WC26:AUTO:snapshot START | generated 2026-06-09T08:57Z | source elo-goal-v1 -->
+Group E | FIFA rank 88 | Elo 1496
+Champion 0.0% | Final 0.0% | SF 0.0% | QF 0.1% | Advance 7.2%
 Availability: no concerns recorded
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-08T10:14Z | source elo-goal-v1 -->
-- 2026-06-08: champion 0.0% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-09T08:57Z | source elo-goal-v1 -->
+- 2026-06-09: champion 0.0% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
