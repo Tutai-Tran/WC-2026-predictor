@@ -14,30 +14,30 @@ These are probabilities, not certainties.
 
 | Team | Win | Final | SF | QF | R16 |
 | --- | --- | --- | --- | --- | --- |
-| [[Countries/Spain\|Spain]] | 25.9% | 36.1% | 48.4% | 59.2% | 78.0% |
-| [[Countries/England\|England]] | 9.6% | 17.6% | 29.0% | 45.1% | 67.4% |
-| [[Countries/Argentina\|Argentina]] | 8.7% | 15.6% | 25.3% | 38.9% | 55.8% |
-| [[Countries/Colombia\|Colombia]] | 7.1% | 13.6% | 23.4% | 38.2% | 63.3% |
-| [[Countries/France\|France]] | 6.8% | 12.8% | 24.7% | 40.6% | 62.9% |
-| [[Countries/Portugal\|Portugal]] | 6.3% | 12.6% | 22.2% | 36.3% | 61.6% |
-| [[Countries/Brazil\|Brazil]] | 3.8% | 8.2% | 17.0% | 31.0% | 52.5% |
-| [[Countries/Germany\|Germany]] | 3.8% | 8.2% | 17.7% | 32.2% | 58.2% |
-| [[Countries/Japan\|Japan]] | 3.6% | 8.0% | 17.3% | 32.2% | 51.6% |
-| [[Countries/Morocco\|Morocco]] | 3.2% | 7.1% | 15.7% | 29.7% | 51.0% |
-| [[Countries/Norway\|Norway]] | 2.7% | 6.3% | 14.3% | 28.3% | 51.2% |
-| [[Countries/Uruguay\|Uruguay]] | 2.3% | 5.9% | 12.6% | 25.1% | 44.7% |
-| [[Countries/Netherlands\|Netherlands]] | 2.1% | 5.1% | 12.2% | 25.3% | 45.7% |
-| [[Countries/Mexico\|Mexico]] | 2.0% | 5.3% | 12.9% | 28.1% | 61.7% |
-| [[Countries/Switzerland\|Switzerland]] | 1.7% | 4.6% | 11.7% | 26.9% | 57.9% |
-| [[Countries/Turkey\|Turkey]] | 1.3% | 3.4% | 8.3% | 22.1% | 44.0% |
-| [[Countries/Ecuador\|Ecuador]] | 1.1% | 3.1% | 8.0% | 18.6% | 41.2% |
-| [[Countries/Belgium\|Belgium]] | 0.9% | 2.9% | 7.1% | 20.5% | 44.9% |
-| [[Countries/Australia\|Australia]] | 0.7% | 2.1% | 5.7% | 16.0% | 36.1% |
-| [[Countries/Iran\|Iran]] | 0.7% | 2.2% | 6.0% | 18.5% | 42.4% |
-| [[Countries/Canada\|Canada]] | 0.7% | 2.2% | 6.9% | 19.4% | 51.3% |
-| [[Countries/Croatia\|Croatia]] | 0.7% | 2.1% | 5.4% | 12.4% | 32.1% |
-| [[Countries/Paraguay\|Paraguay]] | 0.6% | 2.0% | 5.5% | 15.7% | 35.0% |
-| [[Countries/Austria\|Austria]] | 0.5% | 1.6% | 4.3% | 11.2% | 24.5% |
+| [[Countries/Spain\|Spain]] | 26.3% | 36.7% | 48.8% | 60.0% | 78.4% |
+| [[Countries/England\|England]] | 9.6% | 17.7% | 29.0% | 45.0% | 67.1% |
+| [[Countries/Argentina\|Argentina]] | 8.5% | 15.7% | 25.4% | 39.2% | 55.8% |
+| [[Countries/Colombia\|Colombia]] | 6.9% | 13.7% | 23.4% | 37.8% | 63.3% |
+| [[Countries/France\|France]] | 6.6% | 12.5% | 24.3% | 40.3% | 62.8% |
+| [[Countries/Portugal\|Portugal]] | 6.3% | 12.7% | 22.3% | 36.7% | 62.0% |
+| [[Countries/Brazil\|Brazil]] | 3.8% | 8.1% | 17.2% | 31.3% | 52.7% |
+| [[Countries/Germany\|Germany]] | 3.7% | 8.1% | 17.8% | 32.4% | 58.1% |
+| [[Countries/Japan\|Japan]] | 3.4% | 7.6% | 16.9% | 31.1% | 50.4% |
+| [[Countries/Morocco\|Morocco]] | 3.1% | 7.1% | 15.5% | 29.7% | 51.3% |
+| [[Countries/Norway\|Norway]] | 2.9% | 6.5% | 14.3% | 28.4% | 51.7% |
+| [[Countries/Uruguay\|Uruguay]] | 2.3% | 5.7% | 12.5% | 24.9% | 44.0% |
+| [[Countries/Mexico\|Mexico]] | 2.1% | 5.2% | 12.9% | 28.1% | 61.8% |
+| [[Countries/Netherlands\|Netherlands]] | 2.1% | 5.1% | 12.2% | 25.3% | 46.2% |
+| [[Countries/Switzerland\|Switzerland]] | 1.7% | 4.6% | 11.6% | 26.7% | 58.1% |
+| [[Countries/Turkey\|Turkey]] | 1.3% | 3.4% | 8.1% | 21.7% | 43.6% |
+| [[Countries/Ecuador\|Ecuador]] | 1.1% | 3.1% | 8.2% | 18.8% | 41.3% |
+| [[Countries/Belgium\|Belgium]] | 0.9% | 2.8% | 6.9% | 20.4% | 44.6% |
+| [[Countries/Canada\|Canada]] | 0.8% | 2.3% | 7.1% | 19.5% | 51.0% |
+| [[Countries/Iran\|Iran]] | 0.7% | 2.3% | 6.0% | 18.3% | 42.3% |
+| [[Countries/Australia\|Australia]] | 0.7% | 2.1% | 5.7% | 16.3% | 35.9% |
+| [[Countries/Paraguay\|Paraguay]] | 0.7% | 2.1% | 5.7% | 16.0% | 35.6% |
+| [[Countries/Croatia\|Croatia]] | 0.7% | 2.1% | 5.4% | 12.4% | 32.3% |
+| [[Countries/Austria\|Austria]] | 0.5% | 1.7% | 4.4% | 11.4% | 24.5% |
 
 ## Most likely scorers (expected group-stage goals)
 
