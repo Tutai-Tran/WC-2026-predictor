@@ -5,7 +5,7 @@ fifa_code: "GER"
 group: "E"
 fifa_rank: 9
 elo: 2020
-champion_prob: 0.0418
+champion_prob: 0.0353
 status: active
 created: 2026-06-04
 updated: 2026-06-09
@@ -13,10 +13,10 @@ updated: 2026-06-09
 
 # Germany
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-09T07:10Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-09T10:19Z | source elo-goal-v1 -->
 Group E | FIFA rank 9 | Elo 2020
-Champion 4.2% | Final 8.7% | SF 18.6% | QF 33.4% | Advance 94.5%
-Availability concerns: Lennart Karl (out), Manuel Neuer (doubtful)
+Champion 3.5% | Final 7.9% | SF 16.9% | QF 31.3% | Advance 93.7%
+Availability concerns: Lennart Karl (out), Manuel Neuer (doubtful), Jamal Musiala (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
 ## Squad & availability
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-09T07:10Z | source elo-goal-v1 -->
-- 2026-06-09: champion 4.2% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-09T10:19Z | source elo-goal-v1 -->
+- 2026-06-09: champion 3.5% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
