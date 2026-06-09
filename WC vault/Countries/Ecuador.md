@@ -13,9 +13,9 @@ updated: 2026-06-09
 
 # Ecuador
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-08T23:40Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-09T02:46Z | source elo-goal-v1 -->
 Group E | FIFA rank 24 | Elo 2029
-Champion 4.2% | Final 8.7% | SF 18.1% | QF 32.3% | Advance 95.0%
+Champion 4.2% | Final 9.0% | SF 18.7% | QF 33.3% | Advance 94.8%
 Availability: no concerns recorded
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-08T23:40Z | source elo-goal-v1 -->
-- 2026-06-08: champion 4.2% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-09T02:46Z | source elo-goal-v1 -->
+- 2026-06-09: champion 4.2% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
