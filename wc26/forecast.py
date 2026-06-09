@@ -35,7 +35,13 @@ def load_fitted_params() -> model_mod.ModelParams | None:
     fp = config.DATA_RAW / "fitted_params.json"
     if not fp.exists():
         return None
-    d = json.loads(fp.read_text())
+    try:
+        d = json.loads(fp.read_text())
+    except (OSError, ValueError) as e:
+        # a corrupt params file must degrade to defaults, not kill every future
+        # refresh; the backtest rewrites the file on the next manual run
+        print(f"WARNING: fitted_params.json unreadable ({e}); using model defaults")
+        return None
     return model_mod.ModelParams(
         c=d.get("c", 219.0), base_goals=d.get("base_goals", 2.6), rho=d.get("rho", -0.06),
         rho_friendly=d.get("rho_friendly", d.get("rho", -0.06)),
@@ -103,16 +109,18 @@ def load_tournament(conn, params: model_mod.ModelParams | None = None,
 
     h2h_map = h2h_mod.delta_map(teams.keys(), h2h_index)
 
+    ko_venues = {r["match_no"]: r["venue_country"] for r in conn.execute(
+        "SELECT match_no, venue_country FROM matches "
+        "WHERE stage IN ('R16','QF','SF','Final') AND venue_country IS NOT NULL "
+        "AND venue_country != ''"
+    )}
+
     return Tournament(
         teams=teams, groups=groups, group_fixtures=fixtures,
         r32=r32, routing=routing,
         params=params or model_mod.ModelParams(),
-        attack_mult=attack_mult, played=played, h2h=h2h_map,
+        attack_mult=attack_mult, played=played, h2h=h2h_map, ko_venues=ko_venues,
     )
-
-
-def _host_adv(team: str, venue_country: str | None, bump: float) -> float:
-    return bump if venue_country and team == venue_country else 0.0
 
 
 def group_match_forecasts(t: Tournament) -> list[dict]:
@@ -122,7 +130,7 @@ def group_match_forecasts(t: Tournament) -> list[dict]:
         vc = fx.get("venue_country")
         f = model_mod.match_forecast(
             t.teams[h]["elo"], t.teams[a]["elo"], t.params,
-            _host_adv(h, vc, t.host_bump), _host_adv(a, vc, t.host_bump),
+            t.host_adv(h, vc), t.host_adv(a, vc),
             mult_a=t.mult(h), mult_b=t.mult(a), h2h_delta=t.h2h_delta(h, a),
         )
         ph, pdw, pa = round(f["p_home"], 3), round(f["p_draw"], 3), round(f["p_away"], 3)
@@ -134,6 +142,9 @@ def group_match_forecasts(t: Tournament) -> list[dict]:
             "group": fx["group"], "home": h, "away": a, "date": fx.get("date"),
             "p_home": ph, "p_draw": pdw, "p_away": pa,
             "lambda_home": round(f["lambda_home"], 2), "lambda_away": round(f["lambda_away"], 2),
+            # adjustments baked into the lambdas, frozen so post-mortems can see them
+            "mult_home": round(t.mult(h), 3), "mult_away": round(t.mult(a), 3),
+            "h2h_delta": round(t.h2h_delta(h, a), 3),
             "top_scoreline": f"{sh}-{sa}", "top_scoreline_p": round(sp, 3),
             "result": (f"{res[0]}-{res[1]}" if res else None),
             "top_scorers_home": scorers_mod.top_scorers(t.teams[h].get("players", []), f["lambda_home"]),
@@ -150,7 +161,7 @@ def golden_boot(t: Tournament, top_n: int = 15) -> list[dict]:
         h, a, vc = fx["home"], fx["away"], fx.get("venue_country")
         la, lb = model_mod.match_lambdas(
             t.teams[h]["elo"], t.teams[a]["elo"], t.params,
-            _host_adv(h, vc, t.host_bump), _host_adv(a, vc, t.host_bump), t.h2h_delta(h, a),
+            t.host_adv(h, vc), t.host_adv(a, vc), t.h2h_delta(h, a),
         )
         la *= t.mult(h)
         lb *= t.mult(a)
@@ -191,6 +202,7 @@ def friendly_forecasts(conn, params: model_mod.ModelParams,
             "date": r["d"], "home": r["home"], "away": r["away"],
             "p_home": ph, "p_draw": pdw, "p_away": pa, "top_scoreline": f"{sh}-{sa}",
             "lambda_home": round(f["lambda_home"], 2), "lambda_away": round(f["lambda_away"], 2),
+            "h2h_delta": round(delta, 3),
             "played": bool(r["p"]),
             "result": (f'{r["hg"]}-{r["ag"]}' if r["p"] else None),
         })
@@ -231,8 +243,57 @@ def knockout_fixtures(conn, proj: dict[str, str]) -> list[dict]:
     return out
 
 
+def input_fingerprint(conn, n_runs: int = config.DEFAULT_SIM_RUNS,
+                      seed: int = config.DEFAULT_RNG_SEED) -> str:
+    """Cheap, stable hash of everything the forecast depends on: latest ratings,
+    active availability events, played matches, and the fitted parameters. If two
+    refreshes share a fingerprint, re-running the 50k-sim forecast would reproduce
+    the previous payload bit-for-bit (fixed seed), so the run can be skipped."""
+    import hashlib
+    h = hashlib.sha256()
+    h.update(f"runs={n_runs};seed={seed};".encode())
+    fp = config.DATA_RAW / "fitted_params.json"
+    h.update(fp.read_bytes() if fp.exists() else b"-")
+    for r in conn.execute(
+        "SELECT t.name, r.elo FROM teams t JOIN ratings r ON r.team_id=t.id "
+        "WHERE r.valid_from=(SELECT MAX(valid_from) FROM ratings r2 WHERE r2.team_id=t.id) "
+        "ORDER BY t.name"
+    ):
+        h.update(f"{r['name']}={r['elo']:.2f};".encode())
+    # only events that currently INFLUENCE the forecast: scan markers are bookkeeping
+    # (they change every news cycle without moving a forecast), and judging expiry via
+    # _event_active here means an event crossing its 72h/return-date boundary changes
+    # the fingerprint, so a "skip" can never freeze an injury past its expiry
+    from datetime import datetime, timedelta, timezone
+
+    from .overrides import _event_active
+    now = datetime.now(timezone.utc)
+    today = now.date().isoformat()
+    cutoff = (now - timedelta(hours=config.NEWS_EVENT_MAX_AGE_HOURS)).isoformat()
+    for r in conn.execute(
+        "SELECT team_id, player_name, status, minutes_factor, expected_return, source, "
+        "confidence, fetched_at FROM availability_events "
+        "WHERE source != 'news-llm-marker' ORDER BY team_id, player_name, id"
+    ):
+        if _event_active(r, today, cutoff):
+            h.update(repr((r["team_id"], r["player_name"], r["status"],
+                           r["minutes_factor"], r["confidence"])).encode())
+    for r in conn.execute(
+        "SELECT id, home_goals, away_goals, played FROM matches ORDER BY id"
+    ):
+        h.update(repr(tuple(r)).encode())
+    # the market enters the published payload via champion_blend, so new odds must
+    # invalidate the fingerprint or the blend would go stale on skipped cycles
+    row = conn.execute(
+        "SELECT id FROM public_benchmark WHERE source='the-odds-api' AND scope='champion' "
+        "ORDER BY id DESC LIMIT 1").fetchone()
+    h.update(f"odds={row['id'] if row else None};".encode())
+    return h.hexdigest()
+
+
 def run_forecast(conn, n_runs: int = config.DEFAULT_SIM_RUNS,
-                 seed: int = config.DEFAULT_RNG_SEED) -> dict:
+                 seed: int = config.DEFAULT_RNG_SEED,
+                 input_hash: str | None = None) -> dict:
     h2h_index = h2h_mod.build_index()
     params = load_fitted_params() or model_mod.ModelParams()
     t = load_tournament(conn, params=params, h2h_index=h2h_index)
@@ -259,9 +320,16 @@ def run_forecast(conn, n_runs: int = config.DEFAULT_SIM_RUNS,
         None,
     )
 
+    # model+market champion blend: the devigged market is the strongest single external
+    # signal, so the blend is published alongside (never instead of) the pure model.
+    from . import odds as odds_mod
+    market = odds_mod.latest_market_champion(conn)
+    blend = odds_mod.blend_probs({tm: p["champion"] for tm, p in sim["probs"].items()}, market)
+
     payload = {
         "probs": sim["probs"], "matches": matches, "golden_boot": boot,
         "friendlies": friendlies, "knockout": knockout, "bracket_slots": proj,
+        "champion_blend": blend, "blend_weight": 0.5,
         "data_as_of": data_as_of, "n_runs": n_runs, "seed": seed,
         "goal_calibration": {"goal_scale": params.goal_scale, "gamma": params.gamma},
     }
@@ -271,10 +339,11 @@ def run_forecast(conn, n_runs: int = config.DEFAULT_SIM_RUNS,
         (run_id, "forecast", "all", json.dumps(payload), ts),
     )
     conn.execute(
-        "INSERT INTO model_runs (run_id, ts, git_sha, config_json, rng_seed, "
-        "model_version, data_completeness) VALUES (?,?,?,?,?,?,?) "
+        "INSERT INTO model_runs (run_id, ts, git_sha, config_json, input_hash, rng_seed, "
+        "model_version, data_completeness) VALUES (?,?,?,?,?,?,?,?) "
         "ON CONFLICT(run_id) DO NOTHING",
-        (run_id, ts, _git_sha(), json.dumps(t.params.__dict__), seed,
+        (run_id, ts, _git_sha(), json.dumps(t.params.__dict__),
+         input_hash or input_fingerprint(conn, n_runs, seed), seed,
          "elo-goal-v1", 1.0),
     )
     conn.commit()

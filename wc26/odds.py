@@ -95,6 +95,18 @@ def model_vs_market(conn) -> list[dict]:
     return rows
 
 
+def blend_probs(model: dict[str, float], market: dict[str, float],
+                weight: float = 0.5) -> dict[str, float]:
+    """Normalised model+market blend; weight = model share. Teams the market does not
+    price keep their model probability (then everything renormalises)."""
+    if not market:
+        return {}
+    blend = {t: (weight * mp + (1 - weight) * market[t]) if t in market else mp
+             for t, mp in model.items()}
+    total = sum(blend.values()) or 1.0
+    return {t: v / total for t, v in blend.items()}
+
+
 def blended_champion(conn, weight: float = 0.5) -> dict[str, float]:
     """Champion probabilities blending the model with the devigged market (normalised).
 
@@ -107,10 +119,33 @@ def blended_champion(conn, weight: float = 0.5) -> dict[str, float]:
     if not market or not row:
         return {}
     model = {t: p["champion"] for t, p in json.loads(row["payload_json"])["probs"].items()}
-    blend = {t: (weight * mp + (1 - weight) * market[t]) if t in market else mp
-             for t, mp in model.items()}
-    total = sum(blend.values()) or 1.0
-    return {t: v / total for t, v in blend.items()}
+    return blend_probs(model, market, weight)
+
+
+def market_movement(conn, days: int = 7) -> list[dict]:
+    """Market re-evaluation signal: change in each team's devigged champion probability
+    between the oldest snapshot inside the window and the latest one. A team the
+    market is walking up (positive move) is one whose news/form the model may lag."""
+    from datetime import timedelta
+    row = conn.execute(
+        "SELECT id, payload_json, fetched_at FROM public_benchmark WHERE source='the-odds-api' "
+        "AND scope='champion' ORDER BY id DESC LIMIT 1"
+    ).fetchone()
+    if not row:
+        return []
+    latest = json.loads(row["payload_json"])
+    cutoff = (datetime.fromisoformat(row["fetched_at"]) - timedelta(days=days)).isoformat()
+    old_row = conn.execute(
+        "SELECT id, payload_json FROM public_benchmark WHERE source='the-odds-api' "
+        "AND scope='champion' AND fetched_at >= ? ORDER BY id ASC LIMIT 1", (cutoff,)
+    ).fetchone()
+    if not old_row or old_row["id"] == row["id"]:    # need two distinct snapshots
+        return []
+    old = json.loads(old_row["payload_json"])
+    moves = [{"team": t, "market": round(p, 4), "move": round(p - old[t], 4)}
+             for t, p in latest.items() if t in old]
+    moves.sort(key=lambda m: abs(m["move"]), reverse=True)
+    return moves
 
 
 def refresh(conn=None) -> dict:

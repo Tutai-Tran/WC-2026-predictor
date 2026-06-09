@@ -12,7 +12,7 @@ updated: 2026-06-09
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-05-29 · played 0-0
 
-Win South Africa: 50.8% | Draw: 28.9% | Win Nicaragua: 20.3%
+Win South Africa: 52.5% | Draw: 28.3% | Win Nicaragua: 19.2%
 Most likely scoreline: 1-0
 Data as of 2026-06-09 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->

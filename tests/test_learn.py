@@ -233,7 +233,9 @@ def _arm_gate(tmp_path, monkeypatch, hist_ll):
     shutil.copy(config.DATA_RAW / "fitted_params.json", raw / "fitted_params.json")
     monkeypatch.setattr("wc26.config.DATA_RAW", raw)
     monkeypatch.setattr(bt, "read_results", lambda *a, **k: "df")
-    monkeypatch.setattr(bt, "prematch_pass", lambda df: ({"year": np.array([2022, 2023])}, {}))
+    monkeypatch.setattr(bt, "prematch_pass", lambda df: (
+        {"year": np.array([2022, 2023]), "is_friendly": np.array([False, False]),
+         "outcome": np.array([0, 0])}, {}))
     # the 2026 eval feats carry 'elo_h'; the historical subset (from prematch_pass) does not.
     # 2026 log loss falls as rho goes more negative; historical is hist_ll(params).
     monkeypatch.setattr(bt, "log_loss",

@@ -13,9 +13,9 @@ updated: 2026-06-09
 <!-- WC26:AUTO:forecast START -->
 **Group F match** · 2026-06-25
 
-Win Japan: 66.1% | Draw: 22.5% | Win Sweden: 11.4%
-Most likely scoreline: 1-0 (14.9%) (modal only; many outcomes possible)
-Top scorers: Ayase Ueda 23.0%; Junya Itō 20.8%; Daichi Kamada 17.2%; Alexander Isak 21.0%; Viktor Gyökeres 15.5%; Anthony Elanga 5.8%;
+Win Japan: 65.4% | Draw: 22.6% | Win Sweden: 12.0%
+Most likely scoreline: 1-0 (14.3%) (modal only; many outcomes possible)
+Top scorers: Ayase Ueda 23.1%; Junya Itō 20.9%; Daichi Kamada 17.3%; Alexander Isak 21.6%; Viktor Gyökeres 16.3%; Anthony Elanga 6.1%;
 Data as of 2026-06-09 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

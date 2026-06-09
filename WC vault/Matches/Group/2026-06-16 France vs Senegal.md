@@ -13,9 +13,9 @@ updated: 2026-06-09
 <!-- WC26:AUTO:forecast START -->
 **Group I match** · 2026-06-16
 
-Win France: 51.8% | Draw: 28.7% | Win Senegal: 19.5%
-Most likely scoreline: 1-0 (15.2%) (modal only; many outcomes possible)
-Top scorers: Kylian Mbappé 55.2%; Ousmane Dembélé 10.1%; Adrien Rabiot 9.1%; Sadio Mané 31.4%; Ismaïla Sarr 9.9%; Nicolas Jackson 4.8%;
+Win France: 54.2% | Draw: 27.5% | Win Senegal: 18.4%
+Most likely scoreline: 1-0 (14.7%) (modal only; many outcomes possible)
+Top scorers: Kylian Mbappé 57.3%; Ousmane Dembélé 10.8%; Adrien Rabiot 9.7%; Sadio Mané 31.6%; Ismaïla Sarr 10.0%; Nicolas Jackson 4.8%;
 Data as of 2026-06-09 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

@@ -35,6 +35,17 @@ FINAL_MATCH = 104
 _MX_CITIES = {"Guadalupe", "Mexico City", "Monterrey", "Guadalajara"}
 _CA_CITIES = {"Toronto", "Vancouver"}
 
+# Venue countries for R16 onward, from the official 2026 schedule (the DB's knockout
+# fixtures carry no venue_country yet; Tournament.ko_venues overrides when present).
+# R16: Philadelphia, Houston, MEXICO CITY, Dallas, Seattle, Atlanta, VANCOUVER, Miami;
+# QF: Boston, LA, Kansas City, Miami; SF: Dallas, Atlanta; Final: New Jersey.
+KO_VENUE_COUNTRY: dict[int, str] = {
+    89: "United States", 90: "United States", 91: "Mexico", 92: "United States",
+    93: "United States", 94: "United States", 95: "Canada", 96: "United States",
+    97: "United States", 98: "United States", 99: "United States", 100: "United States",
+    101: "United States", 102: "United States", 104: "United States",
+}
+
 
 def _r32_country(city: str | None) -> str:
     if city in _MX_CITIES:
@@ -77,6 +88,7 @@ class Tournament:
     attack_mult: dict = field(default_factory=dict)     # team -> attacking-xG multiplier
     played: dict = field(default_factory=dict)          # (home, away) -> (gh, ga) for completed group matches
     h2h: dict = field(default_factory=dict)             # (home, away) -> head-to-head supremacy delta
+    ko_venues: dict = field(default_factory=dict)       # match_no -> venue_country (R16 onward)
 
     def fifa_ranks(self) -> dict[str, int]:
         return {n: (d.get("fifa_rank") or 9999) for n, d in self.teams.items()}
@@ -86,6 +98,13 @@ class Tournament:
 
     def h2h_delta(self, home: str, away: str) -> float:
         return self.h2h.get((home, away), 0.0)
+
+    def host_adv(self, team: str, venue_country: str | None) -> float:
+        """Elo bump when a HOST plays in its own country; per-host values (Mexico's
+        altitude/crowd vs the USA's often-mixed crowds), generic fallback otherwise."""
+        if not venue_country or team != venue_country:
+            return 0.0
+        return config.HOST_BUMP_BY_COUNTRY.get(team, self.host_bump)
 
 
 _STAGES = ["win_group", "top2", "advance", "r16", "qf", "sf", "final", "champion"]
@@ -121,7 +140,7 @@ def simulate(tournament: Tournament, n_runs: int = 10_000, seed: int = config.DE
         fixtures_by_group[fx["group"]].append(fx)
 
     def adv(team: str, venue_country: str | None) -> float:
-        return t.host_bump if venue_country and team == venue_country else 0.0
+        return t.host_adv(team, venue_country)
 
     def sample_goals(home: str, away: str, venue_country: str | None) -> tuple[int, int]:
         if (home, away) in t.played:                  # conditional sim: fix completed matches
@@ -188,12 +207,15 @@ def simulate(tournament: Tournament, n_runs: int = 10_000, seed: int = config.DE
         for team in advanced:
             counts[team]["advance"] += 1
 
-        # Knockout tree (neutral for host advantage from R16 on)
+        # Knockout tree: venues are fixed and known through the final (Mexico City
+        # hosts an R16, Vancouver an R16, everything from the QF on is in the USA),
+        # so a host reaching that match keeps its real home advantage.
         for match_no, (sa, sb) in KNOCKOUT_TREE.items():
             a, b = W.get(sa), W.get(sb)
             if a is None or b is None:
                 continue
-            W[match_no] = knockout_winner(a, b, None)
+            vc = t.ko_venues.get(match_no) or KO_VENUE_COUNTRY.get(match_no)
+            W[match_no] = knockout_winner(a, b, vc)
 
         for m in t.r32:                              # winners of the 16 R32 matches reached the last 16
             mid = m["match"]

@@ -12,7 +12,7 @@ updated: 2026-06-09
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-05-29 · played 0-0
 
-Win Bosnia and Herzegovina: 34.7% | Draw: 33.0% | Win North Macedonia: 32.3%
+Win Bosnia and Herzegovina: 35.4% | Draw: 32.9% | Win North Macedonia: 31.7%
 Most likely scoreline: 1-0
 Data as of 2026-06-09 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->

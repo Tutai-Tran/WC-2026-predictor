@@ -12,7 +12,7 @@ updated: 2026-06-09
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-06-07 · scheduled
 
-Win El Salvador: 24.3% | Draw: 30.7% | Win Qatar: 44.9%
+Win El Salvador: 24.7% | Draw: 30.9% | Win Qatar: 44.4%
 Most likely scoreline: 0-1
 Data as of 2026-06-09 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->

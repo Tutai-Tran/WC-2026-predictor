@@ -13,9 +13,9 @@ updated: 2026-06-09
 <!-- WC26:AUTO:forecast START -->
 **Group E match** · 2026-06-14
 
-Win Germany: 79.3% | Draw: 14.9% | Win Curacao: 5.8%
-Most likely scoreline: 2-0 (15.1%) (modal only; many outcomes possible)
-Top scorers: Kai Havertz 42.9%; Leroy Sané 29.4%; Leon Goretzka 27.9%; Leandro Bacuna 9.6%; Juninho Bacuna 8.5%; Gervane Kastaneer 6.2%;
+Win Germany: 79.6% | Draw: 14.7% | Win Curacao: 5.7%
+Most likely scoreline: 2-0 (15.0%) (modal only; many outcomes possible)
+Top scorers: Kai Havertz 43.2%; Leroy Sané 29.6%; Leon Goretzka 28.1%; Leandro Bacuna 9.7%; Juninho Bacuna 8.6%; Gervane Kastaneer 6.3%;
 Data as of 2026-06-09 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

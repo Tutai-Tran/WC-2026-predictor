@@ -231,7 +231,10 @@ if data is None:
 as_of = data.get("data_as_of", "unknown")
 stale = False
 try:
-    age_h = (datetime.now(timezone.utc).date() - datetime.fromisoformat(as_of).date()).days * 24
+    as_of_dt = datetime.fromisoformat(as_of)
+    if as_of_dt.tzinfo is None:                       # date-only stamps parse as naive midnight
+        as_of_dt = as_of_dt.replace(tzinfo=timezone.utc)
+    age_h = (datetime.now(timezone.utc) - as_of_dt).total_seconds() / 3600.0
     stale = age_h > config.STALE_HOURS
 except Exception:
     pass
@@ -322,7 +325,7 @@ if _played:
                         f"min-height:2.6em;line-height:1.2;display:flex;align-items:center;"
                         f"justify-content:center'>{_r['label']}</div>", unsafe_allow_html=True)
             _c.altair_chart(_accuracy_donut(_r["key"], _r["correct"], _r["total"]),
-                            use_container_width=True)
+                            width="stretch")
             _c.markdown(f"<div style='text-align:center;color:#4B5563;font-size:0.82rem;"
                         f"margin-top:-0.6em'>{_r['correct']} / {_r['total']} correct</div>",
                         unsafe_allow_html=True)
@@ -412,21 +415,24 @@ with tabs[0]:
         else:
             styled = _highlight_rows(day_disp, status_col="status")
         st.caption("↔ On a phone, swipe the table sideways to see every column.")
-        st.dataframe(styled, hide_index=True, use_container_width=True,
+        st.dataframe(styled, hide_index=True, width="stretch",
                      column_config=_DAILY_COLCFG)
     with st.expander("See the full schedule (all days)"):
         st.dataframe(_highlight_rows(df, date_col="date", status_col="status", today=today),
-                     hide_index=True, use_container_width=True, height=400,
+                     hide_index=True, width="stretch", height=400,
                      column_config=_DAILY_COLCFG)
 
 # ======================== Champion & stages =========================
 with tabs[1]:
-    blend = {}
-    try:
-        from wc26 import odds
-        blend = odds.blended_champion(db.connect())
-    except Exception:
-        blend = {}
+    # the published payload carries the blend computed at forecast time; fall back to
+    # a live blend from the local DB for older payloads that predate the field
+    blend = data.get("champion_blend") or {}
+    if not blend:
+        try:
+            from wc26 import odds
+            blend = odds.blended_champion(db.connect())
+        except Exception:
+            blend = {}
     n_runs = max(1, data.get("n_runs", 1))
     rows = []
     for n, p in probs.items():
@@ -458,7 +464,7 @@ with tabs[1]:
         "Advance %": st.column_config.NumberColumn("Advance (R32)", format="%.1f%%",
             help="Probability of getting out of the group"),
     }
-    st.dataframe(df, use_container_width=True, height=600, hide_index=True,
+    st.dataframe(df, width="stretch", height=600, hide_index=True,
                  column_config=_champ_cfg)
 
 # ============================== Matches =============================
@@ -483,7 +489,7 @@ with tabs[2]:
                    "✅ played green; 'Our call' shows ✅/❌ once a match has a result.")
         st.dataframe(_highlight_rows(pd.DataFrame(mrows).sort_values(["Date", "Kickoff (AMS)"]),
                                      date_col="Date", status_col="Status"),
-                     hide_index=True, use_container_width=True, height=560,
+                     hide_index=True, width="stretch", height=560,
                      column_config=_MATCH_COLCFG)
     elif kind == "Friendlies (warm-up)":
         frows = []
@@ -513,7 +519,7 @@ with tabs[2]:
                    "blue; played results (✅, green) also update the model's Elo when the refresh runs.")
         st.dataframe(_highlight_rows(pd.DataFrame(frows).sort_values("Date"),
                                      date_col="Date", status_col="Status"),
-                     hide_index=True, use_container_width=True, height=560,
+                     hide_index=True, width="stretch", height=560,
                      column_config=_MATCH_COLCFG)
     else:
         krows = []
@@ -528,7 +534,7 @@ with tabs[2]:
                    "TBD until the group stage finishes; the 'Projected' column shows the current "
                    "most-likely qualifiers. 🔵 Today's matches are highlighted blue, ✅ played green.")
         st.dataframe(_highlight_rows(pd.DataFrame(krows), date_col="Date", status_col="Result"),
-                     hide_index=True, use_container_width=True, height=560)
+                     hide_index=True, width="stretch", height=560)
 
 # ============================== Bracket =============================
 with tabs[3]:
@@ -556,7 +562,7 @@ with tabs[3]:
         for mno, (a, b) in KNOCKOUT_TREE.items():
             dot.append(f"M{a} -> M{mno}; M{b} -> M{mno};")
         dot.append("}")
-        st.graphviz_chart("\n".join(dot), use_container_width=True)
+        st.graphviz_chart("\n".join(dot), width="stretch")
     except Exception as e:
         st.caption(f"(diagram unavailable: {e})")
 
@@ -609,13 +615,13 @@ with tabs[4]:
             st.dataframe(pd.DataFrame([
                 {"Team": t, "Win grp %": round(_p(t, "win_group")*100),
                  "Advance %": round(_p(t, "advance")*100)} for t in teams
-            ]), hide_index=True, use_container_width=True)
+            ]), hide_index=True, width="stretch")
 
 # ============================== Scorers =============================
 with tabs[5]:
     st.subheader("Most likely scorers (expected group-stage goals)")
     st.dataframe(pd.DataFrame(data.get("golden_boot", [])), hide_index=True,
-                 use_container_width=True)
+                 width="stretch")
 
 # ============================ Availability ==========================
 with tabs[6]:
@@ -633,7 +639,7 @@ with tabs[6]:
         st.dataframe(pd.DataFrame([
             {"Team": r["team"], "Player": r["player"], "Status": r["status"],
              "Source": r["source"], "Note": (r["quote"] or "")[:90]} for r in rows
-        ]), hide_index=True, use_container_width=True)
+        ]), hide_index=True, width="stretch")
     else:
         st.caption("No current availability concerns recorded yet. The news agent scans teams "
                    "on a rotating schedule; results appear here as it finds them.")
@@ -656,7 +662,7 @@ with tabs[7]:
             {"forecast": "favourite baseline", "log loss": b["favourite_log_loss"]},
             {"forecast": "climatology baseline", "log loss": b["climatology_log_loss"]},
             {"forecast": "uniform baseline", "log loss": b["uniform_log_loss"]},
-        ]), hide_index=True, use_container_width=True)
+        ]), hide_index=True, width="stretch")
         c1, c2, c3, c4 = st.columns(4)
         c1.metric("Log loss", r["test"]["log_loss"],
                   help=f"95% CI {r['test']['log_loss_ci95']} · lower is better")
@@ -684,8 +690,13 @@ with tabs[7]:
         from wc26 import odds
         comp = odds.model_vs_market(conn)
         if comp:
-            st.dataframe(pd.DataFrame(comp), hide_index=True, use_container_width=True)
+            st.dataframe(pd.DataFrame(comp), hide_index=True, width="stretch")
             st.caption("Benchmark only, never betting. Edge = model minus market.")
+            moves = odds.market_movement(conn)
+            if moves:
+                st.markdown("**Market movement (last 7 days)** — teams the market is "
+                            "re-pricing; a big move the model doesn't share is worth a look.")
+                st.dataframe(pd.DataFrame(moves[:12]), hide_index=True, width="stretch")
         else:
             st.caption("Run `python -m wc26.odds` to fetch and compare market odds.")
     except Exception as e:
@@ -715,7 +726,7 @@ with tabs[7]:
             c1, c2 = st.columns(2)
             c1.metric("Top-pick accuracy", f"{hit}/{n} ({hit/n*100:.0f}%)")
             c2.metric("Avg log loss", round(ll / n, 3))
-            st.dataframe(pd.DataFrame(frows), hide_index=True, use_container_width=True)
+            st.dataframe(pd.DataFrame(frows), hide_index=True, width="stretch")
     else:
         st.caption("No played friendlies in the latest snapshot yet.")
 
@@ -743,7 +754,7 @@ with tabs[8]:
     if inj:
         st.dataframe(pd.DataFrame([{"Player": r["player_name"], "Status": r["status"],
                                     "Note": (r["source_quote"] or "")[:90]} for r in inj]),
-                     hide_index=True, use_container_width=True)
+                     hide_index=True, width="stretch")
     else:
         st.caption("No concerns recorded.")
 
@@ -766,7 +777,7 @@ with tabs[8]:
     if mrows:
         st.caption("Kickoff times are Amsterdam local (CEST); matches without a scheduled time show —.")
         st.dataframe(pd.DataFrame(mrows).sort_values(["Date", "Kickoff (AMS)"]), hide_index=True,
-                     use_container_width=True)
+                     width="stretch")
 
     st.subheader("Most likely scorers")
     scs = None
@@ -777,7 +788,7 @@ with tabs[8]:
             scs = m["top_scorers_away"]; break
     if scs:
         st.dataframe(pd.DataFrame([{"Player": s["player"], "P(anytime)": _pct(s["p_anytime"])}
-                                   for s in scs]), hide_index=True, use_container_width=True)
+                                   for s in scs]), hide_index=True, width="stretch")
     else:
         st.caption("Scorer estimates appear for teams in the group stage.")
 
@@ -822,14 +833,14 @@ with tabs[9]:
                          color=alt.Color("metric:N", legend=alt.Legend(title=None)),
                          tooltip=["computed_at:T", "metric:N", alt.Tooltip("value:Q", format=".3f")])
                  .properties(height=220))
-        st.altair_chart(_line, use_container_width=True)
+        st.altair_chart(_line, width="stretch")
 
     _segs = _L.get("segments", {})
     if _segs:
         st.markdown("##### Accuracy by competition type")
         st.dataframe(pd.DataFrame([{"Segment": k, "Accuracy": f"{v['accuracy']*100:.0f}%",
                                     "Matches": v["n"]} for k, v in _segs.items()]),
-                     hide_index=True, use_container_width=True)
+                     hide_index=True, width="stretch")
 
     _biases = _L.get("biases", [])
     if _biases:
@@ -842,7 +853,7 @@ with tabs[9]:
                             range=["#D1495B", "#4a78c4"]), legend=alt.Legend(title="model rated")),
             tooltip=["factor:N", "segment:N", "direction:N", "strength:Q", "n:Q"])
             .properties(height=max(120, 26 * len(_bdf))))
-        st.altair_chart(_bar, use_container_width=True)
+        st.altair_chart(_bar, width="stretch")
 
     try:                                              # adopted parameter changes (schema v4+)
         _adj = conn.execute(
@@ -859,7 +870,7 @@ with tabs[9]:
             {"When": str(r["created_at"])[:10], "From bias": r["factor"], "Parameter": r["param"],
              "Change": f"{r['old_value']} → {r['new_value']}",
              "Validated on": f"{r['n_eval']} matches"} for r in _adj]),
-            hide_index=True, use_container_width=True)
+            hide_index=True, width="stretch")
 
     _pm = conn.execute(
         "SELECT pl.home_team, pl.away_team, pl.home_goals hg, pl.away_goals ag, p.factor, p.summary "
@@ -870,4 +881,4 @@ with tabs[9]:
         st.dataframe(pd.DataFrame([
             {"Match": f"{r['home_team']} {r['hg']}-{r['ag']} {r['away_team']}",
              "Factor": r["factor"], "Lesson": r["summary"]} for r in _pm]),
-            hide_index=True, use_container_width=True)
+            hide_index=True, width="stretch")

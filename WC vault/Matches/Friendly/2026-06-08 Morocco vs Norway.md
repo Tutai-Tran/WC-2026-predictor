@@ -10,9 +10,9 @@ updated: 2026-06-09
 # Morocco vs Norway (friendly)
 
 <!-- WC26:AUTO:forecast START -->
-**Warm-up friendly** · 2026-06-08 · scheduled
+**Warm-up friendly** · 2026-06-08 · played 1-1
 
-Win Morocco: 34.4% | Draw: 33.0% | Win Norway: 32.6%
+Win Morocco: 34.5% | Draw: 33.0% | Win Norway: 32.5%
 Most likely scoreline: 1-0
 Data as of 2026-06-09 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->

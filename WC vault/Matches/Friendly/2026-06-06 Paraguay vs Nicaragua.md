@@ -10,9 +10,9 @@ updated: 2026-06-09
 # Paraguay vs Nicaragua (friendly)
 
 <!-- WC26:AUTO:forecast START -->
-**Warm-up friendly** · 2026-06-06 · scheduled
+**Warm-up friendly** · 2026-06-06 · played 4-0
 
-Win Paraguay: 78.8% | Draw: 15.8% | Win Nicaragua: 5.4%
+Win Paraguay: 79.3% | Draw: 15.5% | Win Nicaragua: 5.2%
 Most likely scoreline: 2-0
 Data as of 2026-06-09 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->

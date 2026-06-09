@@ -51,6 +51,7 @@ def prematch_pass(df: pd.DataFrame, home_adv: float = 60.0):
     neutral = df["neutral"].to_numpy(bool)
 
     maj = np.empty(n, bool)
+    fri = np.empty(n, bool)
     for i in range(n):
         h, a = homes[i], aways[i]
         rh = ratings.get(h, elo_mod.DEFAULT_ELO)
@@ -59,12 +60,14 @@ def prematch_pass(df: pd.DataFrame, home_adv: float = 60.0):
         adv = 0.0 if neutral[i] else home_adv
         k = elo_mod.k_for_tournament(tours[i])
         maj[i] = k >= 50.0  # World Cup / continental finals (tournament-like)
+        fri[i] = k <= 25.0  # friendlies (low-K): the segment rho_friendly is tuned on
         nh, na = elo_mod.update_pair(rh, ra, int(gh[i]), int(ga[i]), k=k, home_adv=adv)
         ratings[h], ratings[a] = nh, na
 
     outcome = np.where(gh > ga, 0, np.where(gh == ga, 1, 2))  # 0 home,1 draw,2 away
     feats = {"elo_h": eh, "elo_a": ea, "neutral": neu, "gh": gh, "ga": ga,
-             "year": years, "is_major": maj, "outcome": outcome}
+             "year": years, "is_major": maj, "is_friendly": fri, "outcome": outcome,
+             "tournament": tours.astype(object)}
     return feats, ratings
 
 
@@ -101,10 +104,13 @@ def _probs_for(feats, params):
     return _outcome_probs(la, lb, rho)
 
 
-def log_loss(feats, params) -> float:
+def log_loss(feats, params, weights=None) -> float:
+    """Mean negative log likelihood; optional per-match weights (e.g. time decay)."""
     p = _probs_for(feats, params)
-    actual = p[np.arange(len(p)), feats["outcome"]]
-    return float(-np.mean(np.log(np.clip(actual, 1e-12, 1.0))))
+    actual = -np.log(np.clip(p[np.arange(len(p)), feats["outcome"]], 1e-12, 1.0))
+    if weights is None:
+        return float(np.mean(actual))
+    return float(np.average(actual, weights=weights))
 
 
 def brier(feats, params) -> float:
@@ -193,14 +199,21 @@ def _subset(feats, mask):
     return {k: v[mask] for k, v in feats.items()}
 
 
-def fit(feats_train, rho: float = -0.06):
+def decay_weights(feats, train_until: int = 2021, half_life_years: float = 10.0):
+    """Time-decay weights: a match `half_life_years` before the train cutoff counts
+    half as much as a cutoff-year match, so the fit tracks the modern game."""
+    age = np.maximum(0.0, train_until - feats["year"].astype(float))
+    return 0.5 ** (age / half_life_years)
+
+
+def fit(feats_train, rho: float = -0.06, weights=None):
     def obj(x):
         c, base, home, gamma = x
         c = min(600.0, max(50.0, c))
         base = min(4.0, max(1.5, base))
         home = min(150.0, max(0.0, home))
         gamma = min(1.0, max(0.0, gamma))
-        return log_loss(feats_train, (c, base, home, rho, gamma))
+        return log_loss(feats_train, (c, base, home, rho, gamma), weights=weights)
 
     res = minimize(obj, x0=[200.0, 2.6, 60.0, 0.2], method="Nelder-Mead",
                    options={"xatol": 0.5, "fatol": 1e-5, "maxiter": 600})
@@ -242,14 +255,42 @@ def _temp_log_loss(feats, params, T) -> float:
     return float(-np.mean(np.log(np.clip(a, 1e-12, 1.0))))
 
 
-def run(write: bool = True, train_until: int = 2021):
+_NOT_FINALS = ("nations league", "viva", "conifa", "island games", "ellan vannin")
+
+
+def home_adv_majors(train, params, home_adv_global: float) -> dict | None:
+    """Diagnostic: home advantage refit on non-neutral FINALS matches only (a host
+    nation playing a major tournament in its own country, the reference class for the
+    2026 co-hosts), all other params held fixed. Nations League and non-FIFA events
+    carry k>=50 but are ordinary home fixtures, so they are excluded. Reported for
+    audit; the live host bump is configured separately."""
+    import numpy as np
+    from scipy.optimize import minimize_scalar
+    not_finals = np.array([any(s in str(t).lower() for s in _NOT_FINALS)
+                           for t in train["tournament"]])
+    m = train["is_major"] & ~train["neutral"] & ~not_finals
+    sub = _subset(train, m)
+    n = len(sub["outcome"])
+    if n < 100:
+        return None
+    res = minimize_scalar(
+        lambda h: log_loss(sub, (params.c, params.base_goals, h, params.rho, params.gamma)),
+        bounds=(0.0, 200.0), method="bounded",
+    )
+    return {"home_adv_elo": round(float(res.x), 1), "n": n}
+
+
+def run(write: bool = True, train_until: int = 2021, decay_half_life: float | None = 10.0):
+    # decay_half_life=10.0 is the live default (adopted 2026-06-09: test LL 0.8597 vs
+    # 0.8600 undecayed); pass None to reproduce the undecayed fit.
     df = read_results()
     feats, ratings = prematch_pass(df)
     feats = _subset(feats, feats["year"] >= 2006)
     train = _subset(feats, feats["year"] < train_until)
     test = _subset(feats, feats["year"] >= train_until)
 
-    params, home_adv_elo = fit(train)
+    w = decay_weights(train, train_until, decay_half_life) if decay_half_life else None
+    params, home_adv_elo = fit(train, weights=w)
     p = (params.c, params.base_goals, home_adv_elo, params.rho, params.gamma)
     temperature = round(fit_temperature(train, p), 3)
     ci_lo, ci_hi = bootstrap_log_loss_ci(test, p)
@@ -272,6 +313,8 @@ def run(write: bool = True, train_until: int = 2021):
         "fitted": {**asdict(params), "home_adv_elo": round(home_adv_elo, 1),
                    "temperature": temperature, "goal_scale": goal_scale,
                    "rho_friendly": _prev.get("rho_friendly", asdict(params).get("rho_friendly", -0.06))},
+        "decay_half_life": decay_half_life,
+        "home_adv_majors": home_adv_majors(train, params, home_adv_elo),
         "train": {"n": int(len(train["outcome"])), "log_loss": round(log_loss(train, p), 4),
                   "brier": round(brier(train, p), 4), "rps": round(rps(train, p), 4)},
         "test": {"n": int(len(test["outcome"])), "log_loss": round(log_loss(test, p), 4),

@@ -156,31 +156,57 @@ def add_availability(conn, team: str, player: str, status: str,
     conn.commit()
 
 
+def _event_active(row, today: str, cutoff_iso: str) -> bool:
+    """Whether an availability event should still influence the forecast.
+
+    Expiry rules: a passed expected_return means the player is back (any source), and
+    a news-LLM event older than NEWS_EVENT_MAX_AGE_HOURS lapses unless a rescan
+    re-confirmed it (injuries heal; stale news must not depress a team for weeks).
+    Human entries (vault/manual) have no age limit: the human removes them."""
+    ret = row["expected_return"]
+    if ret and str(ret)[:10] < today:
+        return False
+    src = row["source"] or ""
+    if src.startswith("news-llm") and (row["fetched_at"] or "") < cutoff_iso:
+        return False
+    return True
+
+
 def availability_multipliers(conn, team_players: dict[str, list[dict]]) -> dict[str, float]:
     """Per-team attacking-xG multiplier from current availability events.
 
     A missing/doubtful player removes (a fraction of) his share of the team's goals,
-    bounded so a single event cannot collapse a team's attack.
+    weighted by the event's confidence (human entries 1.0, news-LLM lower), bounded
+    so a single event cannot collapse a team's attack. Expired events are ignored.
     """
+    from datetime import timedelta
+
+    from . import config as cfg
     from .scorers import team_goal_shares
 
     by_team_id = {}
     for r in conn.execute("SELECT id, name FROM teams"):
         by_team_id[r["id"]] = r["name"]
 
+    now = datetime.now(timezone.utc)
+    today = now.date().isoformat()
+    cutoff_iso = (now - timedelta(hours=cfg.NEWS_EVENT_MAX_AGE_HOURS)).isoformat()
+
     out: dict[str, float] = {name: 1.0 for name in team_players}
     rows = conn.execute(
-        "SELECT team_id, player_name, status, minutes_factor FROM availability_events"
+        "SELECT team_id, player_name, status, minutes_factor, expected_return, "
+        "source, confidence, fetched_at FROM availability_events"
     ).fetchall()
     reductions: dict[str, float] = {}
     for r in rows:
         team = by_team_id.get(r["team_id"])
-        if team not in team_players:
+        if team not in team_players or not _event_active(r, today, cutoff_iso):
             continue
         shares = team_goal_shares(team_players[team])
         share = shares.get(r["player_name"], 0.0)
         missing = 1.0 - (r["minutes_factor"] or 0.0)  # 'out' -> 1.0, doubtful 50% -> 0.5
-        reductions[team] = reductions.get(team, 0.0) + share * missing
+        conf = r["confidence"] if r["confidence"] is not None else 1.0
+        reductions[team] = reductions.get(team, 0.0) + share * missing * conf
     for team, red in reductions.items():
         out[team] = max(0.4, 1.0 - min(0.6, red))  # cap total reduction at 60%
     return out

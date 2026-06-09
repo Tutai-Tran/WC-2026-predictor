@@ -12,7 +12,7 @@ updated: 2026-06-09
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-05-31 · played 1-0
 
-Win Mexico: 43.1% | Draw: 31.2% | Win Australia: 25.7%
+Win Mexico: 44.1% | Draw: 31.0% | Win Australia: 24.9%
 Most likely scoreline: 1-0
 Data as of 2026-06-09 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->

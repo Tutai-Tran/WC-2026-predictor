@@ -10,9 +10,9 @@ updated: 2026-06-09
 # Czech Republic vs Guatemala (friendly)
 
 <!-- WC26:AUTO:forecast START -->
-**Warm-up friendly** · 2026-06-05 · scheduled
+**Warm-up friendly** · 2026-06-05 · played 3-1
 
-Win Czech Republic: 52.1% | Draw: 28.5% | Win Guatemala: 19.4%
+Win Czech Republic: 54.7% | Draw: 27.5% | Win Guatemala: 17.7%
 Most likely scoreline: 1-0
 Data as of 2026-06-09 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->

@@ -12,7 +12,7 @@ updated: 2026-06-09
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-06-07 · scheduled
 
-Win Scotland: 48.5% | Draw: 29.7% | Win Bolivia: 21.8%
+Win Scotland: 51.9% | Draw: 28.6% | Win Bolivia: 19.6%
 Most likely scoreline: 1-0
 Data as of 2026-06-09 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->

@@ -10,9 +10,9 @@ updated: 2026-06-09
 # England vs New Zealand (friendly)
 
 <!-- WC26:AUTO:forecast START -->
-**Warm-up friendly** · 2026-06-07 · scheduled
+**Warm-up friendly** · 2026-06-07 · played 1-0
 
-Win England: 77.7% | Draw: 16.5% | Win New Zealand: 5.8%
+Win England: 78.0% | Draw: 16.3% | Win New Zealand: 5.7%
 Most likely scoreline: 2-0
 Data as of 2026-06-09 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->

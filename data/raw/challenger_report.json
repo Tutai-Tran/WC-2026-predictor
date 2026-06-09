@@ -1,0 +1,22 @@
+{
+  "challenger": "bivariate-poisson",
+  "challenger_params": {
+    "c": 217.37,
+    "base_goals": 2.186,
+    "home_adv_elo": 115.0,
+    "gamma": 0.457,
+    "lambda3": 0.1008
+  },
+  "test": {
+    "n": 5584,
+    "champion_log_loss": 0.8597,
+    "challenger_log_loss": 0.8597,
+    "diff_mean": -0.0,
+    "diff_ci95": [
+      -0.0001,
+      0.0001
+    ]
+  },
+  "verdict": "no significant difference \u2014 keep the champion",
+  "note": "report only; switching models requires this CI to exclude zero in the challenger's favour"
+}

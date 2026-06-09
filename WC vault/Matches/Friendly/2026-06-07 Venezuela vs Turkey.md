@@ -10,9 +10,9 @@ updated: 2026-06-09
 # Venezuela vs Turkey (friendly)
 
 <!-- WC26:AUTO:forecast START -->
-**Warm-up friendly** · 2026-06-07 · scheduled
+**Warm-up friendly** · 2026-06-07 · played 1-2
 
-Win Venezuela: 18.6% | Draw: 28.0% | Win Turkey: 53.4%
+Win Venezuela: 17.8% | Draw: 27.5% | Win Turkey: 54.7%
 Most likely scoreline: 0-1
 Data as of 2026-06-09 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->

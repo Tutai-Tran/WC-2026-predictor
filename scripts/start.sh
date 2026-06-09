@@ -10,9 +10,12 @@ export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:$PATH"
 cd "$PROJ" || exit 1
 mkdir -p logs
 
-# stop any prior refresh loop from a previous launch
+# stop any prior refresh loop AND any orphaned dashboard from a previous launch
+# (a leftover streamlit would hold :8501, crash the new one, and launchd would
+# relaunch in a tight loop, each relaunch burning a full refresh cycle)
 [ -f logs/refresh.pid ] && kill "$(cat logs/refresh.pid)" 2>/dev/null || true
 pkill -f "wc26.update" 2>/dev/null || true
+pkill -f "streamlit run wc26/app.py" 2>/dev/null || true
 
 # One full self-improving cycle: scrape + LLM news + odds + re-forecast, publish
 # the DB snapshot for the cloud dashboard, then push the repo updates (vault,
@@ -22,8 +25,17 @@ refresh_cycle() {
   "$PY" -m wc26.odds   >> logs/odds.log   2>&1 || true
   bash "$PROJ/scripts/publish_db.sh" >> logs/publish.log 2>&1 || true
   git -C "$PROJ" add -A >/dev/null 2>&1 || true
-  git -C "$PROJ" commit -q -m "chore: scheduled self-improving refresh [skip ci]" >/dev/null 2>&1 || true
-  git -C "$PROJ" push -q origin main >/dev/null 2>&1 || true
+  git -C "$PROJ" commit -q -m "chore: scheduled self-improving refresh [skip ci]" >> logs/git.log 2>&1 || true
+  # the remote can gain commits; rebase before pushing so a divergence never
+  # silently breaks every future push, and LOG failures instead of hiding them
+  git -C "$PROJ" fetch -q origin >> logs/git.log 2>&1 || true
+  if ! git -C "$PROJ" rebase -q origin/main >> logs/git.log 2>&1; then
+    git -C "$PROJ" rebase --abort >> logs/git.log 2>&1 || true
+    echo "$(date -u +%FT%TZ) rebase FAILED — local and remote diverged" >> logs/git.log
+  fi
+  if ! git -C "$PROJ" push -q origin main >> logs/git.log 2>&1; then
+    echo "$(date -u +%FT%TZ) push FAILED" >> logs/git.log
+  fi
 }
 
 # Refresh + publish IMMEDIATELY on launch so the cloud dashboard updates right

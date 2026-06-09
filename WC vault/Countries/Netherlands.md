@@ -5,7 +5,7 @@ fifa_code: "NED"
 group: "F"
 fifa_rank: 7
 elo: 2007
-champion_prob: 0.0208
+champion_prob: 0.0214
 status: active
 created: 2026-06-04
 updated: 2026-06-09
@@ -13,9 +13,9 @@ updated: 2026-06-09
 
 # Netherlands
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-09T18:07Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-09T20:54Z | source elo-goal-v1 -->
 Group F | FIFA rank 7 | Elo 2007
-Champion 2.1% | Final 5.1% | SF 12.2% | QF 25.3% | Advance 88.9%
+Champion 2.1% | Final 5.1% | SF 12.3% | QF 25.7% | Advance 89.5%
 Availability concerns: Jurriën Timber (out), Bart Verbruggen (doubtful), Memphis Depay (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-09T18:07Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-09T20:54Z | source elo-goal-v1 -->
 - 2026-06-09: champion 2.1% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

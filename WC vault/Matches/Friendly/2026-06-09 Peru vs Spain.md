@@ -12,7 +12,7 @@ updated: 2026-06-09
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-06-09 · played 1-3
 
-Win Peru: 3.9% | Draw: 13.4% | Win Spain: 82.7%
+Win Peru: 3.9% | Draw: 13.5% | Win Spain: 82.6%
 Most likely scoreline: 0-2
 Data as of 2026-06-09 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->

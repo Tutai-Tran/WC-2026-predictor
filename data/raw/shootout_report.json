@@ -1,0 +1,9 @@
+{
+  "n": 540,
+  "since": 1990,
+  "favourite_won_rate": 0.5481,
+  "tilt_estimate": 0.1453,
+  "tilt_se": 0.0577,
+  "configured_tilt": 0.05,
+  "note": "tilt = slope of (won-0.5) on (2E-1); shootouts are nearly a coin flip, so the configured tilt should sit inside estimate \u00b1 2*se"
+}

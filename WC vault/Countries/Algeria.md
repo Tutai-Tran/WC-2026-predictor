@@ -5,7 +5,7 @@ fifa_code: "ALG"
 group: "J"
 fifa_rank: 33
 elo: 1890
-champion_prob: 0.0042
+champion_prob: 0.0038
 status: active
 created: 2026-06-04
 updated: 2026-06-09
@@ -13,9 +13,9 @@ updated: 2026-06-09
 
 # Algeria
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-09T18:07Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-09T20:54Z | source elo-goal-v1 -->
 Group J | FIFA rank 33 | Elo 1890
-Champion 0.4% | Final 1.2% | SF 3.4% | QF 9.3% | Advance 65.0%
+Champion 0.4% | Final 1.1% | SF 3.2% | QF 9.1% | Advance 64.6%
 Availability concerns: Luca Zidane (doubtful), Ramy Bensebaini (doubtful), Hicham Boudaoui (doubtful), Houssem Aouar (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-09T18:07Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-09T20:54Z | source elo-goal-v1 -->
 - 2026-06-09: champion 0.4% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

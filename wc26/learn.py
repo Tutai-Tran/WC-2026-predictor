@@ -67,10 +67,14 @@ def snapshot_upcoming(conn) -> dict:
         ph, pdw, pa = m["p_home"], m["p_draw"], m["p_away"]
         pick = model.outcome_label(ph, pdw, pa)
         eh, ea = elo.get(m["home"]), elo.get(m["away"])
-        # freeze the inputs that produced this prediction so the post-mortem is grounded
+        # freeze the inputs that produced this prediction so the post-mortem is grounded;
+        # mult_* and h2h_delta let the panel see an injury-reduced or h2h-nudged lambda
+        # for what it was, instead of misattributing the miss to goal_volume
         inputs = {"lambda_home": m.get("lambda_home"), "lambda_away": m.get("lambda_away"),
                   "top_scoreline": m.get("top_scoreline"), "elo_home": eh, "elo_away": ea,
-                  "elo_gap": (round(eh - ea, 1) if eh is not None and ea is not None else None)}
+                  "elo_gap": (round(eh - ea, 1) if eh is not None and ea is not None else None),
+                  "mult_home": m.get("mult_home", 1.0), "mult_away": m.get("mult_away", 1.0),
+                  "h2h_delta": m.get("h2h_delta", 0.0)}
         conn.execute(
             "INSERT INTO prediction_log (match_id, stage, home_team, away_team, date_utc, "
             "p_home, p_draw, p_away, lambda_home, lambda_away, top_scoreline, pick, inputs_json, snapshot_at) "
@@ -168,11 +172,11 @@ _PANEL = (
     ("tactical", "You are a TACTICAL football analyst. Focus on the on-pitch matchup: style "
                  "clash, game state, set-pieces, a red card. Be honest: if the result was simply "
                  "a fair low-probability upset with no model error, say so via the 'variance' factor."),
-    ("draws", "You are a DRAW SPECIALIST. The model has been systematically UNDER-predicting "
-              "draws. Judge specifically how likely a DRAW was vs the model's draw probability: "
-              "weigh parity between the sides, low-scoring/cagey tendencies, defensive setups, "
-              "and late-equaliser dynamics. If a draw was more likely than the model implied, "
-              "return factor 'draw' direction 'under'. Use 'goal_volume' if total goals drove it."),
+    ("draws", "You are a DRAW-PREDICTION analyst. Judge how likely a DRAW was vs the model's "
+              "draw probability, in EITHER direction: weigh parity between the sides, "
+              "low-scoring/cagey tendencies, defensive setups, and late-equaliser dynamics. "
+              "Return factor 'draw' with direction 'under' if a draw was more likely than the "
+              "model implied, or 'over' if less likely. Use 'goal_volume' if total goals drove it."),
     ("scoreline", "You are a SCORELINE/expected-goals analyst. Focus on the GOALS, not the "
                   "win/draw/loss pick: was the expected-goals total too high/low (goal_volume) or "
                   "the home/away split wrong, and would a tighter, more draw-prone scoreline "
@@ -195,12 +199,20 @@ _LESSON_SCHEMA = (
 
 def _match_brief(row) -> str:
     inp = json.loads(row["inputs_json"] or "{}")
+    extras = []
+    mh, ma = inp.get("mult_home", 1.0), inp.get("mult_away", 1.0)
+    if (mh or 1.0) != 1.0 or (ma or 1.0) != 1.0:
+        extras.append(f"availability xG multipliers already applied: home {mh}, away {ma}")
+    if inp.get("h2h_delta"):
+        extras.append(f"head-to-head supremacy nudge already applied: {inp['h2h_delta']}")
+    extra = ("Adjustments baked into the prediction: " + "; ".join(extras) + ".\n") if extras else ""
     return (
         f"Match: {row['home_team']} vs {row['away_team']} ({row['stage']}, {row['date_utc']}).\n"
         f"Our PRE-match prediction: home {row['p_home']:.0%} / draw {row['p_draw']:.0%} / "
         f"away {row['p_away']:.0%}; pick={row['pick']}; "
         f"expected goals {inp.get('lambda_home')}-{inp.get('lambda_away')}; "
         f"likely score {inp.get('top_scoreline')}; Elo gap (home-away) {inp.get('elo_gap')}.\n"
+        + extra +
         f"ACTUAL RESULT: {row['home_team']} {row['home_goals']}-{row['away_goals']} {row['away_team']} "
         f"(a {row['actual']} result).\n\n"
     )
@@ -371,47 +383,91 @@ def aggregate_lessons(conn) -> dict:
 # during the tournament until enough new matches accumulate to validate a change.
 # --------------------------------------------------------------------------
 
-_QUORUM = 8   # wrong matches tagging a factor before it becomes a candidate (guard vs anecdote)
+_QUORUM = 8         # wrong matches tagging a factor before it becomes a candidate (guard vs anecdote)
+_QUORUM_GROUP = 5   # during the group stage: ~11 wrong picks are expected across all 72 matches,
+                    # so quorum 8 on a single factor would likely never fire inside the window
 
 # factor -> (fitted param, direction implied when the model OVER-weighted that factor).
 # This is exactly the set the validated gate (phase 3b) can tune, so the candidate audit
 # trail never names a parameter the gate wouldn't actually change. Qualitative factors
 # (h2h, availability, motivation, tactical) and home_advantage (inert under the neutral
 # eval) have no auto-tunable knob and are recorded as biases only.
+# Evidence is split by segment: friendly-tagged lessons tune only the friendly-specific
+# rho_friendly (validated on graded friendlies), never the tournament parameters, so a
+# friendly-only pattern can no longer over-generalise into the tournament model.
 _PARAM_MAP = {
     "goal_volume": ("base_goals", "down"),   # over-predicted goals -> lower base expected goals
     "elo_gap":     ("c", "up"),              # over-rated favourites -> raise Elo-per-goal (less supremacy)
     "draw":        ("rho", "up"),            # over-predicted draws -> rho toward 0 (fewer draws)
 }
+_PARAM_MAP_FRIENDLY = {
+    "draw": ("rho_friendly", "up"),
+}
 _FLIP = {"up": "down", "down": "up"}
+_FRIENDLY_SEGMENTS = ("friendly",)
 
 
-def propose_adjustments(conn, quorum: int = _QUORUM) -> dict:
-    """Turn quorum-reaching systematic biases into CANDIDATE parameter nudges.
+def gate_thresholds(today: str | None = None) -> tuple[int, int]:
+    """(min graded matches, quorum) for the adoption gate; lower during the group
+    stage so the loop can act inside the 72-match window, conservative otherwise."""
+    if config.group_stage_mode(today):
+        return _MIN_EVAL_GROUP, _QUORUM_GROUP
+    return _MIN_EVAL, _QUORUM
 
-    A factor only becomes a candidate once at least `quorum` wrong matches tagged it
-    (so it is systematic, not a single upset). Candidates are written for the audit
-    trail only; they are NOT applied — adoption is decided by the validated re-fit gate
-    out-of-sample. Returns the candidate list and writes data/raw/learned_adjustments.json."""
-    candidates = []
+
+def _quorum_factors(conn, quorum: int, pool: str) -> list[tuple[str, str, str]]:
+    """Quorum-reaching (factor, param, direction) candidates for one evidence pool.
+
+    Pools are keyed on the graded match's ACTUAL stage (objective), not the LLM's
+    suggested_segment: pool='friendly' counts lessons from wrong friendlies and maps
+    only to friendly params; pool='tournament' counts group/knockout lessons and maps
+    to the tournament params. Matchday-3 group draws are excluded from the 'draw'
+    factor: simultaneous final-round games where a draw can suit both sides are not
+    representative evidence for the tournament-wide draw rate."""
+    if pool == "friendly":
+        stage_clause, param_map = "pl.stage = 'friendly'", _PARAM_MAP_FRIENDLY
+    else:
+        stage_clause, param_map = "pl.stage IN ('group', 'knockout')", _PARAM_MAP
+    out = []
     for r in conn.execute(
-        "SELECT factor, "
-        "SUM(CASE WHEN direction='over' THEN confidence*magnitude "
-        "ELSE -confidence*magnitude END) signed, COUNT(*) n "
-        "FROM postmortems WHERE factor != 'variance' GROUP BY factor HAVING n >= ?",
+        "SELECT pm.factor factor, "
+        "SUM(CASE WHEN pm.direction='over' THEN pm.confidence*pm.magnitude "
+        "ELSE -pm.confidence*pm.magnitude END) signed, COUNT(*) n "
+        "FROM postmortems pm "
+        "JOIN prediction_log pl ON pl.id = pm.prediction_id "
+        "LEFT JOIN matches m ON m.id = pm.match_id "
+        f"WHERE pm.factor != 'variance' AND {stage_clause} "
+        "AND NOT (pm.factor = 'draw' AND pl.stage = 'group' AND COALESCE(m.matchday, 0) = 3) "
+        "GROUP BY pm.factor HAVING n >= ?",
         (quorum,),
     ):
-        mapped = _PARAM_MAP.get(r["factor"])
+        mapped = param_map.get(r["factor"])
         if not mapped:
             continue                                  # qualitative factor — no fitted knob to nudge
         param, over_dir = mapped
         over_weighted = (r["signed"] or 0) >= 0
-        candidates.append({
-            "factor": r["factor"], "param": param,
-            "direction": over_dir if over_weighted else _FLIP[over_dir],
-            "evidence_n": r["n"], "applied": False,
-            "note": "candidate only — adoption requires out-of-sample re-fit validation",
-        })
+        out.append((r["factor"], param, over_dir if over_weighted else _FLIP[over_dir], r["n"]))
+    return out
+
+
+def propose_adjustments(conn, quorum: int | None = None) -> dict:
+    """Turn quorum-reaching systematic biases into CANDIDATE parameter nudges.
+
+    A factor only becomes a candidate once at least `quorum` wrong matches tagged it
+    (so it is systematic, not a single upset). Friendly-tagged evidence is pooled
+    separately and can only name friendly-specific parameters. Candidates are written
+    for the audit trail only; they are NOT applied — adoption is decided by the
+    validated re-fit gate out-of-sample. Writes data/raw/learned_adjustments.json."""
+    if quorum is None:
+        quorum = gate_thresholds()[1]
+    candidates = []
+    for pool in ("tournament", "friendly"):
+        for factor, param, direction, n in _quorum_factors(conn, quorum, pool):
+            candidates.append({
+                "factor": factor, "param": param, "direction": direction,
+                "evidence_n": n, "pool": pool, "applied": False,
+                "note": "candidate only — adoption requires out-of-sample re-fit validation",
+            })
     out = {"quorum": quorum, "candidates": candidates,
            "computed_at": datetime.now(timezone.utc).isoformat()}
     path = config.DATA_RAW / "learned_adjustments.json"
@@ -428,29 +484,41 @@ def propose_adjustments(conn, quorum: int = _QUORUM) -> dict:
 # --------------------------------------------------------------------------
 
 _MIN_EVAL = 20        # graded TOURNAMENT matches required before the gate may change anything
+_MIN_EVAL_GROUP = 12  # one full matchday during the group stage (first adoption ~June 13-14)
+_MIN_EVAL_FRIENDLY = 12   # graded friendlies required before rho_friendly may move
+_MIN_NEW_BETWEEN_ADOPT = 12   # newly graded matches a pool needs between two adoptions
 _NET_MARGIN = 0.005   # (2026 log-loss improvement) - (historical regression) must beat this
 _HIST_CAP = 0.01      # historical held-out log loss may never rise by more than this
 
 # Per-step size and hard valid range for each gate-tunable parameter (ranges match the
 # bounds backtest.fit() enforces, so an adopted value can never leave the sane region).
-_GATE_STEP = {"c": 8.0, "base_goals": 0.06, "rho": 0.015}
-_GATE_RANGE = {"c": (50.0, 600.0), "base_goals": (1.5, 4.0), "rho": (-0.18, 0.0)}
+_GATE_STEP = {"c": 8.0, "base_goals": 0.06, "rho": 0.015, "rho_friendly": 0.015}
+_GATE_RANGE = {"c": (50.0, 600.0), "base_goals": (1.5, 4.0), "rho": (-0.18, 0.0),
+               "rho_friendly": (-0.30, 0.0)}
 
 
-def _feats_2026(conn):
-    """Build a backtest-style feature set from the graded TOURNAMENT predictions (the
-    new data the model must adapt to). Pre-match Elo comes from the frozen snapshot, so
-    this stays leak-free. Friendlies are excluded: their draw/goal dynamics differ from
-    the tournament we are tuning for. Returns (feats, n) or None. Venues are treated as
-    neutral — a constant that cancels in the current-vs-trial comparison for the tuned
-    params (c/base_goals/rho don't interact with home_adv_elo, which the gate never tunes)."""
+def _feats_2026(conn, stages: tuple[str, ...] = ("group", "knockout"),
+                since: str | None = None):
+    """Build a backtest-style feature set from graded predictions for the given stages
+    (the new data the model must adapt to). Pre-match Elo comes from the frozen
+    snapshot, so this stays leak-free. The default excludes friendlies: their
+    draw/goal dynamics differ from the tournament; pass stages=('friendly',) to
+    validate the friendly-specific parameters; pass `since` (an ISO timestamp) to keep
+    only matches graded after it (rollback judges a change on post-adoption data only).
+    Returns (feats, n) or None. Venues are treated as neutral — a constant that
+    cancels in the current-vs-trial comparison for the tuned params (none of which
+    interact with home_adv_elo)."""
     import numpy as np
     omap = {"home": 0, "draw": 1, "away": 2}
     eh, ea, gh, ga, out = [], [], [], [], []
+    placeholders = ",".join("?" * len(stages))
+    since_clause = "AND graded_at > ? " if since else ""
+    params = stages + ((since,) if since else ())
     for r in conn.execute(
         "SELECT inputs_json, home_goals hg, away_goals ag, actual FROM prediction_log "
         "WHERE graded=1 AND home_goals IS NOT NULL AND away_goals IS NOT NULL "
-        "AND stage IN ('group', 'knockout')"          # tournament distribution only
+        f"AND stage IN ({placeholders}) {since_clause}",
+        params,
     ):
         inp = json.loads(r["inputs_json"] or "{}")
         e_h, e_a = inp.get("elo_home"), inp.get("elo_away")
@@ -465,77 +533,126 @@ def _feats_2026(conn):
              "gh": np.array(gh), "ga": np.array(ga), "outcome": np.array(out)}, n)
 
 
-def adopt_adjustments(conn, quorum: int = _QUORUM) -> dict:
-    """Apply ONE quorum-backed bias correction to the live fitted parameters per cycle,
-    and only a nudge that improves out-of-sample log loss on the tournament results so
-    far WITHOUT worsening the historical held-out calibration. At most one parameter
-    changes per cycle (each candidate judged against the same pre-cycle baseline, so they
-    can't compound), every decision is logged to model_params_log for audit/rollback, and
-    a self-correcting bias direction lets a later cycle step a bad change back."""
+def _tup(d, rho_key: str = "rho"):                    # (c, base, home_adv_elo, rho, gamma)
+    return (d["c"], d["base_goals"], d.get("home_adv_elo", 60.0), d[rho_key], d.get("gamma", 0.0))
+
+
+def _write_params(fp_path, fp: dict) -> None:
     import os
+    tmp = fp_path.with_suffix(".json.tmp")            # atomic write: never leave a partial file
+    with open(tmp, "w") as f:
+        json.dump(fp, f, indent=2)
+        f.flush()
+        os.fsync(f.fileno())                          # survive power loss: no zero-length params
+    os.replace(tmp, fp_path)
+
+
+def adopt_adjustments(conn, quorum: int | None = None) -> dict:
+    """Apply ONE quorum-backed bias correction to the live fitted parameters per cycle,
+    and only a nudge that improves out-of-sample log loss on the graded results so far
+    WITHOUT worsening the historical held-out calibration. Tournament-segment evidence
+    is validated on graded tournament matches and tunes the tournament params;
+    friendly-segment evidence is validated on graded friendlies and may only tune
+    rho_friendly. At most one parameter changes per cycle (each candidate judged
+    against the same pre-cycle baseline, so they can't compound), every decision is
+    logged to model_params_log for audit/rollback, and a self-correcting bias
+    direction lets a later cycle step a bad change back."""
     from . import backtest as bt
+    min_eval, q = gate_thresholds()
+    if quorum is None:
+        quorum = q
     fp_path = config.DATA_RAW / "fitted_params.json"
     if not fp_path.exists():
         return {"adopted": 0, "reason": "no fitted_params.json"}
-    new = _feats_2026(conn)
-    if new is None or new[1] < _MIN_EVAL:
-        return {"adopted": 0, "reason": "insufficient graded matches", "n": (new[1] if new else 0)}
-    feats_new, n_eval = new
-
-    cands = []
-    for r in conn.execute(
-        "SELECT factor, SUM(CASE WHEN direction='over' THEN confidence*magnitude "
-        "ELSE -confidence*magnitude END) signed, COUNT(*) n FROM postmortems "
-        "WHERE factor != 'variance' GROUP BY factor HAVING n >= ?", (quorum,)
-    ):
-        m = _PARAM_MAP.get(r["factor"])
-        if not m:
-            continue
-        param, over_dir = m
-        over = (r["signed"] or 0) >= 0
-        cands.append((r["factor"], param, over_dir if over else _FLIP[over_dir]))
-    if not cands:
-        return {"adopted": 0, "reason": "no quorum candidates", "n": n_eval}
 
     fp = json.loads(fp_path.read_text())
-    for k in ("c", "base_goals", "rho"):              # never act on a corrupt params file
+    for k in ("c", "base_goals", "rho", "rho_friendly"):   # never act on a corrupt params file
         v = fp.get(k)
         if not isinstance(v, (int, float)) or not math.isfinite(v):
-            return {"adopted": 0, "reason": f"corrupt fitted_params: {k}={v}", "n": n_eval}
+            return {"adopted": 0, "reason": f"corrupt fitted_params: {k}={v}"}
 
-    try:                                              # leak-free historical held-out set
+    try:                                              # leak-free historical held-out sets
         feats_all, _ratings = bt.prematch_pass(bt.read_results())
-        mask = feats_all["year"] >= 2021
-        feats_h = {key: val[mask] for key, val in feats_all.items()}
+        recent = feats_all["year"] >= 2021
+        feats_h = {key: val[recent] for key, val in feats_all.items()}
+        fr_mask = recent & feats_all["is_friendly"]
+        feats_h_friendly = {key: val[fr_mask] for key, val in feats_all.items()}
     except Exception as e:
-        return {"adopted": 0, "reason": f"backtest load failed: {e}", "n": n_eval}
+        return {"adopted": 0, "reason": f"backtest load failed: {e}"}
 
-    def tup(d):                                       # (c, base, home_adv_elo, rho, gamma)
-        return (d["c"], d["base_goals"], d.get("home_adv_elo", 60.0), d["rho"], d.get("gamma", 0.0))
+    # (pool, eval feats requirement, eval set, historical guard, rho key, stages, params)
+    pools = []
+    new_t = _feats_2026(conn)
+    pools.append(("tournament", min_eval, new_t, feats_h, "rho",
+                  ("group", "knockout"), ("c", "base_goals", "rho")))
+    new_f = _feats_2026(conn, stages=("friendly",))
+    pools.append(("friendly", _MIN_EVAL_FRIENDLY, new_f, feats_h_friendly, "rho_friendly",
+                  ("friendly",), ("rho_friendly",)))
 
-    # FIXED pre-cycle baselines: every candidate is judged against the same starting point,
-    # and at most ONE parameter changes this cycle, so candidates cannot compound or corrupt
-    # each other's evaluation. The next cycle continues from the new baseline.
-    base_new = bt.log_loss(feats_new, tup(fp))
-    base_hist = bt.log_loss(feats_h, tup(fp))
     now = datetime.now(timezone.utc).isoformat()
-
-    trials = []
-    for factor, param, direction in cands:
-        old_val = float(fp[param])
-        lo, hi = _GATE_RANGE[param]
-        step = _GATE_STEP[param] if direction == "up" else -_GATE_STEP[param]
-        new_val = round(min(hi, max(lo, old_val + step)), 4)
-        if new_val == old_val:                        # already at a bound; nothing to try
+    trials, ns, blocked = [], {}, []
+    for pool, need, new, feats_hist, rho_key, stages, pool_params in pools:
+        cands = [(f, p, d) for f, p, d, _n in _quorum_factors(conn, quorum, pool)]
+        n_eval = new[1] if new else 0
+        ns[pool] = n_eval
+        if not cands:
             continue
-        trial = dict(fp); trial[param] = new_val
-        ll_new = bt.log_loss(feats_new, tup(trial))
-        ll_hist = bt.log_loss(feats_h, tup(trial))
-        improve, regress = base_new - ll_new, ll_hist - base_hist
-        ok = (ll_new < base_new and regress < _HIST_CAP and improve - max(0.0, regress) > _NET_MARGIN)
-        trials.append({"factor": factor, "param": param, "direction": direction, "old": old_val,
-                       "new": new_val, "ll_new": ll_new, "ll_hist": ll_hist,
-                       "net": improve - max(0.0, regress), "ok": ok})
+        if new is None or n_eval < need:
+            blocked.append(f"{pool}: {n_eval}/{need} graded matches")
+            continue
+        # ANTI-RATCHET: the same evidence must not justify a step every 3h cycle. A
+        # pool may adopt again only after a matchday's worth of NEW graded matches
+        # since its last adopted change (incremental refitting to the same 12 matches
+        # would walk a parameter to its bound while each step passes the per-step gate).
+        last = conn.execute(
+            "SELECT created_at FROM model_params_log WHERE adopted=1 AND param IN "
+            f"({','.join('?' * len(pool_params))}) ORDER BY id DESC LIMIT 1",
+            pool_params,
+        ).fetchone()
+        if last:
+            n_new = conn.execute(
+                "SELECT COUNT(*) c FROM prediction_log WHERE graded=1 AND graded_at > ? "
+                f"AND stage IN ({','.join('?' * len(stages))})",
+                (last["created_at"], *stages),
+            ).fetchone()["c"]
+            if n_new < _MIN_NEW_BETWEEN_ADOPT:
+                blocked.append(f"{pool}: {n_new}/{_MIN_NEW_BETWEEN_ADOPT} newly graded "
+                               "since last adoption")
+                continue
+        feats_new = new[0]
+        # FIXED pre-cycle baselines: every candidate is judged against the same starting
+        # point, and at most ONE parameter changes this cycle, so candidates cannot
+        # compound or corrupt each other's evaluation.
+        base_new = bt.log_loss(feats_new, _tup(fp, rho_key))
+        base_hist = bt.log_loss(feats_hist, _tup(fp, rho_key)) if len(feats_hist["outcome"]) else 0.0
+        for factor, param, direction in cands:
+            old_val = float(fp[param])
+            lo, hi = _GATE_RANGE[param]
+            step = _GATE_STEP[param] if direction == "up" else -_GATE_STEP[param]
+            new_val = round(min(hi, max(lo, old_val + step)), 4)
+            if new_val == old_val:                    # already at a bound; nothing to try
+                continue
+            trial = dict(fp); trial[param] = new_val
+            ll_new = bt.log_loss(feats_new, _tup(trial, rho_key))
+            ll_hist = bt.log_loss(feats_hist, _tup(trial, rho_key)) if len(feats_hist["outcome"]) else 0.0
+            improve, regress = base_new - ll_new, ll_hist - base_hist
+            ok = (ll_new < base_new and regress < _HIST_CAP
+                  and improve - max(0.0, regress) > _NET_MARGIN)
+            trials.append({"factor": factor, "param": param, "direction": direction,
+                           "old": old_val, "new": new_val, "ll_new": ll_new, "ll_hist": ll_hist,
+                           "base_new": base_new, "base_hist": base_hist, "n_eval": n_eval,
+                           "net": improve - max(0.0, regress), "ok": ok})
+
+    if not trials:
+        if blocked:
+            reason = "insufficient graded matches: " + "; ".join(blocked)
+        elif ns.get("tournament", 0) < min_eval:
+            reason = (f"insufficient graded matches "
+                      f"(tournament: {ns.get('tournament', 0)}/{min_eval})")
+        else:
+            reason = f"no quorum candidates (quorum {quorum})"
+        return {"adopted": 0, "reason": reason, "n": ns.get("tournament", 0),
+                "n_friendly": ns.get("friendly", 0)}
 
     winner = max((t for t in trials if t["ok"]), key=lambda t: t["net"], default=None)
     for t in trials:
@@ -545,19 +662,84 @@ def adopt_adjustments(conn, quorum: int = _QUORUM) -> dict:
             "ll_new_before, ll_new_after, ll_hist_before, ll_hist_after, n_eval, adopted, reason, params_json) "
             "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
             (now, t["factor"], t["param"], t["direction"], t["old"], t["new"],
-             round(base_new, 4), round(t["ll_new"], 4), round(base_hist, 4), round(t["ll_hist"], 4),
-             n_eval, 1 if chosen else 0,
-             f"new {base_new:.4f}->{t['ll_new']:.4f}; hist {base_hist:.4f}->{t['ll_hist']:.4f}",
+             round(t["base_new"], 4), round(t["ll_new"], 4),
+             round(t["base_hist"], 4), round(t["ll_hist"], 4),
+             t["n_eval"], 1 if chosen else 0,
+             f"new {t['base_new']:.4f}->{t['ll_new']:.4f}; hist {t['base_hist']:.4f}->{t['ll_hist']:.4f}",
              json.dumps({**fp, t["param"]: t["new"]} if chosen else fp)),
         )
     conn.commit()
     if winner:
         fp[winner["param"]] = winner["new"]
-        tmp = fp_path.with_suffix(".json.tmp")        # atomic write: never leave a partial file
-        tmp.write_text(json.dumps(fp, indent=2))
-        os.replace(tmp, fp_path)                       # the forecast reads this next run -> more accurate
-    return {"adopted": 1 if winner else 0, "n": n_eval,
+        _write_params(fp_path, fp)                     # the forecast reads this next run
+    return {"adopted": 1 if winner else 0, "n": ns.get("tournament", 0),
+            "n_friendly": ns.get("friendly", 0),
             "decisions": [{"factor": t["factor"], "param": t["param"], "direction": t["direction"],
-                           "adopted": t is winner, "ll_new": [round(base_new, 4), round(t["ll_new"], 4)]}
+                           "adopted": t is winner,
+                           "ll_new": [round(t["base_new"], 4), round(t["ll_new"], 4)]}
                           for t in trials]}
+
+
+# --------------------------------------------------------------------------
+# Phase 3c: automatic ROLLBACK. If an adopted nudge later proves harmful on the
+# growing graded set, step it back without waiting for the bias loop to notice.
+# --------------------------------------------------------------------------
+
+_ROLLBACK_REGRESS = 0.02      # current params must be this much worse than the pre-change
+_ROLLBACK_MIN_NEW = 8         # ...judged only once this many NEW matches graded since the change
+
+
+def check_rollback(conn) -> dict:
+    """Auto-revert the most recent adopted parameter change if, on the matches graded
+    AFTER the change (only those: the pre-adoption matches selected the change, so
+    scoring them again would bias the comparison toward keeping it), the old value
+    clearly outperforms it. Logged like any other decision (factor='rollback'), so
+    the audit trail stays complete."""
+    from . import backtest as bt
+    row = conn.execute(
+        "SELECT * FROM model_params_log WHERE adopted=1 ORDER BY id DESC LIMIT 1"
+    ).fetchone()
+    if not row or row["factor"] == "rollback":
+        return {"checked": False}
+    fp_path = config.DATA_RAW / "fitted_params.json"
+    if not fp_path.exists():
+        return {"checked": False}
+    fp = json.loads(fp_path.read_text())
+    param = row["param"]
+    if fp.get(param) != row["new_value"]:             # changed again since; nothing to judge
+        return {"checked": False}
+    stages = ("friendly",) if param == "rho_friendly" else ("group", "knockout")
+    rho_key = "rho_friendly" if param == "rho_friendly" else "rho"
+    n_since = conn.execute(
+        "SELECT COUNT(*) c FROM prediction_log WHERE graded=1 AND graded_at > ? "
+        f"AND stage IN ({','.join('?' * len(stages))})",
+        (row["created_at"], *stages),
+    ).fetchone()["c"]
+    if n_since < _ROLLBACK_MIN_NEW:
+        return {"checked": True, "rolled_back": False, "n_since": n_since}
+    new = _feats_2026(conn, stages=stages, since=row["created_at"])
+    if new is None:
+        return {"checked": True, "rolled_back": False, "n_since": n_since}
+    feats, n_eval = new
+    old_fp = dict(fp); old_fp[param] = row["old_value"]
+    ll_cur = bt.log_loss(feats, _tup(fp, rho_key))
+    ll_old = bt.log_loss(feats, _tup(old_fp, rho_key))
+    if ll_cur <= ll_old + _ROLLBACK_REGRESS:
+        return {"checked": True, "rolled_back": False, "n_since": n_since}
+    now = datetime.now(timezone.utc).isoformat()
+    fp[param] = row["old_value"]
+    _write_params(fp_path, fp)
+    conn.execute(
+        "INSERT INTO model_params_log (created_at, factor, param, direction, old_value, new_value, "
+        "ll_new_before, ll_new_after, ll_hist_before, ll_hist_after, n_eval, adopted, reason, params_json) "
+        "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+        (now, "rollback", param, _FLIP[row["direction"]], row["new_value"], row["old_value"],
+         round(ll_cur, 4), round(ll_old, 4), None, None, n_eval, 1,
+         f"auto-rollback: accuracy regression ({ll_cur:.4f} vs {ll_old:.4f} with old value) "
+         f"over {n_since} newly graded matches",
+         json.dumps(fp)),
+    )
+    conn.commit()
+    return {"checked": True, "rolled_back": True, "param": param,
+            "restored": row["old_value"], "n_since": n_since}
 

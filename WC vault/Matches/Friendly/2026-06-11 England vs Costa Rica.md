@@ -12,7 +12,7 @@ updated: 2026-06-09
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-06-11 · scheduled
 
-Win England: 74.4% | Draw: 18.4% | Win Costa Rica: 7.2%
+Win England: 74.9% | Draw: 18.1% | Win Costa Rica: 7.0%
 Most likely scoreline: 2-0
 Data as of 2026-06-09 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->

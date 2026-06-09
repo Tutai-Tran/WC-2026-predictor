@@ -28,6 +28,10 @@ ESPN_ALIASES = {
     # observed in the live ledger as unmatched: qualified WC teams whose source spelling
     # differs from ours (would otherwise fail to grade their group matches), plus China.
     "Bosnia-Herzegovina": "Bosnia and Herzegovina", "Congo DR": "DR Congo", "China": "China PR",
+    # non-tournament opponents whose ESPN spelling differs from the results.csv name
+    # (their friendlies feed an opponent's Elo; unmatched they'd be a phantom 1500)
+    "Kyrgyz Republic": "Kyrgyzstan", "UAE": "United Arab Emirates",
+    "Ireland": "Republic of Ireland", "Cabo Verde": "Cape Verde",
 }
 
 
@@ -73,8 +77,13 @@ def fetch_espn(league: str, ymd: str) -> list[dict]:
     return parse_espn(data, league)
 
 
-def update_results(conn, days_back: int = 12) -> dict:
-    """Record newly-completed friendly/World Cup results into the ledger + fixtures."""
+def update_results(conn, days_back: int | None = None) -> dict:
+    """Record newly-completed friendly/World Cup results into the ledger + fixtures.
+
+    During the tournament the window widens to 30 days so a late ESPN correction
+    (or a missed scrape day) is never silently lost outside the rescan horizon."""
+    if days_back is None:
+        days_back = 30 if config.tournament_mode() else 12
     today = date.today()
     added = 0
     for d in range(days_back, -1, -1):

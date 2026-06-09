@@ -10,7 +10,7 @@ updated: 2026-06-09
 # Panama vs Bosnia and Herzegovina (friendly)
 
 <!-- WC26:AUTO:forecast START -->
-**Warm-up friendly** · 2026-06-07 · scheduled
+**Warm-up friendly** · 2026-06-07 · played 1-1
 
 Win Panama: 56.4% | Draw: 26.9% | Win Bosnia and Herzegovina: 16.7%
 Most likely scoreline: 1-0

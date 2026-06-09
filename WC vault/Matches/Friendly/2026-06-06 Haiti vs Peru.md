@@ -10,7 +10,7 @@ updated: 2026-06-09
 # Haiti vs Peru (friendly)
 
 <!-- WC26:AUTO:forecast START -->
-**Warm-up friendly** · 2026-06-06 · scheduled
+**Warm-up friendly** · 2026-06-06 · played 1-2
 
 Win Haiti: 26.7% | Draw: 31.6% | Win Peru: 41.7%
 Most likely scoreline: 0-1

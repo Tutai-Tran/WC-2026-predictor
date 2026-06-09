@@ -12,7 +12,7 @@ updated: 2026-06-09
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-06-03 · played 4-0
 
-Win Haiti: 36.7% | Draw: 32.6% | Win New Zealand: 30.6%
+Win Haiti: 35.8% | Draw: 32.8% | Win New Zealand: 31.4%
 Most likely scoreline: 1-0
 Data as of 2026-06-09 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
