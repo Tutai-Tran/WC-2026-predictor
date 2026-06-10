@@ -5,7 +5,7 @@ fifa_code: "POR"
 group: "K"
 fifa_rank: 5
 elo: 2058
-champion_prob: 0.0537
+champion_prob: 0.0522
 status: active
 created: 2026-06-04
 updated: 2026-06-10
@@ -13,9 +13,9 @@ updated: 2026-06-10
 
 # Portugal
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-10T08:04Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-10T11:51Z | source elo-goal-v1 -->
 Group K | FIFA rank 5 | Elo 2058
-Champion 5.4% | Final 11.0% | SF 19.7% | QF 36.2% | Advance 91.5%
+Champion 5.2% | Final 10.9% | SF 19.9% | QF 36.4% | Advance 91.5%
 Availability concerns: Rafael Leão (suspended)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-10T08:04Z | source elo-goal-v1 -->
-- 2026-06-10: champion 5.4% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-10T11:51Z | source elo-goal-v1 -->
+- 2026-06-10: champion 5.2% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
