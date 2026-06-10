@@ -13,9 +13,9 @@ updated: 2026-06-10
 <!-- WC26:AUTO:forecast START -->
 **Group A match** · 2026-06-11
 
-Win Mexico: 79.1% | Draw: 15.5% | Win South Africa: 5.4%
-Most likely scoreline: 2-0 (16.4%) (modal only; many outcomes possible)
-Top scorers: Raúl Jiménez 58.7%; Orbelín Pineda 19.9%; Alexis Vega 14.0%; Teboho Mokoena 13.7%; Themba Zwane 7.2%; Lyle Foster 6.7%;
+Win Mexico: 78.3% | Draw: 15.8% | Win South Africa: 5.9%
+Most likely scoreline: 2-0 (15.9%) (modal only; many outcomes possible)
+Top scorers: Raúl Jiménez 58.7%; Orbelín Pineda 19.9%; Alexis Vega 14.0%; Teboho Mokoena 14.1%; Themba Zwane 7.7%; Lyle Foster 7.1%;
 Data as of 2026-06-10 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
