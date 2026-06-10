@@ -5,7 +5,7 @@ fifa_code: "IRN"
 group: "G"
 fifa_rank: 20
 elo: 1902
-champion_prob: 0.0049
+champion_prob: 0.0048
 status: active
 created: 2026-06-04
 updated: 2026-06-10
@@ -13,9 +13,9 @@ updated: 2026-06-10
 
 # Iran
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-10T16:13Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-10T19:21Z | source elo-goal-v1 -->
 Group G | FIFA rank 20 | Elo 1902
-Champion 0.5% | Final 1.7% | SF 4.8% | QF 15.6% | Advance 82.7%
+Champion 0.5% | Final 1.7% | SF 4.7% | QF 16.5% | Advance 83.5%
 Availability concerns: Rouzbeh Cheshmi (out)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-10T16:13Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-10T19:21Z | source elo-goal-v1 -->
 - 2026-06-10: champion 0.5% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

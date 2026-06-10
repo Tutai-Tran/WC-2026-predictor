@@ -13,9 +13,9 @@ updated: 2026-06-10
 
 # Switzerland
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-10T16:13Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-10T19:21Z | source elo-goal-v1 -->
 Group B | FIFA rank 17 | Elo 1968
-Champion 1.3% | Final 3.9% | SF 10.4% | QF 26.5% | Advance 94.3%
+Champion 1.3% | Final 3.8% | SF 10.2% | QF 26.3% | Advance 94.2%
 Availability concerns: Zeki Amdouni (doubtful), Noah Okafor (doubtful), Fabian Rieder (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-10T16:13Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-10T19:21Z | source elo-goal-v1 -->
 - 2026-06-10: champion 1.3% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

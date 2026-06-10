@@ -14,30 +14,30 @@ These are probabilities, not certainties.
 
 | Team | Win | Final | SF | QF | R16 |
 | --- | --- | --- | --- | --- | --- |
-| [[Countries/Spain\|Spain]] | 24.9% | 36.2% | 48.0% | 59.0% | 77.2% |
-| [[Countries/Argentina\|Argentina]] | 20.0% | 31.1% | 43.0% | 57.2% | 70.1% |
-| [[Countries/England\|England]] | 7.6% | 14.4% | 26.6% | 42.5% | 65.8% |
-| [[Countries/France\|France]] | 7.2% | 14.1% | 27.2% | 43.4% | 65.7% |
-| [[Countries/Colombia\|Colombia]] | 5.9% | 11.8% | 21.1% | 38.4% | 64.3% |
-| [[Countries/Portugal\|Portugal]] | 5.2% | 11.0% | 19.7% | 36.2% | 61.9% |
-| [[Countries/Brazil\|Brazil]] | 3.7% | 8.0% | 17.8% | 32.5% | 54.7% |
-| [[Countries/Germany\|Germany]] | 3.0% | 7.3% | 17.1% | 31.3% | 57.5% |
-| [[Countries/Japan\|Japan]] | 2.7% | 6.7% | 15.9% | 29.8% | 49.3% |
-| [[Countries/Morocco\|Morocco]] | 2.6% | 6.1% | 14.9% | 29.1% | 50.6% |
-| [[Countries/Norway\|Norway]] | 2.1% | 5.4% | 13.6% | 27.6% | 50.7% |
-| [[Countries/Mexico\|Mexico]] | 1.9% | 5.2% | 14.4% | 31.4% | 67.6% |
-| [[Countries/Netherlands\|Netherlands]] | 1.8% | 4.8% | 12.5% | 26.1% | 46.4% |
-| [[Countries/Uruguay\|Uruguay]] | 1.5% | 4.4% | 9.8% | 19.4% | 35.7% |
-| [[Countries/Switzerland\|Switzerland]] | 1.3% | 3.9% | 10.4% | 26.5% | 58.0% |
-| [[Countries/Ecuador\|Ecuador]] | 1.1% | 3.3% | 9.3% | 20.4% | 44.3% |
-| [[Countries/Turkey\|Turkey]] | 1.0% | 3.0% | 7.3% | 20.5% | 44.5% |
-| [[Countries/Belgium\|Belgium]] | 1.0% | 3.0% | 7.0% | 21.6% | 48.4% |
-| [[Countries/United States\|United States]] | 0.8% | 2.5% | 6.4% | 18.1% | 42.6% |
-| [[Countries/Canada\|Canada]] | 0.6% | 2.1% | 6.5% | 21.2% | 55.9% |
-| [[Countries/Croatia\|Croatia]] | 0.6% | 2.1% | 5.5% | 13.3% | 34.0% |
-| [[Countries/Australia\|Australia]] | 0.6% | 1.7% | 4.6% | 13.6% | 34.1% |
-| [[Countries/Iran\|Iran]] | 0.5% | 1.7% | 4.8% | 15.6% | 41.0% |
-| [[Countries/Paraguay\|Paraguay]] | 0.5% | 1.7% | 4.6% | 13.8% | 34.7% |
+| [[Countries/Spain\|Spain]] | 28.6% | 40.7% | 52.4% | 62.6% | 79.5% |
+| [[Countries/Argentina\|Argentina]] | 19.3% | 31.0% | 42.8% | 57.0% | 69.8% |
+| [[Countries/England\|England]] | 7.1% | 14.3% | 26.3% | 42.3% | 66.3% |
+| [[Countries/France\|France]] | 6.8% | 13.4% | 27.1% | 43.7% | 66.2% |
+| [[Countries/Colombia\|Colombia]] | 5.7% | 11.8% | 20.5% | 37.6% | 63.9% |
+| [[Countries/Portugal\|Portugal]] | 5.0% | 10.7% | 19.5% | 35.6% | 62.2% |
+| [[Countries/Brazil\|Brazil]] | 3.5% | 7.9% | 18.2% | 33.1% | 55.1% |
+| [[Countries/Germany\|Germany]] | 2.7% | 6.8% | 16.8% | 31.0% | 57.0% |
+| [[Countries/Japan\|Japan]] | 2.6% | 6.5% | 16.0% | 30.0% | 49.2% |
+| [[Countries/Morocco\|Morocco]] | 2.4% | 5.8% | 14.8% | 28.9% | 50.6% |
+| [[Countries/Norway\|Norway]] | 2.0% | 5.4% | 13.7% | 27.5% | 50.8% |
+| [[Countries/Mexico\|Mexico]] | 1.7% | 4.9% | 14.1% | 31.3% | 67.7% |
+| [[Countries/Netherlands\|Netherlands]] | 1.7% | 4.4% | 12.2% | 25.5% | 46.2% |
+| [[Countries/Uruguay\|Uruguay]] | 1.4% | 4.0% | 9.3% | 18.9% | 34.5% |
+| [[Countries/Switzerland\|Switzerland]] | 1.3% | 3.8% | 10.2% | 26.3% | 57.8% |
+| [[Countries/Ecuador\|Ecuador]] | 1.1% | 3.2% | 9.3% | 20.8% | 44.2% |
+| [[Countries/Turkey\|Turkey]] | 1.0% | 2.9% | 7.2% | 20.5% | 44.2% |
+| [[Countries/Belgium\|Belgium]] | 0.9% | 2.9% | 6.8% | 21.5% | 48.6% |
+| [[Countries/United States\|United States]] | 0.8% | 2.5% | 6.4% | 18.2% | 42.9% |
+| [[Countries/Canada\|Canada]] | 0.6% | 2.1% | 6.5% | 21.3% | 56.4% |
+| [[Countries/Croatia\|Croatia]] | 0.6% | 1.9% | 5.3% | 12.9% | 34.3% |
+| [[Countries/Iran\|Iran]] | 0.5% | 1.7% | 4.7% | 16.5% | 42.1% |
+| [[Countries/Australia\|Australia]] | 0.5% | 1.5% | 4.3% | 13.7% | 34.1% |
+| [[Countries/Paraguay\|Paraguay]] | 0.4% | 1.5% | 4.4% | 13.7% | 34.3% |
 
 ## Most likely scorers (expected group-stage goals)
 
@@ -52,8 +52,8 @@ These are probabilities, not certainties.
 - Erling Haaland (Norway): 1.79
 - Romelu Lukaku (Belgium): 1.75
 - Mohamed Salah (Egypt): 1.62
+- Mehdi Taremi (Iran): 1.58
 - Jonathan David (Canada): 1.55
-- Mehdi Taremi (Iran): 1.55
+- Mikel Oyarzabal (Spain): 1.52
 - Memphis Depay (Netherlands): 1.48
-- Ayoub El Kaabi (Morocco): 1.48
 <!-- WC26:AUTO:dashboard END -->
