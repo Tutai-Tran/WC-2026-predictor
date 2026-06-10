@@ -5,17 +5,17 @@ fifa_code: "FRA"
 group: "I"
 fifa_rank: 3
 elo: 2131
-champion_prob: 0.0757
+champion_prob: 0.068
 status: active
 created: 2026-06-04
-updated: 2026-06-09
+updated: 2026-06-10
 ---
 
 # France
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-09T20:54Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-10T00:13Z | source elo-goal-v1 -->
 Group I | FIFA rank 3 | Elo 2131
-Champion 7.6% | Final 14.0% | SF 26.8% | QF 42.9% | Advance 91.7%
+Champion 6.8% | Final 13.3% | SF 26.6% | QF 42.9% | Advance 91.8%
 Availability concerns: William Saliba (doubtful), Kylian Mbappé (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-09T20:54Z | source elo-goal-v1 -->
-- 2026-06-09: champion 7.6% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-10T00:13Z | source elo-goal-v1 -->
+- 2026-06-10: champion 6.8% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

@@ -1,6 +1,6 @@
 ---
 type: wc-bracket
-updated: 2026-06-09
+updated: 2026-06-10
 ---
 
 # Knockout bracket

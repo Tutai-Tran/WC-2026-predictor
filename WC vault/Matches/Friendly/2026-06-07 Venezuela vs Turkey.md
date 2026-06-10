@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-07
 home: "Venezuela"
 away: "Turkey"
-updated: 2026-06-09
+updated: 2026-06-10
 ---
 
 # Venezuela vs Turkey (friendly)
@@ -14,7 +14,7 @@ updated: 2026-06-09
 
 Win Venezuela: 17.8% | Draw: 27.5% | Win Turkey: 54.7%
 Most likely scoreline: 0-1
-Data as of 2026-06-09 | runs 50000 | seed 20260611
+Data as of 2026-06-10 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-08
 home: "France"
 away: "Northern Ireland"
-updated: 2026-06-09
+updated: 2026-06-10
 ---
 
 # France vs Northern Ireland (friendly)
@@ -14,7 +14,7 @@ updated: 2026-06-09
 
 Win France: 83.3% | Draw: 13.1% | Win Northern Ireland: 3.7%
 Most likely scoreline: 2-0
-Data as of 2026-06-09 | runs 50000 | seed 20260611
+Data as of 2026-06-10 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

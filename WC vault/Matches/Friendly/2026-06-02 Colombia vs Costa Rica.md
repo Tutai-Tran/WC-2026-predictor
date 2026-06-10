@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-02
 home: "Colombia"
 away: "Costa Rica"
-updated: 2026-06-09
+updated: 2026-06-10
 ---
 
 # Colombia vs Costa Rica (friendly)
@@ -14,7 +14,7 @@ updated: 2026-06-09
 
 Win Colombia: 75.3% | Draw: 17.8% | Win Costa Rica: 6.8%
 Most likely scoreline: 2-0
-Data as of 2026-06-09 | runs 50000 | seed 20260611
+Data as of 2026-06-10 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

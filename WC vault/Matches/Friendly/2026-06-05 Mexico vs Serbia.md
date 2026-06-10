@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-05
 home: "Mexico"
 away: "Serbia"
-updated: 2026-06-09
+updated: 2026-06-10
 ---
 
 # Mexico vs Serbia (friendly)
@@ -14,7 +14,7 @@ updated: 2026-06-09
 
 Win Mexico: 58.9% | Draw: 25.9% | Win Serbia: 15.2%
 Most likely scoreline: 2-0
-Data as of 2026-06-09 | runs 50000 | seed 20260611
+Data as of 2026-06-10 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

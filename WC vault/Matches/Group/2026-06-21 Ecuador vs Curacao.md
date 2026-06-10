@@ -5,7 +5,7 @@ group: E
 date: 2026-06-21
 home: "Ecuador"
 away: "Curacao"
-updated: 2026-06-09
+updated: 2026-06-10
 ---
 
 # Ecuador vs Curacao
@@ -16,7 +16,7 @@ updated: 2026-06-09
 Win Ecuador: 70.3% | Draw: 21.0% | Win Curacao: 8.8%
 Most likely scoreline: 1-0 (16.0%) (modal only; many outcomes possible)
 Top scorers: Enner Valencia 61.9%; Gonzalo Plata 15.4%; Félix Torres 8.6%; Leandro Bacuna 9.5%; Juninho Bacuna 8.4%; Gervane Kastaneer 6.1%;
-Data as of 2026-06-09 | runs 50000 | seed 20260611
+Data as of 2026-06-10 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

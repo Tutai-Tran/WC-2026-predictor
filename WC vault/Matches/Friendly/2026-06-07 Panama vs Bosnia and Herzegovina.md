@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-07
 home: "Panama"
 away: "Bosnia and Herzegovina"
-updated: 2026-06-09
+updated: 2026-06-10
 ---
 
 # Panama vs Bosnia and Herzegovina (friendly)
@@ -14,7 +14,7 @@ updated: 2026-06-09
 
 Win Panama: 56.4% | Draw: 26.9% | Win Bosnia and Herzegovina: 16.7%
 Most likely scoreline: 1-0
-Data as of 2026-06-09 | runs 50000 | seed 20260611
+Data as of 2026-06-10 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

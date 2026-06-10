@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-06
 home: "Portugal"
 away: "Chile"
-updated: 2026-06-09
+updated: 2026-06-10
 ---
 
 # Portugal vs Chile (friendly)
@@ -14,7 +14,7 @@ updated: 2026-06-09
 
 Win Portugal: 65.7% | Draw: 22.8% | Win Chile: 11.5%
 Most likely scoreline: 2-0
-Data as of 2026-06-09 | runs 50000 | seed 20260611
+Data as of 2026-06-10 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

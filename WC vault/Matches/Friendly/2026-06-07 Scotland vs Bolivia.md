@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-07
 home: "Scotland"
 away: "Bolivia"
-updated: 2026-06-09
+updated: 2026-06-10
 ---
 
 # Scotland vs Bolivia (friendly)
@@ -14,7 +14,7 @@ updated: 2026-06-09
 
 Win Scotland: 51.9% | Draw: 28.6% | Win Bolivia: 19.6%
 Most likely scoreline: 1-0
-Data as of 2026-06-09 | runs 50000 | seed 20260611
+Data as of 2026-06-10 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

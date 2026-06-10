@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-02
 home: "Wales"
 away: "Ghana"
-updated: 2026-06-09
+updated: 2026-06-10
 ---
 
 # Wales vs Ghana (friendly)
@@ -14,7 +14,7 @@ updated: 2026-06-09
 
 Win Wales: 49.1% | Draw: 29.5% | Win Ghana: 21.4%
 Most likely scoreline: 1-0
-Data as of 2026-06-09 | runs 50000 | seed 20260611
+Data as of 2026-06-10 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match
