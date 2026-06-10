@@ -8,13 +8,13 @@ updated: 2026-06-04
 
 # Group I
 
-<!-- WC26:AUTO:standings START | generated 2026-06-10T11:51Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:standings START | generated 2026-06-10T16:13Z | source elo-goal-v1 -->
 | Team | Win group | Top 2 | Advance |
 | --- | --- | --- | --- |
-| [[Countries/France\|France]] | 50.5% | 80.3% | 92.4% |
-| [[Countries/Norway\|Norway]] | 31.7% | 66.8% | 85.0% |
-| [[Countries/Senegal\|Senegal]] | 14.1% | 39.2% | 65.6% |
-| [[Countries/Iraq\|Iraq]] | 3.7% | 13.7% | 28.1% |
+| [[Countries/France\|France]] | 50.5% | 79.8% | 92.3% |
+| [[Countries/Norway\|Norway]] | 31.4% | 67.0% | 85.3% |
+| [[Countries/Senegal\|Senegal]] | 14.5% | 39.7% | 66.0% |
+| [[Countries/Iraq\|Iraq]] | 3.6% | 13.4% | 27.7% |
 <!-- WC26:AUTO:standings END -->
 
 ## Fixtures
