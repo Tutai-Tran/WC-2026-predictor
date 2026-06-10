@@ -14,7 +14,7 @@ updated: 2026-06-10
 
 Win DR Congo: 30.5% | Draw: 32.6% | Win Chile: 36.8%
 Most likely scoreline: 0-1
-Data as of 2026-06-10 | runs 50000 | seed 20260611
+Data as of 2026-06-11 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

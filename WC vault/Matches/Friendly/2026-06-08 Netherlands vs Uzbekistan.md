@@ -14,7 +14,7 @@ updated: 2026-06-10
 
 Win Netherlands: 56.3% | Draw: 26.9% | Win Uzbekistan: 16.8%
 Most likely scoreline: 1-0
-Data as of 2026-06-10 | runs 50000 | seed 20260611
+Data as of 2026-06-11 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

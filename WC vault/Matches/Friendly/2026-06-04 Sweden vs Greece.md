@@ -14,7 +14,7 @@ updated: 2026-06-10
 
 Win Sweden: 29.8% | Draw: 32.5% | Win Greece: 37.7%
 Most likely scoreline: 0-1
-Data as of 2026-06-10 | runs 50000 | seed 20260611
+Data as of 2026-06-11 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

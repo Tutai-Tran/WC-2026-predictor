@@ -12,9 +12,9 @@ updated: 2026-06-10
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-06-05 · played 5-1
 
-Win Mexico: 58.9% | Draw: 25.9% | Win Serbia: 15.2%
+Win Mexico: 59.3% | Draw: 25.7% | Win Serbia: 15.0%
 Most likely scoreline: 2-0
-Data as of 2026-06-10 | runs 50000 | seed 20260611
+Data as of 2026-06-11 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

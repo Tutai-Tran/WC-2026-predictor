@@ -14,7 +14,7 @@ updated: 2026-06-10
 Slots: 1B vs 3rd E/F/G/I/J
 Projected: Canada vs 3rd E/F/G/I/J
 Result: TBD
-Data as of 2026-06-10 | runs 50000 | seed 20260611
+Data as of 2026-06-11 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

@@ -14,7 +14,7 @@ updated: 2026-06-10
 Slots: 1I vs 3rd C/D/F/G/H
 Projected: France vs 3rd C/D/F/G/H
 Result: TBD
-Data as of 2026-06-10 | runs 50000 | seed 20260611
+Data as of 2026-06-11 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

@@ -16,7 +16,7 @@ updated: 2026-06-10
 Win Uzbekistan: 13.5% | Draw: 22.6% | Win Colombia: 64.0%
 Most likely scoreline: 0-1 (12.8%) (modal only; many outcomes possible)
 Top scorers: Eldor Shomurodov 21.7%; Igor Sergeev 12.8%; Jaloliddin Masharipov 6.6%; James Rodríguez 43.8%; Luis Díaz 30.4%; Yerry Mina 11.8%;
-Data as of 2026-06-10 | runs 50000 | seed 20260611
+Data as of 2026-06-11 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

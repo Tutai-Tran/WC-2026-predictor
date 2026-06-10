@@ -13,10 +13,10 @@ updated: 2026-06-10
 <!-- WC26:AUTO:forecast START -->
 **Group A match** · 2026-06-25
 
-Win Czech Republic: 13.5% | Draw: 23.3% | Win Mexico: 63.3%
-Most likely scoreline: 0-1 (13.7%) (modal only; many outcomes possible)
-Top scorers: Patrik Schick 22.8%; Tomáš Souček 10.6%; Vladimír Darida 5.4%; Raúl Jiménez 50.8%; Orbelín Pineda 15.9%; Alexis Vega 11.1%;
-Data as of 2026-06-10 | runs 50000 | seed 20260611
+Win Czech Republic: 11.3% | Draw: 20.3% | Win Mexico: 68.5%
+Most likely scoreline: 0-2 (13.1%) (modal only; many outcomes possible)
+Top scorers: Patrik Schick 22.9%; Tomáš Souček 10.7%; Vladimír Darida 5.4%; Raúl Jiménez 54.9%; Orbelín Pineda 17.9%; Alexis Vega 12.6%;
+Data as of 2026-06-11 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match
