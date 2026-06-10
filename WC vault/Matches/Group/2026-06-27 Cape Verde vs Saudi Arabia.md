@@ -13,9 +13,9 @@ updated: 2026-06-10
 <!-- WC26:AUTO:forecast START -->
 **Group H match** · 2026-06-27
 
-Win Cape Verde: 36.5% | Draw: 30.5% | Win Saudi Arabia: 33.0%
-Most likely scoreline: 1-0 (11.6%) (modal only; many outcomes possible)
-Top scorers: Ryan Mendes 26.9%; Garry Rodrigues 12.1%; Dailon Livramento 10.9%; Salem Al-Dawsari 30.6%; Saleh Al-Shehri 17.8%; Firas Al-Buraikan 15.3%;
+Win Cape Verde: 35.9% | Draw: 30.6% | Win Saudi Arabia: 33.5%
+Most likely scoreline: 1-0 (11.5%) (modal only; many outcomes possible)
+Top scorers: Ryan Mendes 26.6%; Garry Rodrigues 11.9%; Dailon Livramento 10.7%; Salem Al-Dawsari 30.7%; Saleh Al-Shehri 17.9%; Firas Al-Buraikan 15.4%;
 Data as of 2026-06-10 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
