@@ -5,7 +5,7 @@ group: G
 date: 2026-06-15
 home: "Belgium"
 away: "Egypt"
-updated: 2026-06-10
+updated: 2026-06-11
 ---
 
 # Belgium vs Egypt

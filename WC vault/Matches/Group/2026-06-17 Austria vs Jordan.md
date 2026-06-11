@@ -5,7 +5,7 @@ group: J
 date: 2026-06-17
 home: "Austria"
 away: "Jordan"
-updated: 2026-06-10
+updated: 2026-06-11
 ---
 
 # Austria vs Jordan

@@ -5,7 +5,7 @@ group: K
 date: 2026-06-27
 home: "Colombia"
 away: "Portugal"
-updated: 2026-06-10
+updated: 2026-06-11
 ---
 
 # Colombia vs Portugal

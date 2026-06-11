@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-05-31
 home: "Japan"
 away: "Iceland"
-updated: 2026-06-10
+updated: 2026-06-11
 ---
 
 # Japan vs Iceland (friendly)

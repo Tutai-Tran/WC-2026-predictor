@@ -5,7 +5,7 @@ group: B
 date: 2026-06-13
 home: "Qatar"
 away: "Switzerland"
-updated: 2026-06-10
+updated: 2026-06-11
 ---
 
 # Qatar vs Switzerland

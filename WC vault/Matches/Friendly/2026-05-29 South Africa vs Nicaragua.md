@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-05-29
 home: "South Africa"
 away: "Nicaragua"
-updated: 2026-06-10
+updated: 2026-06-11
 ---
 
 # South Africa vs Nicaragua (friendly)

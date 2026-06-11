@@ -5,7 +5,7 @@ group: C
 date: 2026-06-24
 home: "Morocco"
 away: "Haiti"
-updated: 2026-06-10
+updated: 2026-06-11
 ---
 
 # Morocco vs Haiti

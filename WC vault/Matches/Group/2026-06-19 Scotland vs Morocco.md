@@ -5,7 +5,7 @@ group: C
 date: 2026-06-19
 home: "Scotland"
 away: "Morocco"
-updated: 2026-06-10
+updated: 2026-06-11
 ---
 
 # Scotland vs Morocco

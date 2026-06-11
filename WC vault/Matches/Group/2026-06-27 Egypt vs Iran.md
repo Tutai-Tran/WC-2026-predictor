@@ -5,7 +5,7 @@ group: G
 date: 2026-06-27
 home: "Egypt"
 away: "Iran"
-updated: 2026-06-10
+updated: 2026-06-11
 ---
 
 # Egypt vs Iran

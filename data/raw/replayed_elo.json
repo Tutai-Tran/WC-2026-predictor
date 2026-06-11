@@ -3,7 +3,7 @@
   "source": "base_elo + results ledger",
   "ratings": {
     "Scotland": 1871.9,
-    "England": 2094.0,
+    "England": 2098.1,
     "Wales": 1754.7,
     "Northern Ireland": 1670.9,
     "United States": 1873.4,
@@ -47,7 +47,7 @@
     "Estonia": 1416.1,
     "Suriname": 1597.4,
     "Provence": 1464.2,
-    "Costa Rica": 1742.9,
+    "Costa Rica": 1738.8,
     "El Salvador": 1494.3,
     "Guatemala": 1656.4,
     "Poland": 1769.2,

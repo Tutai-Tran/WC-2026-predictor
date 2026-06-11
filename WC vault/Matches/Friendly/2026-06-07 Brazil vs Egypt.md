@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-07
 home: "Brazil"
 away: "Egypt"
-updated: 2026-06-10
+updated: 2026-06-11
 ---
 
 # Brazil vs Egypt (friendly)

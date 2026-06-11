@@ -5,7 +5,7 @@ group: B
 date: 2026-06-24
 home: "Switzerland"
 away: "Canada"
-updated: 2026-06-10
+updated: 2026-06-11
 ---
 
 # Switzerland vs Canada

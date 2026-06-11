@@ -5,7 +5,7 @@ group: K
 date: 2026-06-27
 home: "DR Congo"
 away: "Uzbekistan"
-updated: 2026-06-10
+updated: 2026-06-11
 ---
 
 # DR Congo vs Uzbekistan

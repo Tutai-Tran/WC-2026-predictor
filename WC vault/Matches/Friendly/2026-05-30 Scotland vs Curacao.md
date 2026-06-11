@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-05-30
 home: "Scotland"
 away: "Curacao"
-updated: 2026-06-10
+updated: 2026-06-11
 ---
 
 # Scotland vs Curacao (friendly)

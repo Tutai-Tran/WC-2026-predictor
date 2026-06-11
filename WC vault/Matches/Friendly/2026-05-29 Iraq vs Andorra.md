@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-05-29
 home: "Iraq"
 away: "Andorra"
-updated: 2026-06-10
+updated: 2026-06-11
 ---
 
 # Iraq vs Andorra (friendly)

@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-08
 home: "Morocco"
 away: "Norway"
-updated: 2026-06-10
+updated: 2026-06-11
 ---
 
 # Morocco vs Norway (friendly)

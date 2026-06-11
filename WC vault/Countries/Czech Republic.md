@@ -5,18 +5,18 @@ fifa_code: "CZE"
 group: "A"
 fifa_rank: 44
 elo: 1825
-champion_prob: 0.0014
+champion_prob: 0.001
 status: active
 created: 2026-06-04
-updated: 2026-06-10
+updated: 2026-06-11
 ---
 
 # Czech Republic
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-10T22:51Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-11T02:20Z | source elo-goal-v1 -->
 Group A | FIFA rank 44 | Elo 1825
-Champion 0.1% | Final 0.6% | SF 2.5% | QF 9.6% | Advance 65.0%
-Availability: no concerns recorded
+Champion 0.1% | Final 0.5% | SF 2.1% | QF 9.4% | Advance 64.6%
+Availability concerns: Jan Kuchta (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
 ## Squad & availability
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-10T22:51Z | source elo-goal-v1 -->
-- 2026-06-10: champion 0.1% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-11T02:20Z | source elo-goal-v1 -->
+- 2026-06-11: champion 0.1% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
