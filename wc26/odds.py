@@ -16,6 +16,7 @@ from . import config, db
 
 API = "https://api.the-odds-api.com/v4"
 WINNER_SPORT = "soccer_fifa_world_cup_winner"
+MATCH_SPORT = "soccer_fifa_world_cup"
 
 # The Odds API outright name -> our team name
 NAME_ALIASES = {
@@ -44,6 +45,22 @@ def fetch_winner_odds(key: str | None = None, region: str = "eu"):
     url = (f"{API}/sports/{WINNER_SPORT}/odds/?regions={region}"
            f"&markets=outrights&oddsFormat=decimal&apiKey={key}")
     with urllib.request.urlopen(url, timeout=30) as r:
+        remaining = r.headers.get("x-requests-remaining")
+        return json.load(r), remaining
+
+
+def fetch_match_odds(key: str | None = None, region: str = "eu"):
+    """Return (events, requests_remaining) for per-fixture 1X2 (h2h) match odds.
+
+    Match markets are deeper and sharper than the outright market; used only as a
+    research signal and CLV benchmark, never for betting. Raises on missing key /
+    HTTP error. Uses more quota than the single outrights endpoint."""
+    key = key or _key()
+    if not key:
+        raise RuntimeError("No THE_ODDS_API_KEY (set it in .env)")
+    url = (f"{API}/sports/{MATCH_SPORT}/odds/?regions={region}"
+           f"&markets=h2h&oddsFormat=decimal&apiKey={key}")
+    with urllib.request.urlopen(url, timeout=30) as r:  # noqa: S310 (trusted API host)
         remaining = r.headers.get("x-requests-remaining")
         return json.load(r), remaining
 

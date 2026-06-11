@@ -38,11 +38,33 @@ refresh_cycle() {
   fi
 }
 
-# Refresh + publish IMMEDIATELY on launch so the cloud dashboard updates right
-# after this device comes online, then repeat every 3 hours.
-( refresh_cycle; while true; do sleep 10800; refresh_cycle; done ) &
+# Refresh + publish IMMEDIATELY on launch, then on an EVENT-DRIVEN cadence: sleep
+# until the next pre-kickoff (lineups) / post-match (result) trigger computed from
+# the fixture list, with a slow heartbeat when nothing is near. Recomputed each
+# cycle. Far more timely around matches than a flat timer, and it avoids pointless
+# mid-match re-runs (the model is pre-match; the scrape is completed-results-only;
+# the input-fingerprint skip makes a mid-match run a no-op anyway).
+( refresh_cycle
+  while true; do
+    SLEEP_SEC="$("$PY" -m wc26.schedule sleep 2>>logs/schedule.log)"
+    case "$SLEEP_SEC" in (*[!0-9]*|"") SLEEP_SEC=10800 ;; esac   # fallback if CLI failed
+    sleep "$SLEEP_SEC"
+    refresh_cycle
+  done ) &
 LOOP_PID=$!
 echo "$LOOP_PID" > logs/refresh.pid
+
+# OPTIONAL in-play odds/CLV research snapshots (opt-in: WC26_INPLAY_ODDS=1). This
+# is the ONLY thing that wakes during the 90 minutes; each tick is a no-op unless
+# a match is live and the daily budget allows. Spends Odds API quota.
+SNAP_PID=""
+if [ "${WC26_INPLAY_ODDS:-}" = "1" ]; then
+  ( while true; do
+      "$PY" -m wc26.marketwatch >> logs/marketwatch.log 2>&1 || true
+      sleep "${WC26_INPLAY_INTERVAL:-900}"
+    done ) &
+  SNAP_PID=$!
+fi
 
 # dashboard alongside the loop
 "$ST" run wc26/app.py --server.headless true --server.port 8501 --server.address 127.0.0.1 &
@@ -54,5 +76,5 @@ DASH_PID=$!
 while kill -0 "$LOOP_PID" 2>/dev/null && kill -0 "$DASH_PID" 2>/dev/null; do
   sleep 30
 done
-kill "$LOOP_PID" "$DASH_PID" 2>/dev/null || true
+kill "$LOOP_PID" "$DASH_PID" ${SNAP_PID:+"$SNAP_PID"} 2>/dev/null || true
 exit 1
