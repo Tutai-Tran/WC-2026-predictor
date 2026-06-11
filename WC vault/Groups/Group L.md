@@ -8,13 +8,13 @@ updated: 2026-06-04
 
 # Group L
 
-<!-- WC26:AUTO:standings START | generated 2026-06-11T02:20Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:standings START | generated 2026-06-11T05:48Z | source elo-goal-v1 -->
 | Team | Win group | Top 2 | Advance |
 | --- | --- | --- | --- |
-| [[Countries/England\|England]] | 67.4% | 89.9% | 97.3% |
-| [[Countries/Croatia\|Croatia]] | 19.4% | 59.4% | 81.3% |
-| [[Countries/Panama\|Panama]] | 11.5% | 41.3% | 68.9% |
-| [[Countries/Ghana\|Ghana]] | 1.6% | 9.4% | 20.3% |
+| [[Countries/England\|England]] | 67.6% | 90.1% | 97.3% |
+| [[Countries/Croatia\|Croatia]] | 19.6% | 59.8% | 81.4% |
+| [[Countries/Panama\|Panama]] | 11.3% | 40.9% | 69.4% |
+| [[Countries/Ghana\|Ghana]] | 1.6% | 9.2% | 20.1% |
 <!-- WC26:AUTO:standings END -->
 
 ## Fixtures

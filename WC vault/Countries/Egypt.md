@@ -5,7 +5,7 @@ fifa_code: "EGY"
 group: "G"
 fifa_rank: 32
 elo: 1812
-champion_prob: 0.0008
+champion_prob: 0.0005
 status: active
 created: 2026-06-04
 updated: 2026-06-11
@@ -13,9 +13,9 @@ updated: 2026-06-11
 
 # Egypt
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-11T02:20Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-11T05:48Z | source elo-goal-v1 -->
 Group G | FIFA rank 32 | Elo 1812
-Champion 0.1% | Final 0.4% | SF 1.5% | QF 7.0% | Advance 66.8%
+Champion 0.1% | Final 0.4% | SF 1.6% | QF 7.0% | Advance 66.4%
 Availability: no concerns recorded
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-11T02:20Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-11T05:48Z | source elo-goal-v1 -->
 - 2026-06-11: champion 0.1% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
