@@ -8,13 +8,13 @@ updated: 2026-06-04
 
 # Group B
 
-<!-- WC26:AUTO:standings START | generated 2026-06-11T12:44Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:standings START | generated 2026-06-11T17:34Z | source elo-goal-v1 -->
 | Team | Win group | Top 2 | Advance |
 | --- | --- | --- | --- |
-| [[Countries/Canada\|Canada]] | 52.1% | 90.6% | 97.0% |
-| [[Countries/Switzerland\|Switzerland]] | 43.8% | 87.5% | 95.6% |
-| [[Countries/Bosnia and Herzegovina\|Bosnia and Herzegovina]] | 2.1% | 11.3% | 31.6% |
-| [[Countries/Qatar\|Qatar]] | 2.0% | 10.6% | 30.1% |
+| [[Countries/Canada\|Canada]] | 51.0% | 89.7% | 96.6% |
+| [[Countries/Switzerland\|Switzerland]] | 44.6% | 87.6% | 95.7% |
+| [[Countries/Bosnia and Herzegovina\|Bosnia and Herzegovina]] | 2.1% | 11.6% | 32.1% |
+| [[Countries/Qatar\|Qatar]] | 2.2% | 11.1% | 30.3% |
 <!-- WC26:AUTO:standings END -->
 
 ## Fixtures
