@@ -5,7 +5,7 @@ fifa_code: "JPN"
 group: "F"
 fifa_rank: 19
 elo: 2014
-champion_prob: 0.024
+champion_prob: 0.0226
 status: active
 created: 2026-06-04
 updated: 2026-06-11
@@ -13,9 +13,9 @@ updated: 2026-06-11
 
 # Japan
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-11T09:16Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-11T12:44Z | source elo-goal-v1 -->
 Group F | FIFA rank 19 | Elo 2014
-Champion 2.4% | Final 5.9% | SF 14.2% | QF 28.9% | Advance 92.2%
+Champion 2.3% | Final 5.7% | SF 14.4% | QF 29.3% | Advance 92.3%
 Availability concerns: Wataru Endo (doubtful), Takehiro Tomiyasu (doubtful), Yuito Suzuki (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-11T09:16Z | source elo-goal-v1 -->
-- 2026-06-11: champion 2.4% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-11T12:44Z | source elo-goal-v1 -->
+- 2026-06-11: champion 2.3% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

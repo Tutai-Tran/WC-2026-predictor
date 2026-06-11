@@ -13,9 +13,9 @@ updated: 2026-06-11
 <!-- WC26:AUTO:forecast START -->
 **Group B match** · 2026-06-24
 
-Win Switzerland: 30.3% | Draw: 31.3% | Win Canada: 38.3%
+Win Switzerland: 30.5% | Draw: 31.4% | Win Canada: 38.2%
 Most likely scoreline: 0-1 (12.9%) (modal only; many outcomes possible)
-Top scorers: Granit Xhaka 19.1%; Breel Embolo 16.2%; Rubén Vargas 8.3%; Jonathan David 33.2%; Cyle Larin 21.7%; Alphonso Davies 11.1%;
+Top scorers: Granit Xhaka 19.1%; Breel Embolo 16.2%; Rubén Vargas 8.3%; Jonathan David 33.1%; Cyle Larin 21.6%; Alphonso Davies 11.0%;
 Data as of 2026-06-11 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
