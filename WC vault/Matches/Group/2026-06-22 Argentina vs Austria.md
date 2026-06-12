@@ -5,7 +5,7 @@ group: J
 date: 2026-06-22
 home: "Argentina"
 away: "Austria"
-updated: 2026-06-11
+updated: 2026-06-12
 ---
 
 # Argentina vs Austria
@@ -16,7 +16,7 @@ updated: 2026-06-11
 Win Argentina: 68.6% | Draw: 20.3% | Win Austria: 11.2%
 Most likely scoreline: 2-0 (13.2%) (modal only; many outcomes possible)
 Top scorers: Lionel Messi 67.5%; Lautaro Martínez 28.2%; Julián Alvarez 12.9%; Marko Arnautović 19.3%; Marcel Sabitzer 18.7%; Michael Gregoritsch 10.7%;
-Data as of 2026-06-11 | runs 50000 | seed 20260611
+Data as of 2026-06-12 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

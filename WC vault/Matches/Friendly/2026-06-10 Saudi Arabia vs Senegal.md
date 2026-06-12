@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-10
 home: "Saudi Arabia"
 away: "Senegal"
-updated: 2026-06-11
+updated: 2026-06-12
 ---
 
 # Saudi Arabia vs Senegal (friendly)
@@ -14,7 +14,7 @@ updated: 2026-06-11
 
 Win Saudi Arabia: 16.0% | Draw: 26.4% | Win Senegal: 57.6%
 Most likely scoreline: 0-2
-Data as of 2026-06-11 | runs 50000 | seed 20260611
+Data as of 2026-06-12 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-01
 home: "Austria"
 away: "Tunisia"
-updated: 2026-06-11
+updated: 2026-06-12
 ---
 
 # Austria vs Tunisia (friendly)
@@ -14,7 +14,7 @@ updated: 2026-06-11
 
 Win Austria: 55.2% | Draw: 27.3% | Win Tunisia: 17.5%
 Most likely scoreline: 1-0
-Data as of 2026-06-11 | runs 50000 | seed 20260611
+Data as of 2026-06-12 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

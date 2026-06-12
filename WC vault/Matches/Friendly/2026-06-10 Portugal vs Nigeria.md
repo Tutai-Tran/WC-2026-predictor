@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-10
 home: "Portugal"
 away: "Nigeria"
-updated: 2026-06-11
+updated: 2026-06-12
 ---
 
 # Portugal vs Nigeria (friendly)
@@ -14,7 +14,7 @@ updated: 2026-06-11
 
 Win Portugal: 57.9% | Draw: 26.3% | Win Nigeria: 15.8%
 Most likely scoreline: 2-0
-Data as of 2026-06-11 | runs 50000 | seed 20260611
+Data as of 2026-06-12 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

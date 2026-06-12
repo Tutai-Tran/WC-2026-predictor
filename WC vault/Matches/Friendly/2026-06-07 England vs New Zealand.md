@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-07
 home: "England"
 away: "New Zealand"
-updated: 2026-06-11
+updated: 2026-06-12
 ---
 
 # England vs New Zealand (friendly)
@@ -14,7 +14,7 @@ updated: 2026-06-11
 
 Win England: 78.3% | Draw: 16.1% | Win New Zealand: 5.6%
 Most likely scoreline: 2-0
-Data as of 2026-06-11 | runs 50000 | seed 20260611
+Data as of 2026-06-12 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

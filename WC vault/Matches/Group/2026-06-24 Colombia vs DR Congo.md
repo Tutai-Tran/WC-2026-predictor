@@ -5,7 +5,7 @@ group: K
 date: 2026-06-24
 home: "Colombia"
 away: "DR Congo"
-updated: 2026-06-11
+updated: 2026-06-12
 ---
 
 # Colombia vs DR Congo
@@ -13,10 +13,10 @@ updated: 2026-06-11
 <!-- WC26:AUTO:forecast START -->
 **Group K match** · 2026-06-24
 
-Win Colombia: 70.4% | Draw: 19.3% | Win DR Congo: 10.2%
-Most likely scoreline: 2-0 (13.3%) (modal only; many outcomes possible)
-Top scorers: James Rodríguez 47.4%; Luis Díaz 33.8%; Yerry Mina 13.3%; Cédric Bakambu 14.6%; Meschak Elia 9.1%; Yoane Wissa 7.2%;
-Data as of 2026-06-11 | runs 50000 | seed 20260611
+Win Colombia: 69.3% | Draw: 20.0% | Win DR Congo: 10.7%
+Most likely scoreline: 2-0 (13.4%) (modal only; many outcomes possible)
+Top scorers: James Rodríguez 46.7%; Luis Díaz 33.1%; Yerry Mina 13.0%; Cédric Bakambu 14.6%; Meschak Elia 9.1%; Yoane Wissa 7.2%;
+Data as of 2026-06-12 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

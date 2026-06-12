@@ -1,13 +1,14 @@
 ---
 type: wc-lessons
-updated: 2026-06-11
+updated: 2026-06-12
 ---
 
 # What the model has learned
 
-> Leak-free over **24** graded matches: outcome accuracy **83%**, Brier 0.3058, log loss 0.5697. The biases below are hypotheses (the audit trail); the model's parameters are where learning is actually applied, only after it validates out-of-sample.
+> Leak-free over **25** graded matches: outcome accuracy **84%**, Brier 0.2955, log loss 0.5544. The biases below are hypotheses (the audit trail); the model's parameters are where learning is actually applied, only after it validates out-of-sample.
 
 ## Accuracy by segment
+- group: 100% (1 matches)
 - friendly: 83% (24 matches)
 
 ## Systematic biases found (ranked by evidence)

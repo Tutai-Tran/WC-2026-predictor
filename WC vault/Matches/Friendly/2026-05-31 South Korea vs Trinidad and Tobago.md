@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-05-31
 home: "South Korea"
 away: "Trinidad and Tobago"
-updated: 2026-06-11
+updated: 2026-06-12
 ---
 
 # South Korea vs Trinidad and Tobago (friendly)
@@ -14,7 +14,7 @@ updated: 2026-06-11
 
 Win South Korea: 75.6% | Draw: 17.7% | Win Trinidad and Tobago: 6.7%
 Most likely scoreline: 2-0
-Data as of 2026-06-11 | runs 50000 | seed 20260611
+Data as of 2026-06-12 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

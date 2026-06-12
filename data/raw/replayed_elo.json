@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-11",
+  "updated": "2026-06-12",
   "source": "base_elo + results ledger",
   "ratings": {
     "Scotland": 1871.9,
@@ -22,7 +22,7 @@
     "Netherlands": 2007.1,
     "Guyana": 1497.8,
     "Trinidad and Tobago": 1522.3,
-    "South Africa": 1666.7,
+    "South Africa": 1655.3,
     "Germany": 2019.7,
     "Sweden": 1781.1,
     "Norway": 2000.5,
@@ -58,7 +58,7 @@
     "Latvia": 1348.4,
     "Galicia": 1538.0,
     "Central Spain": 1494.6,
-    "Mexico": 2001.1,
+    "Mexico": 2012.6,
     "Andalusia": 1606.6,
     "Asturias": 1519.0,
     "Lithuania": 1350.2,

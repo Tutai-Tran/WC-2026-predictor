@@ -4,18 +4,18 @@ team: "Mexico"
 fifa_code: "MEX"
 group: "A"
 fifa_rank: 14
-elo: 2001
-champion_prob: 0.0236
+elo: 2013
+champion_prob: 0.0284
 status: active
 created: 2026-06-04
-updated: 2026-06-11
+updated: 2026-06-12
 ---
 
 # Mexico
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-11T21:05Z | source elo-goal-v1 -->
-Group A | FIFA rank 14 | Elo 2001
-Champion 2.4% | Final 6.5% | SF 16.5% | QF 35.2% | Advance 97.9%
+<!-- WC26:AUTO:snapshot START | generated 2026-06-12T00:32Z | source elo-goal-v1 -->
+Group A | FIFA rank 14 | Elo 2013
+Champion 2.8% | Final 7.3% | SF 18.1% | QF 37.3% | Advance 99.7%
 Availability concerns: Santiago Giménez (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-11T21:05Z | source elo-goal-v1 -->
-- 2026-06-11: champion 2.4% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-12T00:32Z | source elo-goal-v1 -->
+- 2026-06-12: champion 2.8% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

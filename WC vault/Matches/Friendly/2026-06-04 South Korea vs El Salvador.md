@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-04
 home: "South Korea"
 away: "El Salvador"
-updated: 2026-06-11
+updated: 2026-06-12
 ---
 
 # South Korea vs El Salvador (friendly)
@@ -14,7 +14,7 @@ updated: 2026-06-11
 
 Win South Korea: 77.8% | Draw: 16.4% | Win El Salvador: 5.8%
 Most likely scoreline: 2-0
-Data as of 2026-06-11 | runs 50000 | seed 20260611
+Data as of 2026-06-12 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

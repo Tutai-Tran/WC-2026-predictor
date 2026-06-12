@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-09
 home: "DR Congo"
 away: "Chile"
-updated: 2026-06-11
+updated: 2026-06-12
 ---
 
 # DR Congo vs Chile (friendly)
@@ -14,7 +14,7 @@ updated: 2026-06-11
 
 Win DR Congo: 30.5% | Draw: 32.6% | Win Chile: 36.8%
 Most likely scoreline: 0-1
-Data as of 2026-06-11 | runs 50000 | seed 20260611
+Data as of 2026-06-12 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

@@ -8,13 +8,13 @@ updated: 2026-06-04
 
 # Group G
 
-<!-- WC26:AUTO:standings START | generated 2026-06-11T21:05Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:standings START | generated 2026-06-12T00:32Z | source elo-goal-v1 -->
 | Team | Win group | Top 2 | Advance |
 | --- | --- | --- | --- |
-| [[Countries/Belgium\|Belgium]] | 42.3% | 71.6% | 86.9% |
-| [[Countries/Iran\|Iran]] | 32.4% | 63.8% | 81.8% |
-| [[Countries/Egypt\|Egypt]] | 18.7% | 44.2% | 67.7% |
-| [[Countries/New Zealand\|New Zealand]] | 6.7% | 20.4% | 37.0% |
+| [[Countries/Belgium\|Belgium]] | 42.3% | 71.8% | 87.1% |
+| [[Countries/Iran\|Iran]] | 32.3% | 63.0% | 81.6% |
+| [[Countries/Egypt\|Egypt]] | 18.9% | 44.9% | 67.9% |
+| [[Countries/New Zealand\|New Zealand]] | 6.6% | 20.3% | 36.8% |
 <!-- WC26:AUTO:standings END -->
 
 ## Fixtures
