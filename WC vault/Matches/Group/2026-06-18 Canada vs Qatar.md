@@ -13,9 +13,9 @@ updated: 2026-06-12
 <!-- WC26:AUTO:forecast START -->
 **Group B match** · 2026-06-18
 
-Win Canada: 81.8% | Draw: 13.8% | Win Qatar: 4.4%
-Most likely scoreline: 2-0 (16.6%) (modal only; many outcomes possible)
-Top scorers: Jonathan David 54.0%; Cyle Larin 41.4%; Alphonso Davies 22.6%; Almoez Ali 10.3%; Hassan Al-Haydos 7.9%; Akram Afif 7.5%;
+Win Canada: 80.7% | Draw: 14.6% | Win Qatar: 4.7%
+Most likely scoreline: 2-0 (16.8%) (modal only; many outcomes possible)
+Top scorers: Jonathan David 53.0%; Cyle Larin 40.4%; Alphonso Davies 22.0%; Almoez Ali 10.3%; Hassan Al-Haydos 7.9%; Akram Afif 7.5%;
 Data as of 2026-06-12 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
