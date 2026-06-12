@@ -14,7 +14,7 @@ updated: 2026-06-12
 
 Win Colombia: 69.3% | Draw: 21.1% | Win Jordan: 9.6%
 Most likely scoreline: 2-0
-Data as of 2026-06-12 | runs 50000 | seed 20260611
+Data as of 2026-06-13 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

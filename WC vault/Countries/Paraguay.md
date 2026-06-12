@@ -5,7 +5,7 @@ fifa_code: "PAR"
 group: "D"
 fifa_rank: 38
 elo: 1916
-champion_prob: 0.0034
+champion_prob: 0.005
 status: active
 created: 2026-06-04
 updated: 2026-06-12
@@ -13,10 +13,10 @@ updated: 2026-06-12
 
 # Paraguay
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-12T19:24Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-12T22:53Z | source elo-goal-v1 -->
 Group D | FIFA rank 38 | Elo 1916
-Champion 0.3% | Final 1.3% | SF 4.2% | QF 13.1% | Advance 65.0%
-Availability concerns: Julio Enciso (doubtful), Damián Bobadilla (doubtful)
+Champion 0.5% | Final 1.6% | SF 4.9% | QF 14.3% | Advance 62.5%
+Availability concerns: Julio Enciso (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
 ## Squad & availability
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-12T19:24Z | source elo-goal-v1 -->
-- 2026-06-12: champion 0.3% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-12T22:53Z | source elo-goal-v1 -->
+- 2026-06-12: champion 0.5% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-12",
+  "updated": "2026-06-13",
   "source": "base_elo + results ledger",
   "ratings": {
     "Scotland": 1871.9,
@@ -7,7 +7,7 @@
     "Wales": 1754.7,
     "Northern Ireland": 1670.9,
     "United States": 1873.4,
-    "Canada": 1923.5,
+    "Canada": 1904.6,
     "Uruguay": 1970.9,
     "Argentina": 2187.3,
     "Austria": 1900.1,
@@ -249,7 +249,7 @@
     "Gibraltar": 1151.0,
     "North Macedonia": 1647.6,
     "Czech Republic": 1800.6,
-    "Bosnia and Herzegovina": 1664.6,
+    "Bosnia and Herzegovina": 1683.6,
     "Canary Islands": 1520.8,
     "Andorra": 1162.1,
     "Hitra": 1315.7,

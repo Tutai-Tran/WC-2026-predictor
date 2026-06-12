@@ -13,10 +13,10 @@ updated: 2026-06-12
 <!-- WC26:AUTO:forecast START -->
 **Group F match** · 2026-06-14
 
-Win Netherlands: 35.2% | Draw: 30.7% | Win Japan: 34.1%
-Most likely scoreline: 1-0 (11.5%) (modal only; many outcomes possible)
-Top scorers: Memphis Depay 36.9%; Cody Gakpo 12.6%; Wout Weghorst 9.7%; Ayase Ueda 14.3%; Junya Itō 12.8%; Daichi Kamada 10.5%;
-Data as of 2026-06-12 | runs 50000 | seed 20260611
+Win Netherlands: 31.0% | Draw: 32.4% | Win Japan: 36.6%
+Most likely scoreline: 0-1 (13.4%) (modal only; many outcomes possible)
+Top scorers: Memphis Depay 33.3%; Cody Gakpo 10.9%; Wout Weghorst 8.3%; Ayase Ueda 13.8%; Junya Itō 12.4%; Daichi Kamada 10.2%;
+Data as of 2026-06-13 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

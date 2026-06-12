@@ -16,7 +16,7 @@ updated: 2026-06-12
 Win Iraq: 12.3% | Draw: 21.1% | Win Norway: 66.6%
 Most likely scoreline: 0-2 (12.8%) (modal only; many outcomes possible)
 Top scorers: Aymen Hussein 21.6%; Mohanad Ali 18.2%; Ibrahim Bayesh 6.0%; Erling Haaland 60.3%; Alexander Sørloth 33.5%; Antonio Nusa 13.3%;
-Data as of 2026-06-12 | runs 50000 | seed 20260611
+Data as of 2026-06-13 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

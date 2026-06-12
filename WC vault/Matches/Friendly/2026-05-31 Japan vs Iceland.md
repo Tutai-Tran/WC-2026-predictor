@@ -14,7 +14,7 @@ updated: 2026-06-12
 
 Win Japan: 78.5% | Draw: 16.0% | Win Iceland: 5.5%
 Most likely scoreline: 2-0
-Data as of 2026-06-12 | runs 50000 | seed 20260611
+Data as of 2026-06-13 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

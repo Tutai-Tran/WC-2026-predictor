@@ -12,9 +12,9 @@ updated: 2026-06-12
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-06-06 · played 1-1
 
-Win Canada: 51.2% | Draw: 28.8% | Win Republic of Ireland: 20.0%
+Win Canada: 48.9% | Draw: 29.6% | Win Republic of Ireland: 21.6%
 Most likely scoreline: 1-0
-Data as of 2026-06-12 | runs 50000 | seed 20260611
+Data as of 2026-06-13 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

@@ -14,7 +14,7 @@ updated: 2026-06-12
 
 Win Argentina: 89.2% | Draw: 9.0% | Win Iceland: 1.7%
 Most likely scoreline: 3-0
-Data as of 2026-06-12 | runs 50000 | seed 20260611
+Data as of 2026-06-13 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

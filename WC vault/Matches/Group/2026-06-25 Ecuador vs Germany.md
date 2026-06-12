@@ -13,10 +13,10 @@ updated: 2026-06-12
 <!-- WC26:AUTO:forecast START -->
 **Group E match** · 2026-06-25
 
-Win Ecuador: 33.9% | Draw: 30.7% | Win Germany: 35.4%
-Most likely scoreline: 0-1 (11.5%) (modal only; many outcomes possible)
-Top scorers: Enner Valencia 44.3%; Gonzalo Plata 9.0%; Félix Torres 5.0%; Kai Havertz 26.2%; Leroy Sané 14.6%; Leon Goretzka 13.8%;
-Data as of 2026-06-12 | runs 50000 | seed 20260611
+Win Ecuador: 27.6% | Draw: 32.2% | Win Germany: 40.2%
+Most likely scoreline: 0-1 (14.4%) (modal only; many outcomes possible)
+Top scorers: Enner Valencia 38.7%; Gonzalo Plata 7.3%; Félix Torres 4.0%; Kai Havertz 26.2%; Leroy Sané 14.6%; Leon Goretzka 13.8%;
+Data as of 2026-06-13 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match
