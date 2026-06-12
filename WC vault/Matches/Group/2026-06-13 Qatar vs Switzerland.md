@@ -13,9 +13,9 @@ updated: 2026-06-12
 <!-- WC26:AUTO:forecast START -->
 **Group B match** · 2026-06-13
 
-Win Qatar: 6.4% | Draw: 15.2% | Win Switzerland: 78.4%
-Most likely scoreline: 0-2 (14.4%) (modal only; many outcomes possible)
-Top scorers: Almoez Ali 13.5%; Hassan Al-Haydos 10.3%; Akram Afif 9.9%; Breel Embolo 35.9%; Granit Xhaka 32.8%; Rubén Vargas 19.7%;
+Win Qatar: 6.0% | Draw: 15.6% | Win Switzerland: 78.4%
+Most likely scoreline: 0-2 (15.5%) (modal only; many outcomes possible)
+Top scorers: Almoez Ali 12.2%; Hassan Al-Haydos 9.3%; Akram Afif 8.9%; Breel Embolo 34.8%; Granit Xhaka 32.0%; Rubén Vargas 19.1%;
 Data as of 2026-06-12 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
