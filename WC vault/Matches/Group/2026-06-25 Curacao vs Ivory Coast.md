@@ -13,9 +13,9 @@ updated: 2026-06-12
 <!-- WC26:AUTO:forecast START -->
 **Group E match** · 2026-06-25
 
-Win Curacao: 14.8% | Draw: 23.0% | Win Ivory Coast: 62.3%
+Win Curacao: 14.8% | Draw: 23.0% | Win Ivory Coast: 62.2%
 Most likely scoreline: 0-1 (12.2%) (modal only; many outcomes possible)
-Top scorers: Leandro Bacuna 14.0%; Juninho Bacuna 12.4%; Gervane Kastaneer 9.2%; Franck Kessié 25.2%; Nicolas Pépé 22.3%; Ibrahim Sangaré 20.9%;
+Top scorers: Leandro Bacuna 14.0%; Juninho Bacuna 12.4%; Gervane Kastaneer 9.2%; Franck Kessié 25.2%; Nicolas Pépé 22.2%; Ibrahim Sangaré 20.9%;
 Data as of 2026-06-12 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

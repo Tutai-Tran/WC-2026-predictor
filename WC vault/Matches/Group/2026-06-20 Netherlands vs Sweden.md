@@ -13,9 +13,9 @@ updated: 2026-06-12
 <!-- WC26:AUTO:forecast START -->
 **Group F match** · 2026-06-20
 
-Win Netherlands: 61.7% | Draw: 24.9% | Win Sweden: 13.4%
-Most likely scoreline: 1-0 (15.7%) (modal only; many outcomes possible)
-Top scorers: Memphis Depay 47.8%; Cody Gakpo 18.5%; Wout Weghorst 14.3%; Alexander Isak 21.3%; Viktor Gyökeres 16.0%; Anthony Elanga 6.0%;
+Win Netherlands: 64.2% | Draw: 22.2% | Win Sweden: 13.7%
+Most likely scoreline: 2-0 (12.4%) (modal only; many outcomes possible)
+Top scorers: Memphis Depay 52.1%; Cody Gakpo 21.0%; Wout Weghorst 16.4%; Alexander Isak 23.7%; Viktor Gyökeres 18.9%; Anthony Elanga 7.1%;
 Data as of 2026-06-12 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
