@@ -5,7 +5,7 @@ fifa_code: "ESP"
 group: "H"
 fifa_rank: 1
 elo: 2225
-champion_prob: 0.2413
+champion_prob: 0.2423
 status: active
 created: 2026-06-04
 updated: 2026-06-13
@@ -13,9 +13,9 @@ updated: 2026-06-13
 
 # Spain
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-13T12:46Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-13T16:16Z | source elo-goal-v1 -->
 Group H | FIFA rank 1 | Elo 2225
-Champion 24.1% | Final 34.2% | SF 46.9% | QF 59.0% | Advance 99.4%
+Champion 24.2% | Final 34.4% | SF 46.9% | QF 58.9% | Advance 99.3%
 Availability concerns: Lamine Yamal (doubtful), Nico Williams (doubtful), Víctor Muñoz (doubtful), Mikel Merino (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-13T12:46Z | source elo-goal-v1 -->
-- 2026-06-13: champion 24.1% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-13T16:16Z | source elo-goal-v1 -->
+- 2026-06-13: champion 24.2% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

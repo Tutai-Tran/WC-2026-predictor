@@ -13,9 +13,9 @@ updated: 2026-06-13
 
 # Panama
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-13T12:46Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-13T16:16Z | source elo-goal-v1 -->
 Group L | FIFA rank 30 | Elo 1847
-Champion 0.1% | Final 0.5% | SF 1.9% | QF 6.3% | Advance 70.6%
+Champion 0.1% | Final 0.5% | SF 1.9% | QF 6.0% | Advance 70.8%
 Availability concerns: Adalberto Carrasquilla (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-13T12:46Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-13T16:16Z | source elo-goal-v1 -->
 - 2026-06-13: champion 0.1% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
