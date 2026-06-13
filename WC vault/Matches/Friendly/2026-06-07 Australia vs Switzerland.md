@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-07
 home: "Australia"
 away: "Switzerland"
-updated: 2026-06-12
+updated: 2026-06-13
 ---
 
 # Australia vs Switzerland (friendly)

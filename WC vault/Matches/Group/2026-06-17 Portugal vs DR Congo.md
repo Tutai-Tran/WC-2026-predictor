@@ -5,7 +5,7 @@ group: K
 date: 2026-06-17
 home: "Portugal"
 away: "DR Congo"
-updated: 2026-06-12
+updated: 2026-06-13
 ---
 
 # Portugal vs DR Congo

@@ -5,17 +5,17 @@ fifa_code: "USA"
 group: "D"
 fifa_rank: 16
 elo: 1873
-champion_prob: 0.0088
+champion_prob: 0.0094
 status: active
 created: 2026-06-04
-updated: 2026-06-12
+updated: 2026-06-13
 ---
 
 # United States
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-12T22:53Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-13T02:22Z | source elo-goal-v1 -->
 Group D | FIFA rank 16 | Elo 1873
-Champion 0.9% | Final 2.7% | SF 6.8% | QF 19.4% | Advance 73.0%
+Champion 0.9% | Final 2.7% | SF 7.1% | QF 19.5% | Advance 72.7%
 Availability concerns: Chris Richards (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-12T22:53Z | source elo-goal-v1 -->
-- 2026-06-12: champion 0.9% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-13T02:22Z | source elo-goal-v1 -->
+- 2026-06-13: champion 0.9% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

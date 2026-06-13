@@ -5,7 +5,7 @@ group: G
 date: 2026-06-22
 home: "New Zealand"
 away: "Egypt"
-updated: 2026-06-12
+updated: 2026-06-13
 ---
 
 # New Zealand vs Egypt

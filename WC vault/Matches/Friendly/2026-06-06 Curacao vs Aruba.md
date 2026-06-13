@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-06
 home: "Curacao"
 away: "Aruba"
-updated: 2026-06-12
+updated: 2026-06-13
 ---
 
 # Curacao vs Aruba (friendly)

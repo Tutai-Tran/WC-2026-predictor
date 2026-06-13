@@ -3,7 +3,7 @@ type: wc-match
 stage: R32
 match_no: 80
 date: 2026-07-01
-updated: 2026-06-12
+updated: 2026-06-13
 ---
 
 # R32 #80: 1L vs 3rd E/H/I/J/K

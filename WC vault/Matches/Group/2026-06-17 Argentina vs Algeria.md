@@ -5,7 +5,7 @@ group: J
 date: 2026-06-17
 home: "Argentina"
 away: "Algeria"
-updated: 2026-06-12
+updated: 2026-06-13
 ---
 
 # Argentina vs Algeria

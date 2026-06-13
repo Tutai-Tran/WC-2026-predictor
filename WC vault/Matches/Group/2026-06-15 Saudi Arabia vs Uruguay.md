@@ -5,7 +5,7 @@ group: H
 date: 2026-06-15
 home: "Saudi Arabia"
 away: "Uruguay"
-updated: 2026-06-12
+updated: 2026-06-13
 ---
 
 # Saudi Arabia vs Uruguay

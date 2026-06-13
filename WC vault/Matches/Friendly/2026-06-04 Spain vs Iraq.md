@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-04
 home: "Spain"
 away: "Iraq"
-updated: 2026-06-12
+updated: 2026-06-13
 ---
 
 # Spain vs Iraq (friendly)

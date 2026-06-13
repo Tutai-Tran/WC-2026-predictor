@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-05-31
 home: "Brazil"
 away: "Panama"
-updated: 2026-06-12
+updated: 2026-06-13
 ---
 
 # Brazil vs Panama (friendly)

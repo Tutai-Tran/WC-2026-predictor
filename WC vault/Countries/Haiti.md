@@ -8,14 +8,14 @@ elo: 1720
 champion_prob: 0.0
 status: active
 created: 2026-06-04
-updated: 2026-06-12
+updated: 2026-06-13
 ---
 
 # Haiti
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-12T22:53Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-13T02:22Z | source elo-goal-v1 -->
 Group C | FIFA rank 84 | Elo 1720
-Champion 0.0% | Final 0.0% | SF 0.3% | QF 1.7% | Advance 34.2%
+Champion 0.0% | Final 0.0% | SF 0.2% | QF 1.3% | Advance 28.9%
 Availability: no concerns recorded
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-12T22:53Z | source elo-goal-v1 -->
-- 2026-06-12: champion 0.0% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-13T02:22Z | source elo-goal-v1 -->
+- 2026-06-13: champion 0.0% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

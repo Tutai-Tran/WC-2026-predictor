@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-05-31
 home: "South Korea"
 away: "Trinidad and Tobago"
-updated: 2026-06-12
+updated: 2026-06-13
 ---
 
 # South Korea vs Trinidad and Tobago (friendly)

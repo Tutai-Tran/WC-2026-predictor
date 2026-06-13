@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-06
 home: "Canada"
 away: "Republic of Ireland"
-updated: 2026-06-12
+updated: 2026-06-13
 ---
 
 # Canada vs Republic of Ireland (friendly)

@@ -5,7 +5,7 @@ group: J
 date: 2026-06-28
 home: "Jordan"
 away: "Argentina"
-updated: 2026-06-12
+updated: 2026-06-13
 ---
 
 # Jordan vs Argentina

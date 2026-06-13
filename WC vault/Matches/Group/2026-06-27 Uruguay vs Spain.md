@@ -5,7 +5,7 @@ group: H
 date: 2026-06-27
 home: "Uruguay"
 away: "Spain"
-updated: 2026-06-12
+updated: 2026-06-13
 ---
 
 # Uruguay vs Spain

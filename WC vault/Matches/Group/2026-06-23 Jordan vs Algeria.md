@@ -5,7 +5,7 @@ group: J
 date: 2026-06-23
 home: "Jordan"
 away: "Algeria"
-updated: 2026-06-12
+updated: 2026-06-13
 ---
 
 # Jordan vs Algeria

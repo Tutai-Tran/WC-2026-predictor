@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-06
 home: "Belgium"
 away: "Tunisia"
-updated: 2026-06-12
+updated: 2026-06-13
 ---
 
 # Belgium vs Tunisia (friendly)

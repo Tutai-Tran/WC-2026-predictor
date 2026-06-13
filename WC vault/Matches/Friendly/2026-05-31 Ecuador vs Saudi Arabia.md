@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-05-31
 home: "Ecuador"
 away: "Saudi Arabia"
-updated: 2026-06-12
+updated: 2026-06-13
 ---
 
 # Ecuador vs Saudi Arabia (friendly)

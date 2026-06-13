@@ -5,7 +5,7 @@ group: K
 date: 2026-06-23
 home: "Portugal"
 away: "Uzbekistan"
-updated: 2026-06-12
+updated: 2026-06-13
 ---
 
 # Portugal vs Uzbekistan

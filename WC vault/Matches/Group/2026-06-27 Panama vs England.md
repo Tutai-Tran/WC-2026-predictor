@@ -5,7 +5,7 @@ group: L
 date: 2026-06-27
 home: "Panama"
 away: "England"
-updated: 2026-06-12
+updated: 2026-06-13
 ---
 
 # Panama vs England

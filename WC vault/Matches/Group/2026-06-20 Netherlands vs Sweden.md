@@ -5,7 +5,7 @@ group: F
 date: 2026-06-20
 home: "Netherlands"
 away: "Sweden"
-updated: 2026-06-12
+updated: 2026-06-13
 ---
 
 # Netherlands vs Sweden

@@ -3,7 +3,7 @@ type: wc-match
 stage: R32
 match_no: 82
 date: 2026-07-01
-updated: 2026-06-12
+updated: 2026-06-13
 ---
 
 # R32 #82: 1G vs 3rd A/E/H/I/J

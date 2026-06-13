@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-03
 home: "Netherlands"
 away: "Algeria"
-updated: 2026-06-12
+updated: 2026-06-13
 ---
 
 # Netherlands vs Algeria (friendly)

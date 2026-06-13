@@ -5,7 +5,7 @@ group: I
 date: 2026-06-16
 home: "France"
 away: "Senegal"
-updated: 2026-06-12
+updated: 2026-06-13
 ---
 
 # France vs Senegal

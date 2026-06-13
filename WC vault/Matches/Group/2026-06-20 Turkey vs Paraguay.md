@@ -5,7 +5,7 @@ group: D
 date: 2026-06-20
 home: "Turkey"
 away: "Paraguay"
-updated: 2026-06-12
+updated: 2026-06-13
 ---
 
 # Turkey vs Paraguay

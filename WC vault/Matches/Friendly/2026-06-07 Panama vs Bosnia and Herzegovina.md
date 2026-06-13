@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-07
 home: "Panama"
 away: "Bosnia and Herzegovina"
-updated: 2026-06-12
+updated: 2026-06-13
 ---
 
 # Panama vs Bosnia and Herzegovina (friendly)

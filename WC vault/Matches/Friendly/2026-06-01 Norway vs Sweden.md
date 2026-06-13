@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-01
 home: "Norway"
 away: "Sweden"
-updated: 2026-06-12
+updated: 2026-06-13
 ---
 
 # Norway vs Sweden (friendly)
