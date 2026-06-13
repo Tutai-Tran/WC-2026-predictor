@@ -14,7 +14,7 @@ updated: 2026-06-13
 
 Win United States: 38.3% | Draw: 32.3% | Win Senegal: 29.3%
 Most likely scoreline: 1-0
-Data as of 2026-06-13 | runs 50000 | seed 20260611
+Data as of 2026-06-14 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

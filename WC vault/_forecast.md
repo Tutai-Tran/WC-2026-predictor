@@ -6,7 +6,7 @@ updated: 2026-06-13
 # World Cup 2026 Forecast
 
 <!-- WC26:AUTO:dashboard START -->
-> Data as of 2026-06-13 | runs 50000 | seed 20260611
+> Data as of 2026-06-14 | runs 50000 | seed 20260611
 
 These are probabilities, not certainties.
 
@@ -14,30 +14,30 @@ These are probabilities, not certainties.
 
 | Team | Win | Final | SF | QF | R16 |
 | --- | --- | --- | --- | --- | --- |
-| [[Countries/Spain\|Spain]] | 24.2% | 34.3% | 46.9% | 58.9% | 78.9% |
-| [[Countries/France\|France]] | 13.1% | 21.6% | 37.3% | 53.6% | 74.8% |
-| [[Countries/Argentina\|Argentina]] | 11.1% | 20.0% | 31.2% | 46.6% | 64.2% |
-| [[Countries/England\|England]] | 7.3% | 14.3% | 24.8% | 40.6% | 65.6% |
-| [[Countries/Colombia\|Colombia]] | 6.6% | 13.1% | 22.8% | 38.0% | 63.5% |
-| [[Countries/Portugal\|Portugal]] | 5.9% | 12.2% | 21.9% | 37.0% | 62.3% |
-| [[Countries/Brazil\|Brazil]] | 3.3% | 7.4% | 16.4% | 31.2% | 54.0% |
-| [[Countries/Germany\|Germany]] | 3.2% | 7.4% | 16.4% | 29.4% | 57.1% |
-| [[Countries/Mexico\|Mexico]] | 3.2% | 7.7% | 18.0% | 37.0% | 74.9% |
-| [[Countries/United States\|United States]] | 2.8% | 6.8% | 14.8% | 37.5% | 67.1% |
-| [[Countries/Japan\|Japan]] | 2.4% | 5.7% | 13.5% | 28.2% | 48.5% |
-| [[Countries/Morocco\|Morocco]] | 2.2% | 5.4% | 12.8% | 26.8% | 49.3% |
-| [[Countries/Norway\|Norway]] | 2.0% | 5.4% | 13.0% | 26.0% | 48.6% |
-| [[Countries/Netherlands\|Netherlands]] | 1.8% | 4.2% | 10.7% | 24.3% | 45.2% |
-| [[Countries/Turkey\|Turkey]] | 1.7% | 4.4% | 10.5% | 26.1% | 50.3% |
-| [[Countries/Ecuador\|Ecuador]] | 1.6% | 4.0% | 10.3% | 21.8% | 46.3% |
-| [[Countries/Switzerland\|Switzerland]] | 1.6% | 4.5% | 11.1% | 26.6% | 57.9% |
-| [[Countries/Croatia\|Croatia]] | 0.9% | 2.7% | 6.9% | 15.3% | 38.3% |
-| [[Countries/Belgium\|Belgium]] | 0.8% | 2.5% | 6.8% | 20.3% | 45.8% |
-| [[Countries/South Korea\|South Korea]] | 0.8% | 2.5% | 8.1% | 22.9% | 56.2% |
-| [[Countries/Uruguay\|Uruguay]] | 0.6% | 2.2% | 5.9% | 14.5% | 31.3% |
-| [[Countries/Iran\|Iran]] | 0.5% | 1.7% | 4.9% | 16.0% | 40.7% |
-| [[Countries/Australia\|Australia]] | 0.5% | 1.6% | 4.6% | 13.5% | 32.6% |
-| [[Countries/Canada\|Canada]] | 0.4% | 1.5% | 5.1% | 16.6% | 45.6% |
+| [[Countries/Spain\|Spain]] | 23.8% | 33.9% | 46.7% | 58.7% | 78.7% |
+| [[Countries/France\|France]] | 13.3% | 21.9% | 37.6% | 53.7% | 74.7% |
+| [[Countries/Argentina\|Argentina]] | 11.0% | 19.9% | 31.8% | 47.0% | 64.3% |
+| [[Countries/England\|England]] | 7.6% | 14.6% | 25.3% | 41.0% | 65.8% |
+| [[Countries/Colombia\|Colombia]] | 6.7% | 13.2% | 23.3% | 38.4% | 63.5% |
+| [[Countries/Portugal\|Portugal]] | 5.9% | 12.2% | 22.3% | 37.7% | 62.1% |
+| [[Countries/Brazil\|Brazil]] | 3.3% | 7.4% | 15.9% | 30.6% | 52.6% |
+| [[Countries/United States\|United States]] | 3.1% | 7.2% | 15.3% | 38.6% | 68.3% |
+| [[Countries/Germany\|Germany]] | 3.1% | 7.2% | 16.1% | 29.3% | 57.8% |
+| [[Countries/Mexico\|Mexico]] | 3.0% | 7.5% | 17.5% | 36.9% | 75.5% |
+| [[Countries/Netherlands\|Netherlands]] | 2.8% | 6.4% | 14.9% | 30.7% | 52.0% |
+| [[Countries/Japan\|Japan]] | 2.4% | 5.8% | 13.4% | 27.3% | 47.2% |
+| [[Countries/Norway\|Norway]] | 2.2% | 5.6% | 12.9% | 26.1% | 48.9% |
+| [[Countries/Morocco\|Morocco]] | 2.0% | 5.2% | 12.1% | 25.9% | 47.8% |
+| [[Countries/Ecuador\|Ecuador]] | 1.5% | 4.1% | 10.3% | 21.6% | 46.9% |
+| [[Countries/Turkey\|Turkey]] | 1.2% | 3.4% | 8.5% | 22.2% | 45.4% |
+| [[Countries/Switzerland\|Switzerland]] | 1.0% | 2.9% | 8.0% | 20.9% | 48.0% |
+| [[Countries/Croatia\|Croatia]] | 0.8% | 2.7% | 6.9% | 15.6% | 38.4% |
+| [[Countries/Belgium\|Belgium]] | 0.8% | 2.5% | 6.8% | 20.5% | 46.4% |
+| [[Countries/South Korea\|South Korea]] | 0.8% | 2.4% | 7.8% | 22.5% | 57.0% |
+| [[Countries/Uruguay\|Uruguay]] | 0.7% | 2.2% | 6.0% | 14.5% | 31.1% |
+| [[Countries/Iran\|Iran]] | 0.5% | 1.7% | 5.0% | 16.5% | 41.7% |
+| [[Countries/Canada\|Canada]] | 0.4% | 1.6% | 5.3% | 16.8% | 48.0% |
+| [[Countries/Australia\|Australia]] | 0.4% | 1.5% | 4.7% | 14.0% | 33.9% |
 
 ## Most likely scorers (expected group-stage goals)
 
@@ -48,12 +48,12 @@ These are probabilities, not certainties.
 - Raúl Jiménez (Mexico): 2.21
 - Neymar (Brazil): 2.09
 - Enner Valencia (Ecuador): 2.03
-- Edin Džeko (Bosnia and Herzegovina): 1.87
+- Edin Džeko (Bosnia and Herzegovina): 1.84
 - Erling Haaland (Norway): 1.81
+- Memphis Depay (Netherlands): 1.71
 - Romelu Lukaku (Belgium): 1.66
 - Mohamed Salah (Egypt): 1.62
 - Son Heung-min (South Korea): 1.56
 - Mehdi Taremi (Iran): 1.54
 - Jonathan David (Canada): 1.48
-- Memphis Depay (Netherlands): 1.46
 <!-- WC26:AUTO:dashboard END -->

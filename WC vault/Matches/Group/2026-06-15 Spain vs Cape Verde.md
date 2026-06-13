@@ -16,7 +16,7 @@ updated: 2026-06-13
 Win Spain: 84.0% | Draw: 12.3% | Win Cape Verde: 3.7%
 Most likely scoreline: 2-0 (16.3%) (modal only; many outcomes possible)
 Top scorers: Mikel Oyarzabal 44.7%; Ferran Torres 38.3%; Dani Olmo 23.5%; Ryan Mendes 11.0%; Garry Rodrigues 4.7%; Dailon Livramento 4.2%;
-Data as of 2026-06-13 | runs 50000 | seed 20260611
+Data as of 2026-06-14 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

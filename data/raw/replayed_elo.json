@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-13",
+  "updated": "2026-06-14",
   "source": "base_elo + results ledger",
   "ratings": {
     "Scotland": 1871.9,
@@ -15,7 +15,7 @@
     "Czechoslovakia": 1803.8,
     "Belgium": 1965.7,
     "France": 2130.8,
-    "Switzerland": 1968.3,
+    "Switzerland": 1943.7,
     "Guernsey": 1751.7,
     "Alderney": 1059.4,
     "Jersey": 1829.5,
@@ -191,7 +191,7 @@
     "Western Australia": 1379.6,
     "Eswatini": 1316.4,
     "Botswana": 1395.8,
-    "Qatar": 1565.5,
+    "Qatar": 1590.1,
     "Lesotho": 1397.3,
     "Bahamas": 894.9,
     "Brunei": 889.5,

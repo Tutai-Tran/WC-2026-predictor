@@ -5,10 +5,10 @@ updated: 2026-06-13
 
 # What the model has learned
 
-> Leak-free over **28** graded matches: outcome accuracy **82%**, Brier 0.3445, log loss 0.618. The biases below are hypotheses (the audit trail); the model's parameters are where learning is actually applied, only after it validates out-of-sample.
+> Leak-free over **29** graded matches: outcome accuracy **79%**, Brier 0.3788, log loss 0.6616. The biases below are hypotheses (the audit trail); the model's parameters are where learning is actually applied, only after it validates out-of-sample.
 
 ## Accuracy by segment
-- group: 75% (4 matches)
+- group: 60% (5 matches)
 - friendly: 83% (24 matches)
 
 ## Systematic biases found (ranked by evidence)
@@ -18,5 +18,5 @@ updated: 2026-06-13
 - **availability** (friendly): model under-rated it (strength 0.35, over 3 wrong matches)
 - **elo_gap** (friendly): model over-rated it (strength 0.452, over 3 wrong matches)
 - **home_advantage** (friendly): model over-rated it (strength 0.305, over 3 wrong matches)
-- **home_advantage** (host): model over-rated it (strength 0.015, over 2 wrong matches)
-- **tactical** (close_match): model under-rated it (strength 0.414, over 2 wrong matches)
+- **home_advantage** (host): model under-rated it (strength 0.142, over 3 wrong matches)
+- **draw** (mismatch): model under-rated it (strength 0.55, over 2 wrong matches)

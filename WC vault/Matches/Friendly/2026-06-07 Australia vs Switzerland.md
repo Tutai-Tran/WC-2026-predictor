@@ -12,9 +12,9 @@ updated: 2026-06-13
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-06-07 · scheduled
 
-Win Australia: 27.4% | Draw: 31.8% | Win Switzerland: 40.8%
+Win Australia: 29.9% | Draw: 32.5% | Win Switzerland: 37.6%
 Most likely scoreline: 0-1
-Data as of 2026-06-13 | runs 50000 | seed 20260611
+Data as of 2026-06-14 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

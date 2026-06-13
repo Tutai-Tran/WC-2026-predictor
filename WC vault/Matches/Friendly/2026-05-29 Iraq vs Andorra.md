@@ -14,7 +14,7 @@ updated: 2026-06-13
 
 Win Iraq: 89.6% | Draw: 8.8% | Win Andorra: 1.6%
 Most likely scoreline: 3-0
-Data as of 2026-06-13 | runs 50000 | seed 20260611
+Data as of 2026-06-14 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

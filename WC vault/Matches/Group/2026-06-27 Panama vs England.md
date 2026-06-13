@@ -16,7 +16,7 @@ updated: 2026-06-13
 Win Panama: 12.8% | Draw: 22.1% | Win England: 65.1%
 Most likely scoreline: 0-2 (12.9%) (modal only; many outcomes possible)
 Top scorers: José Fajardo 9.4%; Ismael Díaz 8.9%; Cecilio Waterman 8.4%; Harry Kane 64.3%; Marcus Rashford 20.7%; Bukayo Saka 16.9%;
-Data as of 2026-06-13 | runs 50000 | seed 20260611
+Data as of 2026-06-14 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match
