@@ -13,10 +13,10 @@ updated: 2026-06-13
 
 # Morocco
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-13T05:53Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-13T09:19Z | source elo-goal-v1 -->
 Group C | FIFA rank 12 | Elo 2009
-Champion 2.1% | Final 5.4% | SF 12.8% | QF 26.6% | Advance 87.8%
-Availability concerns: Abde Ezzalzouli (out), Nayef Aguerd (out), Noussair Mazraoui (doubtful)
+Champion 2.1% | Final 5.3% | SF 12.8% | QF 27.0% | Advance 87.9%
+Availability concerns: Abde Ezzalzouli (out), Nayef Aguerd (out), Noussair Mazraoui (doubtful), Anass Salah-Eddine (doubtful), Chemsdine Talbi (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
 ## Squad & availability
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-13T05:53Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-13T09:19Z | source elo-goal-v1 -->
 - 2026-06-13: champion 2.1% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
