@@ -12,7 +12,7 @@ updated: 2026-06-13
 **R32 (match #81)** · 2026-07-02
 
 Slots: 1D vs 3rd B/E/F/I/J
-Projected: Turkey vs 3rd B/E/F/I/J
+Projected: United States vs 3rd B/E/F/I/J
 Result: TBD
 Data as of 2026-06-13 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->

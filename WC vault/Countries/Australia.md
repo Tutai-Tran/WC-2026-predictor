@@ -13,9 +13,9 @@ updated: 2026-06-13
 
 # Australia
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-13T02:22Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-13T05:53Z | source elo-goal-v1 -->
 Group D | FIFA rank 25 | Elo 1910
-Champion 0.4% | Final 1.3% | SF 3.8% | QF 12.0% | Advance 58.0%
+Champion 0.3% | Final 1.3% | SF 4.0% | QF 11.8% | Advance 61.8%
 Availability concerns: Harry Souttar (doubtful), Mohamed Touré (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-13T02:22Z | source elo-goal-v1 -->
-- 2026-06-13: champion 0.4% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-13T05:53Z | source elo-goal-v1 -->
+- 2026-06-13: champion 0.3% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
