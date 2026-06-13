@@ -5,7 +5,7 @@ fifa_code: "SWE"
 group: "F"
 fifa_rank: 41
 elo: 1781
-champion_prob: 0.0003
+champion_prob: 0.0002
 status: active
 created: 2026-06-04
 updated: 2026-06-13
@@ -13,9 +13,9 @@ updated: 2026-06-13
 
 # Sweden
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-13T16:16Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-13T20:12Z | source elo-goal-v1 -->
 Group F | FIFA rank 41 | Elo 1781
-Champion 0.0% | Final 0.2% | SF 0.9% | QF 3.6% | Advance 50.0%
+Champion 0.0% | Final 0.1% | SF 0.7% | QF 3.1% | Advance 50.0%
 Availability concerns: Anthony Elanga (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-13T16:16Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-13T20:12Z | source elo-goal-v1 -->
 - 2026-06-13: champion 0.0% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
