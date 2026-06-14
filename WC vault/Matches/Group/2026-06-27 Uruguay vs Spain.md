@@ -5,7 +5,7 @@ group: H
 date: 2026-06-27
 home: "Uruguay"
 away: "Spain"
-updated: 2026-06-13
+updated: 2026-06-14
 ---
 
 # Uruguay vs Spain
@@ -13,9 +13,12 @@ updated: 2026-06-13
 <!-- WC26:AUTO:forecast START -->
 **Group H match** · 2026-06-27
 
-Win Uruguay: 10.4% | Draw: 22.2% | Win Spain: 67.4%
-Most likely scoreline: 0-1 (15.7%) (modal only; many outcomes possible)
-Top scorers: Federico Valverde 14.1%; Darwin Núñez 8.9%; Giorgian de Arrascaeta 8.3%; Mikel Oyarzabal 35.9%; Ferran Torres 28.8%; Dani Olmo 17.2%;
+Win Uruguay: 10.8% | Draw: 22.4% | Win Spain: 66.8%
+Most likely single score: 0-1 (15.3%) (one of many possible, not a prediction)
+Top-5 scorelines: 0-1 15.3%, 0-2 14.8%, 1-1 10.0%, 0-3 9.2%, 0-0 9.0% (cumulative 58.5%)
+Expected score: 1-2
+Over 2.5: 44.8% | Under 2.5: 55.2% | BTTS yes: 38.6% | BTTS no: 61.4%
+Top scorers: Federico Valverde 14.2%; Darwin Núñez 9.1%; Giorgian de Arrascaeta 8.5%; Mikel Oyarzabal 36.1%; Ferran Torres 29.1%; Dani Olmo 17.3%;
 Data as of 2026-06-14 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

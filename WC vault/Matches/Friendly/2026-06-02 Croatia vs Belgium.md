@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-02
 home: "Croatia"
 away: "Belgium"
-updated: 2026-06-13
+updated: 2026-06-14
 ---
 
 # Croatia vs Belgium (friendly)
@@ -12,8 +12,11 @@ updated: 2026-06-13
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-06-02 · played 0-2
 
-Win Croatia: 33.4% | Draw: 33.2% | Win Belgium: 33.4%
-Most likely scoreline: 1-0
+Win Croatia: 33.5% | Draw: 32.9% | Win Belgium: 33.6%
+Most likely single score: 0-1 (10.0%) (one of many possible, not a prediction)
+Top-5 scorelines: 1-1 15.4%, 0-0 12.7%, 0-1 10.0%, 1-0 10.0%, 1-2 7.5% (cumulative 55.5%)
+Expected score: 1-1
+Over 2.5: 38.6% | Under 2.5: 61.4% | BTTS yes: 47.3% | BTTS no: 52.7%
 Data as of 2026-06-14 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

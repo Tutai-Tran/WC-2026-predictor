@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-05-28
 home: "Republic of Ireland"
 away: "Qatar"
-updated: 2026-06-13
+updated: 2026-06-14
 ---
 
 # Republic of Ireland vs Qatar (friendly)
@@ -12,8 +12,11 @@ updated: 2026-06-13
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-05-28 · played 1-0
 
-Win Republic of Ireland: 59.8% | Draw: 25.5% | Win Qatar: 14.7%
-Most likely scoreline: 2-0
+Win Republic of Ireland: 59.2% | Draw: 25.5% | Win Qatar: 15.2%
+Most likely single score: 2-0 (11.6%) (one of many possible, not a prediction)
+Top-5 scorelines: 1-1 12.1%, 2-0 11.6%, 1-0 10.9%, 2-1 9.8%, 0-0 8.3% (cumulative 52.7%)
+Expected score: 2-1
+Over 2.5: 50.6% | Under 2.5: 49.4% | BTTS yes: 49.6% | BTTS no: 50.4%
 Data as of 2026-06-14 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

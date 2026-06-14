@@ -5,7 +5,7 @@ group: D
 date: 2026-06-19
 home: "United States"
 away: "Australia"
-updated: 2026-06-13
+updated: 2026-06-14
 ---
 
 # United States vs Australia
@@ -13,9 +13,12 @@ updated: 2026-06-13
 <!-- WC26:AUTO:forecast START -->
 **Group D match** · 2026-06-19
 
-Win United States: 48.4% | Draw: 27.8% | Win Australia: 23.8%
-Most likely scoreline: 1-0 (12.2%) (modal only; many outcomes possible)
-Top scorers: Christian Pulisic 36.2%; Ricardo Pepi 14.1%; Weston McKennie 12.4%; Mathew Leckie 15.0%; Jackson Irvine 14.2%; Awer Mabil 11.4%;
+Win United States: 48.1% | Draw: 27.7% | Win Australia: 24.2%
+Most likely single score: 1-0 (11.9%) (one of many possible, not a prediction)
+Top-5 scorelines: 1-1 13.1%, 1-0 11.9%, 2-0 9.4%, 0-0 9.2%, 2-1 9.2% (cumulative 52.8%)
+Expected score: 1-1
+Over 2.5: 44.8% | Under 2.5: 55.2% | BTTS yes: 49.1% | BTTS no: 50.9%
+Top scorers: Christian Pulisic 36.5%; Ricardo Pepi 14.3%; Weston McKennie 12.5%; Mathew Leckie 15.3%; Jackson Irvine 14.5%; Awer Mabil 11.6%;
 Data as of 2026-06-14 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
