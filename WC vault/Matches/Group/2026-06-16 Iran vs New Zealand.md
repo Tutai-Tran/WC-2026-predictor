@@ -13,7 +13,7 @@ updated: 2026-06-14
 <!-- WC26:AUTO:forecast START -->
 **Group G match** · 2026-06-16
 
-Win Iran: 59.0% | Draw: 24.3% | Win New Zealand: 16.7%
+Win Iran: 55.1% | Draw: 26.2% | Win New Zealand: 18.7%
 Most likely single score: 1-0 (12.2%) (one of many possible, not a prediction)
 Top-5 scorelines: 1-0 12.2%, 2-0 11.6%, 1-1 11.4%, 2-1 9.7%, 0-0 7.8% (cumulative 52.8%)
 Expected score: 2-1
