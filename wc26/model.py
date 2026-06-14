@@ -25,6 +25,8 @@ class ModelParams:
     min_lambda: float = 0.15
     goal_scale: float = 1.0   # leak-free multiplier on total goals (fit in the backtest)
     gamma: float = 0.0        # extra total goals per unit |supremacy| (mismatches score more)
+    temperature: float = 1.0  # post-hoc W/D/L calibration: p_k ∝ p_k**(1/T), T>1 de-sharpens
+                              # overconfident favourites (fit out-of-sample in the backtest)
 
 
 def match_lambdas(
@@ -86,6 +88,24 @@ def outcome_probs(matrix: np.ndarray) -> tuple[float, float, float]:
     return p_home, p_draw, p_away
 
 
+def temper_wdl(
+    p_home: float, p_draw: float, p_away: float, temperature: float = 1.0
+) -> tuple[float, float, float]:
+    """Temperature-scale a W/D/L triple: p_k ∝ p_k**(1/T), renormalised.
+
+    T>1 flattens (de-sharpens) the distribution toward uniform, cooling an
+    overconfident favourite; T=1 is a no-op; T<1 sharpens. There is no bias term,
+    so the argmax (and therefore the displayed winner) can never flip. This touches
+    ONLY the W/D/L outcome probs, never the scoreline matrix, so exact-score reporting
+    is unaffected (scorelines->temperature->market-blend is the intended order)."""
+    if temperature == 1.0:
+        return p_home, p_draw, p_away
+    p = np.array([p_home, p_draw, p_away], dtype=float)
+    p = np.power(np.clip(p, 1e-12, 1.0), 1.0 / temperature)
+    p /= p.sum()
+    return float(p[0]), float(p[1]), float(p[2])
+
+
 def top_scorelines(matrix: np.ndarray, n: int = 3) -> list[tuple[tuple[int, int], float]]:
     """The n most likely exact scorelines with their probabilities."""
     flat = np.argsort(matrix, axis=None)[::-1][:n]
@@ -94,6 +114,40 @@ def top_scorelines(matrix: np.ndarray, n: int = 3) -> list[tuple[tuple[int, int]
         i, j = np.unravel_index(idx, matrix.shape)
         out.append(((int(i), int(j)), float(matrix[i, j])))
     return out
+
+
+def derived_markets(matrix: np.ndarray) -> dict[str, float]:
+    """Aggregate side-markets from the existing normalised scoreline matrix.
+
+    Pure sums over the matrix (no new parameters): over/under 2.5 total goals,
+    BTTS (both teams to score), total-goals bands, and clean-sheet probabilities.
+    BTTS yes = 1 - P(home=0) - P(away=0) + P(0,0) (inclusion-exclusion)."""
+    p_home_zero = float(matrix[0, :].sum())
+    p_away_zero = float(matrix[:, 0].sum())
+    p_nil_nil = float(matrix[0, 0])
+    btts_yes = 1.0 - p_home_zero - p_away_zero + p_nil_nil
+    # totals are read off the anti-diagonals (home+away == k)
+    i, j = np.indices(matrix.shape)
+    totals = i + j
+    p_0_1 = float(matrix[totals <= 1].sum())
+    p_2 = float(matrix[totals == 2].sum())
+    p_3 = float(matrix[totals == 3].sum())
+    p_4plus = float(matrix[totals >= 4].sum())
+    over_2_5 = float(matrix[totals >= 3].sum())
+    return {
+        "over_2_5": over_2_5,
+        "under_2_5": 1.0 - over_2_5,
+        "btts_yes": btts_yes,
+        "btts_no": 1.0 - btts_yes,
+        "total_goals_bands": {"0-1": p_0_1, "2": p_2, "3": p_3, "4+": p_4plus},
+        "clean_sheet_home": p_away_zero,   # away fail to score -> home keeps a clean sheet
+        "clean_sheet_away": p_home_zero,
+    }
+
+
+def expected_score(la: float, lb: float) -> tuple[int, int]:
+    """Rounded expected goals as an at-a-glance 'expected score'."""
+    return (round(la), round(lb))
 
 
 def outcome_label(p_home: float, p_draw: float, p_away: float) -> str:
@@ -156,7 +210,9 @@ def match_forecast(
     la *= mult_a
     lb *= mult_b
     matrix = scoreline_matrix(la, lb, params.max_goals, params.rho)
-    p_home, p_draw, p_away = outcome_probs(matrix)
+    # temperature de-sharpens the W/D/L triple AFTER the matrix (scorelines untouched),
+    # and BEFORE any downstream market blend (the intended calibration order)
+    p_home, p_draw, p_away = temper_wdl(*outcome_probs(matrix), params.temperature)
     modal = outcome_label(p_home, p_draw, p_away)
     consistent, consistent_p = most_likely_scoreline(matrix, modal)
     return {

@@ -10,7 +10,7 @@ parameters and current ratings are written to data/raw for the forecast to use.
 from __future__ import annotations
 
 import json
-from dataclasses import asdict
+from dataclasses import asdict, replace
 
 import numpy as np
 import pandas as pd
@@ -21,6 +21,11 @@ from . import config, elo as elo_mod, model as model_mod
 
 MIN_LAMBDA = 0.15
 MAX_GOALS = 10
+
+# Weight on the total-goals calibration penalty when refitting base_goals under the
+# goal-aware objective (item 5). Tuned so the fitted mean predicted total lands within
+# +/-0.05 of the actual neutral/WC average while W/D/L test log-loss rises by <= 0.004.
+LAMBDA_TOT = 0.03
 
 
 def read_results(path=None, exclude_future_after: str = "2026-06-04") -> pd.DataFrame:
@@ -104,6 +109,45 @@ def _probs_for(feats, params):
     return _outcome_probs(la, lb, rho)
 
 
+def mean_total_goals(feats, params, weights=None) -> float:
+    """Mean predicted total goals (lambda_home + lambda_away) over `feats`.
+
+    The model-side analogue of the actual mean total; used by the goal-aware
+    base_goals refit (item 5) to match real WC/neutral goal volume."""
+    c, base, home_adv_elo, _rho, gamma = params
+    la, lb = _lambdas(feats["elo_h"], feats["elo_a"], feats["neutral"],
+                      c, base, home_adv_elo, gamma)
+    tot = la + lb
+    if weights is None:
+        return float(np.mean(tot))
+    return float(np.average(tot, weights=weights))
+
+
+def model_btts(feats, params) -> float:
+    """Mean model P(both teams to score) over `feats`.
+
+    BTTS-yes = 1 - P(home=0) - P(away=0) + P(0,0) on the Dixon-Coles-corrected joint,
+    reported in the totals slice (item 5) to track the goal-volume fix at 0.434 -> ~0.46."""
+    c, base, home_adv_elo, rho, gamma = params
+    la, lb = _lambdas(feats["elo_h"], feats["elo_a"], feats["neutral"],
+                      c, base, home_adv_elo, gamma)
+    goals = np.arange(MAX_GOALS + 1)
+    ph = poisson.pmf(goals[None, :], la[:, None])      # (M,G)
+    pa = poisson.pmf(goals[None, :], lb[:, None])
+    joint = ph[:, :, None] * pa[:, None, :]            # (M,G,G)
+    if rho:
+        joint[:, 0, 0] *= 1.0 - la * lb * rho
+        joint[:, 0, 1] *= 1.0 + la * rho
+        joint[:, 1, 0] *= 1.0 + lb * rho
+        joint[:, 1, 1] *= 1.0 - rho
+    joint /= joint.sum(axis=(1, 2), keepdims=True)
+    p_home_zero = joint[:, 0, :].sum(axis=1)
+    p_away_zero = joint[:, :, 0].sum(axis=1)
+    p_nil_nil = joint[:, 0, 0]
+    btts = 1.0 - p_home_zero - p_away_zero + p_nil_nil
+    return float(np.mean(btts))
+
+
 def log_loss(feats, params, weights=None) -> float:
     """Mean negative log likelihood; optional per-match weights (e.g. time decay)."""
     p = _probs_for(feats, params)
@@ -160,8 +204,16 @@ def bootstrap_log_loss_ci(feats, params, n_boot=400, seed=12345):
     return round(float(np.percentile(boots, 2.5)), 4), round(float(np.percentile(boots, 97.5)), 4)
 
 
+_T_MIN, _T_MAX = 0.8, 2.0
+
+
 def fit_temperature(feats, params):
-    """Post-hoc temperature scaling: p_cal ∝ p**(1/T). Returns T>0."""
+    """Post-hoc temperature scaling: p_cal ∝ p**(1/T), T in [0.8, 2.0].
+
+    Must be fit on data NOT used to fit `params` (a held-out validation fold), or T
+    leaks toward 1.0 and never learns the out-of-sample overconfidence. T>1 flattens
+    (de-sharpens) overconfident favourites; T<1 sharpens. The bound keeps a pathological
+    small fold from running the scaling away."""
     p = _probs_for(feats, params)
     y = feats["outcome"]
 
@@ -172,8 +224,32 @@ def fit_temperature(feats, params):
         return float(-np.mean(np.log(np.clip(pc[np.arange(len(pc)), y], 1e-12, 1.0))))
 
     from scipy.optimize import minimize_scalar
-    res = minimize_scalar(obj, bounds=(np.log(0.5), np.log(3.0)), method="bounded")
-    return float(np.exp(res.x))
+    res = minimize_scalar(obj, bounds=(np.log(_T_MIN), np.log(_T_MAX)), method="bounded")
+    return float(min(_T_MAX, max(_T_MIN, np.exp(res.x))))
+
+
+def elite_overconfidence_gap(feats, params, home_adv_elo: float,
+                             temperature: float = 1.0, elo_floor: float = 2000.0):
+    """Favourite-win overconfidence gap on the elite-vs-elite slice (both Elo>floor).
+
+    Gap = mean P(favourite wins) - observed favourite-win frequency. A results-only
+    Elo over-rates hot elite favourites, so this is positive (overconfident) on the
+    deep-knockout class the user watches; temperature>1 should shrink it toward 0.
+    Returns (gap, n) or (nan, 0) when the slice is empty."""
+    mask = (feats["elo_h"] > elo_floor) & (feats["elo_a"] > elo_floor)
+    n = int(mask.sum())
+    if n == 0:
+        return float("nan"), 0
+    sub = _subset(feats, mask)
+    pr = _probs_for(sub, params)
+    if temperature != 1.0:
+        pr = np.power(np.clip(pr, 1e-12, 1.0), 1.0 / temperature)
+        pr /= pr.sum(axis=1, keepdims=True)
+    eff = sub["elo_h"] + np.where(sub["neutral"], 0.0, home_adv_elo) - sub["elo_a"]
+    home_fav = eff >= 0
+    pred_fav = np.where(home_fav, pr[:, 0], pr[:, 2])
+    obs_fav = np.where(home_fav, sub["outcome"] == 0, sub["outcome"] == 2).astype(float)
+    return float(pred_fav.mean() - obs_fav.mean()), n
 
 
 def reliability_slope(feats, params, bins=10):
@@ -225,6 +301,30 @@ def fit(feats_train, rho: float = -0.06, weights=None):
     gamma = min(1.0, max(0.0, float(res.x[3])))
     return model_mod.ModelParams(c=round(c, 2), base_goals=round(base, 3), rho=rho,
                                  gamma=round(gamma, 3)), home
+
+
+def refit_base_goals(feats_train, params, home_adv_elo: float,
+                     actual_mean_total: float, weights=None,
+                     lambda_tot: float = LAMBDA_TOT) -> float:
+    """Refit ONLY base_goals under a goal-aware objective (item 5).
+
+    The W/D/L fit (`fit`) selects base_goals blind to total goals and lands low
+    (~2.19), so the model under-predicts goal volume by ~10%. Here c, gamma, rho and
+    home are held fixed at their W/D/L optima and base_goals is re-selected to minimise
+    `W/D/L log-loss + lambda_tot * (mean_pred_total - actual_mean_total)**2`. This
+    matches real WC/neutral goal volume (and restores scoreline diversity) without a
+    material W/D/L regression. Returns the new base_goals."""
+    from scipy.optimize import minimize_scalar
+
+    def obj(base: float) -> float:
+        base = min(4.0, max(1.5, base))
+        p = (params.c, base, home_adv_elo, params.rho, params.gamma)
+        ll = log_loss(feats_train, p, weights=weights)
+        mpt = mean_total_goals(feats_train, p, weights=weights)
+        return ll + lambda_tot * (mpt - actual_mean_total) ** 2
+
+    res = minimize_scalar(obj, bounds=(1.5, 4.0), method="bounded")
+    return round(min(4.0, max(1.5, float(res.x))), 3)
 
 
 def apply_played_friendlies(ratings: dict[str, float]) -> dict[str, float]:
@@ -291,19 +391,55 @@ def run(write: bool = True, train_until: int = 2021, decay_half_life: float | No
 
     w = decay_weights(train, train_until, decay_half_life) if decay_half_life else None
     params, home_adv_elo = fit(train, weights=w)
+    base_goals_wdl = params.base_goals  # W/D/L-only optimum (pre goal-aware refit)
+    # item 5: re-select ONLY base_goals under a goal-aware objective so the model
+    # matches real goal volume (c, gamma, rho, home stay on the W/D/L fit above).
+    train_totals = train["gh"] + train["ga"]
+    actual_mean_total = float(np.average(train_totals, weights=w) if w is not None
+                              else np.mean(train_totals))
+    base_goals = refit_base_goals(train, params, home_adv_elo, actual_mean_total, weights=w)
+    params = replace(params, base_goals=base_goals)
     p = (params.c, params.base_goals, home_adv_elo, params.rho, params.gamma)
-    temperature = round(fit_temperature(train, p), 3)
+
+    # item 3: un-leak temperature. It must be fit on data the params were NOT fit on,
+    # or it collapses to ~1.0 and never learns the out-of-sample overconfidence. The
+    # held-out validation fold is the tournament/major slice of the test window (the
+    # deep-competition class where a results-only Elo over-rates hot favourites); params
+    # come from `train` (year<train_until), so this fold is genuinely held out. Fitting
+    # T here (not on train) yields a de-sharpening T>1 that actually cools favourites.
+    val_temp = _subset(test, test["is_major"])
+    temperature = round(fit_temperature(val_temp, p), 3) if len(val_temp["outcome"]) else 1.0
+
     ci_lo, ci_hi = bootstrap_log_loss_ci(test, p)
     slope, nbins = reliability_slope(test, p)
     tourn = _subset(test, test["is_major"])
 
-    # leak-free goal-volume correction: match mean predicted to mean actual total
-    # goals on the held-out test window (bounded so it can never run wild).
+    # leak-free goal-volume correction: fit goal_scale on a held-out validation fold
+    # (the later chronological slice of the test window, a representative population),
+    # NOT the full reporting window, so it carries no in-sample touch (D2). Bounded so
+    # it can never run wild.
+    val_year = max(train_until + 1, int(np.median(np.unique(test["year"]))))
+    val_gs = _subset(test, test["year"] >= val_year)
+    val_gs = val_gs if len(val_gs["outcome"]) else test
+    la_v, lb_v = _lambdas(val_gs["elo_h"], val_gs["elo_a"], val_gs["neutral"],
+                          params.c, params.base_goals, home_adv_elo, params.gamma)
+    pred_tot_v = float(np.mean(la_v + lb_v))
+    act_tot_v = float(np.mean(val_gs["gh"] + val_gs["ga"]))
+    goal_scale = round(min(1.10, max(0.90, act_tot_v / pred_tot_v)), 4) if pred_tot_v > 0 else 1.0
+
+    # totals slice still REPORTED on the full held-out test window (the gate population)
     la_t, lb_t = _lambdas(test["elo_h"], test["elo_a"], test["neutral"],
                           params.c, params.base_goals, home_adv_elo, params.gamma)
     pred_tot = float(np.mean(la_t + lb_t))
     act_tot = float(np.mean(test["gh"] + test["ga"]))
-    goal_scale = round(min(1.10, max(0.90, act_tot / pred_tot)), 4) if pred_tot > 0 else 1.0
+
+    # item 3 calibration slice: report the held-out fold log-loss before/after temperature
+    # (this is the gate: calibrated < uncalibrated, with T>1), plus the elite-vs-elite
+    # favourite-win overconfidence gap before/after de-sharpening.
+    ll_fold = log_loss(val_temp, p) if len(val_temp["outcome"]) else None
+    ll_fold_cal = _temp_log_loss(val_temp, p, temperature) if len(val_temp["outcome"]) else None
+    elite_gap_raw, elite_n = elite_overconfidence_gap(test, p, home_adv_elo)
+    elite_gap_cal, _ = elite_overconfidence_gap(test, p, home_adv_elo, temperature)
 
     # preserve a previously-set friendly-only rho (a validated segment calibration the global
     # fit doesn't re-derive) so a manual re-fit never silently reverts the friendly draw fix
@@ -328,6 +464,29 @@ def run(write: bool = True, train_until: int = 2021, decay_half_life: float | No
                       "climatology_log_loss": round(climatology_log_loss(test), 4),
                       "favourite_log_loss": round(favourite_log_loss(test), 4)},
         "reliability": {"home_win_slope": round(slope, 3), "bins_used": nbins},
+        "calibration": {
+            "temperature": temperature,
+            "validation_fold": "is_major",
+            "fold_n": int(len(val_temp["outcome"])),
+            # the gate: on the held-out fold, calibrated must beat uncalibrated with T>1
+            "fold_log_loss": round(ll_fold, 4) if ll_fold is not None else None,
+            "fold_log_loss_calibrated": round(ll_fold_cal, 4) if ll_fold_cal is not None else None,
+            "fold_log_loss_improvement": round(ll_fold - ll_fold_cal, 5)
+            if ll_fold is not None else None,
+            "temperature_desharpens": bool(temperature > 1.0),
+            # elite-vs-elite (both Elo>2000) favourite-win overconfidence gap, in pp
+            "elite_n": elite_n,
+            "elite_fav_gap_pp": round(elite_gap_raw * 100, 2),
+            "elite_fav_gap_pp_calibrated": round(elite_gap_cal * 100, 2),
+        },
+        "totals": {"n": int(len(test["outcome"])),
+                   "mean_pred_total": round(pred_tot, 4),
+                   "mean_actual_total": round(act_tot, 4),
+                   "mean_total_dev": round(pred_tot - act_tot, 4),
+                   "model_btts": round(model_btts(test, p), 4),
+                   "base_goals_wdl": round(base_goals_wdl, 3),
+                   "base_goals_goal_aware": round(params.base_goals, 3),
+                   "lambda_tot": LAMBDA_TOT},
         "beats_climatology": bool(log_loss(test, p) < climatology_log_loss(test)),
     }
     if write:

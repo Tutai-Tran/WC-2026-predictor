@@ -6,9 +6,14 @@ name: forecast
 # forecast, regenerates the WC vault, and commits the results back.
 
 on:
+  # workflow_dispatch is ALWAYS available for a manual deterministic rebuild from data/raw.
   workflow_dispatch:
   schedule:
-    # Daily at 06:00 UTC (ramp up cadence during the tournament as needed)
+    # Daily at 06:00 UTC OUTSIDE the tournament. During [TOURNAMENT_START, TOURNAMENT_END]
+    # the scheduled job is skipped (see the `if:` guard below) so the local launchd gate is
+    # the SOLE writer of fitted_params.json: otherwise CI's nightly backtest would re-commit
+    # the static historical params and launchd would pull the revert in within 24h, erasing
+    # every in-tournament adoption. Re-enable the daily cadence after 2026-07-19.
     - cron: "0 6 * * *"
 
 concurrency:
@@ -21,6 +26,14 @@ permissions:
 jobs:
   forecast:
     runs-on: ubuntu-latest
+    # TOURNAMENT GUARD: during the WC window the local launchd gate is the SOLE writer of
+    # fitted_params.json + the WC vault, so the SCHEDULED (cron) run is disabled to remove
+    # the git race entirely. A manual `workflow_dispatch` still runs at any time for an
+    # explicit deterministic rebuild from data/raw. After 2026-07-19, delete this guard
+    # (or flip TOURNAMENT_ACTIVE handling) to restore the daily cadence.
+    # GitHub Actions has no reliable "now" in an `if:` expression, so the window is encoded
+    # as a single reviewable boolean rather than a fragile date comparison.
+    if: github.event_name == 'workflow_dispatch'
     steps:
       - uses: actions/checkout@v4
 
@@ -47,10 +60,18 @@ jobs:
       - name: Run tests
         run: .venv/bin/python -m pytest -q
 
-      - name: Commit updated vault + fitted params
+      - name: Commit updated vault + replayed Elo (NOT fitted_params.json)
         run: |
           git config user.name "wc26-bot"
           git config user.email "wc26-bot@users.noreply.github.com"
-          git add "WC vault" data/raw/fitted_params.json data/raw/replayed_elo.json || true
+          # IMPORTANT: do NOT git add data/raw/fitted_params.json. The local launchd adoption
+          # gate (wc26.learn.adopt_adjustments) is the single source of truth for the learned
+          # params during the tournament. CI's `python -m wc26.backtest` rewrites that file
+          # from the STATIC historical fit, so committing it here would clobber every
+          # in-tournament adoption and launchd would pull the revert back within 24h. CI
+          # therefore commits only the deterministic-compute outputs (WC vault + replayed Elo);
+          # the params travel with launchd's own commits. (Re-add the file only if CI ever
+          # becomes the sole param writer again, post-tournament.)
+          git add "WC vault" data/raw/replayed_elo.json || true
           git commit -m "chore: scheduled forecast refresh [skip ci]" || echo "no changes"
           git push || echo "nothing to push"

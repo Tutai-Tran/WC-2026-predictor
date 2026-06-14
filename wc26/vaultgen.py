@@ -88,6 +88,28 @@ def _freshness(result: dict) -> str:
     return f"Data as of {as_of}{stale} | runs {result.get('n_runs')} | seed {result.get('seed')}"
 
 
+def _scoreline_block(m: dict) -> str:
+    """Render the scoreline distribution: the most-likely single score (with its
+    small probability so it reads as one possibility, not 'the prediction'), the
+    top-5 scorelines, and the headline side-markets (O/U 2.5, BTTS, expected score)."""
+    lines = []
+    tops = m.get("top_scorelines") or []
+    if m.get("top_scoreline") is not None and m.get("top_scoreline_p") is not None:
+        lines.append(f"Most likely single score: {m['top_scoreline']} "
+                     f"({_pct(m['top_scoreline_p'])}) (one of many possible, not a prediction)")
+    if tops:
+        cum = sum(p for _, p in tops)
+        dist = ", ".join(f"{i}-{j} {_pct(p)}" for (i, j), p in tops)
+        lines.append(f"Top-5 scorelines: {dist} (cumulative {_pct(cum)})")
+    if m.get("expected_score"):
+        lines.append(f"Expected score: {m['expected_score']}")
+    dm = m.get("derived_markets") or {}
+    if dm:
+        lines.append(f"Over 2.5: {_pct(dm['over_2_5'])} | Under 2.5: {_pct(dm['under_2_5'])} | "
+                     f"BTTS yes: {_pct(dm['btts_yes'])} | BTTS no: {_pct(dm['btts_no'])}")
+    return "\n".join(lines)
+
+
 def write_dashboard(result: dict) -> None:
     probs = result["probs"]
     champ = sorted(probs.items(), key=lambda kv: kv[1]["champion"], reverse=True)
@@ -193,8 +215,7 @@ def write_match_notes(result: dict) -> dict:
         body = (f"**Group {m['group']} match** · {_dprefix(m.get('date'))}\n\n"
                 f"Win {m['home']}: {_pct(m['p_home'])} | Draw: {_pct(m['p_draw'])} | "
                 f"Win {m['away']}: {_pct(m['p_away'])}\n"
-                f"Most likely scoreline: {m['top_scoreline']} ({_pct(m['top_scoreline_p'])}) "
-                f"(modal only; many outcomes possible)\n"
+                f"{_scoreline_block(m)}\n"
                 f"Top scorers: {scorers}\n{_freshness(result)}")
         fm = {"type": "wc-match", "stage": "group", "group": m["group"],
               "date": _dprefix(m.get("date")), "home": f'"{m["home"]}"', "away": f'"{m["away"]}"',
@@ -209,7 +230,7 @@ def write_match_notes(result: dict) -> dict:
         body = (f"**Warm-up friendly** · {_dprefix(f.get('date'))} · {status}\n\n"
                 f"Win {f['home']}: {_pct(f['p_home'])} | Draw: {_pct(f['p_draw'])} | "
                 f"Win {f['away']}: {_pct(f['p_away'])}\n"
-                f"Most likely scoreline: {f['top_scoreline']}\n{_freshness(result)}")
+                f"{_scoreline_block(f)}\n{_freshness(result)}")
         fm = {"type": "wc-match", "stage": "friendly", "date": _dprefix(f.get("date")),
               "home": f'"{f["home"]}"', "away": f'"{f["away"]}"',
               "updated": datetime.now(timezone.utc).date()}

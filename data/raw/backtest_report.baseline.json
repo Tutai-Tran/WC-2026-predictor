@@ -1,0 +1,51 @@
+{
+  "fitted": {
+    "c": 208.86,
+    "base_goals": 2.19,
+    "rho": -0.06,
+    "rho_friendly": -0.15,
+    "max_goals": 10,
+    "min_lambda": 0.15,
+    "goal_scale": 1.0023,
+    "gamma": 0.456,
+    "home_adv_elo": 115.3,
+    "temperature": 0.996
+  },
+  "decay_half_life": 10.0,
+  "home_adv_majors": {
+    "home_adv_elo": 129.9,
+    "n": 200
+  },
+  "train": {
+    "n": 13990,
+    "log_loss": 0.8985,
+    "brier": 0.5294,
+    "rps": 0.1779
+  },
+  "test": {
+    "n": 5584,
+    "log_loss": 0.8597,
+    "log_loss_ci95": [
+      0.8428,
+      0.8766
+    ],
+    "log_loss_calibrated": 0.8597,
+    "brier": 0.5049,
+    "rps": 0.1672
+  },
+  "tournament_only": {
+    "n": 1200,
+    "log_loss": 0.9334,
+    "climatology_log_loss": 1.0638
+  },
+  "baselines": {
+    "uniform_log_loss": 1.0986,
+    "climatology_log_loss": 1.0492,
+    "favourite_log_loss": 0.9423
+  },
+  "reliability": {
+    "home_win_slope": 1.003,
+    "bins_used": 10
+  },
+  "beats_climatology": true
+}

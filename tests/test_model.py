@@ -1,4 +1,5 @@
 import numpy as np
+import pytest
 
 from wc26 import model
 
@@ -110,3 +111,105 @@ def test_most_likely_scoreline_respects_region():
     assert hh > ha
     (ah, aa), _ = model.most_likely_scoreline(m, "away")
     assert ah < aa
+
+
+def test_derived_markets_consistency_identities():
+    m = model.scoreline_matrix(1.7, 1.1)
+    dm = model.derived_markets(m)
+    # over/under and BTTS yes/no are complementary
+    assert abs(dm["over_2_5"] + dm["under_2_5"] - 1.0) < 1e-9
+    assert abs(dm["btts_yes"] + dm["btts_no"] - 1.0) < 1e-9
+    # the four total-goals bands partition the whole mass
+    bands = dm["total_goals_bands"]
+    assert abs(sum(bands.values()) - 1.0) < 1e-9
+    # over 2.5 == P(3) + P(4+) (the bands above 2)
+    assert abs(dm["over_2_5"] - (bands["3"] + bands["4+"])) < 1e-9
+    # under 2.5 == P(0-1) + P(2)
+    assert abs(dm["under_2_5"] - (bands["0-1"] + bands["2"])) < 1e-9
+    # BTTS-yes identity: 1 - P(home=0) - P(away=0) + P(0,0); clean-sheet probs match
+    # the marginal zero masses (home keeps a sheet iff away scores 0)
+    p_home_zero = float(m[0, :].sum())
+    p_away_zero = float(m[:, 0].sum())
+    assert abs(dm["clean_sheet_home"] - p_away_zero) < 1e-9
+    assert abs(dm["clean_sheet_away"] - p_home_zero) < 1e-9
+    expected_btts = 1.0 - p_home_zero - p_away_zero + float(m[0, 0])
+    assert abs(dm["btts_yes"] - expected_btts) < 1e-9
+    # every probability is a valid [0,1] mass
+    for v in (dm["over_2_5"], dm["under_2_5"], dm["btts_yes"], dm["btts_no"],
+              dm["clean_sheet_home"], dm["clean_sheet_away"]):
+        assert 0.0 <= v <= 1.0
+
+
+def test_top_scorelines_sorted_desc_and_length_five():
+    m = model.scoreline_matrix(1.6, 1.3)
+    tops = model.top_scorelines(m, 5)
+    assert len(tops) == 5
+    probs = [p for _, p in tops]
+    assert probs == sorted(probs, reverse=True)
+    # the global modal cell is the first entry
+    assert tops[0][1] == pytest.approx(float(m.max()))
+
+
+def test_expected_score_rounds_lambdas():
+    assert model.expected_score(1.4, 0.6) == (1, 1)
+    assert model.expected_score(2.6, 0.9) == (3, 1)
+
+
+def test_derived_markets_do_not_change_wdl():
+    # W/D/L must be byte-identical whether or not derived_markets is computed
+    # (same matrix in, same outcome probs out: the new aggregation is read-only)
+    m = model.scoreline_matrix(1.7, 1.1)
+    wdl_before = model.outcome_probs(m)
+    _ = model.derived_markets(m)
+    _ = model.top_scorelines(m, 5)
+    wdl_after = model.outcome_probs(m)
+    assert wdl_before == wdl_after
+
+
+# ---------------- temperature scaling (item 3) ----------------
+
+def test_temper_wdl_identity_at_one():
+    # T=1 is an exact no-op
+    p = (0.6, 0.25, 0.15)
+    assert model.temper_wdl(*p, 1.0) == p
+
+
+def test_temper_wdl_renormalises_to_one():
+    for T in (0.85, 1.0, 1.3, 1.9):
+        out = model.temper_wdl(0.55, 0.27, 0.18, T)
+        assert abs(sum(out) - 1.0) < 1e-12
+        assert all(0.0 <= v <= 1.0 for v in out)
+
+
+def test_temper_wdl_above_one_desharpens_favourite():
+    # T>1 flattens toward uniform: the favourite's prob falls, the laggards' rise
+    ph, pdw, pa = 0.70, 0.20, 0.10
+    h2, d2, a2 = model.temper_wdl(ph, pdw, pa, 1.4)
+    assert h2 < ph                 # favourite cooled
+    assert a2 > pa and d2 > pdw     # the other two outcomes pick up the mass
+
+
+def test_temper_wdl_below_one_sharpens():
+    ph, pdw, pa = 0.55, 0.27, 0.18
+    h2, _, a2 = model.temper_wdl(ph, pdw, pa, 0.85)
+    assert h2 > ph and a2 < pa      # T<1 sharpens (concentrates on the leader)
+
+
+def test_temper_wdl_preserves_argmax():
+    # no bias term, so the winner can never flip under any temperature in-bound
+    ph, pdw, pa = 0.46, 0.30, 0.24
+    for T in (0.8, 1.0, 1.5, 2.0):
+        out = model.temper_wdl(ph, pdw, pa, T)
+        assert out.index(max(out)) == 0
+
+
+def test_match_forecast_temperature_cools_favourite_not_scorelines():
+    sharp = model.match_forecast(1950, 1500, model.ModelParams(temperature=1.0))
+    cool = model.match_forecast(1950, 1500, model.ModelParams(temperature=1.4))
+    # the favourite's win prob is lower with T>1...
+    assert cool["p_home"] < sharp["p_home"]
+    # ...but the scoreline matrix (and therefore exact-score reporting) is untouched
+    assert (sharp["matrix"] == cool["matrix"]).all()
+    assert sharp["top_scorelines"] == cool["top_scorelines"]
+    # the displayed winner is unchanged (argmax cannot flip)
+    assert cool["p_home"] == max(cool["p_home"], cool["p_draw"], cool["p_away"])

@@ -267,3 +267,164 @@ def test_adopt_adjustments_rejects_when_history_regresses(tmp_path, monkeypatch)
     assert after == before                                     # live params untouched
     row = conn.execute("SELECT adopted FROM model_params_log ORDER BY id DESC LIMIT 1").fetchone()
     assert row["adopted"] == 0                                 # decision logged for audit
+
+
+# --------------------- item 8: temperature-tunable, reachable gate ----------------------
+
+def test_temperature_is_gate_tunable():
+    """Item 8: temperature is now in the gate's tunable set with the specified bounds."""
+    assert "temperature" in learn._GATE_STEP
+    assert learn._GATE_STEP["temperature"] == 0.03            # +/-0.03 de-sharpening step
+    assert learn._GATE_RANGE["temperature"] == (0.8, 2.0)     # matches fit_temperature bounds
+    # the favourites-overconfident signal maps elo_gap -> raise temperature
+    assert learn._PARAM_MAP_CALIB["elo_gap"] == ("temperature", "up")
+    assert "temperature" in learn._CALIB_PARAMS
+
+
+def test_gate_thresholds_calibration_vs_structural():
+    """Item 8: calibration knobs reach quorum/min-eval sooner than structural params."""
+    # structural (base_goals, rho) keep the conservative group-stage thresholds
+    assert learn._MIN_EVAL_GROUP == 12 and learn._QUORUM_GROUP == 5
+    # global calibration (temperature, small c) are reachable a touch sooner
+    assert learn._MIN_EVAL_GROUP_CALIB == 8 and learn._QUORUM_GROUP_CALIB == 3
+    # the thrash guards are UNCHANGED (do not loosen)
+    assert learn._NET_MARGIN == 0.005 and learn._HIST_CAP == 0.01
+    assert learn._MIN_NEW_BETWEEN_ADOPT == 12
+    assert learn._MIN_EVAL == 20                              # non-group min eval untouched
+
+
+def _arm_temp_gate(tmp_path, monkeypatch, hist_temp_ll, n_graded=8):
+    """Arm the gate with n_graded graded GROUP matches + an 'elo_gap over' quorum (3),
+    forcing group-stage mode. The 2026 temperature log loss FALLS as T rises (rewards
+    de-sharpening); the historical temperature log loss is hist_temp_ll(T). Structural
+    bt.log_loss is held flat so only the temperature candidate can move. Returns
+    (conn, raw)."""
+    import shutil
+    import numpy as np
+    from wc26 import config, backtest as bt
+    conn = _setup(tmp_path)
+    learn.snapshot_upcoming(conn)
+    ids = _grade_with_elo(conn, n_graded, actual="home", elo_away=2050)   # elite-vs-elite
+    for pid in ids[:3]:                                        # quorum_calib=3 on 'elo_gap', over
+        _pm(conn, pid, "elo_gap", "over")
+    conn.commit()
+
+    raw = tmp_path / "raw"; raw.mkdir()
+    shutil.copy(config.DATA_RAW / "fitted_params.json", raw / "fitted_params.json")
+    monkeypatch.setattr("wc26.config.DATA_RAW", raw)
+    monkeypatch.setattr("wc26.config.group_stage_mode", lambda today=None: True)
+    monkeypatch.setattr(bt, "read_results", lambda *a, **k: "df")
+    monkeypatch.setattr(bt, "prematch_pass", lambda df: (
+        {"year": np.array([2022, 2023]), "is_friendly": np.array([False, False]),
+         "outcome": np.array([0, 0])}, {}))
+    # structural log loss flat (no structural candidate can improve -> only temperature moves)
+    monkeypatch.setattr(bt, "log_loss", lambda feats, params: 0.80)
+    # temperature path: 2026 (has elo_h) improves with T; historical is hist_temp_ll(T)
+    monkeypatch.setattr(bt, "_temp_log_loss",
+                        lambda feats, params, T: (1.0 - 0.5 * (T - 1.0)) if "elo_h" in feats
+                        else hist_temp_ll(T))
+    return conn, raw
+
+
+def test_gate_adopts_temperature_after_8_overconfident_matches(tmp_path, monkeypatch):
+    import json
+    # historical temperature log loss FLAT -> de-sharpening passes _NET_MARGIN/_HIST_CAP -> ADOPT
+    conn, raw = _arm_temp_gate(tmp_path, monkeypatch, hist_temp_ll=lambda T: 0.80)
+    before = json.loads((raw / "fitted_params.json").read_text()).get("temperature", 1.0)
+    rep = learn.adopt_adjustments(conn)
+    after = json.loads((raw / "fitted_params.json").read_text())["temperature"]
+    assert rep["adopted"] == 1
+    assert after > before                                      # temperature raised (de-sharpened)
+    assert round(after - before, 4) == learn._GATE_STEP["temperature"]
+    row = conn.execute("SELECT param, direction, adopted FROM model_params_log "
+                       "ORDER BY id DESC LIMIT 1").fetchone()
+    assert row["param"] == "temperature" and row["direction"] == "up" and row["adopted"] == 1
+    # 8 graded matches is enough for the calibration knob but BELOW the structural min-eval
+    assert rep["n"] == 8
+
+
+def test_gate_rejects_temperature_when_history_regresses(tmp_path, monkeypatch):
+    import json
+    # historical temperature log loss RISES past _HIST_CAP as T grows -> REJECT despite 2026 gain
+    conn, raw = _arm_temp_gate(tmp_path, monkeypatch,
+                               hist_temp_ll=lambda T: 0.80 + 0.5 * (T - 1.0))
+    before = json.loads((raw / "fitted_params.json").read_text()).get("temperature", 1.0)
+    rep = learn.adopt_adjustments(conn)
+    after = json.loads((raw / "fitted_params.json").read_text())["temperature"]
+    assert rep["adopted"] == 0                                 # _HIST_CAP guard still works
+    assert after == before                                     # live temperature untouched
+    row = conn.execute("SELECT param, adopted FROM model_params_log "
+                       "ORDER BY id DESC LIMIT 1").fetchone()
+    assert row["param"] == "temperature" and row["adopted"] == 0   # logged for audit
+
+
+def test_rollback_reverts_regressing_temperature(tmp_path, monkeypatch):
+    """A previously-adopted temperature step that REGRESSES on the matches graded after
+    it must be auto-rolled back. Before the fix, check_rollback scored the change through
+    _tup (which excludes temperature), so ll_cur==ll_old and a temperature adoption could
+    never be reverted, silently denying it the fast safety net every other param has."""
+    import json
+    from wc26 import config, backtest as bt
+    conn = _setup(tmp_path)
+    learn.snapshot_upcoming(conn)
+    ids = _grade_with_elo(conn, 9, actual="home", elo_away=2050)        # >= _ROLLBACK_MIN_NEW
+    conn.executemany("UPDATE prediction_log SET graded_at=? WHERE id=?",
+                     [("2026-06-13T00:00:00+00:00", pid) for pid in ids])
+    conn.commit()
+
+    raw = tmp_path / "raw"; raw.mkdir()
+    fp = json.loads((config.DATA_RAW / "fitted_params.json").read_text())
+    fp["temperature"] = 1.08
+    (raw / "fitted_params.json").write_text(json.dumps(fp))
+    monkeypatch.setattr("wc26.config.DATA_RAW", raw)
+    # current T=1.08 scores WORSE (higher) than old T=1.02 on the post-adoption matches.
+    monkeypatch.setattr(bt, "_temp_log_loss", lambda feats, params, T: 0.5 + T)
+    monkeypatch.setattr(bt, "log_loss", lambda feats, params: 0.5)      # _tup path must NOT decide this
+
+    conn.execute(
+        "INSERT INTO model_params_log (created_at, factor, param, direction, old_value, new_value, "
+        "n_eval, adopted, reason, params_json) VALUES (?,?,?,?,?,?,?,?,?,?)",
+        ("2026-06-01T00:00:00+00:00", "elo_gap", "temperature", "up", 1.02, 1.08, 9, 1,
+         "test adopt", json.dumps(fp)))
+    conn.commit()
+
+    rep = learn.check_rollback(conn)
+    assert rep["rolled_back"] is True
+    assert rep["param"] == "temperature" and rep["restored"] == 1.02
+    assert json.loads((raw / "fitted_params.json").read_text())["temperature"] == 1.02
+    rb = conn.execute("SELECT factor, ll_new_before, ll_new_after FROM model_params_log "
+                      "ORDER BY id DESC LIMIT 1").fetchone()
+    assert rb["factor"] == "rollback"
+    # temperature-aware scoring (1.58 vs 1.52); the temperature-blind _tup code would tie these
+    assert round(rb["ll_new_before"] - rb["ll_new_after"], 2) == 0.06
+
+
+def test_structural_param_still_blocked_below_12_in_group_stage(tmp_path, monkeypatch):
+    import json
+    import numpy as np
+    import shutil
+    from wc26 import config, backtest as bt
+    # 8 graded matches with a STRUCTURAL ('draw') quorum: the structural min-eval is 12,
+    # so the structural candidate must NOT adopt at 8 (only calibration knobs may).
+    conn = _setup(tmp_path)
+    learn.snapshot_upcoming(conn)
+    ids = _grade_with_elo(conn, 8)
+    for pid in ids[:5]:                                        # quorum 5 on 'draw'
+        _pm(conn, pid, "draw", "under")
+    conn.commit()
+    raw = tmp_path / "raw"; raw.mkdir()
+    shutil.copy(config.DATA_RAW / "fitted_params.json", raw / "fitted_params.json")
+    monkeypatch.setattr("wc26.config.DATA_RAW", raw)
+    monkeypatch.setattr("wc26.config.group_stage_mode", lambda today=None: True)
+    monkeypatch.setattr(bt, "read_results", lambda *a, **k: "df")
+    monkeypatch.setattr(bt, "prematch_pass", lambda df: (
+        {"year": np.array([2022, 2023]), "is_friendly": np.array([False, False]),
+         "outcome": np.array([0, 0])}, {}))
+    monkeypatch.setattr(bt, "log_loss",
+                        lambda feats, params: (1.0 + params[3]) if "elo_h" in feats else 0.80)
+    before = json.loads((raw / "fitted_params.json").read_text())["rho"]
+    rep = learn.adopt_adjustments(conn)
+    after = json.loads((raw / "fitted_params.json").read_text())["rho"]
+    assert rep["adopted"] == 0                                 # 8 < structural _MIN_EVAL_GROUP (12)
+    assert after == before
+    assert "insufficient" in rep["reason"] and "8/12" in rep["reason"]

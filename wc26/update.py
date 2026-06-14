@@ -98,6 +98,11 @@ def run(conn=None, n_runs: int = 50_000, news_teams: int | None = None,
         rollback_rep = learn.check_rollback(conn)  # newly graded matches now show was harmful
     except Exception as e:
         rollback_rep = {"error": str(e)}
+    try:                                          # fetch+store devigged h2h odds for fixtures <48h
+        from . import odds                         # (item 1); skips cleanly without a key/quota,
+        odds_rep = odds.refresh_h2h(conn)          # accumulating odds and feeding the published blend
+    except Exception as e:
+        odds_rep = {"error": str(e)}
     calib = log_calibration(conn)                # score the prior forecast vs played results
     # Skip the 50k-run simulation when nothing it depends on changed since the last
     # run (fixed seed -> identical output). All data-mutating steps are above, so the
@@ -139,14 +144,14 @@ def run(conn=None, n_runs: int = 50_000, news_teams: int | None = None,
         f"scraped results: {scraped}; elo: {elo_rep}; news: {news_rep}; "
         f"overrides synced: {overrides_report.get('events', 0)} events; "
         f"prediction snapshots: {snap_rep}; graded: {grade_rep}; post-mortems: {pm_rep}; "
-        f"param adoption: {adopt_rep}; rollback: {rollback_rep}; "
+        f"param adoption: {adopt_rep}; rollback: {rollback_rep}; odds h2h: {odds_rep}; "
         f"lessons: {lessons.get('overall') if isinstance(lessons, dict) else lessons}; "
         f"running calibration: {calib}; vault: {vault}; run_id {result['run_id']}.",
     )
     return {"scraped": scraped, "elo": elo_rep, "news": news_rep,
             "overrides": overrides_report, "snapshots": snap_rep, "graded": grade_rep,
             "postmortems": pm_rep, "adoption": adopt_rep, "rollback": rollback_rep,
-            "lessons": lessons, "calibration": calib, "vault": vault,
+            "odds_h2h": odds_rep, "lessons": lessons, "calibration": calib, "vault": vault,
             "forecast_skipped": bool(result.get("skipped")), "run_id": result["run_id"]}
 
 

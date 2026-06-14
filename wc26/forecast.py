@@ -15,7 +15,10 @@ import subprocess
 from collections import defaultdict
 from datetime import datetime, timezone
 
-from . import config, db, h2h as h2h_mod, model as model_mod, scorers as scorers_mod
+from . import (
+    config, db, h2h as h2h_mod, model as model_mod, odds as odds_mod,
+    scorers as scorers_mod,
+)
 from .simulate import Tournament, simulate
 
 HOSTS = config.HOSTS
@@ -47,6 +50,9 @@ def load_fitted_params() -> model_mod.ModelParams | None:
         rho_friendly=d.get("rho_friendly", d.get("rho", -0.06)),
         max_goals=d.get("max_goals", 10), min_lambda=d.get("min_lambda", 0.15),
         goal_scale=d.get("goal_scale", 1.0), gamma=d.get("gamma", 0.0),
+        # un-leaked temperature (item 3): fit out-of-sample in the backtest and now
+        # actually read here, so the de-sharpening reaches the published W/D/L probs
+        temperature=d.get("temperature", 1.0),
     )
 
 
@@ -123,7 +129,10 @@ def load_tournament(conn, params: model_mod.ModelParams | None = None,
     )
 
 
-def group_match_forecasts(t: Tournament) -> list[dict]:
+def group_match_forecasts(t: Tournament,
+                          market: dict[str, dict[str, float]] | None = None) -> list[dict]:
+    market = market or {}
+    blend_w = odds_mod.match_blend_weight() if market else None
     out = []
     for fx in t.group_fixtures:
         h, a = fx["home"], fx["away"]
@@ -133,19 +142,40 @@ def group_match_forecasts(t: Tournament) -> list[dict]:
             t.host_adv(h, vc), t.host_adv(a, vc),
             mult_a=t.mult(h), mult_b=t.mult(a), h2h_delta=t.h2h_delta(h, a),
         )
-        ph, pdw, pa = round(f["p_home"], 3), round(f["p_draw"], 3), round(f["p_away"], 3)
+        ph_m, pdw_m, pa_m = round(f["p_home"], 3), round(f["p_draw"], 3), round(f["p_away"], 3)
+        # live market blend (item 1): if a devigged line exists for this fixture, the
+        # PUBLISHED W/D/L is a log-pool of model+market (cools hot favourites toward the
+        # sharp line); the raw model probs are always kept for the post-mortem audit
+        # trail. No line (all historical data, most group games pre-odds) -> pure model.
+        line = market.get(f"{h} vs {a}")
+        if line:
+            blended = odds_mod.blend_wdl(
+                {"home": ph_m, "draw": pdw_m, "away": pa_m}, line, blend_w)
+            ph, pdw, pa = (round(blended["home"], 3), round(blended["draw"], 3),
+                           round(blended["away"], 3))
+        else:
+            ph, pdw, pa = ph_m, pdw_m, pa_m
         # pick the headline score from the matrix region of the modal outcome computed
         # on the *rounded* probs, so it can never contradict the W/D/L shown next to it
         (sh, sa), sp = model_mod.most_likely_scoreline(f["matrix"], model_mod.outcome_label(ph, pdw, pa))
+        tops = model_mod.top_scorelines(f["matrix"], 5)
+        es = model_mod.expected_score(f["lambda_home"], f["lambda_away"])
         res = t.played.get((h, a))
         out.append({
             "group": fx["group"], "home": h, "away": a, "date": fx.get("date"),
             "p_home": ph, "p_draw": pdw, "p_away": pa,
+            # raw pre-blend model probs, always present for leak-free grading
+            "p_home_model": ph_m, "p_draw_model": pdw_m, "p_away_model": pa_m,
             "lambda_home": round(f["lambda_home"], 2), "lambda_away": round(f["lambda_away"], 2),
             # adjustments baked into the lambdas, frozen so post-mortems can see them
             "mult_home": round(t.mult(h), 3), "mult_away": round(t.mult(a), 3),
             "h2h_delta": round(t.h2h_delta(h, a), 3),
             "top_scoreline": f"{sh}-{sa}", "top_scoreline_p": round(sp, 3),
+            # full scoreline distribution: the modal cell holds <=16% mass, so publish
+            # the top-5 with their probabilities rather than implying a single prediction
+            "top_scorelines": [[[i, j], round(p, 4)] for (i, j), p in tops],
+            "expected_score": f"{es[0]}-{es[1]}",
+            "derived_markets": model_mod.derived_markets(f["matrix"]),
             "result": (f"{res[0]}-{res[1]}" if res else None),
             "top_scorers_home": scorers_mod.top_scorers(t.teams[h].get("players", []), f["lambda_home"]),
             "top_scorers_away": scorers_mod.top_scorers(t.teams[a].get("players", []), f["lambda_away"]),
@@ -197,10 +227,16 @@ def friendly_forecasts(conn, params: model_mod.ModelParams,
         delta = h2h_mod.h2h_delta(meetings, r["home"], r["away"])
         f = model_mod.match_forecast(r["he"], r["ae"], params, h2h_delta=delta)
         ph, pdw, pa = round(f["p_home"], 3), round(f["p_draw"], 3), round(f["p_away"], 3)
-        (sh, sa), _ = model_mod.most_likely_scoreline(f["matrix"], model_mod.outcome_label(ph, pdw, pa))
+        (sh, sa), sp = model_mod.most_likely_scoreline(f["matrix"], model_mod.outcome_label(ph, pdw, pa))
+        tops = model_mod.top_scorelines(f["matrix"], 5)
+        es = model_mod.expected_score(f["lambda_home"], f["lambda_away"])
         out.append({
             "date": r["d"], "home": r["home"], "away": r["away"],
             "p_home": ph, "p_draw": pdw, "p_away": pa, "top_scoreline": f"{sh}-{sa}",
+            "top_scoreline_p": round(sp, 3),
+            "top_scorelines": [[[i, j], round(p, 4)] for (i, j), p in tops],
+            "expected_score": f"{es[0]}-{es[1]}",
+            "derived_markets": model_mod.derived_markets(f["matrix"]),
             "lambda_home": round(f["lambda_home"], 2), "lambda_away": round(f["lambda_away"], 2),
             "h2h_delta": round(delta, 3),
             "played": bool(r["p"]),
@@ -282,12 +318,17 @@ def input_fingerprint(conn, n_runs: int = config.DEFAULT_SIM_RUNS,
         "SELECT id, home_goals, away_goals, played FROM matches ORDER BY id"
     ):
         h.update(repr(tuple(r)).encode())
-    # the market enters the published payload via champion_blend, so new odds must
-    # invalidate the fingerprint or the blend would go stale on skipped cycles
+    # the market enters the published payload via champion_blend and the per-match
+    # W/D/L blend (item 1), so new odds must invalidate the fingerprint or the blend
+    # would go stale on skipped cycles
     row = conn.execute(
         "SELECT id FROM public_benchmark WHERE source='the-odds-api' AND scope='champion' "
         "ORDER BY id DESC LIMIT 1").fetchone()
+    h2h_row = conn.execute(
+        "SELECT id FROM public_benchmark WHERE source='the-odds-api' AND scope='match' "
+        "ORDER BY id DESC LIMIT 1").fetchone()
     h.update(f"odds={row['id'] if row else None};".encode())
+    h.update(f"odds_h2h={h2h_row['id'] if h2h_row else None};".encode())
     return h.hexdigest()
 
 
@@ -298,7 +339,10 @@ def run_forecast(conn, n_runs: int = config.DEFAULT_SIM_RUNS,
     params = load_fitted_params() or model_mod.ModelParams()
     t = load_tournament(conn, params=params, h2h_index=h2h_index)
     sim = simulate(t, n_runs=n_runs, seed=seed)
-    matches = group_match_forecasts(t)
+    # live h2h market blend (item 1): pure model when no line exists for a fixture, so
+    # the all-historical backtest is unchanged; live group games blend once odds open
+    market_h2h = odds_mod.latest_market_h2h(conn)
+    matches = group_match_forecasts(t, market_h2h)
     boot = golden_boot(t)
     # friendlies predict the 2026 warm-ups, so they get a leak-free (pre-2026) H2H index AND a
     # stronger Dixon-Coles rho (validated: friendlies systematically under-predict draws because
@@ -322,7 +366,6 @@ def run_forecast(conn, n_runs: int = config.DEFAULT_SIM_RUNS,
 
     # model+market champion blend: the devigged market is the strongest single external
     # signal, so the blend is published alongside (never instead of) the pure model.
-    from . import odds as odds_mod
     market = odds_mod.latest_market_champion(conn)
     blend = odds_mod.blend_probs({tm: p["champion"] for tm, p in sim["probs"].items()}, market)
 

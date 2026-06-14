@@ -386,6 +386,10 @@ def aggregate_lessons(conn) -> dict:
 _QUORUM = 8         # wrong matches tagging a factor before it becomes a candidate (guard vs anecdote)
 _QUORUM_GROUP = 5   # during the group stage: ~11 wrong picks are expected across all 72 matches,
                     # so quorum 8 on a single factor would likely never fire inside the window
+_QUORUM_GROUP_CALIB = 3   # GLOBAL calibration knobs (temperature, the small c step) move only
+                          # the overall sharpness, so a thinner quorum is safe here: the
+                          # out-of-sample re-fit + _HIST_CAP gate still vets every step. Structural
+                          # params (base_goals, rho) keep _QUORUM_GROUP=5 (they reshape the matrix).
 
 # factor -> (fitted param, direction implied when the model OVER-weighted that factor).
 # This is exactly the set the validated gate (phase 3b) can tune, so the candidate audit
@@ -400,6 +404,16 @@ _PARAM_MAP = {
     "elo_gap":     ("c", "up"),              # over-rated favourites -> raise Elo-per-goal (less supremacy)
     "draw":        ("rho", "up"),            # over-predicted draws -> rho toward 0 (fewer draws)
 }
+# GLOBAL calibration knobs, tuned under the thinner _QUORUM_GROUP_CALIB. The
+# favourites-overconfident signal ("elo_gap over") raises temperature toward
+# de-sharpening (T>1 flattens overconfident favourites; cf. backtest.fit_temperature),
+# the cheapest post-hoc fix for complaint #1. These do not reshape the scoreline matrix,
+# only the published W/D/L sharpness, so they are validated on the same out-of-sample
+# re-fit gate but reachable a matchday sooner.
+_PARAM_MAP_CALIB = {
+    "elo_gap": ("temperature", "up"),        # over-rated favourites -> raise T (de-sharpen)
+}
+_CALIB_PARAMS = frozenset(p for p, _d in _PARAM_MAP_CALIB.values())
 _PARAM_MAP_FRIENDLY = {
     "draw": ("rho_friendly", "up"),
 }
@@ -415,7 +429,8 @@ def gate_thresholds(today: str | None = None) -> tuple[int, int]:
     return _MIN_EVAL, _QUORUM
 
 
-def _quorum_factors(conn, quorum: int, pool: str) -> list[tuple[str, str, str]]:
+def _quorum_factors(conn, quorum: int, pool: str,
+                    param_map: dict | None = None) -> list[tuple[str, str, str]]:
     """Quorum-reaching (factor, param, direction) candidates for one evidence pool.
 
     Pools are keyed on the graded match's ACTUAL stage (objective), not the LLM's
@@ -423,11 +438,17 @@ def _quorum_factors(conn, quorum: int, pool: str) -> list[tuple[str, str, str]]:
     only to friendly params; pool='tournament' counts group/knockout lessons and maps
     to the tournament params. Matchday-3 group draws are excluded from the 'draw'
     factor: simultaneous final-round games where a draw can suit both sides are not
-    representative evidence for the tournament-wide draw rate."""
+    representative evidence for the tournament-wide draw rate.
+
+    `param_map` overrides which factor->(param, direction) mapping is applied (the
+    tournament pool is queried twice: structural _PARAM_MAP at the structural quorum,
+    then _PARAM_MAP_CALIB at the thinner calibration quorum)."""
     if pool == "friendly":
-        stage_clause, param_map = "pl.stage = 'friendly'", _PARAM_MAP_FRIENDLY
+        stage_clause = "pl.stage = 'friendly'"
+        param_map = param_map or _PARAM_MAP_FRIENDLY
     else:
-        stage_clause, param_map = "pl.stage IN ('group', 'knockout')", _PARAM_MAP
+        stage_clause = "pl.stage IN ('group', 'knockout')"
+        param_map = param_map or _PARAM_MAP
     out = []
     for r in conn.execute(
         "SELECT pm.factor factor, "
@@ -484,7 +505,10 @@ def propose_adjustments(conn, quorum: int | None = None) -> dict:
 # --------------------------------------------------------------------------
 
 _MIN_EVAL = 20        # graded TOURNAMENT matches required before the gate may change anything
-_MIN_EVAL_GROUP = 12  # one full matchday during the group stage (first adoption ~June 13-14)
+_MIN_EVAL_GROUP = 12  # one full matchday during the group stage (structural params: base_goals, rho)
+_MIN_EVAL_GROUP_CALIB = 8  # global calibration knobs (temperature, small c step) may adopt half a
+                           # matchday sooner: they only resharpen the published W/D/L, and the
+                           # out-of-sample re-fit + _HIST_CAP gate still vets every step.
 _MIN_EVAL_FRIENDLY = 12   # graded friendlies required before rho_friendly may move
 _MIN_NEW_BETWEEN_ADOPT = 12   # newly graded matches a pool needs between two adoptions
 _NET_MARGIN = 0.005   # (2026 log-loss improvement) - (historical regression) must beat this
@@ -492,9 +516,12 @@ _HIST_CAP = 0.01      # historical held-out log loss may never rise by more than
 
 # Per-step size and hard valid range for each gate-tunable parameter (ranges match the
 # bounds backtest.fit() enforces, so an adopted value can never leave the sane region).
-_GATE_STEP = {"c": 8.0, "base_goals": 0.06, "rho": 0.015, "rho_friendly": 0.015}
+# temperature: small +/-0.03 step toward de-sharpening, bounded to backtest.fit_temperature's
+# [0.8, 2.0] so an adopted T can never run away.
+_GATE_STEP = {"c": 8.0, "base_goals": 0.06, "rho": 0.015, "rho_friendly": 0.015,
+              "temperature": 0.03}
 _GATE_RANGE = {"c": (50.0, 600.0), "base_goals": (1.5, 4.0), "rho": (-0.18, 0.0),
-               "rho_friendly": (-0.30, 0.0)}
+               "rho_friendly": (-0.30, 0.0), "temperature": (0.8, 2.0)}
 
 
 def _feats_2026(conn, stages: tuple[str, ...] = ("group", "knockout"),
@@ -537,6 +564,18 @@ def _tup(d, rho_key: str = "rho"):                    # (c, base, home_adv_elo, 
     return (d["c"], d["base_goals"], d.get("home_adv_elo", 60.0), d[rho_key], d.get("gamma", 0.0))
 
 
+def _gate_log_loss(bt, feats, params, temperature: float) -> float:
+    """Held-out log loss with the gate's temperature applied (p**(1/T), renormalised).
+
+    Temperature is a published-probability calibration knob that lives OUTSIDE the
+    structural param tuple `_tup`, so the gate evaluates a temperature trial by scaling
+    the same _probs_for output. At T==1.0 this is exactly bt.log_loss (no double counting),
+    so non-temperature trials and the historical backtest are byte-for-byte unaffected."""
+    if temperature == 1.0:
+        return bt.log_loss(feats, params)
+    return bt._temp_log_loss(feats, params, temperature)
+
+
 def _write_params(fp_path, fp: dict) -> None:
     import os
     tmp = fp_path.with_suffix(".json.tmp")            # atomic write: never leave a partial file
@@ -561,13 +600,19 @@ def adopt_adjustments(conn, quorum: int | None = None) -> dict:
     min_eval, q = gate_thresholds()
     if quorum is None:
         quorum = q
+    # GLOBAL calibration knobs (temperature, small c step) reach quorum/min-eval a touch
+    # sooner during the group stage; structural params keep the conservative thresholds.
+    if config.group_stage_mode():
+        min_eval_calib, quorum_calib = _MIN_EVAL_GROUP_CALIB, _QUORUM_GROUP_CALIB
+    else:
+        min_eval_calib, quorum_calib = min_eval, quorum
     fp_path = config.DATA_RAW / "fitted_params.json"
     if not fp_path.exists():
         return {"adopted": 0, "reason": "no fitted_params.json"}
 
     fp = json.loads(fp_path.read_text())
-    for k in ("c", "base_goals", "rho", "rho_friendly"):   # never act on a corrupt params file
-        v = fp.get(k)
+    for k in ("c", "base_goals", "rho", "rho_friendly", "temperature"):  # never act on a corrupt file
+        v = fp.get(k, 1.0)                              # temperature defaults to 1.0 if absent
         if not isinstance(v, (int, float)) or not math.isfinite(v):
             return {"adopted": 0, "reason": f"corrupt fitted_params: {k}={v}"}
 
@@ -584,7 +629,7 @@ def adopt_adjustments(conn, quorum: int | None = None) -> dict:
     pools = []
     new_t = _feats_2026(conn)
     pools.append(("tournament", min_eval, new_t, feats_h, "rho",
-                  ("group", "knockout"), ("c", "base_goals", "rho")))
+                  ("group", "knockout"), ("c", "base_goals", "rho", "temperature")))
     new_f = _feats_2026(conn, stages=("friendly",))
     pools.append(("friendly", _MIN_EVAL_FRIENDLY, new_f, feats_h_friendly, "rho_friendly",
                   ("friendly",), ("rho_friendly",)))
@@ -592,14 +637,25 @@ def adopt_adjustments(conn, quorum: int | None = None) -> dict:
     now = datetime.now(timezone.utc).isoformat()
     trials, ns, blocked = [], {}, []
     for pool, need, new, feats_hist, rho_key, stages, pool_params in pools:
-        cands = [(f, p, d) for f, p, d, _n in _quorum_factors(conn, quorum, pool)]
+        # Structural candidates at the conservative quorum/min-eval; for the tournament
+        # pool also gather GLOBAL calibration candidates (temperature) at the thinner
+        # quorum_calib/min_eval_calib. Each candidate carries its own min-eval requirement.
+        cands = [(f, p, d, need) for f, p, d, _n in _quorum_factors(conn, quorum, pool)]
+        if pool == "tournament":
+            cands += [(f, p, d, min_eval_calib)
+                      for f, p, d, _n in _quorum_factors(conn, quorum_calib, pool, _PARAM_MAP_CALIB)]
         n_eval = new[1] if new else 0
         ns[pool] = n_eval
         if not cands:
             continue
-        if new is None or n_eval < need:
-            blocked.append(f"{pool}: {n_eval}/{need} graded matches")
+        # gate each candidate against ITS OWN min-eval; only block the pool when even the
+        # most lenient candidate cannot run yet (so a structural shortfall never silently
+        # hides a reachable calibration nudge).
+        min_need = min(c[3] for c in cands)
+        if new is None or n_eval < min_need:
+            blocked.append(f"{pool}: {n_eval}/{min_need} graded matches")
             continue
+        cands = [c for c in cands if n_eval >= c[3]]    # drop candidates short of their own min-eval
         # ANTI-RATCHET: the same evidence must not justify a step every 3h cycle. A
         # pool may adopt again only after a matchday's worth of NEW graded matches
         # since its last adopted change (incremental refitting to the same 12 matches
@@ -622,25 +678,44 @@ def adopt_adjustments(conn, quorum: int | None = None) -> dict:
         feats_new = new[0]
         # FIXED pre-cycle baselines: every candidate is judged against the same starting
         # point, and at most ONE parameter changes this cycle, so candidates cannot
-        # compound or corrupt each other's evaluation.
+        # compound or corrupt each other's evaluation. The structural baseline uses the
+        # current params; temperature candidates use a temperature-aware baseline at the
+        # current T (see _gate_log_loss), so the before/after is apples-to-apples.
+        cur_temp = float(fp.get("temperature", 1.0))
         base_new = bt.log_loss(feats_new, _tup(fp, rho_key))
         base_hist = bt.log_loss(feats_hist, _tup(fp, rho_key)) if len(feats_hist["outcome"]) else 0.0
-        for factor, param, direction in cands:
-            old_val = float(fp[param])
+        # temperature-aware baselines computed lazily only when a temperature candidate
+        # exists, so structural-only cycles stay byte-for-byte on bt.log_loss.
+        base_new_temp = base_hist_temp = None
+        if any(p == "temperature" for _f, p, _d, _n in cands):
+            base_new_temp = _gate_log_loss(bt, feats_new, _tup(fp, rho_key), cur_temp)
+            base_hist_temp = (_gate_log_loss(bt, feats_hist, _tup(fp, rho_key), cur_temp)
+                              if len(feats_hist["outcome"]) else 0.0)
+        for factor, param, direction, _need in cands:
+            is_temp = param == "temperature"
+            old_val = float(fp.get(param, 1.0))
             lo, hi = _GATE_RANGE[param]
             step = _GATE_STEP[param] if direction == "up" else -_GATE_STEP[param]
             new_val = round(min(hi, max(lo, old_val + step)), 4)
             if new_val == old_val:                    # already at a bound; nothing to try
                 continue
             trial = dict(fp); trial[param] = new_val
-            ll_new = bt.log_loss(feats_new, _tup(trial, rho_key))
-            ll_hist = bt.log_loss(feats_hist, _tup(trial, rho_key)) if len(feats_hist["outcome"]) else 0.0
-            improve, regress = base_new - ll_new, ll_hist - base_hist
-            ok = (ll_new < base_new and regress < _HIST_CAP
+            if is_temp:                               # temperature lives outside _tup: apply p**(1/T)
+                b_new, b_hist = base_new_temp, base_hist_temp
+                ll_new = _gate_log_loss(bt, feats_new, _tup(fp, rho_key), new_val)
+                ll_hist = (_gate_log_loss(bt, feats_hist, _tup(fp, rho_key), new_val)
+                           if len(feats_hist["outcome"]) else 0.0)
+            else:
+                b_new, b_hist = base_new, base_hist
+                ll_new = bt.log_loss(feats_new, _tup(trial, rho_key))
+                ll_hist = (bt.log_loss(feats_hist, _tup(trial, rho_key))
+                           if len(feats_hist["outcome"]) else 0.0)
+            improve, regress = b_new - ll_new, ll_hist - b_hist
+            ok = (ll_new < b_new and regress < _HIST_CAP
                   and improve - max(0.0, regress) > _NET_MARGIN)
             trials.append({"factor": factor, "param": param, "direction": direction,
                            "old": old_val, "new": new_val, "ll_new": ll_new, "ll_hist": ll_hist,
-                           "base_new": base_new, "base_hist": base_hist, "n_eval": n_eval,
+                           "base_new": b_new, "base_hist": b_hist, "n_eval": n_eval,
                            "net": improve - max(0.0, regress), "ok": ok})
 
     if not trials:
@@ -722,8 +797,16 @@ def check_rollback(conn) -> dict:
         return {"checked": True, "rolled_back": False, "n_since": n_since}
     feats, n_eval = new
     old_fp = dict(fp); old_fp[param] = row["old_value"]
-    ll_cur = bt.log_loss(feats, _tup(fp, rho_key))
-    ll_old = bt.log_loss(feats, _tup(old_fp, rho_key))
+    if param == "temperature":
+        # temperature lives OUTSIDE _tup, so scoring it via _tup would make ll_cur==ll_old
+        # and the rollback could never fire. Score the SAME structural probs at the two
+        # temperatures, mirroring the adoption path (_gate_log_loss), so a regressing
+        # temperature step gets the same fast safety net every other tunable param has.
+        ll_cur = _gate_log_loss(bt, feats, _tup(fp, rho_key), float(fp.get("temperature", 1.0)))
+        ll_old = _gate_log_loss(bt, feats, _tup(fp, rho_key), float(row["old_value"]))
+    else:
+        ll_cur = bt.log_loss(feats, _tup(fp, rho_key))
+        ll_old = bt.log_loss(feats, _tup(old_fp, rho_key))
     if ll_cur <= ll_old + _ROLLBACK_REGRESS:
         return {"checked": True, "rolled_back": False, "n_since": n_since}
     now = datetime.now(timezone.utc).isoformat()
