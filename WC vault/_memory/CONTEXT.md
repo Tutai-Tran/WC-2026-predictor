@@ -408,3 +408,19 @@ Still open (next waves): elite-vs-elite overconfidence only partly fixed by a gl
 ## 2026-06-14 01:03 UTC — Automated refresh (update.py)
 
 scraped results: {'added': 1}; elo: {'recomputed': True, 'ledger_matches': 144, 'teams_updated': 76}; news: {'teams_scanned': ['Curacao', 'Haiti', 'Turkey', 'Germany', 'Ivory Coast', 'Netherlands'], 'events': 8, 'scan_failed': ['Ecuador', 'Australia', 'Tunisia', 'Scotland']}; overrides synced: 0 events; prediction snapshots: {'snapshotted': 70}; graded: {'graded': 1, 'wrong': 1}; post-mortems: {'analyzed': 1, 'errors': 0}; param adoption: {'adopted': 0, 'reason': 'insufficient graded matches: tournament: 6/8 graded matches', 'n': 6, 'n_friendly': 24}; rollback: {'checked': False}; odds h2h: {'fixtures': 9, 'requests_remaining': '425'}; lessons: {'n': 30, 'accuracy': 0.767, 'brier': 0.3893, 'log_loss': 0.6776}; running calibration: {'n': 6, 'brier': 0.6218, 'log_loss': 0.9811, 'computed_at': '2026-06-14T01:03:13.484723+00:00', 'forecast_run_id': 'run-20260614T003356Z'}; vault: {'countries': 48, 'groups': 12, 'matches': {'group': 72, 'friendly': 62, 'knockout': 31}, 'bracket': 'written'}; run_id run-20260614T010331Z.
+
+## 2026-06-14 — Batch 2 structural improvements (Claude multi-agent session, gated)
+
+Continuation of the batch-1 overhaul. Each item backtest-gated against a frozen post-batch1 baseline (test log-loss 0.8599); adopted only on a verified improvement, reverted otherwise. Integrated onto live main (commits 9aea345, 54467d0 + vault), daemon kept coherent.
+
+ADOPTED:
+- Supremacy-conditional de-sharpen (item A): T_eff = temperature + t_elite*g(matchup), g rises only for elite-vs-elite close games. Fixes the elite overconfidence a single global temperature could not: elite-vs-elite favourite-win gap 6.11pp -> 1.91pp (held-out sub-fold 3.67 -> ~0pp), overall log-loss unchanged/improved, non-elite matches byte-identical. t_elite=1.5, fit leak-free on a held-out sub-fold. Live params gain t_elite.
+- Corrected stage-split base_goals: GROUP stage over-predicted total goals; a per-stage base_goals delta (group base_goals_group_delta=-0.105) pulls group totals toward actual (bias +0.22 -> +0.11) with W/D/L provably unchanged (delta enters only la+lb, 0/72 pick flips). Knockout leg implemented + bounded but fit to 0.0: an independent structural KO classifier found KO totals already calibrated (the earlier "KO lower-scoring" premise did NOT replicate). Ready to activate once 2026 KO results accrue.
+
+REJECTED (gate discipline; valuable negatives):
+- Negative-Binomial blowout marginal (item 6): regresses RPS at every overdispersion-meaningful r (+0.0002 floor breached) and breaches the log-loss guardrail; P(>2.5) on mismatches dropped but RPS + 4+-band calibration failed. Kept Poisson. Matches the research prediction.
+- "Knockouts are lower-scoring -> lower KO base_goals" (item 9 original): premise REFUTED by data (WC KO mean total 2.55 > group 2.43). The rejection surfaced the real signal (group over-prediction) that the stage-split then fixed.
+
+Verification across both batches: ~25 agents, every shipped change backtest-gated + full-suite tested (195 -> 259 tests) + adversarially reviewed (1 blocking rollback bug caught+fixed). Nothing reached main on trust. Live params now: base_goals 2.234 (group delta -0.105), temperature 1.021, t_elite 1.5, goal_scale 1.0.
+
+Remaining (greenlight/time-gated): fit the market-blend weight w once odds accumulate (biggest remaining lever; the loop is now collecting h2h odds each cycle); Transfermarkt squad-value Elo regularizer (needs a dataset pull); re-fit the KO stage delta once 2026 knockout results land. After 2026-07-19 remove the forecast.yml workflow_dispatch-only guard to restore the daily CI cadence.
