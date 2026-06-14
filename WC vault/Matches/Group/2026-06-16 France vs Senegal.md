@@ -13,7 +13,7 @@ updated: 2026-06-14
 <!-- WC26:AUTO:forecast START -->
 **Group I match** · 2026-06-16
 
-Win France: 62.4% | Draw: 23.3% | Win Senegal: 14.3%
+Win France: 64.9% | Draw: 22.0% | Win Senegal: 13.2%
 Most likely single score: 1-0 (12.9%) (one of many possible, not a prediction)
 Top-5 scorelines: 1-0 12.9%, 2-0 12.7%, 1-1 10.8%, 2-1 9.6%, 3-0 7.9% (cumulative 53.9%)
 Expected score: 2-1
