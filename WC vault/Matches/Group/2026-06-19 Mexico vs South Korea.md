@@ -13,12 +13,12 @@ updated: 2026-06-14
 <!-- WC26:AUTO:forecast START -->
 **Group A match** · 2026-06-19
 
-Win Mexico: 59.3% | Draw: 24.3% | Win South Korea: 16.4%
-Most likely single score: 1-0 (12.5%) (one of many possible, not a prediction)
-Top-5 scorelines: 1-0 12.4%, 2-0 11.9%, 1-1 11.3%, 2-1 9.7%, 0-0 7.8% (cumulative 53.1%)
+Win Mexico: 59.5% | Draw: 24.7% | Win South Korea: 15.7%
+Most likely single score: 1-0 (13.5%) (one of many possible, not a prediction)
+Top-5 scorelines: 1-0 13.5%, 2-0 12.5%, 1-1 11.4%, 2-1 9.5%, 0-0 8.6% (cumulative 55.4%)
 Expected score: 2-1
-Over 2.5: 48.9% | Under 2.5: 51.1% | BTTS yes: 47.2% | BTTS no: 52.8%
-Top scorers: Raúl Jiménez 50.6%; Orbelín Pineda 15.8%; Alexis Vega 11.0%; Son Heung-min 32.0%; Hwang Hee-chan 8.7%; Lee Jae-sung 7.8%;
+Over 2.5: 46.4% | Under 2.5: 53.6% | BTTS yes: 44.8% | BTTS no: 55.2%
+Top scorers: Raúl Jiménez 49.8%; Orbelín Pineda 15.4%; Alexis Vega 10.7%; Son Heung-min 30.7%; Hwang Hee-chan 8.2%; Lee Jae-sung 7.3%;
 Data as of 2026-06-14 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

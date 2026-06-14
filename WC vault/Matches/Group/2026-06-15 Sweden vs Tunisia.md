@@ -13,12 +13,12 @@ updated: 2026-06-14
 <!-- WC26:AUTO:forecast START -->
 **Group F match** · 2026-06-15
 
-Win Sweden: 47.9% | Draw: 28.3% | Win Tunisia: 23.8%
-Most likely single score: 1-0 (12.0%) (one of many possible, not a prediction)
-Top-5 scorelines: 1-1 13.8%, 1-0 12.0%, 0-0 10.6%, 0-1 9.2%, 2-1 8.5% (cumulative 54.1%)
+Win Sweden: 47.8% | Draw: 28.6% | Win Tunisia: 23.7%
+Most likely single score: 1-0 (12.8%) (one of many possible, not a prediction)
+Top-5 scorelines: 1-1 14.0%, 1-0 12.8%, 0-0 11.7%, 0-1 9.7%, 2-0 8.5% (cumulative 56.7%)
 Expected score: 1-1
-Over 2.5: 41.0% | Under 2.5: 59.0% | BTTS yes: 47.3% | BTTS no: 52.7%
-Top scorers: Alexander Isak 32.4%; Viktor Gyökeres 29.5%; Anthony Elanga 11.6%; Firas Chaouat 12.3%; Ali Abdi 11.6%; Elias Achouri 9.2%;
+Over 2.5: 38.2% | Under 2.5: 61.8% | BTTS yes: 45.0% | BTTS no: 55.0%
+Top scorers: Alexander Isak 31.6%; Viktor Gyökeres 28.5%; Anthony Elanga 11.2%; Firas Chaouat 11.7%; Ali Abdi 11.0%; Elias Achouri 8.8%;
 Data as of 2026-06-14 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

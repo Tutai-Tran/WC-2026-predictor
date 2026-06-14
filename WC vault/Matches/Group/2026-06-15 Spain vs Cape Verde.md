@@ -13,12 +13,12 @@ updated: 2026-06-14
 <!-- WC26:AUTO:forecast START -->
 **Group H match** · 2026-06-15
 
-Win Spain: 87.8% | Draw: 9.0% | Win Cape Verde: 3.1%
-Most likely single score: 2-0 (15.9%) (one of many possible, not a prediction)
-Top-5 scorelines: 2-0 15.9%, 3-0 14.1%, 1-0 11.7%, 4-0 9.3%, 2-1 7.1% (cumulative 58.0%)
+Win Spain: 88.0% | Draw: 9.0% | Win Cape Verde: 3.0%
+Most likely single score: 2-0 (17.0%) (one of many possible, not a prediction)
+Top-5 scorelines: 2-0 17.0%, 3-0 14.7%, 1-0 12.7%, 4-0 9.6%, 2-1 6.7% (cumulative 60.6%)
 Expected score: 3-0
-Over 2.5: 59.8% | Under 2.5: 40.2% | BTTS yes: 33.7% | BTTS no: 66.3%
-Top scorers: Mikel Oyarzabal 44.9%; Ferran Torres 38.5%; Dani Olmo 23.6%; Ryan Mendes 11.4%; Garry Rodrigues 4.9%; Dailon Livramento 4.3%;
+Over 2.5: 57.6% | Under 2.5: 42.4% | BTTS yes: 30.3% | BTTS no: 69.7%
+Top scorers: Mikel Oyarzabal 44.4%; Ferran Torres 38.0%; Dani Olmo 23.3%; Ryan Mendes 10.2%; Garry Rodrigues 4.3%; Dailon Livramento 3.8%;
 Data as of 2026-06-14 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

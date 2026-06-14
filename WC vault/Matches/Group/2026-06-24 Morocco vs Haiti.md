@@ -13,12 +13,12 @@ updated: 2026-06-14
 <!-- WC26:AUTO:forecast START -->
 **Group C match** · 2026-06-24
 
-Win Morocco: 66.8% | Draw: 21.1% | Win Haiti: 12.1%
-Most likely single score: 2-0 (13.0%) (one of many possible, not a prediction)
-Top-5 scorelines: 2-0 13.0%, 1-0 12.1%, 1-1 9.9%, 2-1 9.5%, 3-0 8.8% (cumulative 53.4%)
+Win Morocco: 67.1% | Draw: 21.4% | Win Haiti: 11.5%
+Most likely single score: 2-0 (13.7%) (one of many possible, not a prediction)
+Top-5 scorelines: 2-0 13.7%, 1-0 13.2%, 1-1 9.9%, 2-1 9.3%, 3-0 9.1% (cumulative 55.2%)
 Expected score: 2-1
-Over 2.5: 52.6% | Under 2.5: 47.4% | BTTS yes: 45.9% | BTTS no: 54.1%
-Top scorers: Ayoub El Kaabi 48.3%; Achraf Hakimi 24.5%; Brahim Díaz 22.1%; Duckens Nazon 22.0%; Frantzdy Pierrot 17.6%; Louicius Deedson 6.1%;
+Over 2.5: 50.1% | Under 2.5: 49.9% | BTTS yes: 43.3% | BTTS no: 56.7%
+Top scorers: Ayoub El Kaabi 47.4%; Achraf Hakimi 24.1%; Brahim Díaz 21.6%; Duckens Nazon 20.6%; Frantzdy Pierrot 16.5%; Louicius Deedson 5.7%;
 Data as of 2026-06-14 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

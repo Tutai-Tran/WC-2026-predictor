@@ -13,12 +13,12 @@ updated: 2026-06-14
 <!-- WC26:AUTO:forecast START -->
 **Group F match** · 2026-06-25
 
-Win Tunisia: 14.3% | Draw: 23.9% | Win Netherlands: 61.7%
-Most likely single score: 0-1 (13.7%) (one of many possible, not a prediction)
-Top-5 scorelines: 0-1 13.7%, 0-2 12.9%, 1-1 11.1%, 1-2 9.4%, 0-0 8.6% (cumulative 55.8%)
+Win Tunisia: 13.6% | Draw: 24.3% | Win Netherlands: 62.1%
+Most likely single score: 0-1 (14.8%) (one of many possible, not a prediction)
+Top-5 scorelines: 0-1 14.8%, 0-2 13.5%, 1-1 11.1%, 0-0 9.4%, 1-2 9.2% (cumulative 57.9%)
 Expected score: 1-2
-Over 2.5: 46.3% | Under 2.5: 53.7% | BTTS yes: 43.8% | BTTS no: 56.2%
-Top scorers: Firas Chaouat 9.0%; Ali Abdi 8.5%; Elias Achouri 6.7%; Memphis Depay 49.8%; Cody Gakpo 19.6%; Wout Weghorst 15.2%;
+Over 2.5: 43.9% | Under 2.5: 56.1% | BTTS yes: 41.4% | BTTS no: 58.6%
+Top scorers: Firas Chaouat 8.4%; Ali Abdi 7.9%; Elias Achouri 6.3%; Memphis Depay 49.0%; Cody Gakpo 19.2%; Wout Weghorst 14.9%;
 Data as of 2026-06-14 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

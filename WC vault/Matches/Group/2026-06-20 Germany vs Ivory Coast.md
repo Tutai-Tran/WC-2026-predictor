@@ -13,12 +13,12 @@ updated: 2026-06-14
 <!-- WC26:AUTO:forecast START -->
 **Group E match** · 2026-06-20
 
-Win Germany: 58.6% | Draw: 24.3% | Win Ivory Coast: 17.1%
-Most likely single score: 1-0 (12.0%) (one of many possible, not a prediction)
-Top-5 scorelines: 1-0 12.0%, 1-1 11.5%, 2-0 11.4%, 2-1 9.7%, 0-0 7.6% (cumulative 52.2%)
+Win Germany: 58.7% | Draw: 24.8% | Win Ivory Coast: 16.5%
+Most likely single score: 1-0 (13.0%) (one of many possible, not a prediction)
+Top-5 scorelines: 1-0 13.0%, 2-0 11.9%, 1-1 11.6%, 2-1 9.6%, 0-0 8.4% (cumulative 54.5%)
 Expected score: 2-1
-Over 2.5: 49.6% | Under 2.5: 50.4% | BTTS yes: 48.7% | BTTS no: 51.3%
-Top scorers: Kai Havertz 35.3%; Leroy Sané 22.5%; Leon Goretzka 21.3%; Franck Kessié 12.3%; Nicolas Pépé 10.8%; Ibrahim Sangaré 10.1%;
+Over 2.5: 47.0% | Under 2.5: 53.0% | BTTS yes: 46.3% | BTTS no: 53.7%
+Top scorers: Kai Havertz 34.6%; Leroy Sané 21.9%; Leon Goretzka 20.8%; Franck Kessié 11.6%; Nicolas Pépé 10.2%; Ibrahim Sangaré 9.5%;
 Data as of 2026-06-14 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
