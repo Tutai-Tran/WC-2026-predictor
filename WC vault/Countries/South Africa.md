@@ -13,9 +13,9 @@ updated: 2026-06-14
 
 # South Africa
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-14T19:14Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-14T22:16Z | source elo-goal-v1 -->
 Group A | FIFA rank 56 | Elo 1655
-Champion 0.0% | Final 0.0% | SF 0.0% | QF 0.5% | Advance 15.2%
+Champion 0.0% | Final 0.0% | SF 0.0% | QF 0.5% | Advance 15.3%
 Availability concerns: Sphephelo Sithole (suspended), Themba Zwane (suspended)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-14T19:14Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-14T22:16Z | source elo-goal-v1 -->
 - 2026-06-14: champion 0.0% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

@@ -5,7 +5,7 @@ fifa_code: "URU"
 group: "H"
 fifa_rank: 15
 elo: 1971
-champion_prob: 0.0079
+champion_prob: 0.0075
 status: active
 created: 2026-06-04
 updated: 2026-06-14
@@ -13,9 +13,9 @@ updated: 2026-06-14
 
 # Uruguay
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-14T19:14Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-14T22:16Z | source elo-goal-v1 -->
 Group H | FIFA rank 15 | Elo 1971
-Champion 0.8% | Final 2.5% | SF 6.5% | QF 15.8% | Advance 82.4%
+Champion 0.7% | Final 2.4% | SF 6.3% | QF 15.5% | Advance 82.6%
 Availability concerns: José Giménez (doubtful), Ronald Araújo (doubtful), Giorgian de Arrascaeta (out), Matías Viña (doubtful), Sebastián Cáceres (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-14T19:14Z | source elo-goal-v1 -->
-- 2026-06-14: champion 0.8% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-14T22:16Z | source elo-goal-v1 -->
+- 2026-06-14: champion 0.7% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

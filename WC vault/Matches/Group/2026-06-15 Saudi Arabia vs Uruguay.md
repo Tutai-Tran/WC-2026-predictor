@@ -13,7 +13,7 @@ updated: 2026-06-14
 <!-- WC26:AUTO:forecast START -->
 **Group H match** · 2026-06-15
 
-Win Saudi Arabia: 12.7% | Draw: 22.8% | Win Uruguay: 64.5%
+Win Saudi Arabia: 13.0% | Draw: 23.1% | Win Uruguay: 63.9%
 Most likely single score: 0-1 (15.0%) (one of many possible, not a prediction)
 Top-5 scorelines: 0-1 15.0%, 0-2 13.0%, 1-1 11.6%, 0-0 10.1%, 1-2 9.1% (cumulative 58.8%)
 Expected score: 1-2

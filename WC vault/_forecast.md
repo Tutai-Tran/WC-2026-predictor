@@ -14,30 +14,30 @@ These are probabilities, not certainties.
 
 | Team | Win | Final | SF | QF | R16 |
 | --- | --- | --- | --- | --- | --- |
-| [[Countries/Spain\|Spain]] | 25.4% | 35.4% | 48.2% | 60.0% | 79.2% |
-| [[Countries/France\|France]] | 13.1% | 21.5% | 37.6% | 53.9% | 75.1% |
-| [[Countries/Argentina\|Argentina]] | 10.7% | 19.5% | 31.0% | 46.4% | 63.9% |
-| [[Countries/England\|England]] | 7.3% | 14.3% | 24.8% | 40.5% | 65.5% |
-| [[Countries/Colombia\|Colombia]] | 6.5% | 12.9% | 23.0% | 38.6% | 64.0% |
-| [[Countries/Portugal\|Portugal]] | 5.7% | 12.2% | 21.9% | 37.5% | 62.3% |
-| [[Countries/Germany\|Germany]] | 3.0% | 7.1% | 15.8% | 29.5% | 57.7% |
-| [[Countries/Brazil\|Brazil]] | 3.0% | 6.9% | 15.2% | 29.6% | 52.0% |
-| [[Countries/Mexico\|Mexico]] | 3.0% | 7.5% | 17.6% | 36.4% | 74.4% |
-| [[Countries/United States\|United States]] | 2.8% | 7.0% | 14.9% | 38.1% | 68.9% |
-| [[Countries/Netherlands\|Netherlands]] | 2.8% | 6.3% | 14.5% | 30.3% | 51.5% |
-| [[Countries/Japan\|Japan]] | 2.3% | 5.7% | 13.1% | 26.9% | 47.0% |
-| [[Countries/Morocco\|Morocco]] | 2.3% | 5.6% | 13.1% | 27.0% | 49.2% |
-| [[Countries/Norway\|Norway]] | 2.2% | 5.6% | 12.8% | 26.2% | 48.6% |
-| [[Countries/Australia\|Australia]] | 1.6% | 4.8% | 12.0% | 31.4% | 62.4% |
-| [[Countries/Ecuador\|Ecuador]] | 1.5% | 4.1% | 10.4% | 21.8% | 46.5% |
-| [[Countries/Switzerland\|Switzerland]] | 1.0% | 2.8% | 7.9% | 20.7% | 48.1% |
-| [[Countries/Uruguay\|Uruguay]] | 0.8% | 2.5% | 6.5% | 15.8% | 32.9% |
-| [[Countries/South Korea\|South Korea]] | 0.8% | 2.4% | 7.9% | 22.6% | 56.8% |
-| [[Countries/Belgium\|Belgium]] | 0.8% | 2.4% | 6.6% | 20.6% | 47.6% |
-| [[Countries/Croatia\|Croatia]] | 0.8% | 2.5% | 6.7% | 15.1% | 38.2% |
-| [[Countries/Iran\|Iran]] | 0.5% | 1.8% | 5.0% | 16.6% | 42.6% |
-| [[Countries/Canada\|Canada]] | 0.4% | 1.6% | 5.4% | 16.8% | 48.4% |
-| [[Countries/Senegal\|Senegal]] | 0.4% | 1.3% | 4.1% | 11.5% | 27.8% |
+| [[Countries/Spain\|Spain]] | 24.9% | 35.3% | 47.9% | 59.8% | 79.3% |
+| [[Countries/France\|France]] | 13.1% | 21.4% | 36.9% | 53.1% | 74.3% |
+| [[Countries/Argentina\|Argentina]] | 10.9% | 19.5% | 31.1% | 46.4% | 64.0% |
+| [[Countries/England\|England]] | 7.3% | 14.6% | 25.2% | 40.7% | 65.8% |
+| [[Countries/Colombia\|Colombia]] | 6.3% | 13.0% | 23.3% | 38.5% | 63.7% |
+| [[Countries/Portugal\|Portugal]] | 5.9% | 12.3% | 22.3% | 37.6% | 62.7% |
+| [[Countries/Germany\|Germany]] | 3.5% | 8.0% | 17.9% | 32.2% | 62.5% |
+| [[Countries/Brazil\|Brazil]] | 3.0% | 6.9% | 15.1% | 29.7% | 51.6% |
+| [[Countries/Mexico\|Mexico]] | 3.0% | 7.6% | 17.6% | 36.4% | 74.7% |
+| [[Countries/United States\|United States]] | 2.9% | 6.9% | 14.9% | 38.3% | 69.2% |
+| [[Countries/Netherlands\|Netherlands]] | 2.6% | 6.3% | 14.5% | 29.9% | 51.3% |
+| [[Countries/Japan\|Japan]] | 2.3% | 5.5% | 12.9% | 26.7% | 47.0% |
+| [[Countries/Morocco\|Morocco]] | 2.3% | 5.7% | 13.0% | 27.0% | 48.8% |
+| [[Countries/Norway\|Norway]] | 2.0% | 5.2% | 12.3% | 25.6% | 48.6% |
+| [[Countries/Australia\|Australia]] | 1.7% | 4.7% | 11.9% | 31.6% | 62.5% |
+| [[Countries/Ecuador\|Ecuador]] | 1.6% | 4.2% | 10.3% | 21.9% | 45.9% |
+| [[Countries/Switzerland\|Switzerland]] | 0.9% | 2.9% | 8.1% | 20.8% | 48.1% |
+| [[Countries/Croatia\|Croatia]] | 0.8% | 2.5% | 6.6% | 15.1% | 38.0% |
+| [[Countries/Uruguay\|Uruguay]] | 0.7% | 2.4% | 6.3% | 15.5% | 32.8% |
+| [[Countries/Belgium\|Belgium]] | 0.7% | 2.4% | 6.8% | 21.1% | 47.7% |
+| [[Countries/South Korea\|South Korea]] | 0.7% | 2.4% | 7.7% | 22.4% | 56.9% |
+| [[Countries/Canada\|Canada]] | 0.4% | 1.5% | 5.3% | 16.8% | 48.2% |
+| [[Countries/Iran\|Iran]] | 0.4% | 1.3% | 4.3% | 14.6% | 39.2% |
+| [[Countries/Senegal\|Senegal]] | 0.4% | 1.3% | 3.9% | 11.5% | 27.8% |
 
 ## Most likely scorers (expected group-stage goals)
 
@@ -53,7 +53,7 @@ These are probabilities, not certainties.
 - Memphis Depay (Netherlands): 1.67
 - Romelu Lukaku (Belgium): 1.62
 - Son Heung-min (South Korea): 1.52
-- Mehdi Taremi (Iran): 1.51
 - Jonathan David (Canada): 1.46
 - Ayoub El Kaabi (Morocco): 1.44
+- Mikel Oyarzabal (Spain): 1.41
 <!-- WC26:AUTO:dashboard END -->
