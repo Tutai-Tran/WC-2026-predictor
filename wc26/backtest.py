@@ -205,6 +205,56 @@ def bootstrap_log_loss_ci(feats, params, n_boot=400, seed=12345):
 
 
 _T_MIN, _T_MAX = 0.8, 2.0
+# matchup-conditional de-sharpen (item A): t_elite is bounded so a small/pathological
+# sub-fold cannot run the elite cooling away. 0 is a no-op; positive de-sharpens.
+_TE_MIN, _TE_MAX = 0.0, 1.5
+
+
+def _eff_temp_vec(feats, params, home_adv_elo: float,
+                  temperature: float, t_elite: float) -> np.ndarray:
+    """Per-match effective temperature T_eff = temperature + t_elite*g(matchup).
+
+    Vectorised mirror of `model.effective_temperature`: g rises only for elite-vs-elite
+    CLOSE games (both Elo high, |supremacy| small) and is ~0 elsewhere, so T_eff equals
+    the global temperature for every ordinary match."""
+    n = len(feats["outcome"])
+    if t_elite == 0.0:
+        return np.full(n, temperature)
+    eff = feats["elo_h"] + np.where(feats["neutral"], 0.0, home_adv_elo) - feats["elo_a"]
+    sup = eff / params[0]                              # supremacy in goal units (eff/c)
+    min_elo = np.minimum(feats["elo_h"], feats["elo_a"])
+    elite = 1.0 / (1.0 + np.exp(-(min_elo - model_mod._ELITE_ELO_MID) / model_mod._ELITE_ELO_WIDTH))
+    close = 1.0 / (1.0 + np.exp(-(model_mod._ELITE_SUP_MID - np.abs(sup)) / model_mod._ELITE_SUP_WIDTH))
+    return temperature + t_elite * (elite * close)
+
+
+def _eff_temp_log_loss(feats, params, home_adv_elo: float,
+                       temperature: float, t_elite: float) -> float:
+    """Log-loss after applying the per-match matchup-conditional temperature T_eff."""
+    p = _probs_for(feats, params)
+    t = _eff_temp_vec(feats, params, home_adv_elo, temperature, t_elite)[:, None]
+    pc = np.power(np.clip(p, 1e-12, 1.0), 1.0 / t)
+    pc /= pc.sum(axis=1, keepdims=True)
+    a = pc[np.arange(len(pc)), feats["outcome"]]
+    return float(-np.mean(np.log(np.clip(a, 1e-12, 1.0))))
+
+
+def fit_t_elite(feats, params, home_adv_elo: float, temperature: float):
+    """Fit the elite-vs-elite de-sharpen height `t_elite` on `feats` (a held-out sub-fold).
+
+    Holds the global `temperature` fixed and adds matchup-conditional de-sharpening that is
+    non-zero ONLY for elite-vs-elite close games. Minimises log-loss over the WHOLE sub-fold
+    (so it cannot help itself by hurting non-elite matches: g~0 there leaves them at the base
+    temperature). Bounded to [0, 1.5]. Must be fit on data the params were NOT fit on, and
+    scored on a further held-out sub-fold (the gate), so the elite-gap reduction is genuine."""
+    from scipy.optimize import minimize_scalar
+
+    def obj(t_elite: float) -> float:
+        t_elite = min(_TE_MAX, max(_TE_MIN, t_elite))
+        return _eff_temp_log_loss(feats, params, home_adv_elo, temperature, t_elite)
+
+    res = minimize_scalar(obj, bounds=(_TE_MIN, _TE_MAX), method="bounded")
+    return float(min(_TE_MAX, max(_TE_MIN, res.x)))
 
 
 def fit_temperature(feats, params):
@@ -229,21 +279,24 @@ def fit_temperature(feats, params):
 
 
 def elite_overconfidence_gap(feats, params, home_adv_elo: float,
-                             temperature: float = 1.0, elo_floor: float = 2000.0):
+                             temperature: float = 1.0, elo_floor: float = 2000.0,
+                             t_elite: float = 0.0):
     """Favourite-win overconfidence gap on the elite-vs-elite slice (both Elo>floor).
 
     Gap = mean P(favourite wins) - observed favourite-win frequency. A results-only
     Elo over-rates hot elite favourites, so this is positive (overconfident) on the
     deep-knockout class the user watches; temperature>1 should shrink it toward 0.
-    Returns (gap, n) or (nan, 0) when the slice is empty."""
+    A non-zero `t_elite` adds the matchup-conditional de-sharpen (item A), which targets
+    exactly this slice. Returns (gap, n) or (nan, 0) when the slice is empty."""
     mask = (feats["elo_h"] > elo_floor) & (feats["elo_a"] > elo_floor)
     n = int(mask.sum())
     if n == 0:
         return float("nan"), 0
     sub = _subset(feats, mask)
     pr = _probs_for(sub, params)
-    if temperature != 1.0:
-        pr = np.power(np.clip(pr, 1e-12, 1.0), 1.0 / temperature)
+    t = _eff_temp_vec(sub, params, home_adv_elo, temperature, t_elite)
+    if not np.allclose(t, 1.0):
+        pr = np.power(np.clip(pr, 1e-12, 1.0), 1.0 / t[:, None])
         pr /= pr.sum(axis=1, keepdims=True)
     eff = sub["elo_h"] + np.where(sub["neutral"], 0.0, home_adv_elo) - sub["elo_a"]
     home_fav = eff >= 0
@@ -410,6 +463,20 @@ def run(write: bool = True, train_until: int = 2021, decay_half_life: float | No
     val_temp = _subset(test, test["is_major"])
     temperature = round(fit_temperature(val_temp, p), 3) if len(val_temp["outcome"]) else 1.0
 
+    # item A: supremacy-conditional de-sharpen. A single global temperature cannot reach
+    # the elite-vs-elite favourite overconfidence, so fit an EXTRA height `t_elite` that is
+    # added only for elite-vs-elite close games (T_eff = temperature + t_elite*g). To make
+    # the gate genuinely out-of-sample (the in-sample-gate weakness flagged in batch 1), the
+    # is_major fold is split temporally: t_elite is FIT on the earlier sub-fold and the elite
+    # gap is SCORED on the later, held-out sub-fold. Both are disjoint from `train`.
+    te_split_year = int(np.median(np.unique(val_temp["year"]))) if len(val_temp["outcome"]) else 0
+    te_fit = _subset(val_temp, val_temp["year"] < te_split_year)
+    te_score = _subset(val_temp, val_temp["year"] >= te_split_year)
+    if not len(te_fit["outcome"]) or not len(te_score["outcome"]):
+        te_fit = te_score = val_temp   # degenerate split: fall back to the whole fold
+    t_elite = (round(fit_t_elite(te_fit, p, home_adv_elo, temperature), 3)
+               if len(te_fit["outcome"]) else 0.0)
+
     ci_lo, ci_hi = bootstrap_log_loss_ci(test, p)
     slope, nbins = reliability_slope(test, p)
     tourn = _subset(test, test["is_major"])
@@ -438,8 +505,18 @@ def run(write: bool = True, train_until: int = 2021, decay_half_life: float | No
     # favourite-win overconfidence gap before/after de-sharpening.
     ll_fold = log_loss(val_temp, p) if len(val_temp["outcome"]) else None
     ll_fold_cal = _temp_log_loss(val_temp, p, temperature) if len(val_temp["outcome"]) else None
+    # full-test elite gap (continuity with the batch-1 report): raw -> global-temperature ->
+    # +supremacy-conditional t_elite. The headline item-A gate is the HELD-OUT sub-fold below.
     elite_gap_raw, elite_n = elite_overconfidence_gap(test, p, home_adv_elo)
     elite_gap_cal, _ = elite_overconfidence_gap(test, p, home_adv_elo, temperature)
+    elite_gap_te, _ = elite_overconfidence_gap(test, p, home_adv_elo, temperature,
+                                               t_elite=t_elite)
+    # item A gate: elite gap on the genuinely held-out SCORE sub-fold (disjoint from the
+    # FIT sub-fold t_elite was fit on), global-temperature baseline vs +t_elite.
+    elite_gap_score_base, elite_score_n = elite_overconfidence_gap(
+        te_score, p, home_adv_elo, temperature)
+    elite_gap_score_te, _ = elite_overconfidence_gap(
+        te_score, p, home_adv_elo, temperature, t_elite=t_elite)
 
     # preserve a previously-set friendly-only rho (a validated segment calibration the global
     # fit doesn't re-derive) so a manual re-fit never silently reverts the friendly draw fix
@@ -447,7 +524,7 @@ def run(write: bool = True, train_until: int = 2021, decay_half_life: float | No
         if (config.DATA_RAW / "fitted_params.json").exists() else {}
     report = {
         "fitted": {**asdict(params), "home_adv_elo": round(home_adv_elo, 1),
-                   "temperature": temperature, "goal_scale": goal_scale,
+                   "temperature": temperature, "t_elite": t_elite, "goal_scale": goal_scale,
                    "rho_friendly": _prev.get("rho_friendly", asdict(params).get("rho_friendly", -0.06))},
         "decay_half_life": decay_half_life,
         "home_adv_majors": home_adv_majors(train, params, home_adv_elo),
@@ -455,7 +532,11 @@ def run(write: bool = True, train_until: int = 2021, decay_half_life: float | No
                   "brier": round(brier(train, p), 4), "rps": round(rps(train, p), 4)},
         "test": {"n": int(len(test["outcome"])), "log_loss": round(log_loss(test, p), 4),
                  "log_loss_ci95": [ci_lo, ci_hi],
-                 "log_loss_calibrated": round(_temp_log_loss(test, p, temperature), 4),
+                 # calibrated log-loss uses the SHIPPED matchup-conditional temperature
+                 # (global temperature for ordinary matches, +t_elite for elite-vs-elite),
+                 # so this is the real guardrail on the published behaviour
+                 "log_loss_calibrated": round(
+                     _eff_temp_log_loss(test, p, home_adv_elo, temperature, t_elite), 4),
                  "brier": round(brier(test, p), 4), "rps": round(rps(test, p), 4)},
         "tournament_only": {"n": int(len(tourn["outcome"])),
                             "log_loss": round(log_loss(tourn, p), 4) if len(tourn["outcome"]) else None,
@@ -474,10 +555,20 @@ def run(write: bool = True, train_until: int = 2021, decay_half_life: float | No
             "fold_log_loss_improvement": round(ll_fold - ll_fold_cal, 5)
             if ll_fold is not None else None,
             "temperature_desharpens": bool(temperature > 1.0),
-            # elite-vs-elite (both Elo>2000) favourite-win overconfidence gap, in pp
+            # supremacy-conditional de-sharpen height (item A); 0 = global-temperature only
+            "t_elite": t_elite,
+            # elite-vs-elite (both Elo>2000) favourite-win overconfidence gap, in pp, on the
+            # FULL test slice: raw -> global temperature -> +supremacy-conditional t_elite
             "elite_n": elite_n,
             "elite_fav_gap_pp": round(elite_gap_raw * 100, 2),
             "elite_fav_gap_pp_calibrated": round(elite_gap_cal * 100, 2),
+            "elite_fav_gap_pp_supremacy_cond": round(elite_gap_te * 100, 2),
+            # item A gate: the elite gap on the GENUINELY HELD-OUT score sub-fold (disjoint
+            # from the fit sub-fold t_elite was fit on) must drop under the supremacy-conditional
+            # de-sharpen vs the global-temperature baseline
+            "elite_holdout_n": elite_score_n,
+            "elite_holdout_gap_pp_temperature": round(elite_gap_score_base * 100, 2),
+            "elite_holdout_gap_pp_supremacy_cond": round(elite_gap_score_te * 100, 2),
         },
         "totals": {"n": int(len(test["outcome"])),
                    "mean_pred_total": round(pred_tot, 4),

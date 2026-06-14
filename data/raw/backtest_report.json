@@ -9,6 +9,7 @@
     "goal_scale": 1.0,
     "gamma": 0.456,
     "temperature": 1.021,
+    "t_elite": 1.5,
     "home_adv_elo": 115.3
   },
   "decay_half_life": 10.0,
@@ -29,7 +30,7 @@
       0.843,
       0.8767
     ],
-    "log_loss_calibrated": 0.86,
+    "log_loss_calibrated": 0.8597,
     "brier": 0.5049,
     "rps": 0.1672
   },
@@ -55,9 +56,14 @@
     "fold_log_loss_calibrated": 0.9332,
     "fold_log_loss_improvement": 6e-05,
     "temperature_desharpens": true,
+    "t_elite": 1.5,
     "elite_n": 82,
     "elite_fav_gap_pp": 6.4,
-    "elite_fav_gap_pp_calibrated": 6.11
+    "elite_fav_gap_pp_calibrated": 6.11,
+    "elite_fav_gap_pp_supremacy_cond": 1.91,
+    "elite_holdout_n": 26,
+    "elite_holdout_gap_pp_temperature": 3.67,
+    "elite_holdout_gap_pp_supremacy_cond": -0.21
   },
   "totals": {
     "n": 5584,

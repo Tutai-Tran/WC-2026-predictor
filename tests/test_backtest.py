@@ -179,6 +179,94 @@ def test_run_temperature_is_out_of_sample_and_desharpens():
     assert report["test"]["log_loss_calibrated"] <= 0.8597 + 0.004
 
 
+def test_eff_temp_vec_only_touches_elite_close_matches():
+    """T_eff equals the global temperature for ordinary matches and exceeds it only for
+    elite-vs-elite close games (item A: the vectorised mirror of model.effective_temperature)."""
+    feats = {
+        "elo_h": np.array([2080.0, 1700.0, 2080.0]),
+        "elo_a": np.array([2030.0, 1600.0, 1500.0]),
+        "neutral": np.array([True, True, True]),
+        "outcome": np.array([0, 0, 0]),
+    }
+    params = (200.0, 2.5, 0.0, -0.06, 0.0)
+    t = backtest._eff_temp_vec(feats, params, 0.0, temperature=1.02, t_elite=1.5)
+    assert t[0] > 1.02 + 0.3          # elite-vs-elite close -> meaningfully de-sharpened
+    assert abs(t[1] - 1.02) < 1e-3    # ordinary match -> base temperature
+    assert abs(t[2] - 1.02) < 1e-2    # elite but a big gap -> ~base (gate ~0)
+    # t_elite=0 is an exact no-op
+    t0 = backtest._eff_temp_vec(feats, params, 0.0, temperature=1.02, t_elite=0.0)
+    assert np.allclose(t0, 1.02)
+
+
+def test_fit_t_elite_desharpens_elite_and_is_bounded():
+    """On an overconfident elite-vs-elite fold the fitted t_elite is positive (extra
+    de-sharpening) and stays within [0, 1.5]; it shrinks the elite overconfidence gap."""
+    feats = _overconfident_feats(seed=21)
+    # push both Elos above the 2000 floor so the matches are elite-vs-elite and close
+    feats = {**feats, "elo_h": feats["elo_h"] + 230, "elo_a": feats["elo_a"] + 230}
+    params = (200.0, 2.5, 0.0, -0.06, 0.0)
+    te = backtest.fit_t_elite(feats, params, 0.0, temperature=1.0)
+    assert backtest._TE_MIN <= te <= backtest._TE_MAX
+    assert te > 0.0                                  # de-sharpening direction
+    gap0, n = backtest.elite_overconfidence_gap(feats, params, 0.0, 1.0)
+    gap_te, _ = backtest.elite_overconfidence_gap(feats, params, 0.0, 1.0, t_elite=te)
+    assert n > 0
+    assert abs(gap_te) < abs(gap0)                   # gap shrinks toward zero
+
+
+def test_t_elite_leaves_strictly_non_elite_matches_untouched():
+    """The matchup-conditional de-sharpen is provably a no-op on strictly non-elite
+    matches (min Elo well below the 2000 floor): T_eff == base temperature there, so the
+    bulk calibration cannot move no matter how large t_elite is fit (item A invariant)."""
+    feats = _overconfident_feats(seed=22)
+    # keep only the strictly non-elite matches (min Elo < 1800, i.e. >= 5 logistic widths
+    # below the 2000 floor: the elite gate is numerically ~0 there)
+    keep = np.minimum(feats["elo_h"], feats["elo_a"]) < 1800.0
+    sub = backtest._subset(feats, keep)
+    assert len(sub["outcome"]) > 100                 # a meaningful non-elite population
+    params = (200.0, 2.5, 0.0, -0.06, 0.0)
+    t_base = backtest._eff_temp_vec(sub, params, 0.0, temperature=1.02, t_elite=0.0)
+    t_big = backtest._eff_temp_vec(sub, params, 0.0, temperature=1.02, t_elite=1.5)
+    assert np.allclose(t_base, t_big, atol=1e-2)     # base temperature everywhere
+    # and the non-elite log-loss is unchanged by the largest in-bound t_elite
+    ll0 = backtest._eff_temp_log_loss(sub, params, 0.0, 1.02, 0.0)
+    ll1 = backtest._eff_temp_log_loss(sub, params, 0.0, 1.02, 1.5)
+    assert abs(ll1 - ll0) < 1e-3
+
+
+def test_run_supremacy_conditional_desharpen_gate():
+    """item A gate, on the genuinely held-out is_major SCORE sub-fold: the elite-vs-elite
+    favourite overconfidence gap drops under the supremacy-conditional de-sharpen, the
+    full-test gap falls toward <= 3pp, and the overall test log-loss does not regress."""
+    report = backtest.run(write=False)
+    cal = report["calibration"]
+    # t_elite is fitted, positive, and recorded in the fitted params
+    assert cal["t_elite"] > 0.0
+    assert report["fitted"]["t_elite"] == cal["t_elite"]
+    assert backtest._TE_MIN <= cal["t_elite"] <= backtest._TE_MAX
+    # full-test elite gap drops toward the <= 3pp target under the conditional de-sharpen
+    assert cal["elite_fav_gap_pp_supremacy_cond"] < cal["elite_fav_gap_pp_calibrated"]
+    assert cal["elite_fav_gap_pp_supremacy_cond"] <= 3.0
+    # GENUINELY HELD-OUT gate: on the score sub-fold (disjoint from the fit sub-fold), the
+    # gap is smaller under t_elite than under the global temperature alone
+    assert cal["elite_holdout_n"] > 0
+    assert (abs(cal["elite_holdout_gap_pp_supremacy_cond"])
+            < abs(cal["elite_holdout_gap_pp_temperature"]))
+    # GUARDRAIL: overall test log-loss (raw and as-shipped/calibrated) must not regress
+    # past the frozen baseline + 0.004
+    assert report["test"]["log_loss"] <= 0.8599 + 0.004
+    assert report["test"]["log_loss_calibrated"] <= 0.8599 + 0.004
+
+
+def test_run_t_elite_does_not_disturb_non_elite_calibration():
+    """The shipped matchup-conditional temperature changes the overall test log-loss only
+    negligibly vs the global temperature, because it touches only the small elite cluster."""
+    report = backtest.run(write=False)
+    # calibrated (T_eff) overall log-loss must be no worse than the uncalibrated within a
+    # tight band -> the elite-only de-sharpen does not harm the bulk non-elite population
+    assert report["test"]["log_loss_calibrated"] <= report["test"]["log_loss"] + 0.001
+
+
 def test_fit_clamps_params_on_degenerate_data():
     # all home wins 3-0 pushes the optimizer toward an out-of-bounds (even negative c)
     n = 60

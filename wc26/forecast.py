@@ -53,6 +53,9 @@ def load_fitted_params() -> model_mod.ModelParams | None:
         # un-leaked temperature (item 3): fit out-of-sample in the backtest and now
         # actually read here, so the de-sharpening reaches the published W/D/L probs
         temperature=d.get("temperature", 1.0),
+        # supremacy-conditional de-sharpen (item A): extra elite-vs-elite cooling on top
+        # of temperature, fit on a held-out sub-fold; 0.0 (a no-op) when absent
+        t_elite=d.get("t_elite", 0.0),
     )
 
 

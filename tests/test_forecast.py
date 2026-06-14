@@ -205,10 +205,11 @@ def test_wdl_unchanged_vs_recomputed_matrix(tmp_path):
             mult_a=t.mult(fx["home"]), mult_b=t.mult(fx["away"]),
             h2h_delta=t.h2h_delta(fx["home"], fx["away"]),
         )
-        # the published W/D/L is the temperature-scaled triple (item 3); the reporting
-        # change (top_scorelines/derived_markets, item 2) still cannot move it, which is
-        # what this gate proves -- so recompute through the SAME temperature
-        ph, pdw, pa = m.temper_wdl(*m.outcome_probs(f["matrix"]), t.params.temperature)
-        assert fx["p_home"] == round(ph, 3)
-        assert fx["p_draw"] == round(pdw, 3)
-        assert fx["p_away"] == round(pa, 3)
+        # the published W/D/L is the (matchup-conditionally) temperature-scaled triple from
+        # the SAME match_forecast call (item 3 global temperature + item A supremacy-conditional
+        # de-sharpen); the reporting change (top_scorelines/derived_markets, item 2) still
+        # cannot move it, which is what this gate proves. Comparing against f["p_*"] keeps the
+        # invariant robust to the conditional temperature without re-deriving its formula here.
+        assert fx["p_home"] == round(f["p_home"], 3)
+        assert fx["p_draw"] == round(f["p_draw"], 3)
+        assert fx["p_away"] == round(f["p_away"], 3)

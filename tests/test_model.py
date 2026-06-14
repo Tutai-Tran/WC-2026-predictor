@@ -213,3 +213,61 @@ def test_match_forecast_temperature_cools_favourite_not_scorelines():
     assert sharp["top_scorelines"] == cool["top_scorelines"]
     # the displayed winner is unchanged (argmax cannot flip)
     assert cool["p_home"] == max(cool["p_home"], cool["p_draw"], cool["p_away"])
+
+
+# ---------------- supremacy-conditional de-sharpen (item A) ----------------
+
+def test_elite_close_weight_high_only_for_elite_close_games():
+    # elite-vs-elite CLOSE: both Elo well above 2000, supremacy small -> g near 1
+    assert model.elite_close_weight(2050.0, 0.1) > 0.4
+    # ordinary CLOSE game (low Elo) -> g ~ 0 (non-elite untouched)
+    assert model.elite_close_weight(1700.0, 0.1) < 1e-3
+    # elite MISMATCH (large supremacy) -> g ~ 0 (cannot flip argmax anyway)
+    assert model.elite_close_weight(2050.0, 2.0) < 0.05
+    # monotone: closer game (smaller |sup|) gets a larger gate at fixed elite Elo
+    assert model.elite_close_weight(2050.0, 0.1) > model.elite_close_weight(2050.0, 0.6)
+    # monotone: more elite (higher min Elo) gets a larger gate at fixed supremacy
+    assert model.elite_close_weight(2080.0, 0.2) > model.elite_close_weight(2010.0, 0.2)
+
+
+def test_elite_close_weight_bounded_unit_interval():
+    for emin in (1400.0, 1800.0, 2000.0, 2300.0):
+        for sup in (0.0, 0.3, 1.0, 3.0):
+            g = model.elite_close_weight(emin, sup)
+            assert 0.0 <= g <= 1.0
+
+
+def test_effective_temperature_reduces_to_base_off_the_elite_cluster():
+    # t_elite=0 is an exact no-op everywhere
+    assert model.effective_temperature(2050.0, 0.1, 1.02, 0.0) == 1.02
+    # ordinary match: T_eff == base temperature (gate ~0)
+    t_ord = model.effective_temperature(1700.0, 0.2, 1.02, 1.5)
+    assert abs(t_ord - 1.02) < 1e-3
+    # elite-vs-elite close: T_eff is meaningfully ABOVE the base (extra de-sharpen)
+    t_elite = model.effective_temperature(2050.0, 0.1, 1.02, 1.5)
+    assert t_elite > 1.02 + 0.3
+
+
+def test_match_forecast_t_elite_cools_elite_close_not_ordinary():
+    # an elite-vs-elite CLOSE matchup: t_elite must cool the favourite further than the
+    # global temperature alone would
+    base = model.ModelParams(temperature=1.02, t_elite=0.0)
+    elite = model.ModelParams(temperature=1.02, t_elite=1.5)
+    sharp = model.match_forecast(2080.0, 2030.0, base)
+    cooled = model.match_forecast(2080.0, 2030.0, elite)
+    assert cooled["p_home"] < sharp["p_home"]            # favourite cooled
+    assert cooled["p_draw"] > sharp["p_draw"]            # draw mass picked up
+    # scorelines untouched (W/D/L-only calibration) and argmax cannot flip
+    assert (sharp["matrix"] == cooled["matrix"]).all()
+    assert cooled["p_home"] == max(cooled["p_home"], cooled["p_draw"], cooled["p_away"])
+
+
+def test_match_forecast_t_elite_leaves_ordinary_match_unchanged():
+    # a non-elite match must be byte-identical with or without t_elite (g~0 there)
+    base = model.ModelParams(temperature=1.02, t_elite=0.0)
+    elite = model.ModelParams(temperature=1.02, t_elite=1.5)
+    a = model.match_forecast(1720.0, 1600.0, base)
+    b = model.match_forecast(1720.0, 1600.0, elite)
+    assert abs(a["p_home"] - b["p_home"]) < 1e-4
+    assert abs(a["p_draw"] - b["p_draw"]) < 1e-4
+    assert abs(a["p_away"] - b["p_away"]) < 1e-4

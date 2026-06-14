@@ -8,5 +8,6 @@
   "goal_scale": 1.0,
   "gamma": 0.456,
   "temperature": 1.021,
+  "t_elite": 1.5,
   "home_adv_elo": 115.3
 }

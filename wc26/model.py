@@ -27,6 +27,11 @@ class ModelParams:
     gamma: float = 0.0        # extra total goals per unit |supremacy| (mismatches score more)
     temperature: float = 1.0  # post-hoc W/D/L calibration: p_k ∝ p_k**(1/T), T>1 de-sharpens
                               # overconfident favourites (fit out-of-sample in the backtest)
+    t_elite: float = 0.0      # extra de-sharpening added ON TOP of temperature for
+                              # elite-vs-elite close games: T_eff = temperature + t_elite*g
+                              # (g rises only when both teams are elite AND supremacy is small;
+                              # g~0 elsewhere, so non-elite calibration is unchanged). Fit
+                              # out-of-sample on a held-out sub-fold in the backtest (item A).
 
 
 def match_lambdas(
@@ -104,6 +109,46 @@ def temper_wdl(
     p = np.power(np.clip(p, 1e-12, 1.0), 1.0 / temperature)
     p /= p.sum()
     return float(p[0]), float(p[1]), float(p[2])
+
+
+# Structural geometry of the elite-vs-elite gate (NOT fitted: only the scalar height
+# `t_elite` is fitted). `g` is the product of two logistics: one that switches on when
+# BOTH teams are elite (min Elo above ~2000), one that switches on when the game is close
+# (|supremacy| small). It is ~0 for every ordinary match, so adding `t_elite*g` to the base
+# temperature leaves non-elite calibration untouched and de-sharpens ONLY the elite cluster.
+_ELITE_ELO_MID = 2000.0    # matches the elite-slice Elo floor used in the backtest gate
+_ELITE_ELO_WIDTH = 40.0
+_ELITE_SUP_MID = 0.5       # goal units: "close" = supremacy under ~0.5 goals
+_ELITE_SUP_WIDTH = 0.4
+
+
+def _sigmoid(x: float) -> float:
+    return 1.0 / (1.0 + np.exp(-x))
+
+
+def elite_close_weight(min_elo: float, supremacy: float) -> float:
+    """Gate g(matchup) in [0,1]: high for elite-vs-elite CLOSE games, ~0 otherwise.
+
+    g = sigmoid((min_elo - mid)/w_elo) * sigmoid((sup_mid - |supremacy|)/w_sup). It rises
+    only when both teams are elite (min_elo high) AND the supremacy is small, so the
+    matchup-conditional temperature T_eff = temperature + t_elite*g reduces to the global
+    temperature for every ordinary match (g~0) and never disturbs non-elite calibration."""
+    elite = _sigmoid((min_elo - _ELITE_ELO_MID) / _ELITE_ELO_WIDTH)
+    close = _sigmoid((_ELITE_SUP_MID - abs(supremacy)) / _ELITE_SUP_WIDTH)
+    return float(elite * close)
+
+
+def effective_temperature(min_elo: float, supremacy: float,
+                          temperature: float = 1.0, t_elite: float = 0.0) -> float:
+    """Matchup-conditional W/D/L temperature: T_eff = temperature + t_elite * g(matchup).
+
+    A single global scalar cannot reach the elite-vs-elite favourite overconfidence (the
+    gap a results-only Elo opens on the deep-knockout class). Adding `t_elite` weighted by
+    the elite-close gate de-sharpens that cluster specifically while leaving every other
+    match at the base temperature."""
+    if t_elite == 0.0:
+        return temperature
+    return temperature + t_elite * elite_close_weight(min_elo, supremacy)
 
 
 def top_scorelines(matrix: np.ndarray, n: int = 3) -> list[tuple[tuple[int, int], float]]:
@@ -207,12 +252,20 @@ def match_forecast(
     adjustment when key players are out). `h2h_delta` adds a head-to-head supremacy
     nudge (see `wc26.h2h`)."""
     la, lb = match_lambdas(elo_a, elo_b, params, home_adv_elo_a, home_adv_elo_b, h2h_delta)
+    # supremacy (goal units) and min Elo drive the matchup-conditional temperature; take
+    # them from the strength signal BEFORE the availability multipliers (mult_a/mult_b),
+    # which are not a strength signal, and from the raw Elos that define the elite slice.
+    supremacy = la - lb
     la *= mult_a
     lb *= mult_b
     matrix = scoreline_matrix(la, lb, params.max_goals, params.rho)
     # temperature de-sharpens the W/D/L triple AFTER the matrix (scorelines untouched),
-    # and BEFORE any downstream market blend (the intended calibration order)
-    p_home, p_draw, p_away = temper_wdl(*outcome_probs(matrix), params.temperature)
+    # and BEFORE any downstream market blend (the intended calibration order). T_eff adds
+    # supremacy-conditional de-sharpening for elite-vs-elite close games (item A); it equals
+    # the global temperature for every ordinary match, so non-elite calibration is unchanged.
+    t_eff = effective_temperature(min(elo_a, elo_b), supremacy,
+                                  params.temperature, params.t_elite)
+    p_home, p_draw, p_away = temper_wdl(*outcome_probs(matrix), t_eff)
     modal = outcome_label(p_home, p_draw, p_away)
     consistent, consistent_p = most_likely_scoreline(matrix, modal)
     return {
