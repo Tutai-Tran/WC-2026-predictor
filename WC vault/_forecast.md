@@ -14,30 +14,30 @@ These are probabilities, not certainties.
 
 | Team | Win | Final | SF | QF | R16 |
 | --- | --- | --- | --- | --- | --- |
-| [[Countries/Spain\|Spain]] | 23.7% | 33.6% | 46.5% | 58.4% | 78.4% |
-| [[Countries/France\|France]] | 13.2% | 21.6% | 37.2% | 53.3% | 74.5% |
-| [[Countries/Argentina\|Argentina]] | 10.9% | 19.7% | 31.3% | 46.8% | 64.8% |
-| [[Countries/England\|England]] | 7.2% | 14.2% | 24.9% | 40.4% | 65.5% |
-| [[Countries/Colombia\|Colombia]] | 6.6% | 13.2% | 23.3% | 38.8% | 63.6% |
-| [[Countries/Portugal\|Portugal]] | 6.0% | 12.4% | 22.6% | 37.9% | 62.8% |
-| [[Countries/Germany\|Germany]] | 3.2% | 7.1% | 16.0% | 29.4% | 57.6% |
-| [[Countries/Brazil\|Brazil]] | 3.2% | 7.2% | 15.5% | 30.0% | 52.2% |
-| [[Countries/Mexico\|Mexico]] | 3.0% | 7.7% | 17.8% | 36.7% | 75.0% |
-| [[Countries/United States\|United States]] | 2.9% | 7.0% | 15.0% | 37.7% | 67.7% |
-| [[Countries/Netherlands\|Netherlands]] | 2.8% | 6.4% | 14.6% | 30.2% | 51.7% |
-| [[Countries/Morocco\|Morocco]] | 2.4% | 5.8% | 13.1% | 27.3% | 49.4% |
-| [[Countries/Japan\|Japan]] | 2.4% | 5.7% | 13.1% | 27.3% | 47.4% |
-| [[Countries/Norway\|Norway]] | 2.2% | 5.7% | 12.9% | 25.7% | 48.2% |
-| [[Countries/Turkey\|Turkey]] | 1.6% | 4.4% | 10.5% | 25.9% | 50.2% |
-| [[Countries/Ecuador\|Ecuador]] | 1.5% | 4.0% | 10.1% | 21.4% | 46.3% |
-| [[Countries/Switzerland\|Switzerland]] | 1.0% | 2.8% | 7.9% | 20.6% | 47.4% |
-| [[Countries/Croatia\|Croatia]] | 0.9% | 2.6% | 6.9% | 15.3% | 38.1% |
-| [[Countries/South Korea\|South Korea]] | 0.8% | 2.6% | 8.0% | 22.8% | 57.4% |
-| [[Countries/Belgium\|Belgium]] | 0.8% | 2.5% | 6.8% | 20.4% | 46.5% |
-| [[Countries/Uruguay\|Uruguay]] | 0.6% | 2.1% | 5.8% | 14.4% | 31.3% |
-| [[Countries/Iran\|Iran]] | 0.5% | 1.6% | 5.0% | 16.0% | 41.0% |
-| [[Countries/Australia\|Australia]] | 0.5% | 1.6% | 4.6% | 13.6% | 32.7% |
-| [[Countries/Canada\|Canada]] | 0.4% | 1.6% | 5.1% | 16.7% | 47.8% |
+| [[Countries/Spain\|Spain]] | 23.9% | 33.9% | 46.9% | 58.7% | 78.6% |
+| [[Countries/France\|France]] | 13.5% | 22.1% | 37.9% | 54.0% | 75.3% |
+| [[Countries/Argentina\|Argentina]] | 11.1% | 20.2% | 31.5% | 47.2% | 64.4% |
+| [[Countries/England\|England]] | 7.5% | 14.7% | 25.4% | 41.1% | 65.7% |
+| [[Countries/Colombia\|Colombia]] | 6.5% | 12.9% | 23.2% | 38.8% | 63.8% |
+| [[Countries/Portugal\|Portugal]] | 6.1% | 12.6% | 22.6% | 37.8% | 62.7% |
+| [[Countries/Germany\|Germany]] | 3.1% | 7.1% | 16.1% | 29.7% | 57.9% |
+| [[Countries/Mexico\|Mexico]] | 3.1% | 7.6% | 17.7% | 37.0% | 75.2% |
+| [[Countries/Brazil\|Brazil]] | 3.1% | 7.0% | 15.4% | 30.1% | 52.5% |
+| [[Countries/United States\|United States]] | 2.9% | 7.0% | 15.4% | 39.2% | 69.0% |
+| [[Countries/Netherlands\|Netherlands]] | 2.7% | 6.2% | 14.9% | 30.8% | 52.0% |
+| [[Countries/Japan\|Japan]] | 2.5% | 5.8% | 13.3% | 27.5% | 47.7% |
+| [[Countries/Morocco\|Morocco]] | 2.3% | 5.7% | 13.0% | 26.9% | 49.0% |
+| [[Countries/Norway\|Norway]] | 2.2% | 5.5% | 12.9% | 26.5% | 49.3% |
+| [[Countries/Ecuador\|Ecuador]] | 1.3% | 3.6% | 9.2% | 20.2% | 44.8% |
+| [[Countries/Turkey\|Turkey]] | 1.0% | 3.0% | 7.8% | 20.8% | 43.7% |
+| [[Countries/Switzerland\|Switzerland]] | 1.0% | 2.9% | 7.9% | 20.4% | 47.9% |
+| [[Countries/Croatia\|Croatia]] | 0.8% | 2.7% | 6.9% | 15.4% | 37.8% |
+| [[Countries/Belgium\|Belgium]] | 0.8% | 2.6% | 6.8% | 20.6% | 46.6% |
+| [[Countries/South Korea\|South Korea]] | 0.8% | 2.5% | 8.1% | 22.3% | 57.0% |
+| [[Countries/Uruguay\|Uruguay]] | 0.7% | 2.2% | 5.9% | 14.7% | 31.4% |
+| [[Countries/Australia\|Australia]] | 0.5% | 1.7% | 4.8% | 13.9% | 33.8% |
+| [[Countries/Iran\|Iran]] | 0.5% | 1.8% | 5.2% | 16.8% | 42.3% |
+| [[Countries/Canada\|Canada]] | 0.4% | 1.6% | 5.2% | 16.6% | 47.6% |
 
 ## Most likely scorers (expected group-stage goals)
 
@@ -47,7 +47,7 @@ These are probabilities, not certainties.
 - Lionel Messi (Argentina): 2.54
 - Raúl Jiménez (Mexico): 2.18
 - Neymar (Brazil): 2.02
-- Enner Valencia (Ecuador): 2.0
+- Enner Valencia (Ecuador): 1.91
 - Edin Džeko (Bosnia and Herzegovina): 1.78
 - Erling Haaland (Norway): 1.77
 - Memphis Depay (Netherlands): 1.67
