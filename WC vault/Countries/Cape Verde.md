@@ -13,9 +13,9 @@ updated: 2026-06-14
 
 # Cape Verde
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-14T10:48Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-14T15:16Z | source elo-goal-v1 -->
 Group H | FIFA rank 67 | Elo 1709
-Champion 0.0% | Final 0.1% | SF 0.3% | QF 1.5% | Advance 37.1%
+Champion 0.0% | Final 0.0% | SF 0.2% | QF 1.6% | Advance 37.2%
 Availability concerns: Logan Costa (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-14T10:48Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-14T15:16Z | source elo-goal-v1 -->
 - 2026-06-14: champion 0.0% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
