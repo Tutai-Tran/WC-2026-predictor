@@ -13,7 +13,7 @@ updated: 2026-06-14
 
 # Mexico
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-14T01:03Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-14T01:05Z | source elo-goal-v1 -->
 Group A | FIFA rank 14 | Elo 2013
 Champion 3.1% | Final 7.8% | SF 18.0% | QF 37.1% | Advance 99.7%
 Availability concerns: Edson Álvarez (doubtful), Santiago Giménez (doubtful), Gilberto Mora (doubtful)
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-14T01:03Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-14T01:05Z | source elo-goal-v1 -->
 - 2026-06-14: champion 3.1% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

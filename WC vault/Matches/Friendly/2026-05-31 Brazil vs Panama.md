@@ -12,7 +12,7 @@ updated: 2026-06-14
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-05-31 · played 6-2
 
-Win Brazil: 62.2% | Draw: 24.3% | Win Panama: 13.5%
+Win Brazil: 62.1% | Draw: 24.3% | Win Panama: 13.6%
 Most likely single score: 2-0 (12.1%) (one of many possible, not a prediction)
 Top-5 scorelines: 2-0 12.1%, 1-1 11.5%, 1-0 10.9%, 2-1 9.7%, 3-0 7.9% (cumulative 52.1%)
 Expected score: 2-1

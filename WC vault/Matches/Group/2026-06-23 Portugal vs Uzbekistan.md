@@ -13,7 +13,7 @@ updated: 2026-06-14
 <!-- WC26:AUTO:forecast START -->
 **Group K match** · 2026-06-23
 
-Win Portugal: 63.8% | Draw: 22.4% | Win Uzbekistan: 13.8%
+Win Portugal: 63.7% | Draw: 22.4% | Win Uzbekistan: 13.9%
 Most likely single score: 2-0 (12.5%) (one of many possible, not a prediction)
 Top-5 scorelines: 2-0 12.4%, 1-0 12.2%, 1-1 10.5%, 2-1 9.7%, 3-0 8.1% (cumulative 52.9%)
 Expected score: 2-1

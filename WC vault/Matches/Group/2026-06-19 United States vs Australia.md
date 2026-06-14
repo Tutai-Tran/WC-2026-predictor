@@ -13,7 +13,7 @@ updated: 2026-06-14
 <!-- WC26:AUTO:forecast START -->
 **Group D match** · 2026-06-19
 
-Win United States: 48.1% | Draw: 27.7% | Win Australia: 24.2%
+Win United States: 47.1% | Draw: 28.1% | Win Australia: 24.8%
 Most likely single score: 1-0 (11.9%) (one of many possible, not a prediction)
 Top-5 scorelines: 1-1 13.1%, 1-0 11.9%, 2-0 9.4%, 0-0 9.2%, 2-1 9.2% (cumulative 52.8%)
 Expected score: 1-1

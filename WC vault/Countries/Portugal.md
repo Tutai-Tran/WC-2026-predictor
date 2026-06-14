@@ -13,7 +13,7 @@ updated: 2026-06-14
 
 # Portugal
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-14T01:03Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-14T01:05Z | source elo-goal-v1 -->
 Group K | FIFA rank 5 | Elo 2064
 Champion 6.3% | Final 12.9% | SF 22.9% | QF 37.8% | Advance 92.2%
 Availability: no concerns recorded
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-14T01:03Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-14T01:05Z | source elo-goal-v1 -->
 - 2026-06-14: champion 6.3% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

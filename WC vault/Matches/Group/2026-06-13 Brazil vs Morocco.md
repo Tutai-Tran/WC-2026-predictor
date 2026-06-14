@@ -13,7 +13,7 @@ updated: 2026-06-14
 <!-- WC26:AUTO:forecast START -->
 **Group C match** · 2026-06-13
 
-Win Brazil: 34.6% | Draw: 32.2% | Win Morocco: 33.3%
+Win Brazil: 34.1% | Draw: 32.6% | Win Morocco: 33.3%
 Most likely single score: 1-0 (12.6%) (one of many possible, not a prediction)
 Top-5 scorelines: 1-1 14.3%, 0-0 13.9%, 1-0 12.6%, 0-1 12.3%, 2-1 7.0% (cumulative 60.1%)
 Expected score: 1-1

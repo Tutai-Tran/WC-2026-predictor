@@ -13,7 +13,7 @@ updated: 2026-06-14
 <!-- WC26:AUTO:forecast START -->
 **Group K match** · 2026-06-18
 
-Win Uzbekistan: 13.5% | Draw: 22.1% | Win Colombia: 64.4%
+Win Uzbekistan: 13.5% | Draw: 22.2% | Win Colombia: 64.3%
 Most likely single score: 0-2 (12.6%) (one of many possible, not a prediction)
 Top-5 scorelines: 0-2 12.6%, 0-1 12.2%, 1-1 10.4%, 1-2 9.6%, 0-3 8.2% (cumulative 53.0%)
 Expected score: 1-2

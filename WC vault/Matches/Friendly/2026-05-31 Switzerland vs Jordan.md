@@ -12,7 +12,7 @@ updated: 2026-06-14
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-05-31 · played 4-1
 
-Win Switzerland: 53.3% | Draw: 27.8% | Win Jordan: 18.9%
+Win Switzerland: 53.2% | Draw: 27.9% | Win Jordan: 18.9%
 Most likely single score: 1-0 (10.9%) (one of many possible, not a prediction)
 Top-5 scorelines: 1-1 13.2%, 1-0 10.9%, 2-0 10.6%, 2-1 9.6%, 0-0 9.3% (cumulative 53.6%)
 Expected score: 2-1

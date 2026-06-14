@@ -13,7 +13,7 @@ updated: 2026-06-14
 
 # Japan
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-14T01:03Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-14T01:05Z | source elo-goal-v1 -->
 Group F | FIFA rank 19 | Elo 2014
 Champion 2.4% | Final 5.8% | SF 13.6% | QF 28.0% | Advance 90.9%
 Availability concerns: Wataru Endo (out), Yuito Suzuki (doubtful)
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-14T01:03Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-14T01:05Z | source elo-goal-v1 -->
 - 2026-06-14: champion 2.4% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

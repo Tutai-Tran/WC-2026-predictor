@@ -13,7 +13,7 @@ updated: 2026-06-14
 <!-- WC26:AUTO:forecast START -->
 **Group B match** · 2026-06-24
 
-Win Switzerland: 31.7% | Draw: 30.6% | Win Canada: 37.7%
+Win Switzerland: 31.8% | Draw: 30.8% | Win Canada: 37.4%
 Most likely single score: 0-1 (12.0%) (one of many possible, not a prediction)
 Top-5 scorelines: 1-1 14.2%, 0-1 12.0%, 0-0 11.8%, 1-0 10.7%, 1-2 7.8% (cumulative 56.4%)
 Expected score: 1-1

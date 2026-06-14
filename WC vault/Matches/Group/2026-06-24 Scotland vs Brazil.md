@@ -13,7 +13,7 @@ updated: 2026-06-14
 <!-- WC26:AUTO:forecast START -->
 **Group C match** · 2026-06-24
 
-Win Scotland: 18.8% | Draw: 28.3% | Win Brazil: 52.9%
+Win Scotland: 19.0% | Draw: 28.4% | Win Brazil: 52.6%
 Most likely single score: 0-1 (15.2%) (one of many possible, not a prediction)
 Top-5 scorelines: 0-1 15.2%, 1-1 12.7%, 0-2 11.7%, 0-0 11.6%, 1-2 8.8% (cumulative 60.1%)
 Expected score: 1-1

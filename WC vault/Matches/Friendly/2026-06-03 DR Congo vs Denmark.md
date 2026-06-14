@@ -12,7 +12,7 @@ updated: 2026-06-14
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-06-03 · played 0-0
 
-Win DR Congo: 17.9% | Draw: 27.3% | Win Denmark: 54.9%
+Win DR Congo: 17.9% | Draw: 27.3% | Win Denmark: 54.8%
 Most likely single score: 0-1 (10.9%) (one of many possible, not a prediction)
 Top-5 scorelines: 1-1 12.9%, 0-1 10.9%, 0-2 10.9%, 1-2 9.7%, 0-0 9.0% (cumulative 53.4%)
 Expected score: 1-2

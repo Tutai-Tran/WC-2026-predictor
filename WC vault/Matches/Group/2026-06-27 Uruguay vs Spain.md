@@ -13,7 +13,7 @@ updated: 2026-06-14
 <!-- WC26:AUTO:forecast START -->
 **Group H match** · 2026-06-27
 
-Win Uruguay: 10.8% | Draw: 22.4% | Win Spain: 66.8%
+Win Uruguay: 11.7% | Draw: 23.2% | Win Spain: 65.1%
 Most likely single score: 0-1 (15.3%) (one of many possible, not a prediction)
 Top-5 scorelines: 0-1 15.3%, 0-2 14.8%, 1-1 10.0%, 0-3 9.2%, 0-0 9.0% (cumulative 58.5%)
 Expected score: 1-2

@@ -13,7 +13,7 @@ updated: 2026-06-14
 <!-- WC26:AUTO:forecast START -->
 **Group D match** · 2026-06-20
 
-Win Turkey: 46.6% | Draw: 29.0% | Win Paraguay: 24.4%
+Win Turkey: 46.4% | Draw: 29.1% | Win Paraguay: 24.5%
 Most likely single score: 1-0 (13.1%) (one of many possible, not a prediction)
 Top-5 scorelines: 1-1 13.5%, 1-0 13.1%, 0-0 10.8%, 2-0 9.6%, 2-1 8.8% (cumulative 55.8%)
 Expected score: 1-1

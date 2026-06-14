@@ -13,7 +13,7 @@ updated: 2026-06-14
 <!-- WC26:AUTO:forecast START -->
 **Group F match** · 2026-06-14
 
-Win Netherlands: 42.1% | Draw: 28.8% | Win Japan: 29.1%
+Win Netherlands: 42.4% | Draw: 28.9% | Win Japan: 28.7%
 Most likely single score: 1-0 (11.8%) (one of many possible, not a prediction)
 Top-5 scorelines: 1-1 14.3%, 0-0 13.8%, 0-1 13.1%, 1-0 11.8%, 0-2 7.4% (cumulative 60.4%)
 Expected score: 1-1

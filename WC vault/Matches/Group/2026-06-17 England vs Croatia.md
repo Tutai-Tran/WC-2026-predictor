@@ -13,7 +13,7 @@ updated: 2026-06-14
 <!-- WC26:AUTO:forecast START -->
 **Group L match** · 2026-06-17
 
-Win England: 53.3% | Draw: 27.1% | Win Croatia: 19.6%
+Win England: 50.7% | Draw: 28.1% | Win Croatia: 21.2%
 Most likely single score: 1-0 (13.6%) (one of many possible, not a prediction)
 Top-5 scorelines: 1-0 13.6%, 1-1 12.6%, 2-0 11.1%, 0-0 9.9%, 2-1 9.2% (cumulative 56.5%)
 Expected score: 2-1

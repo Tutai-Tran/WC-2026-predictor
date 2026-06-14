@@ -13,7 +13,7 @@ updated: 2026-06-14
 <!-- WC26:AUTO:forecast START -->
 **Group D match** · 2026-06-13
 
-Win United States: 54.3% | Draw: 26.0% | Win Paraguay: 19.6%
+Win United States: 54.0% | Draw: 26.2% | Win Paraguay: 19.8%
 Most likely single score: 1-0 (12.4%) (one of many possible, not a prediction)
 Top-5 scorelines: 1-0 12.4%, 1-1 12.3%, 2-0 10.8%, 2-1 9.6%, 0-0 8.6% (cumulative 53.6%)
 Expected score: 2-1

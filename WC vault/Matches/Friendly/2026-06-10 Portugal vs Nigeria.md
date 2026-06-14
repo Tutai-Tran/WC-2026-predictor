@@ -12,7 +12,7 @@ updated: 2026-06-14
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-06-10 · played 2-1
 
-Win Portugal: 57.4% | Draw: 26.3% | Win Nigeria: 16.3%
+Win Portugal: 56.9% | Draw: 26.5% | Win Nigeria: 16.6%
 Most likely single score: 2-0 (11.3%) (one of many possible, not a prediction)
 Top-5 scorelines: 1-1 12.5%, 2-0 11.3%, 1-0 10.9%, 2-1 9.8%, 0-0 8.6% (cumulative 53.1%)
 Expected score: 2-1
