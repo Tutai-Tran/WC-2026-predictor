@@ -13,7 +13,7 @@ updated: 2026-06-14
 <!-- WC26:AUTO:forecast START -->
 **Group D match** · 2026-06-14
 
-Win Australia: 21.7% | Draw: 27.8% | Win Turkey: 50.4%
+Win Australia: 29.4% | Draw: 31.4% | Win Turkey: 39.2%
 Most likely single score: 0-1 (13.2%) (one of many possible, not a prediction)
 Top-5 scorelines: 1-1 14.2%, 0-1 13.2%, 0-0 12.8%, 1-0 10.7%, 0-2 8.2% (cumulative 59.0%)
 Expected score: 1-1

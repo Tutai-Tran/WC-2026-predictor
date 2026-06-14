@@ -13,7 +13,7 @@ updated: 2026-06-14
 <!-- WC26:AUTO:forecast START -->
 **Group E match** · 2026-06-14
 
-Win Ivory Coast: 25.2% | Draw: 32.1% | Win Ecuador: 42.6%
+Win Ivory Coast: 25.8% | Draw: 32.1% | Win Ecuador: 42.1%
 Most likely single score: 0-1 (15.0%) (one of many possible, not a prediction)
 Top-5 scorelines: 0-1 15.0%, 1-1 13.2%, 0-0 12.1%, 0-2 10.9%, 1-2 8.6% (cumulative 59.8%)
 Expected score: 1-1
