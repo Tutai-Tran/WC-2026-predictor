@@ -8,13 +8,13 @@ updated: 2026-06-04
 
 # Group E
 
-<!-- WC26:AUTO:standings START | generated 2026-06-14T06:18Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:standings START | generated 2026-06-14T10:48Z | source elo-goal-v1 -->
 | Team | Win group | Top 2 | Advance |
 | --- | --- | --- | --- |
-| [[Countries/Germany\|Germany]] | 53.2% | 83.6% | 95.2% |
-| [[Countries/Ecuador\|Ecuador]] | 32.7% | 71.9% | 89.8% |
-| [[Countries/Ivory Coast\|Ivory Coast]] | 12.6% | 37.6% | 68.8% |
-| [[Countries/Curaçao\|Curacao]] | 1.4% | 6.9% | 16.4% |
+| [[Countries/Germany\|Germany]] | 52.6% | 83.3% | 95.3% |
+| [[Countries/Ecuador\|Ecuador]] | 33.7% | 73.2% | 90.2% |
+| [[Countries/Ivory Coast\|Ivory Coast]] | 12.3% | 36.9% | 68.6% |
+| [[Countries/Curaçao\|Curacao]] | 1.4% | 6.6% | 16.2% |
 <!-- WC26:AUTO:standings END -->
 
 ## Fixtures

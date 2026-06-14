@@ -13,7 +13,7 @@ updated: 2026-06-14
 <!-- WC26:AUTO:forecast START -->
 **Group G match** · 2026-06-15
 
-Win Belgium: 55.4% | Draw: 25.9% | Win Egypt: 18.7%
+Win Belgium: 55.1% | Draw: 26.1% | Win Egypt: 18.8%
 Most likely single score: 1-0 (14.0%) (one of many possible, not a prediction)
 Top-5 scorelines: 1-0 14.0%, 1-1 13.6%, 0-0 12.0%, 2-0 9.8%, 0-1 9.0% (cumulative 58.4%)
 Expected score: 1-1

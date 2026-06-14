@@ -13,7 +13,7 @@ updated: 2026-06-14
 <!-- WC26:AUTO:forecast START -->
 **Group F match** · 2026-06-15
 
-Win Sweden: 46.1% | Draw: 29.0% | Win Tunisia: 25.0%
+Win Sweden: 45.7% | Draw: 29.0% | Win Tunisia: 25.3%
 Most likely single score: 1-0 (12.7%) (one of many possible, not a prediction)
 Top-5 scorelines: 1-1 14.2%, 1-0 12.7%, 0-0 12.4%, 0-1 10.8%, 2-0 7.8% (cumulative 57.9%)
 Expected score: 1-1
