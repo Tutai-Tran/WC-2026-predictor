@@ -32,6 +32,32 @@ class ModelParams:
                               # (g rises only when both teams are elite AND supremacy is small;
                               # g~0 elsewhere, so non-elite calibration is unchanged). Fit
                               # out-of-sample on a held-out sub-fold in the backtest (item A).
+    base_goals_group_delta: float = 0.0      # additive shift to base_goals for GROUP-stage
+                              # matches. The global goal-aware base_goals averages group and
+                              # knockout volume, so it OVER-predicts group totals; this (bounded,
+                              # negative) delta lowers group goal volume toward the real average.
+                              # It only moves totals (la+lb), never supremacy (la-lb), so the
+                              # favourite/W-D-L pick is unchanged. 0.0 is a no-op.
+    base_goals_knockout_delta: float = 0.0   # additive shift to base_goals for KNOCKOUT matches.
+                              # Counterpart of the group delta: the averaged global base_goals
+                              # UNDER-predicts knockout totals, so this (bounded, positive) delta
+                              # raises knockout goal volume. Totals-only, favourite unchanged.
+
+
+def stage_base_goals(params: ModelParams, stage: str | None = None) -> float:
+    """Effective base goal volume for a match `stage` ('group' | 'knockout' | None).
+
+    Returns `base_goals` plus the stage-specific additive delta. The global `base_goals`
+    is the goal-aware anchor (it averages group and knockout goal volume); the stage split
+    nudges group totals DOWN and knockout totals UP around that anchor. An unknown/None
+    stage (friendlies, qualifiers, generic matches) uses the unshifted anchor. The delta
+    enters ONLY the total (la+lb), never the supremacy (la-lb), so it cannot move the
+    favourite or the modal W/D/L pick."""
+    if stage == "group":
+        return params.base_goals + params.base_goals_group_delta
+    if stage == "knockout":
+        return params.base_goals + params.base_goals_knockout_delta
+    return params.base_goals
 
 
 def match_lambdas(
@@ -41,19 +67,26 @@ def match_lambdas(
     home_adv_elo_a: float = 0.0,
     home_adv_elo_b: float = 0.0,
     h2h_delta: float = 0.0,
+    stage: str | None = None,
 ) -> tuple[float, float]:
     """Expected goals (lambda_a, lambda_b) from the effective Elo difference.
 
     `h2h_delta` (goal units, positive favours team A) is an optional head-to-head
-    adjustment added to the Elo-derived supremacy; see `wc26.h2h`.
+    adjustment added to the Elo-derived supremacy; see `wc26.h2h`. `stage`
+    ('group' | 'knockout' | None) selects the per-stage base-goals correction
+    (see `stage_base_goals`): group totals are lowered, knockout totals raised,
+    around the global anchor. The stage delta touches only the total volume, never
+    the supremacy, so the favourite/W-D-L pick is identical across stages.
     """
     eff_diff = (elo_a + home_adv_elo_a) - (elo_b + home_adv_elo_b)
     supremacy = eff_diff / params.c + h2h_delta
     # Total goals (la + lb) = base. goal_scale is a flat leak-free volume correction;
-    # gamma * |supremacy| makes mismatches score more in total (the favourite runs up
-    # the score), giving per-match variation in totals. Supremacy (la - lb) is the
-    # only driver of the favourite, so the modal W/D/L pick is unchanged by either term.
-    base = params.base_goals * params.goal_scale + params.gamma * abs(supremacy)
+    # the per-stage base-goals delta is a second leak-free volume correction (group down,
+    # knockout up) around the global anchor; gamma * |supremacy| makes mismatches score
+    # more in total (the favourite runs up the score), giving per-match variation in totals.
+    # Supremacy (la - lb) is the only driver of the favourite, so the modal W/D/L pick is
+    # unchanged by any of these terms.
+    base = stage_base_goals(params, stage) * params.goal_scale + params.gamma * abs(supremacy)
     la = (base + supremacy) / 2.0
     lb = (base - supremacy) / 2.0
     return max(params.min_lambda, la), max(params.min_lambda, lb)
@@ -245,13 +278,16 @@ def match_forecast(
     mult_a: float = 1.0,
     mult_b: float = 1.0,
     h2h_delta: float = 0.0,
+    stage: str | None = None,
 ) -> dict:
     """Full single-match forecast: outcome probs, top scorelines, lambdas.
 
     mult_a/mult_b scale each team's attacking expected goals (e.g. an availability
     adjustment when key players are out). `h2h_delta` adds a head-to-head supremacy
-    nudge (see `wc26.h2h`)."""
-    la, lb = match_lambdas(elo_a, elo_b, params, home_adv_elo_a, home_adv_elo_b, h2h_delta)
+    nudge (see `wc26.h2h`). `stage` ('group' | 'knockout' | None) selects the per-stage
+    base-goals correction; it moves totals only, never the favourite/W-D-L pick."""
+    la, lb = match_lambdas(elo_a, elo_b, params, home_adv_elo_a, home_adv_elo_b,
+                           h2h_delta, stage)
     # supremacy (goal units) and min Elo drive the matchup-conditional temperature; take
     # them from the strength signal BEFORE the availability multipliers (mult_a/mult_b),
     # which are not a strength signal, and from the raw Elos that define the elite slice.

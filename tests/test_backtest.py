@@ -283,3 +283,90 @@ def test_fit_clamps_params_on_degenerate_data():
     assert 1.5 <= params.base_goals <= 4.0
     assert 0.0 <= home <= 150.0
     assert 0.0 <= params.gamma <= 1.0      # supremacy->goals term stays bounded
+
+
+# ---------------- corrected stage-split of base_goals ----------------
+
+def _finals_edition_feats():
+    """A synthetic 16-match finals edition (12 group + 4 knockout by date) plus some
+    friendlies, so stage_masks has a clean group/knockout split to classify."""
+    import numpy as np
+    dates = pd.to_datetime(
+        [f"2018-06-{10 + i:02d}" for i in range(12)]      # 12 group matches
+        + [f"2018-07-{1 + i:02d}" for i in range(4)]       # 4 later knockout matches
+        + ["2017-03-01", "2017-03-02"]                     # 2 friendlies (non-finals)
+    )
+    n = len(dates)
+    df = pd.DataFrame({
+        "date": dates,
+        "home_team": [f"H{i}" for i in range(n)],
+        "away_team": [f"A{i}" for i in range(n)],
+        "home_score": [1] * n, "away_score": [1] * n,
+        "tournament": ["FIFA World Cup"] * 16 + ["Friendly"] * 2,
+        "neutral": [True] * n,
+    })
+    feats, _ = backtest.prematch_pass(df)
+    return feats
+
+
+def test_stage_masks_splits_finals_into_group_and_knockout():
+    feats = _finals_edition_feats()
+    group, ko = backtest.stage_masks(feats)
+    # a 16-match edition -> 8 knockout matches (the last 8 by date), 8 group
+    assert int(ko.sum()) == 8
+    assert int(group.sum()) == 8
+    # friendlies are neither group nor knockout
+    assert not (group | ko)[-2:].any()
+    # group and knockout never overlap
+    assert not (group & ko).any()
+
+
+def test_stage_total_bias_sign_and_delta_shift():
+    feats = _synthetic_goal_feats(seed=3, n=2000)
+    # mark the first 1000 as a single FIFA World Cup edition so half are group/half knockout
+    feats["tournament"] = np.array(["FIFA World Cup"] * 1000 + [""] * 1000, dtype=object)
+    feats["year"] = np.array([2018] * 1000 + [2015] * 1000)
+    params, home = backtest.fit(feats)
+    group, ko = backtest.stage_masks(feats)
+    assert group.any() and ko.any()
+    b0 = backtest.stage_total_bias(feats, params, home, group, 0.0)
+    # a negative base delta lowers the predicted total -> lowers the (pred-actual) bias
+    b_down = backtest.stage_total_bias(feats, params, home, group, -0.2)
+    assert b_down < b0
+    # an empty mask returns None
+    assert backtest.stage_total_bias(feats, params, home, np.zeros(len(group), bool)) is None
+
+
+def test_fit_stage_deltas_has_corrective_shape_and_is_bounded():
+    feats = _synthetic_goal_feats(seed=5, n=3000)
+    feats["tournament"] = np.array(["FIFA World Cup"] * 1500 + [""] * 1500, dtype=object)
+    feats["year"] = np.array([2018] * 1500 + [2015] * 1500)
+    params, home = backtest.fit(feats)
+    dG, dK = backtest.fit_stage_deltas(feats, params, home)
+    # mandated shape: group down (<=0), knockout up (>=0)
+    assert dG <= 0.0
+    assert dK >= 0.0
+    # both capped at +/- the bound
+    assert abs(dG) <= backtest._STAGE_DELTA_CAP
+    assert abs(dK) <= backtest._STAGE_DELTA_CAP
+
+
+def test_run_stage_split_gate():
+    """The corrected stage-split must: lower the group total-goals bias toward 0 (|bias|
+    strictly smaller), not worsen the knockout bias, and keep W/D/L within the guardrail."""
+    report = backtest.run(write=False)
+    t = report["totals"]
+    gb, ga = t["group_bias_before"], t["group_bias_after"]
+    kb, ka = t["knockout_bias_before"], t["knockout_bias_after"]
+    # group bias is positive (over-predicts) and the split shrinks |bias| toward 0
+    assert gb is not None and ga is not None
+    assert abs(ga) < abs(gb)
+    # knockout bias must not worsen
+    assert kb is not None and ka is not None
+    assert abs(ka) <= abs(kb) + 1e-9
+    # corrective shape carried into the fitted params
+    assert report["fitted"]["base_goals_group_delta"] <= 0.0
+    assert report["fitted"]["base_goals_knockout_delta"] >= 0.0
+    # the split barely touches W/D/L (totals-only knob): test log-loss within guardrail
+    assert report["test"]["log_loss"] <= 0.8639
+    assert report["test"]["log_loss"] <= 0.8599 + 0.004

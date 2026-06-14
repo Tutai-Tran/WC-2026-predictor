@@ -56,6 +56,10 @@ def load_fitted_params() -> model_mod.ModelParams | None:
         # supremacy-conditional de-sharpen (item A): extra elite-vs-elite cooling on top
         # of temperature, fit on a held-out sub-fold; 0.0 (a no-op) when absent
         t_elite=d.get("t_elite", 0.0),
+        # corrected stage-split of base_goals: group totals down, knockout totals up around
+        # the global anchor; both 0.0 (no-op) when absent, fit/bounded in the backtest
+        base_goals_group_delta=d.get("base_goals_group_delta", 0.0),
+        base_goals_knockout_delta=d.get("base_goals_knockout_delta", 0.0),
     )
 
 
@@ -144,6 +148,7 @@ def group_match_forecasts(t: Tournament,
             t.teams[h]["elo"], t.teams[a]["elo"], t.params,
             t.host_adv(h, vc), t.host_adv(a, vc),
             mult_a=t.mult(h), mult_b=t.mult(a), h2h_delta=t.h2h_delta(h, a),
+            stage="group",
         )
         ph_m, pdw_m, pa_m = round(f["p_home"], 3), round(f["p_draw"], 3), round(f["p_away"], 3)
         # live market blend (item 1): if a devigged line exists for this fixture, the
@@ -195,6 +200,7 @@ def golden_boot(t: Tournament, top_n: int = 15) -> list[dict]:
         la, lb = model_mod.match_lambdas(
             t.teams[h]["elo"], t.teams[a]["elo"], t.params,
             t.host_adv(h, vc), t.host_adv(a, vc), t.h2h_delta(h, a),
+            stage="group",
         )
         la *= t.mult(h)
         lb *= t.mult(a)

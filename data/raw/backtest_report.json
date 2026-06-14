@@ -10,6 +10,8 @@
     "gamma": 0.456,
     "temperature": 1.021,
     "t_elite": 1.5,
+    "base_goals_group_delta": -0.105,
+    "base_goals_knockout_delta": 0.0,
     "home_adv_elo": 115.3
   },
   "decay_half_life": 10.0,
@@ -73,7 +75,15 @@
     "model_btts": 0.4466,
     "base_goals_wdl": 2.19,
     "base_goals_goal_aware": 2.234,
-    "lambda_tot": 0.03
+    "lambda_tot": 0.03,
+    "base_goals_group_delta": -0.105,
+    "base_goals_knockout_delta": 0.0,
+    "group_n": 348,
+    "knockout_n": 178,
+    "group_bias_before": 0.2185,
+    "group_bias_after": 0.1135,
+    "knockout_bias_before": 0.0056,
+    "knockout_bias_after": 0.0056
   },
   "beats_climatology": true
 }

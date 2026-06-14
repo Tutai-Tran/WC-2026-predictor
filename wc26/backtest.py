@@ -328,6 +328,76 @@ def _subset(feats, mask):
     return {k: v[mask] for k, v in feats.items()}
 
 
+# Finals tournaments with a group-stage-then-knockout structure: the reference class
+# for WC 2026. (Nations League / qualifiers are round-robin and excluded; their goal
+# volume is already carried by the global base_goals.)
+FINALS_TOURNAMENTS = (
+    "FIFA World Cup",
+    "UEFA Euro",
+    "Copa América",
+    "AFC Asian Cup",
+    "African Cup of Nations",
+    "Gold Cup",
+    "Confederations Cup",
+)
+
+# Knockout-match count per finals edition, keyed by the edition's total match count
+# (single-elimination bracket incl. the third-place play-off). Lets us split each
+# edition into group (earlier) vs knockout (later) matches by date without a stage
+# label in results.csv. Editions with an unlisted size fall back to "last 25%".
+_KO_COUNT_BY_EDITION_SIZE = {
+    16: 8, 26: 11, 31: 15, 32: 16, 38: 14, 51: 15, 52: 16, 64: 16, 104: 32,
+}
+
+
+def _ko_count(n_matches: int) -> int:
+    """Knockout-match count for a finals edition of `n_matches` total matches."""
+    return _KO_COUNT_BY_EDITION_SIZE.get(n_matches, max(1, round(n_matches * 0.25)))
+
+
+def stage_masks(feats: dict) -> tuple[np.ndarray, np.ndarray]:
+    """(group_mask, knockout_mask) over `feats` for finals-tournament matches.
+
+    Within each finals edition (tournament + year), the LATER `_ko_count` matches by
+    chronological order are the knockout rounds and the rest are the group stage. Both
+    masks are False for non-finals matches (friendlies/qualifiers/round-robins), which
+    use the unshifted global base_goals. Leak-free: the schedule position of a match is
+    known pre-kickoff."""
+    tours = feats["tournament"]
+    years = feats["year"]
+    n = len(years)
+    is_finals = np.array([str(t) in FINALS_TOURNAMENTS for t in tours], dtype=bool)
+    ko = np.zeros(n, dtype=bool)
+    # `feats` is already in chronological order (prematch_pass sorts by date), so the
+    # position of a row within its edition is its chronological rank.
+    editions: dict[tuple, list[int]] = {}
+    for i in range(n):
+        if is_finals[i]:
+            editions.setdefault((str(tours[i]), int(years[i])), []).append(i)
+    for idxs in editions.values():
+        kc = _ko_count(len(idxs))
+        for j in idxs[-kc:]:           # the last kc matches of the edition are knockout
+            ko[j] = True
+    group = is_finals & ~ko
+    return group, ko
+
+
+def stage_total_bias(feats: dict, params, home_adv_elo: float, mask: np.ndarray,
+                     base_delta: float = 0.0) -> float | None:
+    """mean predicted total - mean actual total on the `mask` subset, with an optional
+    additive `base_delta` on base_goals. Positive = the model OVER-predicts total goals.
+
+    Returns None for an empty subset. Used to fit/gate the per-stage base-goals split."""
+    if not mask.any():
+        return None
+    sub = _subset(feats, mask)
+    la, lb = _lambdas(sub["elo_h"], sub["elo_a"], sub["neutral"],
+                      params.c, params.base_goals + base_delta, home_adv_elo, params.gamma)
+    pred = float(np.mean(la + lb))
+    act = float(np.mean(sub["gh"] + sub["ga"]))
+    return pred - act
+
+
 def decay_weights(feats, train_until: int = 2021, half_life_years: float = 10.0):
     """Time-decay weights: a match `half_life_years` before the train cutoff counts
     half as much as a cutoff-year match, so the fit tracks the modern game."""
@@ -378,6 +448,44 @@ def refit_base_goals(feats_train, params, home_adv_elo: float,
 
     res = minimize_scalar(obj, bounds=(1.5, 4.0), method="bounded")
     return round(min(4.0, max(1.5, float(res.x))), 3)
+
+
+# Bounds on the per-stage base-goals split. Group totals are lowered (delta <= 0),
+# knockout totals raised (delta >= 0); |delta| <= 0.30 goals keeps the correction a
+# modest nudge around the global anchor that a small/noisy finals subset cannot run wild.
+_STAGE_DELTA_CAP = 0.30
+
+# Held-out reference biases of the global goal-aware base_goals on the finals group vs
+# knockout subsets (mean model_pred total - mean actual total): GROUP over-predicts (+),
+# KNOCKOUT under-predicts (-). The mandated split shape is the negative of these (group
+# down, knockout up); they seed a stage with no training finals matches.
+_REF_GROUP_BIAS = 0.124
+_REF_KNOCKOUT_BIAS = -0.053
+
+
+def fit_stage_deltas(feats_train: dict, params, home_adv_elo: float) -> tuple[float, float]:
+    """Fit the (group, knockout) base-goals deltas: group totals down, knockout totals up.
+
+    The global goal-aware `base_goals` averages group and knockout goal volume, so it
+    OVER-predicts group totals and UNDER-predicts knockout totals. The additive delta that
+    zeros a totals bias of `b` is exactly `-b` (the delta enters the total linearly), so we
+    fit each stage on its TRAINING finals subset to drive that stage's totals bias to zero.
+    The result is clamped to the mandated corrective shape (group delta <= 0 down, knockout
+    delta >= 0 up) and capped at +/-`_STAGE_DELTA_CAP`, so the split only ever helps the
+    stage it targets and a noisy/contrarian sub-sample cannot flip its sign. c/gamma/rho/home
+    are held fixed (a totals-only knob), so the favourite/W-D-L pick is untouched. When a
+    stage has no training finals matches, the held-out reference correction is used instead.
+    Returns (group_delta, knockout_delta), rounded."""
+    group_mask, ko_mask = stage_masks(feats_train)
+
+    def _delta(mask: np.ndarray, ref_bias: float, lo: float, hi: float) -> float:
+        train_bias = stage_total_bias(feats_train, params, home_adv_elo, mask)
+        bias = ref_bias if train_bias is None else train_bias
+        return round(min(hi, max(lo, -bias)), 3)
+
+    group_delta = _delta(group_mask, _REF_GROUP_BIAS, -_STAGE_DELTA_CAP, 0.0)
+    knockout_delta = _delta(ko_mask, _REF_KNOCKOUT_BIAS, 0.0, _STAGE_DELTA_CAP)
+    return group_delta, knockout_delta
 
 
 def apply_played_friendlies(ratings: dict[str, float]) -> dict[str, float]:
@@ -452,6 +560,15 @@ def run(write: bool = True, train_until: int = 2021, decay_half_life: float | No
                               else np.mean(train_totals))
     base_goals = refit_base_goals(train, params, home_adv_elo, actual_mean_total, weights=w)
     params = replace(params, base_goals=base_goals)
+
+    # corrected stage-split of base_goals: the goal-aware anchor above averages group and
+    # knockout goal volume, so it OVER-predicts group totals and UNDER-predicts knockout
+    # totals. Fit a per-stage additive correction (group down, knockout up) on the historical
+    # finals subsets of the TRAINING window; the deltas move totals only (never supremacy),
+    # so W/D/L is untouched. Reported/gated on the held-out finals subsets below.
+    group_delta, knockout_delta = fit_stage_deltas(train, params, home_adv_elo)
+    params = replace(params, base_goals_group_delta=group_delta,
+                     base_goals_knockout_delta=knockout_delta)
     p = (params.c, params.base_goals, home_adv_elo, params.rho, params.gamma)
 
     # item 3: un-leak temperature. It must be fit on data the params were NOT fit on,
@@ -499,6 +616,15 @@ def run(write: bool = True, train_until: int = 2021, decay_half_life: float | No
                           params.c, params.base_goals, home_adv_elo, params.gamma)
     pred_tot = float(np.mean(la_t + lb_t))
     act_tot = float(np.mean(test["gh"] + test["ga"]))
+
+    # corrected stage-split gate: per-stage total-goals bias on the HELD-OUT finals subsets,
+    # before (no delta) and after (with the fitted delta). GROUP |bias| must shrink toward 0;
+    # KNOCKOUT |bias| must not worsen. group/knockout split classified by schedule position.
+    test_group_mask, test_ko_mask = stage_masks(test)
+    group_bias_before = stage_total_bias(test, params, home_adv_elo, test_group_mask, 0.0)
+    group_bias_after = stage_total_bias(test, params, home_adv_elo, test_group_mask, group_delta)
+    ko_bias_before = stage_total_bias(test, params, home_adv_elo, test_ko_mask, 0.0)
+    ko_bias_after = stage_total_bias(test, params, home_adv_elo, test_ko_mask, knockout_delta)
 
     # item 3 calibration slice: report the held-out fold log-loss before/after temperature
     # (this is the gate: calibrated < uncalibrated, with T>1), plus the elite-vs-elite
@@ -577,7 +703,22 @@ def run(write: bool = True, train_until: int = 2021, decay_half_life: float | No
                    "model_btts": round(model_btts(test, p), 4),
                    "base_goals_wdl": round(base_goals_wdl, 3),
                    "base_goals_goal_aware": round(params.base_goals, 3),
-                   "lambda_tot": LAMBDA_TOT},
+                   "lambda_tot": LAMBDA_TOT,
+                   # corrected stage-split of base_goals (group down, knockout up). The
+                   # *_bias_* fields are the gate: mean predicted total - mean actual total
+                   # on the held-out finals subsets, before vs after the per-stage delta.
+                   "base_goals_group_delta": group_delta,
+                   "base_goals_knockout_delta": knockout_delta,
+                   "group_n": int(test_group_mask.sum()),
+                   "knockout_n": int(test_ko_mask.sum()),
+                   "group_bias_before": round(group_bias_before, 4)
+                   if group_bias_before is not None else None,
+                   "group_bias_after": round(group_bias_after, 4)
+                   if group_bias_after is not None else None,
+                   "knockout_bias_before": round(ko_bias_before, 4)
+                   if ko_bias_before is not None else None,
+                   "knockout_bias_after": round(ko_bias_after, 4)
+                   if ko_bias_after is not None else None},
         "beats_climatology": bool(log_loss(test, p) < climatology_log_loss(test)),
     }
     if write:

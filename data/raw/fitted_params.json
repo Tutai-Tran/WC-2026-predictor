@@ -9,5 +9,7 @@
   "gamma": 0.456,
   "temperature": 1.021,
   "t_elite": 1.5,
+  "base_goals_group_delta": -0.105,
+  "base_goals_knockout_delta": 0.0,
   "home_adv_elo": 115.3
 }

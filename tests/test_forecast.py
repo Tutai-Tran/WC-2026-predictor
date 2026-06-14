@@ -204,6 +204,7 @@ def test_wdl_unchanged_vs_recomputed_matrix(tmp_path):
             t.host_adv(fx["home"], vc), t.host_adv(fx["away"], vc),
             mult_a=t.mult(fx["home"]), mult_b=t.mult(fx["away"]),
             h2h_delta=t.h2h_delta(fx["home"], fx["away"]),
+            stage="group",   # group forecasts carry the group-stage base-goals delta
         )
         # the published W/D/L is the (matchup-conditionally) temperature-scaled triple from
         # the SAME match_forecast call (item 3 global temperature + item A supremacy-conditional

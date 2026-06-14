@@ -271,3 +271,52 @@ def test_match_forecast_t_elite_leaves_ordinary_match_unchanged():
     assert abs(a["p_home"] - b["p_home"]) < 1e-4
     assert abs(a["p_draw"] - b["p_draw"]) < 1e-4
     assert abs(a["p_away"] - b["p_away"]) < 1e-4
+
+
+# ---------------- corrected stage-split of base_goals ----------------
+
+def test_stage_base_goals_applies_per_stage_delta():
+    p = model.ModelParams(base_goals=2.234, base_goals_group_delta=-0.1,
+                          base_goals_knockout_delta=0.06)
+    # group is lowered, knockout is raised, an unknown/None stage uses the anchor
+    assert model.stage_base_goals(p, "group") == pytest.approx(2.134)
+    assert model.stage_base_goals(p, "knockout") == pytest.approx(2.294)
+    assert model.stage_base_goals(p, None) == pytest.approx(2.234)
+    assert model.stage_base_goals(p, "friendly") == pytest.approx(2.234)
+
+
+def test_stage_delta_defaults_are_no_op():
+    # default params (both deltas 0.0) make the stage argument a no-op everywhere
+    p = model.ModelParams(base_goals=2.4)
+    for stage in (None, "group", "knockout"):
+        assert model.match_lambdas(1700, 1500, p, stage=stage) == \
+            model.match_lambdas(1700, 1500, p)
+
+
+def test_group_delta_lowers_total_knockout_delta_raises_total():
+    p = model.ModelParams(base_goals=2.4, base_goals_group_delta=-0.2,
+                          base_goals_knockout_delta=0.15, gamma=0.0)
+    base = sum(model.match_lambdas(1700, 1500, p, stage=None))
+    grp = sum(model.match_lambdas(1700, 1500, p, stage="group"))
+    ko = sum(model.match_lambdas(1700, 1500, p, stage="knockout"))
+    assert grp < base                       # group totals down
+    assert ko > base                        # knockout totals up
+    # the shift equals the delta exactly (the term is additive on the total)
+    assert grp == pytest.approx(base - 0.2)
+    assert ko == pytest.approx(base + 0.15)
+
+
+def test_stage_delta_does_not_move_supremacy_or_favourite():
+    # the stage delta touches only the TOTAL (la+lb), never the supremacy (la-lb), so
+    # (while neither lambda is floored) the favourite/modal W/D/L pick is stage-invariant
+    p = model.ModelParams(base_goals=2.4, base_goals_group_delta=-0.25,
+                          base_goals_knockout_delta=0.25, c=200.0)
+    la0, lb0 = model.match_lambdas(1700, 1500, p, stage=None)
+    lag, lbg = model.match_lambdas(1700, 1500, p, stage="group")
+    lak, lbk = model.match_lambdas(1700, 1500, p, stage="knockout")
+    assert lbg > p.min_lambda and lbk > p.min_lambda      # no floor in play
+    assert (la0 - lb0) == pytest.approx(lag - lbg) == pytest.approx(lak - lbk)
+    # match_forecast: W/D/L favourite is the home side regardless of stage
+    for stage in (None, "group", "knockout"):
+        f = model.match_forecast(1700, 1500, p, stage=stage)
+        assert f["p_home"] == max(f["p_home"], f["p_draw"], f["p_away"])

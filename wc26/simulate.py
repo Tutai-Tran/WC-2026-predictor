@@ -58,8 +58,11 @@ def _r32_country(city: str | None) -> str:
 def decide_knockout(a, ea, aa, b, eb, ab, params, rng, mult_a=1.0, mult_b=1.0,
                     h2h_delta=0.0) -> str:
     """Resolve a knockout match (no draws): 90 min, then extra time, then a
-    near-coin-flip shootout with a small strength tilt. Pure and testable."""
-    la, lb = model_mod.match_lambdas(ea, eb, params, aa, ab, h2h_delta)
+    near-coin-flip shootout with a small strength tilt. Pure and testable.
+
+    Lambdas use the knockout-stage base-goals correction (totals only; the favourite
+    tilt is driven by supremacy, which the stage delta never touches)."""
+    la, lb = model_mod.match_lambdas(ea, eb, params, aa, ab, h2h_delta, stage="knockout")
     la *= mult_a
     lb *= mult_b
     ga, gb = rng.poisson(la), rng.poisson(lb)
@@ -148,6 +151,7 @@ def simulate(tournament: Tournament, n_runs: int = 10_000, seed: int = config.DE
         la, lb = model_mod.match_lambdas(
             t.teams[home]["elo"], t.teams[away]["elo"], t.params,
             adv(home, venue_country), adv(away, venue_country), t.h2h_delta(home, away),
+            stage="group",
         )
         la *= t.mult(home)
         lb *= t.mult(away)
