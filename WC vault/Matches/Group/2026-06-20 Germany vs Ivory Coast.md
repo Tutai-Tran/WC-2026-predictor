@@ -5,7 +5,7 @@ group: E
 date: 2026-06-20
 home: "Germany"
 away: "Ivory Coast"
-updated: 2026-06-14
+updated: 2026-06-15
 ---
 
 # Germany vs Ivory Coast
@@ -19,7 +19,7 @@ Top-5 scorelines: 1-0 13.0%, 2-0 12.1%, 1-1 11.4%, 2-1 9.6%, 0-0 8.2% (cumulativ
 Expected score: 2-1
 Over 2.5: 47.6% | Under 2.5: 52.4% | BTTS yes: 46.1% | BTTS no: 53.9%
 Top scorers: Kai Havertz 35.0%; Leroy Sané 22.3%; Leon Goretzka 21.1%; Franck Kessié 11.5%; Nicolas Pépé 10.0%; Ibrahim Sangaré 9.4%;
-Data as of 2026-06-14 | runs 50000 | seed 20260611
+Data as of 2026-06-15 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

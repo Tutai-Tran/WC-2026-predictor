@@ -5,7 +5,7 @@ group: G
 date: 2026-06-21
 home: "Belgium"
 away: "Iran"
-updated: 2026-06-14
+updated: 2026-06-15
 ---
 
 # Belgium vs Iran
@@ -19,7 +19,7 @@ Top-5 scorelines: 0-0 15.0%, 1-1 14.2%, 1-0 14.2%, 0-1 11.9%, 2-0 8.0% (cumulati
 Expected score: 1-1
 Over 2.5: 31.1% | Under 2.5: 68.9% | BTTS yes: 39.4% | BTTS no: 60.6%
 Top scorers: Romelu Lukaku 34.8%; Kevin De Bruyne 23.0%; Youri Tielemans 6.2%; Mehdi Taremi 34.4%; Alireza Jahanbakhsh 9.1%; Mohammad Mohebi 7.6%;
-Data as of 2026-06-14 | runs 50000 | seed 20260611
+Data as of 2026-06-15 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

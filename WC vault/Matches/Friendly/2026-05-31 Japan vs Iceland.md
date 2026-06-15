@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-05-31
 home: "Japan"
 away: "Iceland"
-updated: 2026-06-14
+updated: 2026-06-15
 ---
 
 # Japan vs Iceland (friendly)
@@ -12,12 +12,12 @@ updated: 2026-06-14
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-05-31 · played 1-0
 
-Win Japan: 77.7% | Draw: 16.4% | Win Iceland: 5.9%
+Win Japan: 77.6% | Draw: 16.4% | Win Iceland: 6.0%
 Most likely single score: 2-0 (14.1%) (one of many possible, not a prediction)
-Top-5 scorelines: 2-0 14.1%, 3-0 11.9%, 1-0 10.2%, 2-1 8.4%, 1-1 7.6% (cumulative 52.2%)
+Top-5 scorelines: 2-0 14.1%, 3-0 11.8%, 1-0 10.2%, 2-1 8.4%, 1-1 7.6% (cumulative 52.2%)
 Expected score: 3-1
-Over 2.5: 60.2% | Under 2.5: 39.8% | BTTS yes: 42.1% | BTTS no: 57.9%
-Data as of 2026-06-14 | runs 50000 | seed 20260611
+Over 2.5: 60.1% | Under 2.5: 39.9% | BTTS yes: 42.1% | BTTS no: 57.9%
+Data as of 2026-06-15 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

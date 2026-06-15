@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-05-29
 home: "Iran"
 away: "Gambia"
-updated: 2026-06-14
+updated: 2026-06-15
 ---
 
 # Iran vs Gambia (friendly)
@@ -17,7 +17,7 @@ Most likely single score: 2-0 (13.9%) (one of many possible, not a prediction)
 Top-5 scorelines: 2-0 13.9%, 3-0 11.2%, 1-0 10.4%, 2-1 8.7%, 1-1 8.3% (cumulative 52.5%)
 Expected score: 2-1
 Over 2.5: 58.8% | Under 2.5: 41.2% | BTTS yes: 43.7% | BTTS no: 56.3%
-Data as of 2026-06-14 | runs 50000 | seed 20260611
+Data as of 2026-06-15 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

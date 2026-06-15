@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-05
 home: "Czech Republic"
 away: "Guatemala"
-updated: 2026-06-14
+updated: 2026-06-15
 ---
 
 # Czech Republic vs Guatemala (friendly)
@@ -17,7 +17,7 @@ Most likely single score: 1-0 (10.9%) (one of many possible, not a prediction)
 Top-5 scorelines: 1-1 13.5%, 1-0 10.9%, 2-0 10.2%, 0-0 9.6%, 2-1 9.5% (cumulative 53.8%)
 Expected score: 2-1
 Over 2.5: 46.9% | Under 2.5: 53.1% | BTTS yes: 50.3% | BTTS no: 49.7%
-Data as of 2026-06-14 | runs 50000 | seed 20260611
+Data as of 2026-06-15 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

@@ -3,7 +3,7 @@ type: wc-match
 stage: R32
 match_no: 77
 date: 2026-06-30
-updated: 2026-06-14
+updated: 2026-06-15
 ---
 
 # R32 #77: 1I vs 3rd C/D/F/G/H
@@ -14,7 +14,7 @@ updated: 2026-06-14
 Slots: 1I vs 3rd C/D/F/G/H
 Projected: France vs 3rd C/D/F/G/H
 Result: TBD
-Data as of 2026-06-14 | runs 50000 | seed 20260611
+Data as of 2026-06-15 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

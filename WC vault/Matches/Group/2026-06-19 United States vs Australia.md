@@ -5,7 +5,7 @@ group: D
 date: 2026-06-19
 home: "United States"
 away: "Australia"
-updated: 2026-06-14
+updated: 2026-06-15
 ---
 
 # United States vs Australia
@@ -19,7 +19,7 @@ Top-5 scorelines: 1-1 14.0%, 1-0 12.4%, 0-0 11.4%, 0-1 9.8%, 2-0 8.3% (cumulativ
 Expected score: 1-1
 Over 2.5: 38.9% | Under 2.5: 61.1% | BTTS yes: 45.8% | BTTS no: 54.2%
 Top scorers: Christian Pulisic 32.6%; Ricardo Pepi 12.1%; Weston McKennie 10.6%; Mathew Leckie 15.6%; Jackson Irvine 14.7%; Awer Mabil 11.8%;
-Data as of 2026-06-14 | runs 50000 | seed 20260611
+Data as of 2026-06-15 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

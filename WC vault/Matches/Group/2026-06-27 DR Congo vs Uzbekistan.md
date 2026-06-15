@@ -5,7 +5,7 @@ group: K
 date: 2026-06-27
 home: "DR Congo"
 away: "Uzbekistan"
-updated: 2026-06-14
+updated: 2026-06-15
 ---
 
 # DR Congo vs Uzbekistan
@@ -19,7 +19,7 @@ Top-5 scorelines: 1-1 14.0%, 0-1 12.6%, 0-0 11.8%, 1-0 10.0%, 0-2 8.2% (cumulati
 Expected score: 1-1
 Over 2.5: 38.0% | Under 2.5: 62.0% | BTTS yes: 45.1% | BTTS no: 54.9%
 Top scorers: Cédric Bakambu 20.0%; Meschak Elia 12.6%; Yoane Wissa 9.9%; Eldor Shomurodov 32.8%; Igor Sergeev 20.0%; Jaloliddin Masharipov 10.5%;
-Data as of 2026-06-14 | runs 50000 | seed 20260611
+Data as of 2026-06-15 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

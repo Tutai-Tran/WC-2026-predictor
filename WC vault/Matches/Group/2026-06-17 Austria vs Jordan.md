@@ -5,7 +5,7 @@ group: J
 date: 2026-06-17
 home: "Austria"
 away: "Jordan"
-updated: 2026-06-14
+updated: 2026-06-15
 ---
 
 # Austria vs Jordan
@@ -19,7 +19,7 @@ Top-5 scorelines: 1-1 13.5%, 1-0 13.4%, 0-0 11.0%, 2-0 9.8%, 2-1 8.8% (cumulativ
 Expected score: 1-1
 Over 2.5: 39.8% | Under 2.5: 60.2% | BTTS yes: 45.0% | BTTS no: 55.0%
 Top scorers: Marko Arnautović 33.7%; Marcel Sabitzer 27.1%; Michael Gregoritsch 19.5%; Ali Olwan 21.7%; Musa Al-Taamari 18.5%; Mahmoud Al-Mardi 8.2%;
-Data as of 2026-06-14 | runs 50000 | seed 20260611
+Data as of 2026-06-15 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

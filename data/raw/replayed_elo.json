@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-14",
+  "updated": "2026-06-15",
   "source": "base_elo + results ledger",
   "ratings": {
     "Scotland": 1889.6,
@@ -19,7 +19,7 @@
     "Guernsey": 1751.7,
     "Alderney": 1059.4,
     "Jersey": 1829.5,
-    "Netherlands": 2007.1,
+    "Netherlands": 2007.7,
     "Guyana": 1497.8,
     "Trinidad and Tobago": 1522.3,
     "South Africa": 1655.3,
@@ -37,7 +37,7 @@
     "China PR": 1569.8,
     "Brazil": 2062.2,
     "Basque Country": 1815.4,
-    "Japan": 2014.1,
+    "Japan": 2013.5,
     "Paraguay": 1857.1,
     "Romania": 1712.8,
     "Greece": 1823.1,

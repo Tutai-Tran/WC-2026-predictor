@@ -5,7 +5,7 @@ group: L
 date: 2026-06-27
 home: "Panama"
 away: "England"
-updated: 2026-06-14
+updated: 2026-06-15
 ---
 
 # Panama vs England
@@ -19,7 +19,7 @@ Top-5 scorelines: 0-1 13.5%, 0-2 13.4%, 1-1 10.5%, 1-2 9.4%, 0-3 8.5% (cumulativ
 Expected score: 1-2
 Over 2.5: 48.3% | Under 2.5: 51.7% | BTTS yes: 43.6% | BTTS no: 56.4%
 Top scorers: José Fajardo 9.0%; Ismael Díaz 8.5%; Cecilio Waterman 8.0%; Harry Kane 63.8%; Marcus Rashford 20.4%; Bukayo Saka 16.6%;
-Data as of 2026-06-14 | runs 50000 | seed 20260611
+Data as of 2026-06-15 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

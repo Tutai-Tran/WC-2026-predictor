@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-08
 home: "Colombia"
 away: "Jordan"
-updated: 2026-06-14
+updated: 2026-06-15
 ---
 
 # Colombia vs Jordan (friendly)
@@ -17,7 +17,7 @@ Most likely single score: 2-0 (13.0%) (one of many possible, not a prediction)
 Top-5 scorelines: 2-0 13.0%, 1-0 10.7%, 1-1 10.0%, 2-1 9.4%, 3-0 9.4% (cumulative 52.6%)
 Expected score: 2-1
 Over 2.5: 55.2% | Under 2.5: 44.8% | BTTS yes: 47.0% | BTTS no: 53.0%
-Data as of 2026-06-14 | runs 50000 | seed 20260611
+Data as of 2026-06-15 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match
