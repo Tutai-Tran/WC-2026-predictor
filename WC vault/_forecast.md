@@ -14,30 +14,30 @@ These are probabilities, not certainties.
 
 | Team | Win | Final | SF | QF | R16 |
 | --- | --- | --- | --- | --- | --- |
-| [[Countries/Spain\|Spain]] | 25.3% | 35.6% | 48.7% | 60.4% | 79.9% |
-| [[Countries/France\|France]] | 12.4% | 20.4% | 35.5% | 51.2% | 73.2% |
-| [[Countries/Argentina\|Argentina]] | 10.5% | 19.2% | 30.6% | 46.1% | 63.1% |
-| [[Countries/England\|England]] | 7.2% | 14.2% | 24.6% | 40.6% | 65.9% |
-| [[Countries/Colombia\|Colombia]] | 6.5% | 13.0% | 23.1% | 38.3% | 63.1% |
-| [[Countries/Portugal\|Portugal]] | 5.8% | 12.2% | 22.5% | 37.7% | 62.9% |
-| [[Countries/Germany\|Germany]] | 3.4% | 7.8% | 17.6% | 31.9% | 61.5% |
-| [[Countries/Ecuador\|Ecuador]] | 3.0% | 7.0% | 15.4% | 28.9% | 54.9% |
-| [[Countries/Brazil\|Brazil]] | 3.0% | 6.6% | 14.6% | 29.1% | 51.6% |
-| [[Countries/United States\|United States]] | 2.9% | 6.8% | 14.7% | 38.1% | 69.0% |
-| [[Countries/Mexico\|Mexico]] | 2.8% | 7.2% | 17.1% | 36.3% | 74.1% |
-| [[Countries/Netherlands\|Netherlands]] | 2.6% | 6.3% | 14.4% | 30.0% | 51.6% |
-| [[Countries/Japan\|Japan]] | 2.3% | 5.4% | 12.8% | 26.7% | 47.6% |
-| [[Countries/Morocco\|Morocco]] | 2.1% | 5.2% | 12.4% | 26.2% | 48.1% |
-| [[Countries/Norway\|Norway]] | 1.9% | 5.0% | 11.9% | 24.3% | 46.3% |
-| [[Countries/Australia\|Australia]] | 1.7% | 4.9% | 12.2% | 31.4% | 62.6% |
-| [[Countries/Switzerland\|Switzerland]] | 0.9% | 2.8% | 7.9% | 20.8% | 48.4% |
-| [[Countries/Croatia\|Croatia]] | 0.9% | 2.7% | 6.9% | 15.5% | 38.5% |
-| [[Countries/Uruguay\|Uruguay]] | 0.8% | 2.6% | 6.6% | 15.8% | 33.1% |
-| [[Countries/South Korea\|South Korea]] | 0.8% | 2.4% | 7.5% | 21.9% | 55.9% |
-| [[Countries/Belgium\|Belgium]] | 0.7% | 2.4% | 6.6% | 21.3% | 47.9% |
-| [[Countries/Canada\|Canada]] | 0.4% | 1.5% | 5.0% | 16.6% | 48.5% |
-| [[Countries/Iran\|Iran]] | 0.4% | 1.3% | 4.2% | 14.4% | 39.4% |
-| [[Countries/Senegal\|Senegal]] | 0.3% | 1.1% | 3.7% | 10.5% | 25.7% |
+| [[Countries/Spain\|Spain]] | 25.7% | 36.0% | 48.5% | 60.6% | 79.7% |
+| [[Countries/France\|France]] | 12.9% | 21.5% | 37.3% | 53.8% | 75.1% |
+| [[Countries/Argentina\|Argentina]] | 10.6% | 19.5% | 30.8% | 46.5% | 63.9% |
+| [[Countries/England\|England]] | 7.0% | 14.1% | 24.5% | 40.0% | 65.2% |
+| [[Countries/Colombia\|Colombia]] | 6.4% | 13.1% | 22.9% | 37.9% | 63.1% |
+| [[Countries/Portugal\|Portugal]] | 5.5% | 11.8% | 21.6% | 36.5% | 61.5% |
+| [[Countries/Germany\|Germany]] | 3.6% | 7.9% | 18.1% | 32.1% | 61.8% |
+| [[Countries/Brazil\|Brazil]] | 3.0% | 6.9% | 15.1% | 29.7% | 51.6% |
+| [[Countries/Mexico\|Mexico]] | 2.8% | 7.3% | 16.8% | 34.6% | 71.5% |
+| [[Countries/Netherlands\|Netherlands]] | 2.8% | 6.4% | 15.0% | 30.4% | 51.6% |
+| [[Countries/United States\|United States]] | 2.8% | 6.9% | 14.8% | 38.0% | 68.6% |
+| [[Countries/Morocco\|Morocco]] | 2.4% | 5.7% | 13.2% | 27.4% | 49.1% |
+| [[Countries/Japan\|Japan]] | 2.4% | 5.6% | 13.5% | 27.5% | 47.3% |
+| [[Countries/Norway\|Norway]] | 2.1% | 5.7% | 13.3% | 26.5% | 49.3% |
+| [[Countries/Australia\|Australia]] | 1.7% | 4.8% | 11.9% | 31.6% | 62.5% |
+| [[Countries/Ecuador\|Ecuador]] | 1.3% | 3.6% | 8.5% | 19.0% | 37.8% |
+| [[Countries/Switzerland\|Switzerland]] | 0.9% | 2.8% | 7.8% | 20.6% | 47.9% |
+| [[Countries/Croatia\|Croatia]] | 0.8% | 2.5% | 6.6% | 15.0% | 38.1% |
+| [[Countries/Belgium\|Belgium]] | 0.8% | 2.3% | 6.3% | 20.5% | 47.6% |
+| [[Countries/Uruguay\|Uruguay]] | 0.7% | 2.4% | 6.4% | 15.5% | 32.4% |
+| [[Countries/South Korea\|South Korea]] | 0.7% | 2.3% | 7.5% | 21.4% | 55.3% |
+| [[Countries/Iran\|Iran]] | 0.4% | 1.4% | 4.3% | 14.6% | 39.2% |
+| [[Countries/Canada\|Canada]] | 0.4% | 1.5% | 5.1% | 16.7% | 48.3% |
+| [[Countries/Senegal\|Senegal]] | 0.4% | 1.2% | 4.0% | 11.3% | 27.6% |
 
 ## Most likely scorers (expected group-stage goals)
 
@@ -45,7 +45,7 @@ These are probabilities, not certainties.
 - Harry Kane (England): 2.9
 - Cristiano Ronaldo (Portugal): 2.66
 - Lionel Messi (Argentina): 2.54
-- Enner Valencia (Ecuador): 2.48
+- Enner Valencia (Ecuador): 2.24
 - Raúl Jiménez (Mexico): 2.18
 - Neymar (Brazil): 2.02
 - Edin Džeko (Bosnia and Herzegovina): 1.78

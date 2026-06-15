@@ -13,12 +13,12 @@ updated: 2026-06-15
 <!-- WC26:AUTO:forecast START -->
 **Group H match** · 2026-06-21
 
-Win Uruguay: 57.6% | Draw: 26.2% | Win Cape Verde: 16.2%
-Most likely single score: 1-0 (14.9%) (one of many possible, not a prediction)
-Top-5 scorelines: 1-0 14.9%, 2-0 12.6%, 1-1 11.9%, 0-0 10.3%, 2-1 9.1% (cumulative 58.9%)
+Win Uruguay: 57.3% | Draw: 26.4% | Win Cape Verde: 16.3%
+Most likely single score: 1-0 (15.0%) (one of many possible, not a prediction)
+Top-5 scorelines: 1-0 15.0%, 2-0 12.6%, 1-1 12.0%, 0-0 10.5%, 2-1 9.1% (cumulative 59.1%)
 Expected score: 2-1
-Over 2.5: 41.4% | Under 2.5: 58.6% | BTTS yes: 41.9% | BTTS no: 58.1%
-Top scorers: Federico Valverde 23.0%; Darwin Núñez 22.7%; Giorgian de Arrascaeta 21.4%; Ryan Mendes 17.9%; Garry Rodrigues 7.8%; Dailon Livramento 7.0%;
+Over 2.5: 41.0% | Under 2.5: 59.0% | BTTS yes: 41.8% | BTTS no: 58.2%
+Top scorers: Federico Valverde 22.9%; Darwin Núñez 22.5%; Giorgian de Arrascaeta 21.3%; Ryan Mendes 17.9%; Garry Rodrigues 7.8%; Dailon Livramento 7.0%;
 Data as of 2026-06-15 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

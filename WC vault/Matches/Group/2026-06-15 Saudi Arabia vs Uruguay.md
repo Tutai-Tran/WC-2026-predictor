@@ -13,12 +13,12 @@ updated: 2026-06-15
 <!-- WC26:AUTO:forecast START -->
 **Group H match** · 2026-06-15
 
-Win Saudi Arabia: 13.1% | Draw: 23.2% | Win Uruguay: 63.7%
-Most likely single score: 0-1 (15.0%) (one of many possible, not a prediction)
-Top-5 scorelines: 0-1 15.0%, 0-2 13.0%, 1-1 11.6%, 0-0 10.1%, 1-2 9.1% (cumulative 58.8%)
+Win Saudi Arabia: 13.1% | Draw: 23.3% | Win Uruguay: 63.6%
+Most likely single score: 0-1 (15.1%) (one of many possible, not a prediction)
+Top-5 scorelines: 0-1 15.1%, 0-2 13.0%, 1-1 11.7%, 0-0 10.2%, 1-2 9.1% (cumulative 59.0%)
 Expected score: 1-2
-Over 2.5: 42.0% | Under 2.5: 58.0% | BTTS yes: 41.5% | BTTS no: 58.5%
-Top scorers: Salem Al-Dawsari 23.6%; Saleh Al-Shehri 12.0%; Firas Al-Buraikan 10.2%; Federico Valverde 23.3%; Darwin Núñez 23.2%; Giorgian de Arrascaeta 22.0%;
+Over 2.5: 41.7% | Under 2.5: 58.3% | BTTS yes: 41.4% | BTTS no: 58.6%
+Top scorers: Salem Al-Dawsari 23.6%; Saleh Al-Shehri 12.0%; Firas Al-Buraikan 10.2%; Federico Valverde 23.2%; Darwin Núñez 23.1%; Giorgian de Arrascaeta 21.8%;
 Data as of 2026-06-15 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
