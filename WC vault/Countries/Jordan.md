@@ -13,7 +13,7 @@ updated: 2026-06-15
 
 # Jordan
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-15T07:20Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-15T11:51Z | source elo-goal-v1 -->
 Group J | FIFA rank 62 | Elo 1784
 Champion 0.0% | Final 0.1% | SF 0.7% | QF 2.8% | Advance 38.0%
 Availability concerns: Ibrahim Sabra (out)
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-15T07:20Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-15T11:51Z | source elo-goal-v1 -->
 - 2026-06-15: champion 0.0% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
