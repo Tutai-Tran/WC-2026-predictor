@@ -13,9 +13,9 @@ updated: 2026-06-15
 
 # Ecuador
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-15T11:51Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-15T18:38Z | source elo-goal-v1 -->
 Group E | FIFA rank 24 | Elo 1982
-Champion 1.3% | Final 3.6% | SF 8.4% | QF 19.2% | Advance 78.9%
+Champion 1.3% | Final 3.5% | SF 8.4% | QF 18.8% | Advance 79.1%
 Availability concerns: Enner Valencia (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-15T11:51Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-15T18:38Z | source elo-goal-v1 -->
 - 2026-06-15: champion 1.3% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

@@ -13,7 +13,7 @@ updated: 2026-06-15
 <!-- WC26:AUTO:forecast START -->
 **Group J match** · 2026-06-17
 
-Win Argentina: 66.2% | Draw: 22.3% | Win Algeria: 11.5%
+Win Argentina: 66.4% | Draw: 22.2% | Win Algeria: 11.4%
 Most likely single score: 1-0 (16.3%) (one of many possible, not a prediction)
 Top-5 scorelines: 1-0 16.3%, 2-0 13.6%, 1-1 11.6%, 0-0 11.2%, 2-1 8.7% (cumulative 61.4%)
 Expected score: 2-1
