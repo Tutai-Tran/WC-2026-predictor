@@ -12,11 +12,11 @@ updated: 2026-06-15
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-06-01 · played 1-0
 
-Win Austria: 60.2% | Draw: 25.2% | Win Tunisia: 14.7%
-Most likely single score: 2-0 (11.8%) (one of many possible, not a prediction)
-Top-5 scorelines: 1-1 11.9%, 2-0 11.8%, 1-0 10.9%, 2-1 9.8%, 0-0 8.2% (cumulative 52.5%)
+Win Austria: 59.3% | Draw: 25.5% | Win Tunisia: 15.2%
+Most likely single score: 2-0 (11.6%) (one of many possible, not a prediction)
+Top-5 scorelines: 1-1 12.1%, 2-0 11.6%, 1-0 10.9%, 2-1 9.8%, 0-0 8.3% (cumulative 52.7%)
 Expected score: 2-1
-Over 2.5: 51.0% | Under 2.5: 49.0% | BTTS yes: 49.4% | BTTS no: 50.6%
+Over 2.5: 50.6% | Under 2.5: 49.4% | BTTS yes: 49.6% | BTTS no: 50.4%
 Data as of 2026-06-15 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

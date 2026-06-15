@@ -14,7 +14,7 @@ updated: 2026-06-15
 
 Win Sweden: 35.4% | Draw: 32.6% | Win Greece: 32.0%
 Most likely single score: 1-0 (10.1%) (one of many possible, not a prediction)
-Top-5 scorelines: 1-1 15.3%, 0-0 12.4%, 1-0 10.1%, 0-1 9.4%, 2-1 7.8% (cumulative 54.9%)
+Top-5 scorelines: 1-1 15.3%, 0-0 12.4%, 1-0 10.1%, 0-1 9.4%, 2-1 7.8% (cumulative 55.0%)
 Expected score: 1-1
 Over 2.5: 39.5% | Under 2.5: 60.5% | BTTS yes: 47.9% | BTTS no: 52.1%
 Data as of 2026-06-15 | runs 50000 | seed 20260611

@@ -12,11 +12,11 @@ updated: 2026-06-15
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-05-29 · played 3-1
 
-Win Iran: 75.3% | Draw: 17.8% | Win Gambia: 7.0%
-Most likely single score: 2-0 (13.9%) (one of many possible, not a prediction)
-Top-5 scorelines: 2-0 13.9%, 3-0 11.2%, 1-0 10.4%, 2-1 8.7%, 1-1 8.3% (cumulative 52.5%)
+Win Iran: 74.1% | Draw: 18.4% | Win Gambia: 7.5%
+Most likely single score: 2-0 (13.7%) (one of many possible, not a prediction)
+Top-5 scorelines: 2-0 13.7%, 3-0 10.9%, 1-0 10.4%, 2-1 8.9%, 1-1 8.6% (cumulative 52.6%)
 Expected score: 2-1
-Over 2.5: 58.8% | Under 2.5: 41.2% | BTTS yes: 43.7% | BTTS no: 56.3%
+Over 2.5: 58.1% | Under 2.5: 41.9% | BTTS yes: 44.4% | BTTS no: 55.6%
 Data as of 2026-06-15 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

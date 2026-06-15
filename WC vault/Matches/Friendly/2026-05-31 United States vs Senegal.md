@@ -12,11 +12,11 @@ updated: 2026-06-15
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-05-31 · played 3-2
 
-Win United States: 38.0% | Draw: 32.2% | Win Senegal: 29.8%
+Win United States: 37.9% | Draw: 32.2% | Win Senegal: 29.9%
 Most likely single score: 1-0 (10.3%) (one of many possible, not a prediction)
-Top-5 scorelines: 1-1 15.1%, 0-0 11.8%, 1-0 10.3%, 0-1 8.6%, 2-1 8.2% (cumulative 54.1%)
+Top-5 scorelines: 1-1 15.1%, 0-0 11.9%, 1-0 10.3%, 0-1 8.6%, 2-1 8.2% (cumulative 54.1%)
 Expected score: 1-1
-Over 2.5: 40.9% | Under 2.5: 59.1% | BTTS yes: 48.8% | BTTS no: 51.2%
+Over 2.5: 40.8% | Under 2.5: 59.2% | BTTS yes: 48.7% | BTTS no: 51.3%
 Data as of 2026-06-15 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

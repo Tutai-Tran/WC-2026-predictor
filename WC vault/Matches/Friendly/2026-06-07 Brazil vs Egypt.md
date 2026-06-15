@@ -12,11 +12,11 @@ updated: 2026-06-15
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-06-07 · played 2-1
 
-Win Brazil: 64.7% | Draw: 23.2% | Win Egypt: 12.2%
-Most likely single score: 2-0 (12.5%) (one of many possible, not a prediction)
-Top-5 scorelines: 2-0 12.5%, 1-1 10.9%, 1-0 10.8%, 2-1 9.7%, 3-0 8.5% (cumulative 52.3%)
+Win Brazil: 63.7% | Draw: 23.6% | Win Egypt: 12.7%
+Most likely single score: 2-0 (12.3%) (one of many possible, not a prediction)
+Top-5 scorelines: 2-0 12.3%, 1-1 11.1%, 1-0 10.9%, 2-1 9.7%, 3-0 8.2% (cumulative 52.2%)
 Expected score: 2-1
-Over 2.5: 53.2% | Under 2.5: 46.8% | BTTS yes: 48.3% | BTTS no: 51.7%
+Over 2.5: 52.8% | Under 2.5: 47.2% | BTTS yes: 48.6% | BTTS no: 51.4%
 Data as of 2026-06-15 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

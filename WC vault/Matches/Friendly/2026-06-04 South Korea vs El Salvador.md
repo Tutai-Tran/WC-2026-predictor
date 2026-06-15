@@ -12,11 +12,11 @@ updated: 2026-06-15
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-06-04 · played 1-0
 
-Win South Korea: 78.9% | Draw: 15.7% | Win El Salvador: 5.4%
-Most likely single score: 2-0 (14.3%) (one of many possible, not a prediction)
-Top-5 scorelines: 2-0 14.2%, 3-0 12.2%, 1-0 10.1%, 2-1 8.2%, 4-0 7.9% (cumulative 52.6%)
+Win South Korea: 77.7% | Draw: 16.4% | Win El Salvador: 5.9%
+Most likely single score: 2-0 (14.1%) (one of many possible, not a prediction)
+Top-5 scorelines: 2-0 14.1%, 3-0 11.9%, 1-0 10.2%, 2-1 8.4%, 1-1 7.6% (cumulative 52.2%)
 Expected score: 3-1
-Over 2.5: 60.9% | Under 2.5: 39.1% | BTTS yes: 41.2% | BTTS no: 58.8%
+Over 2.5: 60.2% | Under 2.5: 39.8% | BTTS yes: 42.1% | BTTS no: 57.9%
 Data as of 2026-06-15 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

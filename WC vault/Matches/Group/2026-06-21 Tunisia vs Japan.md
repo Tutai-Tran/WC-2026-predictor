@@ -13,12 +13,12 @@ updated: 2026-06-15
 <!-- WC26:AUTO:forecast START -->
 **Group F match** · 2026-06-21
 
-Win Tunisia: 9.8% | Draw: 19.8% | Win Japan: 70.5%
-Most likely single score: 0-2 (14.3%) (one of many possible, not a prediction)
-Top-5 scorelines: 0-2 14.3%, 0-1 13.0%, 0-3 10.0%, 1-1 9.1%, 1-2 9.1% (cumulative 55.5%)
+Win Tunisia: 10.4% | Draw: 20.4% | Win Japan: 69.3%
+Most likely single score: 0-2 (14.1%) (one of many possible, not a prediction)
+Top-5 scorelines: 0-2 14.1%, 0-1 13.1%, 0-3 9.7%, 1-1 9.4%, 1-2 9.2% (cumulative 55.4%)
 Expected score: 1-2
-Over 2.5: 51.8% | Under 2.5: 48.2% | BTTS yes: 42.0% | BTTS no: 58.0%
-Top scorers: Firas Chaouat 7.9%; Ali Abdi 7.4%; Elias Achouri 5.9%; Ayase Ueda 25.8%; Junya Itō 23.3%; Daichi Kamada 19.4%;
+Over 2.5: 51.2% | Under 2.5: 48.8% | BTTS yes: 42.5% | BTTS no: 57.5%
+Top scorers: Firas Chaouat 8.1%; Ali Abdi 7.6%; Elias Achouri 6.0%; Ayase Ueda 25.3%; Junya Itō 22.9%; Daichi Kamada 19.0%;
 Data as of 2026-06-15 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

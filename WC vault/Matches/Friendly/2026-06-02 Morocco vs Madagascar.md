@@ -12,11 +12,11 @@ updated: 2026-06-15
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-06-02 · played 4-0
 
-Win Morocco: 85.2% | Draw: 11.7% | Win Madagascar: 3.1%
+Win Morocco: 84.0% | Draw: 12.5% | Win Madagascar: 3.5%
 Most likely single score: 2-0 (14.7%) (one of many possible, not a prediction)
-Top-5 scorelines: 2-0 14.7%, 3-0 14.2%, 4-0 10.2%, 1-0 9.5%, 2-1 6.7% (cumulative 55.4%)
+Top-5 scorelines: 2-0 14.7%, 3-0 13.8%, 4-0 9.7%, 1-0 9.6%, 2-1 7.0% (cumulative 54.9%)
 Expected score: 3-0
-Over 2.5: 64.9% | Under 2.5: 35.1% | BTTS yes: 35.2% | BTTS no: 64.8%
+Over 2.5: 64.1% | Under 2.5: 35.9% | BTTS yes: 36.6% | BTTS no: 63.4%
 Data as of 2026-06-15 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
