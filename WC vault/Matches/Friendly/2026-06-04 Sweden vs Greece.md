@@ -12,11 +12,11 @@ updated: 2026-06-15
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-06-04 · played 2-2
 
-Win Sweden: 30.1% | Draw: 32.2% | Win Greece: 37.7%
-Most likely single score: 0-1 (10.3%) (one of many possible, not a prediction)
-Top-5 scorelines: 1-1 15.2%, 0-0 11.9%, 0-1 10.3%, 1-0 8.7%, 1-2 8.1% (cumulative 54.2%)
+Win Sweden: 35.4% | Draw: 32.6% | Win Greece: 32.0%
+Most likely single score: 1-0 (10.1%) (one of many possible, not a prediction)
+Top-5 scorelines: 1-1 15.3%, 0-0 12.4%, 1-0 10.1%, 0-1 9.4%, 2-1 7.8% (cumulative 54.9%)
 Expected score: 1-1
-Over 2.5: 40.6% | Under 2.5: 59.4% | BTTS yes: 48.6% | BTTS no: 51.4%
+Over 2.5: 39.5% | Under 2.5: 60.5% | BTTS yes: 47.9% | BTTS no: 52.1%
 Data as of 2026-06-15 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

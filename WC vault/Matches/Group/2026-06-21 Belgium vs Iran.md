@@ -13,12 +13,12 @@ updated: 2026-06-15
 <!-- WC26:AUTO:forecast START -->
 **Group G match** · 2026-06-21
 
-Win Belgium: 37.6% | Draw: 32.8% | Win Iran: 29.6%
-Most likely single score: 1-0 (14.2%) (one of many possible, not a prediction)
-Top-5 scorelines: 0-0 15.0%, 1-1 14.2%, 1-0 14.2%, 0-1 11.9%, 2-0 8.0% (cumulative 63.3%)
+Win Belgium: 39.3% | Draw: 33.3% | Win Iran: 27.4%
+Most likely single score: 1-0 (15.4%) (one of many possible, not a prediction)
+Top-5 scorelines: 0-0 16.1%, 1-0 15.4%, 1-1 14.1%, 0-1 11.7%, 2-0 8.6% (cumulative 65.9%)
 Expected score: 1-1
-Over 2.5: 31.1% | Under 2.5: 68.9% | BTTS yes: 39.4% | BTTS no: 60.6%
-Top scorers: Romelu Lukaku 34.8%; Kevin De Bruyne 23.0%; Youri Tielemans 6.2%; Mehdi Taremi 34.4%; Alireza Jahanbakhsh 9.1%; Mohammad Mohebi 7.6%;
+Over 2.5: 29.0% | Under 2.5: 71.0% | BTTS yes: 37.3% | BTTS no: 62.7%
+Top scorers: Romelu Lukaku 34.8%; Kevin De Bruyne 23.0%; Youri Tielemans 6.2%; Mehdi Taremi 32.5%; Alireza Jahanbakhsh 8.4%; Mohammad Mohebi 7.0%;
 Data as of 2026-06-15 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

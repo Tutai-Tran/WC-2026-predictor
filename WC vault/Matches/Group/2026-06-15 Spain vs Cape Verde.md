@@ -13,7 +13,7 @@ updated: 2026-06-15
 <!-- WC26:AUTO:forecast START -->
 **Group H match** · 2026-06-15
 
-Win Spain: 88.8% | Draw: 8.4% | Win Cape Verde: 2.8%
+Win Spain: 89.0% | Draw: 8.3% | Win Cape Verde: 2.7%
 Most likely single score: 2-0 (16.5%) (one of many possible, not a prediction)
 Top-5 scorelines: 2-0 16.6%, 3-0 14.9%, 1-0 12.0%, 4-0 10.1%, 2-1 6.5% (cumulative 60.0%)
 Expected score: 3-0

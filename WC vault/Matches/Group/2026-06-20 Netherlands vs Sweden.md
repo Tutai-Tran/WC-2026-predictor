@@ -13,12 +13,12 @@ updated: 2026-06-15
 <!-- WC26:AUTO:forecast START -->
 **Group F match** · 2026-06-20
 
-Win Netherlands: 63.7% | Draw: 22.7% | Win Sweden: 13.6%
-Most likely single score: 2-0 (12.8%) (one of many possible, not a prediction)
-Top-5 scorelines: 2-0 12.8%, 1-0 12.8%, 1-1 10.6%, 2-1 9.6%, 3-0 8.2% (cumulative 53.9%)
+Win Netherlands: 58.3% | Draw: 24.9% | Win Sweden: 16.8%
+Most likely single score: 1-0 (12.9%) (one of many possible, not a prediction)
+Top-5 scorelines: 1-0 12.9%, 2-0 11.8%, 1-1 11.6%, 2-1 9.6%, 0-0 8.4% (cumulative 54.4%)
 Expected score: 2-1
-Over 2.5: 49.6% | Under 2.5: 50.4% | BTTS yes: 45.5% | BTTS no: 54.5%
-Top scorers: Memphis Depay 51.6%; Cody Gakpo 20.7%; Wout Weghorst 16.1%; Alexander Isak 23.1%; Viktor Gyökeres 18.1%; Anthony Elanga 6.8%;
+Over 2.5: 47.0% | Under 2.5: 53.0% | BTTS yes: 46.5% | BTTS no: 53.5%
+Top scorers: Memphis Depay 48.8%; Cody Gakpo 19.1%; Wout Weghorst 14.8%; Alexander Isak 24.2%; Viktor Gyökeres 19.5%; Anthony Elanga 7.4%;
 Data as of 2026-06-15 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
