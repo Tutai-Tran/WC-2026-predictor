@@ -3,7 +3,7 @@ type: wc-match
 stage: R32
 match_no: 74
 date: 2026-06-29
-updated: 2026-06-15
+updated: 2026-06-16
 ---
 
 # R32 #74: 1E vs 3rd A/B/C/D/F
@@ -14,7 +14,7 @@ updated: 2026-06-15
 Slots: 1E vs 3rd A/B/C/D/F
 Projected: Germany vs 3rd A/B/C/D/F
 Result: TBD
-Data as of 2026-06-15 | runs 50000 | seed 20260611
+Data as of 2026-06-16 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

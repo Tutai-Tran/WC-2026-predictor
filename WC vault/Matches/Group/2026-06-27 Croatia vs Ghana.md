@@ -5,7 +5,7 @@ group: L
 date: 2026-06-27
 home: "Croatia"
 away: "Ghana"
-updated: 2026-06-15
+updated: 2026-06-16
 ---
 
 # Croatia vs Ghana
@@ -19,7 +19,7 @@ Top-5 scorelines: 2-0 14.1%, 1-0 12.4%, 3-0 10.3%, 2-1 9.1%, 1-1 8.8% (cumulativ
 Expected score: 2-1
 Over 2.5: 53.8% | Under 2.5: 46.2% | BTTS yes: 42.7% | BTTS no: 57.3%
 Top scorers: Ivan Perišić 40.0%; Andrej Kramarić 38.5%; Luka Modrić 36.9%; Jordan Ayew 23.3%; Thomas Partey 11.1%; Ernest Nuamah 4.1%;
-Data as of 2026-06-15 | runs 50000 | seed 20260611
+Data as of 2026-06-16 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-05-29
 home: "Iraq"
 away: "Andorra"
-updated: 2026-06-15
+updated: 2026-06-16
 ---
 
 # Iraq vs Andorra (friendly)
@@ -17,7 +17,7 @@ Most likely single score: 3-0 (15.0%) (one of many possible, not a prediction)
 Top-5 scorelines: 3-0 15.0%, 2-0 14.8%, 4-0 11.4%, 1-0 9.2%, 5-0 6.9% (cumulative 57.4%)
 Expected score: 3-0
 Over 2.5: 66.7% | Under 2.5: 33.3% | BTTS yes: 31.9% | BTTS no: 68.1%
-Data as of 2026-06-15 | runs 50000 | seed 20260611
+Data as of 2026-06-16 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

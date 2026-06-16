@@ -5,7 +5,7 @@ group: J
 date: 2026-06-23
 home: "Jordan"
 away: "Algeria"
-updated: 2026-06-15
+updated: 2026-06-16
 ---
 
 # Jordan vs Algeria
@@ -19,7 +19,7 @@ Top-5 scorelines: 1-1 13.2%, 0-1 13.1%, 0-0 10.2%, 0-2 10.1%, 1-2 9.1% (cumulati
 Expected score: 1-1
 Over 2.5: 41.9% | Under 2.5: 58.1% | BTTS yes: 46.2% | BTTS no: 53.8%
 Top scorers: Ali Olwan 21.8%; Musa Al-Taamari 18.6%; Mahmoud Al-Mardi 8.2%; Riyad Mahrez 34.9%; Mohamed Amoura 20.1%; Amine Gouiri 9.9%;
-Data as of 2026-06-15 | runs 50000 | seed 20260611
+Data as of 2026-06-16 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

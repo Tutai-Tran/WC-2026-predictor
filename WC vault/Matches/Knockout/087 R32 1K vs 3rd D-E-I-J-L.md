@@ -3,7 +3,7 @@ type: wc-match
 stage: R32
 match_no: 87
 date: 2026-07-04
-updated: 2026-06-15
+updated: 2026-06-16
 ---
 
 # R32 #87: 1K vs 3rd D/E/I/J/L
@@ -14,7 +14,7 @@ updated: 2026-06-15
 Slots: 1K vs 3rd D/E/I/J/L
 Projected: Colombia vs 3rd D/E/I/J/L
 Result: TBD
-Data as of 2026-06-15 | runs 50000 | seed 20260611
+Data as of 2026-06-16 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

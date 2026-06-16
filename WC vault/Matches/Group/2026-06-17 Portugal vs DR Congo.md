@@ -5,7 +5,7 @@ group: K
 date: 2026-06-17
 home: "Portugal"
 away: "DR Congo"
-updated: 2026-06-15
+updated: 2026-06-16
 ---
 
 # Portugal vs DR Congo
@@ -19,7 +19,7 @@ Top-5 scorelines: 2-0 13.6%, 1-0 12.6%, 1-1 9.6%, 2-1 9.4%, 3-0 9.3% (cumulative
 Expected score: 2-1
 Over 2.5: 52.0% | Under 2.5: 48.0% | BTTS yes: 44.1% | BTTS no: 55.9%
 Top scorers: Cristiano Ronaldo 69.2%; Bruno Fernandes 19.4%; Bernardo Silva 10.5%; Cédric Bakambu 14.4%; Meschak Elia 9.0%; Yoane Wissa 7.1%;
-Data as of 2026-06-15 | runs 50000 | seed 20260611
+Data as of 2026-06-16 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match
