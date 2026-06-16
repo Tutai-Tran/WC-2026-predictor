@@ -15,10 +15,10 @@ updated: 2026-06-16
 
 Win Portugal: 73.3% | Draw: 17.8% | Win DR Congo: 8.9%
 Most likely single score: 2-0 (13.6%) (one of many possible, not a prediction)
-Top-5 scorelines: 2-0 13.6%, 1-0 12.6%, 1-1 9.6%, 2-1 9.4%, 3-0 9.3% (cumulative 54.4%)
+Top-5 scorelines: 2-0 13.6%, 1-0 12.7%, 1-1 9.7%, 2-1 9.4%, 3-0 9.3% (cumulative 54.5%)
 Expected score: 2-1
-Over 2.5: 52.0% | Under 2.5: 48.0% | BTTS yes: 44.1% | BTTS no: 55.9%
-Top scorers: Cristiano Ronaldo 69.2%; Bruno Fernandes 19.4%; Bernardo Silva 10.5%; Cédric Bakambu 14.4%; Meschak Elia 9.0%; Yoane Wissa 7.1%;
+Over 2.5: 51.8% | Under 2.5: 48.2% | BTTS yes: 44.0% | BTTS no: 56.0%
+Top scorers: Cristiano Ronaldo 69.0%; Bruno Fernandes 19.4%; Bernardo Silva 10.4%; Cédric Bakambu 14.4%; Meschak Elia 9.0%; Yoane Wissa 7.1%;
 Data as of 2026-06-16 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
