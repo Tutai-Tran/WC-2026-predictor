@@ -5,7 +5,7 @@ fifa_code: "SWE"
 group: "F"
 fifa_rank: 41
 elo: 1829
-champion_prob: 0.0014
+champion_prob: 0.0011
 status: active
 created: 2026-06-04
 updated: 2026-06-16
@@ -13,9 +13,9 @@ updated: 2026-06-16
 
 # Sweden
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-16T11:48Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-16T19:41Z | source elo-goal-v1 -->
 Group F | FIFA rank 41 | Elo 1829
-Champion 0.1% | Final 0.6% | SF 2.7% | QF 9.7% | Advance 95.7%
+Champion 0.1% | Final 0.6% | SF 2.5% | QF 8.9% | Advance 95.6%
 Availability concerns: Gabriel Gudmundsson (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-16T11:48Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-16T19:41Z | source elo-goal-v1 -->
 - 2026-06-16: champion 0.1% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

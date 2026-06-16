@@ -13,7 +13,7 @@ updated: 2026-06-16
 <!-- WC26:AUTO:forecast START -->
 **Group J match** · 2026-06-17
 
-Win Austria: 62.7% | Draw: 23.5% | Win Jordan: 13.7%
+Win Austria: 64.5% | Draw: 21.7% | Win Jordan: 13.8%
 Most likely single score: 1-0 (13.1%) (one of many possible, not a prediction)
 Top-5 scorelines: 1-1 13.2%, 1-0 13.1%, 0-0 10.2%, 2-0 10.1%, 2-1 9.0% (cumulative 55.6%)
 Expected score: 1-1
