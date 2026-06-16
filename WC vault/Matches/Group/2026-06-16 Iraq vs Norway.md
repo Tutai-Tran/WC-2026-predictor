@@ -13,7 +13,7 @@ updated: 2026-06-16
 <!-- WC26:AUTO:forecast START -->
 **Group I match** · 2026-06-16
 
-Win Iraq: 7.4% | Draw: 15.6% | Win Norway: 77.0%
+Win Iraq: 7.4% | Draw: 15.6% | Win Norway: 76.9%
 Most likely single score: 0-2 (13.0%) (one of many possible, not a prediction)
 Top-5 scorelines: 0-2 13.0%, 0-1 12.7%, 1-1 10.3%, 1-2 9.5%, 0-3 8.5% (cumulative 54.1%)
 Expected score: 1-2

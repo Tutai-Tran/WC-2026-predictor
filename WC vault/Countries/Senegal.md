@@ -5,7 +5,7 @@ fifa_code: "SEN"
 group: "I"
 fifa_rank: 18
 elo: 1894
-champion_prob: 0.0036
+champion_prob: 0.0021
 status: active
 created: 2026-06-04
 updated: 2026-06-16
@@ -13,10 +13,10 @@ updated: 2026-06-16
 
 # Senegal
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-16T00:20Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-16T03:16Z | source elo-goal-v1 -->
 Group I | FIFA rank 18 | Elo 1894
-Champion 0.4% | Final 1.2% | SF 3.5% | QF 9.8% | Advance 60.1%
-Availability concerns: Cherif Ndiaye (doubtful), Assane Diao (doubtful), Idrissa Gueye (doubtful), Kalidou Koulibaly (doubtful)
+Champion 0.2% | Final 0.9% | SF 3.3% | QF 10.2% | Advance 60.6%
+Availability concerns: Assane Diao (doubtful), Cherif Ndiaye (doubtful), Idrissa Gueye (doubtful), Kalidou Koulibaly (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
 ## Squad & availability
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-16T00:20Z | source elo-goal-v1 -->
-- 2026-06-16: champion 0.4% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-16T03:16Z | source elo-goal-v1 -->
+- 2026-06-16: champion 0.2% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

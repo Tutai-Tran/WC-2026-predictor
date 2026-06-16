@@ -5,7 +5,7 @@ fifa_code: "CRO"
 group: "L"
 fifa_rank: 10
 elo: 1963
-champion_prob: 0.0127
+champion_prob: 0.0106
 status: active
 created: 2026-06-04
 updated: 2026-06-16
@@ -13,9 +13,9 @@ updated: 2026-06-16
 
 # Croatia
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-16T00:20Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-16T03:16Z | source elo-goal-v1 -->
 Group L | FIFA rank 10 | Elo 1963
-Champion 1.3% | Final 3.5% | SF 8.4% | QF 18.1% | Advance 85.8%
+Champion 1.1% | Final 3.0% | SF 7.9% | QF 17.5% | Advance 86.2%
 Availability concerns: Joško Gvardiol (doubtful), Mateo Kovačić (doubtful), Luka Modrić (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-16T00:20Z | source elo-goal-v1 -->
-- 2026-06-16: champion 1.3% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-16T03:16Z | source elo-goal-v1 -->
+- 2026-06-16: champion 1.1% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
