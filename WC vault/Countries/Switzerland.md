@@ -5,7 +5,7 @@ fifa_code: "SUI"
 group: "B"
 fifa_rank: 17
 elo: 1944
-champion_prob: 0.0072
+champion_prob: 0.007
 status: active
 created: 2026-06-04
 updated: 2026-06-17
@@ -13,9 +13,9 @@ updated: 2026-06-17
 
 # Switzerland
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-17T00:09Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-17T03:12Z | source elo-goal-v1 -->
 Group B | FIFA rank 17 | Elo 1944
-Champion 0.7% | Final 2.5% | SF 6.9% | QF 19.6% | Advance 80.8%
+Champion 0.7% | Final 2.3% | SF 6.8% | QF 19.8% | Advance 80.7%
 Availability: no concerns recorded
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-17T00:09Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-17T03:12Z | source elo-goal-v1 -->
 - 2026-06-17: champion 0.7% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

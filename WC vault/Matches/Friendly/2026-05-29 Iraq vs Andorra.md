@@ -12,11 +12,11 @@ updated: 2026-06-17
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-05-29 · played 1-0
 
-Win Iraq: 87.7% | Draw: 10.0% | Win Andorra: 2.2%
-Most likely single score: 3-0 (15.0%) (one of many possible, not a prediction)
-Top-5 scorelines: 3-0 15.0%, 2-0 14.8%, 4-0 11.4%, 1-0 9.2%, 5-0 6.9% (cumulative 57.4%)
+Win Iraq: 86.7% | Draw: 10.7% | Win Andorra: 2.6%
+Most likely single score: 2-0 (14.8%) (one of many possible, not a prediction)
+Top-5 scorelines: 2-0 14.8%, 3-0 14.7%, 4-0 10.9%, 1-0 9.3%, 5-0 6.5% (cumulative 56.2%)
 Expected score: 3-0
-Over 2.5: 66.7% | Under 2.5: 33.3% | BTTS yes: 31.9% | BTTS no: 68.1%
+Over 2.5: 66.0% | Under 2.5: 34.0% | BTTS yes: 33.3% | BTTS no: 66.7%
 Data as of 2026-06-17 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

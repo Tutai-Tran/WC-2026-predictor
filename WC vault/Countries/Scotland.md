@@ -13,9 +13,9 @@ updated: 2026-06-17
 
 # Scotland
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-17T00:09Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-17T03:12Z | source elo-goal-v1 -->
 Group C | FIFA rank 39 | Elo 1890
-Champion 0.3% | Final 1.0% | SF 3.7% | QF 11.4% | Advance 85.3%
+Champion 0.3% | Final 1.0% | SF 3.5% | QF 11.4% | Advance 85.4%
 Availability concerns: Ché Adams (doubtful), Scott McKenna (out), Scott McTominay (doubtful), Craig Gordon (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-17T00:09Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-17T03:12Z | source elo-goal-v1 -->
 - 2026-06-17: champion 0.3% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
