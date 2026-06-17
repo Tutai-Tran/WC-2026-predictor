@@ -5,7 +5,7 @@ fifa_code: "ECU"
 group: "E"
 fifa_rank: 24
 elo: 1982
-champion_prob: 0.0105
+champion_prob: 0.0104
 status: active
 created: 2026-06-04
 updated: 2026-06-17
@@ -13,9 +13,9 @@ updated: 2026-06-17
 
 # Ecuador
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-17T16:10Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-17T19:13Z | source elo-goal-v1 -->
 Group E | FIFA rank 24 | Elo 1982
-Champion 1.1% | Final 2.8% | SF 7.5% | QF 18.0% | Advance 77.6%
+Champion 1.0% | Final 2.9% | SF 7.5% | QF 18.1% | Advance 77.8%
 Availability concerns: Enner Valencia (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-17T16:10Z | source elo-goal-v1 -->
-- 2026-06-17: champion 1.1% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-17T19:13Z | source elo-goal-v1 -->
+- 2026-06-17: champion 1.0% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

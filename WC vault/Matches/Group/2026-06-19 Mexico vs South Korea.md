@@ -13,7 +13,7 @@ updated: 2026-06-17
 <!-- WC26:AUTO:forecast START -->
 **Group A match** · 2026-06-19
 
-Win Mexico: 51.7% | Draw: 27.5% | Win South Korea: 20.8%
+Win Mexico: 51.7% | Draw: 27.4% | Win South Korea: 20.9%
 Most likely single score: 1-0 (13.4%) (one of many possible, not a prediction)
 Top-5 scorelines: 1-0 13.4%, 2-0 12.3%, 1-1 11.5%, 2-1 9.5%, 0-0 8.6% (cumulative 55.3%)
 Expected score: 2-1

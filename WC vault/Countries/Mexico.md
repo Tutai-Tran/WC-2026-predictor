@@ -5,7 +5,7 @@ fifa_code: "MEX"
 group: "A"
 fifa_rank: 14
 elo: 2013
-champion_prob: 0.0233
+champion_prob: 0.0236
 status: active
 created: 2026-06-04
 updated: 2026-06-17
@@ -13,9 +13,9 @@ updated: 2026-06-17
 
 # Mexico
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-17T16:10Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-17T19:13Z | source elo-goal-v1 -->
 Group A | FIFA rank 14 | Elo 2013
-Champion 2.3% | Final 5.9% | SF 15.6% | QF 34.7% | Advance 99.6%
+Champion 2.4% | Final 6.0% | SF 15.5% | QF 34.6% | Advance 99.6%
 Availability concerns: César Montes (suspended), Julián Quiñones (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-17T16:10Z | source elo-goal-v1 -->
-- 2026-06-17: champion 2.3% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-17T19:13Z | source elo-goal-v1 -->
+- 2026-06-17: champion 2.4% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
