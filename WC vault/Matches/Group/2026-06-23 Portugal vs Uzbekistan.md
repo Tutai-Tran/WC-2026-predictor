@@ -13,12 +13,12 @@ updated: 2026-06-17
 <!-- WC26:AUTO:forecast START -->
 **Group K match** · 2026-06-23
 
-Win Portugal: 63.9% | Draw: 23.1% | Win Uzbekistan: 13.0%
-Most likely single score: 1-0 (13.8%) (one of many possible, not a prediction)
-Top-5 scorelines: 1-0 13.8%, 2-0 13.4%, 1-1 10.6%, 2-1 9.3%, 3-0 8.3% (cumulative 55.5%)
+Win Portugal: 63.5% | Draw: 23.3% | Win Uzbekistan: 13.2%
+Most likely single score: 1-0 (13.9%) (one of many possible, not a prediction)
+Top-5 scorelines: 1-0 13.9%, 2-0 13.4%, 1-1 10.7%, 2-1 9.3%, 0-0 8.5% (cumulative 55.9%)
 Expected score: 2-1
-Over 2.5: 47.1% | Under 2.5: 52.9% | BTTS yes: 43.0% | BTTS no: 57.0%
-Top scorers: Cristiano Ronaldo 65.7%; Bruno Fernandes 17.7%; Bernardo Silva 9.5%; Eldor Shomurodov 20.3%; Igor Sergeev 11.9%; Jaloliddin Masharipov 6.1%;
+Over 2.5: 46.7% | Under 2.5: 53.3% | BTTS yes: 42.8% | BTTS no: 57.2%
+Top scorers: Cristiano Ronaldo 65.4%; Bruno Fernandes 17.5%; Bernardo Silva 9.4%; Eldor Shomurodov 20.3%; Igor Sergeev 11.9%; Jaloliddin Masharipov 6.1%;
 Data as of 2026-06-17 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
