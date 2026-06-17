@@ -13,12 +13,12 @@ updated: 2026-06-17
 <!-- WC26:AUTO:forecast START -->
 **Group L match** · 2026-06-23
 
-Win Panama: 22.9% | Draw: 28.4% | Win Croatia: 48.6%
-Most likely single score: 0-1 (13.1%) (one of many possible, not a prediction)
-Top-5 scorelines: 1-1 13.2%, 0-1 13.1%, 0-0 10.3%, 0-2 10.1%, 1-2 9.0% (cumulative 55.7%)
+Win Panama: 23.2% | Draw: 28.4% | Win Croatia: 48.5%
+Most likely single score: 0-1 (12.9%) (one of many possible, not a prediction)
+Top-5 scorelines: 1-1 13.2%, 0-1 13.0%, 0-0 10.2%, 0-2 10.0%, 1-2 9.0% (cumulative 55.3%)
 Expected score: 1-1
-Over 2.5: 41.6% | Under 2.5: 58.4% | BTTS yes: 46.1% | BTTS no: 53.9%
-Top scorers: José Fajardo 11.3%; Ismael Díaz 10.8%; Cecilio Waterman 10.1%; Ivan Perišić 28.8%; Luka Modrić 28.5%; Andrej Kramarić 27.5%;
+Over 2.5: 42.0% | Under 2.5: 58.0% | BTTS yes: 46.5% | BTTS no: 53.5%
+Top scorers: José Fajardo 11.4%; Ismael Díaz 10.9%; Cecilio Waterman 10.3%; Ivan Perišić 28.8%; Luka Modrić 28.6%; Andrej Kramarić 27.6%;
 Data as of 2026-06-17 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

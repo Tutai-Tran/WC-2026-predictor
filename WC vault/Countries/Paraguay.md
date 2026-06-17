@@ -13,9 +13,9 @@ updated: 2026-06-17
 
 # Paraguay
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-17T11:47Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-17T16:10Z | source elo-goal-v1 -->
 Group D | FIFA rank 38 | Elo 1857
-Champion 0.1% | Final 0.2% | SF 0.9% | QF 3.1% | Advance 28.5%
+Champion 0.1% | Final 0.3% | SF 1.1% | QF 3.3% | Advance 28.7%
 Availability concerns: Julio Enciso (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-17T11:47Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-17T16:10Z | source elo-goal-v1 -->
 - 2026-06-17: champion 0.1% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

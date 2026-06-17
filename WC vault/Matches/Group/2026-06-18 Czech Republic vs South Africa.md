@@ -13,7 +13,7 @@ updated: 2026-06-17
 <!-- WC26:AUTO:forecast START -->
 **Group A match** · 2026-06-18
 
-Win Czech Republic: 55.4% | Draw: 25.8% | Win South Africa: 18.7%
+Win Czech Republic: 55.4% | Draw: 25.9% | Win South Africa: 18.7%
 Most likely single score: 1-0 (15.5%) (one of many possible, not a prediction)
 Top-5 scorelines: 1-0 15.5%, 2-0 12.6%, 1-1 12.2%, 0-0 11.1%, 2-1 8.9% (cumulative 60.2%)
 Expected score: 2-1

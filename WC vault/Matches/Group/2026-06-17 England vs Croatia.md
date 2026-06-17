@@ -13,12 +13,12 @@ updated: 2026-06-17
 <!-- WC26:AUTO:forecast START -->
 **Group L match** · 2026-06-17
 
-Win England: 53.7% | Draw: 26.6% | Win Croatia: 19.7%
+Win England: 53.8% | Draw: 26.6% | Win Croatia: 19.7%
 Most likely single score: 1-0 (13.2%) (one of many possible, not a prediction)
-Top-5 scorelines: 1-0 13.2%, 1-1 12.9%, 2-0 10.5%, 0-0 10.0%, 2-1 9.2% (cumulative 55.8%)
+Top-5 scorelines: 1-0 13.2%, 1-1 12.9%, 2-0 10.5%, 0-0 10.0%, 2-1 9.2% (cumulative 55.7%)
 Expected score: 2-1
-Over 2.5: 42.5% | Under 2.5: 57.5% | BTTS yes: 46.0% | BTTS no: 54.0%
-Top scorers: Harry Kane 56.1%; Marcus Rashford 16.6%; Bukayo Saka 13.4%; Luka Modrić 21.2%; Ivan Perišić 18.5%; Andrej Kramarić 17.6%;
+Over 2.5: 42.6% | Under 2.5: 57.4% | BTTS yes: 46.1% | BTTS no: 53.9%
+Top scorers: Harry Kane 56.1%; Marcus Rashford 16.6%; Bukayo Saka 13.4%; Luka Modrić 21.2%; Ivan Perišić 18.5%; Andrej Kramarić 17.7%;
 Data as of 2026-06-17 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
