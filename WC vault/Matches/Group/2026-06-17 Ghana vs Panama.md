@@ -13,7 +13,7 @@ updated: 2026-06-17
 <!-- WC26:AUTO:forecast START -->
 **Group L match** · 2026-06-17
 
-Win Ghana: 29.8% | Draw: 29.3% | Win Panama: 41.0%
+Win Ghana: 29.6% | Draw: 29.5% | Win Panama: 40.9%
 Most likely single score: 0-1 (15.0%) (one of many possible, not a prediction)
 Top-5 scorelines: 0-1 15.0%, 0-2 13.7%, 1-1 11.0%, 0-0 9.6%, 1-2 9.1% (cumulative 58.4%)
 Expected score: 1-2
