@@ -13,12 +13,12 @@ updated: 2026-06-17
 <!-- WC26:AUTO:forecast START -->
 **Group L match** · 2026-06-17
 
-Win Ghana: 29.7% | Draw: 29.2% | Win Panama: 41.1%
-Most likely single score: 0-1 (14.9%) (one of many possible, not a prediction)
-Top-5 scorelines: 0-1 14.9%, 0-2 13.8%, 1-1 10.9%, 0-0 9.3%, 1-2 9.1% (cumulative 58.0%)
+Win Ghana: 29.8% | Draw: 29.3% | Win Panama: 41.0%
+Most likely single score: 0-1 (15.0%) (one of many possible, not a prediction)
+Top-5 scorelines: 0-1 15.0%, 0-2 13.7%, 1-1 11.0%, 0-0 9.6%, 1-2 9.1% (cumulative 58.4%)
 Expected score: 1-2
-Over 2.5: 44.0% | Under 2.5: 56.0% | BTTS yes: 40.8% | BTTS no: 59.2%
-Top scorers: Jordan Ayew 23.8%; Thomas Partey 11.3%; Ernest Nuamah 4.2%; José Fajardo 21.1%; Ismael Díaz 20.2%; Cecilio Waterman 19.1%;
+Over 2.5: 43.4% | Under 2.5: 56.6% | BTTS yes: 40.6% | BTTS no: 59.4%
+Top scorers: Jordan Ayew 23.8%; Thomas Partey 11.3%; Ernest Nuamah 4.2%; José Fajardo 20.9%; Ismael Díaz 19.9%; Cecilio Waterman 18.8%;
 Data as of 2026-06-17 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

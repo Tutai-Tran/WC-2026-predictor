@@ -13,7 +13,7 @@ updated: 2026-06-17
 <!-- WC26:AUTO:forecast START -->
 **Group K match** · 2026-06-17
 
-Win Portugal: 72.9% | Draw: 18.3% | Win DR Congo: 8.8%
+Win Portugal: 72.7% | Draw: 18.4% | Win DR Congo: 8.9%
 Most likely single score: 2-0 (13.6%) (one of many possible, not a prediction)
 Top-5 scorelines: 2-0 13.6%, 1-0 12.7%, 1-1 9.7%, 2-1 9.4%, 3-0 9.2% (cumulative 54.6%)
 Expected score: 2-1
