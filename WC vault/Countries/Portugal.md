@@ -4,8 +4,8 @@ team: "Portugal"
 fifa_code: "POR"
 group: "K"
 fifa_rank: 5
-elo: 2064
-champion_prob: 0.0463
+elo: 2043
+champion_prob: 0.0313
 status: active
 created: 2026-06-04
 updated: 2026-06-17
@@ -13,9 +13,9 @@ updated: 2026-06-17
 
 # Portugal
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-17T19:13Z | source elo-goal-v1 -->
-Group K | FIFA rank 5 | Elo 2064
-Champion 4.6% | Final 10.0% | SF 19.3% | QF 36.7% | Advance 91.9%
+<!-- WC26:AUTO:snapshot START | generated 2026-06-17T22:12Z | source elo-goal-v1 -->
+Group K | FIFA rank 5 | Elo 2043
+Champion 3.1% | Final 7.2% | SF 14.5% | QF 28.0% | Advance 81.9%
 Availability concerns: Rúben Dias (out)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-17T19:13Z | source elo-goal-v1 -->
-- 2026-06-17: champion 4.6% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-17T22:12Z | source elo-goal-v1 -->
+- 2026-06-17: champion 3.1% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

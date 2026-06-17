@@ -13,12 +13,12 @@ updated: 2026-06-17
 <!-- WC26:AUTO:forecast START -->
 **Group B match** · 2026-06-24
 
-Win Bosnia and Herzegovina: 45.2% | Draw: 29.1% | Win Qatar: 25.6%
-Most likely single score: 1-0 (12.7%) (one of many possible, not a prediction)
-Top-5 scorelines: 1-1 13.6%, 1-0 12.7%, 0-0 10.6%, 2-0 9.2%, 2-1 8.7% (cumulative 54.8%)
+Win Bosnia and Herzegovina: 31.9% | Draw: 33.8% | Win Qatar: 34.3%
+Most likely single score: 0-1 (14.0%) (one of many possible, not a prediction)
+Top-5 scorelines: 0-0 16.3%, 1-1 14.3%, 0-1 14.0%, 1-0 13.3%, 0-2 7.0% (cumulative 65.0%)
 Expected score: 1-1
-Over 2.5: 40.8% | Under 2.5: 59.2% | BTTS yes: 46.5% | BTTS no: 53.5%
-Top scorers: Edin Džeko 63.3%; Ermedin Demirović 6.7%; Haris Tabaković 6.7%; Almoez Ali 21.0%; Hassan Al-Haydos 16.3%; Akram Afif 15.6%;
+Over 2.5: 28.6% | Under 2.5: 71.4% | BTTS yes: 37.5% | BTTS no: 62.5%
+Top scorers: Edin Džeko 50.3%; Ermedin Demirović 4.5%; Haris Tabaković 4.5%; Almoez Ali 21.0%; Hassan Al-Haydos 16.3%; Akram Afif 15.6%;
 Data as of 2026-06-17 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
