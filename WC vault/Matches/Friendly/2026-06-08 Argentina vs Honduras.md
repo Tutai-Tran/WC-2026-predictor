@@ -12,11 +12,11 @@ updated: 2026-06-17
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-06-08 · played 2-0
 
-Win Argentina: 83.4% | Draw: 12.9% | Win Honduras: 3.7%
-Most likely single score: 2-0 (14.6%) (one of many possible, not a prediction)
-Top-5 scorelines: 2-0 14.6%, 3-0 13.6%, 1-0 9.7%, 4-0 9.5%, 2-1 7.2% (cumulative 54.6%)
+Win Argentina: 84.5% | Draw: 12.2% | Win Honduras: 3.3%
+Most likely single score: 2-0 (14.7%) (one of many possible, not a prediction)
+Top-5 scorelines: 2-0 14.7%, 3-0 14.0%, 4-0 9.9%, 1-0 9.6%, 2-1 6.9% (cumulative 55.1%)
 Expected score: 3-0
-Over 2.5: 63.7% | Under 2.5: 36.3% | BTTS yes: 37.2% | BTTS no: 62.8%
+Over 2.5: 64.4% | Under 2.5: 35.6% | BTTS yes: 36.0% | BTTS no: 64.0%
 Data as of 2026-06-17 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
