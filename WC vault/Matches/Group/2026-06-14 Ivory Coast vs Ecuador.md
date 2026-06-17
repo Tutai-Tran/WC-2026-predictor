@@ -5,7 +5,7 @@ group: E
 date: 2026-06-14
 home: "Ivory Coast"
 away: "Ecuador"
-updated: 2026-06-16
+updated: 2026-06-17
 ---
 
 # Ivory Coast vs Ecuador
@@ -19,7 +19,7 @@ Top-5 scorelines: 1-1 13.2%, 0-1 12.8%, 0-0 10.0%, 0-2 9.9%, 1-2 9.1% (cumulativ
 Expected score: 1-1
 Over 2.5: 42.4% | Under 2.5: 57.6% | BTTS yes: 46.8% | BTTS no: 53.2%
 Top scorers: Franck Kessié 13.1%; Nicolas Pépé 11.5%; Ibrahim Sangaré 10.8%; Enner Valencia 53.0%; Gonzalo Plata 11.9%; Félix Torres 6.6%;
-Data as of 2026-06-16 | runs 50000 | seed 20260611
+Data as of 2026-06-17 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

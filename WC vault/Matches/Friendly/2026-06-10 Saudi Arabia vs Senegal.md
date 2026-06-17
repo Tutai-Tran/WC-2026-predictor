@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-10
 home: "Saudi Arabia"
 away: "Senegal"
-updated: 2026-06-16
+updated: 2026-06-17
 ---
 
 # Saudi Arabia vs Senegal (friendly)
@@ -12,12 +12,12 @@ updated: 2026-06-16
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-06-10 · played 0-0
 
-Win Saudi Arabia: 18.4% | Draw: 27.6% | Win Senegal: 54.1%
+Win Saudi Arabia: 19.7% | Draw: 28.3% | Win Senegal: 52.0%
 Most likely single score: 0-1 (10.9%) (one of many possible, not a prediction)
-Top-5 scorelines: 1-1 13.1%, 0-1 10.9%, 0-2 10.7%, 1-2 9.7%, 0-0 9.2% (cumulative 53.5%)
+Top-5 scorelines: 1-1 13.4%, 0-1 10.9%, 0-2 10.4%, 1-2 9.6%, 0-0 9.5% (cumulative 53.8%)
 Expected score: 1-2
-Over 2.5: 48.1% | Under 2.5: 51.9% | BTTS yes: 50.2% | BTTS no: 49.8%
-Data as of 2026-06-16 | runs 50000 | seed 20260611
+Over 2.5: 47.1% | Under 2.5: 52.9% | BTTS yes: 50.3% | BTTS no: 49.7%
+Data as of 2026-06-17 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

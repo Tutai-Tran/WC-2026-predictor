@@ -5,7 +5,7 @@ group: A
 date: 2026-06-11
 home: "Mexico"
 away: "South Africa"
-updated: 2026-06-16
+updated: 2026-06-17
 ---
 
 # Mexico vs South Africa
@@ -19,7 +19,7 @@ Top-5 scorelines: 2-0 16.9%, 3-0 14.9%, 1-0 12.4%, 4-0 9.9%, 2-1 6.5% (cumulativ
 Expected score: 3-0
 Over 2.5: 58.6% | Under 2.5: 41.4% | BTTS yes: 30.0% | BTTS no: 70.0%
 Top scorers: Raúl Jiménez 62.8%; Orbelín Pineda 22.2%; Alexis Vega 15.7%; Teboho Mokoena 12.8%; Themba Zwane 5.9%; Lyle Foster 5.4%;
-Data as of 2026-06-16 | runs 50000 | seed 20260611
+Data as of 2026-06-17 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

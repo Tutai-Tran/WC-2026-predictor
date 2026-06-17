@@ -5,17 +5,17 @@ fifa_code: "IRQ"
 group: "I"
 fifa_rank: 57
 elo: 1735
-champion_prob: 0.0001
+champion_prob: 0.0
 status: active
 created: 2026-06-04
-updated: 2026-06-16
+updated: 2026-06-17
 ---
 
 # Iraq
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-16T21:11Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-17T00:09Z | source elo-goal-v1 -->
 Group I | FIFA rank 57 | Elo 1735
-Champion 0.0% | Final 0.0% | SF 0.3% | QF 1.4% | Advance 24.9%
+Champion 0.0% | Final 0.0% | SF 0.2% | QF 1.5% | Advance 25.8%
 Availability concerns: Ahmed Yahya (out)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-16T21:11Z | source elo-goal-v1 -->
-- 2026-06-16: champion 0.0% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-17T00:09Z | source elo-goal-v1 -->
+- 2026-06-17: champion 0.0% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

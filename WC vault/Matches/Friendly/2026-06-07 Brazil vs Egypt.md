@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-07
 home: "Brazil"
 away: "Egypt"
-updated: 2026-06-16
+updated: 2026-06-17
 ---
 
 # Brazil vs Egypt (friendly)
@@ -17,7 +17,7 @@ Most likely single score: 2-0 (12.1%) (one of many possible, not a prediction)
 Top-5 scorelines: 2-0 12.1%, 1-1 11.4%, 1-0 10.9%, 2-1 9.7%, 3-0 7.9% (cumulative 52.1%)
 Expected score: 2-1
 Over 2.5: 52.1% | Under 2.5: 47.9% | BTTS yes: 48.9% | BTTS no: 51.1%
-Data as of 2026-06-16 | runs 50000 | seed 20260611
+Data as of 2026-06-17 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

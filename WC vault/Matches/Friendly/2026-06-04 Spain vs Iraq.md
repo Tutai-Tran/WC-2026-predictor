@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-04
 home: "Spain"
 away: "Iraq"
-updated: 2026-06-16
+updated: 2026-06-17
 ---
 
 # Spain vs Iraq (friendly)
@@ -17,7 +17,7 @@ Most likely single score: 2-0 (14.5%) (one of many possible, not a prediction)
 Top-5 scorelines: 2-0 14.5%, 3-0 12.9%, 1-0 9.9%, 4-0 8.7%, 2-1 7.7% (cumulative 53.7%)
 Expected score: 3-1
 Over 2.5: 62.3% | Under 2.5: 37.7% | BTTS yes: 39.3% | BTTS no: 60.7%
-Data as of 2026-06-16 | runs 50000 | seed 20260611
+Data as of 2026-06-17 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

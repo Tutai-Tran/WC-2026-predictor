@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-08
 home: "Netherlands"
 away: "Uzbekistan"
-updated: 2026-06-16
+updated: 2026-06-17
 ---
 
 # Netherlands vs Uzbekistan (friendly)
@@ -17,7 +17,7 @@ Most likely single score: 1-0 (10.9%) (one of many possible, not a prediction)
 Top-5 scorelines: 1-1 12.9%, 1-0 10.9%, 2-0 10.9%, 2-1 9.7%, 0-0 9.0% (cumulative 53.4%)
 Expected score: 2-1
 Over 2.5: 48.6% | Under 2.5: 51.4% | BTTS yes: 50.1% | BTTS no: 49.9%
-Data as of 2026-06-16 | runs 50000 | seed 20260611
+Data as of 2026-06-17 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

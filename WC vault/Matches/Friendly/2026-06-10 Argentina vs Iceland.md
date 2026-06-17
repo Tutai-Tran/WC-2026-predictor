@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-10
 home: "Argentina"
 away: "Iceland"
-updated: 2026-06-16
+updated: 2026-06-17
 ---
 
 # Argentina vs Iceland (friendly)
@@ -17,7 +17,7 @@ Most likely single score: 3-0 (14.9%) (one of many possible, not a prediction)
 Top-5 scorelines: 3-0 14.9%, 2-0 14.8%, 4-0 11.2%, 1-0 9.2%, 5-0 6.8% (cumulative 57.0%)
 Expected score: 3-0
 Over 2.5: 66.5% | Under 2.5: 33.5% | BTTS yes: 32.4% | BTTS no: 67.6%
-Data as of 2026-06-16 | runs 50000 | seed 20260611
+Data as of 2026-06-17 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

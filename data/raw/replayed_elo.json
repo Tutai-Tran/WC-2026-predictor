@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-16",
+  "updated": "2026-06-17",
   "source": "base_elo + results ledger",
   "ratings": {
     "Scotland": 1889.6,
@@ -14,7 +14,7 @@
     "Hungary": 1776.9,
     "Czechoslovakia": 1803.8,
     "Belgium": 1953.2,
-    "France": 2130.8,
+    "France": 2149.2,
     "Switzerland": 1943.7,
     "Guernsey": 1751.7,
     "Alderney": 1059.4,
@@ -167,7 +167,7 @@
     "Central African Republic": 1350.9,
     "Iraq": 1734.6,
     "Saint Vincent and the Grenadines": 1346.9,
-    "Senegal": 1894.2,
+    "Senegal": 1875.8,
     "Laos": 938.5,
     "Chad": 1247.3,
     "Niger": 1495.2,
