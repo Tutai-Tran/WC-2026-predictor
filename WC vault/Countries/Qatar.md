@@ -8,14 +8,14 @@ elo: 1590
 champion_prob: 0.0
 status: active
 created: 2026-06-04
-updated: 2026-06-17
+updated: 2026-06-18
 ---
 
 # Qatar
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-17T22:12Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-18T01:11Z | source elo-goal-v1 -->
 Group B | FIFA rank 54 | Elo 1590
-Champion 0.0% | Final 0.0% | SF 0.1% | QF 0.9% | Advance 45.2%
+Champion 0.0% | Final 0.0% | SF 0.1% | QF 1.0% | Advance 43.8%
 Availability: no concerns recorded
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-17T22:12Z | source elo-goal-v1 -->
-- 2026-06-17: champion 0.0% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-18T01:11Z | source elo-goal-v1 -->
+- 2026-06-18: champion 0.0% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

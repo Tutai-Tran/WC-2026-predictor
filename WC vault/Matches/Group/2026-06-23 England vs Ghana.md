@@ -5,7 +5,7 @@ group: L
 date: 2026-06-23
 home: "England"
 away: "Ghana"
-updated: 2026-06-17
+updated: 2026-06-18
 ---
 
 # England vs Ghana
@@ -13,13 +13,13 @@ updated: 2026-06-17
 <!-- WC26:AUTO:forecast START -->
 **Group L match** · 2026-06-23
 
-Win England: 82.6% | Draw: 13.4% | Win Ghana: 4.0%
-Most likely single score: 2-0 (17.1%) (one of many possible, not a prediction)
-Top-5 scorelines: 2-0 17.1%, 3-0 14.4%, 1-0 13.2%, 4-0 9.1%, 2-1 6.8% (cumulative 60.7%)
+Win England: 85.6% | Draw: 11.3% | Win Ghana: 3.1%
+Most likely single score: 2-0 (16.8%) (one of many possible, not a prediction)
+Top-5 scorelines: 2-0 16.8%, 3-0 15.3%, 1-0 12.0%, 4-0 10.4%, 2-1 6.2% (cumulative 60.8%)
 Expected score: 3-0
-Over 2.5: 56.0% | Under 2.5: 44.0% | BTTS yes: 30.6% | BTTS no: 69.4%
-Top scorers: Harry Kane 73.2%; Marcus Rashford 26.1%; Bukayo Saka 21.4%; Jordan Ayew 15.2%; Thomas Partey 7.0%; Ernest Nuamah 2.6%;
-Data as of 2026-06-17 | runs 50000 | seed 20260611
+Over 2.5: 59.8% | Under 2.5: 40.2% | BTTS yes: 29.2% | BTTS no: 70.8%
+Top scorers: Harry Kane 75.7%; Marcus Rashford 27.9%; Bukayo Saka 23.0%; Jordan Ayew 14.1%; Thomas Partey 6.5%; Ernest Nuamah 2.4%;
+Data as of 2026-06-18 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

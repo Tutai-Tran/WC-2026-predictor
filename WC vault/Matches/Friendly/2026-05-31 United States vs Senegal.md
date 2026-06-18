@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-05-31
 home: "United States"
 away: "Senegal"
-updated: 2026-06-17
+updated: 2026-06-18
 ---
 
 # United States vs Senegal (friendly)
@@ -17,7 +17,7 @@ Most likely single score: 1-0 (10.5%) (one of many possible, not a prediction)
 Top-5 scorelines: 1-1 14.9%, 0-0 11.5%, 1-0 10.5%, 2-1 8.5%, 2-0 8.1% (cumulative 53.5%)
 Expected score: 1-1
 Over 2.5: 41.8% | Under 2.5: 58.2% | BTTS yes: 49.3% | BTTS no: 50.7%
-Data as of 2026-06-17 | runs 50000 | seed 20260611
+Data as of 2026-06-18 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

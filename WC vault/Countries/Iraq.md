@@ -8,14 +8,14 @@ elo: 1716
 champion_prob: 0.0
 status: active
 created: 2026-06-04
-updated: 2026-06-17
+updated: 2026-06-18
 ---
 
 # Iraq
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-17T22:12Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-18T01:11Z | source elo-goal-v1 -->
 Group I | FIFA rank 57 | Elo 1716
-Champion 0.0% | Final 0.0% | SF 0.1% | QF 0.5% | Advance 11.3%
+Champion 0.0% | Final 0.0% | SF 0.1% | QF 0.5% | Advance 11.9%
 Availability concerns: Ahmed Yahya (out)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-17T22:12Z | source elo-goal-v1 -->
-- 2026-06-17: champion 0.0% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-18T01:11Z | source elo-goal-v1 -->
+- 2026-06-18: champion 0.0% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

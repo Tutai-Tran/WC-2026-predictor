@@ -5,17 +5,17 @@ fifa_code: "AUS"
 group: "D"
 fifa_rank: 25
 elo: 1964
-champion_prob: 0.0144
+champion_prob: 0.0128
 status: active
 created: 2026-06-04
-updated: 2026-06-17
+updated: 2026-06-18
 ---
 
 # Australia
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-17T22:12Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-18T01:11Z | source elo-goal-v1 -->
 Group D | FIFA rank 25 | Elo 1964
-Champion 1.4% | Final 4.3% | SF 11.1% | QF 28.0% | Advance 95.1%
+Champion 1.3% | Final 4.2% | SF 10.7% | QF 27.2% | Advance 95.1%
 Availability: no concerns recorded
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-17T22:12Z | source elo-goal-v1 -->
-- 2026-06-17: champion 1.4% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-18T01:11Z | source elo-goal-v1 -->
+- 2026-06-18: champion 1.3% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

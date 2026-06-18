@@ -1,9 +1,9 @@
 {
-  "updated": "2026-06-17",
+  "updated": "2026-06-18",
   "source": "base_elo + results ledger",
   "ratings": {
     "Scotland": 1889.6,
-    "England": 2098.1,
+    "England": 2126.4,
     "Wales": 1754.7,
     "Northern Ireland": 1670.9,
     "United States": 1932.3,
@@ -96,7 +96,7 @@
     "India": 1235.7,
     "Slovakia": 1734.1,
     "Manchukuo": 1432.2,
-    "Croatia": 1962.7,
+    "Croatia": 1934.4,
     "Lebanon": 1438.9,
     "Puerto Rico": 1365.5,
     "Afghanistan": 1180.3,

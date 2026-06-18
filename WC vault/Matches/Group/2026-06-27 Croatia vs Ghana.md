@@ -5,7 +5,7 @@ group: L
 date: 2026-06-27
 home: "Croatia"
 away: "Ghana"
-updated: 2026-06-17
+updated: 2026-06-18
 ---
 
 # Croatia vs Ghana
@@ -13,13 +13,13 @@ updated: 2026-06-17
 <!-- WC26:AUTO:forecast START -->
 **Group L match** · 2026-06-27
 
-Win Croatia: 74.3% | Draw: 18.2% | Win Ghana: 7.6%
-Most likely single score: 2-0 (15.6%) (one of many possible, not a prediction)
-Top-5 scorelines: 2-0 15.6%, 1-0 13.9%, 3-0 11.4%, 2-1 8.5%, 1-1 8.2% (cumulative 57.5%)
+Win Croatia: 71.8% | Draw: 19.5% | Win Ghana: 8.7%
+Most likely single score: 2-0 (15.3%) (one of many possible, not a prediction)
+Top-5 scorelines: 2-0 15.3%, 1-0 14.1%, 3-0 10.7%, 1-1 8.8%, 2-1 8.7% (cumulative 57.6%)
 Expected score: 2-1
-Over 2.5: 51.3% | Under 2.5: 48.7% | BTTS yes: 37.5% | BTTS no: 62.5%
-Top scorers: Ivan Perišić 40.0%; Andrej Kramarić 38.5%; Luka Modrić 36.9%; Jordan Ayew 19.9%; Thomas Partey 9.3%; Ernest Nuamah 3.5%;
-Data as of 2026-06-17 | runs 50000 | seed 20260611
+Over 2.5: 49.7% | Under 2.5: 50.3% | BTTS yes: 38.6% | BTTS no: 61.4%
+Top scorers: Ivan Perišić 38.7%; Andrej Kramarić 37.2%; Luka Modrić 35.9%; Jordan Ayew 20.9%; Thomas Partey 9.8%; Ernest Nuamah 3.7%;
+Data as of 2026-06-18 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

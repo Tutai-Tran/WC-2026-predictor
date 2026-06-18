@@ -5,18 +5,18 @@ fifa_code: "SUI"
 group: "B"
 fifa_rank: 17
 elo: 1944
-champion_prob: 0.0078
+champion_prob: 0.0076
 status: active
 created: 2026-06-04
-updated: 2026-06-17
+updated: 2026-06-18
 ---
 
 # Switzerland
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-17T22:12Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-18T01:11Z | source elo-goal-v1 -->
 Group B | FIFA rank 17 | Elo 1944
-Champion 0.8% | Final 2.5% | SF 7.1% | QF 21.5% | Advance 85.9%
-Availability concerns: Miro Muheim (doubtful)
+Champion 0.8% | Final 2.5% | SF 7.3% | QF 21.7% | Advance 85.6%
+Availability concerns: Miro Muheim (out)
 <!-- WC26:AUTO:snapshot END -->
 
 ## Squad & availability
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-17T22:12Z | source elo-goal-v1 -->
-- 2026-06-17: champion 0.8% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-18T01:11Z | source elo-goal-v1 -->
+- 2026-06-18: champion 0.8% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
