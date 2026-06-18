@@ -13,12 +13,12 @@ updated: 2026-06-18
 <!-- WC26:AUTO:forecast START -->
 **Group G match** · 2026-06-27
 
-Win Egypt: 24.5% | Draw: 32.3% | Win Iran: 43.2%
-Most likely single score: 0-1 (15.8%) (one of many possible, not a prediction)
-Top-5 scorelines: 0-1 15.8%, 0-0 15.1%, 1-1 13.8%, 1-0 10.5%, 0-2 9.6% (cumulative 64.8%)
+Win Egypt: 30.3% | Draw: 31.1% | Win Iran: 38.5%
+Most likely single score: 0-1 (12.7%) (one of many possible, not a prediction)
+Top-5 scorelines: 1-1 14.2%, 0-1 12.7%, 0-0 12.5%, 1-0 10.8%, 0-2 7.8% (cumulative 58.1%)
 Expected score: 1-1
-Over 2.5: 30.8% | Under 2.5: 69.2% | BTTS yes: 38.1% | BTTS no: 61.9%
-Top scorers: Mohamed Salah 37.3%; Trézéguet 12.6%; Omar Marmoush 6.7%; Mehdi Taremi 40.5%; Alireza Jahanbakhsh 11.6%; Mohammad Mohebi 9.8%;
+Over 2.5: 36.2% | Under 2.5: 63.8% | BTTS yes: 43.8% | BTTS no: 56.2%
+Top scorers: Mohamed Salah 43.0%; Trézéguet 15.6%; Omar Marmoush 8.3%; Mehdi Taremi 40.5%; Alireza Jahanbakhsh 11.6%; Mohammad Mohebi 9.8%;
 Data as of 2026-06-18 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
