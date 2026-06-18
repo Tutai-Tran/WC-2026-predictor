@@ -12,11 +12,11 @@ updated: 2026-06-18
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-05-31 · played 2-1
 
-Win Czech Republic: 35.6% | Draw: 32.6% | Win Kosovo: 31.8%
-Most likely single score: 1-0 (10.1%) (one of many possible, not a prediction)
-Top-5 scorelines: 1-1 15.3%, 0-0 12.3%, 1-0 10.1%, 0-1 9.3%, 2-1 7.8% (cumulative 54.9%)
+Win Czech Republic: 34.2% | Draw: 32.8% | Win Kosovo: 33.0%
+Most likely single score: 1-0 (10.0%) (one of many possible, not a prediction)
+Top-5 scorelines: 1-1 15.3%, 0-0 12.6%, 1-0 10.0%, 0-1 9.8%, 2-1 7.6% (cumulative 55.3%)
 Expected score: 1-1
-Over 2.5: 39.6% | Under 2.5: 60.4% | BTTS yes: 48.0% | BTTS no: 52.0%
+Over 2.5: 38.9% | Under 2.5: 61.1% | BTTS yes: 47.5% | BTTS no: 52.5%
 Data as of 2026-06-18 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

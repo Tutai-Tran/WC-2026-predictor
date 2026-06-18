@@ -13,12 +13,12 @@ updated: 2026-06-18
 <!-- WC26:AUTO:forecast START -->
 **Group A match** · 2026-06-12
 
-Win South Korea: 48.3% | Draw: 28.5% | Win Czech Republic: 23.2%
+Win South Korea: 49.7% | Draw: 28.1% | Win Czech Republic: 22.3%
 Most likely single score: 1-0 (13.1%) (one of many possible, not a prediction)
-Top-5 scorelines: 1-1 13.3%, 1-0 13.1%, 0-0 10.4%, 2-0 9.9%, 2-1 9.0% (cumulative 55.6%)
+Top-5 scorelines: 1-0 13.1%, 1-1 13.1%, 2-0 10.2%, 0-0 10.1%, 2-1 9.1% (cumulative 55.6%)
 Expected score: 1-1
-Over 2.5: 41.5% | Under 2.5: 58.5% | BTTS yes: 46.1% | BTTS no: 53.9%
-Top scorers: Son Heung-min 45.9%; Hwang Hee-chan 14.9%; Lee Jae-sung 13.3%; Patrik Schick 26.1%; Tomáš Souček 13.2%; Vladimír Darida 6.7%;
+Over 2.5: 42.1% | Under 2.5: 57.9% | BTTS yes: 46.2% | BTTS no: 53.8%
+Top scorers: Son Heung-min 46.6%; Hwang Hee-chan 15.3%; Lee Jae-sung 13.7%; Patrik Schick 25.8%; Tomáš Souček 13.0%; Vladimír Darida 6.6%;
 Data as of 2026-06-18 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

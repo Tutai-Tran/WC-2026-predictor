@@ -13,12 +13,12 @@ updated: 2026-06-18
 <!-- WC26:AUTO:forecast START -->
 **Group A match** · 2026-06-18
 
-Win Czech Republic: 53.8% | Draw: 26.9% | Win South Africa: 19.2%
+Win Czech Republic: 52.7% | Draw: 28.5% | Win South Africa: 18.9%
 Most likely single score: 1-0 (15.4%) (one of many possible, not a prediction)
-Top-5 scorelines: 1-0 15.4%, 1-1 12.3%, 2-0 12.3%, 0-0 11.3%, 2-1 8.9% (cumulative 60.2%)
-Expected score: 2-1
-Over 2.5: 39.0% | Under 2.5: 61.0% | BTTS yes: 41.0% | BTTS no: 59.0%
-Top scorers: Patrik Schick 36.1%; Tomáš Souček 21.2%; Vladimír Darida 11.1%; Teboho Mokoena 16.3%; Themba Zwane 10.9%; Lyle Foster 10.0%;
+Top-5 scorelines: 1-0 15.4%, 1-1 12.8%, 0-0 11.9%, 2-0 11.7%, 2-1 8.7% (cumulative 60.4%)
+Expected score: 1-1
+Over 2.5: 37.6% | Under 2.5: 62.4% | BTTS yes: 41.0% | BTTS no: 59.0%
+Top scorers: Patrik Schick 34.9%; Tomáš Souček 20.2%; Vladimír Darida 10.5%; Teboho Mokoena 16.5%; Themba Zwane 11.2%; Lyle Foster 10.3%;
 Data as of 2026-06-18 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

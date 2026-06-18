@@ -13,9 +13,9 @@ updated: 2026-06-18
 
 # Egypt
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-18T13:14Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-18T19:53Z | source elo-goal-v1 -->
 Group G | FIFA rank 32 | Elo 1824
-Champion 0.0% | Final 0.2% | SF 1.1% | QF 5.2% | Advance 63.9%
+Champion 0.0% | Final 0.2% | SF 0.9% | QF 5.0% | Advance 64.6%
 Availability concerns: Mohamed Salah (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-18T13:14Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-18T19:53Z | source elo-goal-v1 -->
 - 2026-06-18: champion 0.0% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
