@@ -8,13 +8,13 @@ updated: 2026-06-04
 
 # Group J
 
-<!-- WC26:AUTO:standings START | generated 2026-06-18T08:43Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:standings START | generated 2026-06-18T13:14Z | source elo-goal-v1 -->
 | Team | Win group | Top 2 | Advance |
 | --- | --- | --- | --- |
 | [[Countries/Argentina\|Argentina]] | 84.0% | 98.8% | 99.7% |
-| [[Countries/Austria\|Austria]] | 14.5% | 76.3% | 94.4% |
-| [[Countries/Algeria\|Algeria]] | 0.9% | 22.4% | 49.2% |
-| [[Countries/Jordan\|Jordan]] | 0.6% | 2.5% | 14.2% |
+| [[Countries/Austria\|Austria]] | 14.4% | 76.3% | 94.5% |
+| [[Countries/Algeria\|Algeria]] | 0.9% | 22.5% | 49.3% |
+| [[Countries/Jordan\|Jordan]] | 0.7% | 2.4% | 14.0% |
 <!-- WC26:AUTO:standings END -->
 
 ## Fixtures

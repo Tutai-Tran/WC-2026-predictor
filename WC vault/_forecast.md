@@ -14,30 +14,30 @@ These are probabilities, not certainties.
 
 | Team | Win | Final | SF | QF | R16 |
 | --- | --- | --- | --- | --- | --- |
-| [[Countries/Argentina\|Argentina]] | 19.6% | 30.5% | 45.2% | 61.0% | 74.9% |
-| [[Countries/Spain\|Spain]] | 19.5% | 30.5% | 44.0% | 55.4% | 72.2% |
-| [[Countries/France\|France]] | 13.3% | 23.2% | 38.9% | 56.1% | 78.3% |
-| [[Countries/England\|England]] | 9.6% | 17.7% | 32.3% | 51.6% | 75.2% |
-| [[Countries/Colombia\|Colombia]] | 7.1% | 14.1% | 26.3% | 50.6% | 74.6% |
-| [[Countries/Brazil\|Brazil]] | 4.5% | 9.7% | 19.4% | 36.4% | 59.3% |
-| [[Countries/Portugal\|Portugal]] | 3.2% | 7.4% | 15.7% | 29.0% | 54.9% |
-| [[Countries/Germany\|Germany]] | 2.9% | 6.8% | 15.1% | 28.9% | 58.9% |
-| [[Countries/Norway\|Norway]] | 2.5% | 6.5% | 15.3% | 31.5% | 59.0% |
-| [[Countries/Morocco\|Morocco]] | 2.1% | 5.3% | 12.3% | 26.7% | 49.2% |
-| [[Countries/Netherlands\|Netherlands]] | 2.1% | 5.4% | 12.4% | 26.9% | 47.2% |
-| [[Countries/Mexico\|Mexico]] | 1.9% | 5.3% | 13.9% | 30.6% | 71.3% |
-| [[Countries/Japan\|Japan]] | 1.8% | 4.8% | 11.3% | 24.7% | 43.9% |
-| [[Countries/United States\|United States]] | 1.5% | 4.5% | 11.2% | 29.5% | 63.7% |
-| [[Countries/Australia\|Australia]] | 1.3% | 4.1% | 10.8% | 28.3% | 62.8% |
-| [[Countries/Ecuador\|Ecuador]] | 1.1% | 2.7% | 7.1% | 17.5% | 35.7% |
-| [[Countries/Belgium\|Belgium]] | 0.9% | 3.0% | 8.0% | 23.5% | 51.6% |
-| [[Countries/Switzerland\|Switzerland]] | 0.7% | 2.3% | 6.7% | 19.9% | 46.8% |
-| [[Countries/Uruguay\|Uruguay]] | 0.7% | 2.2% | 5.8% | 12.6% | 24.6% |
-| [[Countries/Austria\|Austria]] | 0.6% | 2.2% | 6.4% | 15.2% | 33.1% |
-| [[Countries/Croatia\|Croatia]] | 0.6% | 2.0% | 5.4% | 11.7% | 34.2% |
-| [[Countries/South Korea\|South Korea]] | 0.6% | 2.0% | 6.8% | 20.2% | 54.9% |
-| [[Countries/Canada\|Canada]] | 0.4% | 1.4% | 4.9% | 17.8% | 50.9% |
-| [[Countries/Turkey\|Turkey]] | 0.3% | 1.1% | 3.5% | 8.7% | 24.1% |
+| [[Countries/Spain\|Spain]] | 20.0% | 31.0% | 44.2% | 55.8% | 72.2% |
+| [[Countries/Argentina\|Argentina]] | 19.4% | 30.4% | 45.1% | 61.1% | 75.0% |
+| [[Countries/France\|France]] | 13.1% | 22.7% | 38.3% | 55.5% | 78.1% |
+| [[Countries/England\|England]] | 9.8% | 17.9% | 32.7% | 51.7% | 75.2% |
+| [[Countries/Colombia\|Colombia]] | 7.1% | 14.1% | 26.2% | 50.2% | 74.4% |
+| [[Countries/Brazil\|Brazil]] | 4.7% | 9.9% | 19.7% | 36.4% | 59.7% |
+| [[Countries/Portugal\|Portugal]] | 3.2% | 7.6% | 15.7% | 28.8% | 54.9% |
+| [[Countries/Germany\|Germany]] | 2.9% | 7.0% | 15.8% | 29.2% | 59.3% |
+| [[Countries/Norway\|Norway]] | 2.4% | 6.3% | 15.2% | 31.4% | 58.9% |
+| [[Countries/Mexico\|Mexico]] | 2.1% | 5.2% | 13.6% | 30.3% | 71.1% |
+| [[Countries/Netherlands\|Netherlands]] | 2.1% | 5.3% | 12.3% | 26.9% | 47.4% |
+| [[Countries/Japan\|Japan]] | 1.9% | 4.9% | 11.5% | 24.9% | 44.5% |
+| [[Countries/Morocco\|Morocco]] | 1.6% | 4.5% | 11.1% | 25.1% | 47.4% |
+| [[Countries/United States\|United States]] | 1.4% | 4.3% | 10.8% | 28.9% | 63.4% |
+| [[Countries/Australia\|Australia]] | 1.2% | 4.0% | 10.9% | 28.5% | 62.7% |
+| [[Countries/Belgium\|Belgium]] | 1.0% | 3.1% | 8.2% | 23.7% | 51.7% |
+| [[Countries/Ecuador\|Ecuador]] | 0.9% | 2.7% | 7.0% | 17.3% | 35.7% |
+| [[Countries/Switzerland\|Switzerland]] | 0.8% | 2.4% | 6.8% | 20.1% | 46.6% |
+| [[Countries/Uruguay\|Uruguay]] | 0.6% | 2.2% | 5.8% | 12.7% | 24.6% |
+| [[Countries/Croatia\|Croatia]] | 0.6% | 1.9% | 5.3% | 11.6% | 34.6% |
+| [[Countries/Austria\|Austria]] | 0.6% | 2.2% | 6.4% | 15.5% | 33.0% |
+| [[Countries/South Korea\|South Korea]] | 0.6% | 2.1% | 6.8% | 20.5% | 54.8% |
+| [[Countries/Canada\|Canada]] | 0.4% | 1.5% | 5.1% | 18.3% | 51.1% |
+| [[Countries/Turkey\|Turkey]] | 0.4% | 1.2% | 3.4% | 8.8% | 24.0% |
 
 ## Most likely scorers (expected group-stage goals)
 
@@ -54,6 +54,6 @@ These are probabilities, not certainties.
 - Memphis Depay (Netherlands): 1.66
 - Jonathan David (Canada): 1.54
 - Son Heung-min (South Korea): 1.51
-- Ayoub El Kaabi (Morocco): 1.49
+- Ayoub El Kaabi (Morocco): 1.42
 - Mikel Oyarzabal (Spain): 1.4
 <!-- WC26:AUTO:dashboard END -->
