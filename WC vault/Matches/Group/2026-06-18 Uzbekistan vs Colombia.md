@@ -13,12 +13,12 @@ updated: 2026-06-18
 <!-- WC26:AUTO:forecast START -->
 **Group K match** · 2026-06-18
 
-Win Uzbekistan: 12.8% | Draw: 22.8% | Win Colombia: 64.3%
-Most likely single score: 0-1 (13.7%) (one of many possible, not a prediction)
-Top-5 scorelines: 0-1 13.7%, 0-2 13.4%, 1-1 10.5%, 1-2 9.4%, 0-3 8.4% (cumulative 55.4%)
+Win Uzbekistan: 11.0% | Draw: 21.2% | Win Colombia: 67.9%
+Most likely single score: 0-2 (14.0%) (one of many possible, not a prediction)
+Top-5 scorelines: 0-2 14.1%, 0-1 13.5%, 1-1 9.8%, 0-3 9.4%, 1-2 9.2% (cumulative 55.9%)
 Expected score: 1-2
-Over 2.5: 47.6% | Under 2.5: 52.4% | BTTS yes: 43.1% | BTTS no: 56.9%
-Top scorers: Eldor Shomurodov 20.3%; Igor Sergeev 11.9%; Jaloliddin Masharipov 6.1%; James Rodríguez 43.6%; Luis Díaz 30.2%; Yerry Mina 11.7%;
+Over 2.5: 49.6% | Under 2.5: 50.4% | BTTS yes: 42.2% | BTTS no: 57.8%
+Top scorers: Eldor Shomurodov 19.2%; Igor Sergeev 11.3%; Jaloliddin Masharipov 5.8%; James Rodríguez 45.3%; Luis Díaz 31.8%; Yerry Mina 12.4%;
 Data as of 2026-06-18 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

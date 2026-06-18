@@ -8,13 +8,13 @@ updated: 2026-06-04
 
 # Group C
 
-<!-- WC26:AUTO:standings START | generated 2026-06-18T04:16Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:standings START | generated 2026-06-18T08:43Z | source elo-goal-v1 -->
 | Team | Win group | Top 2 | Advance |
 | --- | --- | --- | --- |
-| [[Countries/Brazil\|Brazil]] | 45.7% | 78.7% | 94.0% |
-| [[Countries/Morocco\|Morocco]] | 33.2% | 70.9% | 90.5% |
-| [[Countries/Scotland\|Scotland]] | 20.5% | 47.5% | 86.4% |
-| [[Countries/Haiti\|Haiti]] | 0.6% | 3.0% | 7.9% |
+| [[Countries/Brazil\|Brazil]] | 45.7% | 78.7% | 93.9% |
+| [[Countries/Morocco\|Morocco]] | 33.1% | 70.8% | 90.3% |
+| [[Countries/Scotland\|Scotland]] | 20.6% | 47.4% | 86.0% |
+| [[Countries/Haiti\|Haiti]] | 0.6% | 3.1% | 8.0% |
 <!-- WC26:AUTO:standings END -->
 
 ## Fixtures

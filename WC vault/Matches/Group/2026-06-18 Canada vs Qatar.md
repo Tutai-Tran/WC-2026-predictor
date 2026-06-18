@@ -13,7 +13,7 @@ updated: 2026-06-18
 <!-- WC26:AUTO:forecast START -->
 **Group B match** · 2026-06-18
 
-Win Canada: 76.8% | Draw: 16.1% | Win Qatar: 7.1%
+Win Canada: 76.4% | Draw: 16.4% | Win Qatar: 7.3%
 Most likely single score: 2-0 (15.4%) (one of many possible, not a prediction)
 Top-5 scorelines: 2-0 15.4%, 1-0 12.6%, 3-0 12.1%, 2-1 8.2%, 1-1 7.4% (cumulative 55.7%)
 Expected score: 2-1

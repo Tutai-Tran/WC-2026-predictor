@@ -12,11 +12,11 @@ updated: 2026-06-18
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-06-02 · played 3-1
 
-Win Colombia: 73.8% | Draw: 18.6% | Win Costa Rica: 7.6%
-Most likely single score: 2-0 (13.7%) (one of many possible, not a prediction)
-Top-5 scorelines: 2-0 13.7%, 3-0 10.8%, 1-0 10.5%, 2-1 8.9%, 1-1 8.7% (cumulative 52.6%)
+Win Colombia: 75.3% | Draw: 17.7% | Win Costa Rica: 7.0%
+Most likely single score: 2-0 (13.9%) (one of many possible, not a prediction)
+Top-5 scorelines: 2-0 13.9%, 3-0 11.2%, 1-0 10.4%, 2-1 8.7%, 1-1 8.3% (cumulative 52.5%)
 Expected score: 2-1
-Over 2.5: 58.0% | Under 2.5: 42.0% | BTTS yes: 44.5% | BTTS no: 55.5%
+Over 2.5: 58.8% | Under 2.5: 41.2% | BTTS yes: 43.7% | BTTS no: 56.3%
 Data as of 2026-06-18 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
