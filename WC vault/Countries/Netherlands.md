@@ -13,9 +13,9 @@ updated: 2026-06-18
 
 # Netherlands
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-18T01:11Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-18T04:16Z | source elo-goal-v1 -->
 Group F | FIFA rank 7 | Elo 2008
-Champion 2.1% | Final 5.4% | SF 12.5% | QF 27.1% | Advance 92.9%
+Champion 2.1% | Final 5.2% | SF 12.1% | QF 26.9% | Advance 93.0%
 Availability concerns: Jurriën Timber (out)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-18T01:11Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-18T04:16Z | source elo-goal-v1 -->
 - 2026-06-18: champion 2.1% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

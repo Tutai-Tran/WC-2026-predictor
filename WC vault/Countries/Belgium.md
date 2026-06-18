@@ -5,7 +5,7 @@ fifa_code: "BEL"
 group: "G"
 fifa_rank: 8
 elo: 1953
-champion_prob: 0.0105
+champion_prob: 0.0112
 status: active
 created: 2026-06-04
 updated: 2026-06-18
@@ -13,9 +13,9 @@ updated: 2026-06-18
 
 # Belgium
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-18T01:11Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-18T04:16Z | source elo-goal-v1 -->
 Group G | FIFA rank 8 | Elo 1953
-Champion 1.1% | Final 3.2% | SF 8.5% | QF 23.8% | Advance 85.8%
+Champion 1.1% | Final 3.3% | SF 8.6% | QF 24.2% | Advance 85.9%
 Availability concerns: Zeno Debast (out)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-18T01:11Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-18T04:16Z | source elo-goal-v1 -->
 - 2026-06-18: champion 1.1% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

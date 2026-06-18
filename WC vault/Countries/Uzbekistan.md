@@ -5,7 +5,7 @@ fifa_code: "UZB"
 group: "K"
 fifa_rank: 51
 elo: 1826
-champion_prob: 0.0003
+champion_prob: 0.0005
 status: active
 created: 2026-06-04
 updated: 2026-06-18
@@ -13,9 +13,9 @@ updated: 2026-06-18
 
 # Uzbekistan
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-18T01:11Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-18T04:16Z | source elo-goal-v1 -->
 Group K | FIFA rank 51 | Elo 1826
-Champion 0.0% | Final 0.2% | SF 0.9% | QF 3.6% | Advance 43.6%
+Champion 0.1% | Final 0.3% | SF 1.1% | QF 4.1% | Advance 43.8%
 Availability concerns: Jaloliddin Masharipov (out)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-18T01:11Z | source elo-goal-v1 -->
-- 2026-06-18: champion 0.0% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-18T04:16Z | source elo-goal-v1 -->
+- 2026-06-18: champion 0.1% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

@@ -13,12 +13,12 @@ updated: 2026-06-18
 <!-- WC26:AUTO:forecast START -->
 **Group B match** · 2026-06-18
 
-Win Switzerland: 69.6% | Draw: 21.6% | Win Bosnia and Herzegovina: 8.8%
-Most likely single score: 1-0 (16.7%) (one of many possible, not a prediction)
-Top-5 scorelines: 1-0 16.7%, 2-0 16.3%, 3-0 10.2%, 0-0 9.7%, 1-1 9.2% (cumulative 62.2%)
+Win Switzerland: 63.4% | Draw: 22.9% | Win Bosnia and Herzegovina: 13.6%
+Most likely single score: 1-0 (13.1%) (one of many possible, not a prediction)
+Top-5 scorelines: 1-0 13.1%, 2-0 12.9%, 1-1 10.7%, 2-1 9.5%, 3-0 8.1% (cumulative 54.3%)
 Expected score: 2-1
-Over 2.5: 42.8% | Under 2.5: 57.2% | BTTS yes: 34.2% | BTTS no: 65.8%
-Top scorers: Breel Embolo 28.8%; Granit Xhaka 27.8%; Rubén Vargas 15.5%; Edin Džeko 34.9%; Ermedin Demirović 2.5%; Haris Tabaković 2.5%;
+Over 2.5: 48.8% | Under 2.5: 51.2% | BTTS yes: 44.9% | BTTS no: 55.1%
+Top scorers: Breel Embolo 28.8%; Granit Xhaka 27.8%; Rubén Vargas 15.5%; Edin Džeko 44.3%; Ermedin Demirović 3.7%; Haris Tabaković 3.7%;
 Data as of 2026-06-18 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
