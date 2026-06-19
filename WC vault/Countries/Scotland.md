@@ -13,7 +13,7 @@ updated: 2026-06-19
 
 # Scotland
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-19T05:20Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-19T09:49Z | source elo-goal-v1 -->
 Group C | FIFA rank 39 | Elo 1890
 Champion 0.3% | Final 1.0% | SF 3.6% | QF 11.8% | Advance 93.1%
 Availability concerns: Scott McKenna (doubtful)
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-19T05:20Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-19T09:49Z | source elo-goal-v1 -->
 - 2026-06-19: champion 0.3% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

@@ -13,7 +13,7 @@ updated: 2026-06-19
 <!-- WC26:AUTO:forecast START -->
 **Group E match** · 2026-06-20
 
-Win Germany: 60.2% | Draw: 22.6% | Win Ivory Coast: 17.2%
+Win Germany: 60.1% | Draw: 22.6% | Win Ivory Coast: 17.3%
 Most likely single score: 1-0 (12.9%) (one of many possible, not a prediction)
 Top-5 scorelines: 1-0 12.9%, 1-1 12.4%, 2-0 11.0%, 2-1 9.4%, 0-0 9.1% (cumulative 54.9%)
 Expected score: 2-1
