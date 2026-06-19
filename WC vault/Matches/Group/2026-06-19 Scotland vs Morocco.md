@@ -13,7 +13,7 @@ updated: 2026-06-19
 <!-- WC26:AUTO:forecast START -->
 **Group C match** · 2026-06-19
 
-Win Scotland: 19.4% | Draw: 27.3% | Win Morocco: 53.3%
+Win Scotland: 19.5% | Draw: 27.4% | Win Morocco: 53.1%
 Most likely single score: 0-1 (13.2%) (one of many possible, not a prediction)
 Top-5 scorelines: 1-1 13.2%, 0-1 13.2%, 0-0 10.5%, 0-2 10.0%, 1-2 9.0% (cumulative 55.9%)
 Expected score: 1-1

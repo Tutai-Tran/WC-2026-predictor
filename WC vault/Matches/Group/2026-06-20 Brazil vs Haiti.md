@@ -13,7 +13,7 @@ updated: 2026-06-19
 <!-- WC26:AUTO:forecast START -->
 **Group C match** · 2026-06-20
 
-Win Brazil: 80.8% | Draw: 13.3% | Win Haiti: 6.0%
+Win Brazil: 80.7% | Draw: 13.4% | Win Haiti: 5.9%
 Most likely single score: 1-0 (18.9%) (one of many possible, not a prediction)
 Top-5 scorelines: 1-0 18.9%, 0-0 15.2%, 2-0 13.3%, 1-1 12.0%, 0-1 7.7% (cumulative 67.1%)
 Expected score: 1-1
