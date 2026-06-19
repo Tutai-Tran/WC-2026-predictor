@@ -13,7 +13,7 @@ updated: 2026-06-19
 <!-- WC26:AUTO:forecast START -->
 **Group F match** · 2026-06-20
 
-Win Netherlands: 56.2% | Draw: 24.9% | Win Sweden: 18.9%
+Win Netherlands: 56.2% | Draw: 24.8% | Win Sweden: 19.0%
 Most likely single score: 1-0 (12.9%) (one of many possible, not a prediction)
 Top-5 scorelines: 1-0 12.9%, 1-1 11.8%, 2-0 11.7%, 2-1 9.6%, 0-0 8.5% (cumulative 54.5%)
 Expected score: 2-1

@@ -5,7 +5,7 @@ fifa_code: "KOR"
 group: "A"
 fifa_rank: 23
 elo: 1917
-champion_prob: 0.0062
+champion_prob: 0.0055
 status: active
 created: 2026-06-04
 updated: 2026-06-19
@@ -13,9 +13,9 @@ updated: 2026-06-19
 
 # South Korea
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-19T00:17Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-19T02:15Z | source elo-goal-v1 -->
 Group A | FIFA rank 23 | Elo 1917
-Champion 0.6% | Final 2.2% | SF 6.9% | QF 20.3% | Advance 96.8%
+Champion 0.5% | Final 2.0% | SF 6.2% | QF 18.4% | Advance 96.8%
 Availability concerns: Bae Jun-ho (doubtful), Kim Tae-hyeon (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-19T00:17Z | source elo-goal-v1 -->
-- 2026-06-19: champion 0.6% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-19T02:15Z | source elo-goal-v1 -->
+- 2026-06-19: champion 0.5% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
