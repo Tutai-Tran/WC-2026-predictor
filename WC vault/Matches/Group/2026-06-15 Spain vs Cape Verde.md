@@ -5,7 +5,7 @@ group: H
 date: 2026-06-15
 home: "Spain"
 away: "Cape Verde"
-updated: 2026-06-18
+updated: 2026-06-19
 ---
 
 # Spain vs Cape Verde
@@ -19,7 +19,7 @@ Top-5 scorelines: 2-0 15.4%, 3-0 13.4%, 1-0 11.4%, 4-0 8.8%, 2-1 7.5% (cumulativ
 Expected score: 3-0
 Over 2.5: 59.9% | Under 2.5: 40.1% | BTTS yes: 36.0% | BTTS no: 64.0%
 Top scorers: Mikel Oyarzabal 44.6%; Ferran Torres 38.1%; Dani Olmo 23.4%; Ryan Mendes 12.4%; Garry Rodrigues 5.3%; Dailon Livramento 4.7%;
-Data as of 2026-06-18 | runs 50000 | seed 20260611
+Data as of 2026-06-19 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

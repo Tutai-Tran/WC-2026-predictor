@@ -5,17 +5,17 @@ fifa_code: "AUS"
 group: "D"
 fifa_rank: 25
 elo: 1964
-champion_prob: 0.0123
+champion_prob: 0.0132
 status: active
 created: 2026-06-04
-updated: 2026-06-18
+updated: 2026-06-19
 ---
 
 # Australia
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-18T21:12Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-19T00:17Z | source elo-goal-v1 -->
 Group D | FIFA rank 25 | Elo 1964
-Champion 1.2% | Final 3.9% | SF 10.1% | QF 26.4% | Advance 95.9%
+Champion 1.3% | Final 4.1% | SF 10.4% | QF 28.0% | Advance 95.7%
 Availability concerns: Mohamed Touré (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-18T21:12Z | source elo-goal-v1 -->
-- 2026-06-18: champion 1.2% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-19T00:17Z | source elo-goal-v1 -->
+- 2026-06-19: champion 1.3% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

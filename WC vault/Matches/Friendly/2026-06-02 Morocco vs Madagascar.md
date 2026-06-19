@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-02
 home: "Morocco"
 away: "Madagascar"
-updated: 2026-06-18
+updated: 2026-06-19
 ---
 
 # Morocco vs Madagascar (friendly)
@@ -17,7 +17,7 @@ Most likely single score: 2-0 (14.7%) (one of many possible, not a prediction)
 Top-5 scorelines: 2-0 14.7%, 3-0 13.8%, 4-0 9.7%, 1-0 9.6%, 2-1 7.0% (cumulative 54.9%)
 Expected score: 3-0
 Over 2.5: 64.1% | Under 2.5: 35.9% | BTTS yes: 36.6% | BTTS no: 63.4%
-Data as of 2026-06-18 | runs 50000 | seed 20260611
+Data as of 2026-06-19 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

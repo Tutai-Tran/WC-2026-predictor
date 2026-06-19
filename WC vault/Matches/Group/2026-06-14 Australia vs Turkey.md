@@ -5,7 +5,7 @@ group: D
 date: 2026-06-14
 home: "Australia"
 away: "Turkey"
-updated: 2026-06-18
+updated: 2026-06-19
 ---
 
 # Australia vs Turkey
@@ -19,7 +19,7 @@ Top-5 scorelines: 1-1 14.2%, 0-0 12.6%, 1-0 12.5%, 0-1 11.1%, 2-1 7.6% (cumulati
 Expected score: 1-1
 Over 2.5: 36.0% | Under 2.5: 64.0% | BTTS yes: 43.7% | BTTS no: 56.3%
 Top scorers: Mathew Leckie 17.4%; Jackson Irvine 16.5%; Awer Mabil 13.3%; Hakan Çalhanoğlu 18.0%; Kerem Aktürkoğlu 13.5%; Arda Güler 6.5%;
-Data as of 2026-06-18 | runs 50000 | seed 20260611
+Data as of 2026-06-19 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-06
 home: "Canada"
 away: "Republic of Ireland"
-updated: 2026-06-18
+updated: 2026-06-19
 ---
 
 # Canada vs Republic of Ireland (friendly)
@@ -17,7 +17,7 @@ Most likely single score: 1-0 (10.8%) (one of many possible, not a prediction)
 Top-5 scorelines: 1-1 14.1%, 1-0 10.8%, 0-0 10.2%, 2-0 9.6%, 2-1 9.3% (cumulative 53.9%)
 Expected score: 2-1
 Over 2.5: 45.3% | Under 2.5: 54.7% | BTTS yes: 50.2% | BTTS no: 49.8%
-Data as of 2026-06-18 | runs 50000 | seed 20260611
+Data as of 2026-06-19 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

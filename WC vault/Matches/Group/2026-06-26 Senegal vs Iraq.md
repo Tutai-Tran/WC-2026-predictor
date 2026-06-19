@@ -5,7 +5,7 @@ group: I
 date: 2026-06-26
 home: "Senegal"
 away: "Iraq"
-updated: 2026-06-18
+updated: 2026-06-19
 ---
 
 # Senegal vs Iraq
@@ -19,7 +19,7 @@ Top-5 scorelines: 1-0 13.3%, 1-1 12.8%, 2-0 10.7%, 0-0 9.9%, 2-1 9.2% (cumulativ
 Expected score: 2-1
 Over 2.5: 42.7% | Under 2.5: 57.3% | BTTS yes: 45.9% | BTTS no: 54.1%
 Top scorers: Sadio Mané 48.4%; Ismaïla Sarr 18.8%; Nicolas Jackson 9.3%; Aymen Hussein 24.4%; Mohanad Ali 20.7%; Ibrahim Bayesh 6.8%;
-Data as of 2026-06-18 | runs 50000 | seed 20260611
+Data as of 2026-06-19 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

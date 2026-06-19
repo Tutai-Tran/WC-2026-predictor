@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-05-29
 home: "Bosnia and Herzegovina"
 away: "North Macedonia"
-updated: 2026-06-18
+updated: 2026-06-19
 ---
 
 # Bosnia and Herzegovina vs North Macedonia (friendly)
@@ -12,12 +12,12 @@ updated: 2026-06-18
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-05-29 · played 0-0
 
-Win Bosnia and Herzegovina: 37.7% | Draw: 32.2% | Win North Macedonia: 30.1%
-Most likely single score: 1-0 (10.3%) (one of many possible, not a prediction)
-Top-5 scorelines: 1-1 15.2%, 0-0 11.9%, 1-0 10.3%, 0-1 8.7%, 2-1 8.1% (cumulative 54.3%)
+Win Bosnia and Herzegovina: 35.4% | Draw: 32.6% | Win North Macedonia: 32.0%
+Most likely single score: 1-0 (10.1%) (one of many possible, not a prediction)
+Top-5 scorelines: 1-1 15.3%, 0-0 12.4%, 1-0 10.1%, 0-1 9.4%, 2-1 7.8% (cumulative 54.9%)
 Expected score: 1-1
-Over 2.5: 40.6% | Under 2.5: 59.4% | BTTS yes: 48.6% | BTTS no: 51.4%
-Data as of 2026-06-18 | runs 50000 | seed 20260611
+Over 2.5: 39.5% | Under 2.5: 60.5% | BTTS yes: 47.9% | BTTS no: 52.1%
+Data as of 2026-06-19 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

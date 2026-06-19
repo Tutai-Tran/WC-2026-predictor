@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-18",
+  "updated": "2026-06-19",
   "source": "base_elo + results ledger",
   "ratings": {
     "Scotland": 1889.6,
@@ -15,7 +15,7 @@
     "Czechoslovakia": 1803.8,
     "Belgium": 1953.2,
     "France": 2149.2,
-    "Switzerland": 1943.7,
+    "Switzerland": 1962.9,
     "Guernsey": 1751.7,
     "Alderney": 1059.4,
     "Jersey": 1829.5,
@@ -249,7 +249,7 @@
     "Gibraltar": 1151.0,
     "North Macedonia": 1647.6,
     "Czech Republic": 1788.7,
-    "Bosnia and Herzegovina": 1683.6,
+    "Bosnia and Herzegovina": 1664.4,
     "Canary Islands": 1520.8,
     "Andorra": 1162.1,
     "Hitra": 1315.7,
