@@ -5,7 +5,7 @@ group: B
 date: 2026-06-18
 home: "Switzerland"
 away: "Bosnia and Herzegovina"
-updated: 2026-06-19
+updated: 2026-06-20
 ---
 
 # Switzerland vs Bosnia and Herzegovina
@@ -19,7 +19,7 @@ Top-5 scorelines: 2-0 13.6%, 1-0 12.9%, 1-1 9.8%, 2-1 9.4%, 3-0 9.1% (cumulative
 Expected score: 2-1
 Over 2.5: 50.9% | Under 2.5: 49.1% | BTTS yes: 43.8% | BTTS no: 56.2%
 Top scorers: Breel Embolo 30.5%; Granit Xhaka 28.9%; Rubén Vargas 16.4%; Edin Džeko 42.5%; Ermedin Demirović 3.5%; Haris Tabaković 3.5%;
-Data as of 2026-06-19 | runs 50000 | seed 20260611
+Data as of 2026-06-20 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

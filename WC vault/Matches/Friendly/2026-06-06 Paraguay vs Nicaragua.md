@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-06
 home: "Paraguay"
 away: "Nicaragua"
-updated: 2026-06-19
+updated: 2026-06-20
 ---
 
 # Paraguay vs Nicaragua (friendly)
@@ -12,12 +12,12 @@ updated: 2026-06-19
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-06-06 · played 4-0
 
-Win Paraguay: 72.4% | Draw: 19.3% | Win Nicaragua: 8.3%
-Most likely single score: 2-0 (13.5%) (one of many possible, not a prediction)
-Top-5 scorelines: 2-0 13.5%, 1-0 10.5%, 3-0 10.4%, 2-1 9.1%, 1-1 9.1% (cumulative 52.6%)
+Win Paraguay: 75.5% | Draw: 17.6% | Win Nicaragua: 6.9%
+Most likely single score: 2-0 (13.9%) (one of many possible, not a prediction)
+Top-5 scorelines: 2-0 13.9%, 3-0 11.2%, 1-0 10.4%, 2-1 8.7%, 1-1 8.2% (cumulative 52.4%)
 Expected score: 2-1
-Over 2.5: 57.2% | Under 2.5: 42.8% | BTTS yes: 45.2% | BTTS no: 54.8%
-Data as of 2026-06-19 | runs 50000 | seed 20260611
+Over 2.5: 58.9% | Under 2.5: 41.1% | BTTS yes: 43.5% | BTTS no: 56.5%
+Data as of 2026-06-20 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match
