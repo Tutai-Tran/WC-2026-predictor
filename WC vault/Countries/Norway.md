@@ -5,7 +5,7 @@ fifa_code: "NOR"
 group: "I"
 fifa_rank: 29
 elo: 2019
-champion_prob: 0.0268
+champion_prob: 0.0252
 status: active
 created: 2026-06-04
 updated: 2026-06-21
@@ -13,10 +13,10 @@ updated: 2026-06-21
 
 # Norway
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-21T13:38Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-21T15:36Z | source elo-goal-v1 -->
 Group I | FIFA rank 29 | Elo 2019
-Champion 2.7% | Final 6.9% | SF 16.6% | QF 35.0% | Advance 98.9%
-Availability: no concerns recorded
+Champion 2.5% | Final 6.6% | SF 16.0% | QF 34.6% | Advance 98.9%
+Availability concerns: David Møller Wolfe (doubtful), Julian Ryerson (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
 ## Squad & availability
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-21T13:38Z | source elo-goal-v1 -->
-- 2026-06-21: champion 2.7% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-21T15:36Z | source elo-goal-v1 -->
+- 2026-06-21: champion 2.5% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

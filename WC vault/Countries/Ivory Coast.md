@@ -5,7 +5,7 @@ fifa_code: "CIV"
 group: "E"
 fifa_rank: 40
 elo: 1848
-champion_prob: 0.001
+champion_prob: 0.0014
 status: active
 created: 2026-06-04
 updated: 2026-06-21
@@ -13,9 +13,9 @@ updated: 2026-06-21
 
 # Ivory Coast
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-21T13:38Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-21T15:36Z | source elo-goal-v1 -->
 Group E | FIFA rank 40 | Elo 1848
-Champion 0.1% | Final 0.5% | SF 2.1% | QF 8.7% | Advance 94.6%
+Champion 0.1% | Final 0.6% | SF 2.3% | QF 9.0% | Advance 94.4%
 Availability concerns: Evan Ndicka (out)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-21T13:38Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-21T15:36Z | source elo-goal-v1 -->
 - 2026-06-21: champion 0.1% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
