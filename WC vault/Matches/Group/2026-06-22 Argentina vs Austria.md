@@ -13,7 +13,7 @@ updated: 2026-06-21
 <!-- WC26:AUTO:forecast START -->
 **Group J match** · 2026-06-22
 
-Win Argentina: 63.2% | Draw: 23.0% | Win Austria: 13.8%
+Win Argentina: 63.6% | Draw: 22.8% | Win Austria: 13.6%
 Most likely single score: 2-0 (13.3%) (one of many possible, not a prediction)
 Top-5 scorelines: 2-0 13.3%, 1-0 13.0%, 1-1 10.2%, 2-1 9.4%, 3-0 8.8% (cumulative 54.6%)
 Expected score: 2-1

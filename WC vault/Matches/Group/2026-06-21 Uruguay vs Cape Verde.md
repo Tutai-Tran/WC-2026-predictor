@@ -13,7 +13,7 @@ updated: 2026-06-21
 <!-- WC26:AUTO:forecast START -->
 **Group H match** · 2026-06-21
 
-Win Uruguay: 61.7% | Draw: 24.7% | Win Cape Verde: 13.6%
+Win Uruguay: 60.6% | Draw: 26.1% | Win Cape Verde: 13.2%
 Most likely single score: 1-0 (14.6%) (one of many possible, not a prediction)
 Top-5 scorelines: 1-0 14.6%, 1-1 12.9%, 0-0 11.2%, 2-0 11.2%, 2-1 8.9% (cumulative 58.8%)
 Expected score: 1-1
