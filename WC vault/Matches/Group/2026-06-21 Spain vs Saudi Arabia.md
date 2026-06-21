@@ -13,7 +13,7 @@ updated: 2026-06-21
 <!-- WC26:AUTO:forecast START -->
 **Group H match** · 2026-06-21
 
-Win Spain: 86.4% | Draw: 10.3% | Win Saudi Arabia: 3.3%
+Win Spain: 86.5% | Draw: 10.1% | Win Saudi Arabia: 3.4%
 Most likely single score: 2-0 (16.7%) (one of many possible, not a prediction)
 Top-5 scorelines: 2-0 16.7%, 3-0 13.8%, 1-0 13.1%, 4-0 8.6%, 2-1 7.2% (cumulative 59.5%)
 Expected score: 2-0

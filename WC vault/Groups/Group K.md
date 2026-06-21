@@ -8,13 +8,13 @@ updated: 2026-06-04
 
 # Group K
 
-<!-- WC26:AUTO:standings START | generated 2026-06-21T03:14Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:standings START | generated 2026-06-21T06:16Z | source elo-goal-v1 -->
 | Team | Win group | Top 2 | Advance |
 | --- | --- | --- | --- |
-| [[Countries/Colombia\|Colombia]] | 70.5% | 91.9% | 99.2% |
-| [[Countries/Portugal\|Portugal]] | 23.6% | 68.7% | 83.1% |
-| [[Countries/DR Congo\|DR Congo]] | 4.8% | 23.9% | 47.8% |
-| [[Countries/Uzbekistan\|Uzbekistan]] | 1.1% | 15.6% | 37.1% |
+| [[Countries/Colombia\|Colombia]] | 70.8% | 91.9% | 99.2% |
+| [[Countries/Portugal\|Portugal]] | 23.1% | 68.2% | 82.7% |
+| [[Countries/DR Congo\|DR Congo]] | 5.0% | 24.2% | 47.9% |
+| [[Countries/Uzbekistan\|Uzbekistan]] | 1.0% | 15.8% | 37.6% |
 <!-- WC26:AUTO:standings END -->
 
 ## Fixtures

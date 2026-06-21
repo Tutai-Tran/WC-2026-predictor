@@ -13,7 +13,7 @@ updated: 2026-06-21
 <!-- WC26:AUTO:forecast START -->
 **Group F match** · 2026-06-21
 
-Win Tunisia: 11.1% | Draw: 20.9% | Win Japan: 68.1%
+Win Tunisia: 11.0% | Draw: 21.1% | Win Japan: 68.0%
 Most likely single score: 0-2 (14.0%) (one of many possible, not a prediction)
 Top-5 scorelines: 0-2 14.0%, 0-1 13.3%, 1-1 9.7%, 0-3 9.4%, 1-2 9.2% (cumulative 55.6%)
 Expected score: 1-2
