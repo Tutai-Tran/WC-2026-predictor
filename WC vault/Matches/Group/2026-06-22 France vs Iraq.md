@@ -13,7 +13,7 @@ updated: 2026-06-21
 <!-- WC26:AUTO:forecast START -->
 **Group I match** · 2026-06-22
 
-Win France: 87.7% | Draw: 9.3% | Win Iraq: 3.0%
+Win France: 87.8% | Draw: 9.3% | Win Iraq: 2.9%
 Most likely single score: 2-0 (16.2%) (one of many possible, not a prediction)
 Top-5 scorelines: 2-0 16.2%, 3-0 13.6%, 1-0 12.6%, 4-0 8.6%, 2-1 7.4% (cumulative 58.4%)
 Expected score: 3-0
