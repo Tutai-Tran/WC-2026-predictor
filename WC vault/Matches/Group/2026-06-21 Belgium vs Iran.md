@@ -13,7 +13,7 @@ updated: 2026-06-21
 <!-- WC26:AUTO:forecast START -->
 **Group G match** · 2026-06-21
 
-Win Belgium: 57.3% | Draw: 25.2% | Win Iran: 17.5%
+Win Belgium: 57.6% | Draw: 25.1% | Win Iran: 17.2%
 Most likely single score: 1-0 (13.9%) (one of many possible, not a prediction)
 Top-5 scorelines: 0-0 15.2%, 1-1 14.3%, 1-0 13.9%, 0-1 12.4%, 2-0 7.5% (cumulative 63.3%)
 Expected score: 1-1

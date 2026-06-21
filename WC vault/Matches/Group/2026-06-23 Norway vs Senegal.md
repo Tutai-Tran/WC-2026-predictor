@@ -13,7 +13,7 @@ updated: 2026-06-21
 <!-- WC26:AUTO:forecast START -->
 **Group I match** · 2026-06-23
 
-Win Norway: 45.8% | Draw: 27.5% | Win Senegal: 26.8%
+Win Norway: 45.6% | Draw: 27.4% | Win Senegal: 27.0%
 Most likely single score: 1-0 (12.9%) (one of many possible, not a prediction)
 Top-5 scorelines: 1-0 12.9%, 1-1 12.8%, 2-0 10.5%, 0-0 9.6%, 2-1 9.3% (cumulative 55.0%)
 Expected score: 2-1

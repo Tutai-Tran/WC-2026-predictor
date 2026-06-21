@@ -12,11 +12,11 @@ updated: 2026-06-21
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-05-31 · played 2-1
 
-Win Ecuador: 63.8% | Draw: 23.6% | Win Saudi Arabia: 12.6%
-Most likely single score: 2-0 (12.3%) (one of many possible, not a prediction)
-Top-5 scorelines: 2-0 12.3%, 1-1 11.1%, 1-0 10.9%, 2-1 9.7%, 3-0 8.2% (cumulative 52.2%)
+Win Ecuador: 61.3% | Draw: 24.7% | Win Saudi Arabia: 14.0%
+Most likely single score: 2-0 (11.9%) (one of many possible, not a prediction)
+Top-5 scorelines: 2-0 11.9%, 1-1 11.7%, 1-0 10.9%, 2-1 9.8%, 0-0 8.0% (cumulative 52.3%)
 Expected score: 2-1
-Over 2.5: 52.8% | Under 2.5: 47.2% | BTTS yes: 48.5% | BTTS no: 51.5%
+Over 2.5: 51.5% | Under 2.5: 48.5% | BTTS yes: 49.2% | BTTS no: 50.8%
 Data as of 2026-06-21 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

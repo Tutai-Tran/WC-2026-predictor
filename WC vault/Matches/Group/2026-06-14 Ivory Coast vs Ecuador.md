@@ -13,12 +13,12 @@ updated: 2026-06-21
 <!-- WC26:AUTO:forecast START -->
 **Group E match** · 2026-06-14
 
-Win Ivory Coast: 21.9% | Draw: 27.6% | Win Ecuador: 50.5%
-Most likely single score: 0-1 (12.9%) (one of many possible, not a prediction)
-Top-5 scorelines: 1-1 12.9%, 0-1 12.9%, 0-2 10.3%, 0-0 9.7%, 1-2 9.2% (cumulative 55.0%)
-Expected score: 1-2
-Over 2.5: 43.4% | Under 2.5: 56.6% | BTTS yes: 46.9% | BTTS no: 53.1%
-Top scorers: Franck Kessié 12.9%; Nicolas Pépé 11.3%; Ibrahim Sangaré 10.6%; Enner Valencia 54.2%; Gonzalo Plata 12.3%; Félix Torres 6.8%;
+Win Ivory Coast: 23.9% | Draw: 28.5% | Win Ecuador: 47.6%
+Most likely single score: 0-1 (12.8%) (one of many possible, not a prediction)
+Top-5 scorelines: 1-1 13.3%, 0-1 12.8%, 0-0 10.2%, 0-2 9.7%, 1-2 9.0% (cumulative 54.9%)
+Expected score: 1-1
+Over 2.5: 42.0% | Under 2.5: 58.0% | BTTS yes: 46.8% | BTTS no: 53.2%
+Top scorers: Franck Kessié 13.3%; Nicolas Pépé 11.6%; Ibrahim Sangaré 10.9%; Enner Valencia 52.4%; Gonzalo Plata 11.7%; Félix Torres 6.5%;
 Data as of 2026-06-21 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

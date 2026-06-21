@@ -13,7 +13,7 @@ updated: 2026-06-21
 <!-- WC26:AUTO:forecast START -->
 **Group G match** · 2026-06-22
 
-Win New Zealand: 18.3% | Draw: 25.0% | Win Egypt: 56.7%
+Win New Zealand: 18.3% | Draw: 24.9% | Win Egypt: 56.8%
 Most likely single score: 0-1 (13.3%) (one of many possible, not a prediction)
 Top-5 scorelines: 0-1 13.3%, 1-1 13.2%, 0-0 10.5%, 0-2 10.2%, 1-2 9.0% (cumulative 56.1%)
 Expected score: 1-1
