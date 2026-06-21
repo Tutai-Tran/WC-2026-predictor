@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-01
 home: "Norway"
 away: "Sweden"
-updated: 2026-06-20
+updated: 2026-06-21
 ---
 
 # Norway vs Sweden (friendly)
@@ -12,12 +12,12 @@ updated: 2026-06-20
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-06-01 · played 3-1
 
-Win Norway: 55.9% | Draw: 26.9% | Win Sweden: 17.2%
-Most likely single score: 2-0 (11.1%) (one of many possible, not a prediction)
-Top-5 scorelines: 1-1 12.7%, 2-0 11.1%, 1-0 10.9%, 2-1 9.7%, 0-0 8.8% (cumulative 53.3%)
+Win Norway: 59.2% | Draw: 25.6% | Win Sweden: 15.2%
+Most likely single score: 2-0 (11.6%) (one of many possible, not a prediction)
+Top-5 scorelines: 1-1 12.1%, 2-0 11.6%, 1-0 10.9%, 2-1 9.8%, 0-0 8.3% (cumulative 52.7%)
 Expected score: 2-1
-Over 2.5: 49.0% | Under 2.5: 51.0% | BTTS yes: 50.0% | BTTS no: 50.0%
-Data as of 2026-06-20 | runs 50000 | seed 20260611
+Over 2.5: 50.6% | Under 2.5: 49.4% | BTTS yes: 49.6% | BTTS no: 50.4%
+Data as of 2026-06-21 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

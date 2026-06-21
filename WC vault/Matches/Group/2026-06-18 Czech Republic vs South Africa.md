@@ -5,7 +5,7 @@ group: A
 date: 2026-06-18
 home: "Czech Republic"
 away: "South Africa"
-updated: 2026-06-20
+updated: 2026-06-21
 ---
 
 # Czech Republic vs South Africa
@@ -19,7 +19,7 @@ Top-5 scorelines: 1-0 15.1%, 1-1 12.8%, 0-0 11.7%, 2-0 11.4%, 2-1 8.8% (cumulati
 Expected score: 1-1
 Over 2.5: 38.1% | Under 2.5: 61.9% | BTTS yes: 41.7% | BTTS no: 58.3%
 Top scorers: Patrik Schick 34.9%; Tomáš Souček 20.2%; Vladimír Darida 10.5%; Teboho Mokoena 16.7%; Themba Zwane 11.5%; Lyle Foster 10.6%;
-Data as of 2026-06-20 | runs 50000 | seed 20260611
+Data as of 2026-06-21 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

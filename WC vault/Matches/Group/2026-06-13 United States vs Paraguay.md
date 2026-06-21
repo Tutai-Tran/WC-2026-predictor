@@ -5,7 +5,7 @@ group: D
 date: 2026-06-13
 home: "United States"
 away: "Paraguay"
-updated: 2026-06-20
+updated: 2026-06-21
 ---
 
 # United States vs Paraguay
@@ -19,7 +19,7 @@ Top-5 scorelines: 1-0 14.0%, 1-1 13.1%, 0-0 10.8%, 2-0 10.7%, 2-1 8.9% (cumulati
 Expected score: 1-1
 Over 2.5: 40.2% | Under 2.5: 59.8% | BTTS yes: 44.2% | BTTS no: 55.8%
 Top scorers: Christian Pulisic 35.9%; Ricardo Pepi 13.9%; Weston McKennie 12.2%; Miguel Almirón 11.4%; Antonio Sanabria 10.2%; Kaku 7.9%;
-Data as of 2026-06-20 | runs 50000 | seed 20260611
+Data as of 2026-06-21 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

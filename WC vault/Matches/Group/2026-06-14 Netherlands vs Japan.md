@@ -5,7 +5,7 @@ group: F
 date: 2026-06-14
 home: "Netherlands"
 away: "Japan"
-updated: 2026-06-20
+updated: 2026-06-21
 ---
 
 # Netherlands vs Japan
@@ -13,13 +13,13 @@ updated: 2026-06-20
 <!-- WC26:AUTO:forecast START -->
 **Group F match** · 2026-06-14
 
-Win Netherlands: 34.4% | Draw: 32.0% | Win Japan: 33.5%
-Most likely single score: 1-0 (11.9%) (one of many possible, not a prediction)
-Top-5 scorelines: 1-1 14.3%, 0-0 12.6%, 1-0 11.9%, 0-1 11.6%, 2-1 7.3% (cumulative 57.7%)
+Win Netherlands: 36.7% | Draw: 31.7% | Win Japan: 31.7%
+Most likely single score: 1-0 (12.3%) (one of many possible, not a prediction)
+Top-5 scorelines: 1-1 14.1%, 1-0 12.3%, 0-0 11.8%, 0-1 10.4%, 2-1 7.9% (cumulative 56.6%)
 Expected score: 1-1
-Over 2.5: 36.2% | Under 2.5: 63.8% | BTTS yes: 44.0% | BTTS no: 56.0%
-Top scorers: Memphis Depay 36.3%; Cody Gakpo 12.3%; Wout Weghorst 9.5%; Ayase Ueda 13.9%; Junya Itō 12.5%; Daichi Kamada 10.2%;
-Data as of 2026-06-20 | runs 50000 | seed 20260611
+Over 2.5: 37.9% | Under 2.5: 62.1% | BTTS yes: 45.2% | BTTS no: 54.8%
+Top scorers: Memphis Depay 38.4%; Cody Gakpo 13.4%; Wout Weghorst 10.3%; Ayase Ueda 13.4%; Junya Itō 12.0%; Daichi Kamada 9.9%;
+Data as of 2026-06-21 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

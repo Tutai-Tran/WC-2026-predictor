@@ -5,17 +5,17 @@ fifa_code: "AUT"
 group: "J"
 fifa_rank: 22
 elo: 1931
-champion_prob: 0.0062
+champion_prob: 0.0071
 status: active
 created: 2026-06-04
-updated: 2026-06-20
+updated: 2026-06-21
 ---
 
 # Austria
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-20T20:14Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-21T01:19Z | source elo-goal-v1 -->
 Group J | FIFA rank 22 | Elo 1931
-Champion 0.6% | Final 2.1% | SF 5.9% | QF 15.3% | Advance 94.7%
+Champion 0.7% | Final 2.4% | SF 6.8% | QF 16.5% | Advance 95.0%
 Availability concerns: David Alaba (doubtful), Patrick Wimmer (doubtful), Florian Grillitsch (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -64,6 +64,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-20T20:14Z | source elo-goal-v1 -->
-- 2026-06-20: champion 0.6% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-21T01:19Z | source elo-goal-v1 -->
+- 2026-06-21: champion 0.7% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
