@@ -13,12 +13,12 @@ updated: 2026-06-22
 <!-- WC26:AUTO:forecast START -->
 **Group K match** · 2026-06-27
 
-Win Colombia: 37.0% | Draw: 31.7% | Win Portugal: 31.3%
+Win Colombia: 37.1% | Draw: 31.7% | Win Portugal: 31.2%
 Most likely single score: 1-0 (12.4%) (one of many possible, not a prediction)
-Top-5 scorelines: 1-1 14.1%, 1-0 12.3%, 0-0 11.6%, 0-1 10.1%, 2-1 8.1% (cumulative 56.2%)
+Top-5 scorelines: 1-1 14.1%, 1-0 12.4%, 0-0 11.7%, 0-1 10.1%, 2-1 8.1% (cumulative 56.3%)
 Expected score: 1-1
-Over 2.5: 38.3% | Under 2.5: 61.7% | BTTS yes: 45.5% | BTTS no: 54.5%
-Top scorers: James Rodríguez 33.0%; Luis Díaz 20.7%; Yerry Mina 7.7%; Cristiano Ronaldo 46.3%; Bruno Fernandes 10.0%; Bernardo Silva 5.3%;
+Over 2.5: 38.2% | Under 2.5: 61.8% | BTTS yes: 45.3% | BTTS no: 54.7%
+Top scorers: James Rodríguez 33.0%; Luis Díaz 20.7%; Yerry Mina 7.7%; Cristiano Ronaldo 46.1%; Bruno Fernandes 10.0%; Bernardo Silva 5.2%;
 Data as of 2026-06-22 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

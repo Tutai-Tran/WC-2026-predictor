@@ -13,10 +13,10 @@ updated: 2026-06-22
 
 # Iraq
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-22T12:21Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-22T16:12Z | source elo-goal-v1 -->
 Group I | FIFA rank 57 | Elo 1716
-Champion 0.0% | Final 0.0% | SF 0.0% | QF 0.3% | Advance 10.6%
-Availability concerns: Ahmed Yahya (out), Mohanad Ali (out)
+Champion 0.0% | Final 0.0% | SF 0.1% | QF 0.7% | Advance 14.9%
+Availability concerns: Ahmed Yahya (out)
 <!-- WC26:AUTO:snapshot END -->
 
 ## Squad & availability
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-22T12:21Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-22T16:12Z | source elo-goal-v1 -->
 - 2026-06-22: champion 0.0% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
