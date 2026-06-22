@@ -13,12 +13,12 @@ updated: 2026-06-22
 <!-- WC26:AUTO:forecast START -->
 **Group C match** · 2026-06-19
 
-Win Scotland: 20.3% | Draw: 27.2% | Win Morocco: 52.5%
-Most likely single score: 0-1 (13.3%) (one of many possible, not a prediction)
-Top-5 scorelines: 0-1 13.3%, 1-1 12.6%, 0-2 10.9%, 0-0 9.7%, 1-2 9.3% (cumulative 55.8%)
+Win Scotland: 19.3% | Draw: 26.4% | Win Morocco: 54.3%
+Most likely single score: 0-1 (12.9%) (one of many possible, not a prediction)
+Top-5 scorelines: 0-1 12.9%, 1-1 12.3%, 0-2 11.1%, 1-2 9.5%, 0-0 9.0% (cumulative 54.8%)
 Expected score: 1-2
-Over 2.5: 43.4% | Under 2.5: 56.6% | BTTS yes: 46.0% | BTTS no: 54.0%
-Top scorers: John McGinn 21.9%; Scott McTominay 10.6%; Ché Adams 9.2%; Ayoub El Kaabi 39.5%; Achraf Hakimi 21.0%; Brahim Díaz 17.4%;
+Over 2.5: 45.2% | Under 2.5: 54.8% | BTTS yes: 46.8% | BTTS no: 53.2%
+Top scorers: John McGinn 21.9%; Scott McTominay 10.6%; Ché Adams 9.2%; Ayoub El Kaabi 40.9%; Achraf Hakimi 21.5%; Brahim Díaz 18.1%;
 Data as of 2026-06-22 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
