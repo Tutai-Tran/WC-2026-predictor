@@ -8,7 +8,7 @@ updated: 2026-06-04
 
 # Group C
 
-<!-- WC26:AUTO:standings START | generated 2026-06-22T16:12Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:standings START | generated 2026-06-22T19:19Z | source elo-goal-v1 -->
 | Team | Win group | Top 2 | Advance |
 | --- | --- | --- | --- |
 | [[Countries/Brazil\|Brazil]] | 62.2% | 85.5% | 100.0% |

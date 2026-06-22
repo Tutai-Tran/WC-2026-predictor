@@ -5,7 +5,7 @@ fifa_code: "CRO"
 group: "L"
 fifa_rank: 10
 elo: 1934
-champion_prob: 0.0037
+champion_prob: 0.0041
 status: active
 created: 2026-06-04
 updated: 2026-06-22
@@ -13,10 +13,10 @@ updated: 2026-06-22
 
 # Croatia
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-22T16:12Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-22T19:19Z | source elo-goal-v1 -->
 Group L | FIFA rank 10 | Elo 1934
-Champion 0.4% | Final 1.5% | SF 4.3% | QF 10.7% | Advance 78.3%
-Availability concerns: Duje Ćaleta-Car (doubtful)
+Champion 0.4% | Final 1.5% | SF 4.2% | QF 10.8% | Advance 78.5%
+Availability: no concerns recorded
 <!-- WC26:AUTO:snapshot END -->
 
 ## Squad & availability
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-22T16:12Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-22T19:19Z | source elo-goal-v1 -->
 - 2026-06-22: champion 0.4% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

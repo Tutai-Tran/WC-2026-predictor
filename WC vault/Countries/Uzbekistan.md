@@ -13,9 +13,9 @@ updated: 2026-06-22
 
 # Uzbekistan
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-22T16:12Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-22T19:19Z | source elo-goal-v1 -->
 Group K | FIFA rank 51 | Elo 1808
-Champion 0.0% | Final 0.1% | SF 0.5% | QF 2.2% | Advance 35.2%
+Champion 0.0% | Final 0.1% | SF 0.5% | QF 2.1% | Advance 35.3%
 Availability concerns: Jaloliddin Masharipov (out), Bekhruz Karimov (out)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-22T16:12Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-22T19:19Z | source elo-goal-v1 -->
 - 2026-06-22: champion 0.0% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

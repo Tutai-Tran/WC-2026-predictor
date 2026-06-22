@@ -13,9 +13,9 @@ updated: 2026-06-22
 
 # Austria
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-22T16:12Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-22T19:19Z | source elo-goal-v1 -->
 Group J | FIFA rank 22 | Elo 1931
-Champion 0.4% | Final 1.6% | SF 5.0% | QF 13.8% | Advance 97.0%
+Champion 0.4% | Final 1.6% | SF 5.0% | QF 13.7% | Advance 97.0%
 Availability concerns: Stefan Posch (doubtful), David Alaba (doubtful), Alessandro Schöpf (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -64,6 +64,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-22T16:12Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-22T19:19Z | source elo-goal-v1 -->
 - 2026-06-22: champion 0.4% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

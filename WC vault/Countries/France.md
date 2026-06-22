@@ -5,7 +5,7 @@ fifa_code: "FRA"
 group: "I"
 fifa_rank: 3
 elo: 2149
-champion_prob: 0.1222
+champion_prob: 0.1247
 status: active
 created: 2026-06-04
 updated: 2026-06-22
@@ -13,10 +13,10 @@ updated: 2026-06-22
 
 # France
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-22T16:12Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-22T19:19Z | source elo-goal-v1 -->
 Group I | FIFA rank 3 | Elo 2149
-Champion 12.2% | Final 21.5% | SF 38.8% | QF 56.6% | Advance 99.6%
-Availability concerns: William Saliba (doubtful), Malo Gusto (doubtful)
+Champion 12.5% | Final 21.6% | SF 39.0% | QF 56.9% | Advance 99.6%
+Availability concerns: Malo Gusto (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
 ## Squad & availability
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-22T16:12Z | source elo-goal-v1 -->
-- 2026-06-22: champion 12.2% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-22T19:19Z | source elo-goal-v1 -->
+- 2026-06-22: champion 12.5% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
