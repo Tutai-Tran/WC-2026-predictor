@@ -5,7 +5,7 @@ fifa_code: "GHA"
 group: "L"
 fifa_rank: 72
 elo: 1675
-champion_prob: 0.0001
+champion_prob: 0.0
 status: active
 created: 2026-06-04
 updated: 2026-06-22
@@ -13,9 +13,9 @@ updated: 2026-06-22
 
 # Ghana
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-22T03:21Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-22T07:49Z | source elo-goal-v1 -->
 Group L | FIFA rank 72 | Elo 1675
-Champion 0.0% | Final 0.0% | SF 0.3% | QF 1.9% | Advance 73.5%
+Champion 0.0% | Final 0.0% | SF 0.2% | QF 1.9% | Advance 73.7%
 Availability concerns: Thomas Partey (out)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-22T03:21Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-22T07:49Z | source elo-goal-v1 -->
 - 2026-06-22: champion 0.0% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

@@ -13,12 +13,12 @@ updated: 2026-06-22
 <!-- WC26:AUTO:forecast START -->
 **Group G match** · 2026-06-16
 
-Win Iran: 53.1% | Draw: 27.6% | Win New Zealand: 19.3%
-Most likely single score: 1-0 (14.2%) (one of many possible, not a prediction)
-Top-5 scorelines: 1-0 14.2%, 1-1 12.7%, 2-0 11.3%, 0-0 10.5%, 2-1 9.1% (cumulative 57.8%)
+Win Iran: 56.5% | Draw: 26.3% | Win New Zealand: 17.2%
+Most likely single score: 1-0 (14.3%) (one of many possible, not a prediction)
+Top-5 scorelines: 1-0 14.3%, 1-1 12.1%, 2-0 12.1%, 0-0 10.0%, 2-1 9.2% (cumulative 57.7%)
 Expected score: 2-1
-Over 2.5: 40.9% | Under 2.5: 59.1% | BTTS yes: 43.8% | BTTS no: 56.2%
-Top scorers: Mehdi Taremi 48.0%; Alireza Jahanbakhsh 15.0%; Mohammad Mohebi 12.6%; Chris Wood 25.9%; Kosta Barbarouses 7.2%; Ben Waine 6.6%;
+Over 2.5: 42.4% | Under 2.5: 57.6% | BTTS yes: 43.5% | BTTS no: 56.5%
+Top scorers: Mehdi Taremi 49.8%; Alireza Jahanbakhsh 15.9%; Mohammad Mohebi 13.4%; Chris Wood 24.8%; Kosta Barbarouses 6.9%; Ben Waine 6.3%;
 Data as of 2026-06-22 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
