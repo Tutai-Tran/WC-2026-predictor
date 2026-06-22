@@ -13,12 +13,12 @@ updated: 2026-06-22
 <!-- WC26:AUTO:forecast START -->
 **Group J match** · 2026-06-22
 
-Win Argentina: 66.0% | Draw: 22.1% | Win Austria: 11.9%
-Most likely single score: 2-0 (13.9%) (one of many possible, not a prediction)
-Top-5 scorelines: 2-0 13.9%, 1-0 13.6%, 1-1 10.0%, 2-1 9.3%, 3-0 9.1% (cumulative 55.8%)
+Win Argentina: 69.3% | Draw: 20.5% | Win Austria: 10.2%
+Most likely single score: 2-0 (14.4%) (one of many possible, not a prediction)
+Top-5 scorelines: 2-0 14.4%, 1-0 13.4%, 3-0 9.9%, 1-1 9.3%, 2-1 9.1% (cumulative 56.1%)
 Expected score: 2-1
-Over 2.5: 48.9% | Under 2.5: 51.1% | BTTS yes: 42.4% | BTTS no: 57.6%
-Top scorers: Lionel Messi 65.5%; Lautaro Martínez 26.8%; Julián Alvarez 12.1%; Marcel Sabitzer 18.0%; Marko Arnautović 18.0%; Michael Gregoritsch 9.9%;
+Over 2.5: 50.5% | Under 2.5: 49.5% | BTTS yes: 41.4% | BTTS no: 58.6%
+Top scorers: Lionel Messi 67.2%; Lautaro Martínez 27.9%; Julián Alvarez 12.7%; Marcel Sabitzer 17.6%; Marko Arnautović 17.1%; Michael Gregoritsch 9.4%;
 Data as of 2026-06-22 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

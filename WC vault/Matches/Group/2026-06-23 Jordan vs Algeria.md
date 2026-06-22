@@ -13,7 +13,7 @@ updated: 2026-06-22
 <!-- WC26:AUTO:forecast START -->
 **Group J match** · 2026-06-23
 
-Win Jordan: 17.7% | Draw: 25.0% | Win Algeria: 57.4%
+Win Jordan: 17.6% | Draw: 25.0% | Win Algeria: 57.4%
 Most likely single score: 0-1 (14.1%) (one of many possible, not a prediction)
 Top-5 scorelines: 0-1 14.1%, 1-1 13.7%, 0-0 12.2%, 0-2 9.6%, 1-0 9.2% (cumulative 58.8%)
 Expected score: 1-1
