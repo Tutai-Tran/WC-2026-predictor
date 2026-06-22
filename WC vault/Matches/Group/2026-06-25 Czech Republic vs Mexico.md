@@ -5,7 +5,7 @@ group: A
 date: 2026-06-25
 home: "Czech Republic"
 away: "Mexico"
-updated: 2026-06-21
+updated: 2026-06-22
 ---
 
 # Czech Republic vs Mexico
@@ -19,7 +19,7 @@ Top-5 scorelines: 0-2 14.5%, 0-1 12.9%, 0-3 10.4%, 1-2 9.0%, 1-1 8.8% (cumulativ
 Expected score: 1-2
 Over 2.5: 52.5% | Under 2.5: 47.5% | BTTS yes: 41.4% | BTTS no: 58.6%
 Top scorers: Patrik Schick 21.0%; Tomáš Souček 9.2%; Vladimír Darida 4.7%; Raúl Jiménez 56.0%; Orbelín Pineda 18.4%; Alexis Vega 12.9%;
-Data as of 2026-06-21 | runs 50000 | seed 20260611
+Data as of 2026-06-22 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

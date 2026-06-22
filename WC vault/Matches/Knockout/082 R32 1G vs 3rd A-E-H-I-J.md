@@ -3,7 +3,7 @@ type: wc-match
 stage: R32
 match_no: 82
 date: 2026-07-01
-updated: 2026-06-21
+updated: 2026-06-22
 ---
 
 # R32 #82: 1G vs 3rd A/E/H/I/J
@@ -14,7 +14,7 @@ updated: 2026-06-21
 Slots: 1G vs 3rd A/E/H/I/J
 Projected: Egypt vs 3rd A/E/H/I/J
 Result: TBD
-Data as of 2026-06-21 | runs 50000 | seed 20260611
+Data as of 2026-06-22 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

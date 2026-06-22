@@ -5,7 +5,7 @@ group: B
 date: 2026-06-12
 home: "Canada"
 away: "Bosnia and Herzegovina"
-updated: 2026-06-21
+updated: 2026-06-22
 ---
 
 # Canada vs Bosnia and Herzegovina
@@ -19,7 +19,7 @@ Top-5 scorelines: 2-0 14.3%, 1-0 12.3%, 3-0 10.6%, 2-1 9.0%, 1-1 8.5% (cumulativ
 Expected score: 2-1
 Over 2.5: 54.5% | Under 2.5: 45.5% | BTTS yes: 42.1% | BTTS no: 57.9%
 Top scorers: Jonathan David 50.7%; Cyle Larin 38.2%; Alphonso Davies 20.6%; Edin Džeko 40.0%; Ermedin Demirović 3.1%; Haris Tabaković 3.1%;
-Data as of 2026-06-21 | runs 50000 | seed 20260611
+Data as of 2026-06-22 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

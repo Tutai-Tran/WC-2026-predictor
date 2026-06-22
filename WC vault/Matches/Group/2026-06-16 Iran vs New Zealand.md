@@ -5,7 +5,7 @@ group: G
 date: 2026-06-16
 home: "Iran"
 away: "New Zealand"
-updated: 2026-06-21
+updated: 2026-06-22
 ---
 
 # Iran vs New Zealand
@@ -19,7 +19,7 @@ Top-5 scorelines: 1-0 14.2%, 1-1 12.7%, 2-0 11.3%, 0-0 10.5%, 2-1 9.1% (cumulati
 Expected score: 2-1
 Over 2.5: 40.9% | Under 2.5: 59.1% | BTTS yes: 43.8% | BTTS no: 56.2%
 Top scorers: Mehdi Taremi 48.0%; Alireza Jahanbakhsh 15.0%; Mohammad Mohebi 12.6%; Chris Wood 25.9%; Kosta Barbarouses 7.2%; Ben Waine 6.6%;
-Data as of 2026-06-21 | runs 50000 | seed 20260611
+Data as of 2026-06-22 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match
