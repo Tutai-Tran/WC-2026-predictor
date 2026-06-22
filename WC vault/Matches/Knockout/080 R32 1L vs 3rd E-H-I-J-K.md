@@ -14,7 +14,7 @@ updated: 2026-06-22
 Slots: 1L vs 3rd E/H/I/J/K
 Projected: England vs 3rd E/H/I/J/K
 Result: TBD
-Data as of 2026-06-22 | runs 50000 | seed 20260611
+Data as of 2026-06-23 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

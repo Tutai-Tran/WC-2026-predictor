@@ -19,7 +19,7 @@ Top-5 scorelines: 0-2 14.3%, 0-1 12.3%, 0-3 10.8%, 1-2 8.9%, 1-1 8.4% (cumulativ
 Expected score: 1-2
 Over 2.5: 54.8% | Under 2.5: 45.2% | BTTS yes: 41.9% | BTTS no: 58.1%
 Top scorers: Patrik Schick 21.0%; Tomáš Souček 9.2%; Vladimír Darida 4.7%; Raúl Jiménez 57.4%; Orbelín Pineda 19.2%; Alexis Vega 13.5%;
-Data as of 2026-06-22 | runs 50000 | seed 20260611
+Data as of 2026-06-23 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

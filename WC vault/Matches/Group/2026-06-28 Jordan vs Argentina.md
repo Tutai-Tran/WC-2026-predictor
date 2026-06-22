@@ -19,7 +19,7 @@ Top-5 scorelines: 0-2 15.8%, 0-3 13.7%, 0-1 11.9%, 0-4 8.8%, 1-2 7.3% (cumulativ
 Expected score: 0-3
 Over 2.5: 58.9% | Under 2.5: 41.1% | BTTS yes: 34.7% | BTTS no: 65.3%
 Top scorers: Ali Olwan 11.9%; Musa Al-Taamari 10.1%; Mahmoud Al-Mardi 4.3%; Lionel Messi 74.7%; Lautaro Martínez 33.7%; Julián Alvarez 15.7%;
-Data as of 2026-06-22 | runs 50000 | seed 20260611
+Data as of 2026-06-23 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

@@ -14,7 +14,7 @@ updated: 2026-06-22
 Slots: 1K vs 3rd D/E/I/J/L
 Projected: Colombia vs 3rd D/E/I/J/L
 Result: TBD
-Data as of 2026-06-22 | runs 50000 | seed 20260611
+Data as of 2026-06-23 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

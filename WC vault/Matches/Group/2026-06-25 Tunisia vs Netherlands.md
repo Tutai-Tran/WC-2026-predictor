@@ -19,7 +19,7 @@ Top-5 scorelines: 0-2 14.6%, 0-1 12.1%, 0-3 11.3%, 1-2 8.7%, 1-1 7.9% (cumulativ
 Expected score: 1-2
 Over 2.5: 55.8% | Under 2.5: 44.2% | BTTS yes: 40.9% | BTTS no: 59.1%
 Top scorers: Firas Chaouat 7.4%; Ali Abdi 7.0%; Elias Achouri 5.5%; Memphis Depay 57.8%; Cody Gakpo 24.5%; Wout Weghorst 19.2%;
-Data as of 2026-06-22 | runs 50000 | seed 20260611
+Data as of 2026-06-23 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

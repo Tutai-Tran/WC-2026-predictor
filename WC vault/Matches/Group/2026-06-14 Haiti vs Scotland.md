@@ -19,7 +19,7 @@ Top-5 scorelines: 0-1 12.9%, 1-1 12.1%, 0-2 11.3%, 1-2 9.5%, 0-0 8.8% (cumulativ
 Expected score: 1-2
 Over 2.5: 45.8% | Under 2.5: 54.2% | BTTS yes: 46.8% | BTTS no: 53.2%
 Top scorers: Duckens Nazon 24.7%; Frantzdy Pierrot 19.9%; Louicius Deedson 7.0%; John McGinn 32.8%; Scott McTominay 19.7%; Ché Adams 17.1%;
-Data as of 2026-06-22 | runs 50000 | seed 20260611
+Data as of 2026-06-23 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

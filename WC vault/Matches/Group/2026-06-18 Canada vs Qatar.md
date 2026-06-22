@@ -19,7 +19,7 @@ Top-5 scorelines: 2-0 15.4%, 3-0 13.3%, 1-0 11.5%, 4-0 8.7%, 2-1 7.5% (cumulativ
 Expected score: 3-0
 Over 2.5: 59.7% | Under 2.5: 40.3% | BTTS yes: 36.2% | BTTS no: 63.8%
 Top scorers: Jonathan David 55.5%; Cyle Larin 42.9%; Alphonso Davies 23.6%; Almoez Ali 11.4%; Hassan Al-Haydos 8.7%; Akram Afif 8.4%;
-Data as of 2026-06-22 | runs 50000 | seed 20260611
+Data as of 2026-06-23 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

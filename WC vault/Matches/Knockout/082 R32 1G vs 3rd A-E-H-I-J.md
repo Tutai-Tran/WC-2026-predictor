@@ -14,7 +14,7 @@ updated: 2026-06-22
 Slots: 1G vs 3rd A/E/H/I/J
 Projected: Egypt vs 3rd A/E/H/I/J
 Result: TBD
-Data as of 2026-06-22 | runs 50000 | seed 20260611
+Data as of 2026-06-23 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match
