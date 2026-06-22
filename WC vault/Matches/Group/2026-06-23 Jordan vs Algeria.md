@@ -13,12 +13,12 @@ updated: 2026-06-22
 <!-- WC26:AUTO:forecast START -->
 **Group J match** · 2026-06-23
 
-Win Jordan: 17.3% | Draw: 24.4% | Win Algeria: 58.3%
-Most likely single score: 0-1 (13.3%) (one of many possible, not a prediction)
-Top-5 scorelines: 0-1 13.3%, 1-1 12.9%, 0-2 10.5%, 0-0 10.0%, 1-2 9.2% (cumulative 55.9%)
-Expected score: 1-2
-Over 2.5: 42.4% | Under 2.5: 57.6% | BTTS yes: 45.9% | BTTS no: 54.1%
-Top scorers: Ali Olwan 21.2%; Musa Al-Taamari 18.1%; Mahmoud Al-Mardi 8.0%; Riyad Mahrez 35.8%; Mohamed Amoura 20.6%; Amine Gouiri 10.2%;
+Win Jordan: 18.4% | Draw: 25.3% | Win Algeria: 56.3%
+Most likely single score: 0-1 (13.9%) (one of many possible, not a prediction)
+Top-5 scorelines: 0-1 13.9%, 1-1 13.7%, 0-0 12.1%, 0-2 9.5%, 1-0 9.2% (cumulative 58.5%)
+Expected score: 1-1
+Over 2.5: 37.1% | Under 2.5: 62.9% | BTTS yes: 43.3% | BTTS no: 56.7%
+Top scorers: Ali Olwan 21.4%; Musa Al-Taamari 18.3%; Mahmoud Al-Mardi 8.1%; Riyad Mahrez 31.7%; Mohamed Amoura 18.0%; Amine Gouiri 8.9%;
 Data as of 2026-06-22 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

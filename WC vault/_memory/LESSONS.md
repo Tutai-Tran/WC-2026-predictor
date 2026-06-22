@@ -5,18 +5,18 @@ updated: 2026-06-22
 
 # What the model has learned
 
-> Leak-free over **62** graded matches: outcome accuracy **68%**, Brier 0.4688, log loss 0.7972. The biases below are hypotheses (the audit trail); the model's parameters are where learning is actually applied, only after it validates out-of-sample.
+> Leak-free over **63** graded matches: outcome accuracy **67%**, Brier 0.4745, log loss 0.8046. The biases below are hypotheses (the audit trail); the model's parameters are where learning is actually applied, only after it validates out-of-sample.
 
 ## Accuracy by segment
-- group: 58% (38 matches)
+- group: 56% (39 matches)
 - friendly: 83% (24 matches)
 
 ## Systematic biases found (ranked by evidence)
-- **motivation** (group): model under-rated it (strength 0.282, over 14 wrong matches)
+- **motivation** (group): model under-rated it (strength 0.23, over 15 wrong matches)
 - **goal_volume** (group): model over-rated it (strength 0.142, over 13 wrong matches)
-- **tactical** (mismatch): model under-rated it (strength 0.264, over 10 wrong matches)
+- **tactical** (mismatch): model under-rated it (strength 0.267, over 11 wrong matches)
 - **elo_gap** (mismatch): model over-rated it (strength 0.486, over 9 wrong matches)
-- **home_advantage** (group): model over-rated it (strength 0.055, over 8 wrong matches)
+- **home_advantage** (group): model over-rated it (strength 0.078, over 9 wrong matches)
 - **home_advantage** (host): model under-rated it (strength 0.116, over 8 wrong matches)
-- **availability** (group): model under-rated it (strength 0.018, over 6 wrong matches)
-- **draw** (mismatch): model under-rated it (strength 0.539, over 6 wrong matches)
+- **availability** (group): model over-rated it (strength 0.053, over 7 wrong matches)
+- **draw** (mismatch): model under-rated it (strength 0.523, over 7 wrong matches)
