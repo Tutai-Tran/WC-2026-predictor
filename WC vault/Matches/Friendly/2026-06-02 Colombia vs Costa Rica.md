@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-02
 home: "Colombia"
 away: "Costa Rica"
-updated: 2026-06-22
+updated: 2026-06-23
 ---
 
 # Colombia vs Costa Rica (friendly)

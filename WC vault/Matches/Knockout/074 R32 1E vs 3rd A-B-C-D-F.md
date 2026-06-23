@@ -3,7 +3,7 @@ type: wc-match
 stage: R32
 match_no: 74
 date: 2026-06-29
-updated: 2026-06-22
+updated: 2026-06-23
 ---
 
 # R32 #74: 1E vs 3rd A/B/C/D/F

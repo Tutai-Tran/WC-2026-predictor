@@ -5,7 +5,7 @@ group: B
 date: 2026-06-12
 home: "Canada"
 away: "Bosnia and Herzegovina"
-updated: 2026-06-22
+updated: 2026-06-23
 ---
 
 # Canada vs Bosnia and Herzegovina

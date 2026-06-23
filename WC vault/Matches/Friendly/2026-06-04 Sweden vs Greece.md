@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-04
 home: "Sweden"
 away: "Greece"
-updated: 2026-06-22
+updated: 2026-06-23
 ---
 
 # Sweden vs Greece (friendly)

@@ -5,7 +5,7 @@ group: F
 date: 2026-06-25
 home: "Japan"
 away: "Sweden"
-updated: 2026-06-22
+updated: 2026-06-23
 ---
 
 # Japan vs Sweden

@@ -5,7 +5,7 @@ group: E
 date: 2026-06-21
 home: "Ecuador"
 away: "Curacao"
-updated: 2026-06-22
+updated: 2026-06-23
 ---
 
 # Ecuador vs Curacao

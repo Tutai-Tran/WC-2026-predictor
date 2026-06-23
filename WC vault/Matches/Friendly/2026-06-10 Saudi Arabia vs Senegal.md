@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-10
 home: "Saudi Arabia"
 away: "Senegal"
-updated: 2026-06-22
+updated: 2026-06-23
 ---
 
 # Saudi Arabia vs Senegal (friendly)

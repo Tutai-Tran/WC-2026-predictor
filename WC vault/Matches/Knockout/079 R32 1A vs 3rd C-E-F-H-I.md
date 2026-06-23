@@ -3,7 +3,7 @@ type: wc-match
 stage: R32
 match_no: 79
 date: 2026-07-01
-updated: 2026-06-22
+updated: 2026-06-23
 ---
 
 # R32 #79: 1A vs 3rd C/E/F/H/I

@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-03
 home: "DR Congo"
 away: "Denmark"
-updated: 2026-06-22
+updated: 2026-06-23
 ---
 
 # DR Congo vs Denmark (friendly)

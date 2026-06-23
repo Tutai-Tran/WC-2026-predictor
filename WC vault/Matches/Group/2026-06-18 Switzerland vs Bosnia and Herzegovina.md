@@ -5,7 +5,7 @@ group: B
 date: 2026-06-18
 home: "Switzerland"
 away: "Bosnia and Herzegovina"
-updated: 2026-06-22
+updated: 2026-06-23
 ---
 
 # Switzerland vs Bosnia and Herzegovina

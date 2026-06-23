@@ -5,7 +5,7 @@ group: A
 date: 2026-06-12
 home: "South Korea"
 away: "Czech Republic"
-updated: 2026-06-22
+updated: 2026-06-23
 ---
 
 # South Korea vs Czech Republic

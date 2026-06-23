@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-04
 home: "Panama"
 away: "Dominican Republic"
-updated: 2026-06-22
+updated: 2026-06-23
 ---
 
 # Panama vs Dominican Republic (friendly)

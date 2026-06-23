@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-05-29
 home: "Iran"
 away: "Gambia"
-updated: 2026-06-22
+updated: 2026-06-23
 ---
 
 # Iran vs Gambia (friendly)

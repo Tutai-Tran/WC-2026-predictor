@@ -5,7 +5,7 @@ group: D
 date: 2026-06-19
 home: "United States"
 away: "Australia"
-updated: 2026-06-22
+updated: 2026-06-23
 ---
 
 # United States vs Australia

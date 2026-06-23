@@ -5,7 +5,7 @@ group: D
 date: 2026-06-26
 home: "Paraguay"
 away: "Australia"
-updated: 2026-06-22
+updated: 2026-06-23
 ---
 
 # Paraguay vs Australia

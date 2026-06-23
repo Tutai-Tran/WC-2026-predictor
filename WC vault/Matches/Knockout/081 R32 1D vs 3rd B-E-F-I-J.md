@@ -3,7 +3,7 @@ type: wc-match
 stage: R32
 match_no: 81
 date: 2026-07-02
-updated: 2026-06-22
+updated: 2026-06-23
 ---
 
 # R32 #81: 1D vs 3rd B/E/F/I/J

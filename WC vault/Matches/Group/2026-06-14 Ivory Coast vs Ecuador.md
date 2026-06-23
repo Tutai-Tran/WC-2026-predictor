@@ -5,7 +5,7 @@ group: E
 date: 2026-06-14
 home: "Ivory Coast"
 away: "Ecuador"
-updated: 2026-06-22
+updated: 2026-06-23
 ---
 
 # Ivory Coast vs Ecuador

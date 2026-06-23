@@ -5,7 +5,7 @@ group: G
 date: 2026-06-27
 home: "New Zealand"
 away: "Belgium"
-updated: 2026-06-22
+updated: 2026-06-23
 ---
 
 # New Zealand vs Belgium
