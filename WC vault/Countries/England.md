@@ -13,7 +13,7 @@ updated: 2026-06-23
 
 # England
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-23T14:31Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-23T16:18Z | source elo-goal-v1 -->
 Group L | FIFA rank 4 | Elo 2126
 Champion 5.9% | Final 11.9% | SF 25.3% | QF 44.9% | Advance 99.6%
 Availability concerns: Tino Livramento (out), Bukayo Saka (doubtful), Declan Rice (doubtful), Marcus Rashford (doubtful)
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-23T14:31Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-23T16:18Z | source elo-goal-v1 -->
 - 2026-06-23: champion 5.9% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

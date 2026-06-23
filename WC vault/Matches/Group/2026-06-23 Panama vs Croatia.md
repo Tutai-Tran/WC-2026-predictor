@@ -13,7 +13,7 @@ updated: 2026-06-23
 <!-- WC26:AUTO:forecast START -->
 **Group L match** · 2026-06-23
 
-Win Panama: 16.2% | Draw: 24.2% | Win Croatia: 59.6%
+Win Panama: 16.1% | Draw: 24.2% | Win Croatia: 59.7%
 Most likely single score: 0-1 (13.7%) (one of many possible, not a prediction)
 Top-5 scorelines: 0-1 13.8%, 1-1 13.5%, 0-0 11.3%, 0-2 10.0%, 1-2 8.7% (cumulative 57.2%)
 Expected score: 1-1

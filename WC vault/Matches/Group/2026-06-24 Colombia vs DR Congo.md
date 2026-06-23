@@ -13,7 +13,7 @@ updated: 2026-06-23
 <!-- WC26:AUTO:forecast START -->
 **Group K match** · 2026-06-24
 
-Win Colombia: 65.1% | Draw: 22.4% | Win DR Congo: 12.5%
+Win Colombia: 65.3% | Draw: 22.2% | Win DR Congo: 12.5%
 Most likely single score: 2-0 (13.6%) (one of many possible, not a prediction)
 Top-5 scorelines: 2-0 13.6%, 1-0 12.6%, 1-1 9.5%, 3-0 9.4%, 2-1 9.3% (cumulative 54.5%)
 Expected score: 2-1
