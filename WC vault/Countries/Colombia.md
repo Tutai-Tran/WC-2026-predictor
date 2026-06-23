@@ -13,7 +13,7 @@ updated: 2026-06-23
 
 # Colombia
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-23T09:57Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-23T14:31Z | source elo-goal-v1 -->
 Group K | FIFA rank 13 | Elo 2087
 Champion 6.2% | Final 12.7% | SF 23.6% | QF 50.5% | Advance 99.3%
 Availability: no concerns recorded
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-23T09:57Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-23T14:31Z | source elo-goal-v1 -->
 - 2026-06-23: champion 6.2% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
