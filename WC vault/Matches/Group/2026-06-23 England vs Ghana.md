@@ -13,7 +13,7 @@ updated: 2026-06-23
 <!-- WC26:AUTO:forecast START -->
 **Group L match** · 2026-06-23
 
-Win England: 79.8% | Draw: 14.5% | Win Ghana: 5.7%
+Win England: 78.9% | Draw: 15.6% | Win Ghana: 5.5%
 Most likely single score: 2-0 (16.1%) (one of many possible, not a prediction)
 Top-5 scorelines: 2-0 16.1%, 1-0 13.6%, 3-0 12.3%, 2-1 8.1%, 1-1 7.5% (cumulative 57.5%)
 Expected score: 2-1

@@ -13,12 +13,12 @@ updated: 2026-06-23
 <!-- WC26:AUTO:forecast START -->
 **Group J match** · 2026-06-28
 
-Win Algeria: 28.3% | Draw: 32.4% | Win Austria: 39.3%
-Most likely single score: 0-1 (14.3%) (one of many possible, not a prediction)
-Top-5 scorelines: 0-0 14.5%, 0-1 14.3%, 1-1 14.2%, 1-0 11.3%, 0-2 8.4% (cumulative 62.6%)
+Win Algeria: 30.2% | Draw: 32.9% | Win Austria: 37.0%
+Most likely single score: 0-1 (14.1%) (one of many possible, not a prediction)
+Top-5 scorelines: 0-0 15.0%, 1-1 14.3%, 0-1 14.1%, 1-0 12.0%, 0-2 7.8% (cumulative 63.2%)
 Expected score: 1-1
-Over 2.5: 32.0% | Under 2.5: 68.0% | BTTS yes: 40.0% | BTTS no: 60.0%
-Top scorers: Riyad Mahrez 22.9%; Mohamed Amoura 12.7%; Amine Gouiri 6.1%; Marko Arnautović 28.0%; Marcel Sabitzer 23.7%; Michael Gregoritsch 15.9%;
+Over 2.5: 31.0% | Under 2.5: 69.0% | BTTS yes: 39.4% | BTTS no: 60.6%
+Top scorers: Riyad Mahrez 23.3%; Mohamed Amoura 12.9%; Amine Gouiri 6.3%; Marko Arnautović 26.7%; Marcel Sabitzer 23.0%; Michael Gregoritsch 15.1%;
 Data as of 2026-06-23 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

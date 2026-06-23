@@ -13,7 +13,7 @@ updated: 2026-06-23
 <!-- WC26:AUTO:forecast START -->
 **Group A match** · 2026-06-25
 
-Win South Africa: 16.1% | Draw: 24.2% | Win South Korea: 59.7%
+Win South Africa: 16.4% | Draw: 24.3% | Win South Korea: 59.3%
 Most likely single score: 0-1 (12.8%) (one of many possible, not a prediction)
 Top-5 scorelines: 0-1 12.8%, 0-2 12.3%, 1-1 11.1%, 1-2 9.6%, 0-0 8.0% (cumulative 53.9%)
 Expected score: 1-2
