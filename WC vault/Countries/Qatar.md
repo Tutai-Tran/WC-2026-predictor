@@ -13,10 +13,10 @@ updated: 2026-06-23
 
 # Qatar
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-23T19:18Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-23T22:18Z | source elo-goal-v1 -->
 Group B | FIFA rank 54 | Elo 1572
-Champion 0.0% | Final 0.0% | SF 0.0% | QF 0.3% | Advance 26.0%
-Availability: no concerns recorded
+Champion 0.0% | Final 0.0% | SF 0.0% | QF 0.3% | Advance 25.8%
+Availability concerns: Assim Madibo (suspended), Homam Ahmed (suspended)
 <!-- WC26:AUTO:snapshot END -->
 
 ## Squad & availability
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-23T19:18Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-23T22:18Z | source elo-goal-v1 -->
 - 2026-06-23: champion 0.0% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

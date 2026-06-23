@@ -13,12 +13,12 @@ updated: 2026-06-23
 <!-- WC26:AUTO:forecast START -->
 **Group K match** · 2026-06-27
 
-Win DR Congo: 34.0% | Draw: 31.8% | Win Uzbekistan: 34.2%
-Most likely single score: 0-1 (12.2%) (one of many possible, not a prediction)
-Top-5 scorelines: 1-1 14.3%, 0-0 13.3%, 0-1 12.2%, 1-0 12.2%, 1-2 7.0% (cumulative 59.1%)
+Win DR Congo: 36.6% | Draw: 32.0% | Win Uzbekistan: 31.4%
+Most likely single score: 1-0 (13.1%) (one of many possible, not a prediction)
+Top-5 scorelines: 1-1 14.3%, 0-0 13.8%, 1-0 13.1%, 0-1 11.8%, 2-0 7.5% (cumulative 60.4%)
 Expected score: 1-1
-Over 2.5: 34.4% | Under 2.5: 65.6% | BTTS yes: 42.6% | BTTS no: 57.4%
-Top scorers: Cédric Bakambu 20.9%; Meschak Elia 13.2%; Yoane Wissa 10.4%; Eldor Shomurodov 28.7%; Igor Sergeev 17.3%; Jaloliddin Masharipov 9.0%;
+Over 2.5: 33.5% | Under 2.5: 66.5% | BTTS yes: 41.7% | BTTS no: 58.3%
+Top scorers: Cédric Bakambu 21.5%; Meschak Elia 13.6%; Yoane Wissa 10.8%; Eldor Shomurodov 27.0%; Igor Sergeev 16.2%; Jaloliddin Masharipov 8.4%;
 Data as of 2026-06-23 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
