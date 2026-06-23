@@ -5,7 +5,7 @@ fifa_code: "IRN"
 group: "G"
 fifa_rank: 20
 elo: 1892
-champion_prob: 0.0014
+champion_prob: 0.0013
 status: active
 created: 2026-06-04
 updated: 2026-06-23
@@ -13,9 +13,9 @@ updated: 2026-06-23
 
 # Iran
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-23T02:14Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-23T05:23Z | source elo-goal-v1 -->
 Group G | FIFA rank 20 | Elo 1892
-Champion 0.1% | Final 0.6% | SF 2.2% | QF 9.0% | Advance 71.8%
+Champion 0.1% | Final 0.6% | SF 2.2% | QF 8.9% | Advance 72.9%
 Availability concerns: Alireza Jahanbakhsh (doubtful), Dennis Eckert (out), Mehdi Torabi (doubtful), Rouzbeh Cheshmi (doubtful), Saman Ghoddos (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-23T02:14Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-23T05:23Z | source elo-goal-v1 -->
 - 2026-06-23: champion 0.1% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

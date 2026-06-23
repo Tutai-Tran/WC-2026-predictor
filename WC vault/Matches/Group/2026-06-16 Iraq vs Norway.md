@@ -13,12 +13,12 @@ updated: 2026-06-23
 <!-- WC26:AUTO:forecast START -->
 **Group I match** · 2026-06-16
 
-Win Iraq: 10.4% | Draw: 20.0% | Win Norway: 69.6%
-Most likely single score: 0-2 (13.8%) (one of many possible, not a prediction)
-Top-5 scorelines: 0-2 13.8%, 0-1 12.5%, 0-3 9.7%, 1-1 9.3%, 1-2 9.3% (cumulative 54.6%)
+Win Iraq: 9.5% | Draw: 19.2% | Win Norway: 71.3%
+Most likely single score: 0-2 (14.0%) (one of many possible, not a prediction)
+Top-5 scorelines: 0-2 14.0%, 0-1 12.4%, 0-3 10.2%, 1-2 9.1%, 1-1 8.9% (cumulative 54.6%)
 Expected score: 1-2
-Over 2.5: 52.6% | Under 2.5: 47.4% | BTTS yes: 43.6% | BTTS no: 56.4%
-Top scorers: Aymen Hussein 19.6%; Mohanad Ali 16.5%; Ibrahim Bayesh 5.4%; Erling Haaland 61.7%; Alexander Sørloth 34.6%; Antonio Nusa 13.8%;
+Over 2.5: 53.6% | Under 2.5: 46.4% | BTTS yes: 42.8% | BTTS no: 57.2%
+Top scorers: Aymen Hussein 19.0%; Mohanad Ali 16.0%; Ibrahim Bayesh 5.2%; Erling Haaland 62.6%; Alexander Sørloth 35.4%; Antonio Nusa 14.2%;
 Data as of 2026-06-23 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
