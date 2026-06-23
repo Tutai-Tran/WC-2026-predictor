@@ -13,7 +13,7 @@ updated: 2026-06-23
 
 # Morocco
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-23T16:18Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-23T19:18Z | source elo-goal-v1 -->
 Group C | FIFA rank 12 | Elo 2033
 Champion 2.2% | Final 5.6% | SF 13.9% | QF 30.8% | Advance 100.0%
 Availability concerns: Nayef Aguerd (out), Abde Ezzalzouli (out), Yassine Bounou (doubtful)
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-23T16:18Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-23T19:18Z | source elo-goal-v1 -->
 - 2026-06-23: champion 2.2% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
