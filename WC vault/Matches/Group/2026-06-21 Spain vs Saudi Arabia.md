@@ -13,12 +13,12 @@ updated: 2026-06-24
 <!-- WC26:AUTO:forecast START -->
 **Group H match** · 2026-06-21
 
-Win Spain: 84.2% | Draw: 12.1% | Win Saudi Arabia: 3.7%
-Most likely single score: 2-0 (16.2%) (one of many possible, not a prediction)
-Top-5 scorelines: 2-0 16.2%, 3-0 14.5%, 1-0 11.8%, 4-0 9.8%, 2-1 6.7% (cumulative 59.1%)
+Win Spain: 85.5% | Draw: 11.2% | Win Saudi Arabia: 3.3%
+Most likely single score: 2-0 (15.7%) (one of many possible, not a prediction)
+Top-5 scorelines: 2-0 15.7%, 3-0 14.7%, 1-0 10.9%, 4-0 10.3%, 2-1 6.5% (cumulative 58.2%)
 Expected score: 3-0
-Over 2.5: 59.9% | Under 2.5: 40.1% | BTTS yes: 31.9% | BTTS no: 68.1%
-Top scorers: Mikel Oyarzabal 45.3%; Ferran Torres 38.9%; Dani Olmo 23.9%; Salem Al-Dawsari 17.8%; Saleh Al-Shehri 7.3%; Firas Al-Buraikan 6.2%;
+Over 2.5: 62.4% | Under 2.5: 37.6% | BTTS yes: 32.2% | BTTS no: 67.8%
+Top scorers: Mikel Oyarzabal 46.5%; Ferran Torres 40.2%; Dani Olmo 24.8%; Salem Al-Dawsari 17.8%; Saleh Al-Shehri 7.3%; Firas Al-Buraikan 6.2%;
 Data as of 2026-06-24 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

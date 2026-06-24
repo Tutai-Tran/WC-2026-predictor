@@ -20,7 +20,7 @@ flowchart LR
   M80["R32 #80<br>England vs 3rd E/H/I/J/K"]
   M81["R32 #81<br>United States vs 3rd B/E/F/I/J"]
   M82["R32 #82<br>Egypt vs 3rd A/E/H/I/J"]
-  M83["R32 #83<br>Portugal vs Ghana"]
+  M83["R32 #83<br>Portugal vs Croatia"]
   M84["R32 #84<br>Spain vs Austria"]
   M85["R32 #85<br>Canada vs 3rd E/F/G/I/J"]
   M86["R32 #86<br>Argentina vs Cape Verde"]

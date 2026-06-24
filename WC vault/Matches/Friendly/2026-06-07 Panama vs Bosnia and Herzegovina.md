@@ -12,11 +12,11 @@ updated: 2026-06-24
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-06-07 · played 1-1
 
-Win Panama: 49.8% | Draw: 29.0% | Win Bosnia and Herzegovina: 21.1%
-Most likely single score: 1-0 (10.9%) (one of many possible, not a prediction)
-Top-5 scorelines: 1-1 13.8%, 1-0 10.9%, 2-0 10.0%, 0-0 9.8%, 2-1 9.4% (cumulative 53.9%)
+Win Panama: 47.6% | Draw: 29.7% | Win Bosnia and Herzegovina: 22.7%
+Most likely single score: 1-0 (10.8%) (one of many possible, not a prediction)
+Top-5 scorelines: 1-1 14.1%, 1-0 10.8%, 0-0 10.2%, 2-0 9.5%, 2-1 9.3% (cumulative 53.9%)
 Expected score: 2-1
-Over 2.5: 46.1% | Under 2.5: 53.9% | BTTS yes: 50.3% | BTTS no: 49.7%
+Over 2.5: 45.1% | Under 2.5: 54.9% | BTTS yes: 50.2% | BTTS no: 49.8%
 Data as of 2026-06-24 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
