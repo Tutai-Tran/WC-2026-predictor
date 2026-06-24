@@ -5,7 +5,7 @@ fifa_code: "NOR"
 group: "I"
 fifa_rank: 29
 elo: 2037
-champion_prob: 0.03
+champion_prob: 0.032
 status: active
 created: 2026-06-04
 updated: 2026-06-24
@@ -13,9 +13,9 @@ updated: 2026-06-24
 
 # Norway
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-24T18:02Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-24T21:11Z | source elo-goal-v1 -->
 Group I | FIFA rank 29 | Elo 2037
-Champion 3.0% | Final 7.8% | SF 20.2% | QF 39.3% | Advance 100.0%
+Champion 3.2% | Final 8.0% | SF 20.5% | QF 40.1% | Advance 100.0%
 Availability: no concerns recorded
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-24T18:02Z | source elo-goal-v1 -->
-- 2026-06-24: champion 3.0% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-24T21:11Z | source elo-goal-v1 -->
+- 2026-06-24: champion 3.2% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

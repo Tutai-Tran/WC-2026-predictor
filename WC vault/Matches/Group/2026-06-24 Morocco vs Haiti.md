@@ -13,7 +13,7 @@ updated: 2026-06-24
 <!-- WC26:AUTO:forecast START -->
 **Group C match** · 2026-06-24
 
-Win Morocco: 80.5% | Draw: 14.0% | Win Haiti: 5.5%
+Win Morocco: 78.8% | Draw: 14.9% | Win Haiti: 6.3%
 Most likely single score: 2-0 (15.6%) (one of many possible, not a prediction)
 Top-5 scorelines: 2-0 15.6%, 1-0 13.6%, 3-0 11.5%, 2-1 8.4%, 1-1 8.1% (cumulative 57.2%)
 Expected score: 2-1

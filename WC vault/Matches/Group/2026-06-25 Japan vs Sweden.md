@@ -13,12 +13,12 @@ updated: 2026-06-24
 <!-- WC26:AUTO:forecast START -->
 **Group F match** · 2026-06-25
 
-Win Japan: 54.8% | Draw: 25.9% | Win Sweden: 19.3%
-Most likely single score: 1-0 (12.9%) (one of many possible, not a prediction)
-Top-5 scorelines: 1-0 12.8%, 2-0 12.3%, 1-1 11.2%, 2-1 9.6%, 0-0 8.0% (cumulative 53.9%)
+Win Japan: 53.9% | Draw: 26.4% | Win Sweden: 19.7%
+Most likely single score: 1-0 (13.5%) (one of many possible, not a prediction)
+Top-5 scorelines: 1-0 13.5%, 2-0 12.1%, 1-1 11.7%, 2-1 9.5%, 0-0 8.9% (cumulative 55.7%)
 Expected score: 2-1
-Over 2.5: 48.3% | Under 2.5: 51.7% | BTTS yes: 46.1% | BTTS no: 53.9%
-Top scorers: Ayase Ueda 22.7%; Junya Itō 20.5%; Daichi Kamada 17.0%; Alexander Isak 23.7%; Viktor Gyökeres 18.9%; Anthony Elanga 7.1%;
+Over 2.5: 45.5% | Under 2.5: 54.5% | BTTS yes: 45.1% | BTTS no: 54.9%
+Top scorers: Ayase Ueda 21.5%; Junya Itō 19.4%; Daichi Kamada 16.0%; Alexander Isak 23.7%; Viktor Gyökeres 18.9%; Anthony Elanga 7.1%;
 Data as of 2026-06-24 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

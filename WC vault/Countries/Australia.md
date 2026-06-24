@@ -5,7 +5,7 @@ fifa_code: "AUS"
 group: "D"
 fifa_rank: 25
 elo: 1915
-champion_prob: 0.0027
+champion_prob: 0.0013
 status: active
 created: 2026-06-04
 updated: 2026-06-24
@@ -13,10 +13,10 @@ updated: 2026-06-24
 
 # Australia
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-24T18:02Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-24T21:11Z | source elo-goal-v1 -->
 Group D | FIFA rank 25 | Elo 1915
-Champion 0.3% | Final 1.1% | SF 3.6% | QF 9.2% | Advance 95.5%
-Availability: no concerns recorded
+Champion 0.1% | Final 0.7% | SF 2.5% | QF 7.3% | Advance 95.9%
+Availability concerns: Mathew Leckie (out)
 <!-- WC26:AUTO:snapshot END -->
 
 ## Squad & availability
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-24T18:02Z | source elo-goal-v1 -->
-- 2026-06-24: champion 0.3% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-24T21:11Z | source elo-goal-v1 -->
+- 2026-06-24: champion 0.1% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

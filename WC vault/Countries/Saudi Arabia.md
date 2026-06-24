@@ -13,9 +13,9 @@ updated: 2026-06-24
 
 # Saudi Arabia
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-24T18:02Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-24T21:11Z | source elo-goal-v1 -->
 Group H | FIFA rank 58 | Elo 1712
-Champion 0.0% | Final 0.0% | SF 0.1% | QF 0.6% | Advance 31.2%
+Champion 0.0% | Final 0.0% | SF 0.1% | QF 0.7% | Advance 31.3%
 Availability: no concerns recorded
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-24T18:02Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-24T21:11Z | source elo-goal-v1 -->
 - 2026-06-24: champion 0.0% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

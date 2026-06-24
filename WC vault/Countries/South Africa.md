@@ -13,7 +13,7 @@ updated: 2026-06-24
 
 # South Africa
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-24T18:02Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-24T21:11Z | source elo-goal-v1 -->
 Group A | FIFA rank 56 | Elo 1667
 Champion 0.0% | Final 0.0% | SF 0.0% | QF 0.2% | Advance 10.8%
 Availability concerns: Teboho Mokoena (suspended), Themba Zwane (suspended)
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-24T18:02Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-24T21:11Z | source elo-goal-v1 -->
 - 2026-06-24: champion 0.0% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
