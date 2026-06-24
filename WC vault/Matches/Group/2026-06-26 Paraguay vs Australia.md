@@ -13,7 +13,7 @@ updated: 2026-06-24
 <!-- WC26:AUTO:forecast START -->
 **Group D match** · 2026-06-26
 
-Win Paraguay: 33.1% | Draw: 38.7% | Win Australia: 28.2%
+Win Paraguay: 33.2% | Draw: 38.6% | Win Australia: 28.2%
 Most likely single score: 1-1 (14.2%) (one of many possible, not a prediction)
 Top-5 scorelines: 1-1 14.2%, 0-0 12.2%, 0-1 12.1%, 1-0 11.0%, 1-2 7.6% (cumulative 57.1%)
 Expected score: 1-1

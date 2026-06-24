@@ -5,7 +5,7 @@ fifa_code: "CAN"
 group: "B"
 fifa_rank: 27
 elo: 1922
-champion_prob: 0.0044
+champion_prob: 0.0036
 status: active
 created: 2026-06-04
 updated: 2026-06-24
@@ -13,9 +13,9 @@ updated: 2026-06-24
 
 # Canada
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-24T13:29Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-24T18:02Z | source elo-goal-v1 -->
 Group B | FIFA rank 27 | Elo 1922
-Champion 0.4% | Final 1.6% | SF 5.1% | QF 20.7% | Advance 100.0%
+Champion 0.4% | Final 1.4% | SF 5.0% | QF 20.0% | Advance 100.0%
 Availability concerns: Ismaël Koné (out), Alphonso Davies (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -64,6 +64,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-24T13:29Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-24T18:02Z | source elo-goal-v1 -->
 - 2026-06-24: champion 0.4% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
