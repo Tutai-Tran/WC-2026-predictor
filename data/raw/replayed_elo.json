@@ -1,9 +1,9 @@
 {
-  "updated": "2026-06-23",
+  "updated": "2026-06-24",
   "source": "base_elo + results ledger",
   "ratings": {
     "Scotland": 1869.8,
-    "England": 2126.4,
+    "England": 2100.6,
     "Wales": 1754.7,
     "Northern Ireland": 1670.9,
     "United States": 1981.4,
@@ -125,7 +125,7 @@
     "Syria": 1594.1,
     "Serbia": 1793.8,
     "Taiwan": 1058.4,
-    "Ghana": 1675.5,
+    "Ghana": 1701.3,
     "Myanmar": 1134.6,
     "New Caledonia": 1599.9,
     "Vanuatu": 1413.2,

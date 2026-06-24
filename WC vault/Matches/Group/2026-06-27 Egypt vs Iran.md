@@ -5,7 +5,7 @@ group: G
 date: 2026-06-27
 home: "Egypt"
 away: "Iran"
-updated: 2026-06-23
+updated: 2026-06-24
 ---
 
 # Egypt vs Iran
@@ -19,7 +19,7 @@ Top-5 scorelines: 1-1 14.3%, 0-0 13.2%, 0-1 12.4%, 1-0 11.8%, 1-2 7.2% (cumulati
 Expected score: 1-1
 Over 2.5: 34.8% | Under 2.5: 65.2% | BTTS yes: 42.9% | BTTS no: 57.1%
 Top scorers: Mohamed Salah 43.9%; Trézéguet 16.1%; Omar Marmoush 8.6%; Mehdi Taremi 38.6%; Alireza Jahanbakhsh 10.8%; Mohammad Mohebi 9.1%;
-Data as of 2026-06-23 | runs 50000 | seed 20260611
+Data as of 2026-06-24 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

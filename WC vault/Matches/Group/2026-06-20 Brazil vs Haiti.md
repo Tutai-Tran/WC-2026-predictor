@@ -5,7 +5,7 @@ group: C
 date: 2026-06-20
 home: "Brazil"
 away: "Haiti"
-updated: 2026-06-23
+updated: 2026-06-24
 ---
 
 # Brazil vs Haiti
@@ -13,13 +13,13 @@ updated: 2026-06-23
 <!-- WC26:AUTO:forecast START -->
 **Group C match** · 2026-06-20
 
-Win Brazil: 78.0% | Draw: 15.7% | Win Haiti: 6.4%
-Most likely single score: 2-0 (15.0%) (one of many possible, not a prediction)
-Top-5 scorelines: 2-0 14.9%, 3-0 12.2%, 1-0 11.9%, 2-1 8.2%, 4-0 7.4% (cumulative 54.6%)
-Expected score: 2-1
-Over 2.5: 57.4% | Under 2.5: 42.6% | BTTS yes: 39.1% | BTTS no: 60.9%
-Top scorers: Neymar 68.4%; Raphinha 23.7%; Lucas Paquetá 17.8%; Duckens Nazon 17.0%; Frantzdy Pierrot 13.5%; Louicius Deedson 4.6%;
-Data as of 2026-06-23 | runs 50000 | seed 20260611
+Win Brazil: 79.9% | Draw: 14.9% | Win Haiti: 5.2%
+Most likely single score: 2-0 (16.2%) (one of many possible, not a prediction)
+Top-5 scorelines: 2-0 16.2%, 3-0 13.2%, 1-0 12.9%, 4-0 8.0%, 2-1 7.6% (cumulative 58.0%)
+Expected score: 2-0
+Over 2.5: 55.6% | Under 2.5: 44.4% | BTTS yes: 34.6% | BTTS no: 65.4%
+Top scorers: Neymar 68.4%; Raphinha 23.7%; Lucas Paquetá 17.8%; Duckens Nazon 14.7%; Frantzdy Pierrot 11.7%; Louicius Deedson 4.0%;
+Data as of 2026-06-24 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

@@ -5,7 +5,7 @@ group: G
 date: 2026-06-27
 home: "New Zealand"
 away: "Belgium"
-updated: 2026-06-23
+updated: 2026-06-24
 ---
 
 # New Zealand vs Belgium
@@ -19,7 +19,7 @@ Top-5 scorelines: 0-1 15.7%, 0-2 12.5%, 1-1 12.2%, 0-0 11.3%, 1-2 8.8% (cumulati
 Expected score: 1-2
 Over 2.5: 38.8% | Under 2.5: 61.2% | BTTS yes: 40.4% | BTTS no: 59.6%
 Top scorers: Chris Wood 23.1%; Kosta Barbarouses 6.4%; Ben Waine 5.8%; Romelu Lukaku 46.2%; Kevin De Bruyne 28.7%; Youri Tielemans 8.9%;
-Data as of 2026-06-23 | runs 50000 | seed 20260611
+Data as of 2026-06-24 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

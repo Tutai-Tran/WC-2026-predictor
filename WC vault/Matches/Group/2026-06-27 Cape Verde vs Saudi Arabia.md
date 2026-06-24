@@ -5,7 +5,7 @@ group: H
 date: 2026-06-27
 home: "Cape Verde"
 away: "Saudi Arabia"
-updated: 2026-06-23
+updated: 2026-06-24
 ---
 
 # Cape Verde vs Saudi Arabia
@@ -19,7 +19,7 @@ Top-5 scorelines: 1-1 14.1%, 1-0 12.3%, 0-0 11.9%, 0-1 10.4%, 2-1 7.9% (cumulati
 Expected score: 1-1
 Over 2.5: 37.7% | Under 2.5: 62.3% | BTTS yes: 45.0% | BTTS no: 55.0%
 Top scorers: Ryan Mendes 27.6%; Garry Rodrigues 12.5%; Dailon Livramento 11.2%; Salem Al-Dawsari 29.5%; Saleh Al-Shehri 16.8%; Firas Al-Buraikan 14.4%;
-Data as of 2026-06-23 | runs 50000 | seed 20260611
+Data as of 2026-06-24 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

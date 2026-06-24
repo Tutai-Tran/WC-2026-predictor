@@ -5,7 +5,7 @@ group: B
 date: 2026-06-18
 home: "Canada"
 away: "Qatar"
-updated: 2026-06-23
+updated: 2026-06-24
 ---
 
 # Canada vs Qatar
@@ -19,7 +19,7 @@ Top-5 scorelines: 2-0 15.5%, 3-0 13.4%, 1-0 11.6%, 4-0 8.7%, 2-1 7.5% (cumulativ
 Expected score: 3-0
 Over 2.5: 59.5% | Under 2.5: 40.5% | BTTS yes: 35.8% | BTTS no: 64.2%
 Top scorers: Jonathan David 55.5%; Cyle Larin 42.9%; Alphonso Davies 23.6%; Almoez Ali 11.3%; Hassan Al-Haydos 8.6%; Akram Afif 8.2%;
-Data as of 2026-06-23 | runs 50000 | seed 20260611
+Data as of 2026-06-24 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

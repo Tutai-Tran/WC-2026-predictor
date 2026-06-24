@@ -5,7 +5,7 @@ group: L
 date: 2026-06-27
 home: "Panama"
 away: "England"
-updated: 2026-06-23
+updated: 2026-06-24
 ---
 
 # Panama vs England
@@ -13,13 +13,13 @@ updated: 2026-06-23
 <!-- WC26:AUTO:forecast START -->
 **Group L match** · 2026-06-27
 
-Win Panama: 10.3% | Draw: 21.1% | Win England: 68.6%
-Most likely single score: 0-2 (14.6%) (one of many possible, not a prediction)
-Top-5 scorelines: 0-2 14.6%, 0-1 14.2%, 0-3 9.7%, 1-1 9.6%, 1-2 9.0% (cumulative 57.1%)
+Win Panama: 9.7% | Draw: 19.5% | Win England: 70.7%
+Most likely single score: 0-2 (14.1%) (one of many possible, not a prediction)
+Top-5 scorelines: 0-2 14.1%, 0-1 12.7%, 0-3 10.1%, 1-2 9.1%, 1-1 9.0% (cumulative 55.0%)
 Expected score: 1-2
-Over 2.5: 48.1% | Under 2.5: 51.9% | BTTS yes: 40.1% | BTTS no: 59.9%
-Top scorers: José Fajardo 7.9%; Ismael Díaz 7.5%; Cecilio Waterman 7.1%; Harry Kane 65.1%; Marcus Rashford 21.2%; Bukayo Saka 17.3%;
-Data as of 2026-06-23 | runs 50000 | seed 20260611
+Over 2.5: 52.7% | Under 2.5: 47.3% | BTTS yes: 42.5% | BTTS no: 57.5%
+Top scorers: José Fajardo 8.3%; Ismael Díaz 7.9%; Cecilio Waterman 7.4%; Harry Kane 67.7%; Marcus Rashford 22.6%; Bukayo Saka 18.5%;
+Data as of 2026-06-24 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

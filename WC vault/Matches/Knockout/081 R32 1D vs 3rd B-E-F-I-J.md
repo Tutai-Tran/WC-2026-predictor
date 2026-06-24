@@ -3,7 +3,7 @@ type: wc-match
 stage: R32
 match_no: 81
 date: 2026-07-02
-updated: 2026-06-23
+updated: 2026-06-24
 ---
 
 # R32 #81: 1D vs 3rd B/E/F/I/J
@@ -14,7 +14,7 @@ updated: 2026-06-23
 Slots: 1D vs 3rd B/E/F/I/J
 Projected: United States vs 3rd B/E/F/I/J
 Result: TBD
-Data as of 2026-06-23 | runs 50000 | seed 20260611
+Data as of 2026-06-24 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

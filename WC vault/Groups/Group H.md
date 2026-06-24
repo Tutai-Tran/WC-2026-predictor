@@ -8,13 +8,13 @@ updated: 2026-06-04
 
 # Group H
 
-<!-- WC26:AUTO:standings START | generated 2026-06-23T22:18Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:standings START | generated 2026-06-24T01:24Z | source elo-goal-v1 -->
 | Team | Win group | Top 2 | Advance |
 | --- | --- | --- | --- |
-| [[Countries/Spain\|Spain]] | 89.5% | 96.0% | 100.0% |
-| [[Countries/Cape Verde\|Cape Verde]] | 1.8% | 60.7% | 69.9% |
-| [[Countries/Uruguay\|Uruguay]] | 8.7% | 15.5% | 36.4% |
-| [[Countries/Saudi Arabia\|Saudi Arabia]] | 0.0% | 27.9% | 31.2% |
+| [[Countries/Spain\|Spain]] | 89.8% | 96.0% | 100.0% |
+| [[Countries/Cape Verde\|Cape Verde]] | 1.8% | 60.6% | 70.1% |
+| [[Countries/Uruguay\|Uruguay]] | 8.4% | 15.4% | 36.2% |
+| [[Countries/Saudi Arabia\|Saudi Arabia]] | 0.0% | 28.0% | 31.1% |
 <!-- WC26:AUTO:standings END -->
 
 ## Fixtures

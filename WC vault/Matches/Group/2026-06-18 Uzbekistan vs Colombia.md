@@ -5,7 +5,7 @@ group: K
 date: 2026-06-18
 home: "Uzbekistan"
 away: "Colombia"
-updated: 2026-06-23
+updated: 2026-06-24
 ---
 
 # Uzbekistan vs Colombia
@@ -19,7 +19,7 @@ Top-5 scorelines: 0-2 14.5%, 0-1 13.4%, 0-3 10.1%, 1-1 9.2%, 1-2 9.0% (cumulativ
 Expected score: 1-2
 Over 2.5: 50.9% | Under 2.5: 49.1% | BTTS yes: 41.2% | BTTS no: 58.8%
 Top scorers: Eldor Shomurodov 18.4%; Igor Sergeev 10.8%; Jaloliddin Masharipov 5.5%; James Rodríguez 46.4%; Luis Díaz 32.9%; Yerry Mina 12.9%;
-Data as of 2026-06-23 | runs 50000 | seed 20260611
+Data as of 2026-06-24 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

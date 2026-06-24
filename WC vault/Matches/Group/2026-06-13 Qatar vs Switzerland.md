@@ -5,7 +5,7 @@ group: B
 date: 2026-06-13
 home: "Qatar"
 away: "Switzerland"
-updated: 2026-06-23
+updated: 2026-06-24
 ---
 
 # Qatar vs Switzerland
@@ -19,7 +19,7 @@ Top-5 scorelines: 0-2 14.8%, 0-1 12.2%, 0-3 11.6%, 1-2 8.5%, 1-1 7.7% (cumulativ
 Expected score: 1-2
 Over 2.5: 55.9% | Under 2.5: 44.1% | BTTS yes: 40.0% | BTTS no: 60.0%
 Top scorers: Almoez Ali 13.3%; Hassan Al-Haydos 10.2%; Akram Afif 9.7%; Breel Embolo 34.5%; Granit Xhaka 31.8%; Rubén Vargas 18.8%;
-Data as of 2026-06-23 | runs 50000 | seed 20260611
+Data as of 2026-06-24 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match
