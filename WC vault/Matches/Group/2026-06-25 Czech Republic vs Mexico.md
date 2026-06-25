@@ -13,7 +13,7 @@ updated: 2026-06-25
 <!-- WC26:AUTO:forecast START -->
 **Group A match** · 2026-06-25
 
-Win Czech Republic: 15.6% | Draw: 21.8% | Win Mexico: 62.6%
+Win Czech Republic: 8.5% | Draw: 18.5% | Win Mexico: 73.0%
 Most likely single score: 0-2 (14.7%) (one of many possible, not a prediction)
 Top-5 scorelines: 0-2 14.6%, 0-1 12.8%, 0-3 10.8%, 1-2 8.8%, 1-1 8.5% (cumulative 55.6%)
 Expected score: 1-2

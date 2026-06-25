@@ -13,9 +13,9 @@ updated: 2026-06-25
 
 # Czech Republic
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-25T00:33Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-25T03:38Z | source elo-goal-v1 -->
 Group A | FIFA rank 44 | Elo 1789
-Champion 0.0% | Final 0.0% | SF 0.2% | QF 1.1% | Advance 9.3%
+Champion 0.0% | Final 0.0% | SF 0.1% | QF 1.0% | Advance 9.4%
 Availability concerns: David Jurásek (out), Jan Kuchta (doubtful), Štěpán Chaloupek (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-25T00:33Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-25T03:38Z | source elo-goal-v1 -->
 - 2026-06-25: champion 0.0% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

@@ -13,9 +13,9 @@ updated: 2026-06-25
 
 # Cape Verde
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-25T00:33Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-25T03:38Z | source elo-goal-v1 -->
 Group H | FIFA rank 67 | Elo 1752
-Champion 0.0% | Final 0.1% | SF 0.4% | QF 2.2% | Advance 69.4%
+Champion 0.0% | Final 0.1% | SF 0.4% | QF 2.3% | Advance 69.7%
 Availability concerns: Jovane Cabral (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-25T00:33Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-25T03:38Z | source elo-goal-v1 -->
 - 2026-06-25: champion 0.0% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

@@ -13,7 +13,7 @@ updated: 2026-06-25
 <!-- WC26:AUTO:forecast START -->
 **Group H match** · 2026-06-27
 
-Win Cape Verde: 39.3% | Draw: 28.7% | Win Saudi Arabia: 32.0%
+Win Cape Verde: 39.2% | Draw: 28.8% | Win Saudi Arabia: 32.0%
 Most likely single score: 1-0 (12.3%) (one of many possible, not a prediction)
 Top-5 scorelines: 1-1 14.1%, 1-0 12.3%, 0-0 11.7%, 0-1 10.3%, 2-1 8.0% (cumulative 56.4%)
 Expected score: 1-1

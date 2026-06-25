@@ -5,7 +5,7 @@ fifa_code: "ALG"
 group: "J"
 fifa_rank: 33
 elo: 1903
-champion_prob: 0.0018
+champion_prob: 0.0016
 status: active
 created: 2026-06-04
 updated: 2026-06-25
@@ -13,9 +13,9 @@ updated: 2026-06-25
 
 # Algeria
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-25T00:33Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-25T03:38Z | source elo-goal-v1 -->
 Group J | FIFA rank 33 | Elo 1903
-Champion 0.2% | Final 0.7% | SF 2.3% | QF 9.3% | Advance 84.3%
+Champion 0.2% | Final 0.7% | SF 2.4% | QF 9.6% | Advance 89.7%
 Availability concerns: Mohamed Amoura (out)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-25T00:33Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-25T03:38Z | source elo-goal-v1 -->
 - 2026-06-25: champion 0.2% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

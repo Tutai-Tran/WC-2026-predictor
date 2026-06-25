@@ -13,12 +13,12 @@ updated: 2026-06-25
 <!-- WC26:AUTO:forecast START -->
 **Group C match** · 2026-06-14
 
-Win Haiti: 15.4% | Draw: 25.6% | Win Scotland: 59.0%
-Most likely single score: 0-1 (14.7%) (one of many possible, not a prediction)
-Top-5 scorelines: 0-1 14.8%, 0-2 12.8%, 1-1 11.7%, 0-0 9.9%, 1-2 9.2% (cumulative 58.4%)
+Win Haiti: 16.3% | Draw: 26.2% | Win Scotland: 57.5%
+Most likely single score: 0-1 (14.8%) (one of many possible, not a prediction)
+Top-5 scorelines: 0-1 14.8%, 0-2 12.5%, 1-1 12.0%, 0-0 10.2%, 1-2 9.1% (cumulative 58.6%)
 Expected score: 1-2
-Over 2.5: 42.5% | Under 2.5: 57.5% | BTTS yes: 42.1% | BTTS no: 57.9%
-Top scorers: Duckens Nazon 21.5%; Frantzdy Pierrot 17.2%; Louicius Deedson 6.0%; John McGinn 32.8%; Scott McTominay 19.6%; Ché Adams 17.1%;
+Over 2.5: 41.7% | Under 2.5: 58.3% | BTTS yes: 42.2% | BTTS no: 57.8%
+Top scorers: Duckens Nazon 21.8%; Frantzdy Pierrot 17.5%; Louicius Deedson 6.1%; John McGinn 32.2%; Scott McTominay 19.2%; Ché Adams 16.7%;
 Data as of 2026-06-25 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
