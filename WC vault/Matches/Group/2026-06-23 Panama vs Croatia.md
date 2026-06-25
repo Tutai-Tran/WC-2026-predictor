@@ -5,7 +5,7 @@ group: L
 date: 2026-06-23
 home: "Panama"
 away: "Croatia"
-updated: 2026-06-24
+updated: 2026-06-25
 ---
 
 # Panama vs Croatia
@@ -19,7 +19,7 @@ Top-5 scorelines: 0-1 14.0%, 1-1 12.9%, 0-2 10.9%, 0-0 10.6%, 1-2 9.0% (cumulati
 Expected score: 1-1
 Over 2.5: 40.8% | Under 2.5: 59.2% | BTTS yes: 44.3% | BTTS no: 55.7%
 Top scorers: José Fajardo 10.5%; Ismael Díaz 10.0%; Cecilio Waterman 9.4%; Ivan Perišić 29.4%; Luka Modrić 29.0%; Andrej Kramarić 28.1%;
-Data as of 2026-06-24 | runs 50000 | seed 20260611
+Data as of 2026-06-25 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

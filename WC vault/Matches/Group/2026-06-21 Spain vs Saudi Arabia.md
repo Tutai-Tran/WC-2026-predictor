@@ -5,7 +5,7 @@ group: H
 date: 2026-06-21
 home: "Spain"
 away: "Saudi Arabia"
-updated: 2026-06-24
+updated: 2026-06-25
 ---
 
 # Spain vs Saudi Arabia
@@ -19,7 +19,7 @@ Top-5 scorelines: 2-0 15.7%, 3-0 14.7%, 1-0 10.9%, 4-0 10.3%, 2-1 6.5% (cumulati
 Expected score: 3-0
 Over 2.5: 62.4% | Under 2.5: 37.6% | BTTS yes: 32.2% | BTTS no: 67.8%
 Top scorers: Mikel Oyarzabal 46.5%; Ferran Torres 40.2%; Dani Olmo 24.8%; Salem Al-Dawsari 17.8%; Saleh Al-Shehri 7.3%; Firas Al-Buraikan 6.2%;
-Data as of 2026-06-24 | runs 50000 | seed 20260611
+Data as of 2026-06-25 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

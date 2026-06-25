@@ -5,7 +5,7 @@ group: J
 date: 2026-06-28
 home: "Algeria"
 away: "Austria"
-updated: 2026-06-24
+updated: 2026-06-25
 ---
 
 # Algeria vs Austria
@@ -19,7 +19,7 @@ Top-5 scorelines: 0-0 15.0%, 1-1 14.3%, 0-1 14.1%, 1-0 12.0%, 0-2 7.8% (cumulati
 Expected score: 1-1
 Over 2.5: 31.0% | Under 2.5: 69.0% | BTTS yes: 39.4% | BTTS no: 60.6%
 Top scorers: Riyad Mahrez 23.3%; Mohamed Amoura 12.9%; Amine Gouiri 6.3%; Marko Arnautović 26.7%; Marcel Sabitzer 23.0%; Michael Gregoritsch 15.1%;
-Data as of 2026-06-24 | runs 50000 | seed 20260611
+Data as of 2026-06-25 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

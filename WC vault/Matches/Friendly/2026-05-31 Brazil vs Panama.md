@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-05-31
 home: "Brazil"
 away: "Panama"
-updated: 2026-06-24
+updated: 2026-06-25
 ---
 
 # Brazil vs Panama (friendly)
@@ -17,7 +17,7 @@ Most likely single score: 2-0 (13.1%) (one of many possible, not a prediction)
 Top-5 scorelines: 2-0 13.1%, 1-0 10.7%, 1-1 9.9%, 3-0 9.5%, 2-1 9.4% (cumulative 52.6%)
 Expected score: 2-1
 Over 2.5: 55.4% | Under 2.5: 44.6% | BTTS yes: 46.8% | BTTS no: 53.2%
-Data as of 2026-06-24 | runs 50000 | seed 20260611
+Data as of 2026-06-25 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

@@ -5,7 +5,7 @@ group: D
 date: 2026-06-20
 home: "Turkey"
 away: "Paraguay"
-updated: 2026-06-24
+updated: 2026-06-25
 ---
 
 # Turkey vs Paraguay
@@ -19,7 +19,7 @@ Top-5 scorelines: 0-0 14.8%, 1-1 14.2%, 1-0 14.1%, 0-1 11.8%, 2-0 8.0% (cumulati
 Expected score: 1-1
 Over 2.5: 31.4% | Under 2.5: 68.6% | BTTS yes: 39.7% | BTTS no: 60.3%
 Top scorers: Hakan Çalhanoğlu 18.9%; Kerem Aktürkoğlu 14.2%; Arda Güler 6.8%; Miguel Almirón 12.2%; Antonio Sanabria 10.9%; Kaku 8.5%;
-Data as of 2026-06-24 | runs 50000 | seed 20260611
+Data as of 2026-06-25 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

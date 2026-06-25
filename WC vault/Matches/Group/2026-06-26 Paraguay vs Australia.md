@@ -5,7 +5,7 @@ group: D
 date: 2026-06-26
 home: "Paraguay"
 away: "Australia"
-updated: 2026-06-24
+updated: 2026-06-25
 ---
 
 # Paraguay vs Australia
@@ -19,7 +19,7 @@ Top-5 scorelines: 0-0 16.7%, 0-1 14.5%, 1-1 14.2%, 1-0 13.1%, 0-2 7.4% (cumulati
 Expected score: 1-1
 Over 2.5: 28.0% | Under 2.5: 72.0% | BTTS yes: 36.9% | BTTS no: 63.1%
 Top scorers: Miguel Almirón 11.9%; Antonio Sanabria 10.6%; Kaku 8.3%; Mathew Leckie 15.1%; Jackson Irvine 14.3%; Awer Mabil 11.5%;
-Data as of 2026-06-24 | runs 50000 | seed 20260611
+Data as of 2026-06-25 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

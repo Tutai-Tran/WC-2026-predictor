@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-05-31
 home: "Germany"
 away: "Finland"
-updated: 2026-06-24
+updated: 2026-06-25
 ---
 
 # Germany vs Finland (friendly)
@@ -17,7 +17,7 @@ Most likely single score: 2-0 (14.5%) (one of many possible, not a prediction)
 Top-5 scorelines: 2-0 14.5%, 3-0 13.0%, 1-0 9.9%, 4-0 8.8%, 2-1 7.6% (cumulative 53.8%)
 Expected score: 3-1
 Over 2.5: 62.5% | Under 2.5: 37.5% | BTTS yes: 39.0% | BTTS no: 61.0%
-Data as of 2026-06-24 | runs 50000 | seed 20260611
+Data as of 2026-06-25 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

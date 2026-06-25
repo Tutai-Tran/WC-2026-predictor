@@ -5,7 +5,7 @@ group: E
 date: 2026-06-25
 home: "Curacao"
 away: "Ivory Coast"
-updated: 2026-06-24
+updated: 2026-06-25
 ---
 
 # Curacao vs Ivory Coast
@@ -19,7 +19,7 @@ Top-5 scorelines: 0-1 12.9%, 0-2 12.6%, 1-1 10.9%, 1-2 9.6%, 0-0 7.9% (cumulativ
 Expected score: 1-2
 Over 2.5: 48.8% | Under 2.5: 51.2% | BTTS yes: 45.7% | BTTS no: 54.3%
 Top scorers: Leandro Bacuna 13.3%; Juninho Bacuna 11.8%; Gervane Kastaneer 8.7%; Franck Kessié 24.9%; Nicolas Pépé 22.0%; Ibrahim Sangaré 20.7%;
-Data as of 2026-06-24 | runs 50000 | seed 20260611
+Data as of 2026-06-25 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

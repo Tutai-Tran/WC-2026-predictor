@@ -5,7 +5,7 @@ group: B
 date: 2026-06-24
 home: "Switzerland"
 away: "Canada"
-updated: 2026-06-24
+updated: 2026-06-25
 ---
 
 # Switzerland vs Canada
@@ -13,13 +13,13 @@ updated: 2026-06-24
 <!-- WC26:AUTO:forecast START -->
 **Group B match** · 2026-06-24
 
-Win Switzerland: 30.7% | Draw: 31.3% | Win Canada: 38.0%
-Most likely single score: 0-1 (12.6%) (one of many possible, not a prediction)
-Top-5 scorelines: 1-1 14.2%, 0-1 12.6%, 0-0 12.4%, 1-0 10.7%, 0-2 7.8% (cumulative 57.8%)
+Win Switzerland: 35.5% | Draw: 32.1% | Win Canada: 32.4%
+Most likely single score: 1-0 (12.8%) (one of many possible, not a prediction)
+Top-5 scorelines: 1-1 14.3%, 0-0 13.6%, 1-0 12.8%, 0-1 11.9%, 2-0 7.2% (cumulative 59.8%)
 Expected score: 1-1
-Over 2.5: 36.5% | Under 2.5: 63.5% | BTTS yes: 44.1% | BTTS no: 55.9%
-Top scorers: Granit Xhaka 19.3%; Breel Embolo 16.4%; Rubén Vargas 8.5%; Jonathan David 33.7%; Cyle Larin 22.1%; Alphonso Davies 11.3%;
-Data as of 2026-06-24 | runs 50000 | seed 20260611
+Over 2.5: 33.8% | Under 2.5: 66.2% | BTTS yes: 42.0% | BTTS no: 58.0%
+Top scorers: Granit Xhaka 19.9%; Breel Embolo 17.4%; Rubén Vargas 9.0%; Jonathan David 30.6%; Cyle Larin 19.3%; Alphonso Davies 9.8%;
+Data as of 2026-06-25 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match
