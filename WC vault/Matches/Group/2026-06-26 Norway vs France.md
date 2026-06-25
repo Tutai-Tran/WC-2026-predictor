@@ -13,7 +13,7 @@ updated: 2026-06-25
 <!-- WC26:AUTO:forecast START -->
 **Group I match** · 2026-06-26
 
-Win Norway: 21.3% | Draw: 24.0% | Win France: 54.7%
+Win Norway: 21.0% | Draw: 23.9% | Win France: 55.0%
 Most likely single score: 0-1 (13.1%) (one of many possible, not a prediction)
 Top-5 scorelines: 0-1 13.1%, 1-1 13.0%, 0-2 10.3%, 0-0 10.0%, 1-2 9.2% (cumulative 55.5%)
 Expected score: 1-1

@@ -13,7 +13,7 @@ updated: 2026-06-25
 <!-- WC26:AUTO:forecast START -->
 **Group I match** · 2026-06-26
 
-Win Senegal: 72.5% | Draw: 18.0% | Win Iraq: 9.6%
+Win Senegal: 72.5% | Draw: 17.9% | Win Iraq: 9.6%
 Most likely single score: 1-0 (14.7%) (one of many possible, not a prediction)
 Top-5 scorelines: 1-0 14.7%, 1-1 12.3%, 2-0 12.0%, 0-0 10.5%, 2-1 9.1% (cumulative 58.6%)
 Expected score: 2-1
