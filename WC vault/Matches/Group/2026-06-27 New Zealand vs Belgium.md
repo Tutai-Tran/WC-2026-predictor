@@ -13,7 +13,7 @@ updated: 2026-06-25
 <!-- WC26:AUTO:forecast START -->
 **Group G match** · 2026-06-27
 
-Win New Zealand: 6.8% | Draw: 14.5% | Win Belgium: 78.6%
+Win New Zealand: 6.8% | Draw: 14.5% | Win Belgium: 78.7%
 Most likely single score: 0-2 (13.0%) (one of many possible, not a prediction)
 Top-5 scorelines: 0-2 13.0%, 0-1 12.7%, 1-1 10.4%, 1-2 9.5%, 0-3 8.4% (cumulative 54.0%)
 Expected score: 1-2

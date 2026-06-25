@@ -12,11 +12,11 @@ updated: 2026-06-25
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-06-05 · played 3-1
 
-Win Czech Republic: 49.4% | Draw: 29.2% | Win Guatemala: 21.4%
-Most likely single score: 1-0 (10.9%) (one of many possible, not a prediction)
-Top-5 scorelines: 1-1 13.8%, 1-0 10.8%, 0-0 9.9%, 2-0 9.9%, 2-1 9.4% (cumulative 53.9%)
-Expected score: 2-1
-Over 2.5: 45.9% | Under 2.5: 54.1% | BTTS yes: 50.3% | BTTS no: 49.7%
+Win Czech Republic: 47.0% | Draw: 29.9% | Win Guatemala: 23.1%
+Most likely single score: 1-0 (10.8%) (one of many possible, not a prediction)
+Top-5 scorelines: 1-1 14.2%, 1-0 10.8%, 0-0 10.3%, 2-0 9.4%, 2-1 9.2% (cumulative 53.9%)
+Expected score: 1-1
+Over 2.5: 44.8% | Under 2.5: 55.2% | BTTS yes: 50.2% | BTTS no: 49.8%
 Data as of 2026-06-25 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
