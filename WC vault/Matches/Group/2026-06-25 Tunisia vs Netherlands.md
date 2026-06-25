@@ -13,7 +13,7 @@ updated: 2026-06-25
 <!-- WC26:AUTO:forecast START -->
 **Group F match** · 2026-06-25
 
-Win Tunisia: 3.8% | Draw: 10.7% | Win Netherlands: 85.5%
+Win Tunisia: 3.8% | Draw: 10.4% | Win Netherlands: 85.8%
 Most likely single score: 0-2 (14.7%) (one of many possible, not a prediction)
 Top-5 scorelines: 0-2 14.7%, 0-1 12.4%, 0-3 11.2%, 1-2 8.7%, 1-1 8.1% (cumulative 55.0%)
 Expected score: 1-2
