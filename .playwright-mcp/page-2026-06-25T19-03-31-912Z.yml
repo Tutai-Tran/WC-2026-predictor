@@ -1,0 +1,1058 @@
+- generic [ref=e2]:
+  - link "Ahram Online" [ref=e7] [cursor=pointer]:
+    - /url: https://english.ahram.org.eg/
+    - img "Ahram Online" [ref=e8]
+  - generic [ref=e12]:
+    - link "World Cup 2026" [ref=e14] [cursor=pointer]:
+      - /url: https://english.ahram.org.eg/WorldCup2026/Index.aspx
+      - img "World Cup 2026" [ref=e15]
+    - navigation [ref=e17]:
+      - list [ref=e20]:
+        - listitem [ref=e21]:
+          - link " Home" [ref=e22] [cursor=pointer]:
+            - /url: https://english.ahram.org.eg/WorldCup2026/Index.aspx
+            - generic [ref=e23]: 
+            - text: Home
+        - listitem [ref=e24]:
+          - link "News" [ref=e25] [cursor=pointer]:
+            - /url: https://english.ahram.org.eg/WorldCup2026/AfricaOuter.aspx?NewsPortalID=66&NewsCategoryID=1283&StartRowIndex=0
+        - listitem [ref=e26]:
+          - link "Features" [ref=e27] [cursor=pointer]:
+            - /url: https://english.ahram.org.eg/WorldCup2026/AfricaOuter.aspx?NewsPortalID=66&NewsCategoryID=1284&StartRowIndex=0
+        - listitem [ref=e28]:
+          - link "Team Egypt" [ref=e29] [cursor=pointer]:
+            - /url: https://english.ahram.org.eg/WorldCup2026/WCTeamEgypt.aspx
+        - listitem [ref=e30]:
+          - link "Schedule & Results" [ref=e31] [cursor=pointer]:
+            - /url: https://english.ahram.org.eg/WorldCup2026/WCMatches.aspx?Championship_YearID=18
+        - listitem [ref=e32]:
+          - link "Groups" [ref=e33] [cursor=pointer]:
+            - /url: https://english.ahram.org.eg/WorldCup2026/WCGroups.aspx?Championship_YearID=18
+        - listitem [ref=e34]:
+          - link "Stats" [ref=e35] [cursor=pointer]:
+            - /url: https://english.ahram.org.eg/WorldCup2026/Statistics.aspx
+        - listitem [ref=e36]:
+          - link "Infographics" [ref=e37] [cursor=pointer]:
+            - /url: https://english.ahram.org.eg/WorldCup2026/AfricaOuter.aspx?NewsPortalID=66&NewsCategoryID=1286&StartRowIndex=0
+        - listitem [ref=e38]:
+          - link "Multimedia" [ref=e39] [cursor=pointer]:
+            - /url: https://english.ahram.org.eg/WorldCup2026/CocanMultiOuter.aspx?NewsPortalID=66&NewsCategoryID=1285&StartRowIndex=0
+        - listitem [ref=e40]:
+          - button "EN English" [ref=e41] [cursor=pointer]:
+            - img "EN" [ref=e42]
+            - text: English
+  - generic [ref=e45]:
+    - generic [ref=e47]:
+      - link "Thu 11 Jun Mexico 2 South Africa 0" [ref=e49] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Mexico-vs.-South Africa/624.aspx?Championship_YearID=18
+        - generic [ref=e50]: Thu 11 Jun
+        - generic [ref=e51]:
+          - generic [ref=e52]:
+            - img [ref=e53]
+            - generic [ref=e54]: Mexico
+            - generic [ref=e55]: "2"
+          - generic [ref=e56]:
+            - img [ref=e57]
+            - generic [ref=e58]: South Africa
+            - generic [ref=e59]: "0"
+      - link "Fri 12 Jun South Korea 2 Czech Republic 1" [ref=e61] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/South Korea-vs.-Czech Republic/625.aspx?Championship_YearID=18
+        - generic [ref=e62]: Fri 12 Jun
+        - generic [ref=e63]:
+          - generic [ref=e64]:
+            - img [ref=e65]
+            - generic [ref=e66]: South Korea
+            - generic [ref=e67]: "2"
+          - generic [ref=e68]:
+            - img [ref=e69]
+            - generic [ref=e70]: Czech Republic
+            - generic [ref=e71]: "1"
+      - link "Fri 12 Jun Canada 1 Bosnia and Herzegovina 1" [ref=e73] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Canada-vs.-Bosnia and Herzegovina/631.aspx?Championship_YearID=18
+        - generic [ref=e74]: Fri 12 Jun
+        - generic [ref=e75]:
+          - generic [ref=e76]:
+            - img [ref=e77]
+            - generic [ref=e78]: Canada
+            - generic [ref=e79]: "1"
+          - generic [ref=e80]:
+            - img [ref=e81]
+            - generic [ref=e82]: Bosnia and Herzegovina
+            - generic [ref=e83]: "1"
+      - link "Sat 13 Jun United States 4 Paraguay 1" [ref=e85] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/United States-vs.-Paraguay/681.aspx?Championship_YearID=18
+        - generic [ref=e86]: Sat 13 Jun
+        - generic [ref=e87]:
+          - generic [ref=e88]:
+            - img [ref=e89]
+            - generic [ref=e90]: United States
+            - generic [ref=e91]: "4"
+          - generic [ref=e92]:
+            - img [ref=e93]
+            - generic [ref=e94]: Paraguay
+            - generic [ref=e95]: "1"
+      - link "Sat 13 Jun Qatar 1 Switzerland 1" [ref=e97] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Qatar-vs.-Switzerland/632.aspx?Championship_YearID=18
+        - generic [ref=e98]: Sat 13 Jun
+        - generic [ref=e99]:
+          - generic [ref=e100]:
+            - img [ref=e101]
+            - generic [ref=e102]: Qatar
+            - generic [ref=e103]: "1"
+          - generic [ref=e104]:
+            - img [ref=e105]
+            - generic [ref=e106]: Switzerland
+            - generic [ref=e107]: "1"
+      - link "Sun 14 Jun Brazil 1 Morocco 1" [ref=e109] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Brazil-vs.-Morocco/637.aspx?Championship_YearID=18
+        - generic [ref=e110]: Sun 14 Jun
+        - generic [ref=e111]:
+          - generic [ref=e112]:
+            - img [ref=e113]
+            - generic [ref=e114]: Brazil
+            - generic [ref=e115]: "1"
+          - generic [ref=e116]:
+            - img [ref=e117]
+            - generic [ref=e118]: Morocco
+            - generic [ref=e119]: "1"
+      - link "Sun 14 Jun Haiti 0 Scotland 1" [ref=e121] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Haiti-vs.-Scotland/638.aspx?Championship_YearID=18
+        - generic [ref=e122]: Sun 14 Jun
+        - generic [ref=e123]:
+          - generic [ref=e124]:
+            - img [ref=e125]
+            - generic [ref=e126]: Haiti
+            - generic [ref=e127]: "0"
+          - generic [ref=e128]:
+            - img [ref=e129]
+            - generic [ref=e130]: Scotland
+            - generic [ref=e131]: "1"
+      - link "Sun 14 Jun Australia 2 Turkey 0" [ref=e133] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Australia-vs.-Turkey/682.aspx?Championship_YearID=18
+        - generic [ref=e134]: Sun 14 Jun
+        - generic [ref=e135]:
+          - generic [ref=e136]:
+            - img [ref=e137]
+            - generic [ref=e138]: Australia
+            - generic [ref=e139]: "2"
+          - generic [ref=e140]:
+            - img [ref=e141]
+            - generic [ref=e142]: Turkey
+            - generic [ref=e143]: "0"
+      - link "Sun 14 Jun Germany 7 Curacao 1" [ref=e145] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Germany-vs.-Curacao/687.aspx?Championship_YearID=18
+        - generic [ref=e146]: Sun 14 Jun
+        - generic [ref=e147]:
+          - generic [ref=e148]:
+            - img [ref=e149]
+            - generic [ref=e150]: Germany
+            - generic [ref=e151]: "7"
+          - generic [ref=e152]:
+            - img [ref=e153]
+            - generic [ref=e154]: Curacao
+            - generic [ref=e155]: "1"
+      - link "Sun 14 Jun Netherlands 2 Japan 2" [ref=e157] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Netherlands-vs.-Japan/693.aspx?Championship_YearID=18
+        - generic [ref=e158]: Sun 14 Jun
+        - generic [ref=e159]:
+          - generic [ref=e160]:
+            - img [ref=e161]
+            - generic [ref=e162]: Netherlands
+            - generic [ref=e163]: "2"
+          - generic [ref=e164]:
+            - img [ref=e165]
+            - generic [ref=e166]: Japan
+            - generic [ref=e167]: "2"
+      - link "Mon 15 Jun Cote d Ivoire 1 Ecuador 0" [ref=e169] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Cote d Ivoire-vs.-Ecuador/688.aspx?Championship_YearID=18
+        - generic [ref=e170]: Mon 15 Jun
+        - generic [ref=e171]:
+          - generic [ref=e172]:
+            - img [ref=e173]
+            - generic [ref=e174]: Cote d Ivoire
+            - generic [ref=e175]: "1"
+          - generic [ref=e176]:
+            - img [ref=e177]
+            - generic [ref=e178]: Ecuador
+            - generic [ref=e179]: "0"
+      - link "Mon 15 Jun Sweden 5 Tunisia 1" [ref=e181] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Sweden-vs.-Tunisia/694.aspx?Championship_YearID=18
+        - generic [ref=e182]: Mon 15 Jun
+        - generic [ref=e183]:
+          - generic [ref=e184]:
+            - img [ref=e185]
+            - generic [ref=e186]: Sweden
+            - generic [ref=e187]: "5"
+          - generic [ref=e188]:
+            - img [ref=e189]
+            - generic [ref=e190]: Tunisia
+            - generic [ref=e191]: "1"
+      - link "Mon 15 Jun Spain 0 Cape Verde 0" [ref=e193] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Spain-vs.-Cape Verde/669.aspx?Championship_YearID=18
+        - generic [ref=e194]: Mon 15 Jun
+        - generic [ref=e195]:
+          - generic [ref=e196]:
+            - img [ref=e197]
+            - generic [ref=e198]: Spain
+            - generic [ref=e199]: "0"
+          - generic [ref=e200]:
+            - img [ref=e201]
+            - generic [ref=e202]: Cape Verde
+            - generic [ref=e203]: "0"
+      - link "Mon 15 Jun Belgium 1 Egypt 1" [ref=e205] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Belgium-vs.-Egypt/661.aspx?Championship_YearID=18
+        - generic [ref=e206]: Mon 15 Jun
+        - generic [ref=e207]:
+          - generic [ref=e208]:
+            - img [ref=e209]
+            - generic [ref=e210]: Belgium
+            - generic [ref=e211]: "1"
+          - generic [ref=e212]:
+            - img [ref=e213]
+            - generic [ref=e214]: Egypt
+            - generic [ref=e215]: "1"
+      - link "Tue 16 Jun Saudi Arabia 1 Uruguay 1" [ref=e217] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Saudi Arabia-vs.-Uruguay/670.aspx?Championship_YearID=18
+        - generic [ref=e218]: Tue 16 Jun
+        - generic [ref=e219]:
+          - generic [ref=e220]:
+            - img [ref=e221]
+            - generic [ref=e222]: Saudi Arabia
+            - generic [ref=e223]: "1"
+          - generic [ref=e224]:
+            - img [ref=e225]
+            - generic [ref=e226]: Uruguay
+            - generic [ref=e227]: "1"
+      - link "Tue 16 Jun Iran 2 New Zealand 2" [ref=e229] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Iran-vs.-New Zealand/662.aspx?Championship_YearID=18
+        - generic [ref=e230]: Tue 16 Jun
+        - generic [ref=e231]:
+          - generic [ref=e232]:
+            - img [ref=e233]
+            - generic [ref=e234]: Iran
+            - generic [ref=e235]: "2"
+          - generic [ref=e236]:
+            - img [ref=e237]
+            - generic [ref=e238]: New Zealand
+            - generic [ref=e239]: "2"
+      - link "Tue 16 Jun France 3 Senegal 1" [ref=e241] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/France-vs.-Senegal/675.aspx?Championship_YearID=18
+        - generic [ref=e242]: Tue 16 Jun
+        - generic [ref=e243]:
+          - generic [ref=e244]:
+            - img [ref=e245]
+            - generic [ref=e246]: France
+            - generic [ref=e247]: "3"
+          - generic [ref=e248]:
+            - img [ref=e249]
+            - generic [ref=e250]: Senegal
+            - generic [ref=e251]: "1"
+      - link "Wed 17 Jun Iraq 1 Norway 4" [ref=e253] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Iraq-vs.-Norway/676.aspx?Championship_YearID=18
+        - generic [ref=e254]: Wed 17 Jun
+        - generic [ref=e255]:
+          - generic [ref=e256]:
+            - img [ref=e257]
+            - generic [ref=e258]: Iraq
+            - generic [ref=e259]: "1"
+          - generic [ref=e260]:
+            - img [ref=e261]
+            - generic [ref=e262]: Norway
+            - generic [ref=e263]: "4"
+      - link "Wed 17 Jun Argentina 3 Algeria 0" [ref=e265] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Argentina-vs.-Algeria/643.aspx?Championship_YearID=18
+        - generic [ref=e266]: Wed 17 Jun
+        - generic [ref=e267]:
+          - generic [ref=e268]:
+            - img [ref=e269]
+            - generic [ref=e270]: Argentina
+            - generic [ref=e271]: "3"
+          - generic [ref=e272]:
+            - img [ref=e273]
+            - generic [ref=e274]: Algeria
+            - generic [ref=e275]: "0"
+      - link "Wed 17 Jun Austria 3 Jordan 1" [ref=e277] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Austria-vs.-Jordan/644.aspx?Championship_YearID=18
+        - generic [ref=e278]: Wed 17 Jun
+        - generic [ref=e279]:
+          - generic [ref=e280]:
+            - img [ref=e281]
+            - generic [ref=e282]: Austria
+            - generic [ref=e283]: "3"
+          - generic [ref=e284]:
+            - img [ref=e285]
+            - generic [ref=e286]: Jordan
+            - generic [ref=e287]: "1"
+      - link "Wed 17 Jun Portugal 1 DR Congo 1" [ref=e289] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Portugal-vs.-DR Congo/649.aspx?Championship_YearID=18
+        - generic [ref=e290]: Wed 17 Jun
+        - generic [ref=e291]:
+          - generic [ref=e292]:
+            - img [ref=e293]
+            - generic [ref=e294]: Portugal
+            - generic [ref=e295]: "1"
+          - generic [ref=e296]:
+            - img [ref=e297]
+            - generic [ref=e298]: DR Congo
+            - generic [ref=e299]: "1"
+      - link "Wed 17 Jun England 4 Croatia 2" [ref=e301] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/England-vs.-Croatia/655.aspx?Championship_YearID=18
+        - generic [ref=e302]: Wed 17 Jun
+        - generic [ref=e303]:
+          - generic [ref=e304]:
+            - img [ref=e305]
+            - generic [ref=e306]: England
+            - generic [ref=e307]: "4"
+          - generic [ref=e308]:
+            - img [ref=e309]
+            - generic [ref=e310]: Croatia
+            - generic [ref=e311]: "2"
+      - link "Thu 18 Jun Ghana 1 Panama 0" [ref=e313] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Ghana-vs.-Panama/656.aspx?Championship_YearID=18
+        - generic [ref=e314]: Thu 18 Jun
+        - generic [ref=e315]:
+          - generic [ref=e316]:
+            - img [ref=e317]
+            - generic [ref=e318]: Ghana
+            - generic [ref=e319]: "1"
+          - generic [ref=e320]:
+            - img [ref=e321]
+            - generic [ref=e322]: Panama
+            - generic [ref=e323]: "0"
+      - link "Thu 18 Jun Uzbekistan 1 Colombia 3" [ref=e325] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Uzbekistan-vs.-Colombia/650.aspx?Championship_YearID=18
+        - generic [ref=e326]: Thu 18 Jun
+        - generic [ref=e327]:
+          - generic [ref=e328]:
+            - img [ref=e329]
+            - generic [ref=e330]: Uzbekistan
+            - generic [ref=e331]: "1"
+          - generic [ref=e332]:
+            - img [ref=e333]
+            - generic [ref=e334]: Colombia
+            - generic [ref=e335]: "3"
+      - link "Thu 18 Jun Czech Republic 1 South Africa 1" [ref=e337] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Czech Republic-vs.-South Africa/627.aspx?Championship_YearID=18
+        - generic [ref=e338]: Thu 18 Jun
+        - generic [ref=e339]:
+          - generic [ref=e340]:
+            - img [ref=e341]
+            - generic [ref=e342]: Czech Republic
+            - generic [ref=e343]: "1"
+          - generic [ref=e344]:
+            - img [ref=e345]
+            - generic [ref=e346]: South Africa
+            - generic [ref=e347]: "1"
+      - link "Thu 18 Jun Switzerland 4 Bosnia and Herzegovina 1" [ref=e349] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Switzerland-vs.-Bosnia and Herzegovina/633.aspx?Championship_YearID=18
+        - generic [ref=e350]: Thu 18 Jun
+        - generic [ref=e351]:
+          - generic [ref=e352]:
+            - img [ref=e353]
+            - generic [ref=e354]: Switzerland
+            - generic [ref=e355]: "4"
+          - generic [ref=e356]:
+            - img [ref=e357]
+            - generic [ref=e358]: Bosnia and Herzegovina
+            - generic [ref=e359]: "1"
+      - link "Fri 19 Jun Canada 6 Qatar 0" [ref=e361] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Canada-vs.-Qatar/634.aspx?Championship_YearID=18
+        - generic [ref=e362]: Fri 19 Jun
+        - generic [ref=e363]:
+          - generic [ref=e364]:
+            - img [ref=e365]
+            - generic [ref=e366]: Canada
+            - generic [ref=e367]: "6"
+          - generic [ref=e368]:
+            - img [ref=e369]
+            - generic [ref=e370]: Qatar
+            - generic [ref=e371]: "0"
+      - link "Fri 19 Jun Mexico 1 South Korea 0" [ref=e373] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Mexico-vs.-South Korea/628.aspx?Championship_YearID=18
+        - generic [ref=e374]: Fri 19 Jun
+        - generic [ref=e375]:
+          - generic [ref=e376]:
+            - img [ref=e377]
+            - generic [ref=e378]: Mexico
+            - generic [ref=e379]: "1"
+          - generic [ref=e380]:
+            - img [ref=e381]
+            - generic [ref=e382]: South Korea
+            - generic [ref=e383]: "0"
+      - link "Fri 19 Jun United States 2 Australia 0" [ref=e385] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/United States-vs.-Australia/683.aspx?Championship_YearID=18
+        - generic [ref=e386]: Fri 19 Jun
+        - generic [ref=e387]:
+          - generic [ref=e388]:
+            - img [ref=e389]
+            - generic [ref=e390]: United States
+            - generic [ref=e391]: "2"
+          - generic [ref=e392]:
+            - img [ref=e393]
+            - generic [ref=e394]: Australia
+            - generic [ref=e395]: "0"
+      - link "Sat 20 Jun Scotland 0 Morocco 1" [ref=e397] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Scotland-vs.-Morocco/639.aspx?Championship_YearID=18
+        - generic [ref=e398]: Sat 20 Jun
+        - generic [ref=e399]:
+          - generic [ref=e400]:
+            - img [ref=e401]
+            - generic [ref=e402]: Scotland
+            - generic [ref=e403]: "0"
+          - generic [ref=e404]:
+            - img [ref=e405]
+            - generic [ref=e406]: Morocco
+            - generic [ref=e407]: "1"
+      - link "Sat 20 Jun Brazil 3 Haiti 0" [ref=e409] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Brazil-vs.-Haiti/640.aspx?Championship_YearID=18
+        - generic [ref=e410]: Sat 20 Jun
+        - generic [ref=e411]:
+          - generic [ref=e412]:
+            - img [ref=e413]
+            - generic [ref=e414]: Brazil
+            - generic [ref=e415]: "3"
+          - generic [ref=e416]:
+            - img [ref=e417]
+            - generic [ref=e418]: Haiti
+            - generic [ref=e419]: "0"
+      - link "Sat 20 Jun Turkey 0 Paraguay 1" [ref=e421] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Turkey-vs.-Paraguay/684.aspx?Championship_YearID=18
+        - generic [ref=e422]: Sat 20 Jun
+        - generic [ref=e423]:
+          - generic [ref=e424]:
+            - img [ref=e425]
+            - generic [ref=e426]: Turkey
+            - generic [ref=e427]: "0"
+          - generic [ref=e428]:
+            - img [ref=e429]
+            - generic [ref=e430]: Paraguay
+            - generic [ref=e431]: "1"
+      - link "Sat 20 Jun Netherlands 5 Sweden 1" [ref=e433] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Netherlands-vs.-Sweden/695.aspx?Championship_YearID=18
+        - generic [ref=e434]: Sat 20 Jun
+        - generic [ref=e435]:
+          - generic [ref=e436]:
+            - img [ref=e437]
+            - generic [ref=e438]: Netherlands
+            - generic [ref=e439]: "5"
+          - generic [ref=e440]:
+            - img [ref=e441]
+            - generic [ref=e442]: Sweden
+            - generic [ref=e443]: "1"
+      - link "Sat 20 Jun Germany 2 Cote d Ivoire 1" [ref=e445] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Germany-vs.-Cote d Ivoire/689.aspx?Championship_YearID=18
+        - generic [ref=e446]: Sat 20 Jun
+        - generic [ref=e447]:
+          - generic [ref=e448]:
+            - img [ref=e449]
+            - generic [ref=e450]: Germany
+            - generic [ref=e451]: "2"
+          - generic [ref=e452]:
+            - img [ref=e453]
+            - generic [ref=e454]: Cote d Ivoire
+            - generic [ref=e455]: "1"
+      - link "Sun 21 Jun Ecuador 0 Curacao 0" [ref=e457] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Ecuador-vs.-Curacao/690.aspx?Championship_YearID=18
+        - generic [ref=e458]: Sun 21 Jun
+        - generic [ref=e459]:
+          - generic [ref=e460]:
+            - img [ref=e461]
+            - generic [ref=e462]: Ecuador
+            - generic [ref=e463]: "0"
+          - generic [ref=e464]:
+            - img [ref=e465]
+            - generic [ref=e466]: Curacao
+            - generic [ref=e467]: "0"
+      - link "Sun 21 Jun Tunisia 0 Japan 4" [ref=e469] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Tunisia-vs.-Japan/696.aspx?Championship_YearID=18
+        - generic [ref=e470]: Sun 21 Jun
+        - generic [ref=e471]:
+          - generic [ref=e472]:
+            - img [ref=e473]
+            - generic [ref=e474]: Tunisia
+            - generic [ref=e475]: "0"
+          - generic [ref=e476]:
+            - img [ref=e477]
+            - generic [ref=e478]: Japan
+            - generic [ref=e479]: "4"
+      - link "Sun 21 Jun Spain 4 Saudi Arabia 0" [ref=e481] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Spain-vs.-Saudi Arabia/671.aspx?Championship_YearID=18
+        - generic [ref=e482]: Sun 21 Jun
+        - generic [ref=e483]:
+          - generic [ref=e484]:
+            - img [ref=e485]
+            - generic [ref=e486]: Spain
+            - generic [ref=e487]: "4"
+          - generic [ref=e488]:
+            - img [ref=e489]
+            - generic [ref=e490]: Saudi Arabia
+            - generic [ref=e491]: "0"
+      - link "Sun 21 Jun Belgium 0 Iran 0" [ref=e493] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Belgium-vs.-Iran/663.aspx?Championship_YearID=18
+        - generic [ref=e494]: Sun 21 Jun
+        - generic [ref=e495]:
+          - generic [ref=e496]:
+            - img [ref=e497]
+            - generic [ref=e498]: Belgium
+            - generic [ref=e499]: "0"
+          - generic [ref=e500]:
+            - img [ref=e501]
+            - generic [ref=e502]: Iran
+            - generic [ref=e503]: "0"
+      - link "Mon 22 Jun Uruguay 2 Cape Verde 2" [ref=e505] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Uruguay-vs.-Cape Verde/672.aspx?Championship_YearID=18
+        - generic [ref=e506]: Mon 22 Jun
+        - generic [ref=e507]:
+          - generic [ref=e508]:
+            - img [ref=e509]
+            - generic [ref=e510]: Uruguay
+            - generic [ref=e511]: "2"
+          - generic [ref=e512]:
+            - img [ref=e513]
+            - generic [ref=e514]: Cape Verde
+            - generic [ref=e515]: "2"
+      - link "Mon 22 Jun New Zealand 1 Egypt 3" [ref=e517] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/New Zealand-vs.-Egypt/664.aspx?Championship_YearID=18
+        - generic [ref=e518]: Mon 22 Jun
+        - generic [ref=e519]:
+          - generic [ref=e520]:
+            - img [ref=e521]
+            - generic [ref=e522]: New Zealand
+            - generic [ref=e523]: "1"
+          - generic [ref=e524]:
+            - img [ref=e525]
+            - generic [ref=e526]: Egypt
+            - generic [ref=e527]: "3"
+      - link "Mon 22 Jun Argentina 2 Austria 0" [ref=e529] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Argentina-vs.-Austria/645.aspx?Championship_YearID=18
+        - generic [ref=e530]: Mon 22 Jun
+        - generic [ref=e531]:
+          - generic [ref=e532]:
+            - img [ref=e533]
+            - generic [ref=e534]: Argentina
+            - generic [ref=e535]: "2"
+          - generic [ref=e536]:
+            - img [ref=e537]
+            - generic [ref=e538]: Austria
+            - generic [ref=e539]: "0"
+      - link "Tue 23 Jun France 3 Iraq 0" [ref=e541] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/France-vs.-Iraq/677.aspx?Championship_YearID=18
+        - generic [ref=e542]: Tue 23 Jun
+        - generic [ref=e543]:
+          - generic [ref=e544]:
+            - img [ref=e545]
+            - generic [ref=e546]: France
+            - generic [ref=e547]: "3"
+          - generic [ref=e548]:
+            - img [ref=e549]
+            - generic [ref=e550]: Iraq
+            - generic [ref=e551]: "0"
+      - link "Tue 23 Jun Norway 3 Senegal 2" [ref=e553] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Norway-vs.-Senegal/678.aspx?Championship_YearID=18
+        - generic [ref=e554]: Tue 23 Jun
+        - generic [ref=e555]:
+          - generic [ref=e556]:
+            - img [ref=e557]
+            - generic [ref=e558]: Norway
+            - generic [ref=e559]: "3"
+          - generic [ref=e560]:
+            - img [ref=e561]
+            - generic [ref=e562]: Senegal
+            - generic [ref=e563]: "2"
+      - link "Tue 23 Jun Jordan 1 Algeria 2" [ref=e565] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Jordan-vs.-Algeria/646.aspx?Championship_YearID=18
+        - generic [ref=e566]: Tue 23 Jun
+        - generic [ref=e567]:
+          - generic [ref=e568]:
+            - img [ref=e569]
+            - generic [ref=e570]: Jordan
+            - generic [ref=e571]: "1"
+          - generic [ref=e572]:
+            - img [ref=e573]
+            - generic [ref=e574]: Algeria
+            - generic [ref=e575]: "2"
+      - link "Tue 23 Jun Portugal 5 Uzbekistan 0" [ref=e577] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Portugal-vs.-Uzbekistan/651.aspx?Championship_YearID=18
+        - generic [ref=e578]: Tue 23 Jun
+        - generic [ref=e579]:
+          - generic [ref=e580]:
+            - img [ref=e581]
+            - generic [ref=e582]: Portugal
+            - generic [ref=e583]: "5"
+          - generic [ref=e584]:
+            - img [ref=e585]
+            - generic [ref=e586]: Uzbekistan
+            - generic [ref=e587]: "0"
+      - link "Tue 23 Jun England 0 Ghana 0" [ref=e589] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/England-vs.-Ghana/657.aspx?Championship_YearID=18
+        - generic [ref=e590]: Tue 23 Jun
+        - generic [ref=e591]:
+          - generic [ref=e592]:
+            - img [ref=e593]
+            - generic [ref=e594]: England
+            - generic [ref=e595]: "0"
+          - generic [ref=e596]:
+            - img [ref=e597]
+            - generic [ref=e598]: Ghana
+            - generic [ref=e599]: "0"
+      - link "Wed 24 Jun Panama 0 Croatia 1" [ref=e601] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Panama-vs.-Croatia/658.aspx?Championship_YearID=18
+        - generic [ref=e602]: Wed 24 Jun
+        - generic [ref=e603]:
+          - generic [ref=e604]:
+            - img [ref=e605]
+            - generic [ref=e606]: Panama
+            - generic [ref=e607]: "0"
+          - generic [ref=e608]:
+            - img [ref=e609]
+            - generic [ref=e610]: Croatia
+            - generic [ref=e611]: "1"
+      - link "Wed 24 Jun Colombia 1 DR Congo 0" [ref=e613] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Colombia-vs.-DR Congo/652.aspx?Championship_YearID=18
+        - generic [ref=e614]: Wed 24 Jun
+        - generic [ref=e615]:
+          - generic [ref=e616]:
+            - img [ref=e617]
+            - generic [ref=e618]: Colombia
+            - generic [ref=e619]: "1"
+          - generic [ref=e620]:
+            - img [ref=e621]
+            - generic [ref=e622]: DR Congo
+            - generic [ref=e623]: "0"
+      - link "Wed 24 Jun Switzerland 2 Canada 1" [ref=e625] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Switzerland-vs.-Canada/635.aspx?Championship_YearID=18
+        - generic [ref=e626]: Wed 24 Jun
+        - generic [ref=e627]:
+          - generic [ref=e628]:
+            - img [ref=e629]
+            - generic [ref=e630]: Switzerland
+            - generic [ref=e631]: "2"
+          - generic [ref=e632]:
+            - img [ref=e633]
+            - generic [ref=e634]: Canada
+            - generic [ref=e635]: "1"
+      - link "Wed 24 Jun Bosnia and Herzegovina 3 Qatar 1" [ref=e637] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Bosnia and Herzegovina-vs.-Qatar/636.aspx?Championship_YearID=18
+        - generic [ref=e638]: Wed 24 Jun
+        - generic [ref=e639]:
+          - generic [ref=e640]:
+            - img [ref=e641]
+            - generic [ref=e642]: Bosnia and Herzegovina
+            - generic [ref=e643]: "3"
+          - generic [ref=e644]:
+            - img [ref=e645]
+            - generic [ref=e646]: Qatar
+            - generic [ref=e647]: "1"
+      - link "Thu 25 Jun Scotland 0 Brazil 3" [ref=e649] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Scotland-vs.-Brazil/641.aspx?Championship_YearID=18
+        - generic [ref=e650]: Thu 25 Jun
+        - generic [ref=e651]:
+          - generic [ref=e652]:
+            - img [ref=e653]
+            - generic [ref=e654]: Scotland
+            - generic [ref=e655]: "0"
+          - generic [ref=e656]:
+            - img [ref=e657]
+            - generic [ref=e658]: Brazil
+            - generic [ref=e659]: "3"
+      - link "Thu 25 Jun Morocco 4 Haiti 2" [ref=e661] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Morocco-vs.-Haiti/642.aspx?Championship_YearID=18
+        - generic [ref=e662]: Thu 25 Jun
+        - generic [ref=e663]:
+          - generic [ref=e664]:
+            - img [ref=e665]
+            - generic [ref=e666]: Morocco
+            - generic [ref=e667]: "4"
+          - generic [ref=e668]:
+            - img [ref=e669]
+            - generic [ref=e670]: Haiti
+            - generic [ref=e671]: "2"
+      - link "Thu 25 Jun Czech Republic 0 Mexico 3" [ref=e673] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Czech Republic-vs.-Mexico/629.aspx?Championship_YearID=18
+        - generic [ref=e674]: Thu 25 Jun
+        - generic [ref=e675]:
+          - generic [ref=e676]:
+            - img [ref=e677]
+            - generic [ref=e678]: Czech Republic
+            - generic [ref=e679]: "0"
+          - generic [ref=e680]:
+            - img [ref=e681]
+            - generic [ref=e682]: Mexico
+            - generic [ref=e683]: "3"
+      - link "Thu 25 Jun South Africa 1 South Korea 0" [ref=e685] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/South Africa-vs.-South Korea/630.aspx?Championship_YearID=18
+        - generic [ref=e686]: Thu 25 Jun
+        - generic [ref=e687]:
+          - generic [ref=e688]:
+            - img [ref=e689]
+            - generic [ref=e690]: South Africa
+            - generic [ref=e691]: "1"
+          - generic [ref=e692]:
+            - img [ref=e693]
+            - generic [ref=e694]: South Korea
+            - generic [ref=e695]: "0"
+      - link "Thu 25 Jun Curacao Cote d Ivoire" [ref=e697] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Curacao-vs.-Cote d Ivoire/691.aspx?Championship_YearID=18
+        - generic [ref=e698]: Thu 25 Jun
+        - generic [ref=e699]:
+          - generic [ref=e700]:
+            - img [ref=e701]
+            - generic [ref=e702]: Curacao
+          - generic [ref=e703]:
+            - img [ref=e704]
+            - generic [ref=e705]: Cote d Ivoire
+      - link "Thu 25 Jun Ecuador 0 Germany 0" [ref=e707] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Ecuador-vs.-Germany/692.aspx?Championship_YearID=18
+        - generic [ref=e708]: Thu 25 Jun
+        - generic [ref=e709]:
+          - generic [ref=e710]:
+            - img [ref=e711]
+            - generic [ref=e712]: Ecuador
+            - generic [ref=e713]: "0"
+          - generic [ref=e714]:
+            - img [ref=e715]
+            - generic [ref=e716]: Germany
+            - generic [ref=e717]: "0"
+      - link "Fri 26 Jun Japan Sweden" [ref=e719] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Japan-vs.-Sweden/697.aspx?Championship_YearID=18
+        - generic [ref=e720]: Fri 26 Jun
+        - generic [ref=e721]:
+          - generic [ref=e722]:
+            - img [ref=e723]
+            - generic [ref=e724]: Japan
+          - generic [ref=e725]:
+            - img [ref=e726]
+            - generic [ref=e727]: Sweden
+      - link "Fri 26 Jun Tunisia Netherlands" [ref=e729] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Tunisia-vs.-Netherlands/698.aspx?Championship_YearID=18
+        - generic [ref=e730]: Fri 26 Jun
+        - generic [ref=e731]:
+          - generic [ref=e732]:
+            - img [ref=e733]
+            - generic [ref=e734]: Tunisia
+          - generic [ref=e735]:
+            - img [ref=e736]
+            - generic [ref=e737]: Netherlands
+      - link "Fri 26 Jun Turkey United States" [ref=e739] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Turkey-vs.-United States/685.aspx?Championship_YearID=18
+        - generic [ref=e740]: Fri 26 Jun
+        - generic [ref=e741]:
+          - generic [ref=e742]:
+            - img [ref=e743]
+            - generic [ref=e744]: Turkey
+          - generic [ref=e745]:
+            - img [ref=e746]
+            - generic [ref=e747]: United States
+      - link "Fri 26 Jun Paraguay Australia" [ref=e749] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Paraguay-vs.-Australia/686.aspx?Championship_YearID=18
+        - generic [ref=e750]: Fri 26 Jun
+        - generic [ref=e751]:
+          - generic [ref=e752]:
+            - img [ref=e753]
+            - generic [ref=e754]: Paraguay
+          - generic [ref=e755]:
+            - img [ref=e756]
+            - generic [ref=e757]: Australia
+      - link "Fri 26 Jun Norway France" [ref=e759] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Norway-vs.-France/679.aspx?Championship_YearID=18
+        - generic [ref=e760]: Fri 26 Jun
+        - generic [ref=e761]:
+          - generic [ref=e762]:
+            - img [ref=e763]
+            - generic [ref=e764]: Norway
+          - generic [ref=e765]:
+            - img [ref=e766]
+            - generic [ref=e767]: France
+      - link "Fri 26 Jun Senegal Iraq" [ref=e769] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Senegal-vs.-Iraq/680.aspx?Championship_YearID=18
+        - generic [ref=e770]: Fri 26 Jun
+        - generic [ref=e771]:
+          - generic [ref=e772]:
+            - img [ref=e773]
+            - generic [ref=e774]: Senegal
+          - generic [ref=e775]:
+            - img [ref=e776]
+            - generic [ref=e777]: Iraq
+      - link "Sat 27 Jun Cape Verde Saudi Arabia" [ref=e779] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Cape Verde-vs.-Saudi Arabia/673.aspx?Championship_YearID=18
+        - generic [ref=e780]: Sat 27 Jun
+        - generic [ref=e781]:
+          - generic [ref=e782]:
+            - img [ref=e783]
+            - generic [ref=e784]: Cape Verde
+          - generic [ref=e785]:
+            - img [ref=e786]
+            - generic [ref=e787]: Saudi Arabia
+      - link "Sat 27 Jun Uruguay Spain" [ref=e789] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Uruguay-vs.-Spain/674.aspx?Championship_YearID=18
+        - generic [ref=e790]: Sat 27 Jun
+        - generic [ref=e791]:
+          - generic [ref=e792]:
+            - img [ref=e793]
+            - generic [ref=e794]: Uruguay
+          - generic [ref=e795]:
+            - img [ref=e796]
+            - generic [ref=e797]: Spain
+      - link "Sat 27 Jun Egypt Iran" [ref=e799] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Egypt-vs.-Iran/667.aspx?Championship_YearID=18
+        - generic [ref=e800]: Sat 27 Jun
+        - generic [ref=e801]:
+          - generic [ref=e802]:
+            - img [ref=e803]
+            - generic [ref=e804]: Egypt
+          - generic [ref=e805]:
+            - img [ref=e806]
+            - generic [ref=e807]: Iran
+      - link "Sat 27 Jun New Zealand Belgium" [ref=e809] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/New Zealand-vs.-Belgium/668.aspx?Championship_YearID=18
+        - generic [ref=e810]: Sat 27 Jun
+        - generic [ref=e811]:
+          - generic [ref=e812]:
+            - img [ref=e813]
+            - generic [ref=e814]: New Zealand
+          - generic [ref=e815]:
+            - img [ref=e816]
+            - generic [ref=e817]: Belgium
+      - link "Sun 28 Jun Panama England" [ref=e819] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Panama-vs.-England/659.aspx?Championship_YearID=18
+        - generic [ref=e820]: Sun 28 Jun
+        - generic [ref=e821]:
+          - generic [ref=e822]:
+            - img [ref=e823]
+            - generic [ref=e824]: Panama
+          - generic [ref=e825]:
+            - img [ref=e826]
+            - generic [ref=e827]: England
+      - link "Sun 28 Jun Croatia Ghana" [ref=e829] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Croatia-vs.-Ghana/660.aspx?Championship_YearID=18
+        - generic [ref=e830]: Sun 28 Jun
+        - generic [ref=e831]:
+          - generic [ref=e832]:
+            - img [ref=e833]
+            - generic [ref=e834]: Croatia
+          - generic [ref=e835]:
+            - img [ref=e836]
+            - generic [ref=e837]: Ghana
+      - link "Sun 28 Jun Colombia Portugal" [ref=e839] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Colombia-vs.-Portugal/653.aspx?Championship_YearID=18
+        - generic [ref=e840]: Sun 28 Jun
+        - generic [ref=e841]:
+          - generic [ref=e842]:
+            - img [ref=e843]
+            - generic [ref=e844]: Colombia
+          - generic [ref=e845]:
+            - img [ref=e846]
+            - generic [ref=e847]: Portugal
+      - link "Sun 28 Jun DR Congo Uzbekistan" [ref=e849] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/DR Congo-vs.-Uzbekistan/654.aspx?Championship_YearID=18
+        - generic [ref=e850]: Sun 28 Jun
+        - generic [ref=e851]:
+          - generic [ref=e852]:
+            - img [ref=e853]
+            - generic [ref=e854]: DR Congo
+          - generic [ref=e855]:
+            - img [ref=e856]
+            - generic [ref=e857]: Uzbekistan
+      - link "Sun 28 Jun Algeria Austria" [ref=e859] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Algeria-vs.-Austria/647.aspx?Championship_YearID=18
+        - generic [ref=e860]: Sun 28 Jun
+        - generic [ref=e861]:
+          - generic [ref=e862]:
+            - img [ref=e863]
+            - generic [ref=e864]: Algeria
+          - generic [ref=e865]:
+            - img [ref=e866]
+            - generic [ref=e867]: Austria
+      - link "Sun 28 Jun Jordan Argentina" [ref=e869] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/Jordan-vs.-Argentina/648.aspx?Championship_YearID=18
+        - generic [ref=e870]: Sun 28 Jun
+        - generic [ref=e871]:
+          - generic [ref=e872]:
+            - img [ref=e873]
+            - generic [ref=e874]: Jordan
+          - generic [ref=e875]:
+            - img [ref=e876]
+            - generic [ref=e877]: Argentina
+      - link "Sun 28 Jun South Africa Canada" [ref=e879] [cursor=pointer]:
+        - /url: https://english.ahram.org.eg/WorldCup2026/WC2026MatchInfo/2026/South Africa-vs.-Canada/699.aspx?Championship_YearID=18
+        - generic [ref=e880]: Sun 28 Jun
+        - generic [ref=e881]:
+          - generic [ref=e882]:
+            - img [ref=e883]
+            - generic [ref=e884]: South Africa
+          - generic [ref=e885]:
+            - img [ref=e886]
+            - generic [ref=e887]: Canada
+    - link "View All Matches" [ref=e889] [cursor=pointer]:
+      - /url: https://english.ahram.org.eg/WorldCup2026/WCMatches.aspx?Championship_YearID=18
+  - generic [ref=e890]:
+    - generic [ref=e894]:
+      - generic [ref=e897]:
+        - heading "Egypt defensive duo ruled out of Iran clash" [level=1] [ref=e898]
+        - generic [ref=e899]:
+          - generic [ref=e900]:
+            - generic [ref=e901]: 
+            - text: 23/06/2026
+          - generic [ref=e903]:
+            - button "Share" [ref=e904] [cursor=pointer]:
+              - img [ref=e905]
+              - text: Share
+            - text:      
+        - 'figure "Hossam Abdelmaguid #4 of Egypt competes for a header against Michael Boxall #5 of New Zealand during the FIFA World Cup 2026 Group G match between New Zealand and Egypt at BC Place Vancouver. AFP" [ref=e907]':
+          - generic [ref=e908]: "Hossam Abdelmaguid #4 of Egypt competes for a header against Michael Boxall #5 of New Zealand during the FIFA World Cup 2026 Group G match between New Zealand and Egypt at BC Place Vancouver. AFP"
+        - generic [ref=e910]:
+          - paragraph [ref=e911]
+          - paragraph [ref=e912]:
+            - link "Egypt" [ref=e913] [cursor=pointer]:
+              - /url: https://english.ahram.org.eg/WorldCup2026/WCTeamEgypt.aspx
+            - text: defenders
+            - link "Hamdi Fathi" [ref=e914] [cursor=pointer]:
+              - /url: https://english.ahram.org.eg/WorldCup2026/PlayerWC2026/2026/7500.aspx
+            - text: and
+            - link "Hossam Abdel-Meguid" [ref=e915] [cursor=pointer]:
+              - /url: https://english.ahram.org.eg/WorldCup2026/PlayerWC2026/2026/7507.aspx
+            - text: will miss Pharaohs’ final Group-stage match against Iran, team director Ibrahim Hassan said on Tuesday.
+          - paragraph [ref=e916]: Egypt conclude their Group-stage campaign against Iran in Seattle on Saturday, with both teams seeking to secure a place in the second round.
+          - paragraph [ref=e917]:
+            - text: Fathi was forced off during the first half of
+            - link "Egypt's 3-1 victory" [ref=e918] [cursor=pointer]:
+              - /url: https://english.ahram.org.eg/WorldCup2026/Article/571324
+            - text: over New Zealand on Monday, while Abdel-Meguid suffered a mild concussion in stoppage time, just minutes after coming on as a substitute.
+          - paragraph [ref=e919]: "\"Hamdi Fathi has a muscle injury and needs one week of treatment, while Abdel-Meguid is subject to FIFA's head injury protocol and will be rested for five days before his condition is reassessed,\" Hassan told AFP."
+          - paragraph [ref=e920]: The win over New Zealand was Egypt's first-ever victory at the World Cup and moved the Pharaohs to the brink of a historic first qualification for the knockout stage.
+          - paragraph [ref=e921]: Egypt top the group with four points, two ahead of second-placed Iran.
+          - paragraph [ref=e922]: Belgium, who face New Zealand on Saturday, are third on goal difference with the same number of points as Iran, while New Zealand are bottom with one point.
+          - paragraph [ref=e923]:
+            - generic [ref=e924]:
+              - emphasis [ref=e925]: Check the World Cup
+              - link "matches and standings" [ref=e926] [cursor=pointer]:
+                - /url: https://english.ahram.org.eg/WorldCup2026/WCGroups.aspx?Championship_YearID=18
+                - emphasis [ref=e927]: matches and standings
+              - emphasis [ref=e928]: Check the World Cup
+              - link "Stats" [ref=e929] [cursor=pointer]:
+                - /url: https://english.ahram.org.eg/WorldCup2026/Statistics.aspx
+                - emphasis [ref=e930]: Stats
+          - paragraph [ref=e931]:
+            - text: (For more sports news and updates, follow Ahram Online Sports on Twitter at
+            - link "@AO_Sports" [ref=e932] [cursor=pointer]:
+              - /url: https://twitter.com/AO_Sports
+            - text: and on Facebook at
+            - link "AhramOnlineSports" [ref=e933] [cursor=pointer]:
+              - /url: https://www.facebook.com/AhramOnlineSports?fref=ts
+            - text: .)
+      - generic [ref=e935]:
+        - heading "Latest News" [level=5] [ref=e936]
+        - generic [ref=e937]:
+          - generic [ref=e938]:
+            - generic [ref=e939]:
+              - generic [ref=e940]: News
+              - link "Rows, drones and 'sorry' Son as South Korea await World Cup fate" [ref=e941] [cursor=pointer]:
+                - /url: https://english.ahram.org.eg/WorldCup2026/AfricaInner.aspx?NewsContentID=571640
+                - heading "Rows, drones and 'sorry' Son as South Korea await World Cup fate" [level=6] [ref=e942]
+            - link [ref=e944] [cursor=pointer]:
+              - /url: https://english.ahram.org.eg/WorldCup2026/AfricaInner.aspx?NewsContentID=571640
+          - generic [ref=e945]:
+            - generic [ref=e946]:
+              - generic [ref=e947]: News
+              - link "USA, Germany in control as Dutch eye World Cup knockouts" [ref=e948] [cursor=pointer]:
+                - /url: https://english.ahram.org.eg/WorldCup2026/AfricaInner.aspx?NewsContentID=571633
+                - heading "USA, Germany in control as Dutch eye World Cup knockouts" [level=6] [ref=e949]
+            - link [ref=e951] [cursor=pointer]:
+              - /url: https://english.ahram.org.eg/WorldCup2026/AfricaInner.aspx?NewsContentID=571633
+          - generic [ref=e952]:
+            - generic [ref=e953]:
+              - generic [ref=e954]: News
+              - link "What’s offside? And all your other World Cup questions, answered" [ref=e955] [cursor=pointer]:
+                - /url: https://english.ahram.org.eg/WorldCup2026/AfricaInner.aspx?NewsContentID=571629
+                - heading "What’s offside? And all your other World Cup questions, answered" [level=6] [ref=e956]
+            - link [ref=e958] [cursor=pointer]:
+              - /url: https://english.ahram.org.eg/WorldCup2026/AfricaInner.aspx?NewsContentID=571629
+          - generic [ref=e959]:
+            - generic [ref=e960]:
+              - generic [ref=e961]: News
+              - link "Tunisia's short-lived World Cup experience lays bare deep dysfunctions" [ref=e962] [cursor=pointer]:
+                - /url: https://english.ahram.org.eg/WorldCup2026/AfricaInner.aspx?NewsContentID=571619
+                - heading "Tunisia's short-lived World Cup experience lays bare deep dysfunctions" [level=6] [ref=e963]
+            - link [ref=e965] [cursor=pointer]:
+              - /url: https://english.ahram.org.eg/WorldCup2026/AfricaInner.aspx?NewsContentID=571619
+          - generic [ref=e966]:
+            - generic [ref=e967]:
+              - generic [ref=e968]: News
+              - 'link "Video: Egypt players unwind with a hoop session ahead of Iran World Cup clash" [ref=e969] [cursor=pointer]':
+                - /url: https://english.ahram.org.eg/WorldCup2026/AfricaInner.aspx?NewsContentID=571608
+                - 'heading "Video: Egypt players unwind with a hoop session ahead of Iran World Cup clash" [level=6] [ref=e970]'
+            - link [ref=e972] [cursor=pointer]:
+              - /url: https://english.ahram.org.eg/WorldCup2026/AfricaInner.aspx?NewsContentID=571608
+          - generic [ref=e973]:
+            - generic [ref=e974]:
+              - generic [ref=e975]: News
+              - link "Ancelotti hails Vinicius as Brazil march on at World Cup" [ref=e976] [cursor=pointer]:
+                - /url: https://english.ahram.org.eg/WorldCup2026/AfricaInner.aspx?NewsContentID=571605
+                - heading "Ancelotti hails Vinicius as Brazil march on at World Cup" [level=6] [ref=e977]
+            - link [ref=e979] [cursor=pointer]:
+              - /url: https://english.ahram.org.eg/WorldCup2026/AfricaInner.aspx?NewsContentID=571605
+          - generic [ref=e980]:
+            - generic [ref=e981]:
+              - generic [ref=e982]: News
+              - link "Morocco have 'ingredients' of World Cup winners, says coach Ouahbi" [ref=e983] [cursor=pointer]:
+                - /url: https://english.ahram.org.eg/WorldCup2026/AfricaInner.aspx?NewsContentID=571604
+                - heading "Morocco have 'ingredients' of World Cup winners, says coach Ouahbi" [level=6] [ref=e984]
+            - link [ref=e986] [cursor=pointer]:
+              - /url: https://english.ahram.org.eg/WorldCup2026/AfricaInner.aspx?NewsContentID=571604
+          - generic [ref=e987]:
+            - generic [ref=e988]:
+              - generic [ref=e989]: News
+              - link "'We shut up big mouths,' says South Africa's World Cup coach Broos" [ref=e990] [cursor=pointer]:
+                - /url: https://english.ahram.org.eg/WorldCup2026/AfricaInner.aspx?NewsContentID=571603
+                - heading "'We shut up big mouths,' says South Africa's World Cup coach Broos" [level=6] [ref=e991]
+            - link [ref=e993] [cursor=pointer]:
+              - /url: https://english.ahram.org.eg/WorldCup2026/AfricaInner.aspx?NewsContentID=571603
+          - generic [ref=e994]:
+            - generic [ref=e995]:
+              - generic [ref=e996]: News
+              - 'link "Live score: Tunisia v Netherlands (World Cup 2026)" [ref=e997] [cursor=pointer]':
+                - /url: https://english.ahram.org.eg/WorldCup2026/AfricaInner.aspx?NewsContentID=571598
+                - 'heading "Live score: Tunisia v Netherlands (World Cup 2026)" [level=6] [ref=e998]'
+            - link [ref=e1000] [cursor=pointer]:
+              - /url: https://english.ahram.org.eg/WorldCup2026/AfricaInner.aspx?NewsContentID=571598
+          - generic [ref=e1001]:
+            - generic [ref=e1002]:
+              - generic [ref=e1003]: News
+              - 'link "Live score: Japan v Sweden (World Cup 2026)" [ref=e1004] [cursor=pointer]':
+                - /url: https://english.ahram.org.eg/WorldCup2026/AfricaInner.aspx?NewsContentID=571597
+                - 'heading "Live score: Japan v Sweden (World Cup 2026)" [level=6] [ref=e1005]'
+            - link [ref=e1007] [cursor=pointer]:
+              - /url: https://english.ahram.org.eg/WorldCup2026/AfricaInner.aspx?NewsContentID=571597
+    - heading "Related News" [level=1] [ref=e1011]
+  - contentinfo [ref=e1012]:
+    - generic [ref=e1015]:
+      - img "World Cup 2026" [ref=e1016]
+      - list [ref=e1018]:
+        - listitem [ref=e1019]:
+          - link "Home" [ref=e1020] [cursor=pointer]:
+            - /url: https://english.ahram.org.eg/WorldCup2026/Index.aspx
+        - listitem [ref=e1021]:
+          - link "News" [ref=e1022] [cursor=pointer]:
+            - /url: https://english.ahram.org.eg/WorldCup2026/AfricaOuter.aspx?NewsPortalID=66&NewsCategoryID=1283&StartRowIndex=0
+        - listitem [ref=e1023]:
+          - link "Features" [ref=e1024] [cursor=pointer]:
+            - /url: https://english.ahram.org.eg/WorldCup2026/AfricaOuter.aspx?NewsPortalID=66&NewsCategoryID=1284&StartRowIndex=0
+        - listitem [ref=e1025]:
+          - link "Team Egypt" [ref=e1026] [cursor=pointer]:
+            - /url: https://english.ahram.org.eg/WorldCup2026/WCTeamEgypt.aspx
+        - listitem [ref=e1027]:
+          - link "Schedule & Results" [ref=e1028] [cursor=pointer]:
+            - /url: https://english.ahram.org.eg/WorldCup2026/WCMatches.aspx?Championship_YearID=18
+        - listitem [ref=e1029]:
+          - link "Groups" [ref=e1030] [cursor=pointer]:
+            - /url: https://english.ahram.org.eg/WorldCup2026/WCGroups.aspx?Championship_YearID=18
+        - listitem [ref=e1031]:
+          - link "Stats" [ref=e1032] [cursor=pointer]:
+            - /url: https://english.ahram.org.eg/WorldCup2026/Statistics.aspx
+        - listitem [ref=e1033]:
+          - link "Infographics" [ref=e1034] [cursor=pointer]:
+            - /url: https://english.ahram.org.eg/WorldCup2026/AfricaOuter.aspx?NewsPortalID=66&NewsCategoryID=1286&StartRowIndex=0
+        - listitem [ref=e1035]:
+          - link "Multimedia" [ref=e1036] [cursor=pointer]:
+            - /url: https://english.ahram.org.eg/WorldCup2026/CocanMultiOuter.aspx?NewsPortalID=66&NewsCategoryID=1285&StartRowIndex=0
+  - heading "© 2026 All Rights Reserved Ahram Online." [level=6] [ref=e1042]

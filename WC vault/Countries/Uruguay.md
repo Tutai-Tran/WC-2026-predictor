@@ -13,9 +13,9 @@ updated: 2026-06-25
 
 # Uruguay
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-25T17:06Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-25T19:17Z | source elo-goal-v1 -->
 Group H | FIFA rank 15 | Elo 1935
-Champion 0.2% | Final 0.7% | SF 1.9% | QF 4.5% | Advance 32.1%
+Champion 0.2% | Final 0.6% | SF 2.0% | QF 4.4% | Advance 32.2%
 Availability concerns: Ronald Araújo (out), Giorgian de Arrascaeta (out), José Giménez (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-25T17:06Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-25T19:17Z | source elo-goal-v1 -->
 - 2026-06-25: champion 0.2% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
