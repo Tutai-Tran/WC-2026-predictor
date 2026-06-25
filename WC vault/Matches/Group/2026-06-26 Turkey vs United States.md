@@ -13,7 +13,7 @@ updated: 2026-06-25
 <!-- WC26:AUTO:forecast START -->
 **Group D match** · 2026-06-26
 
-Win Turkey: 23.8% | Draw: 24.7% | Win United States: 51.4%
+Win Turkey: 23.9% | Draw: 24.6% | Win United States: 51.5%
 Most likely single score: 0-1 (13.6%) (one of many possible, not a prediction)
 Top-5 scorelines: 0-1 13.6%, 1-1 13.3%, 0-0 10.9%, 0-2 10.2%, 1-2 8.9% (cumulative 56.8%)
 Expected score: 1-1

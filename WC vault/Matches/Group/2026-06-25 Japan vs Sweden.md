@@ -13,7 +13,7 @@ updated: 2026-06-25
 <!-- WC26:AUTO:forecast START -->
 **Group F match** · 2026-06-25
 
-Win Japan: 52.1% | Draw: 26.9% | Win Sweden: 21.0%
+Win Japan: 49.2% | Draw: 27.3% | Win Sweden: 23.5%
 Most likely single score: 1-0 (13.5%) (one of many possible, not a prediction)
 Top-5 scorelines: 1-0 13.5%, 2-0 12.1%, 1-1 11.7%, 2-1 9.5%, 0-0 8.9% (cumulative 55.7%)
 Expected score: 2-1

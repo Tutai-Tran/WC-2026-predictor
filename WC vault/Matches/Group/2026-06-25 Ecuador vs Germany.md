@@ -13,7 +13,7 @@ updated: 2026-06-25
 <!-- WC26:AUTO:forecast START -->
 **Group E match** · 2026-06-25
 
-Win Ecuador: 21.9% | Draw: 23.7% | Win Germany: 54.4%
+Win Ecuador: 25.7% | Draw: 29.6% | Win Germany: 44.7%
 Most likely single score: 0-1 (12.8%) (one of many possible, not a prediction)
 Top-5 scorelines: 1-1 13.4%, 0-1 12.8%, 0-0 10.4%, 0-2 9.6%, 1-2 8.9% (cumulative 55.0%)
 Expected score: 1-1
