@@ -19,7 +19,7 @@ Top-5 scorelines: 0-2 13.3%, 0-1 12.9%, 1-1 10.1%, 1-2 9.4%, 0-3 8.8% (cumulativ
 Expected score: 1-2
 Over 2.5: 50.4% | Under 2.5: 49.6% | BTTS yes: 44.3% | BTTS no: 55.7%
 Top scorers: Leandro Bacuna 12.4%; Juninho Bacuna 11.0%; Gervane Kastaneer 8.1%; Franck Kessié 26.3%; Nicolas Pépé 23.3%; Ibrahim Sangaré 21.9%;
-Data as of 2026-06-26 | runs 50000 | seed 20260611
+Data as of 2026-06-27 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

@@ -19,7 +19,7 @@ Top-5 scorelines: 2-0 12.8%, 1-0 12.8%, 1-1 10.6%, 2-1 9.6%, 3-0 8.1% (cumulativ
 Expected score: 2-1
 Over 2.5: 49.6% | Under 2.5: 50.4% | BTTS yes: 45.5% | BTTS no: 54.5%
 Top scorers: Ivan Perišić 36.1%; Andrej Kramarić 34.6%; Luka Modrić 33.9%; Jordan Ayew 26.5%; Thomas Partey 12.7%; Ernest Nuamah 4.8%;
-Data as of 2026-06-26 | runs 50000 | seed 20260611
+Data as of 2026-06-27 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

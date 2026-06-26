@@ -19,7 +19,7 @@ Top-5 scorelines: 0-1 13.5%, 1-1 12.1%, 0-2 11.6%, 1-2 9.4%, 0-0 9.3% (cumulativ
 Expected score: 1-2
 Over 2.5: 44.2% | Under 2.5: 55.8% | BTTS yes: 45.3% | BTTS no: 54.7%
 Top scorers: Chris Wood 26.0%; Kosta Barbarouses 7.3%; Ben Waine 6.7%; Mohamed Salah 58.3%; Trézéguet 24.5%; Omar Marmoush 13.5%;
-Data as of 2026-06-26 | runs 50000 | seed 20260611
+Data as of 2026-06-27 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

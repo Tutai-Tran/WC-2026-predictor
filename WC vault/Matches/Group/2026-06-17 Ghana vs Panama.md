@@ -19,7 +19,7 @@ Top-5 scorelines: 1-1 13.7%, 0-1 12.6%, 0-0 10.8%, 0-2 8.9%, 1-0 8.9% (cumulativ
 Expected score: 1-1
 Over 2.5: 40.3% | Under 2.5: 59.7% | BTTS yes: 46.3% | BTTS no: 53.7%
 Top scorers: Jordan Ayew 32.7%; Thomas Partey 16.1%; Ernest Nuamah 6.1%; José Fajardo 16.3%; Ismael Díaz 15.6%; Cecilio Waterman 14.7%;
-Data as of 2026-06-26 | runs 50000 | seed 20260611
+Data as of 2026-06-27 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

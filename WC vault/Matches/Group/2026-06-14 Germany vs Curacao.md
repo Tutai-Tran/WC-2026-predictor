@@ -19,7 +19,7 @@ Top-5 scorelines: 2-0 15.2%, 3-0 12.5%, 1-0 12.0%, 2-1 8.1%, 4-0 7.6% (cumulativ
 Expected score: 2-1
 Over 2.5: 57.4% | Under 2.5: 42.6% | BTTS yes: 38.1% | BTTS no: 61.9%
 Top scorers: Kai Havertz 42.8%; Leroy Sané 29.3%; Leon Goretzka 27.8%; Leandro Bacuna 9.5%; Juninho Bacuna 8.4%; Gervane Kastaneer 6.1%;
-Data as of 2026-06-26 | runs 50000 | seed 20260611
+Data as of 2026-06-27 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

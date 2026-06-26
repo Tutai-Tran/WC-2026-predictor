@@ -19,7 +19,7 @@ Top-5 scorelines: 1-1 14.2%, 0-1 13.2%, 0-0 12.9%, 1-0 10.7%, 0-2 8.1% (cumulati
 Expected score: 1-1
 Over 2.5: 35.4% | Under 2.5: 64.6% | BTTS yes: 43.0% | BTTS no: 57.0%
 Top scorers: Mathew Leckie 14.9%; Jackson Irvine 14.1%; Awer Mabil 11.4%; Hakan Çalhanoğlu 20.4%; Kerem Aktürkoğlu 15.4%; Arda Güler 7.4%;
-Data as of 2026-06-26 | runs 50000 | seed 20260611
+Data as of 2026-06-27 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

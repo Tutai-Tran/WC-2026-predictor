@@ -19,7 +19,7 @@ Top-5 scorelines: 0-0 14.6%, 1-1 14.3%, 1-0 13.5%, 0-1 12.2%, 2-0 7.4% (cumulati
 Expected score: 1-1
 Over 2.5: 31.8% | Under 2.5: 68.2% | BTTS yes: 40.3% | BTTS no: 59.7%
 Top scorers: Memphis Depay 35.3%; Cody Gakpo 11.8%; Wout Weghorst 9.1%; Ayase Ueda 12.5%; Junya Itō 11.2%; Daichi Kamada 9.2%;
-Data as of 2026-06-26 | runs 50000 | seed 20260611
+Data as of 2026-06-27 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

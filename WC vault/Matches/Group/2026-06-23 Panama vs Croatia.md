@@ -19,7 +19,7 @@ Top-5 scorelines: 0-1 12.9%, 1-1 12.2%, 0-2 11.2%, 1-2 9.5%, 0-0 9.0% (cumulativ
 Expected score: 1-2
 Over 2.5: 45.4% | Under 2.5: 54.6% | BTTS yes: 46.8% | BTTS no: 53.2%
 Top scorers: José Fajardo 10.7%; Ismael Díaz 10.2%; Cecilio Waterman 9.6%; Ivan Perišić 31.9%; Luka Modrić 30.8%; Andrej Kramarić 30.6%;
-Data as of 2026-06-26 | runs 50000 | seed 20260611
+Data as of 2026-06-27 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

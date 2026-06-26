@@ -19,7 +19,7 @@ Top-5 scorelines: 1-1 14.1%, 0-1 13.0%, 0-0 12.4%, 1-0 10.4%, 0-2 8.2% (cumulati
 Expected score: 1-1
 Over 2.5: 36.6% | Under 2.5: 63.4% | BTTS yes: 43.9% | BTTS no: 56.1%
 Top scorers: Hakan Çalhanoğlu 17.3%; Kerem Aktürkoğlu 13.0%; Arda Güler 6.2%; Christian Pulisic 31.6%; Ricardo Pepi 11.5%; Weston McKennie 10.1%;
-Data as of 2026-06-26 | runs 50000 | seed 20260611
+Data as of 2026-06-27 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

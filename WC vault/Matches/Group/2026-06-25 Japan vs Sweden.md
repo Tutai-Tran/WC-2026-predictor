@@ -19,7 +19,7 @@ Top-5 scorelines: 1-0 13.5%, 1-1 12.4%, 2-0 11.3%, 0-0 9.5%, 2-1 9.3% (cumulativ
 Expected score: 2-1
 Over 2.5: 43.8% | Under 2.5: 56.2% | BTTS yes: 45.6% | BTTS no: 54.4%
 Top scorers: Ayase Ueda 20.3%; Junya Itō 18.3%; Daichi Kamada 15.1%; Alexander Isak 24.4%; Viktor Gyökeres 19.8%; Anthony Elanga 7.5%;
-Data as of 2026-06-26 | runs 50000 | seed 20260611
+Data as of 2026-06-27 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

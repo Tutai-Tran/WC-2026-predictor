@@ -19,7 +19,7 @@ Top-5 scorelines: 0-0 14.4%, 1-1 14.3%, 1-0 12.9%, 0-1 12.6%, 2-0 7.0% (cumulati
 Expected score: 1-1
 Over 2.5: 32.3% | Under 2.5: 67.7% | BTTS yes: 40.7% | BTTS no: 59.3%
 Top scorers: Romelu Lukaku 33.6%; Kevin De Bruyne 22.4%; Youri Tielemans 5.9%; Mehdi Taremi 36.6%; Alireza Jahanbakhsh 10.0%; Mohammad Mohebi 8.4%;
-Data as of 2026-06-26 | runs 50000 | seed 20260611
+Data as of 2026-06-27 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

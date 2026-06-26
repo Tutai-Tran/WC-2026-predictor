@@ -17,7 +17,7 @@ Most likely single score: 2-0 (12.6%) (one of many possible, not a prediction)
 Top-5 scorelines: 2-0 12.6%, 1-0 10.8%, 1-1 10.7%, 2-1 9.6%, 3-0 8.7% (cumulative 52.4%)
 Expected score: 2-1
 Over 2.5: 53.8% | Under 2.5: 46.2% | BTTS yes: 48.0% | BTTS no: 52.0%
-Data as of 2026-06-26 | runs 50000 | seed 20260611
+Data as of 2026-06-27 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

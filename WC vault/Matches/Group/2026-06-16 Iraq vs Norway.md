@@ -18,8 +18,8 @@ Most likely single score: 0-2 (15.4%) (one of many possible, not a prediction)
 Top-5 scorelines: 0-2 15.4%, 0-1 13.8%, 0-3 11.0%, 1-2 8.6%, 1-1 8.5% (cumulative 57.3%)
 Expected score: 1-2
 Over 2.5: 51.0% | Under 2.5: 49.0% | BTTS yes: 38.4% | BTTS no: 61.6%
-Top scorers: Aymen Hussein 16.7%; Mohanad Ali 14.0%; Ibrahim Bayesh 4.5%; Erling Haaland 62.4%; Alexander Sørloth 35.2%; Antonio Nusa 14.0%;
-Data as of 2026-06-26 | runs 50000 | seed 20260611
+Top scorers: Aymen Hussein 16.6%; Mohanad Ali 14.0%; Ibrahim Bayesh 4.5%; Erling Haaland 62.4%; Alexander Sørloth 35.2%; Antonio Nusa 14.1%;
+Data as of 2026-06-27 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

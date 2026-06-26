@@ -19,7 +19,7 @@ Top-5 scorelines: 1-0 12.9%, 1-1 12.6%, 2-0 10.8%, 2-1 9.4%, 0-0 9.3% (cumulativ
 Expected score: 2-1
 Over 2.5: 44.3% | Under 2.5: 55.7% | BTTS yes: 46.9% | BTTS no: 53.1%
 Top scorers: Edin Džeko 68.3%; Ermedin Demirović 7.7%; Haris Tabaković 7.7%; Almoez Ali 19.4%; Hassan Al-Haydos 15.0%; Akram Afif 14.4%;
-Data as of 2026-06-26 | runs 50000 | seed 20260611
+Data as of 2026-06-27 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

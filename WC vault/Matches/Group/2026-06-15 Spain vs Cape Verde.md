@@ -19,7 +19,7 @@ Top-5 scorelines: 2-0 15.9%, 3-0 13.5%, 1-0 12.0%, 4-0 8.7%, 2-1 7.4% (cumulativ
 Expected score: 3-0
 Over 2.5: 58.3% | Under 2.5: 41.7% | BTTS yes: 34.8% | BTTS no: 65.2%
 Top scorers: Mikel Oyarzabal 44.0%; Ferran Torres 37.5%; Dani Olmo 22.9%; Ryan Mendes 12.0%; Garry Rodrigues 5.1%; Dailon Livramento 4.6%;
-Data as of 2026-06-26 | runs 50000 | seed 20260611
+Data as of 2026-06-27 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

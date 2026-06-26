@@ -12,12 +12,12 @@ updated: 2026-06-26
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-06-08 · played 1-1
 
-Win Morocco: 33.9% | Draw: 33.0% | Win Norway: 33.1%
-Most likely single score: 1-0 (10.0%) (one of many possible, not a prediction)
-Top-5 scorelines: 1-1 15.3%, 0-0 12.6%, 1-0 10.0%, 0-1 9.7%, 2-1 7.6% (cumulative 55.2%)
+Win Morocco: 36.8% | Draw: 32.5% | Win Norway: 30.7%
+Most likely single score: 1-0 (10.4%) (one of many possible, not a prediction)
+Top-5 scorelines: 1-1 15.1%, 0-0 11.8%, 1-0 10.4%, 0-1 8.5%, 2-1 8.3% (cumulative 54.0%)
 Expected score: 1-1
-Over 2.5: 39.0% | Under 2.5: 61.0% | BTTS yes: 47.6% | BTTS no: 52.4%
-Data as of 2026-06-26 | runs 50000 | seed 20260611
+Over 2.5: 41.0% | Under 2.5: 59.0% | BTTS yes: 48.9% | BTTS no: 51.1%
+Data as of 2026-06-27 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

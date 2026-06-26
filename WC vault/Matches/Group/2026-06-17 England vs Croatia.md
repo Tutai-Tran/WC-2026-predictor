@@ -19,7 +19,7 @@ Top-5 scorelines: 1-0 12.9%, 1-1 12.4%, 2-0 11.0%, 2-1 9.4%, 0-0 9.1% (cumulativ
 Expected score: 2-1
 Over 2.5: 44.9% | Under 2.5: 55.1% | BTTS yes: 46.9% | BTTS no: 53.1%
 Top scorers: Harry Kane 58.3%; Marcus Rashford 17.6%; Bukayo Saka 14.3%; Luka Modrić 21.0%; Ivan Perišić 18.2%; Andrej Kramarić 17.4%;
-Data as of 2026-06-26 | runs 50000 | seed 20260611
+Data as of 2026-06-27 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

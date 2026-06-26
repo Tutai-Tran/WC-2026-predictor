@@ -19,7 +19,7 @@ Top-5 scorelines: 1-1 13.7%, 1-0 13.0%, 0-0 11.2%, 2-0 9.1%, 0-1 9.0% (cumulativ
 Expected score: 1-1
 Over 2.5: 39.5% | Under 2.5: 60.5% | BTTS yes: 45.5% | BTTS no: 54.5%
 Top scorers: Son Heung-min 43.6%; Hwang Hee-chan 13.8%; Lee Jae-sung 12.4%; Patrik Schick 26.7%; Tomáš Souček 13.6%; Vladimír Darida 7.0%;
-Data as of 2026-06-26 | runs 50000 | seed 20260611
+Data as of 2026-06-27 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

@@ -12,12 +12,12 @@ updated: 2026-06-26
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-06-08 · played 3-1
 
-Win France: 83.1% | Draw: 13.1% | Win Northern Ireland: 3.8%
-Most likely single score: 2-0 (14.6%) (one of many possible, not a prediction)
-Top-5 scorelines: 2-0 14.6%, 3-0 13.5%, 1-0 9.7%, 4-0 9.4%, 2-1 7.3% (cumulative 54.5%)
+Win France: 85.3% | Draw: 11.7% | Win Northern Ireland: 3.0%
+Most likely single score: 2-0 (14.7%) (one of many possible, not a prediction)
+Top-5 scorelines: 2-0 14.7%, 3-0 14.2%, 4-0 10.3%, 1-0 9.5%, 2-1 6.7% (cumulative 55.4%)
 Expected score: 3-0
-Over 2.5: 63.5% | Under 2.5: 36.5% | BTTS yes: 37.6% | BTTS no: 62.4%
-Data as of 2026-06-26 | runs 50000 | seed 20260611
+Over 2.5: 65.0% | Under 2.5: 35.0% | BTTS yes: 35.2% | BTTS no: 64.8%
+Data as of 2026-06-27 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

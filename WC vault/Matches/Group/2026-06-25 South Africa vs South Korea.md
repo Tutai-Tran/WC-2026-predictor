@@ -19,7 +19,7 @@ Top-5 scorelines: 0-1 15.0%, 1-1 12.5%, 0-2 11.8%, 0-0 11.1%, 1-2 8.9% (cumulati
 Expected score: 1-2
 Over 2.5: 39.5% | Under 2.5: 60.5% | BTTS yes: 42.0% | BTTS no: 58.0%
 Top scorers: Teboho Mokoena 16.6%; Themba Zwane 11.3%; Lyle Foster 10.4%; Son Heung-min 47.3%; Hwang Hee-chan 15.6%; Lee Jae-sung 14.0%;
-Data as of 2026-06-26 | runs 50000 | seed 20260611
+Data as of 2026-06-27 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

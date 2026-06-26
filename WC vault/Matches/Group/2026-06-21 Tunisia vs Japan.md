@@ -19,7 +19,7 @@ Top-5 scorelines: 0-2 14.3%, 0-1 13.2%, 0-3 9.9%, 1-1 9.3%, 1-2 9.1% (cumulative
 Expected score: 1-2
 Over 2.5: 51.0% | Under 2.5: 49.0% | BTTS yes: 41.7% | BTTS no: 58.3%
 Top scorers: Firas Chaouat 7.9%; Ali Abdi 7.4%; Elias Achouri 5.9%; Ayase Ueda 25.5%; Junya Itō 23.0%; Daichi Kamada 19.1%;
-Data as of 2026-06-26 | runs 50000 | seed 20260611
+Data as of 2026-06-27 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match
