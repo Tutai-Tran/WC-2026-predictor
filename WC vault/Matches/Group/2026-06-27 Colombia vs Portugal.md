@@ -13,7 +13,7 @@ updated: 2026-06-26
 <!-- WC26:AUTO:forecast START -->
 **Group K match** · 2026-06-27
 
-Win Colombia: 27.1% | Draw: 28.1% | Win Portugal: 44.8%
+Win Colombia: 27.3% | Draw: 28.1% | Win Portugal: 44.6%
 Most likely single score: 0-1 (10.7%) (one of many possible, not a prediction)
 Top-5 scorelines: 1-1 14.2%, 1-0 12.2%, 0-0 12.0%, 0-1 10.7%, 2-1 7.8% (cumulative 56.8%)
 Expected score: 1-1

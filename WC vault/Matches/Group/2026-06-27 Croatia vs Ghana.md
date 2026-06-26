@@ -13,7 +13,7 @@ updated: 2026-06-26
 <!-- WC26:AUTO:forecast START -->
 **Group L match** · 2026-06-27
 
-Win Croatia: 57.8% | Draw: 26.8% | Win Ghana: 15.4%
+Win Croatia: 58.0% | Draw: 26.7% | Win Ghana: 15.3%
 Most likely single score: 2-0 (12.8%) (one of many possible, not a prediction)
 Top-5 scorelines: 2-0 12.8%, 1-0 12.8%, 1-1 10.6%, 2-1 9.6%, 3-0 8.1% (cumulative 53.9%)
 Expected score: 2-1
