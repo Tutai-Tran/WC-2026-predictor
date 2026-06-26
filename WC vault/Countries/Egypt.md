@@ -13,7 +13,7 @@ updated: 2026-06-26
 
 # Egypt
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-26T09:16Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-26T13:17Z | source elo-goal-v1 -->
 Group G | FIFA rank 32 | Elo 1856
 Champion 0.2% | Final 0.8% | SF 2.9% | QF 13.8% | Advance 100.0%
 Availability concerns: Hamdy Fathy (doubtful), Hossam Abdelmaguid (out)
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-26T09:16Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-26T13:17Z | source elo-goal-v1 -->
 - 2026-06-26: champion 0.2% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
