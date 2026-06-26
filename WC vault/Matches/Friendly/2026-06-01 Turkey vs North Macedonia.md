@@ -12,11 +12,11 @@ updated: 2026-06-26
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-06-01 · played 4-0
 
-Win Turkey: 62.8% | Draw: 24.0% | Win North Macedonia: 13.2%
-Most likely single score: 2-0 (12.2%) (one of many possible, not a prediction)
-Top-5 scorelines: 2-0 12.2%, 1-1 11.3%, 1-0 10.9%, 2-1 9.7%, 3-0 8.0% (cumulative 52.1%)
+Win Turkey: 66.6% | Draw: 22.3% | Win North Macedonia: 11.2%
+Most likely single score: 2-0 (12.7%) (one of many possible, not a prediction)
+Top-5 scorelines: 2-0 12.7%, 1-0 10.8%, 1-1 10.5%, 2-1 9.6%, 3-0 8.9% (cumulative 52.5%)
 Expected score: 2-1
-Over 2.5: 52.3% | Under 2.5: 47.7% | BTTS yes: 48.8% | BTTS no: 51.2%
+Over 2.5: 54.2% | Under 2.5: 45.8% | BTTS yes: 47.7% | BTTS no: 52.3%
 Data as of 2026-06-26 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

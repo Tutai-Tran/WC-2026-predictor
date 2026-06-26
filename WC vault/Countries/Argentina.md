@@ -5,7 +5,7 @@ fifa_code: "ARG"
 group: "J"
 fifa_rank: 2
 elo: 2220
-champion_prob: 0.2526
+champion_prob: 0.2541
 status: active
 created: 2026-06-04
 updated: 2026-06-26
@@ -13,9 +13,9 @@ updated: 2026-06-26
 
 # Argentina
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-26T04:28Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-26T09:16Z | source elo-goal-v1 -->
 Group J | FIFA rank 2 | Elo 2220
-Champion 25.3% | Final 39.7% | SF 55.3% | QF 75.6% | Advance 100.0%
+Champion 25.4% | Final 39.8% | SF 55.2% | QF 75.4% | Advance 100.0%
 Availability concerns: Leonardo Balerdi (out), Gonzalo Montiel (doubtful), Leandro Paredes (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-26T04:28Z | source elo-goal-v1 -->
-- 2026-06-26: champion 25.3% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-26T09:16Z | source elo-goal-v1 -->
+- 2026-06-26: champion 25.4% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
