@@ -5,7 +5,7 @@ fifa_code: "GER"
 group: "E"
 fifa_rank: 9
 elo: 2009
-champion_prob: 0.0217
+champion_prob: 0.0225
 status: active
 created: 2026-06-04
 updated: 2026-06-26
@@ -13,9 +13,9 @@ updated: 2026-06-26
 
 # Germany
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-26T01:24Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-26T04:28Z | source elo-goal-v1 -->
 Group E | FIFA rank 9 | Elo 2009
-Champion 2.2% | Final 6.0% | SF 14.8% | QF 27.9% | Advance 100.0%
+Champion 2.3% | Final 6.1% | SF 15.4% | QF 28.8% | Advance 100.0%
 Availability concerns: Lennart Karl (out), Nico Schlotterbeck (out)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-26T01:24Z | source elo-goal-v1 -->
-- 2026-06-26: champion 2.2% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-26T04:28Z | source elo-goal-v1 -->
+- 2026-06-26: champion 2.3% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
