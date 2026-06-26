@@ -8,7 +8,7 @@ updated: 2026-06-04
 
 # Group I
 
-<!-- WC26:AUTO:standings START | generated 2026-06-26T17:32Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:standings START | generated 2026-06-26T17:45Z | source elo-goal-v1 -->
 | Team | Win group | Top 2 | Advance |
 | --- | --- | --- | --- |
 | [[Countries/France\|France]] | 77.8% | 100.0% | 100.0% |

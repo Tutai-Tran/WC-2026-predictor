@@ -13,7 +13,7 @@ updated: 2026-06-26
 <!-- WC26:AUTO:forecast START -->
 **Group L match** · 2026-06-27
 
-Win Panama: 6.2% | Draw: 13.4% | Win England: 80.4%
+Win Panama: 6.2% | Draw: 13.3% | Win England: 80.5%
 Most likely single score: 0-2 (14.2%) (one of many possible, not a prediction)
 Top-5 scorelines: 0-2 14.1%, 0-1 12.3%, 0-3 10.4%, 1-2 9.0%, 1-1 8.7% (cumulative 54.6%)
 Expected score: 1-2
