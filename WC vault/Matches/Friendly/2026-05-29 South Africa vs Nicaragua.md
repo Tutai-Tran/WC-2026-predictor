@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-05-29
 home: "South Africa"
 away: "Nicaragua"
-updated: 2026-06-25
+updated: 2026-06-26
 ---
 
 # South Africa vs Nicaragua (friendly)
@@ -17,7 +17,7 @@ Most likely single score: 2-0 (11.2%) (one of many possible, not a prediction)
 Top-5 scorelines: 1-1 12.6%, 2-0 11.2%, 1-0 10.9%, 2-1 9.7%, 0-0 8.7% (cumulative 53.2%)
 Expected score: 2-1
 Over 2.5: 49.4% | Under 2.5: 50.6% | BTTS yes: 49.9% | BTTS no: 50.1%
-Data as of 2026-06-25 | runs 50000 | seed 20260611
+Data as of 2026-06-26 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

@@ -5,7 +5,7 @@ group: J
 date: 2026-06-28
 home: "Jordan"
 away: "Argentina"
-updated: 2026-06-25
+updated: 2026-06-26
 ---
 
 # Jordan vs Argentina
@@ -13,13 +13,13 @@ updated: 2026-06-25
 <!-- WC26:AUTO:forecast START -->
 **Group J match** · 2026-06-28
 
-Win Jordan: 3.9% | Draw: 12.3% | Win Argentina: 83.8%
-Most likely single score: 0-2 (15.8%) (one of many possible, not a prediction)
-Top-5 scorelines: 0-2 15.8%, 0-3 14.2%, 0-1 11.4%, 0-4 9.6%, 1-2 7.0% (cumulative 57.9%)
+Win Jordan: 4.1% | Draw: 12.4% | Win Argentina: 83.5%
+Most likely single score: 0-2 (15.6%) (one of many possible, not a prediction)
+Top-5 scorelines: 0-2 15.6%, 0-3 14.0%, 0-1 11.2%, 0-4 9.4%, 1-2 7.1% (cumulative 57.3%)
 Expected score: 0-3
-Over 2.5: 60.6% | Under 2.5: 39.4% | BTTS yes: 33.5% | BTTS no: 66.5%
-Top scorers: Ali Olwan 11.4%; Musa Al-Taamari 9.6%; Mahmoud Al-Mardi 4.1%; Lionel Messi 76.0%; Lautaro Martínez 34.8%; Julián Alvarez 16.3%;
-Data as of 2026-06-25 | runs 50000 | seed 20260611
+Over 2.5: 61.0% | Under 2.5: 39.0% | BTTS yes: 34.4% | BTTS no: 65.6%
+Top scorers: Ali Olwan 11.7%; Musa Al-Taamari 9.9%; Mahmoud Al-Mardi 4.3%; Lionel Messi 76.0%; Lautaro Martínez 34.8%; Julián Alvarez 16.3%;
+Data as of 2026-06-26 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

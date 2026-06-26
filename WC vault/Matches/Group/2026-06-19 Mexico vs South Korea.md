@@ -5,7 +5,7 @@ group: A
 date: 2026-06-19
 home: "Mexico"
 away: "South Korea"
-updated: 2026-06-25
+updated: 2026-06-26
 ---
 
 # Mexico vs South Korea
@@ -19,7 +19,7 @@ Top-5 scorelines: 2-0 14.2%, 1-0 12.6%, 3-0 10.3%, 2-1 9.1%, 1-1 8.9% (cumulativ
 Expected score: 2-1
 Over 2.5: 53.1% | Under 2.5: 46.9% | BTTS yes: 42.2% | BTTS no: 57.8%
 Top scorers: Raúl Jiménez 56.1%; Orbelín Pineda 18.5%; Alexis Vega 13.0%; Son Heung-min 27.5%; Hwang Hee-chan 6.9%; Lee Jae-sung 6.1%;
-Data as of 2026-06-25 | runs 50000 | seed 20260611
+Data as of 2026-06-26 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

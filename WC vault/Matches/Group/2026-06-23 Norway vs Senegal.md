@@ -5,7 +5,7 @@ group: I
 date: 2026-06-23
 home: "Norway"
 away: "Senegal"
-updated: 2026-06-25
+updated: 2026-06-26
 ---
 
 # Norway vs Senegal
@@ -19,7 +19,7 @@ Top-5 scorelines: 1-0 13.0%, 1-1 12.2%, 2-0 11.3%, 2-1 9.5%, 0-0 9.0% (cumulativ
 Expected score: 2-1
 Over 2.5: 45.4% | Under 2.5: 54.6% | BTTS yes: 46.6% | BTTS no: 53.4%
 Top scorers: Erling Haaland 53.7%; Alexander Sørloth 28.2%; Antonio Nusa 10.9%; Sadio Mané 33.3%; Ismaïla Sarr 10.9%; Nicolas Jackson 5.2%;
-Data as of 2026-06-25 | runs 50000 | seed 20260611
+Data as of 2026-06-26 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match
