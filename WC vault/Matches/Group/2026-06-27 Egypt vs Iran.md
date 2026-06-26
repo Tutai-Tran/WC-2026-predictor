@@ -13,7 +13,7 @@ updated: 2026-06-26
 <!-- WC26:AUTO:forecast START -->
 **Group G match** · 2026-06-27
 
-Win Egypt: 36.2% | Draw: 34.7% | Win Iran: 29.1%
+Win Egypt: 36.2% | Draw: 34.6% | Win Iran: 29.2%
 Most likely single score: 1-0 (10.6%) (one of many possible, not a prediction)
 Top-5 scorelines: 1-1 14.2%, 0-1 12.4%, 0-0 12.1%, 1-0 10.6%, 1-2 7.8% (cumulative 57.1%)
 Expected score: 1-1

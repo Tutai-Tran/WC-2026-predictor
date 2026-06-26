@@ -13,12 +13,12 @@ updated: 2026-06-26
 <!-- WC26:AUTO:forecast START -->
 **Group G match** · 2026-06-15
 
-Win Belgium: 45.2% | Draw: 29.3% | Win Egypt: 25.5%
-Most likely single score: 1-0 (12.8%) (one of many possible, not a prediction)
-Top-5 scorelines: 1-1 13.6%, 1-0 12.8%, 0-0 10.8%, 2-0 9.3%, 2-1 8.7% (cumulative 55.2%)
+Win Belgium: 38.0% | Draw: 32.0% | Win Egypt: 30.0%
+Most likely single score: 1-0 (13.5%) (one of many possible, not a prediction)
+Top-5 scorelines: 1-1 14.2%, 0-0 13.8%, 1-0 13.5%, 0-1 11.4%, 2-0 7.9% (cumulative 60.7%)
 Expected score: 1-1
-Over 2.5: 40.5% | Under 2.5: 59.5% | BTTS yes: 46.1% | BTTS no: 53.9%
-Top scorers: Romelu Lukaku 42.3%; Kevin De Bruyne 26.7%; Youri Tielemans 7.9%; Mohamed Salah 41.7%; Trézéguet 14.9%; Omar Marmoush 8.0%;
+Over 2.5: 33.5% | Under 2.5: 66.5% | BTTS yes: 41.5% | BTTS no: 58.5%
+Top scorers: Romelu Lukaku 35.9%; Kevin De Bruyne 23.5%; Youri Tielemans 6.5%; Mohamed Salah 41.7%; Trézéguet 14.9%; Omar Marmoush 8.0%;
 Data as of 2026-06-26 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
