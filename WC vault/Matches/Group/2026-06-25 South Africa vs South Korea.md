@@ -13,12 +13,12 @@ updated: 2026-06-27
 <!-- WC26:AUTO:forecast START -->
 **Group A match** · 2026-06-25
 
-Win South Africa: 18.2% | Draw: 27.6% | Win South Korea: 54.1%
-Most likely single score: 0-1 (15.0%) (one of many possible, not a prediction)
-Top-5 scorelines: 0-1 15.0%, 1-1 12.5%, 0-2 11.8%, 0-0 11.1%, 1-2 8.9% (cumulative 59.4%)
+Win South Africa: 21.9% | Draw: 27.6% | Win South Korea: 50.5%
+Most likely single score: 0-1 (12.9%) (one of many possible, not a prediction)
+Top-5 scorelines: 1-1 12.9%, 0-1 12.9%, 0-2 10.3%, 0-0 9.7%, 1-2 9.2% (cumulative 55.0%)
 Expected score: 1-2
-Over 2.5: 39.5% | Under 2.5: 60.5% | BTTS yes: 42.0% | BTTS no: 58.0%
-Top scorers: Teboho Mokoena 16.6%; Themba Zwane 11.3%; Lyle Foster 10.4%; Son Heung-min 47.3%; Hwang Hee-chan 15.6%; Lee Jae-sung 14.0%;
+Over 2.5: 43.3% | Under 2.5: 56.7% | BTTS yes: 46.9% | BTTS no: 53.1%
+Top scorers: Teboho Mokoena 18.1%; Themba Zwane 13.3%; Lyle Foster 12.2%; Son Heung-min 47.3%; Hwang Hee-chan 15.6%; Lee Jae-sung 14.0%;
 Data as of 2026-06-27 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

@@ -13,12 +13,12 @@ updated: 2026-06-27
 <!-- WC26:AUTO:forecast START -->
 **Group D match** · 2026-06-13
 
-Win United States: 48.8% | Draw: 30.2% | Win Paraguay: 21.1%
-Most likely single score: 1-0 (15.8%) (one of many possible, not a prediction)
-Top-5 scorelines: 1-0 15.8%, 1-1 13.2%, 0-0 13.1%, 2-0 11.0%, 0-1 8.6% (cumulative 61.7%)
+Win United States: 52.7% | Draw: 28.2% | Win Paraguay: 19.0%
+Most likely single score: 1-0 (15.1%) (one of many possible, not a prediction)
+Top-5 scorelines: 1-0 15.1%, 1-1 12.6%, 2-0 11.8%, 0-0 11.3%, 2-1 8.9% (cumulative 59.7%)
 Expected score: 1-1
-Over 2.5: 34.8% | Under 2.5: 65.2% | BTTS yes: 39.8% | BTTS no: 60.2%
-Top scorers: Christian Pulisic 34.0%; Ricardo Pepi 12.9%; Weston McKennie 11.3%; Miguel Almirón 10.3%; Antonio Sanabria 9.2%; Kaku 7.2%;
+Over 2.5: 38.9% | Under 2.5: 61.1% | BTTS yes: 41.8% | BTTS no: 58.2%
+Top scorers: Christian Pulisic 36.4%; Ricardo Pepi 14.2%; Weston McKennie 12.5%; Miguel Almirón 10.3%; Antonio Sanabria 9.2%; Kaku 7.2%;
 Data as of 2026-06-27 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

@@ -5,7 +5,7 @@ fifa_code: "BEL"
 group: "G"
 fifa_rank: 8
 elo: 1968
-champion_prob: 0.0054
+champion_prob: 0.0053
 status: active
 created: 2026-06-04
 updated: 2026-06-27
@@ -13,9 +13,9 @@ updated: 2026-06-27
 
 # Belgium
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-27T13:49Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-27T18:21Z | source elo-goal-v1 -->
 Group G | FIFA rank 8 | Elo 1968
-Champion 0.5% | Final 2.0% | SF 7.0% | QF 30.1% | Advance 100.0%
+Champion 0.5% | Final 1.9% | SF 6.6% | QF 27.8% | Advance 100.0%
 Availability concerns: Jérémy Doku (doubtful), Romelu Lukaku (doubtful), Zeno Debast (doubtful), Nathan Ngoy (suspended)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-27T13:49Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-27T18:21Z | source elo-goal-v1 -->
 - 2026-06-27: champion 0.5% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
