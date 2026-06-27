@@ -5,7 +5,7 @@ fifa_code: "MEX"
 group: "A"
 fifa_rank: 14
 elo: 2055
-champion_prob: 0.0324
+champion_prob: 0.0311
 status: active
 created: 2026-06-04
 updated: 2026-06-27
@@ -13,9 +13,9 @@ updated: 2026-06-27
 
 # Mexico
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-27T01:51Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-27T04:50Z | source elo-goal-v1 -->
 Group A | FIFA rank 14 | Elo 2055
-Champion 3.2% | Final 8.3% | SF 22.2% | QF 37.4% | Advance 100.0%
+Champion 3.1% | Final 8.0% | SF 22.3% | QF 37.4% | Advance 100.0%
 Availability concerns: Julián Quiñones (doubtful), Brian Gutiérrez (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-27T01:51Z | source elo-goal-v1 -->
-- 2026-06-27: champion 3.2% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-27T04:50Z | source elo-goal-v1 -->
+- 2026-06-27: champion 3.1% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
