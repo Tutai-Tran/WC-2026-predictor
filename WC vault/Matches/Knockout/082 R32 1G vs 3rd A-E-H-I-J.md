@@ -12,7 +12,7 @@ updated: 2026-06-27
 **R32 (match #82)** · 2026-07-01
 
 Slots: 1G vs 3rd A/E/H/I/J
-Projected: Egypt vs 3rd A/E/H/I/J
+Projected: Belgium vs 3rd A/E/H/I/J
 Result: TBD
 Data as of 2026-06-27 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->

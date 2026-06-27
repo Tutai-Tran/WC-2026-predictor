@@ -13,12 +13,12 @@ updated: 2026-06-27
 <!-- WC26:AUTO:forecast START -->
 **Group C match** · 2026-06-24
 
-Win Scotland: 24.1% | Draw: 33.8% | Win Brazil: 42.1%
-Most likely single score: 0-1 (17.0%) (one of many possible, not a prediction)
-Top-5 scorelines: 0-0 17.4%, 0-1 17.0%, 1-1 13.7%, 1-0 11.3%, 0-2 9.4% (cumulative 68.8%)
-Expected score: 1-1
-Over 2.5: 26.8% | Under 2.5: 73.2% | BTTS yes: 34.7% | BTTS no: 65.3%
-Top scorers: John McGinn 20.1%; Scott McTominay 9.1%; Ché Adams 7.9%; Neymar 39.6%; Raphinha 15.6%; Lucas Paquetá 8.2%;
+Win Scotland: 12.7% | Draw: 22.0% | Win Brazil: 65.3%
+Most likely single score: 0-2 (13.1%) (one of many possible, not a prediction)
+Top-5 scorelines: 0-2 13.1%, 0-1 12.7%, 1-1 10.2%, 1-2 9.5%, 0-3 8.6% (cumulative 54.1%)
+Expected score: 1-2
+Over 2.5: 50.5% | Under 2.5: 49.5% | BTTS yes: 45.0% | BTTS no: 55.0%
+Top scorers: John McGinn 20.1%; Scott McTominay 9.1%; Ché Adams 7.9%; Neymar 60.5%; Raphinha 21.0%; Lucas Paquetá 14.7%;
 Data as of 2026-06-27 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

@@ -13,12 +13,12 @@ updated: 2026-06-27
 <!-- WC26:AUTO:forecast START -->
 **Group G match** · 2026-06-22
 
-Win New Zealand: 17.9% | Draw: 26.1% | Win Egypt: 56.0%
+Win New Zealand: 16.3% | Draw: 25.1% | Win Egypt: 58.6%
 Most likely single score: 0-1 (13.5%) (one of many possible, not a prediction)
-Top-5 scorelines: 0-1 13.5%, 1-1 12.1%, 0-2 11.6%, 1-2 9.4%, 0-0 9.3% (cumulative 56.0%)
+Top-5 scorelines: 0-1 13.5%, 0-2 12.2%, 1-1 11.7%, 1-2 9.5%, 0-0 8.9% (cumulative 55.7%)
 Expected score: 1-2
-Over 2.5: 44.2% | Under 2.5: 55.8% | BTTS yes: 45.3% | BTTS no: 54.7%
-Top scorers: Chris Wood 26.0%; Kosta Barbarouses 7.3%; Ben Waine 6.7%; Mohamed Salah 58.3%; Trézéguet 24.5%; Omar Marmoush 13.5%;
+Over 2.5: 45.5% | Under 2.5: 54.5% | BTTS yes: 45.1% | BTTS no: 54.9%
+Top scorers: Chris Wood 25.2%; Kosta Barbarouses 7.0%; Ben Waine 6.4%; Mohamed Salah 59.8%; Trézéguet 25.5%; Omar Marmoush 14.1%;
 Data as of 2026-06-27 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
