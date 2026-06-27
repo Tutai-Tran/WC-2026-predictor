@@ -8,7 +8,7 @@ updated: 2026-06-04
 
 # Group F
 
-<!-- WC26:AUTO:standings START | generated 2026-06-27T22:15Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:standings START | generated 2026-06-27T22:50Z | source elo-goal-v1 -->
 | Team | Win group | Top 2 | Advance |
 | --- | --- | --- | --- |
 | [[Countries/Japan\|Japan]] | 0.0% | 100.0% | 100.0% |

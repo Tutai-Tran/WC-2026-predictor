@@ -8,7 +8,7 @@ updated: 2026-06-04
 
 # Group L
 
-<!-- WC26:AUTO:standings START | generated 2026-06-27T22:15Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:standings START | generated 2026-06-27T22:50Z | source elo-goal-v1 -->
 | Team | Win group | Top 2 | Advance |
 | --- | --- | --- | --- |
 | [[Countries/England\|England]] | 77.2% | 99.9% | 100.0% |

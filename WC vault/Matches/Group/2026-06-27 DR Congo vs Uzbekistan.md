@@ -13,7 +13,7 @@ updated: 2026-06-27
 <!-- WC26:AUTO:forecast START -->
 **Group K match** · 2026-06-27
 
-Win DR Congo: 49.6% | Draw: 27.6% | Win Uzbekistan: 22.9%
+Win DR Congo: 49.5% | Draw: 27.5% | Win Uzbekistan: 23.0%
 Most likely single score: 1-0 (11.6%) (one of many possible, not a prediction)
 Top-5 scorelines: 1-1 14.3%, 0-0 12.6%, 0-1 11.9%, 1-0 11.6%, 1-2 7.3% (cumulative 57.7%)
 Expected score: 1-1
