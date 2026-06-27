@@ -5,7 +5,7 @@ fifa_code: "ECU"
 group: "E"
 fifa_rank: 24
 elo: 1995
-champion_prob: 0.0065
+champion_prob: 0.0058
 status: active
 created: 2026-06-04
 updated: 2026-06-27
@@ -13,9 +13,9 @@ updated: 2026-06-27
 
 # Ecuador
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-27T09:16Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-27T13:49Z | source elo-goal-v1 -->
 Group E | FIFA rank 24 | Elo 1995
-Champion 0.6% | Final 1.9% | SF 6.0% | QF 13.7% | Advance 100.0%
+Champion 0.6% | Final 1.8% | SF 5.8% | QF 13.7% | Advance 100.0%
 Availability: no concerns recorded
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-27T09:16Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-27T13:49Z | source elo-goal-v1 -->
 - 2026-06-27: champion 0.6% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
