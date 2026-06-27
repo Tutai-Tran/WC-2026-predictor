@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-06
 home: "United States"
 away: "Germany"
-updated: 2026-06-26
+updated: 2026-06-27
 ---
 
 # United States vs Germany (friendly)

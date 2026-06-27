@@ -5,7 +5,7 @@ group: I
 date: 2026-06-16
 home: "Iraq"
 away: "Norway"
-updated: 2026-06-26
+updated: 2026-06-27
 ---
 
 # Iraq vs Norway

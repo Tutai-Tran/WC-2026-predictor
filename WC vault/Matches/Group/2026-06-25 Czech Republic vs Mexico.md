@@ -5,7 +5,7 @@ group: A
 date: 2026-06-25
 home: "Czech Republic"
 away: "Mexico"
-updated: 2026-06-26
+updated: 2026-06-27
 ---
 
 # Czech Republic vs Mexico

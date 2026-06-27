@@ -5,7 +5,7 @@ group: A
 date: 2026-06-25
 home: "South Africa"
 away: "South Korea"
-updated: 2026-06-26
+updated: 2026-06-27
 ---
 
 # South Africa vs South Korea

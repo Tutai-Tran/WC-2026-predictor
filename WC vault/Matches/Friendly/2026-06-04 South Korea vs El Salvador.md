@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-04
 home: "South Korea"
 away: "El Salvador"
-updated: 2026-06-26
+updated: 2026-06-27
 ---
 
 # South Korea vs El Salvador (friendly)

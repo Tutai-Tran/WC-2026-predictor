@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-05-28
 home: "Egypt"
 away: "Russia"
-updated: 2026-06-26
+updated: 2026-06-27
 ---
 
 # Egypt vs Russia (friendly)

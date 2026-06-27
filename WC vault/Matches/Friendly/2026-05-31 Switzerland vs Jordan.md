@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-05-31
 home: "Switzerland"
 away: "Jordan"
-updated: 2026-06-26
+updated: 2026-06-27
 ---
 
 # Switzerland vs Jordan (friendly)

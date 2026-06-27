@@ -5,7 +5,7 @@ group: J
 date: 2026-06-22
 home: "Argentina"
 away: "Austria"
-updated: 2026-06-26
+updated: 2026-06-27
 ---
 
 # Argentina vs Austria

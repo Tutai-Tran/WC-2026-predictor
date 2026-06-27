@@ -5,7 +5,7 @@ group: L
 date: 2026-06-27
 home: "Panama"
 away: "England"
-updated: 2026-06-26
+updated: 2026-06-27
 ---
 
 # Panama vs England
@@ -13,7 +13,7 @@ updated: 2026-06-26
 <!-- WC26:AUTO:forecast START -->
 **Group L match** · 2026-06-27
 
-Win Panama: 6.6% | Draw: 13.9% | Win England: 79.5%
+Win Panama: 6.7% | Draw: 13.9% | Win England: 79.4%
 Most likely single score: 0-2 (14.2%) (one of many possible, not a prediction)
 Top-5 scorelines: 0-2 14.1%, 0-1 12.3%, 0-3 10.4%, 1-2 9.0%, 1-1 8.7% (cumulative 54.6%)
 Expected score: 1-2

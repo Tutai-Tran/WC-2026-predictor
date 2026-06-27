@@ -5,7 +5,7 @@ group: D
 date: 2026-06-13
 home: "United States"
 away: "Paraguay"
-updated: 2026-06-26
+updated: 2026-06-27
 ---
 
 # United States vs Paraguay

@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-09
 home: "Peru"
 away: "Spain"
-updated: 2026-06-26
+updated: 2026-06-27
 ---
 
 # Peru vs Spain (friendly)

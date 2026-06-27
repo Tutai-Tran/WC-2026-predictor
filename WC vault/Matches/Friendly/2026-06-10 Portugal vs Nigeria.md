@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-10
 home: "Portugal"
 away: "Nigeria"
-updated: 2026-06-26
+updated: 2026-06-27
 ---
 
 # Portugal vs Nigeria (friendly)

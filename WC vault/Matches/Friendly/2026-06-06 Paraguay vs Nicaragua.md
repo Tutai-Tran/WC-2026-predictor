@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-06
 home: "Paraguay"
 away: "Nicaragua"
-updated: 2026-06-26
+updated: 2026-06-27
 ---
 
 # Paraguay vs Nicaragua (friendly)

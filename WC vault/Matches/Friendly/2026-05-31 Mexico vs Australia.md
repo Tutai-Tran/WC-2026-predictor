@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-05-31
 home: "Mexico"
 away: "Australia"
-updated: 2026-06-26
+updated: 2026-06-27
 ---
 
 # Mexico vs Australia (friendly)

@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-09
 home: "DR Congo"
 away: "Chile"
-updated: 2026-06-26
+updated: 2026-06-27
 ---
 
 # DR Congo vs Chile (friendly)
