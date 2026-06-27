@@ -19,7 +19,7 @@ Top-5 scorelines: 1-0 13.8%, 1-1 13.1%, 0-0 10.7%, 2-0 10.5%, 2-1 9.0% (cumulati
 Expected score: 1-1
 Over 2.5: 40.5% | Under 2.5: 59.5% | BTTS yes: 44.6% | BTTS no: 55.4%
 Top scorers: Christian Pulisic 35.9%; Ricardo Pepi 13.9%; Weston McKennie 12.2%; Mathew Leckie 13.5%; Jackson Irvine 12.7%; Awer Mabil 10.2%;
-Data as of 2026-06-27 | runs 50000 | seed 20260611
+Data as of 2026-06-28 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

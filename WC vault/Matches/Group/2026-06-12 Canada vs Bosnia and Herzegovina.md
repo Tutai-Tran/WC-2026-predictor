@@ -19,7 +19,7 @@ Top-5 scorelines: 2-0 13.4%, 1-0 12.6%, 1-1 9.8%, 2-1 9.4%, 3-0 9.1% (cumulative
 Expected score: 2-1
 Over 2.5: 51.5% | Under 2.5: 48.5% | BTTS yes: 44.4% | BTTS no: 55.6%
 Top scorers: Jonathan David 47.9%; Cyle Larin 35.4%; Alphonso Davies 18.9%; Edin Džeko 43.0%; Ermedin Demirović 3.5%; Haris Tabaković 3.5%;
-Data as of 2026-06-27 | runs 50000 | seed 20260611
+Data as of 2026-06-28 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

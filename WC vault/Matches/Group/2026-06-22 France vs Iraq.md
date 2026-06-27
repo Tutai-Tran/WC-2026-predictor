@@ -19,7 +19,7 @@ Top-5 scorelines: 2-0 16.7%, 3-0 15.6%, 1-0 11.6%, 4-0 11.0%, 5-0 6.2% (cumulati
 Expected score: 3-0
 Over 2.5: 61.3% | Under 2.5: 38.7% | BTTS yes: 28.4% | BTTS no: 71.6%
 Top scorers: Kylian Mbappé 77.7%; Ousmane Dembélé 19.1%; Adrien Rabiot 17.3%; Aymen Hussein 10.9%; Mohanad Ali 9.1%; Ibrahim Bayesh 2.9%;
-Data as of 2026-06-27 | runs 50000 | seed 20260611
+Data as of 2026-06-28 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

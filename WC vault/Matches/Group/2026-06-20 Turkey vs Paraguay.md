@@ -19,7 +19,7 @@ Top-5 scorelines: 1-0 14.7%, 1-1 14.0%, 0-0 13.9%, 0-1 10.3%, 2-0 9.2% (cumulati
 Expected score: 1-1
 Over 2.5: 33.3% | Under 2.5: 66.7% | BTTS yes: 40.5% | BTTS no: 59.5%
 Top scorers: Hakan Çalhanoğlu 20.8%; Kerem Aktürkoğlu 15.7%; Arda Güler 7.6%; Miguel Almirón 11.6%; Antonio Sanabria 10.3%; Kaku 8.1%;
-Data as of 2026-06-27 | runs 50000 | seed 20260611
+Data as of 2026-06-28 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

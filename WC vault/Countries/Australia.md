@@ -13,9 +13,9 @@ updated: 2026-06-27
 
 # Australia
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-27T19:45Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-27T22:15Z | source elo-goal-v1 -->
 Group D | FIFA rank 25 | Elo 1913
-Champion 0.2% | Final 1.0% | SF 3.4% | QF 9.8% | Advance 100.0%
+Champion 0.2% | Final 1.0% | SF 3.2% | QF 9.5% | Advance 100.0%
 Availability concerns: Jacob Italiano (out), Mathew Leckie (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-27T19:45Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-27T22:15Z | source elo-goal-v1 -->
 - 2026-06-27: champion 0.2% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

@@ -19,7 +19,7 @@ Top-5 scorelines: 0-1 13.0%, 0-2 11.9%, 1-1 11.6%, 1-2 9.6%, 0-0 8.5% (cumulativ
 Expected score: 1-2
 Over 2.5: 46.9% | Under 2.5: 53.1% | BTTS yes: 46.2% | BTTS no: 53.8%
 Top scorers: Erling Haaland 34.3%; Alexander Sørloth 14.9%; Antonio Nusa 5.5%; Kylian Mbappé 62.0%; Ousmane Dembélé 12.4%; Adrien Rabiot 11.1%;
-Data as of 2026-06-27 | runs 50000 | seed 20260611
+Data as of 2026-06-28 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

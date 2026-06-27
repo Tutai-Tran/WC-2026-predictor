@@ -19,7 +19,7 @@ Top-5 scorelines: 0-1 14.2%, 1-1 13.2%, 0-0 11.4%, 0-2 10.5%, 1-2 8.8% (cumulati
 Expected score: 1-1
 Over 2.5: 38.9% | Under 2.5: 61.1% | BTTS yes: 43.5% | BTTS no: 56.5%
 Top scorers: Ali Olwan 20.4%; Musa Al-Taamari 17.4%; Mahmoud Al-Mardi 7.6%; Riyad Mahrez 33.9%; Mohamed Amoura 19.4%; Amine Gouiri 9.6%;
-Data as of 2026-06-27 | runs 50000 | seed 20260611
+Data as of 2026-06-28 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

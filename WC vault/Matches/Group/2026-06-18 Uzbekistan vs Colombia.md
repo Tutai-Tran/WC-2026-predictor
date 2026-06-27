@@ -19,7 +19,7 @@ Top-5 scorelines: 0-2 13.8%, 0-1 12.8%, 1-1 9.5%, 0-3 9.5%, 1-2 9.3% (cumulative
 Expected score: 1-2
 Over 2.5: 51.6% | Under 2.5: 48.4% | BTTS yes: 43.3% | BTTS no: 56.7%
 Top scorers: Eldor Shomurodov 19.6%; Igor Sergeev 11.5%; Jaloliddin Masharipov 5.9%; James Rodríguez 46.2%; Luis Díaz 32.6%; Yerry Mina 12.8%;
-Data as of 2026-06-27 | runs 50000 | seed 20260611
+Data as of 2026-06-28 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

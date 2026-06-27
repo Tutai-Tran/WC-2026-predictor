@@ -19,7 +19,7 @@ Top-5 scorelines: 1-1 14.0%, 1-0 12.4%, 0-0 11.4%, 0-1 9.8%, 2-0 8.2% (cumulativ
 Expected score: 1-1
 Over 2.5: 38.9% | Under 2.5: 61.1% | BTTS yes: 45.7% | BTTS no: 54.3%
 Top scorers: Patrik Schick 31.7%; Tomáš Souček 17.6%; Vladimír Darida 9.1%; Teboho Mokoena 19.0%; Themba Zwane 14.7%; Lyle Foster 13.5%;
-Data as of 2026-06-27 | runs 50000 | seed 20260611
+Data as of 2026-06-28 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

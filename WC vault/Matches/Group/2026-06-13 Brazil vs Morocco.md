@@ -19,7 +19,7 @@ Top-5 scorelines: 1-1 14.0%, 1-0 12.4%, 0-0 11.4%, 0-1 9.7%, 2-0 8.3% (cumulativ
 Expected score: 1-1
 Over 2.5: 39.0% | Under 2.5: 61.0% | BTTS yes: 45.8% | BTTS no: 54.2%
 Top scorers: Neymar 44.7%; Raphinha 16.7%; Lucas Paquetá 9.6%; Ayoub El Kaabi 27.4%; Achraf Hakimi 16.7%; Brahim Díaz 11.4%;
-Data as of 2026-06-27 | runs 50000 | seed 20260611
+Data as of 2026-06-28 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match
