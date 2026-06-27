@@ -8,7 +8,7 @@ updated: 2026-06-04
 
 # Group H
 
-<!-- WC26:AUTO:standings START | generated 2026-06-27T18:21Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:standings START | generated 2026-06-27T19:45Z | source elo-goal-v1 -->
 | Team | Win group | Top 2 | Advance |
 | --- | --- | --- | --- |
 | [[Countries/Cape Verde\|Cape Verde]] | 0.0% | 100.0% | 100.0% |
