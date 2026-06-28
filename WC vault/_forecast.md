@@ -14,30 +14,30 @@ These are probabilities, not certainties.
 
 | Team | Win | Final | SF | QF | R16 |
 | --- | --- | --- | --- | --- | --- |
-| [[Countries/Argentina\|Argentina]] | 24.4% | 40.5% | 58.5% | 80.0% | 92.3% |
-| [[Countries/Spain\|Spain]] | 19.4% | 31.7% | 49.0% | 61.3% | 85.0% |
-| [[Countries/France\|France]] | 18.1% | 31.0% | 52.0% | 68.5% | 88.1% |
-| [[Countries/England\|England]] | 6.8% | 14.1% | 29.5% | 49.5% | 80.5% |
-| [[Countries/Brazil\|Brazil]] | 5.6% | 11.9% | 25.5% | 45.8% | 67.4% |
-| [[Countries/Colombia\|Colombia]] | 5.4% | 12.1% | 22.7% | 49.0% | 80.9% |
-| [[Countries/Portugal\|Portugal]] | 3.6% | 8.8% | 18.7% | 36.0% | 72.8% |
-| [[Countries/Morocco\|Morocco]] | 2.6% | 6.6% | 15.5% | 40.1% | 53.4% |
-| [[Countries/Mexico\|Mexico]] | 2.4% | 6.2% | 17.3% | 33.4% | 71.4% |
-| [[Countries/United States\|United States]] | 2.3% | 6.9% | 17.4% | 51.8% | 84.2% |
-| [[Countries/Germany\|Germany]] | 1.6% | 4.3% | 11.2% | 20.7% | 65.1% |
-| [[Countries/Netherlands\|Netherlands]] | 1.6% | 4.4% | 11.3% | 32.8% | 46.6% |
-| [[Countries/Norway\|Norway]] | 1.3% | 3.8% | 11.3% | 27.3% | 66.8% |
-| [[Countries/Switzerland\|Switzerland]] | 1.0% | 3.2% | 7.9% | 26.3% | 63.6% |
-| [[Countries/Japan\|Japan]] | 0.9% | 2.6% | 7.8% | 18.4% | 32.6% |
-| [[Countries/Ecuador\|Ecuador]] | 0.6% | 1.6% | 4.9% | 11.7% | 28.6% |
-| [[Countries/Belgium\|Belgium]] | 0.5% | 2.0% | 6.7% | 28.0% | 57.6% |
-| [[Countries/Croatia\|Croatia]] | 0.4% | 1.5% | 4.5% | 8.6% | 34.9% |
-| [[Countries/Canada\|Canada]] | 0.3% | 1.4% | 5.6% | 21.9% | 71.2% |
-| [[Countries/Australia\|Australia]] | 0.2% | 0.9% | 3.2% | 9.6% | 53.2% |
-| [[Countries/Paraguay\|Paraguay]] | 0.2% | 0.7% | 2.7% | 7.1% | 34.9% |
-| [[Countries/Egypt\|Egypt]] | 0.1% | 0.6% | 2.4% | 7.9% | 46.8% |
-| [[Countries/Austria\|Austria]] | 0.1% | 0.6% | 2.1% | 6.1% | 16.8% |
-| [[Countries/Iran\|Iran]] | 0.1% | 0.6% | 2.4% | 10.4% | 32.9% |
+| [[Countries/Argentina\|Argentina]] | 24.2% | 40.3% | 58.2% | 79.7% | 92.3% |
+| [[Countries/Spain\|Spain]] | 19.6% | 31.9% | 49.0% | 61.7% | 85.1% |
+| [[Countries/France\|France]] | 17.8% | 30.9% | 52.0% | 68.3% | 88.4% |
+| [[Countries/England\|England]] | 6.9% | 14.3% | 29.8% | 50.3% | 81.6% |
+| [[Countries/Colombia\|Colombia]] | 5.9% | 13.2% | 24.9% | 59.8% | 88.8% |
+| [[Countries/Brazil\|Brazil]] | 5.7% | 12.2% | 26.1% | 45.8% | 67.7% |
+| [[Countries/Portugal\|Portugal]] | 3.3% | 7.5% | 16.5% | 24.8% | 65.5% |
+| [[Countries/Morocco\|Morocco]] | 2.7% | 6.7% | 15.7% | 40.0% | 53.8% |
+| [[Countries/Mexico\|Mexico]] | 2.5% | 6.2% | 17.1% | 33.1% | 71.3% |
+| [[Countries/United States\|United States]] | 2.3% | 7.2% | 17.9% | 52.4% | 84.4% |
+| [[Countries/Netherlands\|Netherlands]] | 1.6% | 4.3% | 11.2% | 32.3% | 46.2% |
+| [[Countries/Germany\|Germany]] | 1.4% | 4.2% | 11.3% | 21.0% | 65.4% |
+| [[Countries/Norway\|Norway]] | 1.3% | 3.8% | 11.2% | 27.6% | 66.7% |
+| [[Countries/Switzerland\|Switzerland]] | 1.1% | 3.2% | 8.3% | 26.5% | 64.3% |
+| [[Countries/Japan\|Japan]] | 0.9% | 2.5% | 7.6% | 18.2% | 32.3% |
+| [[Countries/Ecuador\|Ecuador]] | 0.5% | 1.5% | 5.0% | 12.0% | 28.7% |
+| [[Countries/Belgium\|Belgium]] | 0.5% | 1.9% | 6.7% | 27.6% | 56.8% |
+| [[Countries/Croatia\|Croatia]] | 0.5% | 1.5% | 4.3% | 8.6% | 34.5% |
+| [[Countries/Canada\|Canada]] | 0.3% | 1.4% | 5.5% | 22.5% | 71.5% |
+| [[Countries/Australia\|Australia]] | 0.2% | 0.9% | 3.1% | 9.9% | 54.0% |
+| [[Countries/Senegal\|Senegal]] | 0.2% | 0.8% | 3.2% | 15.9% | 43.2% |
+| [[Countries/Paraguay\|Paraguay]] | 0.1% | 0.7% | 2.8% | 7.2% | 34.6% |
+| [[Countries/Egypt\|Egypt]] | 0.1% | 0.6% | 2.3% | 7.8% | 46.0% |
+| [[Countries/Iran\|Iran]] | 0.1% | 0.5% | 1.8% | 7.9% | 25.0% |
 
 ## Most likely scorers (expected group-stage goals)
 
@@ -45,7 +45,7 @@ These are probabilities, not certainties.
 - Kylian Mbappé (France): 3.32
 - Harry Kane (England): 3.1
 - Neymar (Brazil): 2.73
-- Cristiano Ronaldo (Portugal): 2.68
+- Cristiano Ronaldo (Portugal): 2.69
 - Raúl Jiménez (Mexico): 2.44
 - Enner Valencia (Ecuador): 2.25
 - Edin Džeko (Bosnia and Herzegovina): 2.01

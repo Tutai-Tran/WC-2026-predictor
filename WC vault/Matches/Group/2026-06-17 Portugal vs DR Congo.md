@@ -13,12 +13,12 @@ updated: 2026-06-28
 <!-- WC26:AUTO:forecast START -->
 **Group K match** · 2026-06-17
 
-Win Portugal: 67.5% | Draw: 21.0% | Win DR Congo: 11.5%
-Most likely single score: 2-0 (13.4%) (one of many possible, not a prediction)
-Top-5 scorelines: 2-0 13.4%, 1-0 12.6%, 1-1 9.8%, 2-1 9.4%, 3-0 9.1% (cumulative 54.4%)
+Win Portugal: 63.1% | Draw: 23.0% | Win DR Congo: 14.0%
+Most likely single score: 1-0 (12.8%) (one of many possible, not a prediction)
+Top-5 scorelines: 1-0 12.8%, 2-0 12.7%, 1-1 10.7%, 2-1 9.6%, 3-0 8.0% (cumulative 53.8%)
 Expected score: 2-1
-Over 2.5: 51.6% | Under 2.5: 48.4% | BTTS yes: 44.4% | BTTS no: 55.6%
-Top scorers: Cristiano Ronaldo 68.8%; Bruno Fernandes 19.2%; Bernardo Silva 10.4%; Cédric Bakambu 14.6%; Meschak Elia 9.1%; Yoane Wissa 7.2%;
+Over 2.5: 49.3% | Under 2.5: 50.7% | BTTS yes: 45.6% | BTTS no: 54.4%
+Top scorers: Cristiano Ronaldo 66.3%; Bruno Fernandes 18.0%; Bernardo Silva 9.7%; Cédric Bakambu 15.7%; Meschak Elia 9.8%; Yoane Wissa 7.7%;
 Data as of 2026-06-28 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

@@ -12,11 +12,11 @@ updated: 2026-06-28
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-06-09 · played 1-2
 
-Win DR Congo: 32.1% | Draw: 32.6% | Win Chile: 35.3%
-Most likely single score: 0-1 (10.1%) (one of many possible, not a prediction)
-Top-5 scorelines: 1-1 15.3%, 0-0 12.4%, 0-1 10.1%, 1-0 9.4%, 1-2 7.8% (cumulative 55.0%)
+Win DR Congo: 37.3% | Draw: 32.3% | Win Chile: 30.4%
+Most likely single score: 1-0 (10.3%) (one of many possible, not a prediction)
+Top-5 scorelines: 1-1 15.2%, 0-0 12.0%, 1-0 10.3%, 0-1 8.8%, 2-1 8.1% (cumulative 54.4%)
 Expected score: 1-1
-Over 2.5: 39.5% | Under 2.5: 60.5% | BTTS yes: 47.9% | BTTS no: 52.1%
+Over 2.5: 40.4% | Under 2.5: 59.6% | BTTS yes: 48.5% | BTTS no: 51.5%
 Data as of 2026-06-28 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

@@ -12,11 +12,11 @@ updated: 2026-06-28
 <!-- WC26:AUTO:forecast START -->
 **Warm-up friendly** · 2026-06-08 · played 2-1
 
-Win Netherlands: 63.7% | Draw: 23.6% | Win Uzbekistan: 12.7%
-Most likely single score: 2-0 (12.3%) (one of many possible, not a prediction)
-Top-5 scorelines: 2-0 12.3%, 1-1 11.1%, 1-0 10.9%, 2-1 9.7%, 3-0 8.2% (cumulative 52.3%)
+Win Netherlands: 68.3% | Draw: 21.4% | Win Uzbekistan: 10.3%
+Most likely single score: 2-0 (13.0%) (one of many possible, not a prediction)
+Top-5 scorelines: 2-0 13.0%, 1-0 10.7%, 1-1 10.1%, 2-1 9.5%, 3-0 9.3% (cumulative 52.6%)
 Expected score: 2-1
-Over 2.5: 52.8% | Under 2.5: 47.2% | BTTS yes: 48.6% | BTTS no: 51.4%
+Over 2.5: 55.0% | Under 2.5: 45.0% | BTTS yes: 47.1% | BTTS no: 52.9%
 Data as of 2026-06-28 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
