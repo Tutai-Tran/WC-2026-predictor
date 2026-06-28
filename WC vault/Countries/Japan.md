@@ -13,7 +13,7 @@ updated: 2026-06-28
 
 # Japan
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-28T15:54Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-28T17:45Z | source elo-goal-v1 -->
 Group F | FIFA rank 19 | Elo 2011
 Champion 0.9% | Final 2.6% | SF 7.8% | QF 18.5% | Advance 100.0%
 Availability concerns: Wataru Endo (out), Takefusa Kubo (doubtful)
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-28T15:54Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-28T17:45Z | source elo-goal-v1 -->
 - 2026-06-28: champion 0.9% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
