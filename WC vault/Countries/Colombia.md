@@ -13,7 +13,7 @@ updated: 2026-06-28
 
 # Colombia
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-28T00:45Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-28T01:20Z | source elo-goal-v1 -->
 Group K | FIFA rank 13 | Elo 2096
 Champion 5.4% | Final 12.1% | SF 22.7% | QF 49.0% | Advance 100.0%
 Availability concerns: Luis Suárez (doubtful)
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-28T00:45Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-28T01:20Z | source elo-goal-v1 -->
 - 2026-06-28: champion 5.4% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

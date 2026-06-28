@@ -13,7 +13,7 @@ updated: 2026-06-28
 <!-- WC26:AUTO:forecast START -->
 **Group J match** · 2026-06-28
 
-Win Jordan: 4.1% | Draw: 10.9% | Win Argentina: 85.0%
+Win Jordan: 4.1% | Draw: 11.0% | Win Argentina: 84.9%
 Most likely single score: 0-2 (15.7%) (one of many possible, not a prediction)
 Top-5 scorelines: 0-2 15.7%, 0-3 14.1%, 0-1 11.3%, 0-4 9.5%, 1-2 7.0% (cumulative 57.7%)
 Expected score: 0-3
