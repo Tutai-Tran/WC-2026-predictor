@@ -5,7 +5,7 @@ group: H
 date: 2026-06-21
 home: "Spain"
 away: "Saudi Arabia"
-updated: 2026-06-27
+updated: 2026-06-28
 ---
 
 # Spain vs Saudi Arabia

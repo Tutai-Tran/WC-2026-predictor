@@ -5,7 +5,7 @@ group: D
 date: 2026-06-14
 home: "Australia"
 away: "Turkey"
-updated: 2026-06-27
+updated: 2026-06-28
 ---
 
 # Australia vs Turkey

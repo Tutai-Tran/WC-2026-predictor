@@ -5,7 +5,7 @@ group: J
 date: 2026-06-28
 home: "Algeria"
 away: "Austria"
-updated: 2026-06-27
+updated: 2026-06-28
 ---
 
 # Algeria vs Austria
@@ -13,7 +13,7 @@ updated: 2026-06-27
 <!-- WC26:AUTO:forecast START -->
 **Group J match** · 2026-06-28
 
-Win Algeria: 28.2% | Draw: 41.7% | Win Austria: 30.1%
+Win Algeria: 28.2% | Draw: 41.4% | Win Austria: 30.3%
 Most likely single score: 1-1 (14.2%) (one of many possible, not a prediction)
 Top-5 scorelines: 1-1 14.2%, 0-0 14.2%, 0-1 14.0%, 1-0 11.3%, 0-2 8.2% (cumulative 61.9%)
 Expected score: 1-1

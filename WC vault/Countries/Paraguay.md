@@ -5,17 +5,17 @@ fifa_code: "PAR"
 group: "D"
 fifa_rank: 38
 elo: 1895
-champion_prob: 0.0008
+champion_prob: 0.0017
 status: active
 created: 2026-06-04
-updated: 2026-06-27
+updated: 2026-06-28
 ---
 
 # Paraguay
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-27T22:50Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-28T00:45Z | source elo-goal-v1 -->
 Group D | FIFA rank 38 | Elo 1895
-Champion 0.1% | Final 0.4% | SF 1.9% | QF 5.7% | Advance 100.0%
+Champion 0.2% | Final 0.7% | SF 2.7% | QF 7.1% | Advance 100.0%
 Availability concerns: Miguel Almirón (suspended), Ramón Sosa (doubtful), Gustavo Caballero (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-27T22:50Z | source elo-goal-v1 -->
-- 2026-06-27: champion 0.1% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-28T00:45Z | source elo-goal-v1 -->
+- 2026-06-28: champion 0.2% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

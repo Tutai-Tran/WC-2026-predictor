@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-06
 home: "Haiti"
 away: "Peru"
-updated: 2026-06-27
+updated: 2026-06-28
 ---
 
 # Haiti vs Peru (friendly)

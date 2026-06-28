@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-02
 home: "Canada"
 away: "Uzbekistan"
-updated: 2026-06-27
+updated: 2026-06-28
 ---
 
 # Canada vs Uzbekistan (friendly)

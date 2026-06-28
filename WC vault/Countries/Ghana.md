@@ -4,18 +4,18 @@ team: "Ghana"
 fifa_code: "GHA"
 group: "L"
 fifa_rank: 72
-elo: 1701
+elo: 1690
 champion_prob: 0.0
 status: active
 created: 2026-06-04
-updated: 2026-06-27
+updated: 2026-06-28
 ---
 
 # Ghana
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-27T22:50Z | source elo-goal-v1 -->
-Group L | FIFA rank 72 | Elo 1701
-Champion 0.0% | Final 0.1% | SF 0.3% | QF 2.4% | Advance 100.0%
+<!-- WC26:AUTO:snapshot START | generated 2026-06-28T00:45Z | source elo-goal-v1 -->
+Group L | FIFA rank 72 | Elo 1690
+Champion 0.0% | Final 0.0% | SF 0.2% | QF 2.5% | Advance 100.0%
 Availability concerns: Lawrence Ati-Zigi (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-27T22:50Z | source elo-goal-v1 -->
-- 2026-06-27: champion 0.0% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-28T00:45Z | source elo-goal-v1 -->
+- 2026-06-28: champion 0.0% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

@@ -5,7 +5,7 @@ group: I
 date: 2026-06-26
 home: "Norway"
 away: "France"
-updated: 2026-06-27
+updated: 2026-06-28
 ---
 
 # Norway vs France

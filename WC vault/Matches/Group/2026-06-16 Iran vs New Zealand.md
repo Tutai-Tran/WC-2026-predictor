@@ -5,7 +5,7 @@ group: G
 date: 2026-06-16
 home: "Iran"
 away: "New Zealand"
-updated: 2026-06-27
+updated: 2026-06-28
 ---
 
 # Iran vs New Zealand

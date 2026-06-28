@@ -5,7 +5,7 @@ group: E
 date: 2026-06-14
 home: "Germany"
 away: "Curacao"
-updated: 2026-06-27
+updated: 2026-06-28
 ---
 
 # Germany vs Curacao

@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-01
 home: "Turkey"
 away: "North Macedonia"
-updated: 2026-06-27
+updated: 2026-06-28
 ---
 
 # Turkey vs North Macedonia (friendly)

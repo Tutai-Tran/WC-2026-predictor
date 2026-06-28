@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-04
 home: "France"
 away: "Ivory Coast"
-updated: 2026-06-27
+updated: 2026-06-28
 ---
 
 # France vs Ivory Coast (friendly)

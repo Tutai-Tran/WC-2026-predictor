@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-02
 home: "Morocco"
 away: "Madagascar"
-updated: 2026-06-27
+updated: 2026-06-28
 ---
 
 # Morocco vs Madagascar (friendly)

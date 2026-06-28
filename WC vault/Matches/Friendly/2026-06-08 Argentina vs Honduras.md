@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-08
 home: "Argentina"
 away: "Honduras"
-updated: 2026-06-27
+updated: 2026-06-28
 ---
 
 # Argentina vs Honduras (friendly)

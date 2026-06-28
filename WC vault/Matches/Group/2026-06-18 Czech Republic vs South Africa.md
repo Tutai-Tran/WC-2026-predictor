@@ -5,7 +5,7 @@ group: A
 date: 2026-06-18
 home: "Czech Republic"
 away: "South Africa"
-updated: 2026-06-27
+updated: 2026-06-28
 ---
 
 # Czech Republic vs South Africa

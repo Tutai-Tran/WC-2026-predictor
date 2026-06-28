@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-05-31
 home: "Germany"
 away: "Finland"
-updated: 2026-06-27
+updated: 2026-06-28
 ---
 
 # Germany vs Finland (friendly)
