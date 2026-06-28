@@ -13,7 +13,7 @@ updated: 2026-06-28
 
 # Switzerland
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-28T07:52Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-28T11:53Z | source elo-goal-v1 -->
 Group B | FIFA rank 17 | Elo 1989
 Champion 1.1% | Final 3.4% | SF 8.4% | QF 27.3% | Advance 100.0%
 Availability: no concerns recorded
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-28T07:52Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-28T11:53Z | source elo-goal-v1 -->
 - 2026-06-28: champion 1.1% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

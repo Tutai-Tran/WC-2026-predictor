@@ -8,7 +8,7 @@ updated: 2026-06-04
 
 # Group G
 
-<!-- WC26:AUTO:standings START | generated 2026-06-28T07:52Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:standings START | generated 2026-06-28T11:53Z | source elo-goal-v1 -->
 | Team | Win group | Top 2 | Advance |
 | --- | --- | --- | --- |
 | [[Countries/Belgium\|Belgium]] | 100.0% | 100.0% | 100.0% |
