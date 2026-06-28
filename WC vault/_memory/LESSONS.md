@@ -5,10 +5,10 @@ updated: 2026-06-28
 
 # What the model has learned
 
-> Leak-free over **94** graded matches: outcome accuracy **66%**, Brier 0.4762, log loss 0.8151. The biases below are hypotheses (the audit trail); the model's parameters are where learning is actually applied, only after it validates out-of-sample.
+> Leak-free over **96** graded matches: outcome accuracy **66%**, Brier 0.4739, log loss 0.8117. The biases below are hypotheses (the audit trail); the model's parameters are where learning is actually applied, only after it validates out-of-sample.
 
 ## Accuracy by segment
-- group: 60% (70 matches)
+- group: 60% (72 matches)
 - friendly: 83% (24 matches)
 
 ## Systematic biases found (ranked by evidence)
