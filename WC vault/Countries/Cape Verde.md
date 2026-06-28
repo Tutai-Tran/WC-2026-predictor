@@ -5,7 +5,7 @@ fifa_code: "CPV"
 group: "H"
 fifa_rank: 67
 elo: 1749
-champion_prob: 0.0002
+champion_prob: 0.0001
 status: active
 created: 2026-06-04
 updated: 2026-06-28
@@ -13,9 +13,9 @@ updated: 2026-06-28
 
 # Cape Verde
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-28T17:45Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-28T20:50Z | source elo-goal-v1 -->
 Group H | FIFA rank 67 | Elo 1749
-Champion 0.0% | Final 0.1% | SF 0.5% | QF 2.5% | Advance 100.0%
+Champion 0.0% | Final 0.1% | SF 0.5% | QF 2.4% | Advance 100.0%
 Availability concerns: Sidny Lopes Cabral (suspended), Telmo Arcanjo (doubtful), Jovane Cabral (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-28T17:45Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-28T20:50Z | source elo-goal-v1 -->
 - 2026-06-28: champion 0.0% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
