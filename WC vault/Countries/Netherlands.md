@@ -13,7 +13,7 @@ updated: 2026-06-28
 
 # Netherlands
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-28T11:53Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-28T15:54Z | source elo-goal-v1 -->
 Group F | FIFA rank 7 | Elo 2047
 Champion 1.7% | Final 4.5% | SF 11.2% | QF 32.3% | Advance 100.0%
 Availability concerns: Jurriën Timber (out), Brian Brobbey (doubtful), Memphis Depay (doubtful), Quinten Timber (doubtful)
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-28T11:53Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-28T15:54Z | source elo-goal-v1 -->
 - 2026-06-28: champion 1.7% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

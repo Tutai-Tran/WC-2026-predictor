@@ -13,7 +13,7 @@ updated: 2026-06-28
 
 # Norway
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-28T11:53Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-28T15:54Z | source elo-goal-v1 -->
 Group I | FIFA rank 29 | Elo 2002
 Champion 1.2% | Final 3.8% | SF 11.3% | QF 27.7% | Advance 100.0%
 Availability concerns: Julian Ryerson (doubtful)
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-28T11:53Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-28T15:54Z | source elo-goal-v1 -->
 - 2026-06-28: champion 1.2% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
