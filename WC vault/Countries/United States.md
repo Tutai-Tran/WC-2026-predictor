@@ -13,7 +13,7 @@ updated: 2026-06-29
 
 # United States
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-29T12:54Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-29T15:45Z | source elo-goal-v1 -->
 Group D | FIFA rank 16 | Elo 1944
 Champion 2.3% | Final 6.7% | SF 17.2% | QF 51.2% | Advance 100.0%
 Availability concerns: Christian Pulisic (doubtful)
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-29T12:54Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-29T15:45Z | source elo-goal-v1 -->
 - 2026-06-29: champion 2.3% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
