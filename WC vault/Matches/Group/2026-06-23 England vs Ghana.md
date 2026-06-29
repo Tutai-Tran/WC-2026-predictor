@@ -5,7 +5,7 @@ group: L
 date: 2026-06-23
 home: "England"
 away: "Ghana"
-updated: 2026-06-28
+updated: 2026-06-29
 ---
 
 # England vs Ghana
@@ -19,7 +19,7 @@ Top-5 scorelines: 2-0 15.1%, 3-0 12.4%, 1-0 11.8%, 2-1 8.1%, 4-0 7.7% (cumulativ
 Expected score: 2-1
 Over 2.5: 58.0% | Under 2.5: 42.0% | BTTS yes: 38.4% | BTTS no: 61.6%
 Top scorers: Harry Kane 72.6%; Marcus Rashford 25.7%; Bukayo Saka 21.1%; Jordan Ayew 19.8%; Thomas Partey 9.3%; Ernest Nuamah 3.4%;
-Data as of 2026-06-28 | runs 50000 | seed 20260611
+Data as of 2026-06-29 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

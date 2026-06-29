@@ -5,7 +5,7 @@ group: J
 date: 2026-06-17
 home: "Argentina"
 away: "Algeria"
-updated: 2026-06-28
+updated: 2026-06-29
 ---
 
 # Argentina vs Algeria
@@ -19,7 +19,7 @@ Top-5 scorelines: 2-0 15.3%, 1-0 13.7%, 3-0 10.9%, 2-1 8.7%, 1-1 8.5% (cumulativ
 Expected score: 2-1
 Over 2.5: 51.1% | Under 2.5: 48.9% | BTTS yes: 38.7% | BTTS no: 61.3%
 Top scorers: Lionel Messi 68.6%; Lautaro Martínez 28.9%; Julián Alvarez 13.2%; Riyad Mahrez 15.4%; Mohamed Amoura 8.3%; Amine Gouiri 4.0%;
-Data as of 2026-06-28 | runs 50000 | seed 20260611
+Data as of 2026-06-29 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

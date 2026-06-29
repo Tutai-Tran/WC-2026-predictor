@@ -5,7 +5,7 @@ group: H
 date: 2026-06-21
 home: "Uruguay"
 away: "Cape Verde"
-updated: 2026-06-28
+updated: 2026-06-29
 ---
 
 # Uruguay vs Cape Verde
@@ -19,7 +19,7 @@ Top-5 scorelines: 1-0 13.2%, 1-1 12.1%, 2-0 11.5%, 2-1 9.5%, 0-0 9.1% (cumulativ
 Expected score: 2-1
 Over 2.5: 45.1% | Under 2.5: 54.9% | BTTS yes: 46.1% | BTTS no: 53.9%
 Top scorers: Federico Valverde 23.3%; Darwin Núñez 23.2%; Giorgian de Arrascaeta 21.9%; Ryan Mendes 20.2%; Garry Rodrigues 8.9%; Dailon Livramento 7.9%;
-Data as of 2026-06-28 | runs 50000 | seed 20260611
+Data as of 2026-06-29 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

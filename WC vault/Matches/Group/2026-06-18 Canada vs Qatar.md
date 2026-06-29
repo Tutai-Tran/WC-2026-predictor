@@ -5,7 +5,7 @@ group: B
 date: 2026-06-18
 home: "Canada"
 away: "Qatar"
-updated: 2026-06-28
+updated: 2026-06-29
 ---
 
 # Canada vs Qatar
@@ -13,13 +13,13 @@ updated: 2026-06-28
 <!-- WC26:AUTO:forecast START -->
 **Group B match** · 2026-06-18
 
-Win Canada: 82.1% | Draw: 13.3% | Win Qatar: 4.6%
-Most likely single score: 2-0 (15.4%) (one of many possible, not a prediction)
-Top-5 scorelines: 2-0 15.4%, 3-0 13.5%, 1-0 11.4%, 4-0 8.8%, 2-1 7.4% (cumulative 56.6%)
+Win Canada: 83.1% | Draw: 12.7% | Win Qatar: 4.2%
+Most likely single score: 2-0 (15.5%) (one of many possible, not a prediction)
+Top-5 scorelines: 2-0 15.5%, 3-0 13.9%, 1-0 11.3%, 4-0 9.3%, 2-1 7.2% (cumulative 57.1%)
 Expected score: 3-0
-Over 2.5: 60.0% | Under 2.5: 40.0% | BTTS yes: 35.8% | BTTS no: 64.2%
-Top scorers: Jonathan David 55.7%; Cyle Larin 43.1%; Alphonso Davies 23.7%; Almoez Ali 11.3%; Hassan Al-Haydos 8.6%; Akram Afif 8.2%;
-Data as of 2026-06-28 | runs 50000 | seed 20260611
+Over 2.5: 60.7% | Under 2.5: 39.3% | BTTS yes: 34.8% | BTTS no: 65.2%
+Top scorers: Jonathan David 56.4%; Cyle Larin 43.8%; Alphonso Davies 24.1%; Almoez Ali 10.8%; Hassan Al-Haydos 8.3%; Akram Afif 7.9%;
+Data as of 2026-06-29 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

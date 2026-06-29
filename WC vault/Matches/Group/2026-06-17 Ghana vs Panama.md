@@ -5,7 +5,7 @@ group: L
 date: 2026-06-17
 home: "Ghana"
 away: "Panama"
-updated: 2026-06-28
+updated: 2026-06-29
 ---
 
 # Ghana vs Panama
@@ -19,7 +19,7 @@ Top-5 scorelines: 1-1 13.8%, 0-1 12.7%, 0-0 11.2%, 1-0 9.3%, 0-2 8.8% (cumulativ
 Expected score: 1-1
 Over 2.5: 39.4% | Under 2.5: 60.6% | BTTS yes: 45.7% | BTTS no: 54.3%
 Top scorers: Jordan Ayew 32.8%; Thomas Partey 16.1%; Ernest Nuamah 6.1%; José Fajardo 15.9%; Ismael Díaz 15.2%; Cecilio Waterman 14.3%;
-Data as of 2026-06-28 | runs 50000 | seed 20260611
+Data as of 2026-06-29 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

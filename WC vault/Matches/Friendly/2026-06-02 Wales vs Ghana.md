@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-02
 home: "Wales"
 away: "Ghana"
-updated: 2026-06-28
+updated: 2026-06-29
 ---
 
 # Wales vs Ghana (friendly)
@@ -17,7 +17,7 @@ Most likely single score: 1-0 (10.5%) (one of many possible, not a prediction)
 Top-5 scorelines: 1-1 14.9%, 0-0 11.3%, 1-0 10.5%, 2-1 8.6%, 2-0 8.3% (cumulative 53.6%)
 Expected score: 1-1
 Over 2.5: 42.2% | Under 2.5: 57.8% | BTTS yes: 49.5% | BTTS no: 50.5%
-Data as of 2026-06-28 | runs 50000 | seed 20260611
+Data as of 2026-06-29 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

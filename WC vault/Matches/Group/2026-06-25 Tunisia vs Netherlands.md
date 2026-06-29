@@ -5,7 +5,7 @@ group: F
 date: 2026-06-25
 home: "Tunisia"
 away: "Netherlands"
-updated: 2026-06-28
+updated: 2026-06-29
 ---
 
 # Tunisia vs Netherlands
@@ -19,7 +19,7 @@ Top-5 scorelines: 0-2 14.8%, 0-1 12.0%, 0-3 11.8%, 1-2 8.5%, 1-1 7.5% (cumulativ
 Expected score: 1-2
 Over 2.5: 56.7% | Under 2.5: 43.3% | BTTS yes: 39.9% | BTTS no: 60.1%
 Top scorers: Firas Chaouat 7.1%; Ali Abdi 6.7%; Elias Achouri 5.3%; Memphis Depay 58.7%; Cody Gakpo 25.1%; Wout Weghorst 19.7%;
-Data as of 2026-06-28 | runs 50000 | seed 20260611
+Data as of 2026-06-29 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

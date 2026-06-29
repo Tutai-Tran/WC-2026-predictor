@@ -5,7 +5,7 @@ group: A
 date: 2026-06-12
 home: "South Korea"
 away: "Czech Republic"
-updated: 2026-06-28
+updated: 2026-06-29
 ---
 
 # South Korea vs Czech Republic
@@ -19,7 +19,7 @@ Top-5 scorelines: 1-1 13.7%, 1-0 12.6%, 0-0 10.9%, 0-1 9.0%, 2-0 8.9% (cumulativ
 Expected score: 1-1
 Over 2.5: 40.2% | Under 2.5: 59.8% | BTTS yes: 46.3% | BTTS no: 53.7%
 Top scorers: Son Heung-min 43.6%; Hwang Hee-chan 13.8%; Lee Jae-sung 12.4%; Patrik Schick 27.1%; Tomáš Souček 14.0%; Vladimír Darida 7.2%;
-Data as of 2026-06-28 | runs 50000 | seed 20260611
+Data as of 2026-06-29 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

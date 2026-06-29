@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-28",
+  "updated": "2026-06-29",
   "source": "base_elo + results ledger",
   "ratings": {
     "Scotland": 1845.1,
@@ -7,7 +7,7 @@
     "Wales": 1754.7,
     "Northern Ireland": 1670.9,
     "United States": 1944.0,
-    "Canada": 1896.0,
+    "Canada": 1911.6,
     "Uruguay": 1924.2,
     "Argentina": 2224.8,
     "Austria": 1914.1,
@@ -22,7 +22,7 @@
     "Netherlands": 2046.9,
     "Guyana": 1497.8,
     "Trinidad and Tobago": 1522.3,
-    "South Africa": 1714.4,
+    "South Africa": 1698.8,
     "Germany": 2008.9,
     "Sweden": 1816.7,
     "Norway": 2002.4,
