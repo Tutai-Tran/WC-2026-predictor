@@ -13,7 +13,7 @@ updated: 2026-06-29
 
 # Belgium
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-29T15:45Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-29T18:50Z | source elo-goal-v1 -->
 Group G | FIFA rank 8 | Elo 1968
 Champion 0.4% | Final 1.7% | SF 6.1% | QF 26.0% | Advance 100.0%
 Availability concerns: Jérémy Doku (doubtful), Romelu Lukaku (doubtful), Zeno Debast (doubtful), Nathan Ngoy (suspended)
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-29T15:45Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-29T18:50Z | source elo-goal-v1 -->
 - 2026-06-29: champion 0.4% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
