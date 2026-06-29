@@ -8,7 +8,7 @@ updated: 2026-06-04
 
 # Group K
 
-<!-- WC26:AUTO:standings START | generated 2026-06-29T19:15Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:standings START | generated 2026-06-29T22:42Z | source elo-goal-v1 -->
 | Team | Win group | Top 2 | Advance |
 | --- | --- | --- | --- |
 | [[Countries/Colombia\|Colombia]] | 100.0% | 100.0% | 100.0% |

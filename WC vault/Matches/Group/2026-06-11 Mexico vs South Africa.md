@@ -19,7 +19,7 @@ Top-5 scorelines: 2-0 15.5%, 3-0 13.7%, 1-0 11.3%, 4-0 9.1%, 2-1 7.3% (cumulativ
 Expected score: 3-0
 Over 2.5: 60.4% | Under 2.5: 39.6% | BTTS yes: 35.2% | BTTS no: 64.8%
 Top scorers: Raúl Jiménez 62.8%; Orbelín Pineda 22.2%; Alexis Vega 15.7%; Teboho Mokoena 13.7%; Themba Zwane 7.2%; Lyle Foster 6.6%;
-Data as of 2026-06-29 | runs 50000 | seed 20260611
+Data as of 2026-06-30 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

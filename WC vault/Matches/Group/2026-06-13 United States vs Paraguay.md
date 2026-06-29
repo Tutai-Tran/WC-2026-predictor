@@ -19,7 +19,7 @@ Top-5 scorelines: 1-1 13.0%, 1-0 12.8%, 2-0 10.1%, 0-0 9.8%, 2-1 9.2% (cumulativ
 Expected score: 1-1
 Over 2.5: 42.9% | Under 2.5: 57.1% | BTTS yes: 46.9% | BTTS no: 53.1%
 Top scorers: Christian Pulisic 36.4%; Ricardo Pepi 14.2%; Weston McKennie 12.5%; Miguel Almirón 12.3%; Antonio Sanabria 11.0%; Kaku 8.6%;
-Data as of 2026-06-29 | runs 50000 | seed 20260611
+Data as of 2026-06-30 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

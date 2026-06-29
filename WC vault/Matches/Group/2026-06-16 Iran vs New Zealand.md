@@ -19,7 +19,7 @@ Top-5 scorelines: 1-0 12.8%, 2-0 12.4%, 1-1 11.1%, 2-1 9.6%, 0-0 8.0% (cumulativ
 Expected score: 2-1
 Over 2.5: 48.5% | Under 2.5: 51.5% | BTTS yes: 46.0% | BTTS no: 54.0%
 Top scorers: Mehdi Taremi 53.9%; Alireza Jahanbakhsh 17.9%; Mohammad Mohebi 15.1%; Chris Wood 25.1%; Kosta Barbarouses 7.0%; Ben Waine 6.4%;
-Data as of 2026-06-29 | runs 50000 | seed 20260611
+Data as of 2026-06-30 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

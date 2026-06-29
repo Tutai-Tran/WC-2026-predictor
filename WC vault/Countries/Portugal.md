@@ -13,9 +13,9 @@ updated: 2026-06-29
 
 # Portugal
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-29T19:15Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-29T22:42Z | source elo-goal-v1 -->
 Group K | FIFA rank 5 | Elo 2070
-Champion 3.0% | Final 7.2% | SF 16.3% | QF 24.8% | Advance 100.0%
+Champion 3.0% | Final 7.1% | SF 15.7% | QF 24.8% | Advance 100.0%
 Availability concerns: Tomás Araújo (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-29T19:15Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-29T22:42Z | source elo-goal-v1 -->
 - 2026-06-29: champion 3.0% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

@@ -19,7 +19,7 @@ Top-5 scorelines: 1-1 14.2%, 0-1 12.2%, 0-0 12.0%, 1-0 10.7%, 1-2 7.8% (cumulati
 Expected score: 1-1
 Over 2.5: 37.5% | Under 2.5: 62.5% | BTTS yes: 44.9% | BTTS no: 55.1%
 Top scorers: Mohamed Salah 44.1%; Trézéguet 16.2%; Omar Marmoush 8.7%; Mehdi Taremi 40.7%; Alireza Jahanbakhsh 11.7%; Mohammad Mohebi 9.8%;
-Data as of 2026-06-29 | runs 50000 | seed 20260611
+Data as of 2026-06-30 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

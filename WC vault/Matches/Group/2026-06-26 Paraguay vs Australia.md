@@ -19,7 +19,7 @@ Top-5 scorelines: 1-1 14.2%, 0-0 12.2%, 0-1 12.1%, 1-0 11.1%, 1-2 7.6% (cumulati
 Expected score: 1-1
 Over 2.5: 36.9% | Under 2.5: 63.1% | BTTS yes: 44.5% | BTTS no: 55.5%
 Top scorers: Miguel Almirón 14.0%; Antonio Sanabria 12.5%; Kaku 9.8%; Mathew Leckie 17.4%; Jackson Irvine 16.5%; Awer Mabil 13.3%;
-Data as of 2026-06-29 | runs 50000 | seed 20260611
+Data as of 2026-06-30 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

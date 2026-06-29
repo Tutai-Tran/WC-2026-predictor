@@ -19,7 +19,7 @@ Top-5 scorelines: 1-1 14.1%, 1-0 12.2%, 0-0 11.9%, 0-1 10.5%, 2-1 7.8% (cumulati
 Expected score: 1-1
 Over 2.5: 37.7% | Under 2.5: 62.3% | BTTS yes: 45.1% | BTTS no: 54.9%
 Top scorers: Ryan Mendes 27.5%; Garry Rodrigues 12.4%; Dailon Livramento 11.1%; Salem Al-Dawsari 29.6%; Saleh Al-Shehri 16.9%; Firas Al-Buraikan 14.6%;
-Data as of 2026-06-29 | runs 50000 | seed 20260611
+Data as of 2026-06-30 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

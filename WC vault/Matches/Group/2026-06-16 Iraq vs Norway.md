@@ -19,7 +19,7 @@ Top-5 scorelines: 0-2 14.0%, 0-1 12.4%, 0-3 10.2%, 1-2 9.1%, 1-1 8.9% (cumulativ
 Expected score: 1-2
 Over 2.5: 53.6% | Under 2.5: 46.4% | BTTS yes: 42.9% | BTTS no: 57.1%
 Top scorers: Aymen Hussein 19.0%; Mohanad Ali 16.0%; Ibrahim Bayesh 5.2%; Erling Haaland 62.7%; Alexander Sørloth 35.4%; Antonio Nusa 14.2%;
-Data as of 2026-06-29 | runs 50000 | seed 20260611
+Data as of 2026-06-30 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

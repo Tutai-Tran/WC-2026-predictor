@@ -19,7 +19,7 @@ Top-5 scorelines: 1-1 14.2%, 0-0 12.3%, 0-1 12.1%, 1-0 11.1%, 1-2 7.5% (cumulati
 Expected score: 1-1
 Over 2.5: 36.8% | Under 2.5: 63.2% | BTTS yes: 44.5% | BTTS no: 55.5%
 Top scorers: Granit Xhaka 19.7%; Breel Embolo 17.1%; Rubén Vargas 8.9%; Jonathan David 33.0%; Cyle Larin 21.5%; Alphonso Davies 11.0%;
-Data as of 2026-06-29 | runs 50000 | seed 20260611
+Data as of 2026-06-30 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

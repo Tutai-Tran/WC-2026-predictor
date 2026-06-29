@@ -19,7 +19,7 @@ Top-5 scorelines: 1-0 12.8%, 2-0 12.7%, 1-1 10.7%, 2-1 9.6%, 3-0 8.0% (cumulativ
 Expected score: 2-1
 Over 2.5: 49.3% | Under 2.5: 50.7% | BTTS yes: 45.6% | BTTS no: 54.4%
 Top scorers: Cristiano Ronaldo 66.3%; Bruno Fernandes 18.0%; Bernardo Silva 9.7%; Cédric Bakambu 15.7%; Meschak Elia 9.8%; Yoane Wissa 7.7%;
-Data as of 2026-06-29 | runs 50000 | seed 20260611
+Data as of 2026-06-30 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match

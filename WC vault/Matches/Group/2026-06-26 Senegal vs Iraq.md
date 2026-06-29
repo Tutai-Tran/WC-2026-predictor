@@ -19,7 +19,7 @@ Top-5 scorelines: 1-0 12.9%, 2-0 12.2%, 1-1 11.3%, 2-1 9.6%, 0-0 8.1% (cumulativ
 Expected score: 2-1
 Over 2.5: 48.0% | Under 2.5: 52.0% | BTTS yes: 46.2% | BTTS no: 53.8%
 Top scorers: Sadio Mané 53.5%; Ismaïla Sarr 21.9%; Nicolas Jackson 10.9%; Aymen Hussein 22.5%; Mohanad Ali 19.0%; Ibrahim Bayesh 6.2%;
-Data as of 2026-06-29 | runs 50000 | seed 20260611
+Data as of 2026-06-30 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
 ## Post-match
