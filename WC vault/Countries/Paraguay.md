@@ -13,7 +13,7 @@ updated: 2026-06-29
 
 # Paraguay
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-29T08:53Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-29T12:54Z | source elo-goal-v1 -->
 Group D | FIFA rank 38 | Elo 1895
 Champion 0.2% | Final 0.7% | SF 2.8% | QF 7.5% | Advance 100.0%
 Availability concerns: Miguel Almirón (suspended), Ramón Sosa (doubtful), Gustavo Caballero (doubtful)
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-29T08:53Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-29T12:54Z | source elo-goal-v1 -->
 - 2026-06-29: champion 0.2% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

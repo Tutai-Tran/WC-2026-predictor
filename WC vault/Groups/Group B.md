@@ -8,7 +8,7 @@ updated: 2026-06-04
 
 # Group B
 
-<!-- WC26:AUTO:standings START | generated 2026-06-29T08:53Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:standings START | generated 2026-06-29T12:54Z | source elo-goal-v1 -->
 | Team | Win group | Top 2 | Advance |
 | --- | --- | --- | --- |
 | [[Countries/Bosnia and Herzegovina\|Bosnia and Herzegovina]] | 0.0% | 0.0% | 100.0% |
