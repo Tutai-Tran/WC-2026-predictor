@@ -13,7 +13,7 @@ updated: 2026-06-29
 
 # Iraq
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-29T18:50Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-29T19:15Z | source elo-goal-v1 -->
 Group I | FIFA rank 57 | Elo 1672
 Champion 0.0% | Final 0.0% | SF 0.0% | QF 0.0% | Advance 0.0%
 Availability concerns: Aymen Hussein (doubtful)
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-29T18:50Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:changelog START | generated 2026-06-29T19:15Z | source elo-goal-v1 -->
 - 2026-06-29: champion 0.0% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
