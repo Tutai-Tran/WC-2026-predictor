@@ -13,12 +13,12 @@ updated: 2026-06-29
 <!-- WC26:AUTO:forecast START -->
 **Group I match** · 2026-06-26
 
-Win Senegal: 56.1% | Draw: 26.3% | Win Iraq: 17.6%
-Most likely single score: 1-0 (13.9%) (one of many possible, not a prediction)
-Top-5 scorelines: 1-0 13.9%, 1-1 12.2%, 2-0 11.8%, 0-0 9.7%, 2-1 9.3% (cumulative 56.8%)
+Win Senegal: 60.4% | Draw: 24.1% | Win Iraq: 15.5%
+Most likely single score: 1-0 (12.9%) (one of many possible, not a prediction)
+Top-5 scorelines: 1-0 12.9%, 2-0 12.2%, 1-1 11.3%, 2-1 9.6%, 0-0 8.1% (cumulative 54.0%)
 Expected score: 2-1
-Over 2.5: 43.3% | Under 2.5: 56.7% | BTTS yes: 44.4% | BTTS no: 55.6%
-Top scorers: Sadio Mané 50.2%; Ismaïla Sarr 19.9%; Nicolas Jackson 9.8%; Aymen Hussein 22.5%; Mohanad Ali 19.0%; Ibrahim Bayesh 6.2%;
+Over 2.5: 48.0% | Under 2.5: 52.0% | BTTS yes: 46.2% | BTTS no: 53.8%
+Top scorers: Sadio Mané 53.5%; Ismaïla Sarr 21.9%; Nicolas Jackson 10.9%; Aymen Hussein 22.5%; Mohanad Ali 19.0%; Ibrahim Bayesh 6.2%;
 Data as of 2026-06-29 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 

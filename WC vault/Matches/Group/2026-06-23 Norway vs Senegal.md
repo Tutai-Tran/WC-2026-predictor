@@ -13,12 +13,12 @@ updated: 2026-06-29
 <!-- WC26:AUTO:forecast START -->
 **Group I match** · 2026-06-23
 
-Win Norway: 48.7% | Draw: 29.1% | Win Senegal: 22.2%
-Most likely single score: 1-0 (14.2%) (one of many possible, not a prediction)
-Top-5 scorelines: 1-0 14.2%, 1-1 13.2%, 0-0 11.3%, 2-0 10.5%, 2-1 8.8% (cumulative 58.0%)
+Win Norway: 46.5% | Draw: 28.9% | Win Senegal: 24.6%
+Most likely single score: 1-0 (12.8%) (one of many possible, not a prediction)
+Top-5 scorelines: 1-1 13.4%, 1-0 12.8%, 0-0 10.4%, 2-0 9.6%, 2-1 8.9% (cumulative 55.1%)
 Expected score: 1-1
-Over 2.5: 39.0% | Under 2.5: 61.0% | BTTS yes: 43.6% | BTTS no: 56.4%
-Top scorers: Erling Haaland 48.9%; Alexander Sørloth 24.7%; Antonio Nusa 9.5%; Sadio Mané 33.2%; Ismaïla Sarr 10.8%; Nicolas Jackson 5.2%;
+Over 2.5: 41.5% | Under 2.5: 58.5% | BTTS yes: 46.6% | BTTS no: 53.4%
+Top scorers: Erling Haaland 48.9%; Alexander Sørloth 24.7%; Antonio Nusa 9.5%; Sadio Mané 35.5%; Ismaïla Sarr 11.9%; Nicolas Jackson 5.8%;
 Data as of 2026-06-29 | runs 50000 | seed 20260611
 <!-- WC26:AUTO:forecast END -->
 
