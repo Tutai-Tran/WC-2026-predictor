@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-06
 home: "Portugal"
 away: "Chile"
-updated: 2026-06-29
+updated: 2026-06-30
 ---
 
 # Portugal vs Chile (friendly)

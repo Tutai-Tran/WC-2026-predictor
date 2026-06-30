@@ -5,7 +5,7 @@ group: K
 date: 2026-06-18
 home: "Uzbekistan"
 away: "Colombia"
-updated: 2026-06-29
+updated: 2026-06-30
 ---
 
 # Uzbekistan vs Colombia

@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-05
 home: "Czech Republic"
 away: "Guatemala"
-updated: 2026-06-29
+updated: 2026-06-30
 ---
 
 # Czech Republic vs Guatemala (friendly)

@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-05-31
 home: "Czech Republic"
 away: "Kosovo"
-updated: 2026-06-29
+updated: 2026-06-30
 ---
 
 # Czech Republic vs Kosovo (friendly)

@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-02
 home: "Wales"
 away: "Ghana"
-updated: 2026-06-29
+updated: 2026-06-30
 ---
 
 # Wales vs Ghana (friendly)

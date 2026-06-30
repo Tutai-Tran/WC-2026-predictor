@@ -5,7 +5,7 @@ group: F
 date: 2026-06-25
 home: "Tunisia"
 away: "Netherlands"
-updated: 2026-06-29
+updated: 2026-06-30
 ---
 
 # Tunisia vs Netherlands

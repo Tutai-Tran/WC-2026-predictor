@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-05
 home: "Mexico"
 away: "Serbia"
-updated: 2026-06-29
+updated: 2026-06-30
 ---
 
 # Mexico vs Serbia (friendly)

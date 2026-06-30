@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-05-28
 home: "Republic of Ireland"
 away: "Qatar"
-updated: 2026-06-29
+updated: 2026-06-30
 ---
 
 # Republic of Ireland vs Qatar (friendly)

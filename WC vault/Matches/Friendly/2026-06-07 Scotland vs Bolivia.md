@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-07
 home: "Scotland"
 away: "Bolivia"
-updated: 2026-06-29
+updated: 2026-06-30
 ---
 
 # Scotland vs Bolivia (friendly)

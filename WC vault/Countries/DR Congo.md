@@ -5,17 +5,17 @@ fifa_code: "COD"
 group: "K"
 fifa_rank: 60
 elo: 1823
-champion_prob: 0.0003
+champion_prob: 0.0005
 status: active
 created: 2026-06-04
-updated: 2026-06-29
+updated: 2026-06-30
 ---
 
 # DR Congo
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-29T22:42Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-30T00:06Z | source elo-goal-v1 -->
 Group K | FIFA rank 60 | Elo 1823
-Champion 0.0% | Final 0.2% | SF 1.2% | QF 4.7% | Advance 100.0%
+Champion 0.0% | Final 0.3% | SF 1.6% | QF 4.9% | Advance 100.0%
 Availability: no concerns recorded
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-29T22:42Z | source elo-goal-v1 -->
-- 2026-06-29: champion 0.0% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-30T00:06Z | source elo-goal-v1 -->
+- 2026-06-30: champion 0.0% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

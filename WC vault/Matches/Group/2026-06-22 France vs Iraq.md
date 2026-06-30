@@ -5,7 +5,7 @@ group: I
 date: 2026-06-22
 home: "France"
 away: "Iraq"
-updated: 2026-06-29
+updated: 2026-06-30
 ---
 
 # France vs Iraq

@@ -1,6 +1,6 @@
 ---
 type: wc-lessons
-updated: 2026-06-29
+updated: 2026-06-30
 ---
 
 # What the model has learned

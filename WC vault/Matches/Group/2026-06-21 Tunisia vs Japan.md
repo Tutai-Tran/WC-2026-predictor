@@ -5,7 +5,7 @@ group: F
 date: 2026-06-21
 home: "Tunisia"
 away: "Japan"
-updated: 2026-06-29
+updated: 2026-06-30
 ---
 
 # Tunisia vs Japan

@@ -5,17 +5,17 @@ fifa_code: "COL"
 group: "K"
 fifa_rank: 13
 elo: 2094
-champion_prob: 0.0565
+champion_prob: 0.0629
 status: active
 created: 2026-06-04
-updated: 2026-06-29
+updated: 2026-06-30
 ---
 
 # Colombia
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-29T22:42Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-30T00:06Z | source elo-goal-v1 -->
 Group K | FIFA rank 13 | Elo 2094
-Champion 5.6% | Final 12.7% | SF 24.1% | QF 58.7% | Advance 100.0%
+Champion 6.3% | Final 14.0% | SF 24.1% | QF 58.6% | Advance 100.0%
 Availability concerns: Luis Suárez (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-29T22:42Z | source elo-goal-v1 -->
-- 2026-06-29: champion 5.6% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-30T00:06Z | source elo-goal-v1 -->
+- 2026-06-30: champion 6.3% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

@@ -8,14 +8,14 @@ elo: 1690
 champion_prob: 0.0
 status: active
 created: 2026-06-04
-updated: 2026-06-29
+updated: 2026-06-30
 ---
 
 # Ghana
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-29T22:42Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-30T00:06Z | source elo-goal-v1 -->
 Group L | FIFA rank 72 | Elo 1690
-Champion 0.0% | Final 0.0% | SF 0.3% | QF 2.3% | Advance 100.0%
+Champion 0.0% | Final 0.0% | SF 0.2% | QF 2.2% | Advance 100.0%
 Availability concerns: Jerome Opoku (doubtful), Lawrence Ati-Zigi (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-29T22:42Z | source elo-goal-v1 -->
-- 2026-06-29: champion 0.0% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-30T00:06Z | source elo-goal-v1 -->
+- 2026-06-30: champion 0.0% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

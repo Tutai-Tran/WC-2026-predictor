@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-08
 home: "Ecuador"
 away: "Guatemala"
-updated: 2026-06-29
+updated: 2026-06-30
 ---
 
 # Ecuador vs Guatemala (friendly)

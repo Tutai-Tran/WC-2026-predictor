@@ -5,7 +5,7 @@ group: I
 date: 2026-06-23
 home: "Norway"
 away: "Senegal"
-updated: 2026-06-29
+updated: 2026-06-30
 ---
 
 # Norway vs Senegal

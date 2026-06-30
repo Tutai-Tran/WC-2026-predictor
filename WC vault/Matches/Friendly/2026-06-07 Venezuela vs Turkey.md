@@ -4,7 +4,7 @@ stage: friendly
 date: 2026-06-07
 home: "Venezuela"
 away: "Turkey"
-updated: 2026-06-29
+updated: 2026-06-30
 ---
 
 # Venezuela vs Turkey (friendly)

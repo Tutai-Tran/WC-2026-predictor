@@ -5,7 +5,7 @@ group: K
 date: 2026-06-24
 home: "Colombia"
 away: "DR Congo"
-updated: 2026-06-29
+updated: 2026-06-30
 ---
 
 # Colombia vs DR Congo

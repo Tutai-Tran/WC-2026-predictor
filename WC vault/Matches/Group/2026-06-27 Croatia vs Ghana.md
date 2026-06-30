@@ -5,7 +5,7 @@ group: L
 date: 2026-06-27
 home: "Croatia"
 away: "Ghana"
-updated: 2026-06-29
+updated: 2026-06-30
 ---
 
 # Croatia vs Ghana
