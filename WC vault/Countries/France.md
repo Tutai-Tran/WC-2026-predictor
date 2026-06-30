@@ -5,7 +5,7 @@ fifa_code: "FRA"
 group: "I"
 fifa_rank: 3
 elo: 2192
-champion_prob: 0.1877
+champion_prob: 0.1729
 status: active
 created: 2026-06-04
 updated: 2026-06-30
@@ -13,10 +13,10 @@ updated: 2026-06-30
 
 # France
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-30T07:33Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-30T11:56Z | source elo-goal-v1 -->
 Group I | FIFA rank 3 | Elo 2192
-Champion 18.8% | Final 31.9% | SF 51.4% | QF 69.0% | Advance 100.0%
-Availability: no concerns recorded
+Champion 17.3% | Final 30.2% | SF 49.6% | QF 67.3% | Advance 100.0%
+Availability concerns: Marcus Thuram (out), William Saliba (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
 ## Squad & availability
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-30T07:33Z | source elo-goal-v1 -->
-- 2026-06-30: champion 18.8% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-30T11:56Z | source elo-goal-v1 -->
+- 2026-06-30: champion 17.3% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->

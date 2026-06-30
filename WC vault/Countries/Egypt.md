@@ -5,7 +5,7 @@ fifa_code: "EGY"
 group: "G"
 fifa_rank: 32
 elo: 1859
-champion_prob: 0.0005
+champion_prob: 0.0006
 status: active
 created: 2026-06-04
 updated: 2026-06-30
@@ -13,9 +13,9 @@ updated: 2026-06-30
 
 # Egypt
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-30T07:33Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-30T11:56Z | source elo-goal-v1 -->
 Group G | FIFA rank 32 | Elo 1859
-Champion 0.0% | Final 0.3% | SF 1.3% | QF 5.5% | Advance 100.0%
+Champion 0.1% | Final 0.3% | SF 1.4% | QF 5.7% | Advance 100.0%
 Availability concerns: Ahmed Fatouh (out), Mohamed Abdelmonem (doubtful), Mohamed Salah (doubtful), Mohanad Lasheen (suspended)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-30T07:33Z | source elo-goal-v1 -->
-- 2026-06-30: champion 0.0% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-30T11:56Z | source elo-goal-v1 -->
+- 2026-06-30: champion 0.1% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
