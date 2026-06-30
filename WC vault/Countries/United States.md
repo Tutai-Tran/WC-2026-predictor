@@ -5,7 +5,7 @@ fifa_code: "USA"
 group: "D"
 fifa_rank: 16
 elo: 1944
-champion_prob: 0.0218
+champion_prob: 0.0226
 status: active
 created: 2026-06-04
 updated: 2026-06-30
@@ -13,9 +13,9 @@ updated: 2026-06-30
 
 # United States
 
-<!-- WC26:AUTO:snapshot START | generated 2026-06-30T00:06Z | source elo-goal-v1 -->
+<!-- WC26:AUTO:snapshot START | generated 2026-06-30T03:11Z | source elo-goal-v1 -->
 Group D | FIFA rank 16 | Elo 1944
-Champion 2.2% | Final 6.5% | SF 16.1% | QF 48.0% | Advance 100.0%
+Champion 2.3% | Final 6.6% | SF 16.4% | QF 48.3% | Advance 100.0%
 Availability concerns: Cristian Roldan (doubtful), Auston Trusty (doubtful)
 <!-- WC26:AUTO:snapshot END -->
 
@@ -65,6 +65,6 @@ _Lines here are parsed back into the model. Example:_
 _- Vinicius: doubtful, 50% minutes, until 2026-06-20, source: Marca_
 
 ## Change log
-<!-- WC26:AUTO:changelog START | generated 2026-06-30T00:06Z | source elo-goal-v1 -->
-- 2026-06-30: champion 2.2% (run 50000 sims)
+<!-- WC26:AUTO:changelog START | generated 2026-06-30T03:11Z | source elo-goal-v1 -->
+- 2026-06-30: champion 2.3% (run 50000 sims)
 <!-- WC26:AUTO:changelog END -->
